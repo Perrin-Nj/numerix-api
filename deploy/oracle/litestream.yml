@@ -1,0 +1,13 @@
+# Streams every SQLite change to Oracle Object Storage (S3 compatible). Fill the placeholders in the VM copy.
+# Credentials come from the environment (LITESTREAM_ACCESS_KEY_ID / LITESTREAM_SECRET_ACCESS_KEY), set in
+# /etc/systemd/system/litestream.service.d/override.conf, never in this file.
+dbs:
+  - path: /var/lib/numerix/numerix.db
+    replicas:
+      - type: s3
+        bucket: numerix-backup
+        path: numerix.db
+        endpoint: https://__NAMESPACE__.compat.objectstorage.__REGION__.oraclecloud.com
+        region: __REGION__
+        force-path-style: true
+        retention: 168h

@@ -1,0 +1,9 @@
+__DOMAIN__ {
+	# Caddy gets and renews the HTTPS certificate by itself.
+	encode zstd gzip
+	# The Go API only listens on localhost.
+	reverse_proxy 127.0.0.1:8081 {
+		# Server-sent events (narration) must not be buffered.
+		flush_interval -1
+	}
+}
