@@ -1,0 +1,902 @@
+[
+ {
+  "input": {
+   "kind": "add_carry",
+   "params": {
+    "a": 36,
+    "b": 19
+   }
+  },
+  "lang": "fr",
+  "want": {
+   "kind": "add_carry",
+   "params": {
+    "a": 36,
+    "b": 19
+   },
+   "steps": [
+    {
+     "caption": "On met les unités ensemble : 6 et 9 font 15."
+    },
+    {
+     "caption": "Dix unités font une dizaine. On la déplace à gauche."
+    },
+    {
+     "caption": "Au total : 55."
+    }
+   ],
+   "alt": "Des blocs montrent 36 plus 19. Dix unités deviennent une dizaine. Le total est 55.",
+   "cache_key": "add_carry:36,19:fr"
+  }
+ },
+ {
+  "input": {
+   "kind": "add_carry",
+   "params": {
+    "a": 36,
+    "b": 19
+   }
+  },
+  "lang": "en",
+  "want": {
+   "kind": "add_carry",
+   "params": {
+    "a": 36,
+    "b": 19
+   },
+   "steps": [
+    {
+     "caption": "Put the ones together: 6 and 9 make 15."
+    },
+    {
+     "caption": "Ten ones make one ten. Move it to the left."
+    },
+    {
+     "caption": "In all: 55."
+    }
+   ],
+   "alt": "Blocks show 36 plus 19. Ten ones become one ten. The total is 55.",
+   "cache_key": "add_carry:36,19:en"
+  }
+ },
+ {
+  "input": {
+   "kind": "add_carry",
+   "params": {
+    "a": 25,
+    "b": 10
+   }
+  },
+  "lang": "fr",
+  "want": {
+   "kind": "add_carry",
+   "params": {
+    "a": 25,
+    "b": 10
+   },
+   "steps": [
+    {
+     "caption": "On met les unités ensemble : 5 et 0 font 5."
+    },
+    {
+     "caption": "Rien à regrouper."
+    },
+    {
+     "caption": "Au total : 35."
+    }
+   ],
+   "alt": "Des blocs montrent 25 plus 10. Le total est 35.",
+   "cache_key": "add_carry:25,10:fr"
+  }
+ },
+ {
+  "input": {
+   "kind": "add_carry",
+   "params": {
+    "a": 25,
+    "b": 10
+   }
+  },
+  "lang": "en",
+  "want": {
+   "kind": "add_carry",
+   "params": {
+    "a": 25,
+    "b": 10
+   },
+   "steps": [
+    {
+     "caption": "Put the ones together: 5 and 0 make 5."
+    },
+    {
+     "caption": "Nothing to regroup."
+    },
+    {
+     "caption": "In all: 35."
+    }
+   ],
+   "alt": "Blocks show 25 plus 10. The total is 35.",
+   "cache_key": "add_carry:25,10:en"
+  }
+ },
+ {
+  "input": {
+   "kind": "add_carry",
+   "params": {
+    "a": 7,
+    "b": 5
+   }
+  },
+  "lang": "fr",
+  "want": {
+   "kind": "add_carry",
+   "params": {
+    "a": 7,
+    "b": 5
+   },
+   "steps": [
+    {
+     "caption": "On met les unités ensemble : 7 et 5 font 12."
+    },
+    {
+     "caption": "Dix unités font une dizaine. On la déplace à gauche."
+    },
+    {
+     "caption": "Au total : 12."
+    }
+   ],
+   "alt": "Des blocs montrent 7 plus 5. Dix unités deviennent une dizaine. Le total est 12.",
+   "cache_key": "add_carry:7,5:fr"
+  }
+ },
+ {
+  "input": {
+   "kind": "add_carry",
+   "params": {
+    "a": 7,
+    "b": 5
+   }
+  },
+  "lang": "en",
+  "want": {
+   "kind": "add_carry",
+   "params": {
+    "a": 7,
+    "b": 5
+   },
+   "steps": [
+    {
+     "caption": "Put the ones together: 7 and 5 make 12."
+    },
+    {
+     "caption": "Ten ones make one ten. Move it to the left."
+    },
+    {
+     "caption": "In all: 12."
+    }
+   ],
+   "alt": "Blocks show 7 plus 5. Ten ones become one ten. The total is 12.",
+   "cache_key": "add_carry:7,5:en"
+  }
+ },
+ {
+  "input": {
+   "kind": "add_carry",
+   "params": {
+    "a": 148,
+    "b": 7
+   }
+  },
+  "lang": "fr",
+  "want": {
+   "kind": "add_carry",
+   "params": {
+    "a": 148,
+    "b": 7
+   },
+   "steps": [
+    {
+     "caption": "On met les unités ensemble : 8 et 7 font 15."
+    },
+    {
+     "caption": "Dix unités font une dizaine. On la déplace à gauche."
+    },
+    {
+     "caption": "Au total : 155."
+    }
+   ],
+   "alt": "Des blocs montrent 148 plus 7. Dix unités deviennent une dizaine. Le total est 155.",
+   "cache_key": "add_carry:148,7:fr"
+  }
+ },
+ {
+  "input": {
+   "kind": "add_carry",
+   "params": {
+    "a": 148,
+    "b": 7
+   }
+  },
+  "lang": "en",
+  "want": {
+   "kind": "add_carry",
+   "params": {
+    "a": 148,
+    "b": 7
+   },
+   "steps": [
+    {
+     "caption": "Put the ones together: 8 and 7 make 15."
+    },
+    {
+     "caption": "Ten ones make one ten. Move it to the left."
+    },
+    {
+     "caption": "In all: 155."
+    }
+   ],
+   "alt": "Blocks show 148 plus 7. Ten ones become one ten. The total is 155.",
+   "cache_key": "add_carry:148,7:en"
+  }
+ },
+ {
+  "input": {
+   "kind": "add_carry",
+   "params": {
+    "a": 99,
+    "b": 1
+   }
+  },
+  "lang": "fr",
+  "want": {
+   "kind": "add_carry",
+   "params": {
+    "a": 99,
+    "b": 1
+   },
+   "steps": [
+    {
+     "caption": "On met les unités ensemble : 9 et 1 font 10."
+    },
+    {
+     "caption": "Dix unités font une dizaine. On la déplace à gauche."
+    },
+    {
+     "caption": "Au total : 100."
+    }
+   ],
+   "alt": "Des blocs montrent 99 plus 1. Dix unités deviennent une dizaine. Le total est 100.",
+   "cache_key": "add_carry:99,1:fr"
+  }
+ },
+ {
+  "input": {
+   "kind": "add_carry",
+   "params": {
+    "a": 99,
+    "b": 1
+   }
+  },
+  "lang": "en",
+  "want": {
+   "kind": "add_carry",
+   "params": {
+    "a": 99,
+    "b": 1
+   },
+   "steps": [
+    {
+     "caption": "Put the ones together: 9 and 1 make 10."
+    },
+    {
+     "caption": "Ten ones make one ten. Move it to the left."
+    },
+    {
+     "caption": "In all: 100."
+    }
+   ],
+   "alt": "Blocks show 99 plus 1. Ten ones become one ten. The total is 100.",
+   "cache_key": "add_carry:99,1:en"
+  }
+ },
+ {
+  "input": {
+   "kind": "sub_borrow",
+   "params": {
+    "a": 52,
+    "b": 17
+   }
+  },
+  "lang": "fr",
+  "want": {
+   "kind": "sub_borrow",
+   "params": {
+    "a": 52,
+    "b": 17
+   },
+   "steps": [
+    {
+     "caption": "On part de 52."
+    },
+    {
+     "caption": "2 unités, ce n’est pas assez pour en enlever 7. On casse une dizaine en dix unités."
+    },
+    {
+     "caption": "On enlève 17. Il reste 35."
+    }
+   ],
+   "alt": "Des blocs montrent 52. Une dizaine est cassée en dix unités. On enlève 17 : il reste 35.",
+   "cache_key": "sub_borrow:52,17:fr"
+  }
+ },
+ {
+  "input": {
+   "kind": "sub_borrow",
+   "params": {
+    "a": 52,
+    "b": 17
+   }
+  },
+  "lang": "en",
+  "want": {
+   "kind": "sub_borrow",
+   "params": {
+    "a": 52,
+    "b": 17
+   },
+   "steps": [
+    {
+     "caption": "Start with 52."
+    },
+    {
+     "caption": "2 ones are not enough to take away 7. Break one ten into ten ones."
+    },
+    {
+     "caption": "Take away 17. 35 are left."
+    }
+   ],
+   "alt": "Blocks show 52. One ten is broken into ten ones. Take away 17: 35 are left.",
+   "cache_key": "sub_borrow:52,17:en"
+  }
+ },
+ {
+  "input": {
+   "kind": "sub_borrow",
+   "params": {
+    "a": 80,
+    "b": 20
+   }
+  },
+  "lang": "fr",
+  "want": {
+   "kind": "sub_borrow",
+   "params": {
+    "a": 80,
+    "b": 20
+   },
+   "steps": [
+    {
+     "caption": "On part de 80."
+    },
+    {
+     "caption": "Assez d’unités. Rien à casser."
+    },
+    {
+     "caption": "On enlève 20. Il reste 60."
+    }
+   ],
+   "alt": "Des blocs montrent 80. On enlève 20 : il reste 60.",
+   "cache_key": "sub_borrow:80,20:fr"
+  }
+ },
+ {
+  "input": {
+   "kind": "sub_borrow",
+   "params": {
+    "a": 80,
+    "b": 20
+   }
+  },
+  "lang": "en",
+  "want": {
+   "kind": "sub_borrow",
+   "params": {
+    "a": 80,
+    "b": 20
+   },
+   "steps": [
+    {
+     "caption": "Start with 80."
+    },
+    {
+     "caption": "Enough ones. Nothing to break."
+    },
+    {
+     "caption": "Take away 20. 60 are left."
+    }
+   ],
+   "alt": "Blocks show 80. Take away 20: 60 are left.",
+   "cache_key": "sub_borrow:80,20:en"
+  }
+ },
+ {
+  "input": {
+   "kind": "sub_borrow",
+   "params": {
+    "a": 300,
+    "b": 45
+   }
+  },
+  "lang": "fr",
+  "want": {
+   "kind": "sub_borrow",
+   "params": {
+    "a": 300,
+    "b": 45
+   },
+   "steps": [
+    {
+     "caption": "On part de 300."
+    },
+    {
+     "caption": "0 unités, ce n’est pas assez pour en enlever 5. On casse une dizaine en dix unités."
+    },
+    {
+     "caption": "On enlève 45. Il reste 255."
+    }
+   ],
+   "alt": "Des blocs montrent 300. Une dizaine est cassée en dix unités. On enlève 45 : il reste 255.",
+   "cache_key": "sub_borrow:300,45:fr"
+  }
+ },
+ {
+  "input": {
+   "kind": "sub_borrow",
+   "params": {
+    "a": 300,
+    "b": 45
+   }
+  },
+  "lang": "en",
+  "want": {
+   "kind": "sub_borrow",
+   "params": {
+    "a": 300,
+    "b": 45
+   },
+   "steps": [
+    {
+     "caption": "Start with 300."
+    },
+    {
+     "caption": "0 ones are not enough to take away 5. Break one ten into ten ones."
+    },
+    {
+     "caption": "Take away 45. 255 are left."
+    }
+   ],
+   "alt": "Blocks show 300. One ten is broken into ten ones. Take away 45: 255 are left.",
+   "cache_key": "sub_borrow:300,45:en"
+  }
+ },
+ {
+  "input": {
+   "kind": "sub_borrow",
+   "params": {
+    "a": 41,
+    "b": 9
+   }
+  },
+  "lang": "fr",
+  "want": {
+   "kind": "sub_borrow",
+   "params": {
+    "a": 41,
+    "b": 9
+   },
+   "steps": [
+    {
+     "caption": "On part de 41."
+    },
+    {
+     "caption": "1 unités, ce n’est pas assez pour en enlever 9. On casse une dizaine en dix unités."
+    },
+    {
+     "caption": "On enlève 9. Il reste 32."
+    }
+   ],
+   "alt": "Des blocs montrent 41. Une dizaine est cassée en dix unités. On enlève 9 : il reste 32.",
+   "cache_key": "sub_borrow:41,9:fr"
+  }
+ },
+ {
+  "input": {
+   "kind": "sub_borrow",
+   "params": {
+    "a": 41,
+    "b": 9
+   }
+  },
+  "lang": "en",
+  "want": {
+   "kind": "sub_borrow",
+   "params": {
+    "a": 41,
+    "b": 9
+   },
+   "steps": [
+    {
+     "caption": "Start with 41."
+    },
+    {
+     "caption": "1 ones are not enough to take away 9. Break one ten into ten ones."
+    },
+    {
+     "caption": "Take away 9. 32 are left."
+    }
+   ],
+   "alt": "Blocks show 41. One ten is broken into ten ones. Take away 9: 32 are left.",
+   "cache_key": "sub_borrow:41,9:en"
+  }
+ },
+ {
+  "input": {
+   "kind": "equal_groups",
+   "params": {
+    "groups": 6,
+    "size": 7
+   }
+  },
+  "lang": "fr",
+  "want": {
+   "kind": "equal_groups",
+   "params": {
+    "groups": 6,
+    "size": 7
+   },
+   "steps": [
+    {
+     "caption": "6 groupes."
+    },
+    {
+     "caption": "7 dans chaque groupe."
+    },
+    {
+     "caption": "6 groupes de 7 font 42."
+    }
+   ],
+   "alt": "6 groupes de 7 points font 42.",
+   "cache_key": "equal_groups:6,7:fr"
+  }
+ },
+ {
+  "input": {
+   "kind": "equal_groups",
+   "params": {
+    "groups": 6,
+    "size": 7
+   }
+  },
+  "lang": "en",
+  "want": {
+   "kind": "equal_groups",
+   "params": {
+    "groups": 6,
+    "size": 7
+   },
+   "steps": [
+    {
+     "caption": "6 groups."
+    },
+    {
+     "caption": "7 in each group."
+    },
+    {
+     "caption": "6 groups of 7 make 42."
+    }
+   ],
+   "alt": "6 groups of 7 dots make 42.",
+   "cache_key": "equal_groups:6,7:en"
+  }
+ },
+ {
+  "input": {
+   "kind": "equal_groups",
+   "params": {
+    "groups": 3,
+    "size": 3
+   }
+  },
+  "lang": "fr",
+  "want": {
+   "kind": "equal_groups",
+   "params": {
+    "groups": 3,
+    "size": 3
+   },
+   "steps": [
+    {
+     "caption": "3 groupes."
+    },
+    {
+     "caption": "3 dans chaque groupe."
+    },
+    {
+     "caption": "3 groupes de 3 font 9."
+    }
+   ],
+   "alt": "3 groupes de 3 points font 9.",
+   "cache_key": "equal_groups:3,3:fr"
+  }
+ },
+ {
+  "input": {
+   "kind": "equal_groups",
+   "params": {
+    "groups": 3,
+    "size": 3
+   }
+  },
+  "lang": "en",
+  "want": {
+   "kind": "equal_groups",
+   "params": {
+    "groups": 3,
+    "size": 3
+   },
+   "steps": [
+    {
+     "caption": "3 groups."
+    },
+    {
+     "caption": "3 in each group."
+    },
+    {
+     "caption": "3 groups of 3 make 9."
+    }
+   ],
+   "alt": "3 groups of 3 dots make 9.",
+   "cache_key": "equal_groups:3,3:en"
+  }
+ },
+ {
+  "input": {
+   "kind": "equal_groups",
+   "params": {
+    "groups": 9,
+    "size": 4
+   }
+  },
+  "lang": "fr",
+  "want": {
+   "kind": "equal_groups",
+   "params": {
+    "groups": 9,
+    "size": 4
+   },
+   "steps": [
+    {
+     "caption": "9 groupes."
+    },
+    {
+     "caption": "4 dans chaque groupe."
+    },
+    {
+     "caption": "9 groupes de 4 font 36."
+    }
+   ],
+   "alt": "9 groupes de 4 points font 36.",
+   "cache_key": "equal_groups:9,4:fr"
+  }
+ },
+ {
+  "input": {
+   "kind": "equal_groups",
+   "params": {
+    "groups": 9,
+    "size": 4
+   }
+  },
+  "lang": "en",
+  "want": {
+   "kind": "equal_groups",
+   "params": {
+    "groups": 9,
+    "size": 4
+   },
+   "steps": [
+    {
+     "caption": "9 groups."
+    },
+    {
+     "caption": "4 in each group."
+    },
+    {
+     "caption": "9 groups of 4 make 36."
+    }
+   ],
+   "alt": "9 groups of 4 dots make 36.",
+   "cache_key": "equal_groups:9,4:en"
+  }
+ },
+ {
+  "input": {
+   "kind": "equal_share",
+   "params": {
+    "total": 42,
+    "parts": 6
+   }
+  },
+  "lang": "fr",
+  "want": {
+   "kind": "equal_share",
+   "params": {
+    "total": 42,
+    "parts": 6
+   },
+   "steps": [
+    {
+     "caption": "On a 42."
+    },
+    {
+     "caption": "On partage en 6 parts, un à la fois."
+    },
+    {
+     "caption": "Chaque part reçoit 7."
+    }
+   ],
+   "alt": "42 points sont partagés en 6 parts égales de 7.",
+   "cache_key": "equal_share:42,6:fr"
+  }
+ },
+ {
+  "input": {
+   "kind": "equal_share",
+   "params": {
+    "total": 42,
+    "parts": 6
+   }
+  },
+  "lang": "en",
+  "want": {
+   "kind": "equal_share",
+   "params": {
+    "total": 42,
+    "parts": 6
+   },
+   "steps": [
+    {
+     "caption": "We have 42."
+    },
+    {
+     "caption": "Share them into 6 parts, one at a time."
+    },
+    {
+     "caption": "Each part gets 7."
+    }
+   ],
+   "alt": "42 dots are shared into 6 equal parts of 7.",
+   "cache_key": "equal_share:42,6:en"
+  }
+ },
+ {
+  "input": {
+   "kind": "equal_share",
+   "params": {
+    "total": 35,
+    "parts": 5
+   }
+  },
+  "lang": "fr",
+  "want": {
+   "kind": "equal_share",
+   "params": {
+    "total": 35,
+    "parts": 5
+   },
+   "steps": [
+    {
+     "caption": "On a 35."
+    },
+    {
+     "caption": "On partage en 5 parts, un à la fois."
+    },
+    {
+     "caption": "Chaque part reçoit 7."
+    }
+   ],
+   "alt": "35 points sont partagés en 5 parts égales de 7.",
+   "cache_key": "equal_share:35,5:fr"
+  }
+ },
+ {
+  "input": {
+   "kind": "equal_share",
+   "params": {
+    "total": 35,
+    "parts": 5
+   }
+  },
+  "lang": "en",
+  "want": {
+   "kind": "equal_share",
+   "params": {
+    "total": 35,
+    "parts": 5
+   },
+   "steps": [
+    {
+     "caption": "We have 35."
+    },
+    {
+     "caption": "Share them into 5 parts, one at a time."
+    },
+    {
+     "caption": "Each part gets 7."
+    }
+   ],
+   "alt": "35 dots are shared into 5 equal parts of 7.",
+   "cache_key": "equal_share:35,5:en"
+  }
+ },
+ {
+  "input": {
+   "kind": "equal_share",
+   "params": {
+    "total": 24,
+    "parts": 2
+   }
+  },
+  "lang": "fr",
+  "want": {
+   "kind": "equal_share",
+   "params": {
+    "total": 24,
+    "parts": 2
+   },
+   "steps": [
+    {
+     "caption": "On a 24."
+    },
+    {
+     "caption": "On partage en 2 parts, un à la fois."
+    },
+    {
+     "caption": "Chaque part reçoit 12."
+    }
+   ],
+   "alt": "24 points sont partagés en 2 parts égales de 12.",
+   "cache_key": "equal_share:24,2:fr"
+  }
+ },
+ {
+  "input": {
+   "kind": "equal_share",
+   "params": {
+    "total": 24,
+    "parts": 2
+   }
+  },
+  "lang": "en",
+  "want": {
+   "kind": "equal_share",
+   "params": {
+    "total": 24,
+    "parts": 2
+   },
+   "steps": [
+    {
+     "caption": "We have 24."
+    },
+    {
+     "caption": "Share them into 2 parts, one at a time."
+    },
+    {
+     "caption": "Each part gets 12."
+    }
+   ],
+   "alt": "24 dots are shared into 2 equal parts of 12.",
+   "cache_key": "equal_share:24,2:en"
+  }
+ }
+]

@@ -1,0 +1,2061 @@
+{
+  "meta": {
+    "source": "Progression des apprentissages — Mathématique, Primaire (MELS, 6 octobre 2009)",
+    "url": "https://cdn-contenu.quebec.ca/cdn-contenu/education/pfeq/primaire/progressions-apprentissages/PFEQ-progression-apprentissages-mathematique-primaire.pdf",
+    "champ": "arithmetique",
+    "cycles": [
+      1,
+      2
+    ],
+    "annees": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "version": "0.2.0",
+    "balises_nombres": {
+      "cycle_1": "nombres naturels inférieurs à 1000",
+      "cycle_2": "nombres naturels inférieurs à 100 000"
+    },
+    "legende_statut": {
+      "guide": "L'élève apprend à le faire avec l'intervention de l'enseignant",
+      "autonome": "L'élève le fait par lui-même à la fin de l'année scolaire",
+      "reinvesti": "L'élève réutilise cette connaissance"
+    },
+    "notes": "Les champs annee_intro et annee_maitrise reflètent la PDA. Les champs generateur, erreurs_typiques et univers sont propres à Numerix et ne font pas partie du document ministériel.",
+    "univers_narratifs": [
+      "nature",
+      "espace",
+      "cuisine",
+      "sport",
+      "construction",
+      "medecine",
+      "science",
+      "echecs"
+    ]
+  },
+  "competences": [
+    {
+      "id": "ARI-SEN-A01a",
+      "ref_pda": "Sens et écriture des nombres — A.1.a",
+      "section": "sens_ecriture_nombres",
+      "libelle": "Compter par ordre croissant à partir d'un nombre donné",
+      "annee_intro": 1,
+      "annee_maitrise": 1,
+      "cycle": 1,
+      "prerequis": [],
+      "generable": true,
+      "generateur": "gen_comptine_croissante",
+      "parametres": {
+        "depart_min": 1,
+        "depart_max": 50,
+        "longueur": 5
+      },
+      "erreurs_typiques": [
+        {
+          "code": "saut_dizaine",
+          "desc": "Bloque au passage de dizaine (29 → 30)"
+        },
+        {
+          "code": "repart_de_un",
+          "desc": "Recommence à 1 au lieu du nombre donné"
+        }
+      ],
+      "univers": [
+        "nature",
+        "cuisine",
+        "sport",
+        "science",
+        "echecs"
+      ],
+      "vocabulaire": [
+        "nombre",
+        "ordre croissant"
+      ]
+    },
+    {
+      "id": "ARI-SEN-A01b",
+      "ref_pda": "Sens et écriture des nombres — A.1.b",
+      "section": "sens_ecriture_nombres",
+      "libelle": "Compter par ordre croissant ou décroissant",
+      "annee_intro": 1,
+      "annee_maitrise": 2,
+      "cycle": 1,
+      "prerequis": [
+        "ARI-SEN-A01a"
+      ],
+      "generable": true,
+      "generateur": "gen_comptine_bidirectionnelle",
+      "parametres": {
+        "depart_min": 1,
+        "depart_max": 100,
+        "longueur": 5
+      },
+      "erreurs_typiques": [
+        {
+          "code": "inverse_sens",
+          "desc": "Compte à l'envers du sens demandé"
+        },
+        {
+          "code": "saut_dizaine_desc",
+          "desc": "Bloque au passage de dizaine en décroissant (30 → 29)"
+        }
+      ],
+      "univers": [
+        "espace",
+        "nature",
+        "science",
+        "echecs",
+        "medecine"
+      ],
+      "vocabulaire": [
+        "ordre croissant",
+        "ordre décroissant"
+      ]
+    },
+    {
+      "id": "ARI-SEN-A01c",
+      "ref_pda": "Sens et écriture des nombres — A.1.c",
+      "section": "sens_ecriture_nombres",
+      "libelle": "Compter par bonds",
+      "annee_intro": 1,
+      "annee_maitrise": 2,
+      "cycle": 1,
+      "prerequis": [
+        "ARI-SEN-A01b"
+      ],
+      "generable": true,
+      "generateur": "gen_comptine_bonds",
+      "parametres": {
+        "bonds": [
+          2,
+          5,
+          10
+        ],
+        "depart_max": 100,
+        "longueur": 5
+      },
+      "erreurs_typiques": [
+        {
+          "code": "bond_incoherent",
+          "desc": "Change de pas en cours de suite"
+        },
+        {
+          "code": "bond_un",
+          "desc": "Compte par 1 au lieu du bond demandé"
+        }
+      ],
+      "univers": [
+        "cuisine",
+        "sport",
+        "construction",
+        "echecs",
+        "science",
+        "medecine"
+      ],
+      "vocabulaire": [
+        "bond",
+        "suite"
+      ],
+      "note_pedagogique": "Prépare directement la multiplication (ARI-OPE-A06a)."
+    },
+    {
+      "id": "ARI-SEN-A02c",
+      "ref_pda": "Sens et écriture des nombres — A.2.c",
+      "section": "sens_ecriture_nombres",
+      "libelle": "Dénombrer une collection en groupant ou en regroupant",
+      "annee_intro": 1,
+      "annee_maitrise": 2,
+      "cycle": 1,
+      "prerequis": [
+        "ARI-SEN-A01a"
+      ],
+      "generable": true,
+      "generateur": "gen_denombrement_groupe",
+      "parametres": {
+        "total_max": 100,
+        "taille_groupe": [
+          2,
+          5,
+          10
+        ]
+      },
+      "erreurs_typiques": [
+        {
+          "code": "compte_groupes",
+          "desc": "Donne le nombre de groupes au lieu du total"
+        },
+        {
+          "code": "oublie_reste",
+          "desc": "Ignore les éléments hors groupe"
+        }
+      ],
+      "univers": [
+        "nature",
+        "cuisine",
+        "science",
+        "medecine",
+        "echecs"
+      ],
+      "vocabulaire": [
+        "groupement",
+        "dizaine"
+      ]
+    },
+    {
+      "id": "ARI-SEN-A03",
+      "ref_pda": "Sens et écriture des nombres — A.3",
+      "section": "sens_ecriture_nombres",
+      "libelle": "Lire et écrire tout nombre naturel",
+      "annee_intro": 1,
+      "annee_maitrise": 2,
+      "cycle": 1,
+      "prerequis": [
+        "ARI-SEN-A01a"
+      ],
+      "generable": true,
+      "generateur": "gen_lecture_ecriture_nombre",
+      "parametres": {
+        "max_c1": 1000,
+        "max_c2": 100000
+      },
+      "erreurs_typiques": [
+        {
+          "code": "inversion_chiffres",
+          "desc": "Écrit 51 pour cinquante-et-un lu 15"
+        },
+        {
+          "code": "zero_intercalaire",
+          "desc": "Omet le zéro (307 écrit 37)"
+        }
+      ],
+      "univers": [
+        "espace",
+        "construction",
+        "science",
+        "medecine"
+      ],
+      "vocabulaire": [
+        "chiffre",
+        "nombre",
+        "unité",
+        "dizaine",
+        "centaine"
+      ]
+    },
+    {
+      "id": "ARI-SEN-A04a",
+      "ref_pda": "Sens et écriture des nombres — A.4.a",
+      "section": "sens_ecriture_nombres",
+      "libelle": "Représenter un nombre naturel — accent sur le groupement",
+      "annee_intro": 1,
+      "annee_maitrise": 1,
+      "cycle": 1,
+      "prerequis": [
+        "ARI-SEN-A02c"
+      ],
+      "generable": true,
+      "generateur": "gen_representation_groupement",
+      "parametres": {
+        "max": 100
+      },
+      "erreurs_typiques": [
+        {
+          "code": "groupe_incomplet",
+          "desc": "Forme des groupes de taille inégale"
+        }
+      ],
+      "univers": [
+        "nature",
+        "cuisine",
+        "science",
+        "medecine"
+      ],
+      "vocabulaire": [
+        "groupement",
+        "dizaine"
+      ]
+    },
+    {
+      "id": "ARI-SEN-A04b",
+      "ref_pda": "Sens et écriture des nombres — A.4.b",
+      "section": "sens_ecriture_nombres",
+      "libelle": "Représenter un nombre naturel — accent sur l'échange",
+      "annee_intro": 2,
+      "annee_maitrise": 2,
+      "cycle": 1,
+      "prerequis": [
+        "ARI-SEN-A04a"
+      ],
+      "generable": true,
+      "generateur": "gen_representation_echange",
+      "parametres": {
+        "max": 1000
+      },
+      "erreurs_typiques": [
+        {
+          "code": "echange_rate",
+          "desc": "N'échange pas 10 unités contre 1 dizaine"
+        }
+      ],
+      "univers": [
+        "construction",
+        "cuisine",
+        "science"
+      ],
+      "vocabulaire": [
+        "base dix",
+        "échange"
+      ]
+    },
+    {
+      "id": "ARI-SEN-A04c",
+      "ref_pda": "Sens et écriture des nombres — A.4.c",
+      "section": "sens_ecriture_nombres",
+      "libelle": "Représenter un nombre naturel — accent sur la valeur de position",
+      "annee_intro": 2,
+      "annee_maitrise": 3,
+      "cycle": 2,
+      "prerequis": [
+        "ARI-SEN-A04b"
+      ],
+      "generable": true,
+      "generateur": "gen_valeur_position",
+      "parametres": {
+        "max_c1": 1000,
+        "max_c2": 100000
+      },
+      "erreurs_typiques": [
+        {
+          "code": "position_confondue",
+          "desc": "Confond la valeur du chiffre et sa position"
+        },
+        {
+          "code": "lecture_gauche_droite",
+          "desc": "Attribue la position dans le mauvais sens"
+        }
+      ],
+      "univers": [
+        "espace",
+        "construction",
+        "science",
+        "medecine"
+      ],
+      "vocabulaire": [
+        "valeur de position",
+        "unité de mille",
+        "dizaine de mille"
+      ]
+    },
+    {
+      "id": "ARI-SEN-A05",
+      "ref_pda": "Sens et écriture des nombres — A.5",
+      "section": "sens_ecriture_nombres",
+      "libelle": "Composer et décomposer un nombre naturel de différentes façons",
+      "annee_intro": 1,
+      "annee_maitrise": 3,
+      "cycle": 1,
+      "prerequis": [
+        "ARI-SEN-A04a"
+      ],
+      "generable": true,
+      "generateur": "gen_decomposition",
+      "parametres": {
+        "max_c1": 1000,
+        "max_c2": 100000,
+        "formes": [
+          "additive",
+          "mixte"
+        ]
+      },
+      "erreurs_typiques": [
+        {
+          "code": "somme_incorrecte",
+          "desc": "La décomposition ne redonne pas le nombre"
+        },
+        {
+          "code": "decomposition_partielle",
+          "desc": "Oublie un ordre de grandeur"
+        }
+      ],
+      "univers": [
+        "cuisine",
+        "construction",
+        "science",
+        "echecs"
+      ],
+      "vocabulaire": [
+        "décomposer",
+        "somme"
+      ]
+    },
+    {
+      "id": "ARI-SEN-A06",
+      "ref_pda": "Sens et écriture des nombres — A.6",
+      "section": "sens_ecriture_nombres",
+      "libelle": "Reconnaître des expressions équivalentes",
+      "annee_intro": 2,
+      "annee_maitrise": 3,
+      "cycle": 1,
+      "prerequis": [
+        "ARI-SEN-A05"
+      ],
+      "generable": true,
+      "generateur": "gen_expressions_equivalentes",
+      "parametres": {
+        "max": 200
+      },
+      "erreurs_typiques": [
+        {
+          "code": "egalite_directionnelle",
+          "desc": "Lit = comme « donne » et refuse 40 + 12 = 52"
+        }
+      ],
+      "univers": [
+        "cuisine",
+        "construction",
+        "science",
+        "echecs"
+      ],
+      "vocabulaire": [
+        "égalité",
+        "équivalent"
+      ],
+      "note_pedagogique": "Obstacle conceptuel classique : le signe = perçu comme un opérateur et non une relation."
+    },
+    {
+      "id": "ARI-SEN-A07",
+      "ref_pda": "Sens et écriture des nombres — A.7",
+      "section": "sens_ecriture_nombres",
+      "libelle": "Comparer entre eux des nombres naturels",
+      "annee_intro": 1,
+      "annee_maitrise": 2,
+      "cycle": 1,
+      "prerequis": [
+        "ARI-SEN-A03"
+      ],
+      "generable": true,
+      "generateur": "gen_comparaison_naturels",
+      "parametres": {
+        "max_c1": 1000,
+        "max_c2": 100000
+      },
+      "erreurs_typiques": [
+        {
+          "code": "plus_de_chiffres",
+          "desc": "Croit que plus de chiffres = plus grand sans vérifier"
+        },
+        {
+          "code": "symbole_inverse",
+          "desc": "Inverse < et >"
+        }
+      ],
+      "univers": [
+        "sport",
+        "nature",
+        "echecs",
+        "science",
+        "medecine"
+      ],
+      "vocabulaire": [
+        "est plus grand que",
+        "est plus petit que"
+      ],
+      "symboles": [
+        "<",
+        ">",
+        "="
+      ],
+      "note_pedagogique": "La valeur relative des pièces (pion 1, cavalier 3, tour 5, dame 9) donne un sens immédiat à la comparaison."
+    },
+    {
+      "id": "ARI-SEN-A08",
+      "ref_pda": "Sens et écriture des nombres — A.8",
+      "section": "sens_ecriture_nombres",
+      "libelle": "Ordonner des nombres naturels par ordre croissant ou décroissant",
+      "annee_intro": 1,
+      "annee_maitrise": 2,
+      "cycle": 1,
+      "prerequis": [
+        "ARI-SEN-A07"
+      ],
+      "generable": true,
+      "generateur": "gen_ordonner_naturels",
+      "parametres": {
+        "quantite": 4,
+        "max_c1": 1000,
+        "max_c2": 100000
+      },
+      "erreurs_typiques": [
+        {
+          "code": "ordre_inverse",
+          "desc": "Trie dans le sens opposé au sens demandé"
+        },
+        {
+          "code": "tri_partiel",
+          "desc": "Ordonne correctement une partie seulement"
+        }
+      ],
+      "univers": [
+        "sport",
+        "espace",
+        "echecs",
+        "science",
+        "medecine"
+      ],
+      "vocabulaire": [
+        "ordre croissant",
+        "ordre décroissant"
+      ]
+    },
+    {
+      "id": "ARI-SEN-A10",
+      "ref_pda": "Sens et écriture des nombres — A.10",
+      "section": "sens_ecriture_nombres",
+      "libelle": "Situer des nombres naturels sur une droite numérique",
+      "annee_intro": 1,
+      "annee_maitrise": 3,
+      "cycle": 1,
+      "prerequis": [
+        "ARI-SEN-A08"
+      ],
+      "generable": true,
+      "generateur": "gen_droite_numerique",
+      "parametres": {
+        "graduations": [
+          1,
+          5,
+          10
+        ],
+        "max_c1": 100,
+        "max_c2": 1000
+      },
+      "erreurs_typiques": [
+        {
+          "code": "graduation_ignoree",
+          "desc": "Compte les traits sans tenir compte du pas"
+        },
+        {
+          "code": "extremite",
+          "desc": "Place systématiquement près d'une extrémité"
+        }
+      ],
+      "univers": [
+        "espace",
+        "nature",
+        "science",
+        "medecine"
+      ],
+      "vocabulaire": [
+        "droite numérique"
+      ],
+      "note_pedagogique": "Le thermomètre est la droite numérique la plus familière en contexte médical."
+    },
+    {
+      "id": "ARI-SEN-A11a",
+      "ref_pda": "Sens et écriture des nombres — A.11.a",
+      "section": "sens_ecriture_nombres",
+      "libelle": "Reconnaître un nombre pair ou impair",
+      "annee_intro": 2,
+      "annee_maitrise": 2,
+      "cycle": 1,
+      "prerequis": [
+        "ARI-SEN-A01c"
+      ],
+      "generable": true,
+      "generateur": "gen_pair_impair",
+      "parametres": {
+        "max": 100
+      },
+      "erreurs_typiques": [
+        {
+          "code": "regarde_premier_chiffre",
+          "desc": "Juge la parité sur le chiffre des dizaines"
+        }
+      ],
+      "univers": [
+        "nature",
+        "sport",
+        "echecs",
+        "science"
+      ],
+      "vocabulaire": [
+        "nombre pair",
+        "nombre impair"
+      ],
+      "note_pedagogique": "Les cases claires et foncées de l'échiquier alternent — support concret de la parité."
+    },
+    {
+      "id": "ARI-SEN-A13",
+      "ref_pda": "Sens et écriture des nombres — A.13",
+      "section": "sens_ecriture_nombres",
+      "libelle": "Faire une approximation d'une collection (estimer, arrondir)",
+      "annee_intro": 2,
+      "annee_maitrise": 4,
+      "cycle": 1,
+      "prerequis": [
+        "ARI-SEN-A04b"
+      ],
+      "generable": true,
+      "generateur": "gen_approximation_collection",
+      "parametres": {
+        "ordres": [
+          10,
+          100,
+          1000
+        ]
+      },
+      "erreurs_typiques": [
+        {
+          "code": "arrondi_bas_systematique",
+          "desc": "Arrondit toujours vers le bas"
+        },
+        {
+          "code": "mauvais_ordre",
+          "desc": "Arrondit au mauvais ordre de grandeur"
+        }
+      ],
+      "univers": [
+        "nature",
+        "espace",
+        "science",
+        "medecine"
+      ],
+      "vocabulaire": [
+        "estimer",
+        "arrondir"
+      ]
+    },
+    {
+      "id": "ARI-SEN-B01",
+      "ref_pda": "Fractions — B.1",
+      "section": "fractions",
+      "libelle": "Reconnaître des fractions se rapportant à des éléments du quotidien",
+      "annee_intro": 2,
+      "annee_maitrise": 2,
+      "cycle": 1,
+      "prerequis": [],
+      "generable": true,
+      "generateur": "gen_fraction_reconnaissance",
+      "parametres": {
+        "fractions": [
+          "1/2",
+          "1/3",
+          "1/4"
+        ]
+      },
+      "erreurs_typiques": [
+        {
+          "code": "parties_inegales",
+          "desc": "Accepte un partage en parties non isométriques"
+        }
+      ],
+      "univers": [
+        "cuisine",
+        "nature",
+        "medecine",
+        "science"
+      ],
+      "vocabulaire": [
+        "fraction",
+        "demi",
+        "tiers",
+        "quart"
+      ]
+    },
+    {
+      "id": "ARI-SEN-B02",
+      "ref_pda": "Fractions — B.2",
+      "section": "fractions",
+      "libelle": "Représenter une fraction de différentes façons à partir d'un tout ou d'une collection",
+      "annee_intro": 3,
+      "annee_maitrise": 4,
+      "cycle": 2,
+      "prerequis": [
+        "ARI-SEN-B01"
+      ],
+      "generable": true,
+      "generateur": "gen_fraction_representation",
+      "parametres": {
+        "denominateurs": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          10
+        ]
+      },
+      "erreurs_typiques": [
+        {
+          "code": "denominateur_compte_parts_restantes",
+          "desc": "Compte les parts restantes au dénominateur"
+        }
+      ],
+      "univers": [
+        "cuisine",
+        "construction",
+        "medecine",
+        "science"
+      ],
+      "vocabulaire": [
+        "numérateur",
+        "dénominateur",
+        "entier"
+      ]
+    },
+    {
+      "id": "ARI-SEN-B03",
+      "ref_pda": "Fractions — B.3",
+      "section": "fractions",
+      "libelle": "Associer une fraction à une partie d'un tout ou d'un groupe d'objets et vice versa",
+      "annee_intro": 3,
+      "annee_maitrise": 4,
+      "cycle": 2,
+      "prerequis": [
+        "ARI-SEN-B02"
+      ],
+      "generable": true,
+      "generateur": "gen_fraction_partie_tout",
+      "parametres": {
+        "denominateurs": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          10
+        ],
+        "collection_max": 24
+      },
+      "erreurs_typiques": [
+        {
+          "code": "fraction_du_groupe",
+          "desc": "Confond fraction du tout et fraction d'une collection"
+        }
+      ],
+      "univers": [
+        "cuisine",
+        "nature",
+        "sport",
+        "medecine",
+        "science"
+      ],
+      "vocabulaire": [
+        "partie équivalente"
+      ]
+    },
+    {
+      "id": "ARI-SEN-B05",
+      "ref_pda": "Fractions — B.5",
+      "section": "fractions",
+      "libelle": "Distinguer le rôle du numérateur de celui du dénominateur",
+      "annee_intro": 3,
+      "annee_maitrise": 4,
+      "cycle": 2,
+      "prerequis": [
+        "ARI-SEN-B02"
+      ],
+      "generable": true,
+      "generateur": "gen_num_denom",
+      "parametres": {
+        "denominateurs": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          10,
+          12
+        ]
+      },
+      "erreurs_typiques": [
+        {
+          "code": "inversion_num_denom",
+          "desc": "Inverse numérateur et dénominateur"
+        }
+      ],
+      "univers": [
+        "cuisine",
+        "medecine",
+        "science"
+      ],
+      "vocabulaire": [
+        "numérateur",
+        "dénominateur"
+      ]
+    },
+    {
+      "id": "ARI-SEN-B06",
+      "ref_pda": "Fractions — B.6",
+      "section": "fractions",
+      "libelle": "Lire et écrire une fraction",
+      "annee_intro": 3,
+      "annee_maitrise": 4,
+      "cycle": 2,
+      "prerequis": [
+        "ARI-SEN-B05"
+      ],
+      "generable": true,
+      "generateur": "gen_fraction_notation",
+      "parametres": {
+        "denominateurs": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          10,
+          12
+        ]
+      },
+      "erreurs_typiques": [
+        {
+          "code": "notation_inversee",
+          "desc": "Écrit 4/3 pour trois quarts"
+        }
+      ],
+      "univers": [
+        "cuisine",
+        "construction",
+        "medecine",
+        "science"
+      ],
+      "vocabulaire": [
+        "notation fractionnaire"
+      ]
+    },
+    {
+      "id": "ARI-SEN-B07",
+      "ref_pda": "Fractions — B.7",
+      "section": "fractions",
+      "libelle": "Comparer une fraction à 0, à 1/2 ou à 1",
+      "annee_intro": 4,
+      "annee_maitrise": 5,
+      "cycle": 2,
+      "prerequis": [
+        "ARI-SEN-B06"
+      ],
+      "generable": true,
+      "generateur": "gen_fraction_reperes",
+      "parametres": {
+        "denominateurs": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          10,
+          12
+        ]
+      },
+      "erreurs_typiques": [
+        {
+          "code": "compare_numerateurs",
+          "desc": "Compare uniquement les numérateurs"
+        },
+        {
+          "code": "grand_denominateur_grand",
+          "desc": "Croit qu'un grand dénominateur donne une grande fraction"
+        }
+      ],
+      "univers": [
+        "cuisine",
+        "sport",
+        "medecine",
+        "science"
+      ],
+      "vocabulaire": [
+        "est plus petit que",
+        "est plus grand que"
+      ]
+    },
+    {
+      "id": "ARI-SEN-B10",
+      "ref_pda": "Fractions — B.10",
+      "section": "fractions",
+      "libelle": "Ordonner des fractions ayant un même dénominateur",
+      "annee_intro": 4,
+      "annee_maitrise": 5,
+      "cycle": 2,
+      "prerequis": [
+        "ARI-SEN-B07"
+      ],
+      "generable": true,
+      "generateur": "gen_ordonner_fractions_meme_denom",
+      "parametres": {
+        "quantite": 4,
+        "denominateurs": [
+          4,
+          5,
+          6,
+          8,
+          10,
+          12
+        ]
+      },
+      "erreurs_typiques": [
+        {
+          "code": "ordre_inverse_fraction",
+          "desc": "Trie dans le sens opposé"
+        }
+      ],
+      "univers": [
+        "cuisine",
+        "sport",
+        "medecine",
+        "science"
+      ],
+      "vocabulaire": [
+        "ordre croissant"
+      ]
+    },
+    {
+      "id": "ARI-SEN-C03",
+      "ref_pda": "Nombres décimaux — C.3",
+      "section": "nombres_decimaux",
+      "libelle": "Lire et écrire des nombres écrits en notation décimale",
+      "annee_intro": 3,
+      "annee_maitrise": 4,
+      "cycle": 2,
+      "prerequis": [
+        "ARI-SEN-A04c",
+        "ARI-SEN-B02"
+      ],
+      "generable": true,
+      "generateur": "gen_lecture_decimal",
+      "parametres": {
+        "precision": "centiemes"
+      },
+      "erreurs_typiques": [
+        {
+          "code": "decimal_comme_entier",
+          "desc": "Lit 0,45 comme quarante-cinq"
+        }
+      ],
+      "univers": [
+        "cuisine",
+        "sport",
+        "science",
+        "medecine"
+      ],
+      "vocabulaire": [
+        "nombre décimal",
+        "dixième",
+        "centième"
+      ]
+    },
+    {
+      "id": "ARI-SEN-C04",
+      "ref_pda": "Nombres décimaux — C.4",
+      "section": "nombres_decimaux",
+      "libelle": "Comprendre le rôle de la virgule",
+      "annee_intro": 3,
+      "annee_maitrise": 4,
+      "cycle": 2,
+      "prerequis": [
+        "ARI-SEN-C03"
+      ],
+      "generable": true,
+      "generateur": "gen_role_virgule",
+      "parametres": {
+        "precision": "centiemes"
+      },
+      "erreurs_typiques": [
+        {
+          "code": "virgule_separateur",
+          "desc": "Traite la partie décimale comme un second entier"
+        }
+      ],
+      "univers": [
+        "cuisine",
+        "construction",
+        "science",
+        "medecine"
+      ],
+      "vocabulaire": [
+        "notation décimale"
+      ]
+    },
+    {
+      "id": "ARI-SEN-C08",
+      "ref_pda": "Nombres décimaux — C.8",
+      "section": "nombres_decimaux",
+      "libelle": "Comparer entre eux des nombres décimaux",
+      "annee_intro": 4,
+      "annee_maitrise": 4,
+      "cycle": 2,
+      "prerequis": [
+        "ARI-SEN-C04"
+      ],
+      "generable": true,
+      "generateur": "gen_comparaison_decimaux",
+      "parametres": {
+        "precision": "centiemes"
+      },
+      "erreurs_typiques": [
+        {
+          "code": "longueur_decimale",
+          "desc": "Croit que 0,45 > 0,5 car plus de chiffres"
+        }
+      ],
+      "univers": [
+        "sport",
+        "cuisine",
+        "science",
+        "medecine"
+      ],
+      "vocabulaire": [
+        "est plus grand que",
+        "est plus petit que"
+      ],
+      "note_pedagogique": "Erreur la plus documentée sur les décimaux au primaire."
+    },
+    {
+      "id": "ARI-SOP-A01",
+      "ref_pda": "Sens des opérations — A.1",
+      "section": "sens_operations",
+      "libelle": "Reconnaître l'opération ou les opérations à effectuer dans une situation",
+      "annee_intro": 1,
+      "annee_maitrise": 4,
+      "cycle": 1,
+      "prerequis": [],
+      "generable": true,
+      "generateur": "gen_choix_operation",
+      "parametres": {
+        "operations_c1": [
+          "+",
+          "-"
+        ],
+        "operations_c2": [
+          "+",
+          "-",
+          "x",
+          "/"
+        ]
+      },
+      "erreurs_typiques": [
+        {
+          "code": "mot_cle_trompeur",
+          "desc": "Additionne dès qu'il voit « en tout » sans lire la situation"
+        },
+        {
+          "code": "operation_inverse",
+          "desc": "Choisit l'opération inverse"
+        }
+      ],
+      "univers": [
+        "nature",
+        "espace",
+        "cuisine",
+        "sport",
+        "construction",
+        "medecine",
+        "science",
+        "echecs"
+      ],
+      "note_pedagogique": "Compétence transversale — c'est le cœur de la compétence C1 du PFÉQ (résoudre une situation-problème)."
+    },
+    {
+      "id": "ARI-SOP-A02a",
+      "ref_pda": "Sens des opérations — A.2.a",
+      "section": "sens_operations",
+      "libelle": "Traduire une situation d'addition ou soustraction : transformation, réunion, comparaison",
+      "annee_intro": 1,
+      "annee_maitrise": 4,
+      "cycle": 1,
+      "prerequis": [
+        "ARI-SOP-A01"
+      ],
+      "generable": true,
+      "generateur": "gen_sens_addition_soustraction",
+      "parametres": {
+        "sens": [
+          "ajout",
+          "retrait",
+          "reunion",
+          "comparaison"
+        ],
+        "max_c1": 100,
+        "max_c2": 1000
+      },
+      "erreurs_typiques": [
+        {
+          "code": "comparaison_soustraction",
+          "desc": "Additionne dans une situation de comparaison"
+        },
+        {
+          "code": "sens_retrait_rate",
+          "desc": "Ne reconnaît pas le retrait implicite"
+        }
+      ],
+      "univers": [
+        "nature",
+        "cuisine",
+        "sport",
+        "medecine",
+        "science",
+        "echecs"
+      ],
+      "vocabulaire": [
+        "de plus",
+        "de moins",
+        "somme",
+        "différence"
+      ]
+    },
+    {
+      "id": "ARI-SOP-A03a",
+      "ref_pda": "Sens des opérations — A.3.a",
+      "section": "sens_operations",
+      "libelle": "Traduire une situation de multiplication ou division : disposition rectangulaire, addition répétée, produit cartésien, partage, contenance",
+      "annee_intro": 3,
+      "annee_maitrise": 3,
+      "cycle": 2,
+      "prerequis": [
+        "ARI-SOP-A02a",
+        "ARI-SEN-A01c"
+      ],
+      "generable": true,
+      "generateur": "gen_sens_multiplication_division",
+      "parametres": {
+        "sens": [
+          "disposition_rectangulaire",
+          "addition_repetee",
+          "partage",
+          "contenance"
+        ],
+        "max": 100
+      },
+      "erreurs_typiques": [
+        {
+          "code": "partage_vs_contenance",
+          "desc": "Confond « combien par groupe » et « combien de groupes »"
+        },
+        {
+          "code": "addition_au_lieu_mult",
+          "desc": "Additionne les deux nombres au lieu de multiplier"
+        }
+      ],
+      "univers": [
+        "nature",
+        "cuisine",
+        "construction",
+        "sport",
+        "medecine",
+        "science",
+        "echecs"
+      ],
+      "vocabulaire": [
+        "multiplication",
+        "facteur",
+        "produit",
+        "division",
+        "partage",
+        "quotient"
+      ],
+      "note_pedagogique": "Distinction partage/contenance : compétence charnière du 2e cycle. Excellent moteur narratif — « combien dans chaque groupe » vs « combien de groupes »."
+    },
+    {
+      "id": "ARI-SOP-A04",
+      "ref_pda": "Sens des opérations — A.4",
+      "section": "sens_operations",
+      "libelle": "Établir la relation d'égalité entre des expressions numériques",
+      "annee_intro": 1,
+      "annee_maitrise": 4,
+      "cycle": 1,
+      "prerequis": [
+        "ARI-SEN-A05"
+      ],
+      "generable": true,
+      "generateur": "gen_relation_egalite",
+      "parametres": {
+        "max_c1": 50,
+        "max_c2": 500
+      },
+      "erreurs_typiques": [
+        {
+          "code": "egalite_directionnelle",
+          "desc": "Refuse 3 + 2 = 6 - 1 car « = » signifie « donne »"
+        }
+      ],
+      "univers": [
+        "construction",
+        "cuisine",
+        "science",
+        "echecs"
+      ],
+      "vocabulaire": [
+        "égalité",
+        "équation"
+      ]
+    },
+    {
+      "id": "ARI-SOP-A05a",
+      "ref_pda": "Sens des opérations — A.5.a",
+      "section": "sens_operations",
+      "libelle": "Déterminer des équivalences numériques (addition, soustraction, commutativité de l'addition)",
+      "annee_intro": 1,
+      "annee_maitrise": 2,
+      "cycle": 1,
+      "prerequis": [
+        "ARI-SOP-A04"
+      ],
+      "generable": true,
+      "generateur": "gen_equivalence_add_soustr",
+      "parametres": {
+        "max": 100
+      },
+      "erreurs_typiques": [
+        {
+          "code": "commutativite_soustraction",
+          "desc": "Applique la commutativité à la soustraction"
+        }
+      ],
+      "univers": [
+        "cuisine",
+        "construction",
+        "science",
+        "echecs"
+      ],
+      "vocabulaire": [
+        "opération inverse"
+      ]
+    },
+    {
+      "id": "ARI-SOP-A05b",
+      "ref_pda": "Sens des opérations — A.5.b",
+      "section": "sens_operations",
+      "libelle": "Déterminer des équivalences numériques (4 opérations, commutativité, associativité)",
+      "annee_intro": 3,
+      "annee_maitrise": 4,
+      "cycle": 2,
+      "prerequis": [
+        "ARI-SOP-A05a",
+        "ARI-SOP-A03a"
+      ],
+      "generable": true,
+      "generateur": "gen_equivalence_quatre_operations",
+      "parametres": {
+        "max": 1000
+      },
+      "erreurs_typiques": [
+        {
+          "code": "commutativite_division",
+          "desc": "Applique la commutativité à la division"
+        },
+        {
+          "code": "associativite_mal_placee",
+          "desc": "Regroupe des termes non associables"
+        }
+      ],
+      "univers": [
+        "construction",
+        "espace",
+        "science",
+        "echecs"
+      ],
+      "vocabulaire": [
+        "multiple",
+        "opération inverse"
+      ]
+    },
+    {
+      "id": "ARI-OPE-A01a",
+      "ref_pda": "Opérations — A.1.a",
+      "section": "operations",
+      "libelle": "Faire une approximation du résultat d'une addition ou d'une soustraction",
+      "annee_intro": 2,
+      "annee_maitrise": 4,
+      "cycle": 1,
+      "prerequis": [
+        "ARI-SEN-A13",
+        "ARI-SOP-A02a"
+      ],
+      "generable": true,
+      "generateur": "gen_approximation_add_soustr",
+      "parametres": {
+        "max_c1": 200,
+        "max_c2": 10000
+      },
+      "erreurs_typiques": [
+        {
+          "code": "calcul_exact",
+          "desc": "Calcule exactement au lieu d'estimer"
+        },
+        {
+          "code": "arrondi_double",
+          "desc": "Arrondit un seul des deux termes"
+        }
+      ],
+      "univers": [
+        "nature",
+        "espace",
+        "cuisine",
+        "science",
+        "medecine"
+      ],
+      "vocabulaire": [
+        "estimer",
+        "environ"
+      ]
+    },
+    {
+      "id": "ARI-OPE-A02a",
+      "ref_pda": "Opérations — A.2.a",
+      "section": "operations",
+      "libelle": "Construire les faits numériques de l'addition (0+0 à 10+10) et les soustractions correspondantes",
+      "annee_intro": 1,
+      "annee_maitrise": 1,
+      "cycle": 1,
+      "prerequis": [
+        "ARI-SOP-A02a"
+      ],
+      "generable": true,
+      "generateur": "gen_faits_addition",
+      "parametres": {
+        "termes_max": 10
+      },
+      "erreurs_typiques": [
+        {
+          "code": "erreur_plus_un",
+          "desc": "Résultat décalé de 1 (surcomptage)"
+        },
+        {
+          "code": "confusion_proche",
+          "desc": "Confond avec un fait numérique voisin"
+        }
+      ],
+      "univers": [
+        "nature",
+        "cuisine",
+        "sport",
+        "espace",
+        "construction",
+        "medecine",
+        "science",
+        "echecs"
+      ],
+      "vocabulaire": [
+        "addition",
+        "somme"
+      ]
+    },
+    {
+      "id": "ARI-OPE-A02b",
+      "ref_pda": "Opérations — A.2.b",
+      "section": "operations",
+      "libelle": "Développer des stratégies favorisant la maîtrise des faits numériques de l'addition",
+      "annee_intro": 1,
+      "annee_maitrise": 2,
+      "cycle": 1,
+      "prerequis": [
+        "ARI-OPE-A02a"
+      ],
+      "generable": true,
+      "generateur": "gen_strategies_addition",
+      "parametres": {
+        "strategies": [
+          "doubles",
+          "compl_dix",
+          "plus_un_plus_deux",
+          "commutativite"
+        ]
+      },
+      "erreurs_typiques": [
+        {
+          "code": "surcomptage_systematique",
+          "desc": "Recompte tout depuis 1 à chaque fois"
+        }
+      ],
+      "univers": [
+        "cuisine",
+        "construction",
+        "science",
+        "echecs"
+      ],
+      "note_pedagogique": "Cible d'auto-explication : « comment as-tu trouvé ? » plutôt que « quel est le résultat ? »"
+    },
+    {
+      "id": "ARI-OPE-A02c",
+      "ref_pda": "Opérations — A.2.c",
+      "section": "operations",
+      "libelle": "Maîtriser l'ensemble des faits numériques de l'addition et les soustractions correspondantes",
+      "annee_intro": 2,
+      "annee_maitrise": 2,
+      "cycle": 1,
+      "prerequis": [
+        "ARI-OPE-A02b"
+      ],
+      "generable": true,
+      "generateur": "gen_faits_addition",
+      "parametres": {
+        "termes_max": 10,
+        "mode": "maitrise",
+        "temps_cible_ms": 4000
+      },
+      "erreurs_typiques": [
+        {
+          "code": "lenteur",
+          "desc": "Résultat correct mais reconstruit au lieu d'être rappelé"
+        }
+      ],
+      "univers": [
+        "nature",
+        "cuisine",
+        "sport",
+        "espace",
+        "construction",
+        "medecine",
+        "science",
+        "echecs"
+      ],
+      "note_pedagogique": "Compétence à surveiller par le temps de réponse, pas seulement par la justesse."
+    },
+    {
+      "id": "ARI-OPE-A03a",
+      "ref_pda": "Opérations — A.3.a",
+      "section": "operations",
+      "libelle": "Déterminer la somme ou la différence de deux nombres naturels par processus personnels (calcul mental)",
+      "annee_intro": 1,
+      "annee_maitrise": 4,
+      "cycle": 1,
+      "prerequis": [
+        "ARI-OPE-A02a"
+      ],
+      "generable": true,
+      "generateur": "gen_calcul_mental_add_soustr",
+      "parametres": {
+        "max_c1": 100,
+        "max_c2": 1000
+      },
+      "erreurs_typiques": [
+        {
+          "code": "oubli_retenue",
+          "desc": "Oublie la retenue"
+        },
+        {
+          "code": "emprunt_rate",
+          "desc": "Soustrait le petit chiffre du grand par colonne"
+        }
+      ],
+      "univers": [
+        "nature",
+        "cuisine",
+        "sport",
+        "medecine",
+        "science",
+        "echecs"
+      ],
+      "vocabulaire": [
+        "somme",
+        "différence"
+      ]
+    },
+    {
+      "id": "ARI-OPE-A03b",
+      "ref_pda": "Opérations — A.3.b",
+      "section": "operations",
+      "libelle": "Déterminer le produit ou le quotient de deux nombres naturels par processus personnels (calcul mental)",
+      "annee_intro": 3,
+      "annee_maitrise": 4,
+      "cycle": 2,
+      "prerequis": [
+        "ARI-OPE-A06a"
+      ],
+      "generable": true,
+      "generateur": "gen_calcul_mental_mult_div",
+      "parametres": {
+        "facteur_max": 10,
+        "dividende_max": 100
+      },
+      "erreurs_typiques": [
+        {
+          "code": "table_voisine",
+          "desc": "Donne le résultat d'une table voisine"
+        },
+        {
+          "code": "addition_au_lieu_mult",
+          "desc": "Additionne les facteurs"
+        }
+      ],
+      "univers": [
+        "nature",
+        "cuisine",
+        "espace",
+        "medecine",
+        "science",
+        "echecs"
+      ],
+      "vocabulaire": [
+        "produit",
+        "quotient"
+      ]
+    },
+    {
+      "id": "ARI-OPE-A04a",
+      "ref_pda": "Opérations — A.4.a",
+      "section": "operations",
+      "libelle": "Déterminer la somme ou la différence de deux nombres naturels inférieurs à 1000 par processus personnels (calcul écrit)",
+      "annee_intro": 1,
+      "annee_maitrise": 2,
+      "cycle": 1,
+      "prerequis": [
+        "ARI-OPE-A03a"
+      ],
+      "generable": true,
+      "generateur": "gen_calcul_ecrit_personnel",
+      "parametres": {
+        "max": 1000
+      },
+      "erreurs_typiques": [
+        {
+          "code": "oubli_retenue",
+          "desc": "Oublie la retenue"
+        },
+        {
+          "code": "alignement",
+          "desc": "Aligne mal les positions"
+        }
+      ],
+      "univers": [
+        "construction",
+        "cuisine",
+        "science",
+        "medecine"
+      ],
+      "vocabulaire": [
+        "somme",
+        "différence"
+      ]
+    },
+    {
+      "id": "ARI-OPE-A04b",
+      "ref_pda": "Opérations — A.4.b",
+      "section": "operations",
+      "libelle": "Déterminer la somme de deux nombres naturels d'au plus 4 chiffres par processus conventionnels",
+      "annee_intro": 3,
+      "annee_maitrise": 3,
+      "cycle": 2,
+      "prerequis": [
+        "ARI-OPE-A04a",
+        "ARI-SEN-A04c"
+      ],
+      "generable": true,
+      "generateur": "gen_addition_conventionnelle",
+      "parametres": {
+        "chiffres_max": 4
+      },
+      "erreurs_typiques": [
+        {
+          "code": "oubli_retenue",
+          "desc": "Oublie la retenue"
+        },
+        {
+          "code": "retenue_ajoutee_deux_fois",
+          "desc": "Reporte la retenue deux fois"
+        }
+      ],
+      "univers": [
+        "construction",
+        "espace",
+        "science",
+        "medecine"
+      ],
+      "vocabulaire": [
+        "somme"
+      ]
+    },
+    {
+      "id": "ARI-OPE-A04c",
+      "ref_pda": "Opérations — A.4.c",
+      "section": "operations",
+      "libelle": "Déterminer la différence de deux nombres naturels d'au plus 4 chiffres par processus conventionnels",
+      "annee_intro": 3,
+      "annee_maitrise": 3,
+      "cycle": 2,
+      "prerequis": [
+        "ARI-OPE-A04b"
+      ],
+      "generable": true,
+      "generateur": "gen_soustraction_conventionnelle",
+      "parametres": {
+        "chiffres_max": 4,
+        "resultat_positif": true
+      },
+      "erreurs_typiques": [
+        {
+          "code": "emprunt_rate",
+          "desc": "Soustrait le petit du grand chiffre sans emprunter"
+        },
+        {
+          "code": "emprunt_zero",
+          "desc": "Échoue à emprunter à travers un zéro"
+        }
+      ],
+      "univers": [
+        "construction",
+        "espace",
+        "science",
+        "medecine"
+      ],
+      "vocabulaire": [
+        "différence"
+      ],
+      "note_pedagogique": "L'emprunt à travers un zéro est l'erreur la plus persistante du 2e cycle."
+    },
+    {
+      "id": "ARI-OPE-A05",
+      "ref_pda": "Opérations — A.5",
+      "section": "operations",
+      "libelle": "Déterminer un terme manquant dans une équation d'addition ou de soustraction",
+      "annee_intro": 2,
+      "annee_maitrise": 4,
+      "cycle": 1,
+      "prerequis": [
+        "ARI-OPE-A03a",
+        "ARI-SOP-A05a"
+      ],
+      "generable": true,
+      "generateur": "gen_terme_manquant_add_soustr",
+      "parametres": {
+        "formes": [
+          "a+b=?",
+          "a+?=c",
+          "?+b=c",
+          "a-b=?",
+          "a-?=c",
+          "?-b=c"
+        ],
+        "max": 1000
+      },
+      "erreurs_typiques": [
+        {
+          "code": "operation_directe",
+          "desc": "Applique l'opération visible au lieu de l'inverse"
+        },
+        {
+          "code": "position_ignoree",
+          "desc": "Traite ?-b=c comme b-?=c"
+        }
+      ],
+      "univers": [
+        "construction",
+        "espace",
+        "nature",
+        "science",
+        "echecs",
+        "medecine"
+      ],
+      "vocabulaire": [
+        "terme manquant",
+        "équation"
+      ],
+      "note_pedagogique": "Excellent support narratif : « il manque une information dans le plan »."
+    },
+    {
+      "id": "ARI-OPE-A06a",
+      "ref_pda": "Opérations — A.6.a",
+      "section": "operations",
+      "libelle": "Construire les faits numériques de la multiplication (0×0 à 10×10) et les divisions correspondantes",
+      "annee_intro": 3,
+      "annee_maitrise": 3,
+      "cycle": 2,
+      "prerequis": [
+        "ARI-SOP-A03a",
+        "ARI-SEN-A01c"
+      ],
+      "generable": true,
+      "generateur": "gen_faits_multiplication",
+      "parametres": {
+        "facteurs_max": 10
+      },
+      "erreurs_typiques": [
+        {
+          "code": "table_voisine",
+          "desc": "Donne le résultat de la table voisine (7×8 = 54)"
+        },
+        {
+          "code": "addition_facteurs",
+          "desc": "Additionne les facteurs"
+        },
+        {
+          "code": "zero_un",
+          "desc": "Confusion sur les propriétés de 0 et 1"
+        }
+      ],
+      "univers": [
+        "nature",
+        "cuisine",
+        "construction",
+        "sport",
+        "espace",
+        "echecs",
+        "science",
+        "medecine"
+      ],
+      "vocabulaire": [
+        "multiplication",
+        "facteur",
+        "produit"
+      ],
+      "note_pedagogique": "L'échiquier 8×8 est un support visuel idéal pour construire les faits de la table de 8."
+    },
+    {
+      "id": "ARI-OPE-A06b",
+      "ref_pda": "Opérations — A.6.b",
+      "section": "operations",
+      "libelle": "Développer des stratégies favorisant la maîtrise des faits numériques de la multiplication",
+      "annee_intro": 3,
+      "annee_maitrise": 4,
+      "cycle": 2,
+      "prerequis": [
+        "ARI-OPE-A06a"
+      ],
+      "generable": true,
+      "generateur": "gen_strategies_multiplication",
+      "parametres": {
+        "strategies": [
+          "doubles",
+          "x10_puis_ajuste",
+          "commutativite",
+          "distributivite_simple"
+        ]
+      },
+      "erreurs_typiques": [
+        {
+          "code": "addition_repetee_systematique",
+          "desc": "Reconstruit par addition répétée à chaque fois"
+        }
+      ],
+      "univers": [
+        "construction",
+        "cuisine",
+        "echecs",
+        "science"
+      ],
+      "note_pedagogique": "Cible d'auto-explication."
+    },
+    {
+      "id": "ARI-OPE-A06c",
+      "ref_pda": "Opérations — A.6.c",
+      "section": "operations",
+      "libelle": "Maîtriser l'ensemble des faits numériques de la multiplication et les divisions correspondantes",
+      "annee_intro": 4,
+      "annee_maitrise": 4,
+      "cycle": 2,
+      "prerequis": [
+        "ARI-OPE-A06b"
+      ],
+      "generable": true,
+      "generateur": "gen_faits_multiplication",
+      "parametres": {
+        "facteurs_max": 10,
+        "mode": "maitrise",
+        "temps_cible_ms": 5000
+      },
+      "erreurs_typiques": [
+        {
+          "code": "lenteur",
+          "desc": "Résultat correct mais reconstruit"
+        }
+      ],
+      "univers": [
+        "nature",
+        "cuisine",
+        "construction",
+        "sport",
+        "espace",
+        "echecs",
+        "science",
+        "medecine"
+      ],
+      "note_pedagogique": "Jalon majeur du 2e cycle — condition d'accès à presque tout le 3e cycle."
+    },
+    {
+      "id": "ARI-OPE-A07a",
+      "ref_pda": "Opérations — A.7.a",
+      "section": "operations",
+      "libelle": "Déterminer le produit ou le quotient d'un nombre à 3 chiffres par un nombre à 1 chiffre (processus personnels), exprimer le reste selon le contexte",
+      "annee_intro": 4,
+      "annee_maitrise": 4,
+      "cycle": 2,
+      "prerequis": [
+        "ARI-OPE-A06c"
+      ],
+      "generable": true,
+      "generateur": "gen_mult_div_personnelle",
+      "parametres": {
+        "dividende_max": 999,
+        "diviseur_max": 9
+      },
+      "erreurs_typiques": [
+        {
+          "code": "reste_ignore",
+          "desc": "Ignore le reste alors que le contexte l'exige"
+        },
+        {
+          "code": "reste_superieur_diviseur",
+          "desc": "Laisse un reste plus grand que le diviseur"
+        }
+      ],
+      "univers": [
+        "nature",
+        "cuisine",
+        "espace",
+        "construction",
+        "medecine",
+        "science",
+        "echecs"
+      ],
+      "vocabulaire": [
+        "reste",
+        "dividende",
+        "diviseur"
+      ],
+      "note_pedagogique": "Le traitement du reste est le meilleur moteur narratif de tout le cycle 2 : « il reste 3 villageois — que fait-on ? »"
+    },
+    {
+      "id": "ARI-OPE-A08",
+      "ref_pda": "Opérations — A.8",
+      "section": "operations",
+      "libelle": "Déterminer un terme manquant dans une équation de multiplication ou de division",
+      "annee_intro": 4,
+      "annee_maitrise": 4,
+      "cycle": 2,
+      "prerequis": [
+        "ARI-OPE-A06c",
+        "ARI-OPE-A05"
+      ],
+      "generable": true,
+      "generateur": "gen_terme_manquant_mult_div",
+      "parametres": {
+        "formes": [
+          "axb=?",
+          "ax?=c",
+          "?xb=c",
+          "a/b=?",
+          "a/?=c",
+          "?/b=c"
+        ],
+        "max": 1000
+      },
+      "erreurs_typiques": [
+        {
+          "code": "operation_directe",
+          "desc": "Applique l'opération visible au lieu de l'inverse"
+        },
+        {
+          "code": "division_inversee",
+          "desc": "Inverse dividende et diviseur"
+        }
+      ],
+      "univers": [
+        "construction",
+        "espace",
+        "science",
+        "echecs"
+      ],
+      "vocabulaire": [
+        "terme manquant",
+        "opération inverse"
+      ]
+    },
+    {
+      "id": "ARI-OPE-A13a",
+      "ref_pda": "Opérations — A.13.a",
+      "section": "operations",
+      "libelle": "Décrire des régularités non numériques (couleurs, formes, sons, gestes)",
+      "annee_intro": 1,
+      "annee_maitrise": 2,
+      "cycle": 1,
+      "prerequis": [],
+      "generable": true,
+      "generateur": "gen_regularite_non_numerique",
+      "parametres": {
+        "motifs": [
+          "ABAB",
+          "AABB",
+          "ABC",
+          "ABBA"
+        ]
+      },
+      "erreurs_typiques": [
+        {
+          "code": "motif_partiel",
+          "desc": "Décrit seulement le début de la suite"
+        }
+      ],
+      "univers": [
+        "nature",
+        "construction",
+        "echecs",
+        "science"
+      ],
+      "vocabulaire": [
+        "régularité",
+        "suite"
+      ]
+    },
+    {
+      "id": "ARI-OPE-A13b",
+      "ref_pda": "Opérations — A.13.b",
+      "section": "operations",
+      "libelle": "Décrire des régularités numériques",
+      "annee_intro": 1,
+      "annee_maitrise": 3,
+      "cycle": 1,
+      "prerequis": [
+        "ARI-OPE-A13a",
+        "ARI-SEN-A01c"
+      ],
+      "generable": true,
+      "generateur": "gen_regularite_numerique",
+      "parametres": {
+        "pas": [
+          2,
+          3,
+          5,
+          10
+        ],
+        "max": 200
+      },
+      "erreurs_typiques": [
+        {
+          "code": "pas_variable",
+          "desc": "N'identifie pas un pas constant"
+        }
+      ],
+      "univers": [
+        "nature",
+        "espace",
+        "construction",
+        "echecs",
+        "science"
+      ],
+      "vocabulaire": [
+        "régularité",
+        "suite"
+      ]
+    },
+    {
+      "id": "ARI-OPE-A14",
+      "ref_pda": "Opérations — A.14",
+      "section": "operations",
+      "libelle": "Ajouter de nouveaux termes à une suite dont au moins les 3 premiers termes sont donnés",
+      "annee_intro": 1,
+      "annee_maitrise": 4,
+      "cycle": 1,
+      "prerequis": [
+        "ARI-OPE-A13b"
+      ],
+      "generable": true,
+      "generateur": "gen_suite_prolongement",
+      "parametres": {
+        "termes_donnes": 3,
+        "termes_demandes": 2,
+        "max": 500
+      },
+      "erreurs_typiques": [
+        {
+          "code": "pas_mal_identifie",
+          "desc": "Identifie le mauvais pas"
+        },
+        {
+          "code": "applique_une_fois",
+          "desc": "N'applique le pas qu'au premier terme demandé"
+        }
+      ],
+      "univers": [
+        "espace",
+        "nature",
+        "construction",
+        "echecs",
+        "science"
+      ],
+      "vocabulaire": [
+        "suite",
+        "régularité"
+      ]
+    },
+    {
+      "id": "ARI-OPE-C02a",
+      "ref_pda": "Opérations — C.2.a (nombres décimaux)",
+      "section": "operations_decimaux",
+      "libelle": "Additionner et soustraire des nombres décimaux (calcul mental)",
+      "annee_intro": 4,
+      "annee_maitrise": 5,
+      "cycle": 2,
+      "prerequis": [
+        "ARI-SEN-C08",
+        "ARI-OPE-A03a"
+      ],
+      "generable": true,
+      "generateur": "gen_calcul_mental_decimaux",
+      "parametres": {
+        "precision": "centiemes"
+      },
+      "erreurs_typiques": [
+        {
+          "code": "alignement_virgule",
+          "desc": "Aligne à droite au lieu d'aligner les virgules"
+        }
+      ],
+      "univers": [
+        "cuisine",
+        "sport",
+        "medecine",
+        "science"
+      ],
+      "vocabulaire": [
+        "nombre décimal"
+      ]
+    },
+    {
+      "id": "ARI-OPE-C03a",
+      "ref_pda": "Opérations — C.3.a (nombres décimaux)",
+      "section": "operations_decimaux",
+      "libelle": "Additionner et soustraire des nombres décimaux dont le résultat ne dépasse pas les centièmes (calcul écrit)",
+      "annee_intro": 4,
+      "annee_maitrise": 5,
+      "cycle": 2,
+      "prerequis": [
+        "ARI-OPE-C02a"
+      ],
+      "generable": true,
+      "generateur": "gen_calcul_ecrit_decimaux",
+      "parametres": {
+        "precision": "centiemes"
+      },
+      "erreurs_typiques": [
+        {
+          "code": "alignement_virgule",
+          "desc": "Aligne à droite au lieu d'aligner les virgules"
+        },
+        {
+          "code": "virgule_oubliee",
+          "desc": "Oublie la virgule au résultat"
+        }
+      ],
+      "univers": [
+        "cuisine",
+        "construction",
+        "medecine",
+        "science"
+      ],
+      "vocabulaire": [
+        "nombre décimal"
+      ],
+      "symboles": [
+        "$",
+        "¢"
+      ]
+    }
+  ]
+}

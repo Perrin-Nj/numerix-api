@@ -1,0 +1,781 @@
+{
+  "meta": {
+    "source": "Progression des apprentissages — Mathématique, Primaire (MELS, 6 octobre 2009)",
+    "champs": [
+      "geometrie",
+      "mesure",
+      "statistique",
+      "probabilite"
+    ],
+    "cycles": [
+      1,
+      2
+    ],
+    "version": "0.2.0",
+    "note": "Champs secondaires pour le MVP. L'arithmétique reste le cœur du premier parcours. Ces compétences sont prêtes à être activées en phase 2.",
+    "univers_narratifs": [
+      "nature",
+      "espace",
+      "cuisine",
+      "sport",
+      "construction",
+      "medecine",
+      "science",
+      "echecs"
+    ]
+  },
+  "competences": [
+    {
+      "id": "GEO-A01",
+      "ref_pda": "Géométrie — Espace A.1",
+      "champ": "geometrie",
+      "libelle": "Se repérer et repérer des objets dans l'espace (relations spatiales)",
+      "annee_intro": 1,
+      "annee_maitrise": 2,
+      "cycle": 1,
+      "prerequis": [],
+      "generable": true,
+      "generateur": "gen_reperage_spatial",
+      "erreurs_typiques": [
+        {
+          "code": "gauche_droite",
+          "desc": "Inverse gauche et droite"
+        }
+      ],
+      "univers": [
+        "espace",
+        "construction",
+        "nature",
+        "echecs",
+        "science",
+        "medecine"
+      ]
+    },
+    {
+      "id": "GEO-A02",
+      "ref_pda": "Géométrie — Espace A.2",
+      "champ": "geometrie",
+      "libelle": "Effectuer des activités de repérage dans un plan",
+      "annee_intro": 1,
+      "annee_maitrise": 3,
+      "cycle": 1,
+      "prerequis": [
+        "GEO-A01"
+      ],
+      "generable": true,
+      "generateur": "gen_reperage_plan",
+      "erreurs_typiques": [
+        {
+          "code": "coordonnees_inversees",
+          "desc": "Inverse ligne et colonne"
+        }
+      ],
+      "univers": [
+        "espace",
+        "construction",
+        "echecs",
+        "science"
+      ],
+      "note_pedagogique": "La notation algébrique des échecs (e4, d5) est un système de coordonnées authentique."
+    },
+    {
+      "id": "GEO-B03",
+      "ref_pda": "Géométrie — Solides B.3",
+      "champ": "geometrie",
+      "libelle": "Identifier les principaux solides (boule, cône, cube, cylindre, prisme, pyramide)",
+      "annee_intro": 1,
+      "annee_maitrise": 2,
+      "cycle": 1,
+      "prerequis": [],
+      "generable": true,
+      "generateur": "gen_identification_solides",
+      "erreurs_typiques": [
+        {
+          "code": "cube_carre",
+          "desc": "Confond cube (solide) et carré (figure plane)"
+        }
+      ],
+      "univers": [
+        "construction",
+        "espace",
+        "science",
+        "medecine"
+      ],
+      "vocabulaire": [
+        "solide",
+        "face",
+        "surface plane",
+        "surface courbe"
+      ]
+    },
+    {
+      "id": "GEO-B05",
+      "ref_pda": "Géométrie — Solides B.5",
+      "champ": "geometrie",
+      "libelle": "Décrire des prismes et des pyramides à l'aide de faces, de sommets, d'arêtes",
+      "annee_intro": 3,
+      "annee_maitrise": 4,
+      "cycle": 2,
+      "prerequis": [
+        "GEO-B03"
+      ],
+      "generable": true,
+      "generateur": "gen_description_polyedre",
+      "erreurs_typiques": [
+        {
+          "code": "arete_sommet",
+          "desc": "Confond arête et sommet"
+        },
+        {
+          "code": "faces_cachees",
+          "desc": "Ne compte que les faces visibles"
+        }
+      ],
+      "univers": [
+        "construction",
+        "science"
+      ],
+      "vocabulaire": [
+        "sommet",
+        "arête",
+        "face"
+      ]
+    },
+    {
+      "id": "GEO-C02",
+      "ref_pda": "Géométrie — Figures planes C.2",
+      "champ": "geometrie",
+      "libelle": "Identifier des figures planes : carré, rectangle, triangle, losange, cercle",
+      "annee_intro": 1,
+      "annee_maitrise": 2,
+      "cycle": 1,
+      "prerequis": [],
+      "generable": true,
+      "generateur": "gen_identification_figures",
+      "erreurs_typiques": [
+        {
+          "code": "orientation",
+          "desc": "Ne reconnaît pas un carré posé sur la pointe"
+        }
+      ],
+      "univers": [
+        "construction",
+        "nature",
+        "echecs",
+        "science"
+      ],
+      "vocabulaire": [
+        "figure plane",
+        "côté",
+        "carré",
+        "rectangle",
+        "triangle",
+        "losange",
+        "cercle"
+      ]
+    },
+    {
+      "id": "GEO-C05",
+      "ref_pda": "Géométrie — Figures planes C.5",
+      "champ": "geometrie",
+      "libelle": "Identifier et construire des droites parallèles et des droites perpendiculaires",
+      "annee_intro": 4,
+      "annee_maitrise": 4,
+      "cycle": 2,
+      "prerequis": [
+        "GEO-C02"
+      ],
+      "generable": true,
+      "generateur": "gen_paralleles_perpendiculaires",
+      "erreurs_typiques": [
+        {
+          "code": "confusion_termes",
+          "desc": "Inverse parallèle et perpendiculaire"
+        }
+      ],
+      "univers": [
+        "construction",
+        "espace",
+        "echecs",
+        "science"
+      ],
+      "symboles": [
+        "//",
+        "⊥"
+      ],
+      "note_pedagogique": "Colonnes et rangées de l'échiquier : perpendicularité vécue, pas abstraite."
+    },
+    {
+      "id": "GEO-D01",
+      "ref_pda": "Géométrie — Frises et dallages D.1",
+      "champ": "geometrie",
+      "libelle": "Identifier des figures isométriques",
+      "annee_intro": 2,
+      "annee_maitrise": 3,
+      "cycle": 1,
+      "prerequis": [
+        "GEO-C02"
+      ],
+      "generable": true,
+      "generateur": "gen_figures_isometriques",
+      "erreurs_typiques": [
+        {
+          "code": "rotation_non_reconnue",
+          "desc": "Ne reconnaît pas l'isométrie après rotation"
+        }
+      ],
+      "univers": [
+        "construction",
+        "nature",
+        "echecs",
+        "science"
+      ]
+    },
+    {
+      "id": "GEO-D03a",
+      "ref_pda": "Géométrie — Frises et dallages D.3.a",
+      "champ": "geometrie",
+      "libelle": "Observer et produire des frises et des dallages à l'aide de la réflexion",
+      "annee_intro": 2,
+      "annee_maitrise": 3,
+      "cycle": 1,
+      "prerequis": [
+        "GEO-D01"
+      ],
+      "generable": true,
+      "generateur": "gen_reflexion",
+      "erreurs_typiques": [
+        {
+          "code": "translation_au_lieu_reflexion",
+          "desc": "Translate au lieu de réfléchir"
+        }
+      ],
+      "univers": [
+        "nature",
+        "construction",
+        "echecs",
+        "science"
+      ],
+      "vocabulaire": [
+        "réflexion",
+        "axe de réflexion",
+        "figure symétrique"
+      ]
+    },
+    {
+      "id": "MES-A03",
+      "ref_pda": "Mesure — Longueurs A.3",
+      "champ": "mesure",
+      "libelle": "Estimer et mesurer les dimensions d'un objet à l'aide d'unités non conventionnelles",
+      "annee_intro": 1,
+      "annee_maitrise": 2,
+      "cycle": 1,
+      "prerequis": [],
+      "generable": true,
+      "generateur": "gen_mesure_non_conventionnelle",
+      "erreurs_typiques": [
+        {
+          "code": "unites_inegales",
+          "desc": "Utilise des unités de tailles différentes"
+        }
+      ],
+      "univers": [
+        "construction",
+        "nature",
+        "science",
+        "medecine"
+      ]
+    },
+    {
+      "id": "MES-A04a",
+      "ref_pda": "Mesure — Longueurs A.4.a",
+      "champ": "mesure",
+      "libelle": "Estimer et mesurer des dimensions en mètre, décimètre et centimètre",
+      "annee_intro": 2,
+      "annee_maitrise": 3,
+      "cycle": 1,
+      "prerequis": [
+        "MES-A03"
+      ],
+      "generable": true,
+      "generateur": "gen_mesure_conventionnelle",
+      "parametres": {
+        "unites": [
+          "m",
+          "dm",
+          "cm"
+        ]
+      },
+      "erreurs_typiques": [
+        {
+          "code": "depart_un",
+          "desc": "Commence à mesurer au 1 de la règle au lieu du 0"
+        }
+      ],
+      "univers": [
+        "construction",
+        "sport",
+        "science",
+        "medecine"
+      ],
+      "vocabulaire": [
+        "unité de mesure",
+        "centimètre",
+        "décimètre",
+        "mètre"
+      ]
+    },
+    {
+      "id": "MES-A05a",
+      "ref_pda": "Mesure — Longueurs A.5.a",
+      "champ": "mesure",
+      "libelle": "Établir des relations entre m, dm, cm et mm",
+      "annee_intro": 3,
+      "annee_maitrise": 4,
+      "cycle": 2,
+      "prerequis": [
+        "MES-A04a",
+        "ARI-SEN-A04c"
+      ],
+      "generable": true,
+      "generateur": "gen_conversion_longueur",
+      "erreurs_typiques": [
+        {
+          "code": "facteur_dix_inverse",
+          "desc": "Multiplie au lieu de diviser lors de la conversion"
+        }
+      ],
+      "univers": [
+        "construction",
+        "sport",
+        "science",
+        "medecine"
+      ]
+    },
+    {
+      "id": "MES-A06",
+      "ref_pda": "Mesure — Longueurs A.6",
+      "champ": "mesure",
+      "libelle": "Calculer le périmètre de figures planes",
+      "annee_intro": 3,
+      "annee_maitrise": 4,
+      "cycle": 2,
+      "prerequis": [
+        "MES-A04a",
+        "GEO-C02",
+        "ARI-OPE-A03a"
+      ],
+      "generable": true,
+      "generateur": "gen_perimetre",
+      "erreurs_typiques": [
+        {
+          "code": "perimetre_aire",
+          "desc": "Calcule l'aire au lieu du périmètre"
+        },
+        {
+          "code": "cotes_manquants",
+          "desc": "Oublie les côtés non cotés d'un rectangle"
+        }
+      ],
+      "univers": [
+        "construction",
+        "sport",
+        "nature",
+        "science",
+        "echecs"
+      ],
+      "vocabulaire": [
+        "périmètre"
+      ]
+    },
+    {
+      "id": "MES-B01b",
+      "ref_pda": "Mesure — Surfaces B.1.b",
+      "champ": "mesure",
+      "libelle": "Estimer et mesurer l'aire de surfaces à l'aide d'unités conventionnelles",
+      "annee_intro": 4,
+      "annee_maitrise": 5,
+      "cycle": 2,
+      "prerequis": [
+        "MES-A06",
+        "ARI-OPE-A06c"
+      ],
+      "generable": true,
+      "generateur": "gen_aire",
+      "erreurs_typiques": [
+        {
+          "code": "perimetre_aire",
+          "desc": "Additionne les côtés au lieu de multiplier"
+        }
+      ],
+      "univers": [
+        "construction",
+        "nature",
+        "science",
+        "echecs"
+      ],
+      "vocabulaire": [
+        "aire",
+        "centimètre carré",
+        "mètre carré"
+      ]
+    },
+    {
+      "id": "MES-G01",
+      "ref_pda": "Mesure — Temps G.1",
+      "champ": "mesure",
+      "libelle": "Estimer et mesurer le temps à l'aide d'unités conventionnelles",
+      "annee_intro": 1,
+      "annee_maitrise": 3,
+      "cycle": 1,
+      "prerequis": [],
+      "generable": true,
+      "generateur": "gen_lecture_heure",
+      "erreurs_typiques": [
+        {
+          "code": "aiguilles_inversees",
+          "desc": "Inverse petite et grande aiguille"
+        },
+        {
+          "code": "minutes_en_unites",
+          "desc": "Lit la grande aiguille en unités (le 3 = 3 min)"
+        }
+      ],
+      "univers": [
+        "espace",
+        "cuisine",
+        "sport",
+        "echecs",
+        "medecine",
+        "science"
+      ],
+      "vocabulaire": [
+        "jour",
+        "heure",
+        "minute",
+        "seconde"
+      ],
+      "note_pedagogique": "La pendule d'échecs rend la lecture du temps immédiatement conséquente."
+    },
+    {
+      "id": "MES-G02",
+      "ref_pda": "Mesure — Temps G.2",
+      "champ": "mesure",
+      "libelle": "Établir des relations entre les unités de mesure de temps",
+      "annee_intro": 2,
+      "annee_maitrise": 4,
+      "cycle": 1,
+      "prerequis": [
+        "MES-G01"
+      ],
+      "generable": true,
+      "generateur": "gen_conversion_temps",
+      "erreurs_typiques": [
+        {
+          "code": "base_dix_temps",
+          "desc": "Convertit en base 10 au lieu de base 60"
+        }
+      ],
+      "univers": [
+        "espace",
+        "sport",
+        "cuisine",
+        "echecs",
+        "medecine",
+        "science"
+      ]
+    },
+    {
+      "id": "MES-E03",
+      "ref_pda": "Mesure — Capacités E.3",
+      "champ": "mesure",
+      "libelle": "Établir des relations entre les unités de capacité (L, mL)",
+      "annee_intro": 3,
+      "annee_maitrise": 4,
+      "cycle": 2,
+      "prerequis": [
+        "ARI-SEN-A04c"
+      ],
+      "generable": true,
+      "generateur": "gen_conversion_capacite",
+      "erreurs_typiques": [
+        {
+          "code": "facteur_mille",
+          "desc": "Utilise un facteur 100 au lieu de 1000"
+        }
+      ],
+      "univers": [
+        "cuisine",
+        "nature",
+        "medecine",
+        "science"
+      ],
+      "vocabulaire": [
+        "capacité",
+        "litre",
+        "millilitre"
+      ],
+      "note_pedagogique": "Dosage en mL : contexte médical où la conversion a un enjeu réel et compréhensible."
+    },
+    {
+      "id": "MES-F03",
+      "ref_pda": "Mesure — Masses F.3",
+      "champ": "mesure",
+      "libelle": "Établir des relations entre les unités de masse (kg, g)",
+      "annee_intro": 3,
+      "annee_maitrise": 4,
+      "cycle": 2,
+      "prerequis": [
+        "ARI-SEN-A04c"
+      ],
+      "generable": true,
+      "generateur": "gen_conversion_masse",
+      "erreurs_typiques": [
+        {
+          "code": "facteur_mille",
+          "desc": "Utilise un facteur 100 au lieu de 1000"
+        }
+      ],
+      "univers": [
+        "cuisine",
+        "nature",
+        "construction",
+        "medecine",
+        "science"
+      ],
+      "vocabulaire": [
+        "masse",
+        "gramme",
+        "kilogramme"
+      ],
+      "note_pedagogique": "Posologie selon la masse corporelle : la conversion g/kg devient une question de sécurité."
+    },
+    {
+      "id": "STA-02",
+      "ref_pda": "Statistique — 2",
+      "champ": "statistique",
+      "libelle": "Collecter, décrire et organiser des données à l'aide de tableaux",
+      "annee_intro": 1,
+      "annee_maitrise": 3,
+      "cycle": 1,
+      "prerequis": [
+        "ARI-SEN-A02c"
+      ],
+      "generable": true,
+      "generateur": "gen_organisation_donnees",
+      "erreurs_typiques": [
+        {
+          "code": "categories_chevauchantes",
+          "desc": "Crée des catégories qui se recoupent"
+        }
+      ],
+      "univers": [
+        "nature",
+        "sport",
+        "science",
+        "medecine"
+      ],
+      "vocabulaire": [
+        "enquête",
+        "tableau"
+      ]
+    },
+    {
+      "id": "STA-03a",
+      "ref_pda": "Statistique — 3.a",
+      "champ": "statistique",
+      "libelle": "Interpréter des données à l'aide d'un tableau, d'un diagramme à bandes et d'un diagramme à pictogrammes",
+      "annee_intro": 1,
+      "annee_maitrise": 3,
+      "cycle": 1,
+      "prerequis": [
+        "STA-02",
+        "ARI-SEN-A07"
+      ],
+      "generable": true,
+      "generateur": "gen_lecture_diagramme",
+      "erreurs_typiques": [
+        {
+          "code": "echelle_ignoree",
+          "desc": "Ignore l'échelle du diagramme (1 pictogramme = 5 unités)"
+        },
+        {
+          "code": "compare_hauteur_brute",
+          "desc": "Compare les hauteurs sans lire l'axe"
+        }
+      ],
+      "univers": [
+        "nature",
+        "sport",
+        "espace",
+        "science",
+        "medecine",
+        "echecs"
+      ],
+      "vocabulaire": [
+        "diagramme à bandes",
+        "diagramme à pictogrammes"
+      ]
+    },
+    {
+      "id": "STA-04a",
+      "ref_pda": "Statistique — 4.a",
+      "champ": "statistique",
+      "libelle": "Représenter des données à l'aide d'un tableau, d'un diagramme à bandes ou à pictogrammes",
+      "annee_intro": 2,
+      "annee_maitrise": 4,
+      "cycle": 1,
+      "prerequis": [
+        "STA-03a"
+      ],
+      "generable": true,
+      "generateur": "gen_construction_diagramme",
+      "erreurs_typiques": [
+        {
+          "code": "echelle_incoherente",
+          "desc": "Utilise une échelle non uniforme"
+        }
+      ],
+      "univers": [
+        "nature",
+        "sport",
+        "science",
+        "medecine"
+      ],
+      "vocabulaire": [
+        "diagramme à bandes"
+      ]
+    },
+    {
+      "id": "STA-03b",
+      "ref_pda": "Statistique — 3.b",
+      "champ": "statistique",
+      "libelle": "Interpréter des données incluant un diagramme à ligne brisée",
+      "annee_intro": 4,
+      "annee_maitrise": 5,
+      "cycle": 2,
+      "prerequis": [
+        "STA-03a"
+      ],
+      "generable": true,
+      "generateur": "gen_lecture_ligne_brisee",
+      "erreurs_typiques": [
+        {
+          "code": "point_vs_tendance",
+          "desc": "Lit un point isolé sans voir la tendance"
+        }
+      ],
+      "univers": [
+        "nature",
+        "espace",
+        "sport",
+        "science",
+        "medecine"
+      ],
+      "vocabulaire": [
+        "diagramme à ligne brisée"
+      ],
+      "note_pedagogique": "La courbe de température d'un patient est un diagramme à ligne brisée authentique."
+    },
+    {
+      "id": "PRO-05a",
+      "ref_pda": "Probabilité — 5.a",
+      "champ": "probabilite",
+      "libelle": "Prédire qualitativement : résultat certain, possible ou impossible",
+      "annee_intro": 1,
+      "annee_maitrise": 3,
+      "cycle": 1,
+      "prerequis": [],
+      "generable": true,
+      "generateur": "gen_certain_possible_impossible",
+      "erreurs_typiques": [
+        {
+          "code": "possible_certain",
+          "desc": "Confond « possible » et « certain »"
+        },
+        {
+          "code": "desir_prediction",
+          "desc": "Prédit ce qu'il souhaite plutôt que ce qui est probable"
+        }
+      ],
+      "univers": [
+        "nature",
+        "espace",
+        "science",
+        "medecine",
+        "echecs"
+      ],
+      "vocabulaire": [
+        "résultat certain",
+        "résultat possible",
+        "résultat impossible"
+      ],
+      "note_pedagogique": "La PDA note explicitement que l'élève tend à raisonner par affectivité — biais à traiter narrativement."
+    },
+    {
+      "id": "PRO-05b",
+      "ref_pda": "Probabilité — 5.b",
+      "champ": "probabilite",
+      "libelle": "Prédire : événement plus probable, également probable, moins probable",
+      "annee_intro": 3,
+      "annee_maitrise": 4,
+      "cycle": 2,
+      "prerequis": [
+        "PRO-05a"
+      ],
+      "generable": true,
+      "generateur": "gen_comparaison_probabilites",
+      "erreurs_typiques": [
+        {
+          "code": "equilibre_attendu",
+          "desc": "Attend un rééquilibrage après une série (biais du joueur)"
+        }
+      ],
+      "univers": [
+        "nature",
+        "espace",
+        "sport",
+        "echecs",
+        "science",
+        "medecine"
+      ],
+      "vocabulaire": [
+        "événement plus probable",
+        "également probable",
+        "moins probable"
+      ],
+      "note_pedagogique": "Aux échecs, évaluer quel coup est le plus probable est la compétence centrale du jeu."
+    },
+    {
+      "id": "PRO-08a",
+      "ref_pda": "Probabilité — 8.a",
+      "champ": "probabilite",
+      "libelle": "Dénombrer les résultats possibles d'une expérience aléatoire simple",
+      "annee_intro": 4,
+      "annee_maitrise": 5,
+      "cycle": 2,
+      "prerequis": [
+        "PRO-05b",
+        "ARI-SEN-A02c"
+      ],
+      "generable": true,
+      "generateur": "gen_denombrement_resultats",
+      "erreurs_typiques": [
+        {
+          "code": "oubli_cas",
+          "desc": "Omet des issues possibles"
+        }
+      ],
+      "univers": [
+        "espace",
+        "nature",
+        "echecs",
+        "science"
+      ],
+      "vocabulaire": [
+        "expérience aléatoire",
+        "dénombrement"
+      ]
+    }
+  ]
+}
