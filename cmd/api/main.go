@@ -15,6 +15,7 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/Perrin-Nj/numerix-api/internal/adminapi"
 	"github.com/Perrin-Nj/numerix-api/internal/app"
 	"github.com/Perrin-Nj/numerix-api/internal/config"
 	"github.com/Perrin-Nj/numerix-api/internal/httpapi"
@@ -52,11 +53,17 @@ func run() error {
 	defer db.Close()
 
 	server := app.NewServer(db, cfg, log)
+	// Root router: /admin/v1/* goes to the admin API (its own auth + CORS), everything else to the public API.
+	root := http.NewServeMux()
+	root.Handle("/admin/v1/", adminapi.New(adminapi.Deps{
+		Store: db, Log: log, Token: cfg.AdminAPIToken, Production: cfg.IsProduction(), Origins: os.Getenv("ADMIN_ORIGIN"),
+	}))
+	root.Handle("/", httpapi.NewHandler(httpapi.Deps{
+		Impl: server, Config: cfg, Log: log, Issuer: server.Issuer,
+	}))
 	srv := &http.Server{
-		Addr: ":" + cfg.Port,
-		Handler: httpapi.NewHandler(httpapi.Deps{
-			Impl: server, Config: cfg, Log: log, Issuer: server.Issuer,
-		}),
+		Addr:    ":" + cfg.Port,
+		Handler: root,
 		// Timeouts protect us from slow or stuck clients when many kids connect at once.
 		ReadHeaderTimeout: 5 * time.Second,
 		ReadTimeout:       15 * time.Second,
