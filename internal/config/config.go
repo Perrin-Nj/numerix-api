@@ -24,22 +24,23 @@ const devJWTSecret = "dev-only-secret-do-not-use-in-production-0123456789"
 
 // Config holds every setting the service needs (Spring: a @ConfigurationProperties bean).
 type Config struct {
-	Port           string        // TCP port to listen on
-	Env            string        // development, test or production
-	DBPath         string        // SQLite file path
-	JWTSecret      string        // HMAC key used to sign access tokens
-	AllowedOrigins []string      // browser origins allowed by CORS (admin app)
-	AdminAPIToken  string        // static bearer token for /admin/v1 (empty = admin API disabled)
-	TrustProxy     bool          // read the client IP from X-Forwarded-For (only behind a trusted proxy)
-	AccessTTL      time.Duration // parent access token lifetime
-	ChildTTL       time.Duration // child access token lifetime (contract: 8 h)
-	RefreshTTL     time.Duration // parent refresh token lifetime (contract: 30 days)
-	RequestTimeout time.Duration // deadline attached to every request context
-	MaxConcurrent  int           // max requests in flight before answering 429
-	LLMProvider    string        // placeholder: "stub" until the narrator exists
-	LLMAPIKey      string        // placeholder: secret for the LLM provider
-	LLMModel       string        // placeholder: model name
-	LLMMonthlyCap  float64       // placeholder: monthly budget in dollars
+	Port               string        // TCP port to listen on
+	Env                string        // development, test or production
+	DBPath             string        // SQLite file path
+	JWTSecret          string        // HMAC key used to sign access tokens
+	AllowedOrigins     []string      // browser origins allowed by CORS (admin app)
+	AdminAPIToken      string        // static bearer token for /admin/v1 (empty = admin API disabled)
+	FeatureWelcomeGift bool          // FEATURE_WELCOME_GIFT: the server grants the one-time welcome card (default off)
+	TrustProxy         bool          // read the client IP from X-Forwarded-For (only behind a trusted proxy)
+	AccessTTL          time.Duration // parent access token lifetime
+	ChildTTL           time.Duration // child access token lifetime (contract: 8 h)
+	RefreshTTL         time.Duration // parent refresh token lifetime (contract: 30 days)
+	RequestTimeout     time.Duration // deadline attached to every request context
+	MaxConcurrent      int           // max requests in flight before answering 429
+	LLMProvider        string        // placeholder: "stub" until the narrator exists
+	LLMAPIKey          string        // placeholder: secret for the LLM provider
+	LLMModel           string        // placeholder: model name
+	LLMMonthlyCap      float64       // placeholder: monthly budget in dollars
 }
 
 // IsProduction tells whether strict production rules apply.
@@ -70,20 +71,21 @@ func Load(getenv func(string) string) (Config, error) {
 	seconds := func(key string, def int) time.Duration { return time.Duration(atoi(key, def)) * time.Second }
 
 	cfg := Config{
-		Port:           get("PORT", "8081"), // 8081 matches API_URL in the web app contract
-		Env:            get("APP_ENV", EnvDevelopment),
-		DBPath:         get("DB_PATH", "./data/numerix.db"),
-		JWTSecret:      get("JWT_SECRET", ""),
-		AdminAPIToken:  get("ADMIN_API_TOKEN", ""),
-		TrustProxy:     get("TRUST_PROXY", "false") == "true",
-		AccessTTL:      seconds("ACCESS_TTL_SECONDS", 900),
-		ChildTTL:       seconds("CHILD_TTL_SECONDS", 28800),
-		RefreshTTL:     seconds("REFRESH_TTL_SECONDS", 30*24*3600),
-		RequestTimeout: seconds("REQUEST_TIMEOUT_SECONDS", 10),
-		MaxConcurrent:  atoi("MAX_CONCURRENT_REQUESTS", 256),
-		LLMProvider:    get("LLM_PROVIDER", "stub"),
-		LLMAPIKey:      get("LLM_API_KEY", ""),
-		LLMModel:       get("LLM_MODEL", ""),
+		Port:               get("PORT", "8081"), // 8081 matches API_URL in the web app contract
+		Env:                get("APP_ENV", EnvDevelopment),
+		DBPath:             get("DB_PATH", "./data/numerix.db"),
+		JWTSecret:          get("JWT_SECRET", ""),
+		AdminAPIToken:      get("ADMIN_API_TOKEN", ""),
+		FeatureWelcomeGift: get("FEATURE_WELCOME_GIFT", "false") == "true",
+		TrustProxy:         get("TRUST_PROXY", "false") == "true",
+		AccessTTL:          seconds("ACCESS_TTL_SECONDS", 900),
+		ChildTTL:           seconds("CHILD_TTL_SECONDS", 28800),
+		RefreshTTL:         seconds("REFRESH_TTL_SECONDS", 30*24*3600),
+		RequestTimeout:     seconds("REQUEST_TIMEOUT_SECONDS", 10),
+		MaxConcurrent:      atoi("MAX_CONCURRENT_REQUESTS", 256),
+		LLMProvider:        get("LLM_PROVIDER", "stub"),
+		LLMAPIKey:          get("LLM_API_KEY", ""),
+		LLMModel:           get("LLM_MODEL", ""),
 	}
 	// Comma separated list -> slice, dropping blanks.
 	for _, o := range strings.Split(get("ALLOWED_ORIGINS", ""), ",") {
