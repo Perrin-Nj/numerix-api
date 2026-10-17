@@ -1,0 +1,3729 @@
+openapi: 3.0.3
+info:
+  title: Numerix API
+  version: 0.1.0
+  summary: Contract between the Next.js app and the Numerix backend.
+  description: |
+    Source of truth for the frontend and the backend. TypeScript types and the
+    mock server are generated from this file; the FastAPI service is checked
+    against it.
+
+    **The one rule (see docs/NUMERIX_CONTEXT.md):** the LLM never does math.
+    The deterministic engine builds the problem and rules on the answer.
+    Consequences for this contract:
+    - A `Beat` never contains the correct answer. It is revealed only in the
+      `AnswerResult` returned after the child answers.
+    - Narration text comes from the LLM and is never an input to grading.
+
+    **Game feel:** Duolingo-like structure outside play (journey map, story-day
+    streak, story cards, daily goal, own-past growth), story-only inside play.
+    There are deliberately no hearts or lives, no XP, no leagues or
+    leaderboards, and no timers. Wrong answers carry no failure flag: the
+    child-facing `outcome` only selects which story beat to show.
+
+    **Roles.** `parent` tokens manage accounts and read reports. `child` tokens
+    (obtained with `POST /children/{childId}/token`) can only play: journey,
+    sessions, collection. Each operation lists its role in `x-roles`.
+
+    **Where to start.** `contracts/BACKEND_INTEGRATION.md` explains behaviour, trust
+    boundaries, state machines and the acceptance checklist. This file is the
+    machine-readable shape. The platform admin API lives in `openapi.admin.yaml`
+    (bearer `ADMIN_API_TOKEN`, never reachable from the kid origin).
+
+    **Common rules.**
+    - Errors are `application/problem+json` with a stable `code` (see `Problem`).
+      Every operation can also answer 401, 403, 429 and 500 (added to each operation).
+    - `Accept-Language` (`fr-CA` or `en-CA`) selects the language of every
+      localized string (worlds, skills, journey labels, narration, notifications, problem text).
+    - `Idempotency-Key` is required on `startSession`, `nextBeat` and `answerBeat`.
+    - Dates are ISO 8601 UTC. Ids are UUID v4 unless noted (feed items and notifications use opaque strings).
+    - Cursor lists answer `{items, next_cursor}`; `next_cursor` is null at the end.
+    - Optional request header `x-card-threshold-pct` (0 to 100) is honoured by the mock only.
+servers:
+  - url: http://localhost:8000/v1
+    description: Local development
+  - url: http://localhost:8081/v1
+    description: Numerix mock (node, same behaviour as WireMock)
+tags:
+  - name: Auth
+  - name: Children
+  - name: Catalog
+  - name: Journey
+  - name: Sessions
+  - name: Progress
+  - name: Engagement
+  - name: Challenges
+  - name: Parent
+  - name: Platform
+  - name: Push
+  - name: Ops
+security:
+  - bearerAuth: []
+paths:
+  /auth/register:
+    post:
+      tags:
+        - Auth
+      operationId: registerParent
+      summary: Create a parent account
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterRequest'
+      responses:
+        '201':
+          description: Account created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthSession'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /auth/login:
+    post:
+      tags:
+        - Auth
+      operationId: loginParent
+      summary: Log a parent in
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: Logged in
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthSession'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /auth/refresh:
+    post:
+      tags:
+        - Auth
+      operationId: refreshToken
+      summary: Exchange a refresh token for a new access token
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - refresh_token
+              properties:
+                refresh_token:
+                  type: string
+      responses:
+        '200':
+          description: New tokens
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthSession'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /auth/consent:
+    post:
+      tags:
+        - Auth
+      operationId: recordConsent
+      summary: Record the parent's consent to process a child's data
+      x-roles:
+        - parent
+      description: Required before a child profile can start a session (Quebec Law 25).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConsentRequest'
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '204':
+          description: Consent recorded
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /children:
+    get:
+      tags:
+        - Children
+      operationId: listChildren
+      summary: List the parent's child profiles
+      x-roles:
+        - parent
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: Child profiles
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - items
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Child'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+    post:
+      tags:
+        - Children
+      operationId: createChild
+      summary: Create a child profile
+      x-roles:
+        - parent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChildCreate'
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Child'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /children/{childId}:
+    parameters:
+      - $ref: '#/components/parameters/ChildId'
+    get:
+      tags:
+        - Children
+      operationId: getChild
+      summary: Get one child profile
+      x-roles:
+        - parent
+        - child
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: The profile
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Child'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+    patch:
+      tags:
+        - Children
+      operationId: updateChild
+      summary: Update name, avatar or grade
+      x-roles:
+        - parent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChildUpdate'
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: Updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Child'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+    delete:
+      tags:
+        - Children
+      operationId: deleteChild
+      summary: Delete a child profile and all of its data
+      x-roles:
+        - parent
+      description: Irreversible. Removes sessions, mastery, collection and reports.
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '204':
+          description: Deleted
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /children/{childId}/token:
+    parameters:
+      - $ref: '#/components/parameters/ChildId'
+    post:
+      tags:
+        - Children
+      operationId: createChildToken
+      summary: Switch to a child (play mode)
+      x-roles:
+        - parent
+      description: |
+        Returns a child-scoped token. A PIN is required if the profile has one (403 `invalid_pin`). The backend
+        should also refuse with 403 `consent_missing` while the parent has not consented; the profile picker
+        handles that answer (the mock still issues the token and refuses at session start).
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pin:
+                  type: string
+                  pattern: ^[0-9]{4}$
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: Child token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChildToken'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /children/{childId}/settings:
+    parameters:
+      - $ref: '#/components/parameters/ChildId'
+    get:
+      tags:
+        - Parent
+      operationId: getChildSettings
+      summary: Get a child's play settings
+      x-roles:
+        - parent
+        - child
+      description: The child token may read (never change) sound and read-aloud so play follows the parent's choices.
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: Settings
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChildSettings'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+    put:
+      tags:
+        - Parent
+      operationId: updateChildSettings
+      summary: Replace a child's play settings
+      x-roles:
+        - parent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChildSettings'
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: Saved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChildSettings'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /children/{childId}/export:
+    parameters:
+      - $ref: '#/components/parameters/ChildId'
+    get:
+      tags:
+        - Parent
+      operationId: exportChildData
+      summary: Download all data held about a child (Law 25 access request)
+      x-roles:
+        - parent
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: JSON export
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /worlds:
+    get:
+      tags:
+        - Catalog
+      operationId: listWorlds
+      summary: The eight story worlds
+      x-roles:
+        - parent
+        - child
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: Worlds
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - items
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/World'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /skills:
+    get:
+      tags:
+        - Catalog
+      operationId: listSkills
+      summary: Curriculum skills (PDA), filterable
+      x-roles:
+        - parent
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+        - name: world
+          in: query
+          schema:
+            $ref: '#/components/schemas/WorldId'
+        - name: grade
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 4
+        - name: implemented
+          in: query
+          description: Only skills that have a generator today (8 of 75)
+          schema:
+            type: boolean
+      responses:
+        '200':
+          description: Skills
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - items
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Skill'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /children/{childId}/journey:
+    parameters:
+      - $ref: '#/components/parameters/ChildId'
+    get:
+      tags:
+        - Journey
+      operationId: getJourney
+      summary: The path of chapters for a child in one world
+      x-roles:
+        - parent
+        - child
+      description: |
+        Duolingo-style path. Each node is one skill. Node state is derived from
+        mastery and the review schedule; it is not a score.
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+        - name: world
+          in: query
+          required: true
+          schema:
+            $ref: '#/components/schemas/WorldId'
+      responses:
+        '200':
+          description: The journey
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Journey'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /children/{childId}/sessions:
+    parameters:
+      - $ref: '#/components/parameters/ChildId'
+    post:
+      tags:
+        - Sessions
+      operationId: startSession
+      summary: Start a chapter
+      x-roles:
+        - child
+      description: |
+        A session is one chapter of the child's story. The planner picks each
+        skill (review, consolidation, new, upkeep) unless `skill_id` is given.
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StartSessionRequest'
+      responses:
+        '201':
+          description: Session created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '402':
+          description: 'subscription_inactive: unpaid, expired or ended subscription (policy block). Problem carries i18n {fr,en}{title,detail}. account_blocked is a 403.'
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '403':
+          description: consent_missing (no consent on file), daily_limit_reached (daily time limit), or account_blocked (the parent is blocked, even when unpaid_policy is allow)
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '409':
+          description: The child already has an active session
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+    get:
+      tags:
+        - Sessions
+      operationId: listSessions
+      summary: Past sessions, newest first
+      x-roles:
+        - parent
+        - child
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Cursor'
+      responses:
+        '200':
+          description: A page of sessions
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - items
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Session'
+                  next_cursor:
+                    type: string
+                    nullable: true
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /sessions/{sessionId}:
+    parameters:
+      - $ref: '#/components/parameters/SessionId'
+    get:
+      tags:
+        - Sessions
+      operationId: getSession
+      summary: Session state (use it to resume after a reload)
+      x-roles:
+        - parent
+        - child
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: The session
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /sessions/{sessionId}/beats:
+    parameters:
+      - $ref: '#/components/parameters/SessionId'
+    post:
+      tags:
+        - Sessions
+      operationId: nextBeat
+      summary: Get the next scene and question
+      x-roles:
+        - child
+      description: |
+        Runs the planner, generates a problem, returns the question at once.
+        The scene text may still be `pending`: subscribe to the narration
+        stream. The answer is never in this response.
+        Calling it again while the previous beat is unanswered returns that
+        same beat.
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      responses:
+        '200':
+          description: The still-unanswered current beat
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Beat'
+        '201':
+          description: A new beat
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Beat'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          description: Session is paused or completed
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /sessions/{sessionId}/beats/{beatId}/answer:
+    parameters:
+      - $ref: '#/components/parameters/SessionId'
+      - $ref: '#/components/parameters/BeatId'
+    post:
+      tags:
+        - Sessions
+      operationId: answerBeat
+      summary: Submit the child's answer
+      x-roles:
+        - child
+      description: |
+        The engine rules on the answer (`Probleme.evaluer`), mastery is
+        updated, and the outcome is returned with the story consequence.
+        Safe to retry with the same `Idempotency-Key`: the verdict is stored.
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnswerRequest'
+      responses:
+        '200':
+          description: Verdict and consequence
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnswerResult'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          description: This beat was already answered
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /sessions/{sessionId}/beats/{beatId}/narration:
+    parameters:
+      - $ref: '#/components/parameters/SessionId'
+      - $ref: '#/components/parameters/BeatId'
+    get:
+      tags:
+        - Sessions
+      operationId: streamNarration
+      summary: Stream the scene or the consequence as it is written
+      x-roles:
+        - child
+      description: |
+        Server-sent events (`Content-Type: text/event-stream`, `Cache-Control: no-cache`). Each block is
+        `event: <name>\ndata: <json>\n\n`. Events:
+        - `scene` or `denouement` (the name equals `phase`): `data: {"delta":"text chunk"}`; chunks are about 4 words
+          and keep their trailing space so the client can concatenate them as they are.
+        - `done`: `data: {}`, last event of a healthy stream, then close.
+        - `fallback`: `data: {"text":"full canned text"}`, sent instead of `done` when the model failed or leaked
+          an answer. The client shows the text and tells the user the story is simplified. Then close.
+        - A comment line `: ping` every 5 s while the model thinks (heartbeat; the client ignores it).
+        Add `id: <n>` to every block. A reconnect with `Last-Event-ID: <n>` resumes after that chunk. The client
+        reconnects once, from scratch, when the stream drops before `done`.
+        `phase=denouement` before the beat is answered returns 409 `beat_not_answered`.
+        The first byte must arrive within 3 s; the whole scene within 8 s or send `fallback`. The web proxy
+        cuts every request at 15 s.
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+        - name: phase
+          in: query
+          required: true
+          schema:
+            type: string
+            enum:
+              - scene
+              - denouement
+        - name: Last-Event-ID
+          in: header
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Event stream
+          content:
+            text/event-stream:
+              schema:
+                type: string
+              example: |+
+                event: scene
+                data: {"delta":"Zoé et la tour "}
+
+                event: scene
+                data: {"delta":"arrivent au pont. "}
+
+                event: done
+                data: {}
+
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          description: beat_not_answered (denouement requested too early) or session_completed
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /sessions/{sessionId}/pause:
+    parameters:
+      - $ref: '#/components/parameters/SessionId'
+    post:
+      tags:
+        - Sessions
+      operationId: pauseSession
+      summary: Pause (the child leaves; no penalty, no timer)
+      x-roles:
+        - child
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: Paused
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /sessions/{sessionId}/resume:
+    parameters:
+      - $ref: '#/components/parameters/SessionId'
+    post:
+      tags:
+        - Sessions
+      operationId: resumeSession
+      summary: Resume a paused session
+      x-roles:
+        - child
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: Active again; `current_beat` is the open question if any
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /sessions/{sessionId}/finish:
+    post:
+      tags:
+        - Sessions
+      operationId: finishSession
+      summary: End the chapter early
+      x-roles:
+        - child
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+        - $ref: '#/components/parameters/SessionId'
+      responses:
+        '200':
+          description: Closed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /sessions/{sessionId}/summary:
+    parameters:
+      - $ref: '#/components/parameters/SessionId'
+    get:
+      tags:
+        - Parent
+      operationId: getSessionSummary
+      summary: Parent recap of one session
+      x-roles:
+        - parent
+      description: Skills practised, where the child got stuck (with the misconception), and the story so far.
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: Recap
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SessionSummary'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /children/{childId}/progress:
+    parameters:
+      - $ref: '#/components/parameters/ChildId'
+    get:
+      tags:
+        - Progress
+      operationId: getProgress
+      summary: Mastery per skill and active misconceptions
+      x-roles:
+        - parent
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: Progress
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Progress'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /children/{childId}/reviews:
+    parameters:
+      - $ref: '#/components/parameters/ChildId'
+    get:
+      tags:
+        - Progress
+      operationId: getReviewCalendar
+      summary: Upcoming spaced reviews
+      x-roles:
+        - parent
+        - child
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+        - name: days
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 90
+            default: 30
+      responses:
+        '200':
+          description: Reviews, soonest first
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - items
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ReviewDue'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /children/{childId}/growth:
+    parameters:
+      - $ref: '#/components/parameters/ChildId'
+    get:
+      tags:
+        - Progress
+      operationId: getGrowth
+      summary: The child compared with their own past (never with other children)
+      x-roles:
+        - parent
+        - child
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+        - name: window_days
+          in: query
+          schema:
+            type: integer
+            enum:
+              - 7
+              - 30
+            default: 7
+      responses:
+        '200':
+          description: Growth
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Growth'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /reports/weekly:
+    get:
+      tags:
+        - Parent
+      operationId: getWeeklyReport
+      summary: Weekly report for one child
+      x-roles:
+        - parent
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+        - name: child_id
+          in: query
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: week_start
+          in: query
+          description: Monday of the week. Defaults to the last full week.
+          schema:
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Report
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WeeklyReport'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /children/{childId}/engagement:
+    parameters:
+      - $ref: '#/components/parameters/ChildId'
+    get:
+      tags:
+        - Engagement
+      operationId: getEngagement
+      summary: Story-day streak and daily goal
+      x-roles:
+        - parent
+        - child
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: Engagement state
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Engagement'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /children/{childId}/home:
+    parameters:
+      - $ref: '#/components/parameters/ChildId'
+    get:
+      tags:
+        - Engagement
+      operationId: getHome
+      summary: Everything the child home feed needs in one request
+      x-roles:
+        - child
+      description: One aggregate to avoid request waterfalls on the landing screen.
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: Home feed data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Home'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /children/{childId}/feed:
+    parameters:
+      - $ref: '#/components/parameters/ChildId'
+    get:
+      tags:
+        - Engagement
+      operationId: getFeed
+      summary: The endless discovery feed (AI generated content, always labeled)
+      x-roles:
+        - child
+      description: |
+        A never-ending vertical feed of short AI generated items: mini stories, fun facts, puzzles and
+        challenges. Cursor paginated; `next_cursor` is always set because the feed does not end.
+        All content is generated by Numerix, never by other users. Every item carries `ai_generated: true`
+        and the UI must show that label. A puzzle never contains its answer.
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+        - name: cursor
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 20
+            default: 5
+      responses:
+        '200':
+          description: A page of feed items
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FeedPage'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /children/{childId}/feed/{itemId}/reaction:
+    parameters:
+      - $ref: '#/components/parameters/ChildId'
+      - name: itemId
+        in: path
+        required: true
+        schema:
+          type: string
+    put:
+      tags:
+        - Engagement
+      operationId: reactToFeedItem
+      summary: Like or save a feed item (private to the child, never shown to others)
+      x-roles:
+        - child
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - liked
+                - saved
+              properties:
+                liked:
+                  type: boolean
+                saved:
+                  type: boolean
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: The new reaction state
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - liked
+                  - saved
+                properties:
+                  liked:
+                    type: boolean
+                  saved:
+                    type: boolean
+                  rewards:
+                    type: array
+                    description: 'Set when this like completed a challenge: a card_earned reward with the card (id ch-<challenge>).'
+                    items:
+                      $ref: '#/components/schemas/Reward'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /children/{childId}/feed/{itemId}/answer:
+    parameters:
+      - $ref: '#/components/parameters/ChildId'
+      - name: itemId
+        in: path
+        required: true
+        schema:
+          type: string
+    post:
+      tags:
+        - Engagement
+      operationId: answerFeedPuzzle
+      summary: Answer a puzzle from the feed
+      x-roles:
+        - child
+      description: Graded by the deterministic engine. The result carries a story message, not a score.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - answer
+              properties:
+                answer:
+                  $ref: '#/components/schemas/AnswerValue'
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: Outcome and a short story line
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - outcome
+                  - message
+                properties:
+                  outcome:
+                    $ref: '#/components/schemas/Outcome'
+                  message:
+                    type: string
+                  rewards:
+                    type: array
+                    description: 'Set when this answer completed a challenge: a card_earned reward with the card (id ch-<challenge>).'
+                    items:
+                      $ref: '#/components/schemas/Reward'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /children/{childId}/collection:
+    parameters:
+      - $ref: '#/components/parameters/ChildId'
+    get:
+      tags:
+        - Engagement
+      operationId: getCollection
+      summary: Story cards earned by finishing chapters
+      x-roles:
+        - parent
+        - child
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+        - name: world
+          in: query
+          schema:
+            $ref: '#/components/schemas/WorldId'
+      responses:
+        '200':
+          description: Cards
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - items
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/StoryCard'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /children/{childId}/quests/daily:
+    parameters:
+      - $ref: '#/components/parameters/ChildId'
+    get:
+      tags:
+        - Engagement
+      operationId: getDailyQuest
+      summary: Today's review quest, a chapter made of due reviews in a fresh story
+      x-roles:
+        - child
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: Quest
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DailyQuest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /subscription:
+    get:
+      tags:
+        - Parent
+      operationId: getSubscription
+      summary: The parent's subscription (effective status and whether the family can play)
+      x-roles:
+        - parent
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: Subscription
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubscriptionView'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /subscription/plans:
+    get:
+      tags:
+        - Parent
+      operationId: listSubscriptionPlans
+      summary: Plans (CAD cents), bilingual features and payment methods
+      x-roles:
+        - parent
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: Plans
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlanCatalog'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /subscription/checkout:
+    post:
+      tags:
+        - Parent
+      operationId: checkoutSubscription
+      summary: Start a paid plan (BE-24). The real backend returns the processor's hosted page URL; the mock completes instantly.
+      description: |
+        Idempotent: the client sends `Idempotency-Key`; a retry with the same key returns the same
+        `checkout_url` (or the same activated subscription) and never creates a second checkout.
+        With a processor, the response carries `checkout_url` (https only) and the subscription stays
+        unchanged until the processor webhook confirms payment. The app never collects card details.
+      x-roles:
+        - parent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - plan
+                - method
+              properties:
+                plan:
+                  type: string
+                  enum:
+                    - family_monthly
+                    - family_yearly
+                method:
+                  $ref: '#/components/schemas/PaymentMethod'
+            example:
+              plan: family_monthly
+              method: card
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+        - name: Idempotency-Key
+          in: header
+          required: false
+          description: Recommended. Not yet sent by the web app (see the guide, known mismatches).
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Subscription after checkout (mock), or the current subscription plus `checkout_url` (processor)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CheckoutResult'
+              examples:
+                instant:
+                  summary: Mock, completed at once
+                  value:
+                    status: active
+                    plan: family_monthly
+                    method: card
+                    renews_at: '2026-11-11T14:00:00Z'
+                    can_play: true
+                    days_left: 30
+                hosted:
+                  summary: Processor, redirect the browser
+                  value:
+                    status: trial
+                    plan: free
+                    trial_ends_at: '2026-10-26T14:00:00Z'
+                    can_play: true
+                    days_left: 14
+                    checkout_url: https://checkout.example-processor.com/c/cs_123
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /subscription/cancel:
+    post:
+      tags:
+        - Parent
+      operationId: cancelSubscription
+      summary: Cancel at the end of the paid period (access continues until then)
+      x-roles:
+        - parent
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: Canceled subscription
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubscriptionView'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /notifications:
+    get:
+      tags:
+        - Parent
+      operationId: listNotifications
+      summary: In-app notifications of the parent (BE-25)
+      x-roles:
+        - parent
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+        - name: audience
+          in: query
+          schema:
+            type: string
+            enum:
+              - parent
+              - child
+            default: parent
+      responses:
+        '200':
+          description: Notifications, newest first
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - items
+                  - unread_count
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Notification'
+                  unread_count:
+                    type: integer
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /notifications/{notificationId}/read:
+    post:
+      tags:
+        - Parent
+      operationId: markNotificationRead
+      summary: Mark a notification as read
+      x-roles:
+        - parent
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+        - name: notificationId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Marked
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /platform/public:
+    get:
+      tags:
+        - Platform
+      operationId: getPlatformPublic
+      summary: Public platform settings (unpaid policy, card threshold, trial length, feature flags)
+      description: Safe to cache for 5 minutes. No personal data. Read by the parent app to explain the paywall and by reminders.
+      security: []
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: Public config
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlatformPublic'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /push/subscribe:
+    post:
+      tags:
+        - Push
+      operationId: subscribePush
+      summary: Store the parent's Web Push subscription (VAPID)
+      x-roles:
+        - parent
+      description: |
+        Body is the browser `PushSubscription.toJSON()`. Upsert by `endpoint`: the same endpoint twice is
+        one subscription. Returns 404, 405 or 501 while push is not built (the app then explains it).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PushSubscription'
+            example:
+              endpoint: https://fcm.googleapis.com/fcm/send/abc
+              expirationTime: null
+              keys:
+                p256dh: BNc...
+                auth: xyz...
+      responses:
+        '201':
+          description: Stored
+        '204':
+          description: Already stored
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+    delete:
+      tags:
+        - Push
+      operationId: unsubscribePush
+      summary: Remove a Web Push subscription (sign out, permission revoked, expired endpoint)
+      x-roles:
+        - parent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - endpoint
+              properties:
+                endpoint:
+                  type: string
+                  format: uri
+      responses:
+        '204':
+          description: Removed or never existed
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /children/{childId}/challenges:
+    parameters:
+      - $ref: '#/components/parameters/ChildId'
+    get:
+      tags:
+        - Challenges
+      operationId: listChallenges
+      summary: The challenge catalogue with this child's progress
+      x-roles:
+        - child
+        - parent
+      description: |
+        Until this exists the web app derives challenges from the on-device event log. Progress counts only
+        events after the child accepted the challenge. Completion awards the card `ch-<challenge id>` once.
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: Challenges, active first, then available, then done
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - items
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Challenge'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /children/{childId}/challenges/{challengeId}/accept:
+    parameters:
+      - $ref: '#/components/parameters/ChildId'
+      - name: challengeId
+        in: path
+        required: true
+        schema:
+          type: string
+          example: sharp_three
+    post:
+      tags:
+        - Challenges
+      operationId: acceptChallenge
+      summary: The child accepts a challenge (progress starts counting now)
+      x-roles:
+        - child
+      description: Idempotent. Accepting twice returns the same challenge with the first `accepted_at`.
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: The accepted challenge
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Challenge'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /children/{childId}/gift/claim:
+    parameters:
+      - $ref: '#/components/parameters/ChildId'
+    post:
+      tags:
+        - Challenges
+      operationId: claimWelcomeGift
+      summary: Claim the one-time welcome gift (a card)
+      x-roles:
+        - child
+      description: Idempotent. The first call creates the card `welcome`; later calls return the same card with 200.
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: Gift was already claimed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StoryCard'
+        '201':
+          description: Gift claimed now
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StoryCard'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /account:
+    get:
+      tags:
+        - Auth
+      operationId: getAccount
+      summary: The parent's own profile
+      x-roles:
+        - parent
+      description: Not called by the web app yet. The account screen changes the language with a cookie only, so the backend never learns the parent's language (see known mismatches).
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: The account
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+    patch:
+      tags:
+        - Auth
+      operationId: updateAccount
+      summary: Change name or language
+      x-roles:
+        - parent
+      description: The language decides the text of notifications and emails created later.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  minLength: 1
+                  maxLength: 80
+                locale:
+                  type: string
+                  enum:
+                    - fr-CA
+                    - en-CA
+            example:
+              locale: en-CA
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: The account after the change
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+    delete:
+      tags:
+        - Auth
+      operationId: deleteAccount
+      summary: Delete the parent and everything that belongs to the family
+      x-roles:
+        - parent
+      description: Irreversible cascade (children, sessions, progress, subscription and processor customer, notifications, push subscriptions, tokens). Requires the password. Not called by the web app yet.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - password
+              properties:
+                password:
+                  type: string
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '204':
+          description: Deleted
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /auth/logout:
+    post:
+      tags:
+        - Auth
+      operationId: logoutParent
+      summary: Revoke the parent's refresh token family
+      x-roles:
+        - parent
+      description: |
+        Sign out must revoke server side. The web app only clears its cookies today (see known mismatches),
+        so the backend must also expire refresh tokens by itself. Idempotent; always 204.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                refresh_token:
+                  type: string
+      responses:
+        '204':
+          description: Signed out
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /health:
+    get:
+      tags:
+        - Ops
+      operationId: health
+      summary: Liveness, with the narrator state
+      description: Cheap, no database call. The Next app reads it through `/api/health` to tell "our backend is down" from "your connection is down".
+      security: []
+      responses:
+        '200':
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - status
+                properties:
+                  status:
+                    type: string
+                    enum:
+                      - ok
+                      - degraded
+                  narrator:
+                    type: string
+                    enum:
+                      - llm
+                      - stub
+                      - down
+                  version:
+                    type: string
+                    example: 1.4.2
+              example:
+                status: ok
+                narrator: llm
+                version: 1.4.2
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /ready:
+    get:
+      tags:
+        - Ops
+      operationId: ready
+      summary: Readiness (database, cache, engine, narrator)
+      description: Returns 503 with the failing check names when the service must not receive traffic. Used by the platform load balancer, not by the web app.
+      security: []
+      responses:
+        '200':
+          description: Ready
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - status
+                  - checks
+                properties:
+                  status:
+                    type: string
+                    enum:
+                      - ok
+                  checks:
+                    type: object
+                    additionalProperties:
+                      type: string
+                      enum:
+                        - ok
+                        - degraded
+              example:
+                status: ok
+                checks:
+                  database: ok
+                  cache: ok
+                  engine: ok
+                  narrator: ok
+        '503':
+          description: Not ready
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    enum:
+                      - down
+                  checks:
+                    type: object
+                    additionalProperties:
+                      type: string
+                      enum:
+                        - ok
+                        - degraded
+                        - down
+  /events:
+    post:
+      tags:
+        - Ops
+      operationId: sendEvents
+      summary: Batch of privacy-safe UI events (no names, no free text)
+      description: |
+        Product analytics. Not called by the web app yet (the `NEXT_PUBLIC_ANALYTICS_ENABLED` flag exists
+        but no sender is wired). Never accept names, emails, free text or ids of other people in `props`.
+        Drop unknown `name` values silently, always answer 202.
+      x-roles:
+        - parent
+        - child
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - events
+              properties:
+                events:
+                  type: array
+                  maxItems: 100
+                  items:
+                    type: object
+                    required:
+                      - name
+                      - at
+                    properties:
+                      name:
+                        type: string
+                        example: world_picker_opened
+                      at:
+                        type: string
+                        format: date-time
+                      props:
+                        type: object
+                        additionalProperties: {}
+      responses:
+        '202':
+          description: Accepted
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  parameters:
+    ChildId:
+      name: childId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+    SessionId:
+      name: sessionId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+    BeatId:
+      name: beatId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+    IdempotencyKey:
+      name: Idempotency-Key
+      in: header
+      required: true
+      description: Client-generated UUID. A retry with the same key returns the first result.
+      schema:
+        type: string
+        format: uuid
+    Limit:
+      name: limit
+      in: query
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+        default: 20
+    Cursor:
+      name: cursor
+      in: query
+      schema:
+        type: string
+    AcceptLanguage:
+      name: Accept-Language
+      in: header
+      required: false
+      description: fr-CA or en-CA. The app forwards the NEXT_LOCALE cookie, else the browser header. Default fr-CA.
+      schema:
+        type: string
+        example: fr-CA
+  responses:
+    Unauthorized:
+      description: Missing or invalid token
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+    Forbidden:
+      description: Wrong role, wrong PIN, or not your child
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+    NotFound:
+      description: No such resource
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+    Conflict:
+      description: State conflict
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+    ValidationError:
+      description: Invalid request body (code validation_failed, with `errors[]` per field)
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+    RateLimited:
+      description: Too many requests (code rate_limited). Send `Retry-After` in seconds.
+      headers:
+        Retry-After:
+          schema:
+            type: integer
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+    ServerError:
+      description: Unexpected failure (code internal_error). Never leak stack traces or model output.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+  schemas:
+    Problem:
+      type: object
+      description: RFC 9457 problem details
+      required:
+        - type
+        - title
+        - status
+      properties:
+        type:
+          type: string
+          example: https://numerix.app/problems/consent-missing
+        title:
+          type: string
+        status:
+          type: integer
+        detail:
+          type: string
+        code:
+          type: string
+          description: |
+            Stable machine code the UI switches on. Vocabulary (guide, error catalogue):
+            unauthorized, forbidden, forbidden_origin, not_found, validation_failed, rate_limited, internal_error,
+            consent_missing, daily_limit_reached, session_active, session_paused, session_completed,
+            beat_answered, beat_not_answered, invalid_pin, subscription_inactive, account_blocked,
+            not_cancelable, conflict, email_taken.
+          example: consent_missing
+        retry_after_seconds:
+          type: integer
+          description: On 429 and 503. Also sent as header Retry-After, but the Next proxy forwards only content-type and cache-control, so the body copy is the one the app can read.
+        i18n:
+          type: object
+          description: Optional ready-made copy in both languages (used by subscription_inactive and account_blocked).
+          properties:
+            fr:
+              type: object
+              properties:
+                title:
+                  type: string
+                detail:
+                  type: string
+            en:
+              type: object
+              properties:
+                title:
+                  type: string
+                detail:
+                  type: string
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              field:
+                type: string
+              message:
+                type: string
+      example:
+        type: https://numerix.app/problems/subscription-inactive
+        title: A little break for now
+        status: 402
+        code: subscription_inactive
+        detail: Your family's subscription is paused.
+        i18n:
+          fr:
+            title: Petite pause pour l’instant
+            detail: L’abonnement de ta famille est en pause.
+          en:
+            title: A little break for now
+            detail: Your family's subscription is paused.
+    WorldId:
+      type: string
+      enum:
+        - nature
+        - espace
+        - cuisine
+        - sport
+        - construction
+        - medecine
+        - science
+        - echecs
+    SkillId:
+      type: string
+      description: PDA skill id from the curriculum graph
+      example: ARI-OPE-A07a
+    AnswerValue:
+      oneOf:
+        - type: integer
+        - type: number
+        - type: string
+        - type: array
+          minItems: 2
+          maxItems: 2
+          items:
+            type: integer
+      example: 48
+    RegisterRequest:
+      type: object
+      required:
+        - email
+        - password
+        - locale
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          minLength: 10
+        locale:
+          type: string
+          enum:
+            - fr-CA
+            - en-CA
+          default: fr-CA
+    LoginRequest:
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+    AuthSession:
+      type: object
+      required:
+        - access_token
+        - refresh_token
+        - expires_in
+        - parent
+      properties:
+        access_token:
+          type: string
+        refresh_token:
+          type: string
+        expires_in:
+          type: integer
+          description: Seconds
+        parent:
+          type: object
+          required:
+            - id
+            - email
+            - locale
+          properties:
+            id:
+              type: string
+              format: uuid
+            email:
+              type: string
+              format: email
+            locale:
+              type: string
+    Account:
+      type: object
+      required:
+        - id
+        - email
+        - name
+        - locale
+      properties:
+        id:
+          type: string
+          format: uuid
+        email:
+          type: string
+          format: email
+        name:
+          type: string
+        locale:
+          type: string
+          enum:
+            - fr-CA
+            - en-CA
+        email_verified:
+          type: boolean
+        created_at:
+          type: string
+          format: date-time
+    ConsentRequest:
+      type: object
+      required:
+        - child_id
+        - version
+        - accepted
+      properties:
+        child_id:
+          type: string
+          format: uuid
+        version:
+          type: string
+          description: Version of the privacy notice shown
+          example: 2026-10
+        accepted:
+          type: boolean
+          enum:
+            - true
+    Child:
+      type: object
+      required:
+        - id
+        - display_name
+        - grade
+        - avatar_id
+        - has_pin
+        - consent_given
+      properties:
+        id:
+          type: string
+          format: uuid
+        display_name:
+          type: string
+          maxLength: 30
+          description: First name or nickname only
+        birth_year:
+          type: integer
+        grade:
+          type: integer
+          minimum: 1
+          maximum: 4
+          description: Quebec primary year covered today
+        avatar_id:
+          type: string
+        has_pin:
+          type: boolean
+        consent_given:
+          type: boolean
+        favorite_world:
+          oneOf:
+            - $ref: '#/components/schemas/WorldId'
+            - type: 'null'
+        timezone:
+          type: string
+          example: America/Toronto
+          description: IANA zone; day boundary for streak and daily goal
+        onboarding_completed:
+          type: boolean
+        created_at:
+          type: string
+          format: date-time
+      example:
+        id: 11111111-1111-4111-8111-111111111111
+        display_name: Zoé
+        birth_year: 2018
+        grade: 3
+        avatar_id: fox
+        has_pin: true
+        consent_given: true
+        favorite_world: echecs
+        timezone: America/Toronto
+        onboarding_completed: false
+        created_at: '2026-10-12T14:00:00Z'
+    ChildCreate:
+      type: object
+      required:
+        - display_name
+        - grade
+        - avatar_id
+      properties:
+        display_name:
+          type: string
+          maxLength: 30
+        birth_year:
+          type: integer
+        grade:
+          type: integer
+          minimum: 1
+          maximum: 4
+        avatar_id:
+          type: string
+        timezone:
+          type: string
+        pin:
+          type: string
+          pattern: ^[0-9]{4}$
+    ChildUpdate:
+      type: object
+      properties:
+        display_name:
+          type: string
+          maxLength: 30
+        grade:
+          type: integer
+          minimum: 1
+          maximum: 4
+        avatar_id:
+          type: string
+        onboarding_completed:
+          type: boolean
+        timezone:
+          type: string
+          description: IANA zone; changes the day boundary from the next day on
+        pin:
+          type: string
+          pattern: ^[0-9]{4}$
+          nullable: true
+    ChildToken:
+      type: object
+      required:
+        - access_token
+        - expires_in
+        - child
+      properties:
+        access_token:
+          type: string
+        expires_in:
+          type: integer
+        child:
+          $ref: '#/components/schemas/Child'
+    ChildSettings:
+      type: object
+      required:
+        - daily_goal_chapters
+        - enabled_worlds
+        - read_aloud
+        - sound
+      properties:
+        daily_goal_chapters:
+          type: integer
+          minimum: 1
+          maximum: 5
+          default: 1
+        daily_time_limit_minutes:
+          type: integer
+          minimum: 5
+          maximum: 180
+          nullable: true
+        enabled_worlds:
+          type: array
+          minItems: 1
+          items:
+            $ref: '#/components/schemas/WorldId'
+        read_aloud:
+          type: boolean
+          description: Narration is spoken (reading levels vary from age 6 to 11)
+        sound:
+          type: boolean
+        kid_can_change_language:
+          type: boolean
+          default: true
+          description: When false the kid app hides the language switch; the server returns the value with the settings (BE-28)
+      example:
+        daily_goal_chapters: 1
+        daily_time_limit_minutes: null
+        enabled_worlds:
+          - nature
+          - espace
+          - cuisine
+          - sport
+          - construction
+          - medecine
+          - science
+          - echecs
+        read_aloud: true
+        sound: true
+        kid_can_change_language: true
+    PaymentMethod:
+      type: string
+      enum:
+        - card
+        - interac
+        - paypal
+        - apple_pay
+        - google_pay
+    SubscriptionView:
+      type: object
+      required:
+        - status
+        - plan
+        - can_play
+      properties:
+        status:
+          type: string
+          enum:
+            - trial
+            - active
+            - unpaid
+            - expired
+            - canceled
+          description: Effective status (a trial or paid period that ended reads expired)
+        plan:
+          type: string
+          enum:
+            - free
+            - family_monthly
+            - family_yearly
+        method:
+          $ref: '#/components/schemas/PaymentMethod'
+        renews_at:
+          type: string
+          format: date-time
+        trial_ends_at:
+          type: string
+          format: date-time
+        marked_by_admin:
+          type: boolean
+        can_play:
+          type: boolean
+          description: The subscription alone allows play (trial running, paid period running, or canceled but not ended). The start gate is can_play OR unpaid_policy allow, and a blocked parent is always refused.
+        days_left:
+          type: integer
+          description: Whole days, rounded up, until trial_ends_at or renews_at; null when there is no end
+          nullable: true
+      example:
+        status: trial
+        plan: free
+        trial_ends_at: '2026-10-26T14:00:00Z'
+        can_play: true
+        days_left: 14
+    PlanCatalog:
+      type: object
+      required:
+        - currency
+        - plans
+        - methods
+      properties:
+        currency:
+          type: string
+          example: CAD
+        plans:
+          type: array
+          items:
+            type: object
+            required:
+              - id
+              - price_cad_cents
+              - period
+              - name
+              - features
+            properties:
+              id:
+                type: string
+                enum:
+                  - free
+                  - family_monthly
+                  - family_yearly
+              price_cad_cents:
+                type: integer
+              period:
+                type: string
+                enum:
+                  - none
+                  - month
+                  - year
+              name:
+                type: object
+                properties:
+                  fr:
+                    type: string
+                  en:
+                    type: string
+              features:
+                type: object
+                properties:
+                  fr:
+                    type: array
+                    items:
+                      type: string
+                  en:
+                    type: array
+                    items:
+                      type: string
+        methods:
+          type: array
+          items:
+            type: object
+            required:
+              - id
+              - label
+            properties:
+              id:
+                $ref: '#/components/schemas/PaymentMethod'
+              label:
+                type: object
+                properties:
+                  fr:
+                    type: string
+                  en:
+                    type: string
+    Notification:
+      type: object
+      required:
+        - id
+        - kind
+        - title
+        - body
+        - created_at
+        - read
+        - audience
+      properties:
+        id:
+          type: string
+        kind:
+          type: string
+          enum:
+            - play_reminder
+            - time_limit
+            - subscription_expiring
+            - payment_due
+            - announcement
+        title:
+          type: string
+        body:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        read:
+          type: boolean
+        audience:
+          type: string
+          enum:
+            - parent
+            - child
+      example:
+        id: nt-1
+        kind: play_reminder
+        title: C’est l’heure d’une petite aventure
+        body: Un chapitre de 10 minutes attend votre enfant.
+        created_at: '2026-10-12T14:00:00Z'
+        read: false
+        audience: parent
+    PlatformPublic:
+      type: object
+      required:
+        - unpaid_policy
+        - card_threshold_pct
+      properties:
+        unpaid_policy:
+          type: string
+          enum:
+            - block
+            - allow
+        card_threshold_pct:
+          type: integer
+          minimum: 0
+          maximum: 100
+        trial_days:
+          type: integer
+        default_locale:
+          type: string
+        expiring_warning_days:
+          type: integer
+          description: Days before the end of a trial or canceled period that trigger subscription_expiring
+        reminder_hour_local:
+          type: integer
+          minimum: 0
+          maximum: 23
+          description: Local hour after which a play reminder is allowed
+        daily_time_limit_minutes_default:
+          type: integer
+          description: Default daily limit for new children
+          nullable: true
+        features:
+          type: object
+          additionalProperties:
+            type: boolean
+      example:
+        unpaid_policy: block
+        card_threshold_pct: 70
+        trial_days: 14
+        default_locale: fr-CA
+        expiring_warning_days: 7
+        reminder_hour_local: 17
+        daily_time_limit_minutes_default: 60
+        features:
+          feed: true
+          challenges: true
+          push: false
+          payments: true
+    World:
+      type: object
+      required:
+        - id
+        - name
+        - tagline
+        - image_url
+        - accent_color
+        - skill_count
+      properties:
+        id:
+          $ref: '#/components/schemas/WorldId'
+        name:
+          type: string
+          example: Échecs
+        tagline:
+          type: string
+        image_url:
+          type: string
+          description: Empty until real art exists; the app then shows its placeholder art
+        accent_color:
+          type: string
+          pattern: ^#[0-9a-fA-F]{6}$
+        hook:
+          type: string
+          description: One short teaser line shown on the home feed
+        skill_count:
+          type: integer
+    Skill:
+      type: object
+      required:
+        - id
+        - label
+        - ref_pda
+        - section
+        - grade_intro
+        - grade_mastery
+        - cycle
+        - prerequisites
+        - implemented
+      properties:
+        id:
+          $ref: '#/components/schemas/SkillId'
+        label:
+          type: string
+        ref_pda:
+          type: string
+        section:
+          type: string
+        grade_intro:
+          type: integer
+        grade_mastery:
+          type: integer
+        cycle:
+          type: integer
+        prerequisites:
+          type: array
+          items:
+            $ref: '#/components/schemas/SkillId'
+        worlds:
+          type: array
+          items:
+            $ref: '#/components/schemas/WorldId'
+        implemented:
+          type: boolean
+          description: A generator exists for this skill today
+    NodeState:
+      type: string
+      enum:
+        - locked
+        - available
+        - in_progress
+        - mastered
+        - needs_review
+    JourneyNode:
+      type: object
+      required:
+        - skill_id
+        - label
+        - state
+        - position
+      properties:
+        skill_id:
+          $ref: '#/components/schemas/SkillId'
+        label:
+          type: string
+          description: Child-friendly title of the chapter
+        state:
+          $ref: '#/components/schemas/NodeState'
+        position:
+          type: object
+          required:
+            - row
+            - col
+          description: Layout slot on the winding path
+          properties:
+            row:
+              type: integer
+            col:
+              type: integer
+              minimum: 0
+              maximum: 4
+        level:
+          type: integer
+          minimum: 0
+          maximum: 5
+          description: How many times the child has revisited and kept it (0 = new). Shown as shine on the node, not as a score.
+        next_review_at:
+          type: string
+          format: date-time
+          nullable: true
+    Journey:
+      type: object
+      required:
+        - world
+        - nodes
+      properties:
+        world:
+          $ref: '#/components/schemas/WorldId'
+        nodes:
+          type: array
+          items:
+            $ref: '#/components/schemas/JourneyNode'
+        current_skill_id:
+          oneOf:
+            - $ref: '#/components/schemas/SkillId'
+            - type: 'null'
+          description: The planner's suggestion for the big "play" button
+    SessionStatus:
+      type: string
+      enum:
+        - active
+        - paused
+        - completed
+        - abandoned
+    StartSessionRequest:
+      type: object
+      required:
+        - world
+        - kind
+      properties:
+        world:
+          $ref: '#/components/schemas/WorldId'
+        kind:
+          type: string
+          enum:
+            - chapter
+            - daily_quest
+            - onboarding
+        skill_id:
+          description: Optional. Replay a specific node from the journey.
+          oneOf:
+            - $ref: '#/components/schemas/SkillId'
+            - type: 'null'
+    Session:
+      type: object
+      required:
+        - id
+        - child_id
+        - world
+        - kind
+        - status
+        - chapter_length
+        - beats_answered
+        - started_at
+      properties:
+        id:
+          type: string
+          format: uuid
+        child_id:
+          type: string
+          format: uuid
+        world:
+          $ref: '#/components/schemas/WorldId'
+        kind:
+          type: string
+          enum:
+            - chapter
+            - daily_quest
+            - onboarding
+        status:
+          $ref: '#/components/schemas/SessionStatus'
+        chapter_length:
+          type: integer
+          description: Planned number of beats. Data for the client; the play screen must not show a progress bar.
+        beats_answered:
+          type: integer
+        current_beat:
+          oneOf:
+            - $ref: '#/components/schemas/Beat'
+            - type: 'null'
+          description: Open (unanswered) beat, if any
+        story_title:
+          type: string
+          nullable: true
+        started_at:
+          type: string
+          format: date-time
+        ended_at:
+          type: string
+          format: date-time
+          nullable: true
+        score:
+          $ref: '#/components/schemas/Score'
+          description: Required on the session inside `AnswerResult` and `SessionSummary`. Recommended on every session once one beat is answered, so the done screen survives a reload (the web app keeps the rewards in sessionStorage only).
+    Score:
+      type: object
+      required:
+        - correct
+        - total
+        - pct
+        - threshold_pct
+        - card_awarded
+      description: |
+        First-try score of a chapter. `correct` counts beats whose outcome is `correct`; `total` counts answered beats;
+        `pct = round(1000 * correct / total) / 10` (one decimal, 0 when total is 0). `card_awarded` is true only
+        when the chapter is completed and `pct >= threshold_pct`. The threshold is `PlatformConfig.card_threshold_pct`
+        (default 70), echoed here so the client never recomputes it. The play screen must not show this object; only
+        the done screen and the parent recap may.
+      properties:
+        correct:
+          type: integer
+          minimum: 0
+        total:
+          type: integer
+          minimum: 0
+        pct:
+          type: number
+          minimum: 0
+          maximum: 100
+        threshold_pct:
+          type: integer
+          minimum: 0
+          maximum: 100
+        card_awarded:
+          type: boolean
+      example:
+        correct: 2
+        total: 3
+        pct: 66.7
+        threshold_pct: 70
+        card_awarded: false
+    Challenge:
+      type: object
+      required:
+        - id
+        - title
+        - description
+        - target
+        - progress
+        - status
+        - reward_label
+        - emoji
+      description: A challenge as the child sees it. The catalogue (ids, metrics, targets) is server data; the six launch challenges are in the guide.
+      properties:
+        id:
+          type: string
+          example: sharp_three
+        title:
+          type: string
+          example: Triplé gagnant
+        description:
+          type: string
+          example: Réponds juste 3 fois de suite.
+        target:
+          type: integer
+          example: 3
+        progress:
+          type: integer
+          description: Capped at target. Counts events after accepted_at only.
+          example: 1
+        status:
+          type: string
+          enum:
+            - available
+            - active
+            - done
+        reward_label:
+          type: string
+          example: Une carte rare
+        emoji:
+          type: string
+          example: 🎯
+        accepted_at:
+          type: string
+          format: date-time
+          nullable: true
+        card:
+          oneOf:
+            - $ref: '#/components/schemas/StoryCard'
+            - type: 'null'
+          description: Set when status is done
+    PushSubscription:
+      type: object
+      required:
+        - endpoint
+        - keys
+      description: Browser PushSubscription.toJSON()
+      properties:
+        endpoint:
+          type: string
+          format: uri
+        expirationTime:
+          type: number
+          nullable: true
+        keys:
+          type: object
+          required:
+            - p256dh
+            - auth
+          properties:
+            p256dh:
+              type: string
+            auth:
+              type: string
+    CheckoutResult:
+      description: The subscription view, plus the processor's hosted page when payment is not instant.
+      allOf:
+        - $ref: '#/components/schemas/SubscriptionView'
+        - type: object
+          properties:
+            checkout_url:
+              type: string
+              format: uri
+              description: https only; the browser navigates to it
+    Question:
+      type: object
+      required:
+        - math_text
+        - choices
+      description: Built by the engine. Never contains the correct answer on its own.
+      properties:
+        math_text:
+          type: string
+          example: 340 ÷ 7 = ? (avec reste)
+        choices:
+          type: array
+          minItems: 4
+          maxItems: 4
+          items:
+            $ref: '#/components/schemas/AnswerValue'
+    NarrationStatus:
+      type: string
+      enum:
+        - pending
+        - streaming
+        - ready
+        - fallback
+    Narration:
+      type: object
+      required:
+        - status
+      properties:
+        status:
+          $ref: '#/components/schemas/NarrationStatus'
+        text:
+          type: string
+          description: Full text when `ready` or `fallback`; null while pending
+          nullable: true
+        illustration_url:
+          type: string
+          format: uri
+          nullable: true
+    Beat:
+      type: object
+      required:
+        - id
+        - session_id
+        - index
+        - skill_id
+        - question
+        - scene
+      properties:
+        id:
+          type: string
+          format: uuid
+        session_id:
+          type: string
+          format: uuid
+        index:
+          type: integer
+          minimum: 0
+        skill_id:
+          $ref: '#/components/schemas/SkillId'
+        question:
+          $ref: '#/components/schemas/Question'
+        scene:
+          $ref: '#/components/schemas/Narration'
+        created_at:
+          type: string
+          format: date-time
+      example:
+        id: 44444444-4444-4444-8444-444444444440
+        session_id: 33333333-3333-4333-8333-333333333333
+        index: 0
+        skill_id: ARI-OPE-A06a
+        question:
+          math_text: 6 × 7 = ?
+          choices:
+            - 42
+            - 13
+            - 48
+            - 36
+        scene:
+          status: pending
+          text: null
+          illustration_url: null
+        created_at: '2026-10-12T14:00:00Z'
+    AnswerRequest:
+      type: object
+      required:
+        - answer
+      properties:
+        answer:
+          $ref: '#/components/schemas/AnswerValue'
+        response_time_ms:
+          type: integer
+          minimum: 0
+          description: Used by mastery tracking only. Never displayed, never a timer.
+    Outcome:
+      type: string
+      description: |
+        Verdict of the deterministic engine. Selects the story beat. The client
+        must never render it as success/failure chrome (no red X).
+      enum:
+        - correct
+        - erreur_typique
+        - erreur_aleatoire
+    Reward:
+      type: object
+      required:
+        - type
+      properties:
+        type:
+          type: string
+          enum:
+            - chapter_complete
+            - card_earned
+            - streak_extended
+            - skill_mastered
+            - daily_goal_met
+        card:
+          $ref: '#/components/schemas/StoryCard'
+        streak_days:
+          type: integer
+        skill_id:
+          $ref: '#/components/schemas/SkillId'
+    AnswerResult:
+      type: object
+      required:
+        - outcome
+        - correct_answer
+        - denouement
+        - session
+      properties:
+        outcome:
+          $ref: '#/components/schemas/Outcome'
+        correct_answer:
+          $ref: '#/components/schemas/AnswerValue'
+        denouement:
+          $ref: '#/components/schemas/Narration'
+        session:
+          $ref: '#/components/schemas/Session'
+        rewards:
+          type: array
+          items:
+            $ref: '#/components/schemas/Reward'
+        method_visual:
+          description: |
+            How to solve this question, as data for an animated picture (no pixels). Sent for right and wrong answers
+            alike, in the language of the request. Absent when no picture exists for the skill. The server builds it
+            once per (kind, params, language) and reuses it for every child.
+          allOf:
+            - $ref: '#/components/schemas/MethodVisual'
+      example:
+        outcome: correct
+        correct_answer: 42
+        denouement:
+          status: pending
+          text: null
+          illustration_url: null
+        session:
+          id: 33333333-3333-4333-8333-333333333333
+          child_id: 11111111-1111-4111-8111-111111111111
+          world: echecs
+          kind: chapter
+          status: completed
+          chapter_length: 3
+          beats_answered: 3
+          current_beat: null
+          story_title: Le tournoi des tours
+          started_at: '2026-10-12T14:00:00Z'
+          ended_at: '2026-10-12T14:00:00Z'
+          score:
+            correct: 3
+            total: 3
+            pct: 100
+            threshold_pct: 70
+            card_awarded: true
+        rewards:
+          - type: chapter_complete
+          - type: card_earned
+            card:
+              id: 55555555-5555-4555-8555-555555555551
+              world: echecs
+              title: Le tournoi des tours
+              image_url: ''
+              session_id: 33333333-3333-4333-8333-333333333333
+              earned_at: '2026-10-12T14:00:00Z'
+          - type: skill_mastered
+            skill_id: ARI-OPE-A06a
+        method_visual:
+          kind: equal_groups
+          params:
+            groups: 6
+            size: 7
+          steps:
+            - caption: 6 groupes.
+            - caption: 7 dans chaque groupe.
+            - caption: 6 groupes de 7 font 42.
+          alt: 6 groupes de 7 points font 42.
+          cache_key: equal_groups:6,7:fr
+    MethodVisual:
+      type: object
+      required:
+        - kind
+        - params
+        - steps
+        - alt
+        - cache_key
+      properties:
+        kind:
+          type: string
+          enum:
+            - add_carry
+            - sub_borrow
+            - equal_groups
+            - equal_share
+          description: |
+            add_carry and sub_borrow take params {a, b} (place-value blocks, regroup ten ones into one ten, or break a ten).
+            equal_groups takes {groups, size} (multiplication). equal_share takes {total, parts} (division, with remainder).
+        params:
+          type: object
+          additionalProperties:
+            type: integer
+            minimum: 0
+        steps:
+          type: array
+          minItems: 2
+          maxItems: 4
+          description: One short caption per animation step, in order. The client shows and speaks one at a time.
+          items:
+            type: object
+            required:
+              - caption
+            properties:
+              caption:
+                type: string
+                maxLength: 120
+        alt:
+          type: string
+          description: One sentence describing the whole picture, for screen readers.
+        cache_key:
+          type: string
+          description: Stable key for (kind, params, language). Equal keys mean an equal visual, so the client may cache it.
+      example:
+        kind: add_carry
+        params:
+          a: 36
+          b: 19
+        steps:
+          - caption: 'On met les unités ensemble : 6 et 9 font 15.'
+          - caption: Dix unités font une dizaine. On la déplace à gauche.
+          - caption: 'Il reste 5 unités et 5 dizaines : 55.'
+        alt: Des blocs montrent 36 plus 19. Dix unités deviennent une dizaine, le total est 55.
+        cache_key: add_carry:36,19:fr
+    SessionSummary:
+      type: object
+      required:
+        - session
+        - duration_seconds
+        - skills
+      properties:
+        session:
+          $ref: '#/components/schemas/Session'
+        duration_seconds:
+          type: integer
+        story_recap:
+          type: string
+        skills:
+          type: array
+          items:
+            type: object
+            required:
+              - skill_id
+              - label
+              - attempts
+              - correct
+            properties:
+              skill_id:
+                $ref: '#/components/schemas/SkillId'
+              label:
+                type: string
+              reason:
+                type: string
+                enum:
+                  - revision
+                  - consolidation
+                  - nouvelle
+                  - entretien
+              attempts:
+                type: integer
+              correct:
+                type: integer
+        stuck_points:
+          type: array
+          items:
+            $ref: '#/components/schemas/Misconception'
+    Misconception:
+      type: object
+      required:
+        - code
+        - description
+        - skill_ids
+      properties:
+        code:
+          type: string
+          example: reste_ignore
+        description:
+          type: string
+          example: Ignore le reste dans une division
+        skill_ids:
+          type: array
+          items:
+            $ref: '#/components/schemas/SkillId'
+    SkillProgress:
+      type: object
+      required:
+        - skill_id
+        - mastery
+        - state
+      properties:
+        skill_id:
+          $ref: '#/components/schemas/SkillId'
+        mastery:
+          type: number
+          minimum: 0
+          maximum: 1
+          description: Probability that decays with time
+        state:
+          $ref: '#/components/schemas/NodeState'
+        attempts:
+          type: integer
+        last_practiced_at:
+          type: string
+          format: date-time
+          nullable: true
+        next_review_at:
+          type: string
+          format: date-time
+          nullable: true
+    Progress:
+      type: object
+      required:
+        - skills
+        - misconceptions
+      properties:
+        skills:
+          type: array
+          items:
+            $ref: '#/components/schemas/SkillProgress'
+        misconceptions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Misconception'
+    ReviewDue:
+      type: object
+      required:
+        - skill_id
+        - label
+        - due_at
+      properties:
+        skill_id:
+          $ref: '#/components/schemas/SkillId'
+        label:
+          type: string
+        due_at:
+          type: string
+          format: date-time
+    Growth:
+      type: object
+      required:
+        - window_days
+        - current
+        - previous
+      description: Same child, two periods. No ranking against anyone else.
+      properties:
+        window_days:
+          type: integer
+        current:
+          $ref: '#/components/schemas/GrowthPeriod'
+        previous:
+          $ref: '#/components/schemas/GrowthPeriod'
+    GrowthPeriod:
+      type: object
+      required:
+        - chapters_completed
+        - skills_mastered
+        - minutes_played
+      properties:
+        chapters_completed:
+          type: integer
+        skills_mastered:
+          type: integer
+        minutes_played:
+          type: integer
+    WeeklyReport:
+      type: object
+      required:
+        - child_id
+        - week_start
+        - sessions
+        - growth
+      properties:
+        child_id:
+          type: string
+          format: uuid
+        week_start:
+          type: string
+          format: date
+        sessions:
+          type: integer
+        days_played:
+          type: integer
+        skills_practised:
+          type: array
+          items:
+            $ref: '#/components/schemas/SkillId'
+        stuck_points:
+          type: array
+          items:
+            $ref: '#/components/schemas/Misconception'
+        growth:
+          $ref: '#/components/schemas/Growth'
+    Engagement:
+      type: object
+      required:
+        - streak
+        - daily_goal
+      properties:
+        streak:
+          type: object
+          required:
+            - current_days
+            - longest_days
+          description: Consecutive days with at least one finished chapter. A missed day resets it, with no punishment screen.
+          properties:
+            current_days:
+              type: integer
+            longest_days:
+              type: integer
+            last_active_date:
+              type: string
+              format: date
+              nullable: true
+        daily_goal:
+          type: object
+          required:
+            - target_chapters
+            - done_chapters
+          properties:
+            target_chapters:
+              type: integer
+            done_chapters:
+              type: integer
+        minutes_today:
+          type: integer
+          description: Active play minutes today in the child time zone. The kid home needs it for the time-limit reminder; in local mode it is derived on the device.
+        last_played_at:
+          type: string
+          format: date-time
+          description: End of the last chapter, used for the play reminder
+          nullable: true
+    StoryCard:
+      type: object
+      required:
+        - id
+        - world
+        - title
+        - image_url
+        - earned_at
+      properties:
+        id:
+          type: string
+          format: uuid
+        world:
+          $ref: '#/components/schemas/WorldId'
+        title:
+          type: string
+        image_url:
+          type: string
+          description: Empty until real art exists; the app then shows its placeholder art
+        session_id:
+          type: string
+          format: uuid
+        earned_at:
+          type: string
+          format: date-time
+    FeedItem:
+      type: object
+      required:
+        - id
+        - kind
+        - world
+        - title
+        - text
+        - ai_generated
+        - liked
+        - saved
+      properties:
+        id:
+          type: string
+        kind:
+          type: string
+          enum:
+            - story_short
+            - fun_fact
+            - puzzle
+            - challenge
+        world:
+          $ref: '#/components/schemas/WorldId'
+        title:
+          type: string
+        text:
+          type: string
+        ai_generated:
+          type: boolean
+          description: Always true. The UI shows an "AI generated" label.
+          enum:
+            - true
+        generated_by:
+          type: string
+          example: mock
+        author:
+          type: object
+          description: The storyteller persona that "wrote" the item (an AI character, never a real person).
+          properties:
+            name:
+              type: string
+              example: Pip
+            emoji:
+              type: string
+              example: 🦊
+        liked:
+          type: boolean
+        saved:
+          type: boolean
+        puzzle:
+          oneOf:
+            - $ref: '#/components/schemas/Question'
+            - type: 'null'
+          description: Present for kind=puzzle. Never contains the answer.
+        cta:
+          oneOf:
+            - type: object
+              required:
+                - label
+                - world
+              properties:
+                label:
+                  type: string
+                world:
+                  $ref: '#/components/schemas/WorldId'
+                skill_id:
+                  $ref: '#/components/schemas/SkillId'
+            - type: 'null'
+    FeedPage:
+      type: object
+      required:
+        - items
+        - next_cursor
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/FeedItem'
+        next_cursor:
+          type: string
+          description: Always set; the feed never ends
+    Home:
+      type: object
+      required:
+        - suggested
+        - quest
+        - worlds
+        - recent_cards
+        - engagement
+        - growth
+      properties:
+        suggested:
+          type: object
+          required:
+            - world
+            - label
+          description: The big "continue" card. `open_session` is set when a chapter is already in progress.
+          properties:
+            world:
+              $ref: '#/components/schemas/WorldId'
+            skill_id:
+              $ref: '#/components/schemas/SkillId'
+            label:
+              type: string
+            open_session:
+              oneOf:
+                - $ref: '#/components/schemas/Session'
+                - type: 'null'
+        quest:
+          $ref: '#/components/schemas/DailyQuest'
+        worlds:
+          type: array
+          items:
+            $ref: '#/components/schemas/World'
+        recent_cards:
+          type: array
+          items:
+            $ref: '#/components/schemas/StoryCard'
+        engagement:
+          $ref: '#/components/schemas/Engagement'
+        growth:
+          $ref: '#/components/schemas/Growth'
+        gift_available:
+          type: boolean
+          description: True until the welcome gift is claimed (BE-20). The web app shows the gift overlay when true.
+        active_challenges:
+          type: integer
+          description: Count of challenges not done, for the Challenges tab badge (BE-20).
+    DailyQuest:
+      type: object
+      required:
+        - available
+        - completed
+      properties:
+        available:
+          type: boolean
+          description: False when no review is due
+        completed:
+          type: boolean
+        skill_ids:
+          type: array
+          items:
+            $ref: '#/components/schemas/SkillId'
