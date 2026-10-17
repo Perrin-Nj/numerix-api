@@ -270,7 +270,7 @@ func (s *Server) CreateChildToken(ctx context.Context, req api.CreateChildTokenR
 	if !c.Consented {
 		return nil, httpapi.NewError(http.StatusForbidden, "consent_missing", "A parent must give consent before this child can play.")
 	}
-	if c.PinHash.Valid && c.PinHash.String != "" {
+	if c.PinHash.Valid && c.PinHash.String != "" && !s.deviceSkipsPIN(ctx, p.ParentID, id) { // known device + remember_on_device skips the PIN
 		pin := ""
 		if req.Body != nil && req.Body.Pin != nil {
 			pin = *req.Body.Pin

@@ -1952,6 +1952,252 @@ paths:
           $ref: '#/components/responses/RateLimited'
         '500':
           $ref: '#/components/responses/ServerError'
+  /auth/device:
+    post:
+      tags:
+        - Auth
+      operationId: deviceLogin
+      summary: Open the app on a known device without signing in
+      security: []
+      description: |
+        Reads the `nx_device` cookie (HttpOnly, Secure outside development, SameSite=Lax, Path=/, 180 days),
+        rotates it (the answer carries a fresh `Set-Cookie`) and returns the same body as `/auth/refresh`.
+        The cookie is set after register, login and passkey login. A missing, expired, revoked or reused
+        cookie answers 401 and clears the cookie. No request body.
+      responses:
+        '200':
+          description: New tokens (and a rotated `nx_device` cookie)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthSession'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /account/devices:
+    get:
+      tags:
+        - Auth
+      operationId: listDevices
+      summary: Known devices of the parent
+      x-roles:
+        - parent
+      description: Active devices only (not revoked, not expired). `current` marks the device that sent the cookie.
+      responses:
+        '200':
+          description: The devices
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeviceList'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /account/devices/{deviceId}:
+    delete:
+      tags:
+        - Auth
+      operationId: revokeDevice
+      summary: Forget a device (its cookie stops working)
+      x-roles:
+        - parent
+      parameters:
+        - name: deviceId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '204':
+          description: Revoked
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /auth/passkeys/register/begin:
+    post:
+      tags:
+        - Auth
+      operationId: beginPasskeyRegistration
+      summary: Start adding a passkey (WebAuthn creation options)
+      x-roles:
+        - parent
+      description: Returns the `options` for `navigator.credentials.create` and a `session_id` valid 5 minutes. 503 `passkeys_unavailable` when the server has no WEBAUTHN_RP_ID.
+      responses:
+        '200':
+          description: Creation options
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PasskeyCeremony'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+        '503':
+          $ref: '#/components/responses/Unavailable'
+  /auth/passkeys/register/finish:
+    post:
+      tags:
+        - Auth
+      operationId: finishPasskeyRegistration
+      summary: Finish adding a passkey
+      x-roles:
+        - parent
+      description: Send the JSON of the credential returned by the browser (`PublicKeyCredential.toJSON()`). Errors use code `passkey_invalid` (422) or `passkey_session_expired` (410).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PasskeyFinishRequest'
+      responses:
+        '201':
+          description: Passkey stored
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Passkey'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '410':
+          $ref: '#/components/responses/Gone'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+        '503':
+          $ref: '#/components/responses/Unavailable'
+  /auth/passkeys/login/begin:
+    post:
+      tags:
+        - Auth
+      operationId: beginPasskeyLogin
+      summary: Start a passkey sign in (discoverable credential, no username)
+      security: []
+      description: Returns the `options` for `navigator.credentials.get` and a `session_id` valid 5 minutes.
+      responses:
+        '200':
+          description: Request options
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PasskeyCeremony'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+        '503':
+          $ref: '#/components/responses/Unavailable'
+  /auth/passkeys/login/finish:
+    post:
+      tags:
+        - Auth
+      operationId: finishPasskeyLogin
+      summary: Finish a passkey sign in
+      security: []
+      description: Same answer as `/auth/login`, plus the `nx_device` cookie. Refused signatures, unknown credentials and a sign counter that goes backwards all answer 401.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PasskeyFinishRequest'
+      responses:
+        '200':
+          description: Signed in
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthSession'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '410':
+          $ref: '#/components/responses/Gone'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+        '503':
+          $ref: '#/components/responses/Unavailable'
+  /account/passkeys:
+    get:
+      tags:
+        - Auth
+      operationId: listPasskeys
+      summary: Passkeys of the parent
+      x-roles:
+        - parent
+      responses:
+        '200':
+          description: The passkeys
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PasskeyList'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /account/passkeys/{passkeyId}:
+    delete:
+      tags:
+        - Auth
+      operationId: deletePasskey
+      summary: Remove a passkey
+      x-roles:
+        - parent
+      parameters:
+        - name: passkeyId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '204':
+          description: Removed
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
   /health:
     get:
       tags:
@@ -2203,6 +2449,18 @@ components:
         application/problem+json:
           schema:
             $ref: '#/components/schemas/Problem'
+    Gone:
+      description: The passkey ceremony expired (code passkey_session_expired); start again
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+    Unavailable:
+      description: Feature not configured on this server (code passkeys_unavailable)
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
   schemas:
     Problem:
       type: object
@@ -2228,7 +2486,8 @@ components:
             unauthorized, forbidden, forbidden_origin, not_found, validation_failed, rate_limited, internal_error,
             consent_missing, daily_limit_reached, session_active, session_paused, session_completed,
             beat_answered, beat_not_answered, invalid_pin, subscription_inactive, account_blocked,
-            not_cancelable, conflict, email_taken.
+            not_cancelable, conflict, email_taken, passkey_invalid, passkey_session_expired,
+            passkey_exists, passkey_limit, passkeys_unavailable.
           example: consent_missing
         retry_after_seconds:
           type: integer
@@ -2543,6 +2802,10 @@ components:
           description: Narration is spoken (reading levels vary from age 6 to 11)
         sound:
           type: boolean
+        remember_on_device:
+          type: boolean
+          default: false
+          description: When true, a valid nx_device cookie lets this child start without the PIN on that device (BE-64)
         kid_can_change_language:
           type: boolean
           default: true
@@ -2562,6 +2825,118 @@ components:
         read_aloud: true
         sound: true
         kid_can_change_language: true
+    Device:
+      type: object
+      required:
+        - id
+        - label
+        - user_agent_family
+        - created_at
+        - last_used_at
+        - current
+      properties:
+        id:
+          type: string
+          format: uuid
+        label:
+          type: string
+          description: Browser and system, for example "Chrome on Windows"
+        user_agent_family:
+          type: string
+          description: Browser family only (Chrome, Safari, Firefox, Edge, Other); never the full user agent
+        created_at:
+          type: string
+          format: date-time
+        last_used_at:
+          type: string
+          format: date-time
+        current:
+          type: boolean
+          description: This request carries this device's cookie
+    DeviceList:
+      type: object
+      required:
+        - items
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Device'
+    Passkey:
+      type: object
+      required:
+        - id
+        - nickname
+        - transports
+        - backup_eligible
+        - backup_state
+        - created_at
+      properties:
+        id:
+          type: string
+          format: uuid
+        nickname:
+          type: string
+          maxLength: 60
+        aaguid:
+          type: string
+          description: Authenticator model id (hex
+          32 chars): null
+        transports:
+          type: array
+          items:
+            type: string
+        backup_eligible:
+          type: boolean
+          description: Synced passkey (can be backed up)
+        backup_state:
+          type: boolean
+          description: Currently backed up
+        created_at:
+          type: string
+          format: date-time
+        last_used_at:
+          type: string
+          format: date-time
+          nullable: true
+    PasskeyList:
+      type: object
+      required:
+        - items
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Passkey'
+    PasskeyCeremony:
+      type: object
+      required:
+        - session_id
+        - options
+      properties:
+        session_id:
+          type: string
+          description: Send it back to the matching finish call; valid 5 minutes
+        options:
+          type: object
+          additionalProperties: true
+          description: WebAuthn options (publicKey) as JSON, to pass to navigator.credentials
+    PasskeyFinishRequest:
+      type: object
+      required:
+        - session_id
+        - credential
+      properties:
+        session_id:
+          type: string
+        nickname:
+          type: string
+          maxLength: 60
+          description: Registration only
+        credential:
+          type: object
+          additionalProperties: true
+          description: JSON of the PublicKeyCredential from the browser
     PaymentMethod:
       type: string
       enum:

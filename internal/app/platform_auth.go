@@ -92,6 +92,7 @@ func (s *Server) RegisterParent(ctx context.Context, req api.RegisterParentReque
 	if err != nil {
 		return nil, err
 	}
+	s.startDevice(ctx, id) // remember this browser (nx_device cookie)
 	return api.RegisterParent201JSONResponse(sess), nil
 }
 
@@ -126,6 +127,7 @@ func (s *Server) LoginParent(ctx context.Context, req api.LoginParentRequestObje
 	if err != nil {
 		return nil, err
 	}
+	s.startDevice(ctx, id) // remember this browser (nx_device cookie)
 	return api.LoginParent200JSONResponse(sess), nil
 }
 
@@ -167,6 +169,7 @@ func (s *Server) LogoutParent(ctx context.Context, req api.LogoutParentRequestOb
 			return nil, s.plInternalErr(ctx, "revoke refresh token", err)
 		}
 	}
+	s.revokeCurrentDevice(ctx) // forget this browser too
 	return api.LogoutParent204Response{}, nil
 }
 

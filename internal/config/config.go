@@ -41,6 +41,9 @@ type Config struct {
 	LLMAPIKey          string        // placeholder: secret for the LLM provider
 	LLMModel           string        // placeholder: model name
 	LLMMonthlyCap      float64       // placeholder: monthly budget in dollars
+	WebAuthnRPID       string        // WEBAUTHN_RP_ID: site domain passkeys are bound to (empty in production = passkeys off)
+	WebAuthnOrigins    []string      // WEBAUTHN_ORIGINS: browser origins allowed to run the ceremony
+	WebAuthnRPName     string        // WEBAUTHN_RP_NAME: name shown by the browser prompt
 }
 
 // IsProduction tells whether strict production rules apply.
@@ -99,6 +102,19 @@ func Load(getenv func(string) string) (Config, error) {
 			errs = append(errs, fmt.Errorf("LLM_MONTHLY_CAP must be a number, got %q", v))
 		}
 		cfg.LLMMonthlyCap = f
+	}
+
+	// Passkeys: localhost defaults outside production so dev works at once; production must opt in.
+	defRP, defOrigin := "", ""
+	if !cfg.IsProduction() {
+		defRP, defOrigin = "localhost", "http://localhost:3000"
+	}
+	cfg.WebAuthnRPID = get("WEBAUTHN_RP_ID", defRP)
+	cfg.WebAuthnRPName = get("WEBAUTHN_RP_NAME", "Numerix")
+	for _, o := range strings.Split(get("WEBAUTHN_ORIGINS", defOrigin), ",") {
+		if o = strings.TrimSpace(o); o != "" {
+			cfg.WebAuthnOrigins = append(cfg.WebAuthnOrigins, o)
+		}
 	}
 
 	// Validation.

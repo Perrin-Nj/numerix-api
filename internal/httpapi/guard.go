@@ -70,6 +70,7 @@ func Guard(l *Limiter, trustProxy bool) api.StrictMiddlewareFunc {
 			if !known { // an operation missing from the table means the generator was not re-run: fail closed
 				return nil, ErrForbidden
 			}
+			ctx = WithExchange(ctx, w, r) // lets handlers read and set cookies (device sessions)
 			p, authed := auth.FromContext(ctx)
 			if !meta.Public {
 				if !authed {

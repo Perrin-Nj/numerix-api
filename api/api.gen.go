@@ -998,7 +998,10 @@ type ChildSettings struct {
 
 	// ReadAloud Narration is spoken (reading levels vary from age 6 to 11)
 	ReadAloud bool `json:"read_aloud"`
-	Sound     bool `json:"sound"`
+
+	// RememberOnDevice When true, a valid nx_device cookie lets this child start without the PIN on that device (BE-64)
+	RememberOnDevice *bool `json:"remember_on_device,omitempty"`
+	Sound            bool  `json:"sound"`
 }
 
 // ChildToken defines model for ChildToken.
@@ -1042,6 +1045,27 @@ type DailyQuest struct {
 	Available bool       `json:"available"`
 	Completed bool       `json:"completed"`
 	SkillIds  *[]SkillId `json:"skill_ids,omitempty"`
+}
+
+// Device defines model for Device.
+type Device struct {
+	CreatedAt time.Time `json:"created_at"`
+
+	// Current This request carries this device's cookie
+	Current bool               `json:"current"`
+	Id      openapi_types.UUID `json:"id"`
+
+	// Label Browser and system, for example "Chrome on Windows"
+	Label      string    `json:"label"`
+	LastUsedAt time.Time `json:"last_used_at"`
+
+	// UserAgentFamily Browser family only (Chrome, Safari, Firefox, Edge, Other); never the full user agent
+	UserAgentFamily string `json:"user_agent_family"`
+}
+
+// DeviceList defines model for DeviceList.
+type DeviceList struct {
+	Items []Device `json:"items"`
 }
 
 // Engagement defines model for Engagement.
@@ -1263,6 +1287,47 @@ type NotificationKind string
 // must never render it as success/failure chrome (no red X).
 type Outcome string
 
+// Passkey defines model for Passkey.
+type Passkey struct {
+	// Aaguid Authenticator model id (hex
+	Aaguid *string `json:"aaguid,omitempty"`
+
+	// BackupEligible Synced passkey (can be backed up)
+	BackupEligible bool `json:"backup_eligible"`
+
+	// BackupState Currently backed up
+	BackupState bool               `json:"backup_state"`
+	CreatedAt   time.Time          `json:"created_at"`
+	Id          openapi_types.UUID `json:"id"`
+	LastUsedAt  *time.Time         `json:"last_used_at,omitempty"`
+	Nickname    string             `json:"nickname"`
+	Transports  []string           `json:"transports"`
+}
+
+// PasskeyCeremony defines model for PasskeyCeremony.
+type PasskeyCeremony struct {
+	// Options WebAuthn options (publicKey) as JSON, to pass to navigator.credentials
+	Options map[string]interface{} `json:"options"`
+
+	// SessionId Send it back to the matching finish call; valid 5 minutes
+	SessionId string `json:"session_id"`
+}
+
+// PasskeyFinishRequest defines model for PasskeyFinishRequest.
+type PasskeyFinishRequest struct {
+	// Credential JSON of the PublicKeyCredential from the browser
+	Credential map[string]interface{} `json:"credential"`
+
+	// Nickname Registration only
+	Nickname  *string `json:"nickname,omitempty"`
+	SessionId string  `json:"session_id"`
+}
+
+// PasskeyList defines model for PasskeyList.
+type PasskeyList struct {
+	Items []Passkey `json:"items"`
+}
+
 // PaymentMethod defines model for PaymentMethod.
 type PaymentMethod string
 
@@ -1327,7 +1392,8 @@ type Problem struct {
 	// unauthorized, forbidden, forbidden_origin, not_found, validation_failed, rate_limited, internal_error,
 	// consent_missing, daily_limit_reached, session_active, session_paused, session_completed,
 	// beat_answered, beat_not_answered, invalid_pin, subscription_inactive, account_blocked,
-	// not_cancelable, conflict, email_taken.
+	// not_cancelable, conflict, email_taken, passkey_invalid, passkey_session_expired,
+	// passkey_exists, passkey_limit, passkeys_unavailable.
 	//
 	//
 	// Example: consent_missing
@@ -1643,6 +1709,11 @@ type Conflict = Problem
 // Example: {"code":"subscription_inactive","detail":"Your family's subscription is paused.","i18n":{"en":{"detail":"Your family's subscription is paused.","title":"A little break for now"},"fr":{"detail":"L’abonnement de ta famille est en pause.","title":"Petite pause pour l’instant"}},"status":402,"title":"A little break for now","type":"https://numerix.app/problems/subscription-inactive"}
 type Forbidden = Problem
 
+// Gone RFC 9457 problem details
+//
+// Example: {"code":"subscription_inactive","detail":"Your family's subscription is paused.","i18n":{"en":{"detail":"Your family's subscription is paused.","title":"A little break for now"},"fr":{"detail":"L’abonnement de ta famille est en pause.","title":"Petite pause pour l’instant"}},"status":402,"title":"A little break for now","type":"https://numerix.app/problems/subscription-inactive"}
+type Gone = Problem
+
 // NotFound RFC 9457 problem details
 //
 // Example: {"code":"subscription_inactive","detail":"Your family's subscription is paused.","i18n":{"en":{"detail":"Your family's subscription is paused.","title":"A little break for now"},"fr":{"detail":"L’abonnement de ta famille est en pause.","title":"Petite pause pour l’instant"}},"status":402,"title":"A little break for now","type":"https://numerix.app/problems/subscription-inactive"}
@@ -1662,6 +1733,11 @@ type ServerError = Problem
 //
 // Example: {"code":"subscription_inactive","detail":"Your family's subscription is paused.","i18n":{"en":{"detail":"Your family's subscription is paused.","title":"A little break for now"},"fr":{"detail":"L’abonnement de ta famille est en pause.","title":"Petite pause pour l’instant"}},"status":402,"title":"A little break for now","type":"https://numerix.app/problems/subscription-inactive"}
 type Unauthorized = Problem
+
+// Unavailable RFC 9457 problem details
+//
+// Example: {"code":"subscription_inactive","detail":"Your family's subscription is paused.","i18n":{"en":{"detail":"Your family's subscription is paused.","title":"A little break for now"},"fr":{"detail":"L’abonnement de ta famille est en pause.","title":"Petite pause pour l’instant"}},"status":402,"title":"A little break for now","type":"https://numerix.app/problems/subscription-inactive"}
+type Unavailable = Problem
 
 // ValidationError RFC 9457 problem details
 //
@@ -2100,6 +2176,12 @@ type LoginParentJSONRequestBody = LoginRequest
 // LogoutParentJSONRequestBody defines body for LogoutParent for application/json ContentType.
 type LogoutParentJSONRequestBody LogoutParentJSONBody
 
+// FinishPasskeyLoginJSONRequestBody defines body for FinishPasskeyLogin for application/json ContentType.
+type FinishPasskeyLoginJSONRequestBody = PasskeyFinishRequest
+
+// FinishPasskeyRegistrationJSONRequestBody defines body for FinishPasskeyRegistration for application/json ContentType.
+type FinishPasskeyRegistrationJSONRequestBody = PasskeyFinishRequest
+
 // RefreshTokenJSONRequestBody defines body for RefreshToken for application/json ContentType.
 type RefreshTokenJSONRequestBody RefreshTokenJSONBody
 
@@ -2267,15 +2349,42 @@ type ServerInterface interface {
 	// UpdateAccount Change name or language
 	// (PATCH /account)
 	UpdateAccount(w http.ResponseWriter, r *http.Request, params UpdateAccountParams)
+	// ListDevices Known devices of the parent
+	// (GET /account/devices)
+	ListDevices(w http.ResponseWriter, r *http.Request)
+	// RevokeDevice Forget a device (its cookie stops working)
+	// (DELETE /account/devices/{deviceId})
+	RevokeDevice(w http.ResponseWriter, r *http.Request, deviceId openapi_types.UUID)
+	// ListPasskeys Passkeys of the parent
+	// (GET /account/passkeys)
+	ListPasskeys(w http.ResponseWriter, r *http.Request)
+	// DeletePasskey Remove a passkey
+	// (DELETE /account/passkeys/{passkeyId})
+	DeletePasskey(w http.ResponseWriter, r *http.Request, passkeyId openapi_types.UUID)
 	// RecordConsent Record the parent's consent to process a child's data
 	// (POST /auth/consent)
 	RecordConsent(w http.ResponseWriter, r *http.Request, params RecordConsentParams)
+	// DeviceLogin Open the app on a known device without signing in
+	// (POST /auth/device)
+	DeviceLogin(w http.ResponseWriter, r *http.Request)
 	// LoginParent Log a parent in
 	// (POST /auth/login)
 	LoginParent(w http.ResponseWriter, r *http.Request)
 	// LogoutParent Revoke the parent's refresh token family
 	// (POST /auth/logout)
 	LogoutParent(w http.ResponseWriter, r *http.Request)
+	// BeginPasskeyLogin Start a passkey sign in (discoverable credential, no username)
+	// (POST /auth/passkeys/login/begin)
+	BeginPasskeyLogin(w http.ResponseWriter, r *http.Request)
+	// FinishPasskeyLogin Finish a passkey sign in
+	// (POST /auth/passkeys/login/finish)
+	FinishPasskeyLogin(w http.ResponseWriter, r *http.Request)
+	// BeginPasskeyRegistration Start adding a passkey (WebAuthn creation options)
+	// (POST /auth/passkeys/register/begin)
+	BeginPasskeyRegistration(w http.ResponseWriter, r *http.Request)
+	// FinishPasskeyRegistration Finish adding a passkey
+	// (POST /auth/passkeys/register/finish)
+	FinishPasskeyRegistration(w http.ResponseWriter, r *http.Request)
 	// RefreshToken Exchange a refresh token for a new access token
 	// (POST /auth/refresh)
 	RefreshToken(w http.ResponseWriter, r *http.Request)
@@ -2560,6 +2669,86 @@ func (siw *ServerInterfaceWrapper) UpdateAccount(w http.ResponseWriter, r *http.
 	handler.ServeHTTP(w, r)
 }
 
+// ListDevices operation middleware
+func (siw *ServerInterfaceWrapper) ListDevices(w http.ResponseWriter, r *http.Request) {
+
+	handler := http.Handler(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		siw.Handler.ListDevices(w, r)
+	}))
+
+	for _, middleware := range siw.HandlerMiddlewares {
+		handler = middleware(handler)
+	}
+
+	handler.ServeHTTP(w, r)
+}
+
+// RevokeDevice operation middleware
+func (siw *ServerInterfaceWrapper) RevokeDevice(w http.ResponseWriter, r *http.Request) {
+
+	var err error
+	_ = err
+
+	// ------------- Path parameter "deviceId" -------------
+	var deviceId openapi_types.UUID
+
+	err = runtime.BindStyledParameterWithOptions("simple", "deviceId", r.PathValue("deviceId"), &deviceId, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationPath, Explode: false, Required: true, Type: "string", Format: "uuid", ValueIsUnescaped: true})
+	if err != nil {
+		siw.ErrorHandlerFunc(w, r, &InvalidParamFormatError{ParamName: "deviceId", Err: err})
+		return
+	}
+
+	handler := http.Handler(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		siw.Handler.RevokeDevice(w, r, deviceId)
+	}))
+
+	for _, middleware := range siw.HandlerMiddlewares {
+		handler = middleware(handler)
+	}
+
+	handler.ServeHTTP(w, r)
+}
+
+// ListPasskeys operation middleware
+func (siw *ServerInterfaceWrapper) ListPasskeys(w http.ResponseWriter, r *http.Request) {
+
+	handler := http.Handler(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		siw.Handler.ListPasskeys(w, r)
+	}))
+
+	for _, middleware := range siw.HandlerMiddlewares {
+		handler = middleware(handler)
+	}
+
+	handler.ServeHTTP(w, r)
+}
+
+// DeletePasskey operation middleware
+func (siw *ServerInterfaceWrapper) DeletePasskey(w http.ResponseWriter, r *http.Request) {
+
+	var err error
+	_ = err
+
+	// ------------- Path parameter "passkeyId" -------------
+	var passkeyId openapi_types.UUID
+
+	err = runtime.BindStyledParameterWithOptions("simple", "passkeyId", r.PathValue("passkeyId"), &passkeyId, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationPath, Explode: false, Required: true, Type: "string", Format: "uuid", ValueIsUnescaped: true})
+	if err != nil {
+		siw.ErrorHandlerFunc(w, r, &InvalidParamFormatError{ParamName: "passkeyId", Err: err})
+		return
+	}
+
+	handler := http.Handler(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		siw.Handler.DeletePasskey(w, r, passkeyId)
+	}))
+
+	for _, middleware := range siw.HandlerMiddlewares {
+		handler = middleware(handler)
+	}
+
+	handler.ServeHTTP(w, r)
+}
+
 // RecordConsent operation middleware
 func (siw *ServerInterfaceWrapper) RecordConsent(w http.ResponseWriter, r *http.Request) {
 
@@ -2601,6 +2790,20 @@ func (siw *ServerInterfaceWrapper) RecordConsent(w http.ResponseWriter, r *http.
 	handler.ServeHTTP(w, r)
 }
 
+// DeviceLogin operation middleware
+func (siw *ServerInterfaceWrapper) DeviceLogin(w http.ResponseWriter, r *http.Request) {
+
+	handler := http.Handler(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		siw.Handler.DeviceLogin(w, r)
+	}))
+
+	for _, middleware := range siw.HandlerMiddlewares {
+		handler = middleware(handler)
+	}
+
+	handler.ServeHTTP(w, r)
+}
+
 // LoginParent operation middleware
 func (siw *ServerInterfaceWrapper) LoginParent(w http.ResponseWriter, r *http.Request) {
 
@@ -2620,6 +2823,62 @@ func (siw *ServerInterfaceWrapper) LogoutParent(w http.ResponseWriter, r *http.R
 
 	handler := http.Handler(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		siw.Handler.LogoutParent(w, r)
+	}))
+
+	for _, middleware := range siw.HandlerMiddlewares {
+		handler = middleware(handler)
+	}
+
+	handler.ServeHTTP(w, r)
+}
+
+// BeginPasskeyLogin operation middleware
+func (siw *ServerInterfaceWrapper) BeginPasskeyLogin(w http.ResponseWriter, r *http.Request) {
+
+	handler := http.Handler(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		siw.Handler.BeginPasskeyLogin(w, r)
+	}))
+
+	for _, middleware := range siw.HandlerMiddlewares {
+		handler = middleware(handler)
+	}
+
+	handler.ServeHTTP(w, r)
+}
+
+// FinishPasskeyLogin operation middleware
+func (siw *ServerInterfaceWrapper) FinishPasskeyLogin(w http.ResponseWriter, r *http.Request) {
+
+	handler := http.Handler(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		siw.Handler.FinishPasskeyLogin(w, r)
+	}))
+
+	for _, middleware := range siw.HandlerMiddlewares {
+		handler = middleware(handler)
+	}
+
+	handler.ServeHTTP(w, r)
+}
+
+// BeginPasskeyRegistration operation middleware
+func (siw *ServerInterfaceWrapper) BeginPasskeyRegistration(w http.ResponseWriter, r *http.Request) {
+
+	handler := http.Handler(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		siw.Handler.BeginPasskeyRegistration(w, r)
+	}))
+
+	for _, middleware := range siw.HandlerMiddlewares {
+		handler = middleware(handler)
+	}
+
+	handler.ServeHTTP(w, r)
+}
+
+// FinishPasskeyRegistration operation middleware
+func (siw *ServerInterfaceWrapper) FinishPasskeyRegistration(w http.ResponseWriter, r *http.Request) {
+
+	handler := http.Handler(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		siw.Handler.FinishPasskeyRegistration(w, r)
 	}))
 
 	for _, middleware := range siw.HandlerMiddlewares {
@@ -5298,6 +5557,15 @@ func HandlerWithOptions(si ServerInterface, options StdHTTPServerOptions) http.H
 	m.HandleFunc(http.MethodGet+" "+options.BaseURL+"/account", wrapper.GetAccount)
 	m.HandleFunc(http.MethodPatch+" "+options.BaseURL+"/account", wrapper.UpdateAccount)
 	m.HandleFunc(http.MethodPost+" "+options.BaseURL+"/auth/logout", wrapper.LogoutParent)
+	m.HandleFunc(http.MethodPost+" "+options.BaseURL+"/auth/device", wrapper.DeviceLogin)
+	m.HandleFunc(http.MethodGet+" "+options.BaseURL+"/account/devices", wrapper.ListDevices)
+	m.HandleFunc(http.MethodDelete+" "+options.BaseURL+"/account/devices/{deviceId}", wrapper.RevokeDevice)
+	m.HandleFunc(http.MethodPost+" "+options.BaseURL+"/auth/passkeys/register/begin", wrapper.BeginPasskeyRegistration)
+	m.HandleFunc(http.MethodPost+" "+options.BaseURL+"/auth/passkeys/register/finish", wrapper.FinishPasskeyRegistration)
+	m.HandleFunc(http.MethodPost+" "+options.BaseURL+"/auth/passkeys/login/begin", wrapper.BeginPasskeyLogin)
+	m.HandleFunc(http.MethodPost+" "+options.BaseURL+"/auth/passkeys/login/finish", wrapper.FinishPasskeyLogin)
+	m.HandleFunc(http.MethodGet+" "+options.BaseURL+"/account/passkeys", wrapper.ListPasskeys)
+	m.HandleFunc(http.MethodDelete+" "+options.BaseURL+"/account/passkeys/{passkeyId}", wrapper.DeletePasskey)
 	m.HandleFunc(http.MethodGet+" "+options.BaseURL+"/health", wrapper.Health)
 	m.HandleFunc(http.MethodGet+" "+options.BaseURL+"/ready", wrapper.Ready)
 	m.HandleFunc(http.MethodPost+" "+options.BaseURL+"/events", wrapper.SendEvents)
@@ -5308,6 +5576,8 @@ func HandlerWithOptions(si ServerInterface, options StdHTTPServerOptions) http.H
 type ConflictApplicationProblemPlusJSONResponse Problem
 
 type ForbiddenApplicationProblemPlusJSONResponse Problem
+
+type GoneApplicationProblemPlusJSONResponse Problem
 
 type NotFoundApplicationProblemPlusJSONResponse Problem
 
@@ -5323,6 +5593,8 @@ type RateLimitedApplicationProblemPlusJSONResponse struct {
 type ServerErrorApplicationProblemPlusJSONResponse Problem
 
 type UnauthorizedApplicationProblemPlusJSONResponse Problem
+
+type UnavailableApplicationProblemPlusJSONResponse Problem
 
 type ValidationErrorApplicationProblemPlusJSONResponse Problem
 
@@ -5605,6 +5877,380 @@ func (response UpdateAccount500ApplicationProblemPlusJSONResponse) VisitUpdateAc
 	return err
 }
 
+type ListDevicesRequestObject struct {
+}
+
+type ListDevicesResponseObject interface {
+	VisitListDevicesResponse(w http.ResponseWriter) error
+}
+
+type ListDevices200JSONResponse DeviceList
+
+func (response ListDevices200JSONResponse) VisitListDevicesResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(200)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type ListDevices401ApplicationProblemPlusJSONResponse struct {
+	UnauthorizedApplicationProblemPlusJSONResponse
+}
+
+func (response ListDevices401ApplicationProblemPlusJSONResponse) VisitListDevicesResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(401)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type ListDevices403ApplicationProblemPlusJSONResponse struct {
+	ForbiddenApplicationProblemPlusJSONResponse
+}
+
+func (response ListDevices403ApplicationProblemPlusJSONResponse) VisitListDevicesResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(403)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type ListDevices429ApplicationProblemPlusJSONResponse struct {
+	RateLimitedApplicationProblemPlusJSONResponse
+}
+
+func (response ListDevices429ApplicationProblemPlusJSONResponse) VisitListDevicesResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response.Body); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	if response.Headers.RetryAfter != nil {
+		w.Header().Set("Retry-After", fmt.Sprint(*response.Headers.RetryAfter))
+	}
+	w.WriteHeader(429)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type ListDevices500ApplicationProblemPlusJSONResponse struct {
+	ServerErrorApplicationProblemPlusJSONResponse
+}
+
+func (response ListDevices500ApplicationProblemPlusJSONResponse) VisitListDevicesResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(500)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type RevokeDeviceRequestObject struct {
+	DeviceId openapi_types.UUID `json:"deviceId"`
+}
+
+type RevokeDeviceResponseObject interface {
+	VisitRevokeDeviceResponse(w http.ResponseWriter) error
+}
+
+type RevokeDevice204Response struct {
+}
+
+func (response RevokeDevice204Response) VisitRevokeDeviceResponse(w http.ResponseWriter) error {
+	w.WriteHeader(204)
+	return nil
+}
+
+type RevokeDevice401ApplicationProblemPlusJSONResponse struct {
+	UnauthorizedApplicationProblemPlusJSONResponse
+}
+
+func (response RevokeDevice401ApplicationProblemPlusJSONResponse) VisitRevokeDeviceResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(401)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type RevokeDevice403ApplicationProblemPlusJSONResponse struct {
+	ForbiddenApplicationProblemPlusJSONResponse
+}
+
+func (response RevokeDevice403ApplicationProblemPlusJSONResponse) VisitRevokeDeviceResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(403)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type RevokeDevice404ApplicationProblemPlusJSONResponse struct {
+	NotFoundApplicationProblemPlusJSONResponse
+}
+
+func (response RevokeDevice404ApplicationProblemPlusJSONResponse) VisitRevokeDeviceResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(404)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type RevokeDevice429ApplicationProblemPlusJSONResponse struct {
+	RateLimitedApplicationProblemPlusJSONResponse
+}
+
+func (response RevokeDevice429ApplicationProblemPlusJSONResponse) VisitRevokeDeviceResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response.Body); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	if response.Headers.RetryAfter != nil {
+		w.Header().Set("Retry-After", fmt.Sprint(*response.Headers.RetryAfter))
+	}
+	w.WriteHeader(429)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type RevokeDevice500ApplicationProblemPlusJSONResponse struct {
+	ServerErrorApplicationProblemPlusJSONResponse
+}
+
+func (response RevokeDevice500ApplicationProblemPlusJSONResponse) VisitRevokeDeviceResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(500)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type ListPasskeysRequestObject struct {
+}
+
+type ListPasskeysResponseObject interface {
+	VisitListPasskeysResponse(w http.ResponseWriter) error
+}
+
+type ListPasskeys200JSONResponse PasskeyList
+
+func (response ListPasskeys200JSONResponse) VisitListPasskeysResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(200)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type ListPasskeys401ApplicationProblemPlusJSONResponse struct {
+	UnauthorizedApplicationProblemPlusJSONResponse
+}
+
+func (response ListPasskeys401ApplicationProblemPlusJSONResponse) VisitListPasskeysResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(401)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type ListPasskeys403ApplicationProblemPlusJSONResponse struct {
+	ForbiddenApplicationProblemPlusJSONResponse
+}
+
+func (response ListPasskeys403ApplicationProblemPlusJSONResponse) VisitListPasskeysResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(403)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type ListPasskeys429ApplicationProblemPlusJSONResponse struct {
+	RateLimitedApplicationProblemPlusJSONResponse
+}
+
+func (response ListPasskeys429ApplicationProblemPlusJSONResponse) VisitListPasskeysResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response.Body); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	if response.Headers.RetryAfter != nil {
+		w.Header().Set("Retry-After", fmt.Sprint(*response.Headers.RetryAfter))
+	}
+	w.WriteHeader(429)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type ListPasskeys500ApplicationProblemPlusJSONResponse struct {
+	ServerErrorApplicationProblemPlusJSONResponse
+}
+
+func (response ListPasskeys500ApplicationProblemPlusJSONResponse) VisitListPasskeysResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(500)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type DeletePasskeyRequestObject struct {
+	PasskeyId openapi_types.UUID `json:"passkeyId"`
+}
+
+type DeletePasskeyResponseObject interface {
+	VisitDeletePasskeyResponse(w http.ResponseWriter) error
+}
+
+type DeletePasskey204Response struct {
+}
+
+func (response DeletePasskey204Response) VisitDeletePasskeyResponse(w http.ResponseWriter) error {
+	w.WriteHeader(204)
+	return nil
+}
+
+type DeletePasskey401ApplicationProblemPlusJSONResponse struct {
+	UnauthorizedApplicationProblemPlusJSONResponse
+}
+
+func (response DeletePasskey401ApplicationProblemPlusJSONResponse) VisitDeletePasskeyResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(401)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type DeletePasskey403ApplicationProblemPlusJSONResponse struct {
+	ForbiddenApplicationProblemPlusJSONResponse
+}
+
+func (response DeletePasskey403ApplicationProblemPlusJSONResponse) VisitDeletePasskeyResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(403)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type DeletePasskey404ApplicationProblemPlusJSONResponse struct {
+	NotFoundApplicationProblemPlusJSONResponse
+}
+
+func (response DeletePasskey404ApplicationProblemPlusJSONResponse) VisitDeletePasskeyResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(404)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type DeletePasskey429ApplicationProblemPlusJSONResponse struct {
+	RateLimitedApplicationProblemPlusJSONResponse
+}
+
+func (response DeletePasskey429ApplicationProblemPlusJSONResponse) VisitDeletePasskeyResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response.Body); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	if response.Headers.RetryAfter != nil {
+		w.Header().Set("Retry-After", fmt.Sprint(*response.Headers.RetryAfter))
+	}
+	w.WriteHeader(429)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type DeletePasskey500ApplicationProblemPlusJSONResponse struct {
+	ServerErrorApplicationProblemPlusJSONResponse
+}
+
+func (response DeletePasskey500ApplicationProblemPlusJSONResponse) VisitDeletePasskeyResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(500)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
 type RecordConsentRequestObject struct {
 	Params RecordConsentParams
 	Body   *RecordConsentJSONRequestBody
@@ -5694,6 +6340,78 @@ type RecordConsent500ApplicationProblemPlusJSONResponse struct {
 }
 
 func (response RecordConsent500ApplicationProblemPlusJSONResponse) VisitRecordConsentResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(500)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type DeviceLoginRequestObject struct {
+}
+
+type DeviceLoginResponseObject interface {
+	VisitDeviceLoginResponse(w http.ResponseWriter) error
+}
+
+type DeviceLogin200JSONResponse AuthSession
+
+func (response DeviceLogin200JSONResponse) VisitDeviceLoginResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(200)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type DeviceLogin401ApplicationProblemPlusJSONResponse struct {
+	UnauthorizedApplicationProblemPlusJSONResponse
+}
+
+func (response DeviceLogin401ApplicationProblemPlusJSONResponse) VisitDeviceLoginResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(401)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type DeviceLogin429ApplicationProblemPlusJSONResponse struct {
+	RateLimitedApplicationProblemPlusJSONResponse
+}
+
+func (response DeviceLogin429ApplicationProblemPlusJSONResponse) VisitDeviceLoginResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response.Body); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	if response.Headers.RetryAfter != nil {
+		w.Header().Set("Retry-After", fmt.Sprint(*response.Headers.RetryAfter))
+	}
+	w.WriteHeader(429)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type DeviceLogin500ApplicationProblemPlusJSONResponse struct {
+	ServerErrorApplicationProblemPlusJSONResponse
+}
+
+func (response DeviceLogin500ApplicationProblemPlusJSONResponse) VisitDeviceLoginResponse(w http.ResponseWriter) error {
 
 	var buf bytes.Buffer
 	if err := json.NewEncoder(&buf).Encode(response); err != nil {
@@ -5825,6 +6543,456 @@ func (response LogoutParent500ApplicationProblemPlusJSONResponse) VisitLogoutPar
 	}
 	w.Header().Set("Content-Type", "application/problem+json")
 	w.WriteHeader(500)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type BeginPasskeyLoginRequestObject struct {
+}
+
+type BeginPasskeyLoginResponseObject interface {
+	VisitBeginPasskeyLoginResponse(w http.ResponseWriter) error
+}
+
+type BeginPasskeyLogin200JSONResponse PasskeyCeremony
+
+func (response BeginPasskeyLogin200JSONResponse) VisitBeginPasskeyLoginResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(200)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type BeginPasskeyLogin429ApplicationProblemPlusJSONResponse struct {
+	RateLimitedApplicationProblemPlusJSONResponse
+}
+
+func (response BeginPasskeyLogin429ApplicationProblemPlusJSONResponse) VisitBeginPasskeyLoginResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response.Body); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	if response.Headers.RetryAfter != nil {
+		w.Header().Set("Retry-After", fmt.Sprint(*response.Headers.RetryAfter))
+	}
+	w.WriteHeader(429)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type BeginPasskeyLogin500ApplicationProblemPlusJSONResponse struct {
+	ServerErrorApplicationProblemPlusJSONResponse
+}
+
+func (response BeginPasskeyLogin500ApplicationProblemPlusJSONResponse) VisitBeginPasskeyLoginResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(500)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type BeginPasskeyLogin503ApplicationProblemPlusJSONResponse struct {
+	UnavailableApplicationProblemPlusJSONResponse
+}
+
+func (response BeginPasskeyLogin503ApplicationProblemPlusJSONResponse) VisitBeginPasskeyLoginResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(503)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type FinishPasskeyLoginRequestObject struct {
+	Body *FinishPasskeyLoginJSONRequestBody
+}
+
+type FinishPasskeyLoginResponseObject interface {
+	VisitFinishPasskeyLoginResponse(w http.ResponseWriter) error
+}
+
+type FinishPasskeyLogin200JSONResponse AuthSession
+
+func (response FinishPasskeyLogin200JSONResponse) VisitFinishPasskeyLoginResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(200)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type FinishPasskeyLogin401ApplicationProblemPlusJSONResponse struct {
+	UnauthorizedApplicationProblemPlusJSONResponse
+}
+
+func (response FinishPasskeyLogin401ApplicationProblemPlusJSONResponse) VisitFinishPasskeyLoginResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(401)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type FinishPasskeyLogin410ApplicationProblemPlusJSONResponse struct {
+	GoneApplicationProblemPlusJSONResponse
+}
+
+func (response FinishPasskeyLogin410ApplicationProblemPlusJSONResponse) VisitFinishPasskeyLoginResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(410)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type FinishPasskeyLogin422ApplicationProblemPlusJSONResponse struct {
+	ValidationErrorApplicationProblemPlusJSONResponse
+}
+
+func (response FinishPasskeyLogin422ApplicationProblemPlusJSONResponse) VisitFinishPasskeyLoginResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(422)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type FinishPasskeyLogin429ApplicationProblemPlusJSONResponse struct {
+	RateLimitedApplicationProblemPlusJSONResponse
+}
+
+func (response FinishPasskeyLogin429ApplicationProblemPlusJSONResponse) VisitFinishPasskeyLoginResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response.Body); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	if response.Headers.RetryAfter != nil {
+		w.Header().Set("Retry-After", fmt.Sprint(*response.Headers.RetryAfter))
+	}
+	w.WriteHeader(429)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type FinishPasskeyLogin500ApplicationProblemPlusJSONResponse struct {
+	ServerErrorApplicationProblemPlusJSONResponse
+}
+
+func (response FinishPasskeyLogin500ApplicationProblemPlusJSONResponse) VisitFinishPasskeyLoginResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(500)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type FinishPasskeyLogin503ApplicationProblemPlusJSONResponse struct {
+	UnavailableApplicationProblemPlusJSONResponse
+}
+
+func (response FinishPasskeyLogin503ApplicationProblemPlusJSONResponse) VisitFinishPasskeyLoginResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(503)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type BeginPasskeyRegistrationRequestObject struct {
+}
+
+type BeginPasskeyRegistrationResponseObject interface {
+	VisitBeginPasskeyRegistrationResponse(w http.ResponseWriter) error
+}
+
+type BeginPasskeyRegistration200JSONResponse PasskeyCeremony
+
+func (response BeginPasskeyRegistration200JSONResponse) VisitBeginPasskeyRegistrationResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(200)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type BeginPasskeyRegistration401ApplicationProblemPlusJSONResponse struct {
+	UnauthorizedApplicationProblemPlusJSONResponse
+}
+
+func (response BeginPasskeyRegistration401ApplicationProblemPlusJSONResponse) VisitBeginPasskeyRegistrationResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(401)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type BeginPasskeyRegistration403ApplicationProblemPlusJSONResponse struct {
+	ForbiddenApplicationProblemPlusJSONResponse
+}
+
+func (response BeginPasskeyRegistration403ApplicationProblemPlusJSONResponse) VisitBeginPasskeyRegistrationResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(403)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type BeginPasskeyRegistration429ApplicationProblemPlusJSONResponse struct {
+	RateLimitedApplicationProblemPlusJSONResponse
+}
+
+func (response BeginPasskeyRegistration429ApplicationProblemPlusJSONResponse) VisitBeginPasskeyRegistrationResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response.Body); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	if response.Headers.RetryAfter != nil {
+		w.Header().Set("Retry-After", fmt.Sprint(*response.Headers.RetryAfter))
+	}
+	w.WriteHeader(429)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type BeginPasskeyRegistration500ApplicationProblemPlusJSONResponse struct {
+	ServerErrorApplicationProblemPlusJSONResponse
+}
+
+func (response BeginPasskeyRegistration500ApplicationProblemPlusJSONResponse) VisitBeginPasskeyRegistrationResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(500)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type BeginPasskeyRegistration503ApplicationProblemPlusJSONResponse struct {
+	UnavailableApplicationProblemPlusJSONResponse
+}
+
+func (response BeginPasskeyRegistration503ApplicationProblemPlusJSONResponse) VisitBeginPasskeyRegistrationResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(503)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type FinishPasskeyRegistrationRequestObject struct {
+	Body *FinishPasskeyRegistrationJSONRequestBody
+}
+
+type FinishPasskeyRegistrationResponseObject interface {
+	VisitFinishPasskeyRegistrationResponse(w http.ResponseWriter) error
+}
+
+type FinishPasskeyRegistration201JSONResponse Passkey
+
+func (response FinishPasskeyRegistration201JSONResponse) VisitFinishPasskeyRegistrationResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(201)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type FinishPasskeyRegistration401ApplicationProblemPlusJSONResponse struct {
+	UnauthorizedApplicationProblemPlusJSONResponse
+}
+
+func (response FinishPasskeyRegistration401ApplicationProblemPlusJSONResponse) VisitFinishPasskeyRegistrationResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(401)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type FinishPasskeyRegistration403ApplicationProblemPlusJSONResponse struct {
+	ForbiddenApplicationProblemPlusJSONResponse
+}
+
+func (response FinishPasskeyRegistration403ApplicationProblemPlusJSONResponse) VisitFinishPasskeyRegistrationResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(403)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type FinishPasskeyRegistration409ApplicationProblemPlusJSONResponse struct {
+	ConflictApplicationProblemPlusJSONResponse
+}
+
+func (response FinishPasskeyRegistration409ApplicationProblemPlusJSONResponse) VisitFinishPasskeyRegistrationResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(409)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type FinishPasskeyRegistration410ApplicationProblemPlusJSONResponse struct {
+	GoneApplicationProblemPlusJSONResponse
+}
+
+func (response FinishPasskeyRegistration410ApplicationProblemPlusJSONResponse) VisitFinishPasskeyRegistrationResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(410)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type FinishPasskeyRegistration422ApplicationProblemPlusJSONResponse struct {
+	ValidationErrorApplicationProblemPlusJSONResponse
+}
+
+func (response FinishPasskeyRegistration422ApplicationProblemPlusJSONResponse) VisitFinishPasskeyRegistrationResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(422)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type FinishPasskeyRegistration429ApplicationProblemPlusJSONResponse struct {
+	RateLimitedApplicationProblemPlusJSONResponse
+}
+
+func (response FinishPasskeyRegistration429ApplicationProblemPlusJSONResponse) VisitFinishPasskeyRegistrationResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response.Body); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	if response.Headers.RetryAfter != nil {
+		w.Header().Set("Retry-After", fmt.Sprint(*response.Headers.RetryAfter))
+	}
+	w.WriteHeader(429)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type FinishPasskeyRegistration500ApplicationProblemPlusJSONResponse struct {
+	ServerErrorApplicationProblemPlusJSONResponse
+}
+
+func (response FinishPasskeyRegistration500ApplicationProblemPlusJSONResponse) VisitFinishPasskeyRegistrationResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(500)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type FinishPasskeyRegistration503ApplicationProblemPlusJSONResponse struct {
+	UnavailableApplicationProblemPlusJSONResponse
+}
+
+func (response FinishPasskeyRegistration503ApplicationProblemPlusJSONResponse) VisitFinishPasskeyRegistrationResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(503)
 	_, err := buf.WriteTo(w)
 	return err
 }
@@ -10669,15 +11837,42 @@ type StrictServerInterface interface {
 	// UpdateAccount Change name or language
 	// (PATCH /account)
 	UpdateAccount(ctx context.Context, request UpdateAccountRequestObject) (UpdateAccountResponseObject, error)
+	// ListDevices Known devices of the parent
+	// (GET /account/devices)
+	ListDevices(ctx context.Context, request ListDevicesRequestObject) (ListDevicesResponseObject, error)
+	// RevokeDevice Forget a device (its cookie stops working)
+	// (DELETE /account/devices/{deviceId})
+	RevokeDevice(ctx context.Context, request RevokeDeviceRequestObject) (RevokeDeviceResponseObject, error)
+	// ListPasskeys Passkeys of the parent
+	// (GET /account/passkeys)
+	ListPasskeys(ctx context.Context, request ListPasskeysRequestObject) (ListPasskeysResponseObject, error)
+	// DeletePasskey Remove a passkey
+	// (DELETE /account/passkeys/{passkeyId})
+	DeletePasskey(ctx context.Context, request DeletePasskeyRequestObject) (DeletePasskeyResponseObject, error)
 	// RecordConsent Record the parent's consent to process a child's data
 	// (POST /auth/consent)
 	RecordConsent(ctx context.Context, request RecordConsentRequestObject) (RecordConsentResponseObject, error)
+	// DeviceLogin Open the app on a known device without signing in
+	// (POST /auth/device)
+	DeviceLogin(ctx context.Context, request DeviceLoginRequestObject) (DeviceLoginResponseObject, error)
 	// LoginParent Log a parent in
 	// (POST /auth/login)
 	LoginParent(ctx context.Context, request LoginParentRequestObject) (LoginParentResponseObject, error)
 	// LogoutParent Revoke the parent's refresh token family
 	// (POST /auth/logout)
 	LogoutParent(ctx context.Context, request LogoutParentRequestObject) (LogoutParentResponseObject, error)
+	// BeginPasskeyLogin Start a passkey sign in (discoverable credential, no username)
+	// (POST /auth/passkeys/login/begin)
+	BeginPasskeyLogin(ctx context.Context, request BeginPasskeyLoginRequestObject) (BeginPasskeyLoginResponseObject, error)
+	// FinishPasskeyLogin Finish a passkey sign in
+	// (POST /auth/passkeys/login/finish)
+	FinishPasskeyLogin(ctx context.Context, request FinishPasskeyLoginRequestObject) (FinishPasskeyLoginResponseObject, error)
+	// BeginPasskeyRegistration Start adding a passkey (WebAuthn creation options)
+	// (POST /auth/passkeys/register/begin)
+	BeginPasskeyRegistration(ctx context.Context, request BeginPasskeyRegistrationRequestObject) (BeginPasskeyRegistrationResponseObject, error)
+	// FinishPasskeyRegistration Finish adding a passkey
+	// (POST /auth/passkeys/register/finish)
+	FinishPasskeyRegistration(ctx context.Context, request FinishPasskeyRegistrationRequestObject) (FinishPasskeyRegistrationResponseObject, error)
 	// RefreshToken Exchange a refresh token for a new access token
 	// (POST /auth/refresh)
 	RefreshToken(ctx context.Context, request RefreshTokenRequestObject) (RefreshTokenResponseObject, error)
@@ -10961,6 +12156,106 @@ func (sh *strictHandler) UpdateAccount(w http.ResponseWriter, r *http.Request, p
 	}
 }
 
+// ListDevices operation middleware
+func (sh *strictHandler) ListDevices(w http.ResponseWriter, r *http.Request) {
+	var request ListDevicesRequestObject
+
+	handler := func(ctx context.Context, w http.ResponseWriter, r *http.Request, request interface{}) (interface{}, error) {
+		return sh.ssi.ListDevices(ctx, request.(ListDevicesRequestObject))
+	}
+	for _, middleware := range sh.middlewares {
+		handler = middleware(handler, "ListDevices")
+	}
+
+	response, err := handler(r.Context(), w, r, request)
+
+	if err != nil {
+		sh.options.ResponseErrorHandlerFunc(w, r, err)
+	} else if validResponse, ok := response.(ListDevicesResponseObject); ok {
+		if err := validResponse.VisitListDevicesResponse(w); err != nil {
+			sh.options.ResponseErrorHandlerFunc(w, r, err)
+		}
+	} else if response != nil {
+		sh.options.ResponseErrorHandlerFunc(w, r, fmt.Errorf("unexpected response type: %T", response))
+	}
+}
+
+// RevokeDevice operation middleware
+func (sh *strictHandler) RevokeDevice(w http.ResponseWriter, r *http.Request, deviceId openapi_types.UUID) {
+	var request RevokeDeviceRequestObject
+
+	request.DeviceId = deviceId
+
+	handler := func(ctx context.Context, w http.ResponseWriter, r *http.Request, request interface{}) (interface{}, error) {
+		return sh.ssi.RevokeDevice(ctx, request.(RevokeDeviceRequestObject))
+	}
+	for _, middleware := range sh.middlewares {
+		handler = middleware(handler, "RevokeDevice")
+	}
+
+	response, err := handler(r.Context(), w, r, request)
+
+	if err != nil {
+		sh.options.ResponseErrorHandlerFunc(w, r, err)
+	} else if validResponse, ok := response.(RevokeDeviceResponseObject); ok {
+		if err := validResponse.VisitRevokeDeviceResponse(w); err != nil {
+			sh.options.ResponseErrorHandlerFunc(w, r, err)
+		}
+	} else if response != nil {
+		sh.options.ResponseErrorHandlerFunc(w, r, fmt.Errorf("unexpected response type: %T", response))
+	}
+}
+
+// ListPasskeys operation middleware
+func (sh *strictHandler) ListPasskeys(w http.ResponseWriter, r *http.Request) {
+	var request ListPasskeysRequestObject
+
+	handler := func(ctx context.Context, w http.ResponseWriter, r *http.Request, request interface{}) (interface{}, error) {
+		return sh.ssi.ListPasskeys(ctx, request.(ListPasskeysRequestObject))
+	}
+	for _, middleware := range sh.middlewares {
+		handler = middleware(handler, "ListPasskeys")
+	}
+
+	response, err := handler(r.Context(), w, r, request)
+
+	if err != nil {
+		sh.options.ResponseErrorHandlerFunc(w, r, err)
+	} else if validResponse, ok := response.(ListPasskeysResponseObject); ok {
+		if err := validResponse.VisitListPasskeysResponse(w); err != nil {
+			sh.options.ResponseErrorHandlerFunc(w, r, err)
+		}
+	} else if response != nil {
+		sh.options.ResponseErrorHandlerFunc(w, r, fmt.Errorf("unexpected response type: %T", response))
+	}
+}
+
+// DeletePasskey operation middleware
+func (sh *strictHandler) DeletePasskey(w http.ResponseWriter, r *http.Request, passkeyId openapi_types.UUID) {
+	var request DeletePasskeyRequestObject
+
+	request.PasskeyId = passkeyId
+
+	handler := func(ctx context.Context, w http.ResponseWriter, r *http.Request, request interface{}) (interface{}, error) {
+		return sh.ssi.DeletePasskey(ctx, request.(DeletePasskeyRequestObject))
+	}
+	for _, middleware := range sh.middlewares {
+		handler = middleware(handler, "DeletePasskey")
+	}
+
+	response, err := handler(r.Context(), w, r, request)
+
+	if err != nil {
+		sh.options.ResponseErrorHandlerFunc(w, r, err)
+	} else if validResponse, ok := response.(DeletePasskeyResponseObject); ok {
+		if err := validResponse.VisitDeletePasskeyResponse(w); err != nil {
+			sh.options.ResponseErrorHandlerFunc(w, r, err)
+		}
+	} else if response != nil {
+		sh.options.ResponseErrorHandlerFunc(w, r, fmt.Errorf("unexpected response type: %T", response))
+	}
+}
+
 // RecordConsent operation middleware
 func (sh *strictHandler) RecordConsent(w http.ResponseWriter, r *http.Request, params RecordConsentParams) {
 	var request RecordConsentRequestObject
@@ -10987,6 +12282,30 @@ func (sh *strictHandler) RecordConsent(w http.ResponseWriter, r *http.Request, p
 		sh.options.ResponseErrorHandlerFunc(w, r, err)
 	} else if validResponse, ok := response.(RecordConsentResponseObject); ok {
 		if err := validResponse.VisitRecordConsentResponse(w); err != nil {
+			sh.options.ResponseErrorHandlerFunc(w, r, err)
+		}
+	} else if response != nil {
+		sh.options.ResponseErrorHandlerFunc(w, r, fmt.Errorf("unexpected response type: %T", response))
+	}
+}
+
+// DeviceLogin operation middleware
+func (sh *strictHandler) DeviceLogin(w http.ResponseWriter, r *http.Request) {
+	var request DeviceLoginRequestObject
+
+	handler := func(ctx context.Context, w http.ResponseWriter, r *http.Request, request interface{}) (interface{}, error) {
+		return sh.ssi.DeviceLogin(ctx, request.(DeviceLoginRequestObject))
+	}
+	for _, middleware := range sh.middlewares {
+		handler = middleware(handler, "DeviceLogin")
+	}
+
+	response, err := handler(r.Context(), w, r, request)
+
+	if err != nil {
+		sh.options.ResponseErrorHandlerFunc(w, r, err)
+	} else if validResponse, ok := response.(DeviceLoginResponseObject); ok {
+		if err := validResponse.VisitDeviceLoginResponse(w); err != nil {
 			sh.options.ResponseErrorHandlerFunc(w, r, err)
 		}
 	} else if response != nil {
@@ -11052,6 +12371,116 @@ func (sh *strictHandler) LogoutParent(w http.ResponseWriter, r *http.Request) {
 		sh.options.ResponseErrorHandlerFunc(w, r, err)
 	} else if validResponse, ok := response.(LogoutParentResponseObject); ok {
 		if err := validResponse.VisitLogoutParentResponse(w); err != nil {
+			sh.options.ResponseErrorHandlerFunc(w, r, err)
+		}
+	} else if response != nil {
+		sh.options.ResponseErrorHandlerFunc(w, r, fmt.Errorf("unexpected response type: %T", response))
+	}
+}
+
+// BeginPasskeyLogin operation middleware
+func (sh *strictHandler) BeginPasskeyLogin(w http.ResponseWriter, r *http.Request) {
+	var request BeginPasskeyLoginRequestObject
+
+	handler := func(ctx context.Context, w http.ResponseWriter, r *http.Request, request interface{}) (interface{}, error) {
+		return sh.ssi.BeginPasskeyLogin(ctx, request.(BeginPasskeyLoginRequestObject))
+	}
+	for _, middleware := range sh.middlewares {
+		handler = middleware(handler, "BeginPasskeyLogin")
+	}
+
+	response, err := handler(r.Context(), w, r, request)
+
+	if err != nil {
+		sh.options.ResponseErrorHandlerFunc(w, r, err)
+	} else if validResponse, ok := response.(BeginPasskeyLoginResponseObject); ok {
+		if err := validResponse.VisitBeginPasskeyLoginResponse(w); err != nil {
+			sh.options.ResponseErrorHandlerFunc(w, r, err)
+		}
+	} else if response != nil {
+		sh.options.ResponseErrorHandlerFunc(w, r, fmt.Errorf("unexpected response type: %T", response))
+	}
+}
+
+// FinishPasskeyLogin operation middleware
+func (sh *strictHandler) FinishPasskeyLogin(w http.ResponseWriter, r *http.Request) {
+	var request FinishPasskeyLoginRequestObject
+
+	var body FinishPasskeyLoginJSONRequestBody
+	if err := json.NewDecoder(r.Body).Decode(&body); err != nil {
+		sh.options.RequestErrorHandlerFunc(w, r, fmt.Errorf("can't decode JSON body: %w", err))
+		return
+	}
+	request.Body = &body
+
+	handler := func(ctx context.Context, w http.ResponseWriter, r *http.Request, request interface{}) (interface{}, error) {
+		return sh.ssi.FinishPasskeyLogin(ctx, request.(FinishPasskeyLoginRequestObject))
+	}
+	for _, middleware := range sh.middlewares {
+		handler = middleware(handler, "FinishPasskeyLogin")
+	}
+
+	response, err := handler(r.Context(), w, r, request)
+
+	if err != nil {
+		sh.options.ResponseErrorHandlerFunc(w, r, err)
+	} else if validResponse, ok := response.(FinishPasskeyLoginResponseObject); ok {
+		if err := validResponse.VisitFinishPasskeyLoginResponse(w); err != nil {
+			sh.options.ResponseErrorHandlerFunc(w, r, err)
+		}
+	} else if response != nil {
+		sh.options.ResponseErrorHandlerFunc(w, r, fmt.Errorf("unexpected response type: %T", response))
+	}
+}
+
+// BeginPasskeyRegistration operation middleware
+func (sh *strictHandler) BeginPasskeyRegistration(w http.ResponseWriter, r *http.Request) {
+	var request BeginPasskeyRegistrationRequestObject
+
+	handler := func(ctx context.Context, w http.ResponseWriter, r *http.Request, request interface{}) (interface{}, error) {
+		return sh.ssi.BeginPasskeyRegistration(ctx, request.(BeginPasskeyRegistrationRequestObject))
+	}
+	for _, middleware := range sh.middlewares {
+		handler = middleware(handler, "BeginPasskeyRegistration")
+	}
+
+	response, err := handler(r.Context(), w, r, request)
+
+	if err != nil {
+		sh.options.ResponseErrorHandlerFunc(w, r, err)
+	} else if validResponse, ok := response.(BeginPasskeyRegistrationResponseObject); ok {
+		if err := validResponse.VisitBeginPasskeyRegistrationResponse(w); err != nil {
+			sh.options.ResponseErrorHandlerFunc(w, r, err)
+		}
+	} else if response != nil {
+		sh.options.ResponseErrorHandlerFunc(w, r, fmt.Errorf("unexpected response type: %T", response))
+	}
+}
+
+// FinishPasskeyRegistration operation middleware
+func (sh *strictHandler) FinishPasskeyRegistration(w http.ResponseWriter, r *http.Request) {
+	var request FinishPasskeyRegistrationRequestObject
+
+	var body FinishPasskeyRegistrationJSONRequestBody
+	if err := json.NewDecoder(r.Body).Decode(&body); err != nil {
+		sh.options.RequestErrorHandlerFunc(w, r, fmt.Errorf("can't decode JSON body: %w", err))
+		return
+	}
+	request.Body = &body
+
+	handler := func(ctx context.Context, w http.ResponseWriter, r *http.Request, request interface{}) (interface{}, error) {
+		return sh.ssi.FinishPasskeyRegistration(ctx, request.(FinishPasskeyRegistrationRequestObject))
+	}
+	for _, middleware := range sh.middlewares {
+		handler = middleware(handler, "FinishPasskeyRegistration")
+	}
+
+	response, err := handler(r.Context(), w, r, request)
+
+	if err != nil {
+		sh.options.ResponseErrorHandlerFunc(w, r, err)
+	} else if validResponse, ok := response.(FinishPasskeyRegistrationResponseObject); ok {
+		if err := validResponse.VisitFinishPasskeyRegistrationResponse(w); err != nil {
 			sh.options.ResponseErrorHandlerFunc(w, r, err)
 		}
 	} else if response != nil {

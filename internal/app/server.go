@@ -10,6 +10,8 @@ import (
 	"log/slog"
 	"time"
 
+	"github.com/go-webauthn/webauthn/webauthn"
+
 	"github.com/Perrin-Nj/numerix-api/api"
 	"github.com/Perrin-Nj/numerix-api/internal/auth"
 	"github.com/Perrin-Nj/numerix-api/internal/config"
@@ -33,6 +35,8 @@ type Server struct {
 	PINLimit *auth.AttemptLimiter
 	// LoginLimit: 5 failures per email per 15 minutes (contract section 16).
 	LoginLimit *auth.AttemptLimiter
+	// WebAuthn runs passkey ceremonies (nil = passkeys off, endpoints answer 503). See passkeys.go.
+	WebAuthn *webauthn.WebAuthn
 	// Payments is the payment processor (nil = dev provider outside production, none in production). See platform_billing.go.
 	Payments PaymentProvider
 }
@@ -47,6 +51,7 @@ func NewServer(s *store.Store, cfg config.Config, log *slog.Logger) *Server {
 		Refresh:    auth.NewRefreshTokens(s, cfg.RefreshTTL),
 		PINLimit:   auth.NewAttemptLimiter(5, 15*time.Minute),
 		LoginLimit: auth.NewAttemptLimiter(5, 15*time.Minute),
+		WebAuthn:   newWebAuthn(cfg),
 	}
 }
 

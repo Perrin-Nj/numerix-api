@@ -28,6 +28,16 @@ func (Unimplemented) AnswerFeedPuzzle(ctx context.Context, request api.AnswerFee
 	return nil, httpapi.ErrNotImplemented
 }
 
+// BeginPasskeyLogin is not built yet: answers 501.
+func (Unimplemented) BeginPasskeyLogin(ctx context.Context, request api.BeginPasskeyLoginRequestObject) (api.BeginPasskeyLoginResponseObject, error) {
+	return nil, httpapi.ErrNotImplemented
+}
+
+// BeginPasskeyRegistration is not built yet: answers 501.
+func (Unimplemented) BeginPasskeyRegistration(ctx context.Context, request api.BeginPasskeyRegistrationRequestObject) (api.BeginPasskeyRegistrationResponseObject, error) {
+	return nil, httpapi.ErrNotImplemented
+}
+
 // CancelSubscription is not built yet: answers 501.
 func (Unimplemented) CancelSubscription(ctx context.Context, request api.CancelSubscriptionRequestObject) (api.CancelSubscriptionResponseObject, error) {
 	return nil, httpapi.ErrNotImplemented
@@ -63,8 +73,28 @@ func (Unimplemented) DeleteChild(ctx context.Context, request api.DeleteChildReq
 	return nil, httpapi.ErrNotImplemented
 }
 
+// DeletePasskey is not built yet: answers 501.
+func (Unimplemented) DeletePasskey(ctx context.Context, request api.DeletePasskeyRequestObject) (api.DeletePasskeyResponseObject, error) {
+	return nil, httpapi.ErrNotImplemented
+}
+
+// DeviceLogin is not built yet: answers 501.
+func (Unimplemented) DeviceLogin(ctx context.Context, request api.DeviceLoginRequestObject) (api.DeviceLoginResponseObject, error) {
+	return nil, httpapi.ErrNotImplemented
+}
+
 // ExportChildData is not built yet: answers 501.
 func (Unimplemented) ExportChildData(ctx context.Context, request api.ExportChildDataRequestObject) (api.ExportChildDataResponseObject, error) {
+	return nil, httpapi.ErrNotImplemented
+}
+
+// FinishPasskeyLogin is not built yet: answers 501.
+func (Unimplemented) FinishPasskeyLogin(ctx context.Context, request api.FinishPasskeyLoginRequestObject) (api.FinishPasskeyLoginResponseObject, error) {
+	return nil, httpapi.ErrNotImplemented
+}
+
+// FinishPasskeyRegistration is not built yet: answers 501.
+func (Unimplemented) FinishPasskeyRegistration(ctx context.Context, request api.FinishPasskeyRegistrationRequestObject) (api.FinishPasskeyRegistrationResponseObject, error) {
 	return nil, httpapi.ErrNotImplemented
 }
 
@@ -173,8 +203,18 @@ func (Unimplemented) ListChildren(ctx context.Context, request api.ListChildrenR
 	return nil, httpapi.ErrNotImplemented
 }
 
+// ListDevices is not built yet: answers 501.
+func (Unimplemented) ListDevices(ctx context.Context, request api.ListDevicesRequestObject) (api.ListDevicesResponseObject, error) {
+	return nil, httpapi.ErrNotImplemented
+}
+
 // ListNotifications is not built yet: answers 501.
 func (Unimplemented) ListNotifications(ctx context.Context, request api.ListNotificationsRequestObject) (api.ListNotificationsResponseObject, error) {
+	return nil, httpapi.ErrNotImplemented
+}
+
+// ListPasskeys is not built yet: answers 501.
+func (Unimplemented) ListPasskeys(ctx context.Context, request api.ListPasskeysRequestObject) (api.ListPasskeysResponseObject, error) {
 	return nil, httpapi.ErrNotImplemented
 }
 
@@ -250,6 +290,11 @@ func (Unimplemented) RegisterParent(ctx context.Context, request api.RegisterPar
 
 // ResumeSession is not built yet: answers 501.
 func (Unimplemented) ResumeSession(ctx context.Context, request api.ResumeSessionRequestObject) (api.ResumeSessionResponseObject, error) {
+	return nil, httpapi.ErrNotImplemented
+}
+
+// RevokeDevice is not built yet: answers 501.
+func (Unimplemented) RevokeDevice(ctx context.Context, request api.RevokeDeviceRequestObject) (api.RevokeDeviceResponseObject, error) {
 	return nil, httpapi.ErrNotImplemented
 }
 
