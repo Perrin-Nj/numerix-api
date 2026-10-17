@@ -2,6 +2,8 @@ module github.com/Perrin-Nj/numerix-api
 
 go 1.27.0
 
+toolchain go1.27.2
+
 require (
 	github.com/go-webauthn/webauthn v0.18.2
 	github.com/golang-jwt/jwt/v5 v5.3.1

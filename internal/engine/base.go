@@ -127,7 +127,7 @@ func Equivalent(a, b Value) bool {
 	if okA && okB {
 		return math.Abs(fa-fb) < 1e-9
 	}
-	return strings.ToLower(strings.TrimSpace(fmt.Sprint(a))) == strings.ToLower(strings.TrimSpace(fmt.Sprint(b)))
+	return strings.EqualFold(strings.TrimSpace(fmt.Sprint(a)), strings.TrimSpace(fmt.Sprint(b))) // case-insensitive compare
 }
 
 // sliceEq compares two equally long int slices.
