@@ -4,6 +4,7 @@ import (
 	"context"
 	"database/sql"
 	"errors"
+	"os"
 	"path/filepath"
 	"testing"
 )
@@ -35,8 +36,9 @@ func TestMigrateIdempotentAndTables(t *testing.T) {
 	}
 	var applied int
 	_ = s.R.QueryRowContext(ctx, `SELECT COUNT(1) FROM schema_migrations`).Scan(&applied)
-	if applied != 1 {
-		t.Fatalf("want 1 migration row, got %d", applied)
+	files, _ := os.ReadDir("migrations") // one row per migration file, however many exist
+	if applied != len(files) || applied < 1 {
+		t.Fatalf("want %d migration rows, got %d", len(files), applied)
 	}
 }
 

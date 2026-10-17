@@ -33,6 +33,8 @@ type Server struct {
 	PINLimit *auth.AttemptLimiter
 	// LoginLimit: 5 failures per email per 15 minutes (contract section 16).
 	LoginLimit *auth.AttemptLimiter
+	// Payments is the payment processor (nil = dev provider outside production, none in production). See platform_billing.go.
+	Payments PaymentProvider
 }
 
 // NewServer wires the dependencies (Spring: constructor injection; no container, main() calls this).

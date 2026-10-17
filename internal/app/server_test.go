@@ -90,9 +90,9 @@ func TestAuthRules(t *testing.T) {
 	}{
 		{"no token", "GET", "/v1/account", "", 401, "unauthorized"},
 		{"garbage token", "GET", "/v1/account", "garbage", 401, "unauthorized"},
-		{"parent reaches stub", "GET", "/v1/account", parent, 501, "not_implemented"},
+		{"parent passes the guard", "GET", "/v1/subscription/plans", parent, 200, ""},
 		{"child on parent route", "GET", "/v1/account", child, 403, "forbidden"},
-		{"public stub needs no token", "POST", "/v1/auth/login", "", 501, "not_implemented"},
+		{"public route needs no token", "GET", "/v1/platform/public", "", 200, ""},
 		{"unknown route", "GET", "/nope", "", 404, "not_found"},
 	}
 	for _, tc := range tests {
@@ -100,6 +100,9 @@ func TestAuthRules(t *testing.T) {
 			rec := do(h, tc.method, tc.path, tc.token)
 			if rec.Code != tc.wantStatus {
 				t.Fatalf("status %d, want %d, body %s", rec.Code, tc.wantStatus, rec.Body)
+			}
+			if tc.wantStatus < 400 { // success answers carry no problem body
+				return
 			}
 			if ct := rec.Header().Get("Content-Type"); ct != "application/problem+json" {
 				t.Fatalf("content type %q", ct)
@@ -115,15 +118,15 @@ func TestAuthRules(t *testing.T) {
 
 func TestRateLimited429(t *testing.T) {
 	h, _ := newTestServer(t)
-	// POST /auth/login is limited to 10 per minute per IP (the stub answers 501 until the limit hits).
-	for i := 0; i < 10; i++ {
-		if rec := do(h, "POST", "/v1/auth/login", ""); rec.Code != 501 {
+	// POST /auth/refresh is limited to 30 per minute per IP (an empty token answers 422 until the limit hits).
+	for i := 0; i < 30; i++ {
+		if rec := do(h, "POST", "/v1/auth/refresh", ""); rec.Code != 422 {
 			t.Fatalf("request %d: status %d", i+1, rec.Code)
 		}
 	}
-	rec := do(h, "POST", "/v1/auth/login", "")
+	rec := do(h, "POST", "/v1/auth/refresh", "")
 	if rec.Code != 429 {
-		t.Fatalf("11th request: status %d, want 429", rec.Code)
+		t.Fatalf("31st request: status %d, want 429", rec.Code)
 	}
 	if rec.Header().Get("Retry-After") == "" {
 		t.Fatal("Retry-After header missing")
