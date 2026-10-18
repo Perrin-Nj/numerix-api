@@ -334,11 +334,22 @@ func TestNarratorNeverSeesAnswer(t *testing.T) {
 	f := newFeedFixture(t, true)
 	spy := &spyProvider{}
 	f.s.game().narr = narrator.New(spy, narrationCache{f.s}, nil)
-	sid := f.startChapter(t, "ARI-OPE-A06a")
-	_, beat, _ := f.gcall(t, "POST", "/v1/sessions/"+sid+"/beats", f.childTok, "{}", nil)
-	beatID := beat["id"].(string)
-	p := f.problemOf(t, beatID)
-	ans := fmt.Sprint(p.Reponse)
+	// Numbers already written in the statement are allowed by design (AnswerTokens skips them),
+	// so draw fresh beats until the answer is hidden and can really leak.
+	var sid, beatID, ans string
+	var p engine.Problem
+	for try := 0; try < 30 && ans == ""; try++ {
+		sid = f.startChapter(t, "ARI-OPE-A06a")
+		_, beat, _ := f.gcall(t, "POST", "/v1/sessions/"+sid+"/beats", f.childTok, "{}", nil)
+		beatID = beat["id"].(string)
+		p = f.problemOf(t, beatID)
+		if toks := p.AnswerTokens(); len(toks) > 0 {
+			ans = toks[0]
+		}
+	}
+	if ans == "" {
+		t.Fatal("no beat with a hidden answer in 30 tries")
+	}
 
 	spy.text = "Mira ouvre la porte avec le nombre " + ans + " !" // leaks the answer
 	_, _, sse := f.gcall(t, "GET", "/v1/sessions/"+sid+"/beats/"+beatID+"/narration?phase=scene", f.childTok, "", nil)
