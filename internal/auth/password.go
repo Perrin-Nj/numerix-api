@@ -11,6 +11,7 @@ import (
 	"encoding/base64"
 	"errors"
 	"fmt"
+	"runtime"
 	"strings"
 
 	"golang.org/x/crypto/argon2"
@@ -26,6 +27,18 @@ const (
 	argonSaltLen   = 16
 )
 
+// hashSlots caps concurrent argon2 runs (Spring: a bounded thread pool). Each run uses 19 MiB and a full CPU
+// for tens of milliseconds, so an unbounded burst of logins would starve every other request and balloon memory.
+// Half the CPUs (at least 1) leave room for the game endpoints; extra callers wait their turn.
+var hashSlots = make(chan struct{}, max(1, runtime.NumCPU()/2))
+
+// idKey runs argon2id while holding one slot of hashSlots.
+func idKey(secret, salt []byte, time, memory uint32, threads uint8, keyLen uint32) []byte {
+	hashSlots <- struct{}{}        // take a slot, blocks when all are busy
+	defer func() { <-hashSlots }() // give it back when done
+	return argon2.IDKey(secret, salt, time, memory, threads, keyLen)
+}
+
 // ErrInvalidHash means the stored hash string is not in the expected format.
 var ErrInvalidHash = errors.New("auth: invalid password hash format")
 
@@ -37,7 +50,7 @@ func Hash(secret string) (string, error) {
 	if _, err := rand.Read(salt); err != nil { // crypto/rand = secure random source
 		return "", fmt.Errorf("read salt: %w", err)
 	}
-	key := argon2.IDKey([]byte(secret), salt, argonTime, argonMemoryKiB, argonThreads, argonKeyLen)
+	key := idKey([]byte(secret), salt, argonTime, argonMemoryKiB, argonThreads, argonKeyLen)
 	enc := base64.RawStdEncoding
 	return fmt.Sprintf("$argon2id$v=%d$m=%d,t=%d,p=%d$%s$%s",
 		argon2.Version, argonMemoryKiB, argonTime, argonThreads, enc.EncodeToString(salt), enc.EncodeToString(key)), nil
@@ -68,7 +81,7 @@ func Verify(secret, encoded string) (bool, error) {
 	if err != nil || len(want) == 0 {
 		return false, ErrInvalidHash
 	}
-	got := argon2.IDKey([]byte(secret), salt, iterations, memory, threads, uint32(len(want)))
+	got := idKey([]byte(secret), salt, iterations, memory, threads, uint32(len(want)))
 	return subtle.ConstantTimeCompare(got, want) == 1, nil
 }
 

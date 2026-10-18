@@ -56,7 +56,12 @@ func Open(ctx context.Context, path string) (*Store, error) {
 		_ = w.Close()
 		return nil, fmt.Errorf("open read pool: %w", err)
 	}
-	r.SetMaxOpenConns(max(4, runtime.NumCPU())) // reads scale with CPUs
+	readConns := max(4, runtime.NumCPU())
+	r.SetMaxOpenConns(readConns) // reads scale with CPUs
+	// Keep every read connection open. database/sql keeps only 2 idle by default and closes the rest, so a burst
+	// reopened SQLite files again and again (slow file opens, 1 s stalls under load, see docs/LOAD_TEST.md).
+	r.SetMaxIdleConns(readConns)
+	w.SetMaxIdleConns(1) // the single write connection must never be closed between requests
 	r.SetConnMaxIdleTime(5 * time.Minute)
 
 	s := &Store{W: w, R: r}
