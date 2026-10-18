@@ -136,13 +136,13 @@ func (s *Server) feedLoadEvents(ctx context.Context, childID string) (feedEvents
 	return ev, err
 }
 
-// feedProgress counts the events of one metric that happened strictly after since (capped by the caller).
+// feedProgress counts the events of one metric that happened at or after since (stamps have millisecond precision, so a same-millisecond event counts) (capped by the caller).
 func feedProgress(metric string, ev feedEvents, since time.Time, loc *time.Location) int {
 	switch metric {
 	case "chapters_done":
 		n := 0
 		for _, x := range ev.sessions {
-			if x.Status == "completed" && x.Finished.After(since) {
+			if x.Status == "completed" && !x.Finished.Before(since) {
 				n++
 			}
 		}
@@ -150,7 +150,7 @@ func feedProgress(metric string, ev feedEvents, since time.Time, loc *time.Locat
 	case "days_played":
 		days := map[string]bool{}
 		for _, x := range ev.sessions {
-			if x.Status == "completed" && x.Finished.After(since) {
+			if x.Status == "completed" && !x.Finished.Before(since) {
 				days[feedDay(x.Finished, loc)] = true
 			}
 		}
@@ -158,7 +158,7 @@ func feedProgress(metric string, ev feedEvents, since time.Time, loc *time.Locat
 	case "worlds_played":
 		worlds := map[string]bool{}
 		for _, x := range ev.sessions {
-			if x.World != "" && x.Started.After(since) {
+			if x.World != "" && !x.Started.Before(since) {
 				worlds[x.World] = true
 			}
 		}
@@ -166,7 +166,7 @@ func feedProgress(metric string, ev feedEvents, since time.Time, loc *time.Locat
 	case "correct_streak": // longest run of right answers in a row
 		best, run := 0, 0
 		for _, a := range ev.answers {
-			if !a.at.After(since) {
+			if a.at.Before(since) {
 				continue
 			}
 			if a.outcome == "correct" {
@@ -185,11 +185,11 @@ func feedProgress(metric string, ev feedEvents, since time.Time, loc *time.Locat
 	return 0
 }
 
-// feedCountAfter counts the times strictly after since.
+// feedCountAfter counts the times at or after since.
 func feedCountAfter(ts []time.Time, since time.Time) int {
 	n := 0
 	for _, t := range ts {
-		if t.After(since) {
+		if !t.Before(since) {
 			n++
 		}
 	}
