@@ -196,6 +196,10 @@ func TestOverviewAndHealth(t *testing.T) {
 	if m["parents_total"] != 2.0 || m["kids_total"] != 1.0 || by["trial"] != 1.0 || by["expired"] != 1.0 || len(m["trend_30"].([]any)) != 31 || len(m["activity_by_day_90"].([]any)) != 90 {
 		t.Fatalf("overview: %v", m)
 	}
+	// Regression: with no sessions at all the overview still lists the 8 worlds (contract: minItems 8, maxItems 8).
+	if tw, _ := m["top_worlds"].([]any); len(tw) != 8 { // a type assertion that fails gives a nil slice, so len is 0
+		t.Fatalf("top_worlds has %d rows, want 8: %v", len(tw), m["top_worlds"])
+	}
 	if c, m, _ := call(h, "GET", "/admin/v1/health", "", tok); c != 200 || m["db"] != "ok" {
 		t.Fatalf("health: %d %v", c, m)
 	}

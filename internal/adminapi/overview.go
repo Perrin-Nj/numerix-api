@@ -239,7 +239,20 @@ func (a *API) overview(w http.ResponseWriter, r *http.Request) {
 	trend[30] = trendRow{dstr(today), len(parents), len(kidCreated), paid, mrr, arpu, churn, retPct}
 
 	activeToday := byDay[dstr(today)].kids
+	// The contract promises exactly 8 rows: add every world nobody played yet with 0 sessions.
+	seen := map[string]bool{}  // worlds already counted (Spring: a Set<String>)
+	for _, x := range worlds { // range walks the slice; the first value is the index, "_" would drop it
+		seen[x.World] = true // remember this world id
+	}
+	for _, id := range worldIDs { // worldIDs is the list of 8 worlds in children.go
+		if !seen[id] { // nobody played it in the last 30 days
+			worlds = append(worlds, worldRow{World: id, N: 0}) // add it with zero sessions
+		}
+	}
 	sort.Slice(worlds, func(i, j int) bool { return worlds[i].N > worlds[j].N })
+	if len(worlds) > 8 { // a stray world id in old data must not break the 8-row contract
+		worlds = worlds[:8] // keep the 8 busiest (the slice is already sorted)
+	}
 	mixRows, subMix := []planRow{}, []map[string]any{}
 	for _, p := range plans.Plans {
 		mixRows = append(mixRows, *mix[p.ID])
