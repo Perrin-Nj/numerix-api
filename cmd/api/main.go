@@ -10,6 +10,7 @@ import (
 	"errors"
 	"log/slog" // structured logging in the standard library (Spring: SLF4J + Logback)
 	"net/http"
+	"net/http/pprof" // profiling handlers; mounted only when PPROF=true (config refuses it in production)
 	"os"
 	"os/signal" // lets us catch Ctrl+C / SIGTERM for a clean shutdown
 	"syscall"
@@ -58,6 +59,13 @@ func run() error {
 	root.Handle("/admin/v1/", adminapi.New(adminapi.Deps{
 		Store: db, Log: log, Token: cfg.AdminAPIToken, Production: cfg.IsProduction(), Origins: os.Getenv("ADMIN_ORIGIN"),
 	}))
+	if cfg.PprofEnabled { // dev-only profiler: go tool pprof http://localhost:PORT/debug/pprof/profile
+		root.HandleFunc("/debug/pprof/", pprof.Index)
+		root.HandleFunc("/debug/pprof/profile", pprof.Profile)
+		root.HandleFunc("/debug/pprof/trace", pprof.Trace)
+		root.HandleFunc("/debug/pprof/symbol", pprof.Symbol)
+		root.HandleFunc("/debug/pprof/cmdline", pprof.Cmdline)
+	}
 	root.Handle("/", httpapi.NewHandler(httpapi.Deps{
 		Impl: server, Config: cfg, Log: log, Issuer: server.Issuer,
 	}))

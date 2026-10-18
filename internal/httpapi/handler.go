@@ -63,7 +63,7 @@ func NewHandler(d Deps) http.Handler {
 		SecurityHeaders(cfg.IsProduction()),
 		CORS(cfg.AllowedOrigins),
 		ConcurrencyLimit(cfg.MaxConcurrent),
-		IPLimit(lim, 600, cfg.TrustProxy),
+		IPLimit(lim, cfg.RateLimitIPPerMin, cfg.TrustProxy),
 		Deadline(cfg.RequestTimeout),
 		Middleware(auth.Middleware(d.Issuer)),
 	)

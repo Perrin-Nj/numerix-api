@@ -37,6 +37,8 @@ type Config struct {
 	RefreshTTL         time.Duration // parent refresh token lifetime (contract: 30 days)
 	RequestTimeout     time.Duration // deadline attached to every request context
 	MaxConcurrent      int           // max requests in flight before answering 429
+	RateLimitIPPerMin  int           // RATE_LIMIT_IP_PER_MIN: per-IP ceiling for all requests (default 600; raise only for load tests)
+	PprofEnabled       bool          // PPROF=true: expose /debug/pprof (refused in production)
 	LLMProvider        string        // placeholder: "stub" until the narrator exists
 	LLMAPIKey          string        // placeholder: secret for the LLM provider
 	LLMModel           string        // placeholder: model name
@@ -86,6 +88,8 @@ func Load(getenv func(string) string) (Config, error) {
 		RefreshTTL:         seconds("REFRESH_TTL_SECONDS", 30*24*3600),
 		RequestTimeout:     seconds("REQUEST_TIMEOUT_SECONDS", 10),
 		MaxConcurrent:      atoi("MAX_CONCURRENT_REQUESTS", 256),
+		RateLimitIPPerMin:  atoi("RATE_LIMIT_IP_PER_MIN", 600), // contract section 16: 600 per minute per IP
+		PprofEnabled:       get("PPROF", "false") == "true",
 		LLMProvider:        get("LLM_PROVIDER", "stub"),
 		LLMAPIKey:          get("LLM_API_KEY", ""),
 		LLMModel:           get("LLM_MODEL", ""),
@@ -137,6 +141,12 @@ func Load(getenv func(string) string) (Config, error) {
 	}
 	if cfg.MaxConcurrent < 1 {
 		errs = append(errs, errors.New("MAX_CONCURRENT_REQUESTS must be at least 1"))
+	}
+	if cfg.RateLimitIPPerMin < 1 {
+		errs = append(errs, errors.New("RATE_LIMIT_IP_PER_MIN must be at least 1"))
+	}
+	if cfg.PprofEnabled && cfg.IsProduction() {
+		errs = append(errs, errors.New("PPROF must not be enabled in production"))
 	}
 	if cfg.AdminAPIToken != "" && len(cfg.AdminAPIToken) < 16 {
 		errs = append(errs, errors.New("ADMIN_API_TOKEN must be at least 16 characters when set"))

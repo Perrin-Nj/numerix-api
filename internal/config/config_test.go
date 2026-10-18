@@ -23,6 +23,8 @@ func TestLoad(t *testing.T) {
 		{"bad env", map[string]string{"APP_ENV": "staging"}, "APP_ENV"},
 		{"bad port", map[string]string{"PORT": "abc"}, "PORT"},
 		{"bad ttl", map[string]string{"ACCESS_TTL_SECONDS": "x"}, "ACCESS_TTL_SECONDS"},
+		{"zero ip limit", map[string]string{"RATE_LIMIT_IP_PER_MIN": "0"}, "RATE_LIMIT_IP_PER_MIN"},
+		{"pprof in production", map[string]string{"APP_ENV": "production", "JWT_SECRET": strings.Repeat("x", 32), "PPROF": "true"}, "PPROF"},
 		{"short admin token", map[string]string{"ADMIN_API_TOKEN": "abc"}, "ADMIN_API_TOKEN"},
 	}
 	for _, tc := range tests {
