@@ -25,6 +25,9 @@ func TestLoad(t *testing.T) {
 		{"bad ttl", map[string]string{"ACCESS_TTL_SECONDS": "x"}, "ACCESS_TTL_SECONDS"},
 		{"zero ip limit", map[string]string{"RATE_LIMIT_IP_PER_MIN": "0"}, "RATE_LIMIT_IP_PER_MIN"},
 		{"pprof in production", map[string]string{"APP_ENV": "production", "JWT_SECRET": strings.Repeat("x", 32), "PPROF": "true"}, "PPROF"},
+		{"mongo uri without pseudo secret", map[string]string{"MONGODB_URI": "mongodb+srv://x"}, "MONGO_PSEUDO_SECRET"},
+		{"mongo uri short pseudo secret", map[string]string{"MONGODB_URI": "mongodb+srv://x", "MONGO_PSEUDO_SECRET": "short"}, "MONGO_PSEUDO_SECRET"},
+		{"mongo uri ok", map[string]string{"MONGODB_URI": "mongodb+srv://x", "MONGO_PSEUDO_SECRET": strings.Repeat("p", 32)}, ""},
 		{"short admin token", map[string]string{"ADMIN_API_TOKEN": "abc"}, "ADMIN_API_TOKEN"},
 	}
 	for _, tc := range tests {

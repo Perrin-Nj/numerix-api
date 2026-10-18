@@ -46,6 +46,9 @@ type Config struct {
 	WebAuthnRPID       string        // WEBAUTHN_RP_ID: site domain passkeys are bound to (empty in production = passkeys off)
 	WebAuthnOrigins    []string      // WEBAUTHN_ORIGINS: browser origins allowed to run the ceremony
 	WebAuthnRPName     string        // WEBAUTHN_RP_NAME: name shown by the browser prompt
+	MongoURI           string        // MONGODB_URI: Atlas SRV string; empty = Mongo sync off
+	MongoDB            string        // MONGODB_DB: database name (default numerix)
+	MongoPseudoSecret  string        // MONGO_PSEUDO_SECRET: HMAC key for pseudonymous ids (min 32 chars when MONGODB_URI is set)
 }
 
 // IsProduction tells whether strict production rules apply.
@@ -93,6 +96,9 @@ func Load(getenv func(string) string) (Config, error) {
 		LLMProvider:        get("LLM_PROVIDER", "stub"),
 		LLMAPIKey:          get("LLM_API_KEY", ""),
 		LLMModel:           get("LLM_MODEL", ""),
+		MongoURI:           get("MONGODB_URI", ""),
+		MongoDB:            get("MONGODB_DB", "numerix"),
+		MongoPseudoSecret:  get("MONGO_PSEUDO_SECRET", ""),
 	}
 	// Comma separated list -> slice, dropping blanks.
 	for _, o := range strings.Split(get("ALLOWED_ORIGINS", ""), ",") {
@@ -147,6 +153,11 @@ func Load(getenv func(string) string) (Config, error) {
 	}
 	if cfg.PprofEnabled && cfg.IsProduction() {
 		errs = append(errs, errors.New("PPROF must not be enabled in production"))
+	}
+	// The secret is demanded in every environment (not only production) so a dev machine can never write
+	// guessable pseudonyms into a shared Atlas cluster.
+	if cfg.MongoURI != "" && len(cfg.MongoPseudoSecret) < 32 {
+		errs = append(errs, errors.New("MONGO_PSEUDO_SECRET is required when MONGODB_URI is set and must be at least 32 characters"))
 	}
 	if cfg.AdminAPIToken != "" && len(cfg.AdminAPIToken) < 16 {
 		errs = append(errs, errors.New("ADMIN_API_TOKEN must be at least 16 characters when set"))

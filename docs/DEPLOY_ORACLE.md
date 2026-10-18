@@ -28,6 +28,19 @@ Facts to re-check on Oracle's pages before relying on them (they change): the Al
 6. Restore drill (do it once, before trusting backups): on a scratch folder `litestream restore -config /etc/litestream.yml -o /tmp/restored.db /var/lib/numerix/numerix.db` and open the file with sqlite.
 7. Point the web app at it: on Vercel set `API_URL=https://numerix-api.duckdns.org/v1`, `PLATFORM_API_URL` for the admin app, redeploy.
 
+## Optional: MongoDB Atlas M0 (free) for bests, family board and stats
+
+Skip this and the app runs the same (SQLite serves everything; the log says "mongo sync is off"). To turn it on, you do these in the browser:
+
+1. Sign in at cloud.mongodb.com, create a project, then **Create a cluster** and pick **M0 (free)**. Choose a Canadian region if the free tier offers one (Law 25). Free tier: 512 MB, no backups.
+2. **Network Access**, **Add IP Address**: the public IP of the Oracle VM (not 0.0.0.0/0).
+3. **Database Access**, **Add New Database User**: password auth, a long random password, role **Specific Privileges** `readWrite` on database `numerix` only (no `atlasAdmin`).
+4. **Database**, **Connect**, **Drivers**: copy the `mongodb+srv://...` string and put the user and password in it.
+5. On the VM edit `/etc/numerix/api.env`: set `MONGODB_URI`, `MONGODB_DB=numerix`, and `MONGO_PSEUDO_SECRET` (`openssl rand -hex 32`, keep it and never change it). Then `sudo systemctl restart numerix-api`.
+6. Check `GET /admin/v1/health` (admin token): `mongo_sync.enabled` is true, `pending` falls to 0, `last_error` is empty. The three collections appear in Atlas after the first finished chapter.
+
+If the VM IP changes, update Network Access or the sync stops (nothing is lost: events wait in SQLite).
+
 ## Keeping the VM from being reclaimed
 
 The keep-alive in the web repo pings health every 5 minutes. Oracle reclaims on low CPU, network and memory use together for 7 days, so also keep a light scheduled job (the daily backup verification) running. Watch Oracle emails.

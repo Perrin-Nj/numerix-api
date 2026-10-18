@@ -22,6 +22,7 @@ Source: `internal/store/migrations/*.sql`, applied at start by `store.Migrate` (
 | `feed_items`, `reactions` | Feed and reactions | `child_id`, `kind`, `json`; reactions PK (`feed_item_id`, `child_id`) |
 | `collection` | Cards owned | PK (`child_id`, `card_id`), `json` |
 | `quests`, `challenges`, `gifts` | Engagement | `child_id`, `status`, `json` (gifts also `claimed_at`) |
+| `outbox` | Pending copies to MongoDB (migration `0007`, empty when sync is off) | `kind`, `key`, `payload`, `attempts`, `next_attempt_at`, `sent_at` |
 
 Foreign keys are enforced (`PRAGMA foreign_keys=1`); deleting a parent cascades to children and everything under them.
 
