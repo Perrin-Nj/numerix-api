@@ -1,0 +1,23 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # go.mod pins the toolchain (go1.27.2), so CI builds with the same compiler as the VM.
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - run: go vet ./...
+      - run: test -z "$(gofmt -l cmd internal)"
+      # Linux has gcc, so the race detector (not available on the dev laptop) runs here.
+      - run: go test ./... -race -count=1
+      - run: go install golang.org/x/vuln/cmd/govulncheck@latest && govulncheck ./...
+      # Same static build the Oracle VM runs.
+      - run: GOOS=linux GOARCH=arm64 CGO_ENABLED=0 go build -o /dev/null ./cmd/api
