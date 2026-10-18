@@ -20,6 +20,7 @@ import (
 	"github.com/Perrin-Nj/numerix-api/internal/app"
 	"github.com/Perrin-Nj/numerix-api/internal/config"
 	"github.com/Perrin-Nj/numerix-api/internal/httpapi"
+	"github.com/Perrin-Nj/numerix-api/internal/mongosync"
 	"github.com/Perrin-Nj/numerix-api/internal/store"
 )
 
@@ -54,10 +55,41 @@ func run() error {
 	defer db.Close()
 
 	server := app.NewServer(db, cfg, log)
+
+	// Optional MongoDB copy (personal bests, family board, anonymised stats). Off unless MONGODB_URI is set.
+	var syncStats func() mongosync.Stats
+	if cfg.MongoURI == "" {
+		log.Info("mongo sync is off (MONGODB_URI not set); SQLite serves everything")
+		syncStats = func() mongosync.Stats { return mongosync.Stats{} }
+	} else {
+		sink, err := mongosync.NewMongo(ctx, cfg.MongoURI, cfg.MongoDB)
+		if err != nil {
+			return err
+		}
+		server.Sync = mongosync.NewOutbox(true)
+		w := mongosync.NewWorker(db, sink, server.SyncResolver(mongosync.NewPseudonymizer(cfg.MongoPseudoSecret)), log, true)
+		syncStats = w.Stats
+		wctx, wcancel := context.WithCancel(ctx)
+		done := make(chan struct{})
+		go func() { // the worker goroutine; closing done tells shutdown that the last flush is finished
+			defer close(done)
+			w.Run(wctx)
+		}()
+		defer func() { // runs before db.Close (defers run last-in first-out): stop the worker, then disconnect
+			wcancel()
+			<-done
+			cctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+			defer cancel()
+			if err := sink.Close(cctx); err != nil {
+				log.Warn("mongo close failed", "err", err)
+			}
+		}()
+		log.Info("mongo sync is on", "db", cfg.MongoDB)
+	}
 	// Root router: /admin/v1/* goes to the admin API (its own auth + CORS), everything else to the public API.
 	root := http.NewServeMux()
 	root.Handle("/admin/v1/", adminapi.New(adminapi.Deps{
-		Store: db, Log: log, Token: cfg.AdminAPIToken, Production: cfg.IsProduction(), Origins: os.Getenv("ADMIN_ORIGIN"),
+		Store: db, Log: log, Token: cfg.AdminAPIToken, Production: cfg.IsProduction(), Origins: os.Getenv("ADMIN_ORIGIN"), Sync: syncStats,
 	}))
 	if cfg.PprofEnabled { // dev-only profiler: go tool pprof http://localhost:PORT/debug/pprof/profile
 		root.HandleFunc("/debug/pprof/", pprof.Index)

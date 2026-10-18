@@ -21,6 +21,7 @@ import (
 	"time"
 
 	"github.com/Perrin-Nj/numerix-api/internal/httpapi"
+	"github.com/Perrin-Nj/numerix-api/internal/mongosync"
 	"github.com/Perrin-Nj/numerix-api/internal/store"
 	"github.com/google/uuid"
 )
@@ -31,8 +32,9 @@ type Deps struct {
 	Log        *slog.Logger
 	Token      string // ADMIN_API_TOKEN; empty outside production falls back to a dev token, empty in production = disabled
 	Production bool
-	Origins    string           // ADMIN_ORIGIN: comma separated browser origins allowed by CORS; nothing else gets CORS headers
-	Now        func() time.Time // clock, replaced in tests; nil = time.Now
+	Origins    string                 // ADMIN_ORIGIN: comma separated browser origins allowed by CORS; nothing else gets CORS headers
+	Now        func() time.Time       // clock, replaced in tests; nil = time.Now
+	Sync       func() mongosync.Stats // Mongo sync counters for /admin/v1/health; nil = not reported
 }
 
 // API holds the dependencies shared by every handler method.
@@ -43,6 +45,7 @@ type API struct {
 	enabled bool
 	origins []string
 	now     func() time.Time
+	sync    func() mongosync.Stats
 }
 
 // tsLayout matches SQLite's strftime('%Y-%m-%dT%H:%M:%fZ') so text comparisons and sorting stay valid.
@@ -50,7 +53,7 @@ const tsLayout = "2006-01-02T15:04:05.000Z"
 
 // New builds the handler to mount at /admin/v1/ (Spring: building the controller bean + filter chain).
 func New(d Deps) http.Handler {
-	a := &API{db: d.Store, log: d.Log, now: d.Now}
+	a := &API{db: d.Store, log: d.Log, now: d.Now, sync: d.Sync}
 	if a.now == nil {
 		a.now = time.Now
 	}

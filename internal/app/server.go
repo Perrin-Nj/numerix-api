@@ -15,6 +15,7 @@ import (
 	"github.com/Perrin-Nj/numerix-api/api"
 	"github.com/Perrin-Nj/numerix-api/internal/auth"
 	"github.com/Perrin-Nj/numerix-api/internal/config"
+	"github.com/Perrin-Nj/numerix-api/internal/mongosync"
 	"github.com/Perrin-Nj/numerix-api/internal/store"
 )
 
@@ -39,6 +40,8 @@ type Server struct {
 	WebAuthn *webauthn.WebAuthn
 	// Payments is the payment processor (nil = dev provider outside production, none in production). See platform_billing.go.
 	Payments PaymentProvider
+	// Sync records outbox rows for the optional MongoDB copy (nil or disabled = no-op). See mongo_sync.go.
+	Sync *mongosync.Outbox
 }
 
 // NewServer wires the dependencies (Spring: constructor injection; no container, main() calls this).

@@ -243,8 +243,10 @@ func (s *Server) DeleteChild(ctx context.Context, req api.DeleteChildRequestObje
 		return nil, err
 	}
 	err = s.Store.WithWriteTx(ctx, func(tx *sql.Tx) error {
-		_, e := tx.ExecContext(ctx, `DELETE FROM children WHERE id = ? AND parent_id = ?`, id, p.ParentID)
-		return e
+		if _, e := tx.ExecContext(ctx, `DELETE FROM children WHERE id = ? AND parent_id = ?`, id, p.ParentID); e != nil {
+			return e
+		}
+		return s.syncChildRemoved(ctx, tx, id, p.ParentID) // erase the child's pseudonymous Mongo documents (Law 25)
 	})
 	if err != nil {
 		return nil, s.plInternalErr(ctx, "delete child", err)

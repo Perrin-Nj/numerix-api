@@ -134,6 +134,10 @@ func (s *Server) AnswerBeat(ctx context.Context, req api.AnswerBeatRequestObject
 			if _, e := tx.ExecContext(ctx, `UPDATE sessions SET status = 'completed', finished_at = ? WHERE id = ?`, plTS(now), r.ID); e != nil {
 				return e
 			}
+			// Mongo copy: same transaction, so a rollback leaves no event (no-op when sync is off).
+			if e := s.syncChapterDone(ctx, tx, r.ChildID, c.ParentID, r.World, skill); e != nil {
+				return e
+			}
 		}
 		if stored.Mastered {
 			sk := skill

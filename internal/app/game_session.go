@@ -322,8 +322,10 @@ func (s *Server) setStatus(ctx context.Context, sessionID, to string, allowed ..
 			_, e := tx.ExecContext(ctx, `UPDATE sessions SET status = 'active', paused_at = NULL WHERE id = ?`, r.ID)
 			return e
 		}
-		_, e := tx.ExecContext(ctx, `UPDATE sessions SET status = 'completed', finished_at = ? WHERE id = ?`, now, r.ID)
-		return e
+		if _, e := tx.ExecContext(ctx, `UPDATE sessions SET status = 'completed', finished_at = ? WHERE id = ?`, now, r.ID); e != nil {
+			return e
+		}
+		return s.syncChapterDone(ctx, tx, r.ChildID, c.ParentID, r.World, r.Data.Skill) // Mongo copy, same transaction
 	})
 	if err != nil {
 		return r, c, s.plInternalErr(ctx, "update session", err)

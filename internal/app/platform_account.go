@@ -133,6 +133,29 @@ func (s *Server) DeleteAccount(ctx context.Context, req api.DeleteAccountRequest
 	}
 	now := time.Now()
 	err = s.Store.WithWriteTx(ctx, func(tx *sql.Tx) error {
+		if s.Sync.Enabled() { // queue Mongo erasure for every child before the rows disappear
+			rows, e := tx.QueryContext(ctx, `SELECT id FROM children WHERE parent_id = ?`, p.ParentID)
+			if e != nil {
+				return e
+			}
+			var kids []string
+			for rows.Next() {
+				var id string
+				if e := rows.Scan(&id); e != nil {
+					_ = rows.Close()
+					return e
+				}
+				kids = append(kids, id)
+			}
+			if e := errors.Join(rows.Err(), rows.Close()); e != nil {
+				return e
+			}
+			for _, id := range kids {
+				if e := s.syncChildRemoved(ctx, tx, id, p.ParentID); e != nil {
+					return e
+				}
+			}
+		}
 		// Children first: foreign keys cascade to settings, sessions, beats, answers, mastery, cards, feed, quests.
 		for _, q := range []string{
 			`DELETE FROM children WHERE parent_id = ?`,
