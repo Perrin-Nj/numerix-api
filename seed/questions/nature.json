@@ -761,8 +761,8 @@
     "en": "Work out the total of each group one at a time."
    },
    "explain": {
-    "fr": "3 x 10 = 30. 5 x 2 = 10. 4 x 5 = 20. 2 x 10 + 3 = 23.",
-    "en": "3 x 10 = 30. 5 x 2 = 10. 4 x 5 = 20. 2 x 10 + 3 = 23."
+    "fr": "Voici les totaux. 3 x 10 = 30. 5 x 2 = 10. 4 x 5 = 20. 2 x 10 + 3 = 23.",
+    "en": "Here are the totals. 3 x 10 = 30. 5 x 2 = 10. 4 x 5 = 20. 2 x 10 + 3 = 23."
    },
    "tags": [
     "matching",
