@@ -1,0 +1,3740 @@
+{
+ "world": "hiver",
+ "schema": 1,
+ "questions": [
+  {
+   "id": "hiver.erabliere.001",
+   "quest": "hiver.erabliere",
+   "skill": "ARI-OPE-A06a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa compte les seaux à l'érablière. Il y a 5 érables avec 2 seaux chacun.",
+    "en": "Lea counts the buckets at the sugar bush. There are 5 maple trees with 2 buckets each."
+   },
+   "prompt": {
+    "fr": "Combien de seaux y a-t-il en tout ?",
+    "en": "How many buckets are there in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 10,
+    "calc": "5*2"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Chaque érable a 2 seaux : répète 2, cinq fois.",
+      "en": "Each tree has 2 buckets: repeat 2 five times."
+     }
+    },
+    {
+     "value": 20,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as compté par bonds trop grands. Compte par 2.",
+      "en": "You counted with jumps that were too big. Count by twos."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte par bonds de 2, une fois par érable.",
+    "en": "Count by twos, once for each tree."
+   },
+   "explain": {
+    "fr": "5 x 2 = 10. Il y a 10 seaux.",
+    "en": "5 x 2 = 10. There are 10 buckets."
+   },
+   "tags": [
+    "maple",
+    "multiplication",
+    "sugar-bush"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_301c36f0d5810ef7355c"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.erabliere.002",
+   "quest": "hiver.erabliere",
+   "skill": "ARI-OPE-A06a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Chaque seau contient 4 litres de sève. Il y a 7 seaux pleins.",
+    "en": "Each bucket holds 4 litres of sap. There are 7 full buckets."
+   },
+   "prompt": {
+    "fr": "Combien de litres de sève y a-t-il en tout ?",
+    "en": "How many litres of sap are there in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 28,
+    "calc": "7*4"
+   },
+   "common_errors": [
+    {
+     "value": 11,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Chaque seau a 4 litres : répète 4, sept fois.",
+      "en": "Each bucket has 4 litres: repeat 4 seven times."
+     }
+    },
+    {
+     "value": 32,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Tu as compté un seau de trop. Il y en a sept.",
+      "en": "You counted one bucket too many. There are seven."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte par bonds de 4, sept fois.",
+    "en": "Count by fours, seven times."
+   },
+   "explain": {
+    "fr": "4, 8, 12, 16, 20, 24, 28. Donc 7 x 4 = 28 litres.",
+    "en": "4, 8, 12, 16, 20, 24, 28. So 7 x 4 = 28 litres."
+   },
+   "tags": [
+    "maple",
+    "multiplication",
+    "sap"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_301c36f0d5810ef7355c"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.erabliere.003",
+   "quest": "hiver.erabliere",
+   "skill": "ARI-OPE-A06a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un camion transporte 8 caisses. Chaque caisse contient 6 bouteilles de sirop d'érable.",
+    "en": "A truck carries 8 crates. Each crate holds 6 bottles of maple syrup."
+   },
+   "prompt": {
+    "fr": "Combien de bouteilles le camion transporte-t-il ?",
+    "en": "How many bottles does the truck carry?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 48,
+    "calc": "8*6"
+   },
+   "common_errors": [
+    {
+     "value": 14,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Il y a 8 caisses de 6 bouteilles : multiplie.",
+      "en": "There are 8 crates of 6 bottles: multiply."
+     }
+    },
+    {
+     "value": 42,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Tu as compté une caisse de moins. Il y en a huit.",
+      "en": "You counted one crate too few. There are eight."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à 8 groupes de 6.",
+    "en": "Think of 8 groups of 6."
+   },
+   "explain": {
+    "fr": "8 x 6 = 48. Le camion transporte 48 bouteilles.",
+    "en": "8 x 6 = 48. The truck carries 48 bottles."
+   },
+   "tags": [
+    "maple",
+    "multiplication",
+    "syrup"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_82f12779eb8658ebd4ba"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.erabliere.004",
+   "quest": "hiver.erabliere",
+   "skill": "ARI-OPE-A06a",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Il y a 5 rangées de 3 seaux dans l'érablière.",
+    "en": "There are 5 rows of 3 buckets in the sugar bush."
+   },
+   "prompt": {
+    "fr": "Combien de seaux y a-t-il en tout ?",
+    "en": "How many buckets are there in all?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "8",
+      "en": "8"
+     },
+     "misconception": "mis_add_instead_of_multiply"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "14",
+      "en": "14"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "15",
+      "en": "15"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "20",
+      "en": "20"
+     },
+     "misconception": "mis_skip_count"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "5*3"
+    }
+   },
+   "hint": {
+    "fr": "Compte par bonds de 3, cinq fois.",
+    "en": "Count by threes, five times."
+   },
+   "explain": {
+    "fr": "3, 6, 9, 12, 15. Donc 5 x 3 = 15 seaux.",
+    "en": "3, 6, 9, 12, 15. So 5 x 3 = 15 buckets."
+   },
+   "tags": [
+    "maple",
+    "multiplication",
+    "arrays"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_301c36f0d5810ef7355c"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.erabliere.005",
+   "quest": "hiver.erabliere",
+   "skill": "ARI-OPE-A06a",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah verse 9 seaux de sève. Chaque seau contient 4 litres.",
+    "en": "Noah pours 9 buckets of sap. Each bucket holds 4 litres."
+   },
+   "prompt": {
+    "fr": "Combien de litres de sève y a-t-il ?",
+    "en": "How many litres of sap are there?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "13",
+      "en": "13"
+     },
+     "misconception": "mis_add_instead_of_multiply"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "32",
+      "en": "32"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "40",
+      "en": "40"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "36",
+      "en": "36"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d",
+    "calc_choice": {
+     "d": "9*4"
+    }
+   },
+   "hint": {
+    "fr": "Pense à 10 x 4, puis enlève un groupe de 4.",
+    "en": "Think of 10 x 4, then take away one group of 4."
+   },
+   "explain": {
+    "fr": "10 x 4 = 40. On enlève 4 : 40 - 4 = 36 litres.",
+    "en": "10 x 4 = 40. Take away 4: 40 - 4 = 36 litres."
+   },
+   "tags": [
+    "maple",
+    "multiplication",
+    "sap"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_301c36f0d5810ef7355c"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.erabliere.006",
+   "quest": "hiver.erabliere",
+   "skill": "ARI-OPE-A06a",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa remplit 42 bouteilles de sirop. Elle les range en rangées de 6.",
+    "en": "Lea fills 42 bottles of syrup. She puts them in rows of 6."
+   },
+   "prompt": {
+    "fr": "Combien de rangées fait-elle ?",
+    "en": "How many rows does she make?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "36",
+      "en": "36"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "48",
+      "en": "48"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "6",
+      "en": "6"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "7",
+      "en": "7"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d",
+    "calc_choice": {
+     "d": "42/6"
+    }
+   },
+   "hint": {
+    "fr": "Quel nombre multiplié par 6 donne 42 ?",
+    "en": "Which number times 6 gives 42?"
+   },
+   "explain": {
+    "fr": "6 x 7 = 42. Elle fait donc 7 rangées.",
+    "en": "6 x 7 = 42. So she makes 7 rows."
+   },
+   "tags": [
+    "maple",
+    "division",
+    "missing-factor"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_82f12779eb8658ebd4ba"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.erabliere.007",
+   "quest": "hiver.erabliere",
+   "skill": "ARI-OPE-A06a",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "À l'érablière, un bâton de tire d'érable coûte 3 $. Léa en achète 6.",
+    "en": "At the sugar bush, a stick of maple taffy costs $3. Lea buys 6."
+   },
+   "prompt": {
+    "fr": "Combien paie-t-elle en tout ?",
+    "en": "How much does she pay in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 18,
+    "calc": "3*6"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Chaque bâton coûte 3 $ : répète 3, six fois.",
+      "en": "Each stick costs $3: repeat 3 six times."
+     }
+    },
+    {
+     "value": 15,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Tu as compté un bâton de moins. Il y en a six.",
+      "en": "You counted one stick too few. There are six."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte par bonds de 3, six fois.",
+    "en": "Count by threes, six times."
+   },
+   "explain": {
+    "fr": "3, 6, 9, 12, 15, 18. Donc 6 x 3 = 18 $.",
+    "en": "3, 6, 9, 12, 15, 18. So 6 x 3 = $18."
+   },
+   "tags": [
+    "word-problem",
+    "maple",
+    "money"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_301c36f0d5810ef7355c"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.erabliere.008",
+   "quest": "hiver.erabliere",
+   "skill": "ARI-OPE-A06a",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Un seau recueille 3 litres de sève par jour. L'érablière a 8 seaux et récolte pendant 4 jours.",
+    "en": "A bucket collects 3 litres of sap a day. The sugar bush has 8 buckets and collects for 4 days."
+   },
+   "prompt": {
+    "fr": "Combien de litres de sève récolte-t-on ?",
+    "en": "How many litres of sap are collected?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 96,
+    "calc": "3*8*4"
+   },
+   "common_errors": [
+    {
+     "value": 24,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "24 litres, c'est pour une seule journée. Il y a quatre jours.",
+      "en": "That is for one day only. There are four days."
+     }
+    },
+    {
+     "value": 15,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Il faut multiplier : 8 seaux, 3 litres, 4 jours.",
+      "en": "You must multiply: 8 buckets, 3 litres, 4 days."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Trouve d'abord les litres récoltés en une journée.",
+    "en": "First find the litres collected in one day."
+   },
+   "explain": {
+    "fr": "8 x 3 = 24 litres par jour. 24 x 4 = 96 litres.",
+    "en": "8 x 3 = 24 litres a day. 24 x 4 = 96 litres."
+   },
+   "tags": [
+    "word-problem",
+    "maple",
+    "two-step"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_301c36f0d5810ef7355c"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.erabliere.009",
+   "quest": "hiver.erabliere",
+   "skill": "ARI-OPE-A06a",
+   "type": "truefalse",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah vérifie un calcul à l'érablière.",
+    "en": "Noah checks a sum at the sugar bush."
+   },
+   "prompt": {
+    "fr": "Vrai ou faux : 8 x 7 = 54.",
+    "en": "True or false: 8 x 7 = 54."
+   },
+   "math_text": "8 x 7 = 54",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_off_by_one"
+   },
+   "hint": {
+    "fr": "Pense à 7 x 7 = 49, puis ajoute 7.",
+    "en": "Think of 7 x 7 = 49, then add 7."
+   },
+   "explain": {
+    "fr": "49 + 7 = 56. Donc 8 x 7 = 56, pas 54.",
+    "en": "49 + 7 = 56. So 8 x 7 = 56, not 54."
+   },
+   "tags": [
+    "maple",
+    "multiplication",
+    "true-false"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_301c36f0d5810ef7355c"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.erabliere.010",
+   "quest": "hiver.erabliere",
+   "skill": "ARI-OPE-A06a",
+   "type": "order",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa calcule le nombre de seaux de quatre érablières.",
+    "en": "Lea works out the number of buckets in four sugar bushes."
+   },
+   "prompt": {
+    "fr": "Range ces produits du plus petit au plus grand.",
+    "en": "Put these products in order, from smallest to biggest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "3 x 7",
+      "en": "3 x 7"
+     },
+     "key": "21"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "4 x 4",
+      "en": "4 x 4"
+     },
+     "key": "16"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "5 x 6",
+      "en": "5 x 6"
+     },
+     "key": "30"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "2 x 9",
+      "en": "2 x 9"
+     },
+     "key": "18"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "d",
+     "a",
+     "c"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_partial"
+   },
+   "hint": {
+    "fr": "Calcule d'abord chaque produit.",
+    "en": "Work out each product first."
+   },
+   "explain": {
+    "fr": "4 x 4 = 16, 2 x 9 = 18, 3 x 7 = 21 et 5 x 6 = 30.",
+    "en": "4 x 4 = 16, 2 x 9 = 18, 3 x 7 = 21 and 5 x 6 = 30."
+   },
+   "tags": [
+    "maple",
+    "multiplication",
+    "ordering"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_301c36f0d5810ef7355c"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.erabliere.011",
+   "quest": "hiver.erabliere",
+   "skill": "ARI-OPE-A06a",
+   "type": "match",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "À l'érablière, Zoé apprend ses tables de multiplication.",
+    "en": "At the sugar bush, Zoe learns her times tables."
+   },
+   "prompt": {
+    "fr": "Relie chaque multiplication à son résultat.",
+    "en": "Match each multiplication to its result."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "6 x 3",
+       "en": "6 x 3"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "7 x 4",
+       "en": "7 x 4"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "9 x 5",
+       "en": "9 x 5"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "8 x 6",
+       "en": "8 x 6"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "28",
+       "en": "28"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "45",
+       "en": "45"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "48",
+       "en": "48"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "18",
+       "en": "18"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ],
+     [
+      "l4",
+      "r4"
+     ]
+    ],
+    "misconception": "mis_off_by_one"
+   },
+   "hint": {
+    "fr": "Utilise les bonds : 3, 6, 9... ou 4, 8, 12...",
+    "en": "Use skip counting: 3, 6, 9... or 4, 8, 12..."
+   },
+   "explain": {
+    "fr": "6 x 3 = 18, 7 x 4 = 28, 9 x 5 = 45 et 8 x 6 = 48.",
+    "en": "6 x 3 = 18, 7 x 4 = 28, 9 x 5 = 45 and 8 x 6 = 48."
+   },
+   "tags": [
+    "maple",
+    "multiplication",
+    "matching"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_301c36f0d5810ef7355c"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.erabliere.012",
+   "quest": "hiver.erabliere",
+   "skill": "ARI-OPE-A06a",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Chaque image vaut 3 seaux. Voici les rangées de l'érablière.",
+    "en": "Each picture is worth 3 buckets. Here are the rows of the sugar bush."
+   },
+   "prompt": {
+    "fr": "Combien de seaux y a-t-il dans la rangée du fond ?",
+    "en": "How many buckets are in the back row?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Seaux par rangée",
+      "en": "Buckets per row"
+     },
+     "each": 3,
+     "rows": [
+      {
+       "label": {
+        "fr": "chemin",
+        "en": "path"
+       },
+       "count": 3
+      },
+      {
+       "label": {
+        "fr": "fond",
+        "en": "back"
+       },
+       "count": 4
+      },
+      {
+       "label": {
+        "fr": "cabane",
+        "en": "shack"
+       },
+       "count": 2
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 12,
+    "calc": "4*3"
+   },
+   "common_errors": [
+    {
+     "value": 4,
+     "misconception": "mis_read_scale",
+     "feedback": {
+      "fr": "Tu as compté les images. Chaque image vaut 3 seaux.",
+      "en": "You counted the pictures. Each picture is worth 3 buckets."
+     }
+    },
+    {
+     "value": 9,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as lu la rangée du chemin. Cherche le fond.",
+      "en": "You read the path row. Look for the back row."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Combien d'images dans la rangée ? Que vaut une image ?",
+    "en": "How many pictures in the row? What is one picture worth?"
+   },
+   "explain": {
+    "fr": "La rangée du fond a 4 images de 3 seaux. 4 x 3 = 12.",
+    "en": "The back row has 4 pictures of 3 buckets. 4 x 3 = 12."
+   },
+   "tags": [
+    "pictograph",
+    "maple",
+    "multiplication"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_301c36f0d5810ef7355c"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.erabliere.013",
+   "quest": "hiver.erabliere",
+   "skill": "ARI-OPE-A06a",
+   "type": "estimate",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "L'érablière a 21 rangées. Chaque rangée a 4 seaux.",
+    "en": "The sugar bush has 21 rows. Each row has 4 buckets."
+   },
+   "prompt": {
+    "fr": "Environ combien de seaux y a-t-il ?",
+    "en": "About how many buckets are there?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 76,
+    "max": 92,
+    "exact_for_check": 84,
+    "calc": "21*4"
+   },
+   "common_errors": [
+    {
+     "value": 25,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Chaque rangée a 4 seaux, et il y a 21 rangées.",
+      "en": "Each row has 4 buckets, and there are 21 rows."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis 21 à 20, puis multiplie par 4.",
+    "en": "Round 21 to 20, then multiply by 4."
+   },
+   "explain": {
+    "fr": "20 x 4 = 80. Le vrai total est 84, très proche de 80.",
+    "en": "20 x 4 = 80. The exact total is 84, very close to 80."
+   },
+   "tags": [
+    "estimation",
+    "maple",
+    "multiplication"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_301c36f0d5810ef7355c"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.patinoire.001",
+   "quest": "hiver.patinoire",
+   "skill": "MES-A06",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "La patinoire de la cour est un rectangle de 8 m sur 5 m.",
+    "en": "The backyard rink is a rectangle, 8 m by 5 m."
+   },
+   "prompt": {
+    "fr": "Quel est son périmètre, en mètres ?",
+    "en": "What is its perimeter, in metres?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 26,
+    "calc": "8+5+8+5"
+   },
+   "common_errors": [
+    {
+     "value": 13,
+     "misconception": "mis_perimeter_missing_side",
+     "feedback": {
+      "fr": "Tu as compté deux côtés. Un rectangle en a quatre.",
+      "en": "You counted two sides. A rectangle has four."
+     }
+    },
+    {
+     "value": 40,
+     "misconception": "mis_perimeter_area",
+     "feedback": {
+      "fr": "40 est l'aire. Le périmètre est le tour.",
+      "en": "40 is the area. The perimeter is the distance around."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne les quatre côtés.",
+    "en": "Add the four sides."
+   },
+   "explain": {
+    "fr": "8 + 5 + 8 + 5 = 26. Le périmètre est 26 m.",
+    "en": "8 + 5 + 8 + 5 = 26. The perimeter is 26 m."
+   },
+   "tags": [
+    "perimeter",
+    "rink",
+    "rectangle"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2c9d00e436ef8c904e09"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.patinoire.002",
+   "quest": "hiver.patinoire",
+   "skill": "MES-A06",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Une patinoire carrée a des côtés de 7 m.",
+    "en": "A square rink has sides of 7 m."
+   },
+   "prompt": {
+    "fr": "Quel est son périmètre, en mètres ?",
+    "en": "What is its perimeter, in metres?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 28,
+    "calc": "4*7"
+   },
+   "common_errors": [
+    {
+     "value": 14,
+     "misconception": "mis_perimeter_missing_side",
+     "feedback": {
+      "fr": "Un carré a quatre côtés, pas deux.",
+      "en": "A square has four sides, not two."
+     }
+    },
+    {
+     "value": 49,
+     "misconception": "mis_perimeter_area",
+     "feedback": {
+      "fr": "49 est l'aire. Le périmètre est le tour.",
+      "en": "49 is the area. The perimeter is the distance around."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Un carré a 4 côtés égaux.",
+    "en": "A square has 4 equal sides."
+   },
+   "explain": {
+    "fr": "7 + 7 + 7 + 7 = 28. Le périmètre est 28 m.",
+    "en": "7 + 7 + 7 + 7 = 28. The perimeter is 28 m."
+   },
+   "tags": [
+    "perimeter",
+    "rink",
+    "square"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2c9d00e436ef8c904e09"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.patinoire.003",
+   "quest": "hiver.patinoire",
+   "skill": "MES-A06",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Une patinoire rectangulaire mesure 12 m sur 9 m. On pose une bande de bois tout autour.",
+    "en": "A rectangular rink measures 12 m by 9 m. A wooden border goes all around."
+   },
+   "prompt": {
+    "fr": "Combien de mètres de bande faut-il ?",
+    "en": "How many metres of border are needed?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 42,
+    "calc": "2*(12+9)"
+   },
+   "common_errors": [
+    {
+     "value": 21,
+     "misconception": "mis_perimeter_missing_side",
+     "feedback": {
+      "fr": "21 m ne couvre que deux côtés. Il y en a quatre.",
+      "en": "21 m covers only two sides. There are four."
+     }
+    },
+    {
+     "value": 108,
+     "misconception": "mis_perimeter_area",
+     "feedback": {
+      "fr": "108 est l'aire. Pour la bande, on additionne les côtés.",
+      "en": "108 is the area. For the border, add the sides."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Les côtés opposés sont égaux. Additionne les quatre.",
+    "en": "Opposite sides are equal. Add all four."
+   },
+   "explain": {
+    "fr": "12 + 9 = 21 pour deux côtés. 21 + 21 = 42 m de bande.",
+    "en": "12 + 9 = 21 for two sides. 21 + 21 = 42 m of border."
+   },
+   "tags": [
+    "perimeter",
+    "rink",
+    "rectangle"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2c9d00e436ef8c904e09"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.patinoire.004",
+   "quest": "hiver.patinoire",
+   "skill": "MES-A06",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Une patinoire a quatre côtés : 10 m, 6 m, 10 m et 6 m.",
+    "en": "A rink has four sides: 10 m, 6 m, 10 m and 6 m."
+   },
+   "prompt": {
+    "fr": "Quel est son périmètre, en mètres ?",
+    "en": "What is its perimeter, in metres?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "16",
+      "en": "16"
+     },
+     "misconception": "mis_perimeter_missing_side"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "60",
+      "en": "60"
+     },
+     "misconception": "mis_perimeter_area"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "31",
+      "en": "31"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "32",
+      "en": "32"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d",
+    "calc_choice": {
+     "d": "10+6+10+6"
+    }
+   },
+   "hint": {
+    "fr": "Additionne les quatre côtés.",
+    "en": "Add the four sides."
+   },
+   "explain": {
+    "fr": "Les quatre côtés font 10 + 6 + 10 + 6 = 32 m.",
+    "en": "The four sides make 10 + 6 + 10 + 6 = 32 m."
+   },
+   "tags": [
+    "perimeter",
+    "rink",
+    "rectangle"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2aa68f1db05750a6fc60"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.patinoire.005",
+   "quest": "hiver.patinoire",
+   "skill": "MES-A06",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "On veut poser une bande de bois tout autour de la glace.",
+    "en": "We want to put a wooden border all around the ice."
+   },
+   "prompt": {
+    "fr": "Quelle mesure calcule-t-on ?",
+    "en": "Which measure do we work out?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "L'aire",
+      "en": "L'aire"
+     },
+     "misconception": "mis_perimeter_area"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "La hauteur",
+      "en": "La hauteur"
+     },
+     "random": true
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Le périmètre",
+      "en": "Le périmètre"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c"
+   },
+   "hint": {
+    "fr": "La bande suit le contour de la patinoire.",
+    "en": "The border follows the outline of the rink."
+   },
+   "explain": {
+    "fr": "Le tour d'une figure s'appelle le périmètre. L'aire mesure la surface de glace.",
+    "en": "The distance around a shape is the perimeter. The area measures the ice surface."
+   },
+   "tags": [
+    "perimeter",
+    "vocabulary",
+    "rink"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2c9d00e436ef8c904e09"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.patinoire.006",
+   "quest": "hiver.patinoire",
+   "skill": "MES-A06",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Pour clôturer la patinoire, on utilise des planches de 2 m. Le périmètre est de 24 m.",
+    "en": "To fence the rink, we use boards of 2 m. The perimeter is 24 m."
+   },
+   "prompt": {
+    "fr": "Combien de planches faut-il ?",
+    "en": "How many boards are needed?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 12,
+    "calc": "24/2"
+   },
+   "common_errors": [
+    {
+     "value": 26,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On partage 24 m en planches de 2 m : on divise.",
+      "en": "We share 24 m into 2 m boards: we divide."
+     }
+    },
+    {
+     "value": 22,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "On cherche combien de planches de 2 m : on divise.",
+      "en": "We want how many 2 m boards: we divide."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Combien de fois 2 m entre-t-il dans 24 m ?",
+    "en": "How many times does 2 m fit in 24 m?"
+   },
+   "explain": {
+    "fr": "24 / 2 = 12. Il faut 12 planches.",
+    "en": "24 / 2 = 12. We need 12 boards."
+   },
+   "tags": [
+    "word-problem",
+    "perimeter",
+    "division"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2aa68f1db05750a6fc60"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.patinoire.007",
+   "quest": "hiver.patinoire",
+   "skill": "MES-A06",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Une patinoire fait 15 m de long et 10 m de large. Noah patine deux fois tout le tour.",
+    "en": "A rink is 15 m long and 10 m wide. Noah skates twice all the way around."
+   },
+   "prompt": {
+    "fr": "Combien de mètres patine-t-il ?",
+    "en": "How many metres does he skate?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 100,
+    "calc": "2*(15+10)*2"
+   },
+   "common_errors": [
+    {
+     "value": 50,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "50 m, c'est un seul tour. Noah en fait deux.",
+      "en": "That is one lap. Noah does two."
+     }
+    },
+    {
+     "value": 25,
+     "misconception": "mis_perimeter_missing_side",
+     "feedback": {
+      "fr": "25 m ne couvre que deux côtés. Fais tout le tour.",
+      "en": "25 m covers only two sides. Go all the way around."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Trouve d'abord le périmètre pour un tour.",
+    "en": "First find the perimeter for one lap."
+   },
+   "explain": {
+    "fr": "15 + 10 + 15 + 10 = 50 m par tour. 50 x 2 = 100 m.",
+    "en": "15 + 10 + 15 + 10 = 50 m per lap. 50 x 2 = 100 m."
+   },
+   "tags": [
+    "word-problem",
+    "perimeter",
+    "two-step"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2c9d00e436ef8c904e09"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.patinoire.008",
+   "quest": "hiver.patinoire",
+   "skill": "MES-A06",
+   "type": "truefalse",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa calcule le tour d'une patinoire.",
+    "en": "Lea works out the distance around a rink."
+   },
+   "prompt": {
+    "fr": "Vrai ou faux : le périmètre d'un rectangle de 6 m sur 4 m est 24 m.",
+    "en": "True or false: the perimeter of a 6 m by 4 m rectangle is 24 m."
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_perimeter_area"
+   },
+   "hint": {
+    "fr": "Additionne les côtés. Ne les multiplie pas.",
+    "en": "Add the sides. Do not multiply them."
+   },
+   "explain": {
+    "fr": "6 + 4 + 6 + 4 = 20 m. Le nombre 24 est l'aire en m carrés.",
+    "en": "6 + 4 + 6 + 4 = 20 m. The number 24 is the area in square metres."
+   },
+   "tags": [
+    "perimeter",
+    "true-false",
+    "rectangle"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2aa68f1db05750a6fc60"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.patinoire.009",
+   "quest": "hiver.patinoire",
+   "skill": "MES-A06",
+   "type": "order",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Quatre patinoires ont des dimensions différentes.",
+    "en": "Four rinks have different dimensions."
+   },
+   "prompt": {
+    "fr": "Range-les du plus petit au plus grand périmètre.",
+    "en": "Put them in order, from the smallest to the biggest perimeter."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "6 m sur 6 m",
+      "en": "6 m by 6 m"
+     },
+     "key": "24"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "10 m sur 3 m",
+      "en": "10 m by 3 m"
+     },
+     "key": "26"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "5 m sur 4 m",
+      "en": "5 m by 4 m"
+     },
+     "key": "18"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "8 m sur 2 m",
+      "en": "8 m by 2 m"
+     },
+     "key": "20"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "c",
+     "d",
+     "a",
+     "b"
+    ],
+    "by": "asc",
+    "misconception": "mis_perimeter_area"
+   },
+   "hint": {
+    "fr": "Calcule le tour de chaque patinoire.",
+    "en": "Work out the distance around each rink."
+   },
+   "explain": {
+    "fr": "Périmètres : 18 m, 20 m, 24 m et 26 m. Le plus grand rectangle n'a pas le plus long tour.",
+    "en": "Perimeters: 18 m, 20 m, 24 m and 26 m. The biggest surface is not the longest way around."
+   },
+   "tags": [
+    "perimeter",
+    "ordering",
+    "rink"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2c9d00e436ef8c904e09"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.patinoire.010",
+   "quest": "hiver.patinoire",
+   "skill": "MES-A06",
+   "type": "match",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa cherche le tour de chaque patinoire de quartier.",
+    "en": "Lea looks for the distance around each neighbourhood rink."
+   },
+   "prompt": {
+    "fr": "Relie chaque patinoire à son périmètre.",
+    "en": "Match each rink to its perimeter."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "4 m sur 3 m",
+       "en": "4 m by 3 m"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "5 m sur 5 m",
+       "en": "5 m by 5 m"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "8 m sur 6 m",
+       "en": "8 m by 6 m"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "9 m sur 3 m",
+       "en": "9 m by 3 m"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "20 m",
+       "en": "20 m"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "28 m",
+       "en": "28 m"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "24 m",
+       "en": "24 m"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "14 m",
+       "en": "14 m"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ],
+     [
+      "l4",
+      "r4"
+     ]
+    ],
+    "misconception": "mis_perimeter_missing_side"
+   },
+   "hint": {
+    "fr": "Additionne les quatre côtés de chaque rectangle.",
+    "en": "Add the four sides of each rectangle."
+   },
+   "explain": {
+    "fr": "4+3+4+3 = 14, 5+5+5+5 = 20, 8+6+8+6 = 28 et 9+3+9+3 = 24.",
+    "en": "4+3+4+3 = 14, 5+5+5+5 = 20, 8+6+8+6 = 28 and 9+3+9+3 = 24."
+   },
+   "tags": [
+    "perimeter",
+    "matching",
+    "rink"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2aa68f1db05750a6fc60"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.patinoire.011",
+   "quest": "hiver.patinoire",
+   "skill": "MES-A06",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Voici le périmètre de trois patinoires de la ville.",
+    "en": "Here is the perimeter of three of the town's rinks."
+   },
+   "prompt": {
+    "fr": "De combien de mètres le tour de la patinoire du parc dépasse-t-il celui de l'école ?",
+    "en": "By how many metres is the park rink's perimeter longer than the school's?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Périmètre en mètres",
+      "en": "Perimeter in metres"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "cour",
+        "en": "yard"
+       },
+       "value": 14
+      },
+      {
+       "label": {
+        "fr": "école",
+        "en": "school"
+       },
+       "value": 30
+      },
+      {
+       "label": {
+        "fr": "parc",
+        "en": "park"
+       },
+       "value": 40
+      }
+     ],
+     "max": 40
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 10,
+    "calc": "40-30"
+   },
+   "common_errors": [
+    {
+     "value": 70,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On compare : on soustrait.",
+      "en": "We compare, so we subtract."
+     }
+    },
+    {
+     "value": 26,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as comparé le parc et la cour. Compare le parc et l'école.",
+      "en": "You compared the park and the yard. Compare the park and the school."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Lis la hauteur des barres du parc et de l'école.",
+    "en": "Read the height of the park and school bars."
+   },
+   "explain": {
+    "fr": "Le parc a 40 m et l'école a 30 m. 40 - 30 = 10 m.",
+    "en": "The park has 40 m and the school has 30 m. 40 - 30 = 10 m."
+   },
+   "tags": [
+    "bar-chart",
+    "perimeter",
+    "compare"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2c9d00e436ef8c904e09"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.patinoire.012",
+   "quest": "hiver.patinoire",
+   "skill": "MES-A06",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Chaque image vaut 2 m de bande. Voici les côtés d'une patinoire rectangulaire.",
+    "en": "Each picture is worth 2 m of border. Here are the sides of a rectangular rink."
+   },
+   "prompt": {
+    "fr": "Les côtés opposés sont pareils. Quel est le périmètre, en mètres ?",
+    "en": "Opposite sides are the same. What is the perimeter, in metres?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Côtés de la patinoire",
+      "en": "Rink sides"
+     },
+     "each": 2,
+     "rows": [
+      {
+       "label": {
+        "fr": "long côté",
+        "en": "long side"
+       },
+       "count": 5
+      },
+      {
+       "label": {
+        "fr": "court côté",
+        "en": "short side"
+       },
+       "count": 3
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 32,
+    "calc": "2*(5*2+3*2)"
+   },
+   "common_errors": [
+    {
+     "value": 16,
+     "misconception": "mis_perimeter_missing_side",
+     "feedback": {
+      "fr": "16 m couvre deux côtés. Il y a deux longs et deux courts.",
+      "en": "16 m covers two sides. There are two long and two short."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_read_scale",
+     "feedback": {
+      "fr": "Tu as compté les images. Chaque image vaut 2 m.",
+      "en": "You counted the pictures. Each picture is worth 2 m."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Trouve la longueur de chaque côté, puis fais le tour.",
+    "en": "Find the length of each side, then go around."
+   },
+   "explain": {
+    "fr": "Long côté : 5 x 2 = 10 m. Court côté : 3 x 2 = 6 m. 10 + 6 + 10 + 6 = 32 m.",
+    "en": "Long side: 5 x 2 = 10 m. Short side: 3 x 2 = 6 m. 10 + 6 + 10 + 6 = 32 m."
+   },
+   "tags": [
+    "pictograph",
+    "perimeter",
+    "scale"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2aa68f1db05750a6fc60"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.patinoire.013",
+   "quest": "hiver.patinoire",
+   "skill": "MES-A06",
+   "type": "estimate",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Une patinoire de parc mesure 29 m sur 11 m.",
+    "en": "A park rink measures 29 m by 11 m."
+   },
+   "prompt": {
+    "fr": "Environ combien de mètres mesure son périmètre ?",
+    "en": "About how many metres is its perimeter?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 72,
+    "max": 88,
+    "exact_for_check": 80,
+    "calc": "2*(29+11)"
+   },
+   "common_errors": [
+    {
+     "value": 40,
+     "misconception": "mis_perimeter_missing_side",
+     "feedback": {
+      "fr": "40 m ne couvre que deux côtés. Il y en a quatre.",
+      "en": "40 m covers only two sides. There are four."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis 29 à 30 et 11 à 10, puis fais le tour.",
+    "en": "Round 29 to 30 and 11 to 10, then go around."
+   },
+   "explain": {
+    "fr": "30 + 10 = 40 pour deux côtés. Le tour fait environ 80 m.",
+    "en": "30 + 10 = 40 for two sides. The distance around is about 80 m."
+   },
+   "tags": [
+    "estimation",
+    "perimeter",
+    "rink"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2c9d00e436ef8c904e09"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.neige.001",
+   "quest": "hiver.neige",
+   "skill": "STA-03a",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa mesure la neige : 4 cm samedi et 6 cm dimanche.",
+    "en": "Lea measures the snow: 4 cm on Saturday and 6 cm on Sunday."
+   },
+   "prompt": {
+    "fr": "Combien de cm de neige en tout ?",
+    "en": "How many cm of snow in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 10,
+    "calc": "4+6"
+   },
+   "common_errors": [
+    {
+     "value": 2,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Les deux jours vont ensemble : on additionne.",
+      "en": "Both days go together, so we add."
+     }
+    },
+    {
+     "value": 11,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte avec soin.",
+      "en": "Close! Count carefully."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pars de 6 et avance de 4.",
+    "en": "Start at 6 and go up 4."
+   },
+   "explain": {
+    "fr": "4 + 6 = 10. Il est tombé 10 cm de neige.",
+    "en": "4 + 6 = 10. 10 cm of snow fell."
+   },
+   "tags": [
+    "snow",
+    "add-within-20",
+    "cm"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a530bb863effc2972d05"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.neige.002",
+   "quest": "hiver.neige",
+   "skill": "STA-03a",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Il y avait 14 cm de neige dans la cour. Soleil : 6 cm ont fondu.",
+    "en": "There were 14 cm of snow in the yard. Sun: 6 cm melted."
+   },
+   "prompt": {
+    "fr": "Combien de cm de neige restent ?",
+    "en": "How many cm of snow are left?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 8,
+    "calc": "14-6"
+   },
+   "common_errors": [
+    {
+     "value": 20,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "La neige fond : on enlève.",
+      "en": "Snow melts, so we take away."
+     }
+    },
+    {
+     "value": 9,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte à reculons.",
+      "en": "Close! Count back again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Recule de 6 en partant de 14.",
+    "en": "Count back 6 from 14."
+   },
+   "explain": {
+    "fr": "14 - 6 = 8. Il reste 8 cm de neige.",
+    "en": "14 - 6 = 8. 8 cm of snow are left."
+   },
+   "tags": [
+    "snow",
+    "subtract",
+    "cm"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_cec35f1c265dc96d53e0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.neige.003",
+   "quest": "hiver.neige",
+   "skill": "STA-03a",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa a 4 paires de mitaines pour l'hiver.",
+    "en": "Lea has 4 pairs of mittens for winter."
+   },
+   "prompt": {
+    "fr": "Combien de mitaines a-t-elle ?",
+    "en": "How many mittens does she have?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "4",
+      "en": "4"
+     },
+     "misconception": "mis_partial_result"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "6",
+      "en": "6"
+     },
+     "misconception": "mis_skip_count"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "9",
+      "en": "9"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "8",
+      "en": "8"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d",
+    "calc_choice": {
+     "d": "4+4"
+    }
+   },
+   "hint": {
+    "fr": "Une paire, c'est 2 mitaines. Compte par 2.",
+    "en": "A pair is 2 mittens. Count by twos."
+   },
+   "explain": {
+    "fr": "2, 4, 6, 8. Quatre paires font 8 mitaines.",
+    "en": "2, 4, 6, 8. Four pairs make 8 mittens."
+   },
+   "tags": [
+    "snow",
+    "mittens",
+    "skip-count"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a530bb863effc2972d05"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.neige.004",
+   "quest": "hiver.neige",
+   "skill": "STA-03a",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Il tombe 7 cm de neige mardi et 3 cm mercredi.",
+    "en": "7 cm of snow falls on Tuesday and 3 cm on Wednesday."
+   },
+   "prompt": {
+    "fr": "Combien de cm de plus mardi que mercredi ?",
+    "en": "How many more cm on Tuesday than on Wednesday?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "10",
+      "en": "10"
+     },
+     "misconception": "mis_add_instead_of_subtract"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "3",
+      "en": "3"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "4",
+      "en": "4"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "5",
+      "en": "5"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "7-3"
+    }
+   },
+   "hint": {
+    "fr": "Compte de 3 jusqu'à 7.",
+    "en": "Count from 3 up to 7."
+   },
+   "explain": {
+    "fr": "7 - 3 = 4. Mardi, il en tombe 4 cm de plus.",
+    "en": "7 - 3 = 4. On Tuesday, 4 cm more falls."
+   },
+   "tags": [
+    "snow",
+    "compare",
+    "subtract"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_cec35f1c265dc96d53e0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.neige.005",
+   "quest": "hiver.neige",
+   "skill": "STA-03a",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un bonhomme de neige a 3 boules. Noah fait 3 bonshommes de neige.",
+    "en": "A snowman has 3 balls. Noah makes 3 snowmen."
+   },
+   "prompt": {
+    "fr": "Combien de boules de neige a-t-il faites ?",
+    "en": "How many snowballs did he make?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "6",
+      "en": "6"
+     },
+     "misconception": "mis_partial_result"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "8",
+      "en": "8"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "9",
+      "en": "9"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "12",
+      "en": "12"
+     },
+     "misconception": "mis_skip_count"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "3+3+3"
+    }
+   },
+   "hint": {
+    "fr": "Ajoute 3 une fois pour chaque bonhomme.",
+    "en": "Add 3 once for each snowman."
+   },
+   "explain": {
+    "fr": "3 + 3 + 3 = 9. Noah a fait 9 boules.",
+    "en": "3 + 3 + 3 = 9. Noah made 9 balls."
+   },
+   "tags": [
+    "snow",
+    "snowman",
+    "repeated-addition"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a530bb863effc2972d05"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.neige.006",
+   "quest": "hiver.neige",
+   "skill": "STA-03a",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah range 9 bottes dans l'entrée. Léa en ajoute 6.",
+    "en": "Noah puts 9 boots in the hall. Lea adds 6."
+   },
+   "prompt": {
+    "fr": "Combien de bottes y a-t-il maintenant ?",
+    "en": "How many boots are there now?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 15,
+    "calc": "9+6"
+   },
+   "common_errors": [
+    {
+     "value": 3,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Léa en ajoute : on additionne.",
+      "en": "Lea adds some, so we add."
+     }
+    },
+    {
+     "value": 14,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte.",
+      "en": "Close! Count again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pars de 9 et avance de 6.",
+    "en": "Start at 9 and go up 6."
+   },
+   "explain": {
+    "fr": "9 + 6 = 9 + 1 + 5 = 15 bottes.",
+    "en": "9 + 6 = 9 + 1 + 5 = 15 boots."
+   },
+   "tags": [
+    "word-problem",
+    "winter",
+    "add-within-20"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1e1f96bd606b75fbd1ce"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.neige.007",
+   "quest": "hiver.neige",
+   "skill": "STA-03a",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 4,
+   "story": {
+    "fr": "Sur la glissoire, 14 enfants font de la luge. 6 partent. Puis 3 arrivent.",
+    "en": "On the slide hill, 14 children are sledding. 6 leave. Then 3 arrive."
+   },
+   "prompt": {
+    "fr": "Combien d'enfants font de la luge maintenant ?",
+    "en": "How many children are sledding now?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 11,
+    "calc": "14-6+3"
+   },
+   "common_errors": [
+    {
+     "value": 5,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Ceux qui arrivent s'ajoutent : on additionne.",
+      "en": "Those who arrive are added: we add."
+     }
+    },
+    {
+     "value": 17,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Ceux qui partent s'enlèvent : on soustrait d'abord.",
+      "en": "Those who leave are taken away: subtract first."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Enlève ceux qui partent, puis ajoute ceux qui arrivent.",
+    "en": "Take away those who leave, then add those who arrive."
+   },
+   "explain": {
+    "fr": "14 - 6 = 8, puis 8 + 3 = 11 enfants.",
+    "en": "14 - 6 = 8, then 8 + 3 = 11 children."
+   },
+   "tags": [
+    "word-problem",
+    "sledding",
+    "two-step"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1e1f96bd606b75fbd1ce"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.neige.008",
+   "quest": "hiver.neige",
+   "skill": "STA-03a",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa compare des quantités de neige.",
+    "en": "Lea compares amounts of snow."
+   },
+   "prompt": {
+    "fr": "Vrai ou faux : 3 cm de neige, c'est plus que 7 cm.",
+    "en": "True or false: 3 cm of snow is more than 7 cm."
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Compte de 3 jusqu'à 7 : tu avances.",
+    "en": "Count from 3 up to 7: you go forward."
+   },
+   "explain": {
+    "fr": "3 est plus petit que 7. Il y a moins de neige avec 3 cm.",
+    "en": "3 is smaller than 7. There is less snow with 3 cm."
+   },
+   "tags": [
+    "snow",
+    "compare",
+    "true-false"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_cec35f1c265dc96d53e0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.neige.009",
+   "quest": "hiver.neige",
+   "skill": "STA-03a",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa a 6 mitaines pour l'hiver.",
+    "en": "Lea has 6 mittens for winter."
+   },
+   "prompt": {
+    "fr": "Vrai ou faux : 6 mitaines, c'est 3 paires.",
+    "en": "True or false: 6 mittens make 3 pairs."
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": true
+   },
+   "hint": {
+    "fr": "Une paire, c'est 2 mitaines. Compte par 2.",
+    "en": "A pair is 2 mittens. Count by twos."
+   },
+   "explain": {
+    "fr": "2, 4, 6. Trois paires font 6 mitaines.",
+    "en": "2, 4, 6. Three pairs make 6 mittens."
+   },
+   "tags": [
+    "mittens",
+    "skip-count",
+    "true-false"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a530bb863effc2972d05"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.neige.010",
+   "quest": "hiver.neige",
+   "skill": "STA-03a",
+   "type": "order",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Quatre journées d'hiver ont apporté de la neige.",
+    "en": "Four winter days brought snow."
+   },
+   "prompt": {
+    "fr": "Range les quantités de la plus petite à la plus grande.",
+    "en": "Put the amounts in order, from smallest to biggest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "8 cm",
+      "en": "8 cm"
+     },
+     "key": "8"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "3 cm",
+      "en": "3 cm"
+     },
+     "key": "3"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "11 cm",
+      "en": "11 cm"
+     },
+     "key": "11"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "5 cm",
+      "en": "5 cm"
+     },
+     "key": "5"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "d",
+     "a",
+     "c"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Trouve d'abord la plus petite quantité.",
+    "en": "First find the smallest amount."
+   },
+   "explain": {
+    "fr": "3, 5, 8 et 11 : du plus petit au plus grand.",
+    "en": "3, 5, 8 and 11: from the smallest to the biggest."
+   },
+   "tags": [
+    "snow",
+    "ordering"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_cec35f1c265dc96d53e0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.neige.011",
+   "quest": "hiver.neige",
+   "skill": "STA-03a",
+   "type": "match",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa compte des flocons avec son frère.",
+    "en": "Lea counts snowflakes with her brother."
+   },
+   "prompt": {
+    "fr": "Relie chaque calcul à son résultat.",
+    "en": "Match each sum to its result."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "5 flocons et 2 flocons",
+       "en": "5 flakes and 2 flakes"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "9 flocons moins 3",
+       "en": "9 flakes take away 3"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "4 flocons et 4 flocons",
+       "en": "4 flakes and 4 flakes"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "6",
+       "en": "6"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "8",
+       "en": "8"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "7",
+       "en": "7"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ]
+    ],
+    "misconception": "mis_wrong_operation"
+   },
+   "hint": {
+    "fr": "Additionne ou enlève, selon les mots.",
+    "en": "Add or take away, as the words say."
+   },
+   "explain": {
+    "fr": "5 + 2 = 7, 9 - 3 = 6 et 4 + 4 = 8.",
+    "en": "5 + 2 = 7, 9 - 3 = 6 and 4 + 4 = 8."
+   },
+   "tags": [
+    "snow",
+    "matching",
+    "add-subtract"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_82f12779eb8658ebd4ba"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.neige.012",
+   "quest": "hiver.neige",
+   "skill": "STA-03a",
+   "type": "match",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah range les vêtements d'hiver par paires.",
+    "en": "Noah sorts winter clothes into pairs."
+   },
+   "prompt": {
+    "fr": "Relie chaque nombre de paires au bon nombre d'objets.",
+    "en": "Match each number of pairs to the right number of items."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "3 paires de mitaines",
+       "en": "3 pairs of mittens"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "4 paires de bottes",
+       "en": "4 pairs of boots"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "5 paires de patins",
+       "en": "5 pairs of skates"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "8 bottes",
+       "en": "8 boots"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "10 patins",
+       "en": "10 skates"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "6 mitaines",
+       "en": "6 mittens"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ]
+    ],
+    "misconception": "mis_skip_count"
+   },
+   "hint": {
+    "fr": "Une paire, c'est 2. Compte par 2.",
+    "en": "A pair is 2. Count by twos."
+   },
+   "explain": {
+    "fr": "Trois paires font 6, quatre paires font 8 et cinq paires font 10.",
+    "en": "Three pairs make 6, four pairs make 8 and five pairs make 10."
+   },
+   "tags": [
+    "mittens",
+    "skip-count",
+    "matching"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2c9d00e436ef8c904e09"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.neige.013",
+   "quest": "hiver.neige",
+   "skill": "STA-03a",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa a noté la neige tombée chaque jour dans un tableau d'images. Une image vaut 1 cm.",
+    "en": "Lea noted the snow that fell each day in a picture chart. One picture is 1 cm."
+   },
+   "prompt": {
+    "fr": "Combien de cm de neige mardi ?",
+    "en": "How many cm of snow on Tuesday?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Neige tombée",
+      "en": "Snow fallen"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "lundi",
+        "en": "Monday"
+       },
+       "count": 3
+      },
+      {
+       "label": {
+        "fr": "mardi",
+        "en": "Tuesday"
+       },
+       "count": 5
+      },
+      {
+       "label": {
+        "fr": "mercredi",
+        "en": "Wednesday"
+       },
+       "count": 2
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "5"
+   },
+   "common_errors": [
+    {
+     "value": 3,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as lu la ligne de lundi. Cherche mardi.",
+      "en": "You read Monday's row. Look for Tuesday."
+     }
+    },
+    {
+     "value": 2,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as lu la ligne de mercredi. Cherche mardi.",
+      "en": "You read Wednesday's row. Look for Tuesday."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les images de la ligne de mardi.",
+    "en": "Count the pictures in Tuesday's row."
+   },
+   "explain": {
+    "fr": "La ligne de mardi a 5 images : 5 cm de neige.",
+    "en": "Tuesday's row has 5 pictures: 5 cm of snow."
+   },
+   "tags": [
+    "pictograph",
+    "snow",
+    "chart"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_cec35f1c265dc96d53e0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.neige.014",
+   "quest": "hiver.neige",
+   "skill": "STA-03a",
+   "type": "estimate",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Il tombe 18 cm de neige samedi et 21 cm dimanche.",
+    "en": "18 cm of snow falls on Saturday and 21 cm on Sunday."
+   },
+   "prompt": {
+    "fr": "Environ combien de cm de neige en tout ?",
+    "en": "About how many cm of snow in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 36,
+    "max": 42,
+    "exact_for_check": 39,
+    "calc": "18+21"
+   },
+   "common_errors": [
+    {
+     "value": 30,
+     "misconception": "mis_estimate_rounding",
+     "feedback": {
+      "fr": "Tu as arrondi trop bas.",
+      "en": "You rounded too low."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis chaque nombre à la dizaine.",
+    "en": "Round each number to the nearest ten."
+   },
+   "explain": {
+    "fr": "18 est proche de 20 et 21 aussi. 20 + 20 = 40.",
+    "en": "18 is close to 20 and so is 21. 20 + 20 = 40."
+   },
+   "tags": [
+    "estimation",
+    "snow",
+    "rounding"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_cec35f1c265dc96d53e0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.horaire.001",
+   "quest": "hiver.horaire",
+   "skill": "MES-G02",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Le village d'hiver est ouvert 7 jours par semaine. Léa y va pendant 2 semaines.",
+    "en": "The winter village is open 7 days a week. Lea goes for 2 weeks."
+   },
+   "prompt": {
+    "fr": "Combien de jours y a-t-il en tout ?",
+    "en": "How many days is that in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 14,
+    "calc": "7+7"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Chaque semaine a 7 jours : répète 7, deux fois.",
+      "en": "Each week has 7 days: repeat 7 twice."
+     }
+    },
+    {
+     "value": 7,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Il y a deux semaines. Tu en as compté une.",
+      "en": "There are two weeks. You counted one."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Une semaine a 7 jours. Ajoute deux fois.",
+    "en": "A week has 7 days. Add it twice."
+   },
+   "explain": {
+    "fr": "7 + 7 = 14. Deux semaines font 14 jours.",
+    "en": "7 + 7 = 14. Two weeks make 14 days."
+   },
+   "tags": [
+    "time",
+    "week",
+    "winter-village"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a530bb863effc2972d05"
+    },
+    {
+     "role": "object",
+     "asset": "a_1aa6929e1baa440db535"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.horaire.002",
+   "quest": "hiver.horaire",
+   "skill": "MES-G02",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "L'atelier de tuques dure 2 heures.",
+    "en": "The hat-making workshop lasts 2 hours."
+   },
+   "prompt": {
+    "fr": "Combien de minutes dure l'atelier ?",
+    "en": "How many minutes does the workshop last?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 120,
+    "calc": "60+60"
+   },
+   "common_errors": [
+    {
+     "value": 20,
+     "misconception": "mis_time_base",
+     "feedback": {
+      "fr": "Une heure a 60 minutes, pas 10.",
+      "en": "An hour has 60 minutes, not 10."
+     }
+    },
+    {
+     "value": 62,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Chaque heure a 60 minutes : compte deux heures.",
+      "en": "Each hour has 60 minutes: count two hours."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Une heure a 60 minutes. Ajoute deux fois.",
+    "en": "One hour has 60 minutes. Add it twice."
+   },
+   "explain": {
+    "fr": "60 + 60 = 120. Deux heures font 120 minutes.",
+    "en": "60 + 60 = 120. Two hours make 120 minutes."
+   },
+   "tags": [
+    "time",
+    "hours-minutes",
+    "winter-village"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_1aa6929e1baa440db535"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.horaire.003",
+   "quest": "hiver.horaire",
+   "skill": "MES-G02",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "La patinoire du village ouvre à 10 h et ferme à 11 h.",
+    "en": "The village rink opens at 10 o'clock and closes at 11 o'clock."
+   },
+   "prompt": {
+    "fr": "Combien de minutes reste-t-elle ouverte ?",
+    "en": "How many minutes does it stay open?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "100",
+      "en": "100"
+     },
+     "misconception": "mis_time_base"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "30",
+      "en": "30"
+     },
+     "misconception": "mis_partial_result"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "24",
+      "en": "24"
+     },
+     "misconception": "mis_unit_confusion"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "60",
+      "en": "60"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d",
+    "calc_choice": {
+     "d": "60"
+    }
+   },
+   "hint": {
+    "fr": "De 10 h à 11 h, il passe une heure.",
+    "en": "From 10 to 11 o'clock, one hour goes by."
+   },
+   "explain": {
+    "fr": "Une heure a 60 minutes. La patinoire reste ouverte 60 minutes.",
+    "en": "One hour has 60 minutes. The rink stays open 60 minutes."
+   },
+   "tags": [
+    "time",
+    "hours-minutes"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2c9d00e436ef8c904e09"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.horaire.004",
+   "quest": "hiver.horaire",
+   "skill": "MES-G02",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Une semaine a 7 jours. Le carnaval d'hiver dure 3 semaines.",
+    "en": "A week has 7 days. The winter carnival lasts 3 weeks."
+   },
+   "prompt": {
+    "fr": "Combien de jours dure le carnaval ?",
+    "en": "How many days does the carnival last?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "10",
+      "en": "10"
+     },
+     "misconception": "mis_add_instead_of_multiply"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "14",
+      "en": "14"
+     },
+     "misconception": "mis_partial_result"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "21",
+      "en": "21"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "28",
+      "en": "28"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "7+7+7"
+    }
+   },
+   "hint": {
+    "fr": "Ajoute 7 une fois pour chaque semaine.",
+    "en": "Add 7 once for each week."
+   },
+   "explain": {
+    "fr": "7 + 7 + 7 = 21. Le carnaval dure 21 jours.",
+    "en": "7 + 7 + 7 = 21. The carnival lasts 21 days."
+   },
+   "tags": [
+    "time",
+    "week",
+    "carnival"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1e1f96bd606b75fbd1ce"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.horaire.005",
+   "quest": "hiver.horaire",
+   "skill": "MES-G02",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah patine 30 minutes à chaque séance. Il fait 3 séances dans la journée.",
+    "en": "Noah skates 30 minutes each session. He does 3 sessions in the day."
+   },
+   "prompt": {
+    "fr": "Combien de minutes patine-t-il en tout ?",
+    "en": "How many minutes does he skate in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 90,
+    "calc": "30+30+30"
+   },
+   "common_errors": [
+    {
+     "value": 60,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Il y a trois séances. Tu en as compté deux.",
+      "en": "There are three sessions. You counted two."
+     }
+    },
+    {
+     "value": 33,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "Additionne les dizaines : 30 + 30 + 30.",
+      "en": "Add the tens: 30 + 30 + 30."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte par bonds de 30.",
+    "en": "Count by thirties."
+   },
+   "explain": {
+    "fr": "30 + 30 = 60, puis 60 + 30 = 90 minutes.",
+    "en": "30 + 30 = 60, then 60 + 30 = 90 minutes."
+   },
+   "tags": [
+    "word-problem",
+    "time",
+    "minutes"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2c9d00e436ef8c904e09"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.horaire.006",
+   "quest": "hiver.horaire",
+   "skill": "MES-G02",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Les vacances d'hiver de Léa durent 2 semaines et 3 jours.",
+    "en": "Lea's winter holiday lasts 2 weeks and 3 days."
+   },
+   "prompt": {
+    "fr": "Combien de jours de vacances a-t-elle ?",
+    "en": "How many days of holiday does she have?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 17,
+    "calc": "7+7+3"
+   },
+   "common_errors": [
+    {
+     "value": 5,
+     "misconception": "mis_unit_ignored",
+     "feedback": {
+      "fr": "Une semaine a 7 jours. Change les semaines en jours.",
+      "en": "A week has 7 days. Turn the weeks into days."
+     }
+    },
+    {
+     "value": 14,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié les 3 jours de plus.",
+      "en": "You forgot the 3 extra days."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Change d'abord les semaines en jours.",
+    "en": "First turn the weeks into days."
+   },
+   "explain": {
+    "fr": "2 semaines = 7 + 7 = 14 jours. 14 + 3 = 17 jours.",
+    "en": "2 weeks = 7 + 7 = 14 days. 14 + 3 = 17 days."
+   },
+   "tags": [
+    "word-problem",
+    "time",
+    "units"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1e1f96bd606b75fbd1ce"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.horaire.007",
+   "quest": "hiver.horaire",
+   "skill": "MES-G02",
+   "type": "truefalse",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa parle de la durée d'une heure.",
+    "en": "Lea talks about how long an hour lasts."
+   },
+   "prompt": {
+    "fr": "Vrai ou faux : une heure a 100 minutes.",
+    "en": "True or false: an hour has 100 minutes."
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_time_base"
+   },
+   "hint": {
+    "fr": "Regarde le tour de l'horloge : combien de minutes ?",
+    "en": "Look at the clock face: how many minutes?"
+   },
+   "explain": {
+    "fr": "Une heure a 60 minutes, pas 100.",
+    "en": "An hour has 60 minutes, not 100."
+   },
+   "tags": [
+    "time",
+    "hours-minutes",
+    "true-false"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_1aa6929e1baa440db535"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.horaire.008",
+   "quest": "hiver.horaire",
+   "skill": "MES-G02",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa range des durées du village d'hiver.",
+    "en": "Lea sorts durations in the winter village."
+   },
+   "prompt": {
+    "fr": "Range ces durées de la plus courte à la plus longue.",
+    "en": "Put these durations in order, from shortest to longest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "une semaine",
+      "en": "one week"
+     },
+     "key": "10080"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "une minute",
+      "en": "one minute"
+     },
+     "key": "1"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "un jour",
+      "en": "one day"
+     },
+     "key": "1440"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "une heure",
+      "en": "one hour"
+     },
+     "key": "60"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "d",
+     "c",
+     "a"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Une minute est très courte. Une semaine est très longue.",
+    "en": "A minute is very short. A week is very long."
+   },
+   "explain": {
+    "fr": "Une minute, une heure, un jour, puis une semaine.",
+    "en": "One minute, one hour, one day, then one week."
+   },
+   "tags": [
+    "time",
+    "units",
+    "ordering"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_1aa6929e1baa440db535"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.horaire.009",
+   "quest": "hiver.horaire",
+   "skill": "MES-G02",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Quatre activités du village d'hiver ont des durées différentes.",
+    "en": "Four winter village activities last different times."
+   },
+   "prompt": {
+    "fr": "Range ces durées de la plus courte à la plus longue.",
+    "en": "Put these durations in order, from shortest to longest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "1 heure",
+      "en": "1 hour"
+     },
+     "key": "60"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "45 minutes",
+      "en": "45 minutes"
+     },
+     "key": "45"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "90 minutes",
+      "en": "90 minutes"
+     },
+     "key": "90"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "2 heures",
+      "en": "2 hours"
+     },
+     "key": "120"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "a",
+     "c",
+     "d"
+    ],
+    "by": "asc",
+    "misconception": "mis_unit_ignored"
+   },
+   "hint": {
+    "fr": "Change les heures en minutes pour comparer.",
+    "en": "Change the hours into minutes to compare."
+   },
+   "explain": {
+    "fr": "45 min, 1 h (60 min), 90 min et 2 h (120 min).",
+    "en": "45 min, 1 h (60 min), 90 min and 2 h (120 min)."
+   },
+   "tags": [
+    "time",
+    "units",
+    "ordering"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_1aa6929e1baa440db535"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.horaire.010",
+   "quest": "hiver.horaire",
+   "skill": "MES-G02",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah apprend les relations entre les unités de temps.",
+    "en": "Noah learns how units of time relate."
+   },
+   "prompt": {
+    "fr": "Relie chaque durée à ce qu'elle vaut.",
+    "en": "Match each duration to what it equals."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "1 heure",
+       "en": "1 hour"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "1 semaine",
+       "en": "1 week"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "1 jour",
+       "en": "1 day"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "1 an",
+       "en": "1 year"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "7 jours",
+       "en": "7 days"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "24 heures",
+       "en": "24 hours"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "12 mois",
+       "en": "12 months"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "60 minutes",
+       "en": "60 minutes"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ],
+     [
+      "l4",
+      "r4"
+     ]
+    ],
+    "misconception": "mis_unit_confusion"
+   },
+   "hint": {
+    "fr": "Pense au calendrier et à l'horloge.",
+    "en": "Think of the calendar and the clock."
+   },
+   "explain": {
+    "fr": "1 heure = 60 minutes. 1 semaine = 7 jours. 1 jour = 24 heures. 1 an = 12 mois.",
+    "en": "1 hour = 60 minutes. 1 week = 7 days. 1 day = 24 hours. 1 year = 12 months."
+   },
+   "tags": [
+    "time",
+    "units",
+    "matching"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a530bb863effc2972d05"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.horaire.011",
+   "quest": "hiver.horaire",
+   "skill": "MES-G02",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "La séance de patin commence à 2 h. L'horloge montre l'heure de la fin.",
+    "en": "The skating session starts at 2 o'clock. The clock shows the end time."
+   },
+   "prompt": {
+    "fr": "Combien de minutes la séance a-t-elle duré ?",
+    "en": "How many minutes did the session last?"
+   },
+   "visual": {
+    "kind": "clock",
+    "data": {
+     "hour": 4,
+     "minute": 0
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 120,
+    "calc": "2*60"
+   },
+   "common_errors": [
+    {
+     "value": 2,
+     "misconception": "mis_unit_ignored",
+     "feedback": {
+      "fr": "2 est le nombre d'heures. Change-les en minutes.",
+      "en": "2 is the number of hours. Change them into minutes."
+     }
+    },
+    {
+     "value": 200,
+     "misconception": "mis_time_base",
+     "feedback": {
+      "fr": "Une heure a 60 minutes, pas 100.",
+      "en": "An hour has 60 minutes, not 100."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Combien d'heures entre le début et la fin ?",
+    "en": "How many hours between the start and the end?"
+   },
+   "explain": {
+    "fr": "De 2 h à 4 h, il y a 2 heures. 2 heures = 60 + 60 = 120 minutes.",
+    "en": "From 2 to 4 o'clock is 2 hours. 2 hours = 60 + 60 = 120 minutes."
+   },
+   "tags": [
+    "clock",
+    "time",
+    "hours-minutes"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2c9d00e436ef8c904e09"
+    },
+    {
+     "role": "object",
+     "asset": "a_1aa6929e1baa440db535"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "hiver.horaire.012",
+   "quest": "hiver.horaire",
+   "skill": "MES-G02",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le cours de patin dure 28 minutes lundi et 33 minutes mardi.",
+    "en": "The skating lesson lasts 28 minutes on Monday and 33 minutes on Tuesday."
+   },
+   "prompt": {
+    "fr": "Environ combien de minutes en tout ?",
+    "en": "About how many minutes in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 55,
+    "max": 67,
+    "exact_for_check": 61,
+    "calc": "28+33"
+   },
+   "common_errors": [
+    {
+     "value": 40,
+     "misconception": "mis_estimate_rounding",
+     "feedback": {
+      "fr": "Tu as arrondi trop bas.",
+      "en": "You rounded too low."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis chaque nombre à la dizaine.",
+    "en": "Round each number to the nearest ten."
+   },
+   "explain": {
+    "fr": "28 est proche de 30 et 33 aussi. 30 + 30 = 60.",
+    "en": "28 is close to 30 and so is 33. 30 + 30 = 60."
+   },
+   "tags": [
+    "estimation",
+    "time",
+    "rounding"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2c9d00e436ef8c904e09"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  }
+ ]
+}
