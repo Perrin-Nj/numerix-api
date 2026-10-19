@@ -1,0 +1,332 @@
+[
+ {
+  "id": "a_9c0a11db00c3d9f41672",
+  "kind": "photo",
+  "role": "hero",
+  "world_id": "construction",
+  "grade_band": "all",
+  "mood": "adventurous",
+  "dominant_color": "#f8f8f8",
+  "lqip": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAAAwBACdASoYAA4APu1iqU2ppaOiMAgBMB2JaACw7YwmyhBGxv9jxuoug6AA/r5Yp5P77J9XUJzEN2qTzs3lvwrmAGdMB/8BaBVAyHXVSt3LyNzcbe8t6fyoC4581CDAJSW5oAXDfN8WxMuUDBSf4l5e3clZJPe+kr13+uM/vQSRjXECUtCHZg2M14Dss7AYYTLbh2kN5YnzFNNhDZIq/CtNwwYy0HuW+MfCILTZStR15dCUAAA=",
+  "width": 1541,
+  "height": 867,
+  "alt_fr": "Une cabane en bois avec un garde-corps construite parmi de grands arbres",
+  "alt_en": "A wooden treehouse with a railing built among tall trees",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Tree_house.jpg",
+  "creator": "https://flickr.com/photos/emdot/",
+  "creator_url": null,
+  "licence": "CC-BY-2.0",
+  "licence_url": "https://creativecommons.org/licenses/by/2.0/",
+  "attribution_text": "\"Tree house\" by https://flickr.com/photos/emdot/, CC BY 2.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Tree_house.jpg)",
+  "attribution_required": 1,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "construction"
+   },
+   {
+    "facet": "topic",
+    "value": "treehouse"
+   },
+   {
+    "facet": "object",
+    "value": "treehouse"
+   },
+   {
+    "facet": "mood",
+    "value": "adventurous"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_9c0a11db00c3d9f41672-480.webp",
+    "size": 34584
+   },
+   {
+    "w": 960,
+    "file": "a_9c0a11db00c3d9f41672-960.webp",
+    "size": 113378
+   }
+  ]
+ },
+ {
+  "id": "a_2871b4c54e2e4974864a",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "construction",
+  "grade_band": "all",
+  "mood": "epic",
+  "dominant_color": "#080808",
+  "lqip": "data:image/webp;base64,UklGRsgAAABXRUJQVlA4ILwAAAAwBQCdASoYABIAPu1sqlEppaOiqAqpMB2JZQC3uA9nO68mjAXOuyWZfuKz0i41IjzoAAD+1zR28vSxaVtRB6hAr06bCU7uI8Qtr0Ly0ySG2hliXEY4Wh1BncgBOFMw8ibPpi9BAZPRiTN/oMpnKTW+sQRX/abn9zm+LyOfyoMmaJ2xrKEwvs6yThAj1obDzxw08Fpd3iNAN4bIcOR1r+g4S9JJiyoCXcoGA1fBwcSEi8KxC3arcZrOMdugAA==",
+  "width": 960,
+  "height": 720,
+  "alt_fr": "Une ville aux hautes tours de bureaux au coucher du soleil",
+  "alt_en": "A city skyline with tall office towers at sunset",
+  "source_name": "openverse",
+  "source_url": "https://stocksnap.io/photo/sunset-lights-D9JNUWWQ06",
+  "creator": "Owen CL",
+  "creator_url": "https://stocksnap.io/author/35087",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Sunset Lights\" by Owen CL is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "construction"
+   },
+   {
+    "facet": "topic",
+    "value": "cranes"
+   },
+   {
+    "facet": "object",
+    "value": "crane"
+   },
+   {
+    "facet": "mood",
+    "value": "epic"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_2871b4c54e2e4974864a-480.webp",
+    "size": 33962
+   },
+   {
+    "w": 960,
+    "file": "a_2871b4c54e2e4974864a-960.webp",
+    "size": 96552
+   }
+  ]
+ },
+ {
+  "id": "a_30414011d01af2b89174",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "construction",
+  "grade_band": "all",
+  "mood": "curious",
+  "dominant_color": "#e8e8e8",
+  "lqip": "data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAACwBQCdASoYABIAPu1qrlCppaQiqAqpMB2JZQC+aSAgvww+jecuU1GbnadjqftC9bOvyaV/6YAA/u3+4L3LxHJ7NEsfZ6EgRUJDGt9tYSSZKqG/8TUXGqTe476BGPS79Ib0q6B0qvszccL3A++br+3CjuCqg30EAhcTHIjBZpTTwaqwhUWU9Qgm6RSl+n2UnMkrexDNsgncc7bH4Vg0GDMFp8I1Oz26nVp0oUKLpjxWUN9i77zBrpIOAAA=",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "Des cheminées de briques aux motifs décoratifs sur un toit",
+  "alt_en": "Brick chimneys with decorative brickwork on a roof",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Chimneys_%26_decorative_brickwork,_corbelling-01.jpg",
+  "creator": "Myotus",
+  "creator_url": null,
+  "licence": "CC-BY-4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution_text": "\"Chimneys & decorative brickwork, corbelling-01\" by Myotus, CC BY 4.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Chimneys_%26_decorative_brickwork,_corbelling-01.jpg)",
+  "attribution_required": 1,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "construction"
+   },
+   {
+    "facet": "topic",
+    "value": "bricks"
+   },
+   {
+    "facet": "object",
+    "value": "brick"
+   },
+   {
+    "facet": "mood",
+    "value": "curious"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_30414011d01af2b89174-480.webp",
+    "size": 23274
+   },
+   {
+    "w": 960,
+    "file": "a_30414011d01af2b89174-960.webp",
+    "size": 76332
+   }
+  ]
+ },
+ {
+  "id": "a_7ffb7673e08da5ff9380",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "construction",
+  "grade_band": "all",
+  "mood": "curious",
+  "dominant_color": "#685838",
+  "lqip": "data:image/webp;base64,UklGRsIAAABXRUJQVlA4ILYAAAAwBQCdASoYABIAPu1ur1IppiQiqAgBMB2JYwC7MxgBIDGgbvninWjb+qkOR7tfdit6AAD+J4mHboyFJymvg0A1pzxVbL6Y7Bo1R5Jm+MwiTS/P/JG24ysBuQXWK0hoL8uDm/TSe1or1DwWuclT20b1dgCYKj4O+MWDBsGGM/JvMoEx+0O4sTDijrL8n4JQMRHYTsKUE4T8KeEaun2IVWmku8R36/FHjxoURM8OngrB50htXeAkAA==",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "Un bateau en bois en construction dans un atelier de menuiserie",
+  "alt_en": "A wooden boat being built in a carpentry workshop",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Punt-building-workshop-in-Oxford.jpg",
+  "creator": "Thruston",
+  "creator_url": null,
+  "licence": "PDM",
+  "licence_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "attribution_text": "\"Punt-building-workshop-in-Oxford\" by Thruston, public domain, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Punt-building-workshop-in-Oxford.jpg)",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "construction"
+   },
+   {
+    "facet": "topic",
+    "value": "tools"
+   },
+   {
+    "facet": "object",
+    "value": "hammer"
+   },
+   {
+    "facet": "mood",
+    "value": "curious"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_7ffb7673e08da5ff9380-480.webp",
+    "size": 25044
+   },
+   {
+    "w": 960,
+    "file": "a_7ffb7673e08da5ff9380-960.webp",
+    "size": 88878
+   }
+  ]
+ },
+ {
+  "id": "a_976e9627e5e396a7b3a0",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "construction",
+  "grade_band": "all",
+  "mood": "epic",
+  "dominant_color": "#181838",
+  "lqip": "data:image/webp;base64,UklGRugAAABXRUJQVlA4INwAAAAwBQCdASoYABIAPu1wsFKppiSiqAgBMB2JagCdMtIWwAGjYDFXG7tVwcnfMbU9X1KYEAD+7EPumpBIN+7ohcJg34pvk6Ha0UpeT0s1Qhgq4WHf73o5Bh5hUhz7EL+sNPMDok9o4P/W91eFe1Nir7+RUHcLNhuztpKXQMKeqeC7NumHiSASDXVeGEjip52mqFn6fvVfLJ5avu8wJiVY8FHBvhK5oJ5HLG8cseBDZGpnsuI5vnQk2oQw0eYSkR2M+mZ/onVTnnbuw/SRoyf8uqZjgg5MArugE/18AAAA",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "Un pont suspendu aux tours illuminées au crépuscule au-dessus d'une rivière",
+  "alt_en": "A suspension bridge with lit towers at dusk over a river",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Cincinnati-roebling-suspension-bridge.jpg",
+  "creator": "Derek Jensen (Tysto)",
+  "creator_url": null,
+  "licence": "PDM",
+  "licence_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "attribution_text": "\"Cincinnati-roebling-suspension-bridge\" by Derek Jensen (Tysto), public domain, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Cincinnati-roebling-suspension-bridge.jpg)",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "construction"
+   },
+   {
+    "facet": "topic",
+    "value": "bridges"
+   },
+   {
+    "facet": "object",
+    "value": "bridge"
+   },
+   {
+    "facet": "mood",
+    "value": "epic"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_976e9627e5e396a7b3a0-480.webp",
+    "size": 25444
+   },
+   {
+    "w": 960,
+    "file": "a_976e9627e5e396a7b3a0-960.webp",
+    "size": 87440
+   }
+  ]
+ },
+ {
+  "id": "a_b67297c7e78cc1e356d9",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "construction",
+  "grade_band": "all",
+  "mood": "cozy",
+  "dominant_color": "#58b8d8",
+  "lqip": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAADwBACdASoYABIAPu1orlCppaQiqAqpMB2JYgDGfAv39ymM0Xfv34xRuhJVoepYDQAA9vRvw8G0KEGti4E7YyR2CnfVal5xQMmxYNn7cG5AgZ5aUouCxazxK9D01sJco3PSLYoVfstunC+5Yb8p8ckAXkC8qvQBHeQhaFVGWSXOUIhoaT4ffDnElTgAAA==",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "Une petite maison de bois rouge aux fenêtres blanches, près de bouleaux",
+  "alt_en": "A small red wooden house with white windows beside birch trees",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Wooden_house_in_small_village.jpg",
+  "creator": "U.S. Fish and Wildlife Service",
+  "creator_url": null,
+  "licence": "PDM",
+  "licence_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "attribution_text": "\"Wooden house in small village\" by U.S. Fish and Wildlife Service, public domain, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Wooden_house_in_small_village.jpg)",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "construction"
+   },
+   {
+    "facet": "topic",
+    "value": "houses"
+   },
+   {
+    "facet": "object",
+    "value": "house"
+   },
+   {
+    "facet": "mood",
+    "value": "cozy"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_b67297c7e78cc1e356d9-480.webp",
+    "size": 30616
+   },
+   {
+    "w": 960,
+    "file": "a_b67297c7e78cc1e356d9-960.webp",
+    "size": 89090
+   }
+  ]
+ }
+]

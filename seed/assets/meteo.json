@@ -1,0 +1,341 @@
+[
+ {
+  "id": "a_af06c94ece65eea63936",
+  "kind": "photo",
+  "role": "hero",
+  "world_id": "meteo",
+  "grade_band": "all",
+  "mood": "joyful",
+  "dominant_color": "#080808",
+  "lqip": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADwAwCdASoYAA4APu1kqU2ppaQiMAgBMB2JagCsABitpzj6qn2eO0QAAP7Bk8es93/OPs1hsy09P+w/sz4FOdjP272STr0QOXQTjhkBsiR4CAeFNfezmHm2eAAAAA==",
+  "width": 1600,
+  "height": 900,
+  "alt_fr": "Un arc-en-ciel au-dessus de montagnes et d'arbres après la pluie",
+  "alt_en": "A rainbow arching over mountains and trees after rain",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Rainbow_appears_over_mountains_after_rain_shower_in_early_evening.jpg",
+  "creator": "Shixart1985",
+  "creator_url": null,
+  "licence": "CC-BY-2.0",
+  "licence_url": "https://creativecommons.org/licenses/by/2.0/",
+  "attribution_text": "\"Rainbow appears over mountains after rain shower in early evening\" by Shixart1985, CC BY 2.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Rainbow_appears_over_mountains_after_rain_shower_in_early_evening.jpg)",
+  "attribution_required": 1,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "meteo"
+   },
+   {
+    "facet": "topic",
+    "value": "rainbow"
+   },
+   {
+    "facet": "object",
+    "value": "rainbow"
+   },
+   {
+    "facet": "mood",
+    "value": "joyful"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_af06c94ece65eea63936-480.webp",
+    "size": 6322
+   },
+   {
+    "w": 960,
+    "file": "a_af06c94ece65eea63936-960.webp",
+    "size": 23328
+   },
+   {
+    "w": 1600,
+    "file": "a_af06c94ece65eea63936-1600.webp",
+    "size": 73740
+   }
+  ]
+ },
+ {
+  "id": "a_3ad0adb9d29a41b0fff3",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "meteo",
+  "grade_band": "all",
+  "mood": "epic",
+  "dominant_color": "#484858",
+  "lqip": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAABQBACdASoYABIAPu1mrE6ppaQiKA1RMB2JZwDE2A9i9SCIhO6mDVNbfvgAAP7o8PHRPYsQnT3T9t6BIuUk8VYUDaWZpSjIRrMGY3j2tktXshHkk6/HIiAbAAA=",
+  "width": 1024,
+  "height": 768,
+  "alt_fr": "Des nuages gris d'orage au-dessus d'une montagne enneigée",
+  "alt_en": "Grey storm clouds over a snowy mountain",
+  "source_name": "openverse",
+  "source_url": "https://www.rawpixel.com/image/3288022/free-photo-image-blizzard-cc0-creative-commons",
+  "creator": "Unknown",
+  "creator_url": null,
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Dark storm clouds roll snowy\" is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "meteo"
+   },
+   {
+    "facet": "topic",
+    "value": "storms"
+   },
+   {
+    "facet": "object",
+    "value": "cloud"
+   },
+   {
+    "facet": "mood",
+    "value": "epic"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_3ad0adb9d29a41b0fff3-480.webp",
+    "size": 4402
+   },
+   {
+    "w": 960,
+    "file": "a_3ad0adb9d29a41b0fff3-960.webp",
+    "size": 13774
+   }
+  ]
+ },
+ {
+  "id": "a_530aa618a672c6811369",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "meteo",
+  "grade_band": "all",
+  "mood": "calm",
+  "dominant_color": "#181818",
+  "lqip": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAACwBACdASoYABIAPu1eqE4ppKOiMBgMATAdiWUAx+QPSB7eZZnHTlzWiO1eFK+AAP7uoZaJkDFu0MbwwicD7bBntdse/NFOAGL/Xtu78J4HwUINwwGlvB4eBMsl/P0lzdbgAAAA",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "Photo macro d'un cristal de flocon de neige aux branches délicates",
+  "alt_en": "Macro photo of a snowflake crystal with delicate branches",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Snowflake_macro-_the_core_(10823897423).jpg",
+  "creator": "Alexey Kljatov / Alexey Kljatov from Moscow, Russia",
+  "creator_url": null,
+  "licence": "CC-BY-2.0",
+  "licence_url": "https://creativecommons.org/licenses/by/2.0/",
+  "attribution_text": "\"Snowflake macro- the core (10823897423)\" by Alexey Kljatov / Alexey Kljatov from Moscow, Russia, CC BY 2.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Snowflake_macro-_the_core_(10823897423).jpg)",
+  "attribution_required": 1,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "meteo"
+   },
+   {
+    "facet": "topic",
+    "value": "snow"
+   },
+   {
+    "facet": "object",
+    "value": "snowflake"
+   },
+   {
+    "facet": "mood",
+    "value": "calm"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_530aa618a672c6811369-480.webp",
+    "size": 20566
+   },
+   {
+    "w": 960,
+    "file": "a_530aa618a672c6811369-960.webp",
+    "size": 58466
+   }
+  ]
+ },
+ {
+  "id": "a_5a2783efe63826d8fbf8",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "meteo",
+  "grade_band": "all",
+  "mood": "cozy",
+  "dominant_color": "#d8d8d8",
+  "lqip": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAACQBACdASoYABIAPu1oqk8ppiOiMBgIATAdiWkAABrT1lUayW970ADapSTPa4AA/qzumHVQwF+Rxj0yM8bLIc7e5yvnjt9c9KLmqsxkxChz/+qzeWbt0U9tLmi1C3DbY0EFH5jgH/A1wY2/Tw5JXOGFi2U4fwJ92MnOFetbLMmG5X/H4MIAAA==",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "Des gouttes de pluie qui tombent sur une surface mouillée et réfléchissante",
+  "alt_en": "Raindrops falling on a wet, reflective surface",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Rain_is_life_-_Flickr_-_Robert_Couse-Baker.jpg",
+  "creator": "Robert Couse-Baker from Sacramento, California",
+  "creator_url": null,
+  "licence": "CC-BY-2.0",
+  "licence_url": "https://creativecommons.org/licenses/by/2.0/",
+  "attribution_text": "\"Rain is life - Flickr - Robert Couse-Baker\" by Robert Couse-Baker from Sacramento, California, CC BY 2.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Rain_is_life_-_Flickr_-_Robert_Couse-Baker.jpg)",
+  "attribution_required": 1,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "meteo"
+   },
+   {
+    "facet": "topic",
+    "value": "rain"
+   },
+   {
+    "facet": "object",
+    "value": "raindrop"
+   },
+   {
+    "facet": "mood",
+    "value": "cozy"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_5a2783efe63826d8fbf8-480.webp",
+    "size": 27464
+   },
+   {
+    "w": 960,
+    "file": "a_5a2783efe63826d8fbf8-960.webp",
+    "size": 92792
+   }
+  ]
+ },
+ {
+  "id": "a_6b4abbb808894bacbbfe",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "meteo",
+  "grade_band": "all",
+  "mood": "curious",
+  "dominant_color": "#080808",
+  "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAACwBACdASoYABIAPu1krE6ppaQiKA1RMB2JQBWAAiNXxIbvyLZz9hFIfiIf0FsAAP7DUsOJ++yk7N0JaPLMlYE+QQmG99C8QgwworDNqn6VeEK4ncFvGC4hVzvUZ+whNjbtImisSHke9zb7uWP/OrAA",
+  "width": 960,
+  "height": 720,
+  "alt_fr": "Une girouette sur un toit devant un ciel bleu",
+  "alt_en": "A weather vane on a rooftop against a blue sky",
+  "source_name": "openverse",
+  "source_url": "https://stocksnap.io/photo/weather-vane-CQMBU85EIJ",
+  "creator": "Tim Sullivan",
+  "creator_url": "https://www.secretagencygroup.com",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Weather Vane\" by Tim Sullivan is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "meteo"
+   },
+   {
+    "facet": "topic",
+    "value": "wind"
+   },
+   {
+    "facet": "object",
+    "value": "weather-vane"
+   },
+   {
+    "facet": "mood",
+    "value": "curious"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_6b4abbb808894bacbbfe-480.webp",
+    "size": 6394
+   },
+   {
+    "w": 960,
+    "file": "a_6b4abbb808894bacbbfe-960.webp",
+    "size": 16232
+   }
+  ]
+ },
+ {
+  "id": "a_a4c132ab7d6f8725b634",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "meteo",
+  "grade_band": "all",
+  "mood": "joyful",
+  "dominant_color": "#f8f8f8",
+  "lqip": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAAAwBQCdASoYABIAPu1qrlCppaQiqAqpMB2JQBdmW+AlK9CuUSLgCFPkTZd74FvV7KcQgAD8Uh9VxBWSyFoLVX3txdB7b5tVrw2+2p0Vbrhw8HXe1tFwbsOg9ti///AR2lxcuBT9berOjZXf1BxMwYKyJq/S4WXHWI3IERjoxVvj56BiggTk2uk6leBoAA==",
+  "width": 960,
+  "height": 720,
+  "alt_fr": "Un gros nuage blanc dans un ciel bleu",
+  "alt_en": "A big white cumulus cloud in a blue sky",
+  "source_name": "openverse",
+  "source_url": "https://stocksnap.io/photo/sky-clouds-ERWF7IMSRX",
+  "creator": "Free Nature Stock",
+  "creator_url": "https://freenaturestock.com",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Sky Clouds\" by Free Nature Stock is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "meteo"
+   },
+   {
+    "facet": "topic",
+    "value": "sun"
+   },
+   {
+    "facet": "object",
+    "value": "cloud"
+   },
+   {
+    "facet": "object",
+    "value": "sun"
+   },
+   {
+    "facet": "mood",
+    "value": "joyful"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_a4c132ab7d6f8725b634-480.webp",
+    "size": 6346
+   },
+   {
+    "w": 960,
+    "file": "a_a4c132ab7d6f8725b634-960.webp",
+    "size": 14386
+   }
+  ]
+ }
+]

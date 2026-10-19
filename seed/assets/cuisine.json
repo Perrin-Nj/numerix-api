@@ -1,0 +1,332 @@
+[
+ {
+  "id": "a_37c884f0ae91a7393bea",
+  "kind": "photo",
+  "role": "hero",
+  "world_id": "cuisine",
+  "grade_band": "all",
+  "mood": "cozy",
+  "dominant_color": "#f8c878",
+  "lqip": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAADwBACdASoYAA4APu1iqU2ppaOiMAgBMB2JbACdMoMYNcAIHIUvfKTxQexwPaDGygAAyy+M4XKSdjFCOUDsJxZd9ziVPQJcyYcXMabQqndwkM705FIsLzDAVYozxeE4iUQ2JZVNbXIKE2EaiRiuwcKmuXEbIizt5+bk8cn7yNDV5w13x0KOykiZC/SArV0bk2f4YyVNceZHRcE6BGBJ24pRzDXfXnNcG4mickHPSwAAAA==",
+  "width": 960,
+  "height": 540,
+  "alt_fr": "Des petits pains dorés dans un plat blanc sur une nappe bleue à motifs",
+  "alt_en": "Golden bread rolls in a white dish on a blue patterned tablecloth",
+  "source_name": "openverse",
+  "source_url": "https://stocksnap.io/photo/breadrolls-bread-B79FSN7YOU",
+  "creator": "416studios.com",
+  "creator_url": "https://www.416studios.com",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Breadrolls Bread\" by 416studios.com is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "cuisine"
+   },
+   {
+    "facet": "topic",
+    "value": "baking"
+   },
+   {
+    "facet": "object",
+    "value": "bread"
+   },
+   {
+    "facet": "mood",
+    "value": "cozy"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_37c884f0ae91a7393bea-480.webp",
+    "size": 17520
+   },
+   {
+    "w": 960,
+    "file": "a_37c884f0ae91a7393bea-960.webp",
+    "size": 39620
+   }
+  ]
+ },
+ {
+  "id": "a_6e99d1a3b31abdc9e82a",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "cuisine",
+  "grade_band": "all",
+  "mood": "cozy",
+  "dominant_color": "#080808",
+  "lqip": "data:image/webp;base64,UklGRuwAAABXRUJQVlA4IOAAAABwBQCdASoYABIAPu1sqlEppaOiqAqpMB2JQBYj4Ty3gTYxBQ+5XzcWZsqTR9c7Z9qN0dJwAPfaRnS6e+S2gj/EyDsgcGeXdcAA6GWKhwa756ywNgbwXFQTBjHe08NXW8Ey5d90jmsWprnUcH0HVlvL0nBZ5oWPgAuW8H1sisMQEqYQ+m8jbKs85NJLvoGHHoqWfhwrm7imfICNi7S5TmNjIgpqTbKERJsznwNxL5MWFGQpPLhoeA/klooOqF34vA4Sjl1wa/fSOSBoeUMf1a2tPsFr+AKN67UZaUWnK11gAA==",
+  "width": 960,
+  "height": 720,
+  "alt_fr": "Une assiette de crêpes garnies de crème à côté d'un petit pot de sirop",
+  "alt_en": "A plate of pancakes topped with cream beside a small jug of syrup",
+  "source_name": "openverse",
+  "source_url": "https://stocksnap.io/photo/food-eat-KJGLHB2KF4",
+  "creator": "Gabriel Gurrola",
+  "creator_url": "https://stocksnap.io/author/34620",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Food Eat\" by Gabriel Gurrola is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "cuisine"
+   },
+   {
+    "facet": "topic",
+    "value": "breakfast"
+   },
+   {
+    "facet": "object",
+    "value": "pancake"
+   },
+   {
+    "facet": "mood",
+    "value": "cozy"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_6e99d1a3b31abdc9e82a-480.webp",
+    "size": 25962
+   },
+   {
+    "w": 960,
+    "file": "a_6e99d1a3b31abdc9e82a-960.webp",
+    "size": 63330
+   }
+  ]
+ },
+ {
+  "id": "a_993be93a875309e87925",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "cuisine",
+  "grade_band": "all",
+  "mood": "joyful",
+  "dominant_color": "#f8f8f8",
+  "lqip": "data:image/webp;base64,UklGRugAAABXRUJQVlA4INwAAADQBQCdASoYABIAPu1sq1EppaOiqAqpMB2JYwCdAYwScZGZsiETWyEuFR2eaDy/zetLxqRR0lvsAPjk516cdcpIZ+fNZFbWOdMhRl9Zh8jlxmH9nbBPnBDUpRpr9IHXR7equgDt0ZLdwPqK1RJgci1SGAcE9Wes1Fb17CUnMpzJBbFaDYP25S64+rVjKPlVQoEsgwO4RPe3asGcUUT2IrO3bIiZOga3PCkUBq2aH0HySO/Uux0+WoaARUh7+KQ93H51+ID5swdoWBeYnQ7wW9i/fKNHE0cSORzpAAAA",
+  "width": 960,
+  "height": 720,
+  "alt_fr": "Des biscuits aux pépites de chocolat fraîchement cuits",
+  "alt_en": "Freshly baked chocolate chip cookies",
+  "source_name": "openverse",
+  "source_url": "https://stocksnap.io/photo/cookies-chocolatechipcookies-S4T2FDBYCN",
+  "creator": "Suzy Hazelwood",
+  "creator_url": "https://twitter.com/SuzyHazelwood",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Cookies Chocolatechipcookies\" by Suzy Hazelwood is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "cuisine"
+   },
+   {
+    "facet": "topic",
+    "value": "baking"
+   },
+   {
+    "facet": "object",
+    "value": "cookie"
+   },
+   {
+    "facet": "mood",
+    "value": "joyful"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_993be93a875309e87925-480.webp",
+    "size": 26562
+   },
+   {
+    "w": 960,
+    "file": "a_993be93a875309e87925-960.webp",
+    "size": 74198
+   }
+  ]
+ },
+ {
+  "id": "a_c090dd6ffc45eee09041",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "cuisine",
+  "grade_band": "all",
+  "mood": "joyful",
+  "dominant_color": "#181808",
+  "lqip": "data:image/webp;base64,UklGRuYAAABXRUJQVlA4INoAAAAQBQCdASoYABIAPu1sqlEppaOiqAqpMB2JQBadMZFHB8Fum3HM9uKqSUOeFIFjBkEgAP7p3YPLv5C3ARF9ERYRdX9uUKT4FdUu+2cExq0XtCSvByXlGJXWXFTdkzuMUWGQIWld0wF9aLR3nXX6PPv78BjiflM/j+h0VukyJo+pIdldA9qTPFEuRflpKKMtcqhg61J9cVKJXnVxu7vDxdD/hIfDgG/ADtRpTYMWC9t+5I2yvcmdVxz21cMx0A3W3ehvzAjVBVq/O2622SGDVCm6SxDOdYJnEaAAAA==",
+  "width": 960,
+  "height": 720,
+  "alt_fr": "Un étal de marché garni de paniers de petits fruits et de fruits frais",
+  "alt_en": "A market stall piled with baskets of fresh berries and fruit",
+  "source_name": "openverse",
+  "source_url": "https://stocksnap.io/photo/fruit-market-E4J3BP6ZNJ",
+  "creator": "Daria Shevtsova",
+  "creator_url": "https://instagram.com/dash.shevtsova",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Fruit Market\" by Daria Shevtsova is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "cuisine"
+   },
+   {
+    "facet": "topic",
+    "value": "market"
+   },
+   {
+    "facet": "object",
+    "value": "fruit"
+   },
+   {
+    "facet": "mood",
+    "value": "joyful"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_c090dd6ffc45eee09041-480.webp",
+    "size": 43354
+   },
+   {
+    "w": 960,
+    "file": "a_c090dd6ffc45eee09041-960.webp",
+    "size": 138864
+   }
+  ]
+ },
+ {
+  "id": "a_da382dc06c6d6138d139",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "cuisine",
+  "grade_band": "all",
+  "mood": "joyful",
+  "dominant_color": "#080808",
+  "lqip": "data:image/webp;base64,UklGRvgAAABXRUJQVlA4IOwAAABQBQCdASoYABIAPu1qq1EppaOiqAqpMB2JZACdMxGwusAnQQKjHG2odde0rLfrNz29CoQA/cHuKtsPiqDPgVTAS446jiNj/wc9IKlk+E+HAvhnoAOBs3G2H9MnYCn/NUYN8+wHm336l4XVVr56eENK54sfoGz7nEwo1c7VxhEZoYeC5VgXFlcBhItGnod5t0N1Ja5dsuQCNrcVp0fSuX5b2EBul4iEWJioyqCD6pwAg10ggVlsdLrbYjKXUbufGz531LzwUuozi5+0qVtHPyKCg97fdjcj3GMcvW/ptKn0XB90+QvUfMOWvsgAAA==",
+  "width": 1024,
+  "height": 768,
+  "alt_fr": "Des paniers de légumes verts frais sur un marché local",
+  "alt_en": "Baskets of fresh green leafy vegetables at a local market",
+  "source_name": "openverse",
+  "source_url": "https://www.rawpixel.com/image/3284432/free-photo-image-herbs-organic-farming-herb-traditional-chinese-medicine",
+  "creator": "Unknown",
+  "creator_url": null,
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Organic vegetable baskets local market\" is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "cuisine"
+   },
+   {
+    "facet": "topic",
+    "value": "vegetables"
+   },
+   {
+    "facet": "object",
+    "value": "carrot"
+   },
+   {
+    "facet": "mood",
+    "value": "joyful"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_da382dc06c6d6138d139-480.webp",
+    "size": 48672
+   },
+   {
+    "w": 960,
+    "file": "a_da382dc06c6d6138d139-960.webp",
+    "size": 144142
+   }
+  ]
+ },
+ {
+  "id": "a_f960ee90963465552540",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "cuisine",
+  "grade_band": "all",
+  "mood": "cozy",
+  "dominant_color": "#181818",
+  "lqip": "data:image/webp;base64,UklGRtoAAABXRUJQVlA4IM4AAACwBQCdASoYABIAPu1qq1EppaOiqAqpMB2JZACxHvUzG0ZE4ZLT79VSy62rzI564JMQJVkrBsAA/uSiPkRj8peljnlvIvlMlU76XTk1W4847WoBhBnZPF4D/nLcSQtwbxCkRcndUjT5AW6DKKqi34lC1lUX3dfIevGm75biJnkcSjse7DjMYYPUHpCAx5mtUsKbK3QQTUcRbI75v6+i9K9CVCbagxURV5xpqP1d9vnqxvh5q9R/fngbAiPO9MSFeFN7ewEw7TaRWKJX+PEAAA==",
+  "width": 1024,
+  "height": 768,
+  "alt_fr": "Des pâtisseries sucrées garnies de noix sur du papier",
+  "alt_en": "Sweet pastries sprinkled with nuts on paper",
+  "source_name": "openverse",
+  "source_url": "https://www.flickr.com/photos/194923002@N08/54118237187",
+  "creator": "& WDnet Studio Creation",
+  "creator_url": "https://www.flickr.com/photos/194923002@N08",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Tasty traditional Croissants of Saint Martin\" by & WDnet Studio Creation is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "cuisine"
+   },
+   {
+    "facet": "topic",
+    "value": "baking"
+   },
+   {
+    "facet": "object",
+    "value": "croissant"
+   },
+   {
+    "facet": "mood",
+    "value": "cozy"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_f960ee90963465552540-480.webp",
+    "size": 27714
+   },
+   {
+    "w": 960,
+    "file": "a_f960ee90963465552540-960.webp",
+    "size": 88800
+   }
+  ]
+ }
+]

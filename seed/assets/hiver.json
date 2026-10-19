@@ -1,0 +1,332 @@
+[
+ {
+  "id": "a_301c36f0d5810ef7355c",
+  "kind": "photo",
+  "role": "hero",
+  "world_id": "hiver",
+  "grade_band": "all",
+  "mood": "cozy",
+  "dominant_color": "#181818",
+  "lqip": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAAAwBACdASoYAA4APu1iqU2ppaOiMAgBMB2JYwC+SB9BIV5K6j8mDYSEJ4AA/Xd2fnT7RfRItAoEnXRDGuE/dxZRdn1KVU8skO9DxDHMW711M2hcT/I3t0+bdhKadT97c3xKZujLR0cEWsTsT3So2accFoKoPYUNOjiigB1qa0A771DxRWSTza+diPgjlwAA",
+  "width": 1600,
+  "height": 900,
+  "alt_fr": "Des bassins d'évaporation en acier inoxydable dans une cabane à sucre",
+  "alt_en": "Stainless steel evaporator pans in a maple syrup sugar shack",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Maple_Syrup_Production_Equipment.JPG",
+  "creator": "MarkBuckawicki",
+  "creator_url": null,
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Maple Syrup Production Equipment\" by MarkBuckawicki, CC0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Maple_Syrup_Production_Equipment.JPG)",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "hiver"
+   },
+   {
+    "facet": "topic",
+    "value": "sugar-shack"
+   },
+   {
+    "facet": "object",
+    "value": "maple-syrup"
+   },
+   {
+    "facet": "mood",
+    "value": "cozy"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_301c36f0d5810ef7355c-480.webp",
+    "size": 24914
+   },
+   {
+    "w": 960,
+    "file": "a_301c36f0d5810ef7355c-960.webp",
+    "size": 73506
+   },
+   {
+    "w": 1600,
+    "file": "a_301c36f0d5810ef7355c-1600.webp",
+    "size": 205384
+   }
+  ]
+ },
+ {
+  "id": "a_1e1f96bd606b75fbd1ce",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "hiver",
+  "grade_band": "all",
+  "mood": "adventurous",
+  "dominant_color": "#6888b8",
+  "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAABQBACdASoYABIAPt1apU2opSOiN/qoARAbiUAVhmX4arff0D9DZLPmkL/AAPyJibqfrdopq/KR0mCbrplI9LpJdaClWj2jmWyAXtOMCOsZppi0kyp1CjKYrmuuKjwUHeZIxN4knGsTIEc15OsLho1qDuk2RMDePfkCsAAA",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "Une piste de ski qui traverse un lac gelé couvert de neige",
+  "alt_en": "A ski track leading across a snowy frozen lake",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Ski_and_sled_track_over_a_frozen_lake_(51080463282).jpg",
+  "creator": "USFWSAlaska",
+  "creator_url": null,
+  "licence": "PDM",
+  "licence_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "attribution_text": "\"Ski and sled track over a frozen lake (51080463282)\" by USFWSAlaska, public domain, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Ski_and_sled_track_over_a_frozen_lake_(51080463282).jpg)",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "hiver"
+   },
+   {
+    "facet": "topic",
+    "value": "sledding"
+   },
+   {
+    "facet": "object",
+    "value": "sled"
+   },
+   {
+    "facet": "mood",
+    "value": "adventurous"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_1e1f96bd606b75fbd1ce-480.webp",
+    "size": 15472
+   },
+   {
+    "w": 960,
+    "file": "a_1e1f96bd606b75fbd1ce-960.webp",
+    "size": 70462
+   }
+  ]
+ },
+ {
+  "id": "a_2aa68f1db05750a6fc60",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "hiver",
+  "grade_band": "all",
+  "mood": "calm",
+  "dominant_color": "#c8c8d8",
+  "lqip": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAACwBACdASoYABIAPu1qrFEppaQiqAqpMB2JZQAALl+dTiAzNrQwqRHU8kX7pE2gAPfR0B4hRqNuGbKeE07AWCZG+anVrJlwed4ZwzTRRFyXu5ot+9MTGx0eNdWz1kDWXKq6jxpYw21QmJUgSqPcer7+RR2USxI5nr45IQJ8lRtSFocAAAA=",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "De longs glaçons suspendus au bord d'un toit",
+  "alt_en": "Long icicles hanging from a roof edge",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:FL_Icicles_hanging_over_the_Interpretive_Office_(5301098010).jpg",
+  "creator": "Virginia State Parks staff",
+  "creator_url": null,
+  "licence": "CC-BY-2.0",
+  "licence_url": "https://creativecommons.org/licenses/by/2.0/",
+  "attribution_text": "\"FL Icicles hanging over the Interpretive Office (5301098010)\" by Virginia State Parks staff, CC BY 2.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:FL_Icicles_hanging_over_the_Interpretive_Office_(5301098010).jpg)",
+  "attribution_required": 1,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "hiver"
+   },
+   {
+    "facet": "topic",
+    "value": "ice"
+   },
+   {
+    "facet": "object",
+    "value": "icicle"
+   },
+   {
+    "facet": "mood",
+    "value": "calm"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_2aa68f1db05750a6fc60-480.webp",
+    "size": 24880
+   },
+   {
+    "w": 960,
+    "file": "a_2aa68f1db05750a6fc60-960.webp",
+    "size": 94614
+   }
+  ]
+ },
+ {
+  "id": "a_2c9d00e436ef8c904e09",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "hiver",
+  "grade_band": "all",
+  "mood": "joyful",
+  "dominant_color": "#385888",
+  "lqip": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAACQBACdASoYABIAPu1ep06ppKMiMBgMATAdiWMAsOwQ7iClHpkIa/q4FM+LLmgA/IHtNO8hXRqYJUcVGNaeLBC/2u8OJpYxKdOTOY9R+SSrUmBHKT42g5WGg0qZzRyCimBFghmIhfAQU4GUtFKNANapZoERxhFLxtttQHfk4mXpRj4I7ThhMS8HT0MohgAA",
+  "width": 720,
+  "height": 540,
+  "alt_fr": "Un étang gelé bordé de bancs de neige et de bâtiments",
+  "alt_en": "A frozen pond with buildings and snowbanks beside it",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Outdoor_Skating_Rink_(6455055263).jpg",
+  "creator": "Fort Simpson Chamber of Commerce",
+  "creator_url": null,
+  "licence": "CC-BY-2.0",
+  "licence_url": "https://creativecommons.org/licenses/by/2.0/",
+  "attribution_text": "\"Outdoor Skating Rink (6455055263)\" by Fort Simpson Chamber of Commerce, CC BY 2.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Outdoor_Skating_Rink_(6455055263).jpg)",
+  "attribution_required": 1,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "hiver"
+   },
+   {
+    "facet": "topic",
+    "value": "skating"
+   },
+   {
+    "facet": "object",
+    "value": "ice-skate"
+   },
+   {
+    "facet": "mood",
+    "value": "joyful"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_2c9d00e436ef8c904e09-480.webp",
+    "size": 18784
+   }
+  ]
+ },
+ {
+  "id": "a_a530bb863effc2972d05",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "hiver",
+  "grade_band": "all",
+  "mood": "joyful",
+  "dominant_color": "#7898d8",
+  "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAAAwBQCdASoYABIAPu1iq1AppSOisBgIATAdiUAWHYIgpiWl8+Kx1qe5DiFs4E8fk3+cAAD93oy59Jvj9KeL06d7cwE/VtDjVbkkZtH0e8/ep/jzd6S6EOHZWK12Fq9UXJ2UlECSwm0+u8Y37xlKdlr7IzamszwOTGH5P3IAAAA=",
+  "width": 1024,
+  "height": 768,
+  "alt_fr": "Un bonhomme de neige souriant coiffé d'une tuque bleue dans un champ enneigé",
+  "alt_en": "A smiling snowman wearing a blue hat in a snowy field",
+  "source_name": "openverse",
+  "source_url": "https://www.rawpixel.com/image/5905869/photo-image-public-domain-ice-free",
+  "creator": "Unknown",
+  "creator_url": null,
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Snowman winter photo\" is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "hiver"
+   },
+   {
+    "facet": "topic",
+    "value": "snow"
+   },
+   {
+    "facet": "object",
+    "value": "snowman"
+   },
+   {
+    "facet": "mood",
+    "value": "joyful"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_a530bb863effc2972d05-480.webp",
+    "size": 10532
+   },
+   {
+    "w": 960,
+    "file": "a_a530bb863effc2972d05-960.webp",
+    "size": 28874
+   }
+  ]
+ },
+ {
+  "id": "a_cec35f1c265dc96d53e0",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "hiver",
+  "grade_band": "all",
+  "mood": "calm",
+  "dominant_color": "#f8f8f8",
+  "lqip": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAADQBACdASoYABIAPu1ur1IppiQiqAgBMB2JYwAHBOEQgmlBn8N324w49ND+1tJViAD+6Hz1QZ7aXBOSRBAm+mc+AlthWvLQUAUiP02A5gCvCERHdTHWtzS96d3vQUdXj5LQbczLfvxYPuEUbaQLEVuInr3SJYCZxVRxP07In4iv1zzrvXJUlzv6Y1+h4jucQW+6RyDJ0TSzhBkj/oAAAA==",
+  "width": 960,
+  "height": 720,
+  "alt_fr": "Une forêt de sapins enneigée avec des montagnes et un ciel nuageux",
+  "alt_en": "A snowy pine forest with mountains and a cloudy sky",
+  "source_name": "openverse",
+  "source_url": "https://stocksnap.io/photo/snow-winter-AO5BEA6QMG",
+  "creator": "Bonnie Moreland",
+  "creator_url": "https://www.flickr.com/photos/icetsarina",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Snow Winter\" by Bonnie Moreland is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "hiver"
+   },
+   {
+    "facet": "topic",
+    "value": "snow"
+   },
+   {
+    "facet": "object",
+    "value": "tree"
+   },
+   {
+    "facet": "mood",
+    "value": "calm"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_cec35f1c265dc96d53e0-480.webp",
+    "size": 31946
+   },
+   {
+    "w": 960,
+    "file": "a_cec35f1c265dc96d53e0-960.webp",
+    "size": 90038
+   }
+  ]
+ }
+]

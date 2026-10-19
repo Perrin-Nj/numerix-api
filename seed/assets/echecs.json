@@ -1,0 +1,332 @@
+[
+ {
+  "id": "a_82efedd1e775f7bcc5a2",
+  "kind": "photo",
+  "role": "hero",
+  "world_id": "echecs",
+  "grade_band": "all",
+  "mood": "calm",
+  "dominant_color": "#d8d8d8",
+  "lqip": "data:image/webp;base64,UklGRsgAAABXRUJQVlA4ILwAAABQBACdASoYAA4APu1iqU2ppaOiMAgBMB2JaQAD4zHaI9F2DCg2PJ6KaPM4AP5qJXZEzi0dQxFKuKEART7pIxwSQAYsTVOj7RiJZi51vdyKZ5/P0ZnXUs6emsg0/RvmIqkDr1q5rYAmgBzIL0ogSMx6GgnrgLhk4T8haudp43L7AA5z/6vQvEvMbNq/YHyxCUP/FDvWzUalP7+dFMBXpc8vuX2xOza4Ta98SFkJB0xMm4ClQwqYwKvS9BAQAA==",
+  "width": 1024,
+  "height": 576,
+  "alt_fr": "Des pièces d'échecs noires sur un échiquier noir et blanc",
+  "alt_en": "Black chess pieces on a black and white chessboard",
+  "source_name": "openverse",
+  "source_url": "https://www.rawpixel.com/image/5914376/image-public-domain-free-game",
+  "creator": "Unknown",
+  "creator_url": null,
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Free chess board pieces photo\" is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "echecs"
+   },
+   {
+    "facet": "topic",
+    "value": "chess"
+   },
+   {
+    "facet": "object",
+    "value": "chess-piece"
+   },
+   {
+    "facet": "mood",
+    "value": "calm"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_82efedd1e775f7bcc5a2-480.webp",
+    "size": 9278
+   },
+   {
+    "w": 960,
+    "file": "a_82efedd1e775f7bcc5a2-960.webp",
+    "size": 19686
+   }
+  ]
+ },
+ {
+  "id": "a_0fe341097d5f4008cfee",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "echecs",
+  "grade_band": "all",
+  "mood": "epic",
+  "dominant_color": "#483838",
+  "lqip": "data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAADQBACdASoYABIAPu1ur1IppiQiqAgBMB2JQAAEChaRDWnkH1PPy5vtwVDMjSUGQAD+0eGoZ4iAYPzfx05rAy44HlvaJoslQndP/P6VICstkZpl3FfLh2pk1QejE4jpTntn1xq2PBJokDuQIasYPyk9WjNumRV/63Dm5pILZhlr+r3Ayqc/okEV+ynROiIst3Wo3k2E0hZKi1alrVybIJA8mvKajXoznBzI7B6FhVIo8ngHSJHpRCbgAAA=",
+  "width": 960,
+  "height": 720,
+  "alt_fr": "Des pièces d'échecs en bois sur un échiquier",
+  "alt_en": "Wooden chess pieces standing on a chessboard",
+  "source_name": "openverse",
+  "source_url": "https://stocksnap.io/photo/chess-board-NUAITIXILP",
+  "creator": "Kristin Hardwick",
+  "creator_url": "https://www.kristinhardwick.com",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Chess Board\" by Kristin Hardwick is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "echecs"
+   },
+   {
+    "facet": "topic",
+    "value": "chess"
+   },
+   {
+    "facet": "object",
+    "value": "king"
+   },
+   {
+    "facet": "mood",
+    "value": "epic"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_0fe341097d5f4008cfee-480.webp",
+    "size": 16002
+   },
+   {
+    "w": 960,
+    "file": "a_0fe341097d5f4008cfee-960.webp",
+    "size": 35448
+   }
+  ]
+ },
+ {
+  "id": "a_363661b8b93c27e81892",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "echecs",
+  "grade_band": "all",
+  "mood": "calm",
+  "dominant_color": "#f8f8f8",
+  "lqip": "data:image/webp;base64,UklGRsgAAABXRUJQVlA4ILwAAACQBQCdASoYABIAPu1ur1KppiQiqAgBMB2JQBOmZGX/90AATdViwuSm5dtPPWThyyDTya0LyAD+8cn2rvIXrYKYjTKJfM1zIscThd3VL/ee33tHrJhnvqNmCRLRuTqfc/SByK8D7xCvTb+teSXejv7+wxWZYutcYGBiEx3q9xmNIewM+pL8kUm1GucF9RTH/JPZUc6c+q3eUuxK3y2bgw0yAWfmKxYVulKF1xtb3woKp1iYiD1f4DiZpwAAAA==",
+  "width": 1024,
+  "height": 768,
+  "alt_fr": "Des pièces d'échecs crème sur un échiquier, une pièce brune au premier plan",
+  "alt_en": "Cream-coloured chess pieces on a board, one brown piece in the foreground",
+  "source_name": "openverse",
+  "source_url": "https://www.rawpixel.com/image/5937286/free-public-domain-cc0-photo",
+  "creator": "Unknown",
+  "creator_url": null,
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "This work is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "echecs"
+   },
+   {
+    "facet": "topic",
+    "value": "chess"
+   },
+   {
+    "facet": "object",
+    "value": "pawn"
+   },
+   {
+    "facet": "mood",
+    "value": "calm"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_363661b8b93c27e81892-480.webp",
+    "size": 9788
+   },
+   {
+    "w": 960,
+    "file": "a_363661b8b93c27e81892-960.webp",
+    "size": 23108
+   }
+  ]
+ },
+ {
+  "id": "a_8bf5129e219638daa34a",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "echecs",
+  "grade_band": "all",
+  "mood": "epic",
+  "dominant_color": "#785848",
+  "lqip": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAABQBQCdASoYABIAPu1ur1IppiQiqAgBMB2JZQCdAYyUZcqrPXV/R56hkT8c/lEhLG+yxgAA+8WO87rC/j6NOu+OtuDNCWIEBVJiVoBmQ0StokDpjgemaeOlNzkb2ACPAmMK7fgiF1MkeVw9IxBf8chwj+M+eSsQS/UzNuF+ZTtT1v7oXxDeF0h9Ohcv7XzUOuMbUmpJVSx4awOdrySCcpfzirhyplsXHbPaOAPCeZZ14WW2gAA=",
+  "width": 960,
+  "height": 720,
+  "alt_fr": "Un jeu d'échecs aux pièces de teintes bronze et argent",
+  "alt_en": "A chess set with pieces in bronze and silver tones",
+  "source_name": "openverse",
+  "source_url": "https://stocksnap.io/photo/mind-games-SF8YGVOUL8",
+  "creator": "Maarten van den Heuvel",
+  "creator_url": "https://stocksnap.io/author/29525",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Mind Games\" by Maarten van den Heuvel is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "echecs"
+   },
+   {
+    "facet": "topic",
+    "value": "chess"
+   },
+   {
+    "facet": "object",
+    "value": "knight"
+   },
+   {
+    "facet": "mood",
+    "value": "epic"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_8bf5129e219638daa34a-480.webp",
+    "size": 20172
+   },
+   {
+    "w": 960,
+    "file": "a_8bf5129e219638daa34a-960.webp",
+    "size": 46882
+   }
+  ]
+ },
+ {
+  "id": "a_9a644174f475121aacf0",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "echecs",
+  "grade_band": "all",
+  "mood": "curious",
+  "dominant_color": "#f8f8f8",
+  "lqip": "data:image/webp;base64,UklGRuIAAABXRUJQVlA4INYAAADwBQCdASoYABIAPu1srFEppaQiqAqpMB2JYgCdMzQ+AkgQzDyCD1i2FaHP2r61xw6+PmatGiEvgAD+8ECnSKjo7AT3E96t/8r/AP9oaS14GuPxLt1cGSR4HsWQwWQQNj5VR1MKqgD4fbEYpytiz2nvq+Zb/k5I8SPFHgJEFJc2G/y0kEaIsm1K39GFIKYtUm9cYP33nwZCfxnADQNi61dwyKUGBboBi01xmvWDgKOSxeA9W9RmfVqKjcvGbTl83iGZ1D6RwySO23fKWYtEpE5mOwDkVyQA",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "Un échiquier en bois avec un jeu d'échecs prêt à jouer",
+  "alt_en": "A wooden chessboard with a chess set ready to play",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Chess_game_Staunton_No._6_perfil_view_8.jpg",
+  "creator": "Wilfredor",
+  "creator_url": null,
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Chess game Staunton No. 6 perfil view 8\" by Wilfredor, CC0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Chess_game_Staunton_No._6_perfil_view_8.jpg)",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "echecs"
+   },
+   {
+    "facet": "topic",
+    "value": "board"
+   },
+   {
+    "facet": "object",
+    "value": "chessboard"
+   },
+   {
+    "facet": "mood",
+    "value": "curious"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_9a644174f475121aacf0-480.webp",
+    "size": 26056
+   },
+   {
+    "w": 960,
+    "file": "a_9a644174f475121aacf0-960.webp",
+    "size": 97562
+   }
+  ]
+ },
+ {
+  "id": "a_e498bd56e1046bb2593f",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "echecs",
+  "grade_band": "all",
+  "mood": "curious",
+  "dominant_color": "#181818",
+  "lqip": "data:image/webp;base64,UklGRvIAAABXRUJQVlA4IOYAAAAQBgCdASoYABIAPu1sq1EppaOiqAqpMB2JZwDE2ywYdxoAMu0XyP8Vie0qa6/4zGYJV9oR3GBYrgAA9r1cwwSO9DV72ibmZpAuqyqH69Q3J3L4MS+zwMtkGQ97AG9lf9XsHEx4S5lCGupTxMAtjgFlhoRO5Aa2ayAS5KAVFW6wdGpvrzhJ7vP2bvQCAG2h7vLPXfJBbRq99n217usNU8Uo2OUGGn3Tnm4pSQA9NFp+fdfrhS4KFrvnFHZpreIv0SF65vzx8dpVLK01fuGPnU4gW5mWcase9R0ghWmSmtRw41Uhm38AAA==",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "Un plancher de tuiles de marbre noires et blanches en damier",
+  "alt_en": "A floor of black and white marble tiles in a checkerboard pattern",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Black_and_white_marble_tile_in_the_southeast_gallery_(5396530982).jpg",
+  "creator": "Jefferson National Expansion Memorial, NPS from St. Louis, MO, USA",
+  "creator_url": null,
+  "licence": "CC-BY-2.0",
+  "licence_url": "https://creativecommons.org/licenses/by/2.0/",
+  "attribution_text": "\"Black and white marble tile in the southeast gallery (5396530982)\" by Jefferson National Expansion Memorial, NPS from St. Louis, MO, USA, CC BY 2.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Black_and_white_marble_tile_in_the_southeast_gallery_(5396530982).jpg)",
+  "attribution_required": 1,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "echecs"
+   },
+   {
+    "facet": "topic",
+    "value": "squares"
+   },
+   {
+    "facet": "object",
+    "value": "tile"
+   },
+   {
+    "facet": "mood",
+    "value": "curious"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_e498bd56e1046bb2593f-480.webp",
+    "size": 18894
+   },
+   {
+    "w": 960,
+    "file": "a_e498bd56e1046bb2593f-960.webp",
+    "size": 78724
+   }
+  ]
+ }
+]

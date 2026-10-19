@@ -1,0 +1,710 @@
+{
+ "a_1a862dfd08ab3deff4ab": {
+  "status": "approved",
+  "alt_fr": "Sentier de forêt brumeux couvert de feuilles rouges et orangées",
+  "alt_en": "Misty autumn forest trail covered in red and orange leaves",
+  "people_free": 1
+ },
+ "a_e6ab1f9c345d3c73c5aa": {
+  "status": "approved",
+  "alt_fr": "Des cônes de pin éparpillés sur le sol de la forêt, près d'une clairière verte",
+  "alt_en": "Pine cones scattered on the forest floor beside a green clearing",
+  "people_free": 1
+ },
+ "a_927afb8fd96dd1847c41": {
+  "status": "approved",
+  "alt_fr": "Tente de toile verte installée dans un terrain de camping boisé",
+  "alt_en": "Green canvas tent set up in a wooded campsite",
+  "people_free": 1
+ },
+ "a_cf33427df082b6a157e3": {
+  "status": "approved",
+  "alt_fr": "Un cerf debout au bord d'un ruisseau dans un pré verdoyant",
+  "alt_en": "A deer standing beside a stream in a green meadow",
+  "people_free": 1
+ },
+ "a_52196f49a5f1cdfffed1": {
+  "status": "approved",
+  "alt_fr": "Un petit ruisseau qui coule sur des roches dans une forêt",
+  "alt_en": "A small stream flowing over rocks through a forest",
+  "people_free": 1
+ },
+ "a_4e21187d552c19823597": {
+  "status": "approved",
+  "alt_fr": "Gros plan de feuilles d'automne orange vif sur un fond flou",
+  "alt_en": "Close-up of bright orange autumn leaves with a blurred background",
+  "people_free": 1
+ },
+ "a_a6f33c352e4a2f7706a8": {
+  "status": "approved",
+  "alt_fr": "Une navette spatiale qui décolle de sa rampe de lancement dans un nuage de fumée blanche",
+  "alt_en": "A space shuttle lifting off from its launch pad in a cloud of white smoke",
+  "people_free": 1
+ },
+ "a_8f934f2223ce02443238": {
+  "status": "approved",
+  "alt_fr": "La Lune, presque pleine, sur un ciel noir",
+  "alt_en": "The Moon, nearly full, against a black sky",
+  "people_free": 1
+ },
+ "a_e4c6c235429cdc537779": {
+  "status": "approved",
+  "alt_fr": "Vue rapprochée des anneaux glacés de Saturne",
+  "alt_en": "Close-up view of Saturn's icy rings",
+  "people_free": 1
+ },
+ "a_56328e63721b70ce0328": {
+  "status": "approved",
+  "alt_fr": "La Station spatiale internationale en orbite au-dessus de la Terre",
+  "alt_en": "The International Space Station orbiting above Earth",
+  "people_free": 1
+ },
+ "a_c59733e07035097a0fe5": {
+  "status": "approved",
+  "alt_fr": "Un amas d'étoiles coloré et un nuage de gaz lumineux dans l'espace",
+  "alt_en": "A colourful star cluster and glowing gas cloud in space",
+  "people_free": 1
+ },
+ "a_dfb0470d4c6fc4784f47": {
+  "status": "approved",
+  "alt_fr": "Un paysage sec, rocailleux et sablonneux sur Mars",
+  "alt_en": "A dry, rocky and sandy landscape on Mars",
+  "people_free": 1
+ },
+ "a_37c884f0ae91a7393bea": {
+  "status": "approved",
+  "alt_fr": "Des petits pains dorés dans un plat blanc sur une nappe bleue à motifs",
+  "alt_en": "Golden bread rolls in a white dish on a blue patterned tablecloth",
+  "people_free": 1
+ },
+ "a_f960ee90963465552540": {
+  "status": "approved",
+  "alt_fr": "Des pâtisseries sucrées garnies de noix sur du papier",
+  "alt_en": "Sweet pastries sprinkled with nuts on paper",
+  "people_free": 1
+ },
+ "a_c090dd6ffc45eee09041": {
+  "status": "approved",
+  "alt_fr": "Un étal de marché garni de paniers de petits fruits et de fruits frais",
+  "alt_en": "A market stall piled with baskets of fresh berries and fruit",
+  "people_free": 1
+ },
+ "a_6e99d1a3b31abdc9e82a": {
+  "status": "approved",
+  "alt_fr": "Une assiette de crêpes garnies de crème à côté d'un petit pot de sirop",
+  "alt_en": "A plate of pancakes topped with cream beside a small jug of syrup",
+  "people_free": 1
+ },
+ "a_993be93a875309e87925": {
+  "status": "approved",
+  "alt_fr": "Des biscuits aux pépites de chocolat fraîchement cuits",
+  "alt_en": "Freshly baked chocolate chip cookies",
+  "people_free": 1
+ },
+ "a_da382dc06c6d6138d139": {
+  "status": "approved",
+  "alt_fr": "Des paniers de légumes verts frais sur un marché local",
+  "alt_en": "Baskets of fresh green leafy vegetables at a local market",
+  "people_free": 1
+ },
+ "a_18c54a41f800e66f3802": {
+  "status": "approved",
+  "alt_fr": "Un ballon de soccer sur un terrain gazonné au crépuscule, avec un but en arrière-plan",
+  "alt_en": "A soccer ball on a grass field at dusk with a goal in the background",
+  "people_free": 1
+ },
+ "a_a760c39d8f58fc657ccf": {
+  "status": "approved",
+  "alt_fr": "Un terrain de basketball extérieur vide avec un panier, parmi des arbres dénudés dans la brume",
+  "alt_en": "An empty outdoor basketball court with a hoop among bare trees in fog",
+  "people_free": 1
+ },
+ "a_1684008ff9958b7b5269": {
+  "status": "approved",
+  "alt_fr": "Une piscine extérieure avec des couloirs et des auvents bleus",
+  "alt_en": "An outdoor swimming pool with lanes and blue shade canopies",
+  "people_free": 1
+ },
+ "a_6540d314539ec2e2fcf1": {
+  "status": "approved",
+  "alt_fr": "Une balle et une raquette de tennis posées sur un terrain de terre battue rouge",
+  "alt_en": "A tennis ball and racket resting on a red clay court",
+  "people_free": 1
+ },
+ "a_57d8de906136df605ab0": {
+  "status": "approved",
+  "alt_fr": "Une piste de course bleue aux lignes blanches, à côté d'un bâtiment",
+  "alt_en": "A blue running track with white lane lines beside a building",
+  "people_free": 1
+ },
+ "a_9c0a11db00c3d9f41672": {
+  "status": "approved",
+  "alt_fr": "Une cabane en bois avec un garde-corps construite parmi de grands arbres",
+  "alt_en": "A wooden treehouse with a railing built among tall trees",
+  "people_free": 1
+ },
+ "a_976e9627e5e396a7b3a0": {
+  "status": "approved",
+  "alt_fr": "Un pont suspendu aux tours illuminées au crépuscule au-dessus d'une rivière",
+  "alt_en": "A suspension bridge with lit towers at dusk over a river",
+  "people_free": 1
+ },
+ "a_b67297c7e78cc1e356d9": {
+  "status": "approved",
+  "alt_fr": "Une petite maison de bois rouge aux fenêtres blanches, près de bouleaux",
+  "alt_en": "A small red wooden house with white windows beside birch trees",
+  "people_free": 1
+ },
+ "a_30414011d01af2b89174": {
+  "status": "approved",
+  "alt_fr": "Des cheminées de briques aux motifs décoratifs sur un toit",
+  "alt_en": "Brick chimneys with decorative brickwork on a roof",
+  "people_free": 1
+ },
+ "a_7ffb7673e08da5ff9380": {
+  "status": "approved",
+  "alt_fr": "Un bateau en bois en construction dans un atelier de menuiserie",
+  "alt_en": "A wooden boat being built in a carpentry workshop",
+  "people_free": 1
+ },
+ "a_2871b4c54e2e4974864a": {
+  "status": "approved",
+  "alt_fr": "Une ville aux hautes tours de bureaux au coucher du soleil",
+  "alt_en": "A city skyline with tall office towers at sunset",
+  "people_free": 1
+ },
+ "a_ac1857d889a14047cef5": {
+  "status": "approved",
+  "alt_fr": "Un stéthoscope rose sur une table parmi du maïs et des légumes frais",
+  "alt_en": "A pink stethoscope on a table among fresh corn and vegetables",
+  "people_free": 1
+ },
+ "a_e22e56f2116e3fd7f5a4": {
+  "status": "approved",
+  "alt_fr": "Une trousse de premiers soins avec pansements, gants et fournitures disposés sur une table",
+  "alt_en": "A first aid kit with bandages, gloves and supplies laid out on a table",
+  "people_free": 1
+ },
+ "a_1052c940a2ad9c143cdc": {
+  "status": "approved",
+  "alt_fr": "Un thermomètre médical en verre sur fond blanc",
+  "alt_en": "A glass medical thermometer on a white background",
+  "people_free": 1
+ },
+ "a_b8cfe25fe19da1d4904d": {
+  "status": "approved",
+  "alt_fr": "Un petit chiot noir couché sur une couverture rose",
+  "alt_en": "A small black puppy resting on a pink blanket",
+  "people_free": 1
+ },
+ "a_1d3a33d8827b6969ec93": {
+  "status": "approved",
+  "alt_fr": "Un panier en fil métallique rempli de fruits et de légumes colorés",
+  "alt_en": "A wire basket filled with colourful fruit and vegetables",
+  "people_free": 1
+ },
+ "a_9ad2d33dcc8c509dde96": {
+  "status": "approved",
+  "alt_fr": "Un microscope de laboratoire avec sa platine",
+  "alt_en": "A laboratory microscope with a slide stage",
+  "people_free": 1
+ },
+ "a_7018091db72e5cdb38b0": {
+  "status": "approved",
+  "alt_fr": "Vieux ballons et bouteilles de laboratoire en verre près d'une fenêtre",
+  "alt_en": "Old glass laboratory flasks and bottles beside a window",
+  "people_free": 1
+ },
+ "a_abc3c43a6d9573bc2d1f": {
+  "status": "approved",
+  "alt_fr": "Un support d'éprouvettes contenant un liquide bleu",
+  "alt_en": "A rack of test tubes with blue liquid",
+  "people_free": 1
+ },
+ "a_06163ab3ddcb97ec1096": {
+  "status": "approved",
+  "alt_fr": "Une loupe posée sur un journal",
+  "alt_en": "A magnifying glass resting on a newspaper",
+  "people_free": 1
+ },
+ "a_6c4be8eaeec53b653af6": {
+  "status": "approved",
+  "alt_fr": "Des pointes de ferrofluide noir formées par un aimant dans un plat",
+  "alt_en": "Spikes of black ferrofluid shaped by a magnet in a dish",
+  "people_free": 1
+ },
+ "a_72a3572100e499fe8a3f": {
+  "status": "approved",
+  "alt_fr": "Le dôme d'un grand télescope au crépuscule sous un ciel nocturne bleu",
+  "alt_en": "A large telescope dome at dusk under a blue night sky",
+  "people_free": 1
+ },
+ "a_badaac8a66dbd1faf7c9": {
+  "status": "approved",
+  "alt_fr": "Un mouton qui broute dans un champ à côté d'une rangée de panneaux solaires",
+  "alt_en": "A sheep grazing in a field beside a row of solar panels",
+  "people_free": 1
+ },
+ "a_82efedd1e775f7bcc5a2": {
+  "status": "approved",
+  "alt_fr": "Des pièces d'échecs noires sur un échiquier noir et blanc",
+  "alt_en": "Black chess pieces on a black and white chessboard",
+  "people_free": 1
+ },
+ "a_0fe341097d5f4008cfee": {
+  "status": "approved",
+  "alt_fr": "Des pièces d'échecs en bois sur un échiquier",
+  "alt_en": "Wooden chess pieces standing on a chessboard",
+  "people_free": 1
+ },
+ "a_363661b8b93c27e81892": {
+  "status": "approved",
+  "alt_fr": "Des pièces d'échecs crème sur un échiquier, une pièce brune au premier plan",
+  "alt_en": "Cream-coloured chess pieces on a board, one brown piece in the foreground",
+  "people_free": 1
+ },
+ "a_8bf5129e219638daa34a": {
+  "status": "approved",
+  "alt_fr": "Un jeu d'échecs aux pièces de teintes bronze et argent",
+  "alt_en": "A chess set with pieces in bronze and silver tones",
+  "people_free": 1
+ },
+ "a_9a644174f475121aacf0": {
+  "status": "approved",
+  "alt_fr": "Un échiquier en bois avec un jeu d'échecs prêt à jouer",
+  "alt_en": "A wooden chessboard with a chess set ready to play",
+  "people_free": 1
+ },
+ "a_e498bd56e1046bb2593f": {
+  "status": "approved",
+  "alt_fr": "Un plancher de tuiles de marbre noires et blanches en damier",
+  "alt_en": "A floor of black and white marble tiles in a checkerboard pattern",
+  "people_free": 1
+ },
+ "a_95ae8af3b76106849ef5": {
+  "status": "approved",
+  "alt_fr": "Un corail cerveau sur un récif de corail dans une eau bleue et claire",
+  "alt_en": "A brain coral on a coral reef in clear blue water",
+  "people_free": 1
+ },
+ "a_20e7c8b063f98f323783": {
+  "status": "approved",
+  "alt_fr": "Des bélugas qui nagent sous l'eau",
+  "alt_en": "Beluga whales swimming underwater",
+  "people_free": 1
+ },
+ "a_262deb11c7a91c34f505": {
+  "status": "approved",
+  "alt_fr": "Une tortue verte qui nage au-dessus d'un fond marin sablonneux",
+  "alt_en": "A green sea turtle swimming above a sandy sea floor",
+  "people_free": 1
+ },
+ "a_32be86e37f2fd0cade35": {
+  "status": "approved",
+  "alt_fr": "Une étoile de mer posée sur le sable",
+  "alt_en": "A starfish lying on sand",
+  "people_free": 1
+ },
+ "a_5c845cd93cc069195f33": {
+  "status": "approved",
+  "alt_fr": "Un phare au large, au-delà d'un rivage rocheux",
+  "alt_en": "A lighthouse far out at sea beyond a rocky shore",
+  "people_free": 1
+ },
+ "a_adf463cfa434ad389b07": {
+  "status": "approved",
+  "alt_fr": "Des méduses qui flottent dans un aquarium bleu",
+  "alt_en": "Jellyfish floating in a blue aquarium tank",
+  "people_free": 1
+ },
+ "a_3af166876a3e03d59bb0": {
+  "status": "approved",
+  "alt_fr": "Un squelette fossile de dinosaure exposé dans une vitrine de musée",
+  "alt_en": "A fossil skeleton of a dinosaur displayed in a museum case",
+  "people_free": 1
+ },
+ "a_2d028533521bbec9f2c6": {
+  "status": "approved",
+  "alt_fr": "Un fossile d'ammonite en spirale dans la pierre",
+  "alt_en": "A spiral ammonite fossil in stone",
+  "people_free": 1
+ },
+ "a_c4a2eae74e0c5009d402": {
+  "status": "approved",
+  "alt_fr": "Une empreinte de dinosaure à trois doigts dans la roche, avec un crayon pour l'échelle",
+  "alt_en": "A three-toed dinosaur track in rock with a pencil for scale",
+  "people_free": 1
+ },
+ "a_267346baf27642f4260d": {
+  "status": "approved",
+  "alt_fr": "Des squelettes de dinosaures montés dans une salle de musée",
+  "alt_en": "Mounted dinosaur skeletons in a museum hall",
+  "people_free": 1
+ },
+ "a_68c50d1ce443b8737114": {
+  "status": "approved",
+  "alt_fr": "Un squelette de tricératops monté, sur une vieille photo de musée",
+  "alt_en": "A mounted Triceratops skeleton in an old museum photograph",
+  "people_free": 1
+ },
+ "a_5b5fa7e183f5faebf658": {
+  "status": "approved",
+  "alt_fr": "Des fougères vertes qui poussent au sol sous les arbres",
+  "alt_en": "Green ferns growing on a forest floor beneath trees",
+  "people_free": 1
+ },
+ "a_3f0a0245f131cbf14ed7": {
+  "status": "approved",
+  "alt_fr": "Des vaches et des veaux bruns dans un pâturage verdoyant bordé d'arbres",
+  "alt_en": "Brown cows and calves in a green pasture with trees",
+  "people_free": 1
+ },
+ "a_2318b9437a2dd31eb698": {
+  "status": "approved",
+  "alt_fr": "Un cheval brun qui galope dans un champ d'herbe",
+  "alt_en": "A brown horse galloping across a grass field",
+  "people_free": 1
+ },
+ "a_223a428af6c1056b6c9b": {
+  "status": "approved",
+  "alt_fr": "Une brebis et ses agneaux dans un champ vert, avec des éoliennes en arrière-plan",
+  "alt_en": "A ewe with her lambs on a green field with wind turbines behind",
+  "people_free": 1
+ },
+ "a_25148b5acd41c1a6f2c1": {
+  "status": "approved",
+  "alt_fr": "Une poule tachetée qui marche devant une porte de grange en bois",
+  "alt_en": "A speckled hen walking in front of a wooden barn door",
+  "people_free": 1
+ },
+ "a_39ac0ffe62c1eefbfc43": {
+  "status": "approved",
+  "alt_fr": "La tête d'une girafe devant un ciel bleu",
+  "alt_en": "A giraffe's head against a blue sky",
+  "people_free": 1
+ },
+ "a_ffffb3ee0fb715c0c494": {
+  "status": "approved",
+  "alt_fr": "Des éléphants d'Afrique debout sur une plaine herbeuse",
+  "alt_en": "African elephants standing on a grassy plain",
+  "people_free": 1
+ },
+ "a_207c83d5931a977e1a76": {
+  "status": "approved",
+  "alt_fr": "Gros plan sur des touches de piano noires et blanches",
+  "alt_en": "Close-up of black and white piano keys",
+  "people_free": 1
+ },
+ "a_8ef0bb8a4bad9956f1af": {
+  "status": "approved",
+  "alt_fr": "Gros plan sur le corps et les cordes d'une guitare acoustique dans la lumière chaude du soir",
+  "alt_en": "Close-up of an acoustic guitar body and strings in warm evening light",
+  "people_free": 1
+ },
+ "a_42883b10907a9fbadb11": {
+  "status": "approved",
+  "alt_fr": "Une batterie éclairée en bleu sur une scène sombre",
+  "alt_en": "A drum kit lit in blue on a dark stage",
+  "people_free": 1
+ },
+ "a_4f63c9f7cdfc486501d2": {
+  "status": "approved",
+  "alt_fr": "Un glockenspiel en bois aux lames métalliques sur fond blanc",
+  "alt_en": "A wooden glockenspiel with metal bars on a white background",
+  "people_free": 1
+ },
+ "a_267ac67f78abcb12cf71": {
+  "status": "approved",
+  "alt_fr": "Une trompette droite en laiton sur un fond gris bleu doux",
+  "alt_en": "A straight brass trumpet against a soft grey-blue background",
+  "people_free": 1
+ },
+ "a_caf205558d296438c392": {
+  "status": "approved",
+  "alt_fr": "Un violon et son archet sur fond sombre",
+  "alt_en": "A violin and bow on a dark background",
+  "people_free": 1
+ },
+ "a_de27167597b6d931b81b": {
+  "status": "approved",
+  "alt_fr": "Une locomotive à vapeur noire avec de la fumée dans une gare",
+  "alt_en": "A black steam locomotive with smoke at a railway station",
+  "people_free": 1
+ },
+ "a_380e46db2262f31817c8": {
+  "status": "approved",
+  "alt_fr": "Un avion qui vole au-dessus de nuages blancs dans un ciel bleu",
+  "alt_en": "A small airplane flying above white clouds in a blue sky",
+  "people_free": 1
+ },
+ "a_ec39ac5bd76d5d96906a": {
+  "status": "approved",
+  "alt_fr": "Un autobus scolaire jaune stationné sur une rue pavée",
+  "alt_en": "A yellow school bus parked on a cobblestone street",
+  "people_free": 1
+ },
+ "a_1001b8de4c7647181979": {
+  "status": "approved",
+  "alt_fr": "Un symbole de vélo peint sur une piste asphaltée dans un parc",
+  "alt_en": "A bicycle symbol painted on a paved path through a park",
+  "people_free": 1
+ },
+ "a_69e191e31955b334eeb5": {
+  "status": "approved",
+  "alt_fr": "Un voilier sur une eau calme près d'une côte vallonnée",
+  "alt_en": "A sailboat on calm water near a hilly coast",
+  "people_free": 1
+ },
+ "a_98b1c9c7b9a29204c3f8": {
+  "status": "approved",
+  "alt_fr": "Un vieux tramway rouge et blanc dans une rue de ville",
+  "alt_en": "A vintage red and white tram on a city street",
+  "people_free": 1
+ },
+ "a_8c18b9d212392ebc2098": {
+  "status": "approved",
+  "alt_fr": "Un grand voilier aux voiles blanches en pleine mer",
+  "alt_en": "A tall ship with white sails on the open sea",
+  "people_free": 1
+ },
+ "a_91a5182cdfd5a21f3345": {
+  "status": "approved",
+  "alt_fr": "Un ara rouge perché sur une branche",
+  "alt_en": "A scarlet macaw parrot perched on a branch",
+  "people_free": 1
+ },
+ "a_f266c21ec76e1e9608b3": {
+  "status": "approved",
+  "alt_fr": "Une plage tropicale bordée de palmiers au coucher du soleil",
+  "alt_en": "A tropical beach with palm trees at sunset",
+  "people_free": 1
+ },
+ "a_4b02ff07fe7051d84283": {
+  "status": "approved",
+  "alt_fr": "De vieilles pièces d'argent qui remplissent un baril en bois",
+  "alt_en": "Old silver coins filling a wooden barrel",
+  "people_free": 1
+ },
+ "a_87792558ceb30cde6a09": {
+  "status": "approved",
+  "alt_fr": "Une vieille boussole en laiton posée sur une carte ancienne jaunie",
+  "alt_en": "An old brass compass lying on a yellow antique map",
+  "people_free": 1
+ },
+ "a_f91fc32bb4767cd81e9e": {
+  "status": "approved",
+  "alt_fr": "Une ancienne carte dessinée à la main des concessions minières de Treasure Hill, au Nevada",
+  "alt_en": "An old hand-drawn map of mining claims on Treasure Hill, Nevada",
+  "people_free": 1
+ },
+ "a_87f844559800d5f812fb": {
+  "status": "approved",
+  "alt_fr": "Un étal de marché coloré rempli de fruits et de légumes",
+  "alt_en": "A colourful market stall full of fruit and vegetables",
+  "people_free": 1
+ },
+ "a_f1d10c2647dd86857b18": {
+  "status": "approved",
+  "alt_fr": "Une petite pile de pièces de monnaie sur une table sombre",
+  "alt_en": "A small stack of coins on a dark table",
+  "people_free": 1
+ },
+ "a_6b6d33ab525d33568147": {
+  "status": "approved",
+  "alt_fr": "Une tirelire verte à côté d'une calculatrice et de lunettes",
+  "alt_en": "A green piggy bank next to a calculator and reading glasses",
+  "people_free": 1
+ },
+ "a_9cd96c9682038748d725": {
+  "status": "approved",
+  "alt_fr": "Une vitrine de magasin remplie de gâteaux décorés",
+  "alt_en": "A shop display case filled with decorated cakes",
+  "people_free": 1
+ },
+ "a_78021ccadcec2b17ebcd": {
+  "status": "approved",
+  "alt_fr": "Un tas de pièces de monnaie variées sur une table brun rougeâtre",
+  "alt_en": "A pile of mixed coins on a red-brown table",
+  "people_free": 1
+ },
+ "a_a4367ba0f5eb97907b51": {
+  "status": "approved",
+  "alt_fr": "Des caisses de pommes, de poivrons et d'autres produits frais au marché",
+  "alt_en": "Crates of apples, peppers and other fresh produce at a market",
+  "people_free": 1
+ },
+ "a_af06c94ece65eea63936": {
+  "status": "approved",
+  "alt_fr": "Un arc-en-ciel au-dessus de montagnes et d'arbres après la pluie",
+  "alt_en": "A rainbow arching over mountains and trees after rain",
+  "people_free": 1
+ },
+ "a_530aa618a672c6811369": {
+  "status": "approved",
+  "alt_fr": "Photo macro d'un cristal de flocon de neige aux branches délicates",
+  "alt_en": "Macro photo of a snowflake crystal with delicate branches",
+  "people_free": 1
+ },
+ "a_5a2783efe63826d8fbf8": {
+  "status": "approved",
+  "alt_fr": "Des gouttes de pluie qui tombent sur une surface mouillée et réfléchissante",
+  "alt_en": "Raindrops falling on a wet, reflective surface",
+  "people_free": 1
+ },
+ "a_a4c132ab7d6f8725b634": {
+  "status": "approved",
+  "alt_fr": "Un gros nuage blanc dans un ciel bleu",
+  "alt_en": "A big white cumulus cloud in a blue sky",
+  "people_free": 1
+ },
+ "a_6b4abbb808894bacbbfe": {
+  "status": "approved",
+  "alt_fr": "Une girouette sur un toit devant un ciel bleu",
+  "alt_en": "A weather vane on a rooftop against a blue sky",
+  "people_free": 1
+ },
+ "a_3ad0adb9d29a41b0fff3": {
+  "status": "approved",
+  "alt_fr": "Des nuages gris d'orage au-dessus d'une montagne enneigée",
+  "alt_en": "Grey storm clouds over a snowy mountain",
+  "people_free": 1
+ },
+ "a_59f055964a223a409104": {
+  "status": "approved",
+  "alt_fr": "Une vitrine remplie de robots jouets colorés",
+  "alt_en": "A shop window crowded with colourful toy robots",
+  "people_free": 1
+ },
+ "a_fba57eb05629a1d98b8a": {
+  "status": "approved",
+  "alt_fr": "Un circuit imprimé rouge avec une puce électronique",
+  "alt_en": "A red electronic circuit board with a chip",
+  "people_free": 1
+ },
+ "a_bdc463bdfdd87d5bbd1b": {
+  "status": "approved",
+  "alt_fr": "Des engrenages métalliques qui s'emboîtent",
+  "alt_en": "Metal gears and cogwheels meshing together",
+  "people_free": 1
+ },
+ "a_d6ef96706bb3f4141400": {
+  "status": "approved",
+  "alt_fr": "Un bras robotisé orange près d'un panier de basketball dans une cage",
+  "alt_en": "An orange robotic arm beside a basketball hoop inside a cage",
+  "people_free": 1
+ },
+ "a_009ff5c78532a49023e2": {
+  "status": "approved",
+  "alt_fr": "Une illustration du robot Curiosity sur la surface de Mars",
+  "alt_en": "An illustration of the Curiosity rover on the surface of Mars",
+  "people_free": 1
+ },
+ "a_1dc6513e9558df323015": {
+  "status": "approved",
+  "alt_fr": "Une petite voiture-robot à roues avec deux capteurs en forme d'yeux, sur un plancher en bois",
+  "alt_en": "A small wheeled robot car with two round sensor eyes on a wooden floor",
+  "people_free": 1
+ },
+ "a_ea1845bde116a82f1451": {
+  "status": "approved",
+  "alt_fr": "Larges coups de pinceau abstraits de peinture rouge, bleue et jaune",
+  "alt_en": "Thick abstract brushstrokes of red, blue and yellow paint",
+  "people_free": 1
+ },
+ "a_7b47b0493638e9f830dc": {
+  "status": "approved",
+  "alt_fr": "Une boîte d'aquarelle, des pinceaux et un carnet vierge sur une table en bois",
+  "alt_en": "A watercolour paint set, brushes and a blank notebook on a wooden table",
+  "people_free": 1
+ },
+ "a_21d91fafa3ddfd8bd9e8": {
+  "status": "approved",
+  "alt_fr": "Des morceaux de céramique blanche formant une mosaïque",
+  "alt_en": "Broken white ceramic tiles forming a mosaic",
+  "people_free": 1
+ },
+ "a_d86581cbc5473360e67a": {
+  "status": "approved",
+  "alt_fr": "Un papillon vert et jaune aux ailes à motifs posé sur une feuille",
+  "alt_en": "A green and yellow butterfly with patterned wings resting on a leaf",
+  "people_free": 1
+ },
+ "a_fcbfbf87722426a10e9e": {
+  "status": "approved",
+  "alt_fr": "Une rangée de crayons de couleur aux mines taillées",
+  "alt_en": "A row of coloured pencils with sharpened tips",
+  "people_free": 1
+ },
+ "a_301c36f0d5810ef7355c": {
+  "status": "approved",
+  "alt_fr": "Des bassins d'évaporation en acier inoxydable dans une cabane à sucre",
+  "alt_en": "Stainless steel evaporator pans in a maple syrup sugar shack",
+  "people_free": 1
+ },
+ "a_cec35f1c265dc96d53e0": {
+  "status": "approved",
+  "alt_fr": "Une forêt de sapins enneigée avec des montagnes et un ciel nuageux",
+  "alt_en": "A snowy pine forest with mountains and a cloudy sky",
+  "people_free": 1
+ },
+ "a_a530bb863effc2972d05": {
+  "status": "approved",
+  "alt_fr": "Un bonhomme de neige souriant coiffé d'une tuque bleue dans un champ enneigé",
+  "alt_en": "A smiling snowman wearing a blue hat in a snowy field",
+  "people_free": 1
+ },
+ "a_2aa68f1db05750a6fc60": {
+  "status": "approved",
+  "alt_fr": "De longs glaçons suspendus au bord d'un toit",
+  "alt_en": "Long icicles hanging from a roof edge",
+  "people_free": 1
+ },
+ "a_2c9d00e436ef8c904e09": {
+  "status": "approved",
+  "alt_fr": "Un étang gelé bordé de bancs de neige et de bâtiments",
+  "alt_en": "A frozen pond with buildings and snowbanks beside it",
+  "people_free": 1
+ },
+ "a_1e1f96bd606b75fbd1ce": {
+  "status": "approved",
+  "alt_fr": "Une piste de ski qui traverse un lac gelé couvert de neige",
+  "alt_en": "A ski track leading across a snowy frozen lake",
+  "people_free": 1
+ },
+ "a_a07f59d4e90b1e0cb2bf": {
+  "status": "approved",
+  "alt_fr": "Gros plan sur des dés translucides bleu et rouge portant des chiffres",
+  "alt_en": "Close-up of blue and red translucent dice with numbers",
+  "people_free": 1
+ },
+ "a_46b98728a4e1d6791f3c": {
+  "status": "approved",
+  "alt_fr": "Des rangées de très vieilles cartes à jouer peintes à la main",
+  "alt_en": "Rows of very old hand-painted playing cards",
+  "people_free": 1
+ },
+ "a_fdcf7c5ff1a03f3b8232": {
+  "status": "approved",
+  "alt_fr": "Des dominos posés sur un tissu vert à motifs",
+  "alt_en": "Domino tiles on a green patterned cloth",
+  "people_free": 1
+ },
+ "a_d404d3557ed20c2ab5b9": {
+  "status": "approved",
+  "alt_fr": "Des pièces de casse-tête assemblées pour former des lettres sur fond blanc",
+  "alt_en": "Jigsaw puzzle pieces assembled to form letters on a white background",
+  "people_free": 1
+ },
+ "a_62da8cb575839f5a39f9": {
+  "status": "approved",
+  "alt_fr": "Un damier sur une table extérieure avec des pions rouges et noirs",
+  "alt_en": "A checkers board on an outdoor table with red and black pieces",
+  "people_free": 1
+ },
+ "a_50559c1e5b392c27f25f": {
+  "status": "approved",
+  "alt_fr": "Des billes de verre colorées alignées sur une surface en bois",
+  "alt_en": "Colourful glass marbles lined up on a wooden surface",
+  "people_free": 1
+ }
+}

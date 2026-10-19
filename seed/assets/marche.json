@@ -1,0 +1,332 @@
+[
+ {
+  "id": "a_87f844559800d5f812fb",
+  "kind": "photo",
+  "role": "hero",
+  "world_id": "marche",
+  "grade_band": "all",
+  "mood": "joyful",
+  "dominant_color": "#180808",
+  "lqip": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAACQBACdASoYAA4APu1iqU2ppaOiMAgBMB2JbACdMoR3A8AVu4sKiZHiNkZ0XPQA/qXuGW9KUlELgFI4Ocqg1x5Nh35DVCncnu5cpMcgUsFjkGofiyUxuE1P+GHskmLgpSPV5lK1g68kKoCMNrqq+GEJPHJjok71BbAalfGD9oDdTKekgdxzgVpEyBgxEk+U4OqEVz+rTGJDmCz3CS/m63ty+lxKLTHSe+SsKqg0x2hxv+ECAAA=",
+  "width": 1024,
+  "height": 576,
+  "alt_fr": "Un étal de marché coloré rempli de fruits et de légumes",
+  "alt_en": "A colourful market stall full of fruit and vegetables",
+  "source_name": "openverse",
+  "source_url": "https://www.rawpixel.com/image/3284018/free-photo-image-farmers-market-vegetables-store-fruit-shop",
+  "creator": "Unknown",
+  "creator_url": null,
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Colorful fruit vegetables market stall\" is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "marche"
+   },
+   {
+    "facet": "topic",
+    "value": "market"
+   },
+   {
+    "facet": "object",
+    "value": "fruit"
+   },
+   {
+    "facet": "mood",
+    "value": "joyful"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_87f844559800d5f812fb-480.webp",
+    "size": 39166
+   },
+   {
+    "w": 960,
+    "file": "a_87f844559800d5f812fb-960.webp",
+    "size": 103036
+   }
+  ]
+ },
+ {
+  "id": "a_6b6d33ab525d33568147",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "marche",
+  "grade_band": "all",
+  "mood": "cozy",
+  "dominant_color": "#e8e8e8",
+  "lqip": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAADwBACdASoYABIAPuFcqE2opSQiMAwBEBwJQBmaBDwKtMrmKv0gm1WocHXn/jhR4zAA/u++zM/Zv7IPE3p0PVdVboCGnnHcsjJe/OSR1mKrowJmzCZt5ePKDen9qsUssfau+tHVaKuVIo6dOl7WNEDovYErTfbWzVD6jKPlD2D354CvTDxZdNwpHasCoi3PbIx95TfiO1GEgAAA",
+  "width": 960,
+  "height": 720,
+  "alt_fr": "Une tirelire verte à côté d'une calculatrice et de lunettes",
+  "alt_en": "A green piggy bank next to a calculator and reading glasses",
+  "source_name": "openverse",
+  "source_url": "https://stocksnap.io/photo/piggy-bank-ZLEVSWFWZC",
+  "creator": "Artsy Crafty",
+  "creator_url": "https://stocksnap.io/author/132198",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Piggy Bank\" by Artsy Crafty is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "marche"
+   },
+   {
+    "facet": "topic",
+    "value": "saving"
+   },
+   {
+    "facet": "object",
+    "value": "piggy-bank"
+   },
+   {
+    "facet": "mood",
+    "value": "cozy"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_6b6d33ab525d33568147-480.webp",
+    "size": 16700
+   },
+   {
+    "w": 960,
+    "file": "a_6b6d33ab525d33568147-960.webp",
+    "size": 39082
+   }
+  ]
+ },
+ {
+  "id": "a_78021ccadcec2b17ebcd",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "marche",
+  "grade_band": "all",
+  "mood": "curious",
+  "dominant_color": "#682828",
+  "lqip": "data:image/webp;base64,UklGRuQAAABXRUJQVlA4INgAAADwBQCdASoYABIAPu1sq1EppaOiqAqpMB2JYgCxHzRCwBYrmgmrP8slEEriiQmvtiBvkzMNZldCAAD96ft2G0snMpB8i2Pv5lZ7N5BQuRrZVYmNjsbD4RLhVVTARz68o5D7ooHA6+69/j82stc6+X2ELYBUAdNuKYpntLpBaCnikKRCXR9zXGGWaXe4LvaN/ZAoTc9Eg8a7eF9MC3xQFzrO2Db4Pgj2GfTnp0aeQY2OiSkDYId4hBgD3dGmLvf25FwumV1W0f9Nxph5uBYe6wfe1GxuBhgEAAA=",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "Un tas de pièces de monnaie variées sur une table brun rougeâtre",
+  "alt_en": "A pile of mixed coins on a red-brown table",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:A_pile_of_Ukrainian_currency_coins.jpg",
+  "creator": "Роман Рябенко",
+  "creator_url": null,
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"A pile of Ukrainian currency coins\" by Роман Рябенко, CC0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:A_pile_of_Ukrainian_currency_coins.jpg)",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "marche"
+   },
+   {
+    "facet": "topic",
+    "value": "coins"
+   },
+   {
+    "facet": "object",
+    "value": "coin"
+   },
+   {
+    "facet": "mood",
+    "value": "curious"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_78021ccadcec2b17ebcd-480.webp",
+    "size": 23412
+   },
+   {
+    "w": 960,
+    "file": "a_78021ccadcec2b17ebcd-960.webp",
+    "size": 107578
+   }
+  ]
+ },
+ {
+  "id": "a_9cd96c9682038748d725",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "marche",
+  "grade_band": "all",
+  "mood": "cozy",
+  "dominant_color": "#787878",
+  "lqip": "data:image/webp;base64,UklGRtYAAABXRUJQVlA4IMoAAADQBACdASoYABIAPu1urlIppiQiqAgBMB2JQBUesYOIvInoMm8kCeeol5aesRfwwAD6fMc5qgib4cYPI1g550QF3yOQZIDakGQ1MCmQUKT6vWBYoSFQ+J1hYKrxovENaukOt6wXjReGSMZjzN2Om0rTwz2LtYqw+oSYV7fW76dTs9Fezp/7dXkvVQz939CyW/PL2gpMiQNpeUdB+mC7PoXtFcbMqq1QQJo5VOM2xxU1X/H9xE7QD4wOM9K2j1mEs8N+QBRzNfxUIAAA",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "Une vitrine de magasin remplie de gâteaux décorés",
+  "alt_en": "A shop display case filled with decorated cakes",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:HK_TW_%E8%8D%83%E7%81%A3_Tsuen_Wan_%E5%B8%82%E5%8D%80_downtown_city_%E8%A1%97%E6%99%AF_scene_December_2023_R12S_69_bakery_shop_window_display.jpg",
+  "creator": "MAUOSREEGU DAVMUR",
+  "creator_url": null,
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"HK TW 荃灣 Tsuen Wan 市區 downtown city 街景 scene December 2023 R12S 69 bakery shop window display\" by MAUOSREEGU DAVMUR, CC0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:HK_TW_%E8%8D%83%E7%81%A3_Tsuen_Wan_%E5%B8%82%E5%8D%80_downtown_city_%E8%A1%97%E6%99%AF_scene_December_2023_R12S_69_bakery_shop_window_display.jpg)",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "marche"
+   },
+   {
+    "facet": "topic",
+    "value": "shops"
+   },
+   {
+    "facet": "object",
+    "value": "shop"
+   },
+   {
+    "facet": "mood",
+    "value": "cozy"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_9cd96c9682038748d725-480.webp",
+    "size": 33810
+   },
+   {
+    "w": 960,
+    "file": "a_9cd96c9682038748d725-960.webp",
+    "size": 121866
+   }
+  ]
+ },
+ {
+  "id": "a_a4367ba0f5eb97907b51",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "marche",
+  "grade_band": "all",
+  "mood": "joyful",
+  "dominant_color": "#181818",
+  "lqip": "data:image/webp;base64,UklGRgYBAABXRUJQVlA4IPoAAADQBQCdASoYABIAPu1sq1EppaOiqAqpMB2JagC7MzLqvmSFsHGjHWbftWDFyd6hSrTTqTElKigAAPhYZ1ZM7a3EArW8tzFK8nMidg9Mwi3+YMXWOUwWxrg5wf/H4Wv4dRwKdUdfeBw0/kksnfBM3Va1NS2+Pq71d5WISn3uvo4bfTz8rV3wE6XK4hXuBJBeyP0WhZ+5vReSMGmIIoJvt05eJ6jTOZMtlc4SOamew8XcRmmq9MwDsR1Lr00gRIb6eNHFijEVNYl1IBv11JsSXSSyuCuDC/5Hh1pDOhTqZErgboVZnyPrS8pvtnM4j6LOjvNDslzSQ1cpE4AA",
+  "width": 960,
+  "height": 720,
+  "alt_fr": "Des caisses de pommes, de poivrons et d'autres produits frais au marché",
+  "alt_en": "Crates of apples, peppers and other fresh produce at a market",
+  "source_name": "openverse",
+  "source_url": "https://stocksnap.io/photo/market-fruits-VBQSBXBAO8",
+  "creator": "Agnieszka%20Wal%u0119dziak",
+  "creator_url": "https://stocksnap.io/author/5258",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Market Fruits\" by Agnieszka%20Wal%u0119dziak is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "marche"
+   },
+   {
+    "facet": "topic",
+    "value": "shopping"
+   },
+   {
+    "facet": "object",
+    "value": "basket"
+   },
+   {
+    "facet": "mood",
+    "value": "joyful"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_a4367ba0f5eb97907b51-480.webp",
+    "size": 41234
+   },
+   {
+    "w": 960,
+    "file": "a_a4367ba0f5eb97907b51-960.webp",
+    "size": 100282
+   }
+  ]
+ },
+ {
+  "id": "a_f1d10c2647dd86857b18",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "marche",
+  "grade_band": "all",
+  "mood": "curious",
+  "dominant_color": "#f8c8a8",
+  "lqip": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAAAwBQCdASoYABIAPuVepU2pJSOiMAwBIByJYgCdMt7BSCm6AeNUyNVgIpq9LMCkDxNcoAD+x8oREURaHwRhd+U+a9ngqfOjNXRP/HfhbMOdTPXd86oRZQCbJ5pWVirvwHuqne3vD73u4R1XuTxpvYSQUua4rVenZSONiSudVv0FNVW0xuIAAA==",
+  "width": 960,
+  "height": 720,
+  "alt_fr": "Une petite pile de pièces de monnaie sur une table sombre",
+  "alt_en": "A small stack of coins on a dark table",
+  "source_name": "openverse",
+  "source_url": "https://stocksnap.io/photo/money-coins-SDM03P88BO",
+  "creator": "Negative Space",
+  "creator_url": "https://www.negativespace.co",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Money Coins\" by Negative Space is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "marche"
+   },
+   {
+    "facet": "topic",
+    "value": "coins"
+   },
+   {
+    "facet": "object",
+    "value": "coin"
+   },
+   {
+    "facet": "mood",
+    "value": "curious"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_f1d10c2647dd86857b18-480.webp",
+    "size": 6510
+   },
+   {
+    "w": 960,
+    "file": "a_f1d10c2647dd86857b18-960.webp",
+    "size": 15678
+   }
+  ]
+ }
+]

@@ -1,0 +1,327 @@
+[
+ {
+  "id": "a_ac1857d889a14047cef5",
+  "kind": "photo",
+  "role": "hero",
+  "world_id": "medecine",
+  "grade_band": "all",
+  "mood": "calm",
+  "dominant_color": "#484848",
+  "lqip": "data:image/webp;base64,UklGRt4AAABXRUJQVlA4INIAAAAQBQCdASoYAA4APu1iqU2ppaOiMAgBMB2JbAC7H8IxXQf+Sqo0Dahko6NvubPjWElgAP4WtvHBmgR0tzkvv679rut6H+W4cqMLg6Wjsp+2OgPZAYvSfX6TVEOPGGGpvfqQvbfVtm4zm5+v0IuPA8fKDNTASpkE1irn1WArVAzQF7/BsUAy7N9Cq240S6SVaShe2nCcmhPaH+Y4ZQtn9qlf42aKBDlLgBAT6026SkX+5xaUyU/TyHsMph5l9/k5AXNadeSPPyi/bRfl6BboxwggAAA=",
+  "width": 1024,
+  "height": 576,
+  "alt_fr": "Un stéthoscope rose sur une table parmi du maïs et des légumes frais",
+  "alt_en": "A pink stethoscope on a table among fresh corn and vegetables",
+  "source_name": "openverse",
+  "source_url": "https://www.rawpixel.com/image/5910406/image-public-domain-greens-food",
+  "creator": "Unknown",
+  "creator_url": null,
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Free vegetables stethoscope middle wooden\" is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "medecine"
+   },
+   {
+    "facet": "topic",
+    "value": "health"
+   },
+   {
+    "facet": "object",
+    "value": "stethoscope"
+   },
+   {
+    "facet": "mood",
+    "value": "calm"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_ac1857d889a14047cef5-480.webp",
+    "size": 30596
+   },
+   {
+    "w": 960,
+    "file": "a_ac1857d889a14047cef5-960.webp",
+    "size": 83836
+   }
+  ]
+ },
+ {
+  "id": "a_1052c940a2ad9c143cdc",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "medecine",
+  "grade_band": "all",
+  "mood": "curious",
+  "dominant_color": "#f8f8f8",
+  "lqip": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAACwAwCdASoYABIAPu1qrlCppiQiqAqpMB2JaQAALnWd+Zyf7FldAAD+82lzuBinvJX+jTYYRt9AAAAA",
+  "width": 1024,
+  "height": 768,
+  "alt_fr": "Un thermomètre médical en verre sur fond blanc",
+  "alt_en": "A glass medical thermometer on a white background",
+  "source_name": "openverse",
+  "source_url": "https://www.rawpixel.com/image/5925351/photo-image-public-domain-medicine-free",
+  "creator": "Unknown",
+  "creator_url": null,
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Medical thermometer\" is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "medecine"
+   },
+   {
+    "facet": "topic",
+    "value": "health"
+   },
+   {
+    "facet": "object",
+    "value": "thermometer"
+   },
+   {
+    "facet": "mood",
+    "value": "curious"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_1052c940a2ad9c143cdc-480.webp",
+    "size": 4424
+   },
+   {
+    "w": 960,
+    "file": "a_1052c940a2ad9c143cdc-960.webp",
+    "size": 11954
+   }
+  ]
+ },
+ {
+  "id": "a_1d3a33d8827b6969ec93",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "medecine",
+  "grade_band": "all",
+  "mood": "joyful",
+  "dominant_color": "#181808",
+  "lqip": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAABwBACdASoYABIAPu1qrVEppaQiqAqpMB2JZgCdAA94WLk7HO+mMKzVGEQjoAD+y/ty00FdRZCySsvwUN48yQOeNizO/ypGHtjCUarDaB0qbHHvLP38SOwT/YadGe2lxqxpZqo8J2aWb9JBSS3PoZZ61r2gGvZhtpR4fiobFWhhjVH32VU5ysC6Fha2OEEM2TbDJoqLAVUtkPD2LM9Eu908dt7gFS5cCvdmFK4AAAA=",
+  "width": 960,
+  "height": 720,
+  "alt_fr": "Un panier en fil métallique rempli de fruits et de légumes colorés",
+  "alt_en": "A wire basket filled with colourful fruit and vegetables",
+  "source_name": "openverse",
+  "source_url": "https://stocksnap.io/photo/fruits-vegetables-ES1JJ1RI3I",
+  "creator": "Brooke Cagle",
+  "creator_url": "https://stocksnap.io/author/7552",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Fruits Vegetables\" by Brooke Cagle is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "medecine"
+   },
+   {
+    "facet": "topic",
+    "value": "nutrition"
+   },
+   {
+    "facet": "object",
+    "value": "apple"
+   },
+   {
+    "facet": "mood",
+    "value": "joyful"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_1d3a33d8827b6969ec93-480.webp",
+    "size": 16652
+   },
+   {
+    "w": 960,
+    "file": "a_1d3a33d8827b6969ec93-960.webp",
+    "size": 36254
+   }
+  ]
+ },
+ {
+  "id": "a_9ad2d33dcc8c509dde96",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "medecine",
+  "grade_band": "all",
+  "mood": "curious",
+  "dominant_color": "#d8d8d8",
+  "lqip": "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAAAwBQCdASoYABIAPu1ur1IppiQiqAgBMB2JZwAIEC5ljnm6qkA/ue0PFGHvxc2AgxhDcAD+bLgmIdrpCGUodkzmqghf8GgeKAs3pLayLll+/PJcMeBgqEPeyMY9CKJIGeVesXgEpExV3ja04wskrvPQ1dGLW8zkXrJcf5Bzck2kgCYtdh6/i4t68YvbTHn+2io5eIkUB8HyOiP4idq3STLJeU3R1JSS+9xj8XGeQKAPHDHQZ2lraZXYUZ0+Qa9qEAAAAA==",
+  "width": 638,
+  "height": 479,
+  "alt_fr": "Un microscope de laboratoire avec sa platine",
+  "alt_en": "A laboratory microscope with a slide stage",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Olympus_BH-2_BHT_Trinocular_Laboratory_Microscope_2_(15361243474).jpg",
+  "creator": "Kitmondo Marketplace",
+  "creator_url": null,
+  "licence": "CC-BY-2.0",
+  "licence_url": "https://creativecommons.org/licenses/by/2.0/",
+  "attribution_text": "\"Olympus BH-2 BHT Trinocular Laboratory Microscope 2 (15361243474)\" by Kitmondo Marketplace, CC BY 2.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Olympus_BH-2_BHT_Trinocular_Laboratory_Microscope_2_(15361243474).jpg)",
+  "attribution_required": 1,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "medecine"
+   },
+   {
+    "facet": "topic",
+    "value": "science"
+   },
+   {
+    "facet": "object",
+    "value": "microscope"
+   },
+   {
+    "facet": "mood",
+    "value": "curious"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_9ad2d33dcc8c509dde96-480.webp",
+    "size": 17002
+   }
+  ]
+ },
+ {
+  "id": "a_b8cfe25fe19da1d4904d",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "medecine",
+  "grade_band": "all",
+  "mood": "joyful",
+  "dominant_color": "#b89898",
+  "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAADwBACdASoYABIAPu1gq1AppSOisBgIATAdiUAXYAH4xnZNx1B36hzs2z6P8IGApxAA4P1NYUwoOyV5Nr5bq+Q3o7Z1DuePhoS8jccqd4Gc5b5unKb7CSCrNpe+fdxIzGJdWgBN2MXHnB3V3lO/OkJu7sFQnryAf8CHmlj3AAA=",
+  "width": 960,
+  "height": 720,
+  "alt_fr": "Un petit chiot noir couché sur une couverture rose",
+  "alt_en": "A small black puppy resting on a pink blanket",
+  "source_name": "openverse",
+  "source_url": "https://stocksnap.io/photo/puppy-dog-KOEZT7FTSR",
+  "creator": "Dana Tentis",
+  "creator_url": "https://www.linkedin.com/in/dana-tentis-540516b2",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Puppy Dog\" by Dana Tentis is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "medecine"
+   },
+   {
+    "facet": "topic",
+    "value": "pets"
+   },
+   {
+    "facet": "object",
+    "value": "dog"
+   },
+   {
+    "facet": "mood",
+    "value": "joyful"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_b8cfe25fe19da1d4904d-480.webp",
+    "size": 7030
+   },
+   {
+    "w": 960,
+    "file": "a_b8cfe25fe19da1d4904d-960.webp",
+    "size": 18528
+   }
+  ]
+ },
+ {
+  "id": "a_e22e56f2116e3fd7f5a4",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "medecine",
+  "grade_band": "all",
+  "mood": "calm",
+  "dominant_color": "#c8c8b8",
+  "lqip": "data:image/webp;base64,UklGRvoAAABXRUJQVlA4IO4AAAAQBgCdASoYABIAPu1sqlEppaOiqAqpMB2JYgCsEcAF5G/A0gTQ4WGIVIVk8neBqq4D+E9fhC1w0gAA/b8/5RgKgJi+6jx1QGblypK+UX6nbxa62z6gUvHb7GAA6onMEUIvdrgF5rdx0FZV9vw2qRcIGPQSifyGg3A0trbEKQNIzmh6AATHSaExPmB0L46Ir9i7zTZZqwRcsl1DabJ/CnV/cQn6JPBDIiAEDSzA/g1aaCpIIGg5RT3Aw2fzK9YTZ/VRCfE1bWt6amG2qKR7J7W8oshCy59FM2zg6IJamMcf2YEYfzdsSj+96f549gAA",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "Une trousse de premiers soins avec pansements, gants et fournitures disposés sur une table",
+  "alt_en": "A first aid kit with bandages, gloves and supplies laid out on a table",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:First_aid_kit_for_tropical_country_-_unpacked.jpg",
+  "creator": "Mat Honan from San Francisco, CA, USA",
+  "creator_url": null,
+  "licence": "CC-BY-2.0",
+  "licence_url": "https://creativecommons.org/licenses/by/2.0/",
+  "attribution_text": "\"First aid kit for tropical country - unpacked\" by Mat Honan from San Francisco, CA, USA, CC BY 2.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:First_aid_kit_for_tropical_country_-_unpacked.jpg)",
+  "attribution_required": 1,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "medecine"
+   },
+   {
+    "facet": "topic",
+    "value": "first-aid"
+   },
+   {
+    "facet": "object",
+    "value": "first-aid-kit"
+   },
+   {
+    "facet": "mood",
+    "value": "calm"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_e22e56f2116e3fd7f5a4-480.webp",
+    "size": 25412
+   },
+   {
+    "w": 960,
+    "file": "a_e22e56f2116e3fd7f5a4-960.webp",
+    "size": 133240
+   }
+  ]
+ }
+]

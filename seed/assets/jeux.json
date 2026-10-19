@@ -1,0 +1,327 @@
+[
+ {
+  "id": "a_a07f59d4e90b1e0cb2bf",
+  "kind": "photo",
+  "role": "hero",
+  "world_id": "jeux",
+  "grade_band": "all",
+  "mood": "joyful",
+  "dominant_color": "#0878b8",
+  "lqip": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAACQBACdASoYAA4APu1iqU2ppaOiMAgBMB2JbACdL1AB1TL0UPwxa/lRfHlMsUQA/pprB99AqOxN2Tdr9Qqfvp29pOxzCwFvbKWDvz9hQZsK8xPfgcbJH7z8q0f1PZUvZWeGerqw6IAxWV/GrKWgYy49cgh5eGQ045CQr0oQ89jrSAnkCkaDc0/IvYKoaIL4QYotnYzdmCr+2FwA",
+  "width": 1024,
+  "height": 576,
+  "alt_fr": "Gros plan sur des dés translucides bleu et rouge portant des chiffres",
+  "alt_en": "Close-up of blue and red translucent dice with numbers",
+  "source_name": "openverse",
+  "source_url": "https://www.rawpixel.com/image/6039095/dice-blue-and-red-free-public-domain-cc0-photo",
+  "creator": "Unknown",
+  "creator_url": null,
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Dice, blue red\" is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "jeux"
+   },
+   {
+    "facet": "topic",
+    "value": "dice"
+   },
+   {
+    "facet": "object",
+    "value": "die"
+   },
+   {
+    "facet": "mood",
+    "value": "joyful"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_a07f59d4e90b1e0cb2bf-480.webp",
+    "size": 9168
+   },
+   {
+    "w": 960,
+    "file": "a_a07f59d4e90b1e0cb2bf-960.webp",
+    "size": 22190
+   }
+  ]
+ },
+ {
+  "id": "a_46b98728a4e1d6791f3c",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "jeux",
+  "grade_band": "all",
+  "mood": "curious",
+  "dominant_color": "#080808",
+  "lqip": "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAADQBACdASoYABIAPu1qrFEppaQiqAqpMB2JYwC07a0Yvv+QCIvvWetktK0wjtuiAAD9U+BmzviK3B1PvfB8UoMLINSNHX/AmDC5UA+UaKrbgSaED6JXlj5wLI2eyzPO9orHQz0pMNSQWOIqykD7lF/bJYu9+wILNLR88KTUYEn3tCO/bL21bFPuhUwPAEXAB28UPUj9tQvNaSmY4Z+LfNKirvSTPulC7Slab0rKbZ1vJ8fzRBzYpGEwzwAe6BgA",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "Des rangées de très vieilles cartes à jouer peintes à la main",
+  "alt_en": "Rows of very old hand-painted playing cards",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:The_oldest_full_deck_of_playing_cards_known_(DT206401).jpg",
+  "creator": "Unknown. Date: ca. 1470–80 Southern Netherlands",
+  "creator_url": null,
+  "licence": "PDM",
+  "licence_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "attribution_text": "\"The oldest full deck of playing cards known (DT206401)\" by Unknown. Date: ca. 1470–80 Southern Netherlands, public domain, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:The_oldest_full_deck_of_playing_cards_known_(DT206401).jpg)",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "jeux"
+   },
+   {
+    "facet": "topic",
+    "value": "cards"
+   },
+   {
+    "facet": "object",
+    "value": "playing-card"
+   },
+   {
+    "facet": "mood",
+    "value": "curious"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_46b98728a4e1d6791f3c-480.webp",
+    "size": 33334
+   },
+   {
+    "w": 960,
+    "file": "a_46b98728a4e1d6791f3c-960.webp",
+    "size": 109010
+   }
+  ]
+ },
+ {
+  "id": "a_50559c1e5b392c27f25f",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "jeux",
+  "grade_band": "all",
+  "mood": "joyful",
+  "dominant_color": "#283818",
+  "lqip": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAADQBACdASoYABIAPu1or1CppaQiqAqpMB2JZQDE2BFBem2ifBYyfN4RcjbAlXYLQAD+2T6zuHFI4NU9v29IHuYHtAYBpq0ini4Jh70o72clkDvyopfGUl0iTcD2dpqhmBtRug0iJhCQygiF4WwFpHMSclhRbO0IteSh+RPuKC2N0StqUQjlA/fkxcHLAAAA",
+  "width": 1024,
+  "height": 768,
+  "alt_fr": "Des billes de verre colorées alignées sur une surface en bois",
+  "alt_en": "Colourful glass marbles lined up on a wooden surface",
+  "source_name": "openverse",
+  "source_url": "https://www.rawpixel.com/image/6035513/eyes-marbles-free-public-domain-cc0-image",
+  "creator": "Unknown",
+  "creator_url": null,
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Eyes marbles\" is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "jeux"
+   },
+   {
+    "facet": "topic",
+    "value": "marbles"
+   },
+   {
+    "facet": "object",
+    "value": "marble"
+   },
+   {
+    "facet": "mood",
+    "value": "joyful"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_50559c1e5b392c27f25f-480.webp",
+    "size": 13498
+   },
+   {
+    "w": 960,
+    "file": "a_50559c1e5b392c27f25f-960.webp",
+    "size": 34794
+   }
+  ]
+ },
+ {
+  "id": "a_62da8cb575839f5a39f9",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "jeux",
+  "grade_band": "all",
+  "mood": "calm",
+  "dominant_color": "#585858",
+  "lqip": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAAAwBQCdASoYABIAPu1sq1EppaOiqAqpMB2JZwBV/VwMGuHewedd73kaj+eyXsq/vqBNAAD+WeyyxU5gttPGsvA1kJE1gZweWMe7IcaKFG+LVqZTXZXh9jtnhQlPiE+6ZjeGrXU/3atPmCiukQCT5BNHrRzOK/HVNk/Fchh6whtvLfSaNOSktl3KQRXfizbp3sopeIrz3fXI/8Njo8HImRwPwJzmBlHba0YOM2yNwAAAAA==",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "Un damier sur une table extérieure avec des pions rouges et noirs",
+  "alt_en": "A checkers board on an outdoor table with red and black pieces",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Tanger_Outlets_Savannah_-_Checkers_board_table_and_checkers.jpg",
+  "creator": "Wizzito",
+  "creator_url": null,
+  "licence": "CC-BY-4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution_text": "\"Tanger Outlets Savannah - Checkers board table and checkers\" by Wizzito, CC BY 4.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Tanger_Outlets_Savannah_-_Checkers_board_table_and_checkers.jpg)",
+  "attribution_required": 1,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "jeux"
+   },
+   {
+    "facet": "topic",
+    "value": "board-games"
+   },
+   {
+    "facet": "object",
+    "value": "checkers"
+   },
+   {
+    "facet": "mood",
+    "value": "calm"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_62da8cb575839f5a39f9-480.webp",
+    "size": 29704
+   },
+   {
+    "w": 960,
+    "file": "a_62da8cb575839f5a39f9-960.webp",
+    "size": 103028
+   }
+  ]
+ },
+ {
+  "id": "a_d404d3557ed20c2ab5b9",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "jeux",
+  "grade_band": "all",
+  "mood": "cozy",
+  "dominant_color": "#f8f8f8",
+  "lqip": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAAAwBACdASoYABIAPu1mq02ppaQiMAgBMB2JaQAAW+pgA9iLBvqf/RE0YKAA/vHbfonGJU+FFnvTPU3+zGx3z7SG5jNFLHCw7+3H7aDl+ozrmcHJIyXTNs+vhQlswEHiuhpkmNYpBXMcxnSzpDV/yW22IY8tpVcAAAA=",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "Des pièces de casse-tête assemblées pour former des lettres sur fond blanc",
+  "alt_en": "Jigsaw puzzle pieces assembled to form letters on a white background",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:The_word_no_made_from_jigsaw_puzzle_pieces_-_Flickr_horiavarlan.jpg",
+  "creator": "Horia Varlan",
+  "creator_url": null,
+  "licence": "CC-BY-2.0",
+  "licence_url": "https://creativecommons.org/licenses/by/2.0/",
+  "attribution_text": "\"The word no made from jigsaw puzzle pieces - Flickr horiavarlan\" by Horia Varlan, CC BY 2.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:The_word_no_made_from_jigsaw_puzzle_pieces_-_Flickr_horiavarlan.jpg)",
+  "attribution_required": 1,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "jeux"
+   },
+   {
+    "facet": "topic",
+    "value": "puzzles"
+   },
+   {
+    "facet": "object",
+    "value": "puzzle-piece"
+   },
+   {
+    "facet": "mood",
+    "value": "cozy"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_d404d3557ed20c2ab5b9-480.webp",
+    "size": 23892
+   },
+   {
+    "w": 960,
+    "file": "a_d404d3557ed20c2ab5b9-960.webp",
+    "size": 77376
+   }
+  ]
+ },
+ {
+  "id": "a_fdcf7c5ff1a03f3b8232",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "jeux",
+  "grade_band": "all",
+  "mood": "curious",
+  "dominant_color": "#f8f8f8",
+  "lqip": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAADwBACdASoYABIAPu1qrVCppaQiqAqpMB2JZQDDVL/BVvDFHdhWFdrgz4cajfEMTvAA727AAc8AGbNv1RMT12gfegSdfE/YcZxlhAso/7PKHGeHCkhzXXyibZer9pDaTdo9febSQTQwQ4K1cum+BYfnBfgBiTJaHBy4O55RSPrsMhcswIl/wl+dnTpR5XECwhR47Q6h3CH9WGYg2jYRI4G4ewQFrJPDjtEzLoG4CUAAAA==",
+  "width": 640,
+  "height": 480,
+  "alt_fr": "Des dominos posés sur un tissu vert à motifs",
+  "alt_en": "Domino tiles on a green patterned cloth",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Domino_Matadors.jpg",
+  "creator": "Nanami Kamimura, using a Nokia 3250.",
+  "creator_url": null,
+  "licence": "CC-BY-3.0",
+  "licence_url": "https://creativecommons.org/licenses/by/3.0/",
+  "attribution_text": "\"Domino Matadors\" by Nanami Kamimura, using a Nokia 3250., CC BY 3.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Domino_Matadors.jpg)",
+  "attribution_required": 1,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "jeux"
+   },
+   {
+    "facet": "topic",
+    "value": "dominoes"
+   },
+   {
+    "facet": "object",
+    "value": "domino"
+   },
+   {
+    "facet": "mood",
+    "value": "curious"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_fdcf7c5ff1a03f3b8232-480.webp",
+    "size": 37262
+   }
+  ]
+ }
+]

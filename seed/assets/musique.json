@@ -1,0 +1,337 @@
+[
+ {
+  "id": "a_207c83d5931a977e1a76",
+  "kind": "photo",
+  "role": "hero",
+  "world_id": "musique",
+  "grade_band": "all",
+  "mood": "calm",
+  "dominant_color": "#080808",
+  "lqip": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAACwAwCdASoYAA4APu1kqU4ppaOiMAgBMB2JZwAAXAOdu6sLzOoKQAD+9CpzRh5xNEm5NVfJp9z3NC3OxhuqQ/NUnNYUCCjsbEgbG68ldcOx5AfwFCE0snng9sYLySVNeATHrAM93FePb/1t/Ppl/no64mJmqTzANSf0NESg3l5fFG5Xv1BdNHAA",
+  "width": 1600,
+  "height": 900,
+  "alt_fr": "Gros plan sur des touches de piano noires et blanches",
+  "alt_en": "Close-up of black and white piano keys",
+  "source_name": "openverse",
+  "source_url": "https://wordpress.org/photos/photo/1826309b9c/",
+  "creator": "Leonardus Nugraha",
+  "creator_url": "http://leoandlens.com/",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"A close-up photograph of piano keys, highlighting several white keys interspersed with two black keys.\" by Leonardus Nugraha is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "musique"
+   },
+   {
+    "facet": "topic",
+    "value": "piano"
+   },
+   {
+    "facet": "object",
+    "value": "piano"
+   },
+   {
+    "facet": "mood",
+    "value": "calm"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_207c83d5931a977e1a76-480.webp",
+    "size": 4338
+   },
+   {
+    "w": 960,
+    "file": "a_207c83d5931a977e1a76-960.webp",
+    "size": 9406
+   },
+   {
+    "w": 1600,
+    "file": "a_207c83d5931a977e1a76-1600.webp",
+    "size": 18988
+   }
+  ]
+ },
+ {
+  "id": "a_267ac67f78abcb12cf71",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "musique",
+  "grade_band": "all",
+  "mood": "joyful",
+  "dominant_color": "#787888",
+  "lqip": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAADQBACdASoYABIAPu1gqE2ppSOiMBgMATAdiWMAzcANcIMYMsIrOO0KpIa+jeTqAAD6br8ZjXBaBnR9yBia9nbNV0YgnQfiP5SlINQxU0lM0ZRCTkQuY5T31xU53T7PfE+gaQcuoRpc6ZKOZusvtc1DUiWTb2UAAAA=",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "Une trompette droite en laiton sur un fond gris bleu doux",
+  "alt_en": "A straight brass trumpet against a soft grey-blue background",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Trumpet_(AM_1998.60.64-1).jpg",
+  "creator": "W Brown & Sons",
+  "creator_url": null,
+  "licence": "CC-BY-4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution_text": "\"Trumpet (AM 1998.60.64-1)\" by W Brown & Sons, CC BY 4.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Trumpet_(AM_1998.60.64-1).jpg)",
+  "attribution_required": 1,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "musique"
+   },
+   {
+    "facet": "topic",
+    "value": "brass"
+   },
+   {
+    "facet": "object",
+    "value": "trumpet"
+   },
+   {
+    "facet": "mood",
+    "value": "joyful"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_267ac67f78abcb12cf71-480.webp",
+    "size": 8376
+   },
+   {
+    "w": 960,
+    "file": "a_267ac67f78abcb12cf71-960.webp",
+    "size": 26410
+   }
+  ]
+ },
+ {
+  "id": "a_42883b10907a9fbadb11",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "musique",
+  "grade_band": "all",
+  "mood": "joyful",
+  "dominant_color": "#080808",
+  "lqip": "data:image/webp;base64,UklGRsQAAABXRUJQVlA4ILgAAABQBQCdASoYABIAPuVipU2pJaOiMAwBIByJbACsISAgxBf6yzI0JIGOG8o+F7oRutcbJIAA/vVrqor5bfVM0ZC1x23pkhQwD1TSFASyab8CoySqaJp02MQu0gOUiA9XSv4eKPrtH9Q0OoGqzSW1hwInDf99RGwrv8EyH8hs9dwc74cxsiHsfrfJLiWsTXy+tGW7PQB9ikU8uL1gn878/YlOY4pVLoOsl3cJPpVm1xOt77tg7Q473mgA",
+  "width": 1024,
+  "height": 768,
+  "alt_fr": "Une batterie éclairée en bleu sur une scène sombre",
+  "alt_en": "A drum kit lit in blue on a dark stage",
+  "source_name": "openverse",
+  "source_url": "https://www.rawpixel.com/image/5922324/photo-image-public-domain-shadow-free",
+  "creator": "Unknown",
+  "creator_url": null,
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Free drum kit stage image\" is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "musique"
+   },
+   {
+    "facet": "topic",
+    "value": "drums"
+   },
+   {
+    "facet": "object",
+    "value": "drum"
+   },
+   {
+    "facet": "mood",
+    "value": "joyful"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_42883b10907a9fbadb11-480.webp",
+    "size": 19984
+   },
+   {
+    "w": 960,
+    "file": "a_42883b10907a9fbadb11-960.webp",
+    "size": 51052
+   }
+  ]
+ },
+ {
+  "id": "a_4f63c9f7cdfc486501d2",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "musique",
+  "grade_band": "all",
+  "mood": "joyful",
+  "dominant_color": "#f8f8f8",
+  "lqip": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAACQBACdASoYABIAPu1qq08ppiOiMBgIATAdiWMAvmj/AXr5sBR4deOf5d8GGwAA/vNysXKUbwM/asYMe9a9fRoRYhPiWDXdrGyAAnc5ATttGi5uCkbo0Q8qHwPG2OGvA+4Gt0xUjULintMIUQFQYjJ5vXK0iWgQA3oVT52FhKXsNdj+ZEoAAA==",
+  "width": 1042,
+  "height": 782,
+  "alt_fr": "Un glockenspiel en bois aux lames métalliques sur fond blanc",
+  "alt_en": "A wooden glockenspiel with metal bars on a white background",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Glockenspiel-malletech.jpg",
+  "creator": "flamurai",
+  "creator_url": null,
+  "licence": "PDM",
+  "licence_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "attribution_text": "\"Glockenspiel-malletech\" by flamurai, public domain, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Glockenspiel-malletech.jpg)",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "musique"
+   },
+   {
+    "facet": "topic",
+    "value": "percussion"
+   },
+   {
+    "facet": "object",
+    "value": "xylophone"
+   },
+   {
+    "facet": "mood",
+    "value": "joyful"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_4f63c9f7cdfc486501d2-480.webp",
+    "size": 15366
+   },
+   {
+    "w": 960,
+    "file": "a_4f63c9f7cdfc486501d2-960.webp",
+    "size": 34938
+   }
+  ]
+ },
+ {
+  "id": "a_8ef0bb8a4bad9956f1af",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "musique",
+  "grade_band": "all",
+  "mood": "cozy",
+  "dominant_color": "#484848",
+  "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAABwBACdASoYABIAPu1qq08ppiOiMBgIATAdiUAY3oG2X9VYLymRF3iAD6nQAADyopOdUhp9uEBp2Lkkr1UGXNpKrWrzYTKQ93pMnh98Lrav8E8vzV0VIHsE0dry5ph7WQ8dQ0wEtPmRiCvfBJ8vIkmTHxzRVq77wyeTwxYMSwejgAAA",
+  "width": 960,
+  "height": 720,
+  "alt_fr": "Gros plan sur le corps et les cordes d'une guitare acoustique dans la lumière chaude du soir",
+  "alt_en": "Close-up of an acoustic guitar body and strings in warm evening light",
+  "source_name": "openverse",
+  "source_url": "https://stocksnap.io/photo/acoustic-guitar-4H8FT5VT7K",
+  "creator": "abednego ago",
+  "creator_url": "https://stocksnap.io/author/38218",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Acoustic Guitar\" by abednego ago is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "musique"
+   },
+   {
+    "facet": "topic",
+    "value": "guitar"
+   },
+   {
+    "facet": "object",
+    "value": "guitar"
+   },
+   {
+    "facet": "mood",
+    "value": "cozy"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_8ef0bb8a4bad9956f1af-480.webp",
+    "size": 13328
+   },
+   {
+    "w": 960,
+    "file": "a_8ef0bb8a4bad9956f1af-960.webp",
+    "size": 32502
+   }
+  ]
+ },
+ {
+  "id": "a_caf205558d296438c392",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "musique",
+  "grade_band": "all",
+  "mood": "calm",
+  "dominant_color": "#181818",
+  "lqip": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAwBACdASoYABIAPu1orVEppaQiqAqpMB2JZQDO7BGzXxmtPk272sNjMwAA/u6h0GfyY9elCYXwBqtIp/kFGvFWc3FCBGLXhKKN3PagZTByV3eSRBOtqu5RENpAAAAA",
+  "width": 960,
+  "height": 720,
+  "alt_fr": "Un violon et son archet sur fond sombre",
+  "alt_en": "A violin and bow on a dark background",
+  "source_name": "openverse",
+  "source_url": "https://stocksnap.io/photo/violin-music-0NJ7O8YWBG",
+  "creator": "Baher Khairy",
+  "creator_url": "https://stocksnap.io/author/30842",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Violin Music\" by Baher Khairy is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "musique"
+   },
+   {
+    "facet": "topic",
+    "value": "strings"
+   },
+   {
+    "facet": "object",
+    "value": "violin"
+   },
+   {
+    "facet": "mood",
+    "value": "calm"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_caf205558d296438c392-480.webp",
+    "size": 10420
+   },
+   {
+    "w": 960,
+    "file": "a_caf205558d296438c392-960.webp",
+    "size": 29484
+   }
+  ]
+ }
+]

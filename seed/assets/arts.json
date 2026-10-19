@@ -1,0 +1,277 @@
+[
+ {
+  "id": "a_ea1845bde116a82f1451",
+  "kind": "photo",
+  "role": "hero",
+  "world_id": "arts",
+  "grade_band": "all",
+  "mood": "joyful",
+  "dominant_color": "#e80808",
+  "lqip": "data:image/webp;base64,UklGRvIAAABXRUJQVlA4IOYAAAAQBgCdASoYAA4APu1iqU2ppaOiMAgBMB2JbACdMoR4TsAqQOpXFgG8d+TcTPAvxdoGhRf3RzqFOwAA/WmXs3ImAo1Ji7pqjdpL1+AHuy5FmUGdXh3S2oj6PIrj5hsTQnNdiIzdWAJyilunKRWTV9ilcqdrkOl9ryRn1J6iNOCqC/JXH8uulFAcDSTetUNMtF+ohvIEfLkBkO4fhKbrHHUdA5HVP+k/t4iEnsVq0KNnyZSWuPlUhXdXlqj84/XJ8aNIC7/ZyZ/Jq/TZD5kQQb8izoun1//TeRhfyqblXsZR/RyYgAAAAA==",
+  "width": 960,
+  "height": 540,
+  "alt_fr": "Larges coups de pinceau abstraits de peinture rouge, bleue et jaune",
+  "alt_en": "Thick abstract brushstrokes of red, blue and yellow paint",
+  "source_name": "openverse",
+  "source_url": "https://stocksnap.io/photo/splatter-abstract-ACCEYLTL4Z",
+  "creator": "Steve Johnson",
+  "creator_url": "http://artbystevej.com",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Splatter Abstract\" by Steve Johnson is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "arts"
+   },
+   {
+    "facet": "topic",
+    "value": "painting"
+   },
+   {
+    "facet": "object",
+    "value": "palette"
+   },
+   {
+    "facet": "mood",
+    "value": "joyful"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_ea1845bde116a82f1451-480.webp",
+    "size": 34830
+   },
+   {
+    "w": 960,
+    "file": "a_ea1845bde116a82f1451-960.webp",
+    "size": 111980
+   }
+  ]
+ },
+ {
+  "id": "a_21d91fafa3ddfd8bd9e8",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "arts",
+  "grade_band": "all",
+  "mood": "curious",
+  "dominant_color": "#c8c8c8",
+  "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAABQBQCdASoYABIAPu1ip04ppSMiMBgMATAdiWlfJFcw72GHrBukzhUwb2yy6RKkertwDwAA/uPX9hky8EG/RW8zDtjorOIticzKRp56r0Jm9yFjjmIBWLWToVTmE0D52YfG6nwiNZO1ZjjDYMmH6MAA",
+  "width": 1024,
+  "height": 768,
+  "alt_fr": "Des morceaux de céramique blanche formant une mosaïque",
+  "alt_en": "Broken white ceramic tiles forming a mosaic",
+  "source_name": "openverse",
+  "source_url": "https://www.rawpixel.com/image/6043284/photo-image-background-public-domain-art",
+  "creator": "Unknown",
+  "creator_url": null,
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Vintage mosaic tiles\" is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "arts"
+   },
+   {
+    "facet": "topic",
+    "value": "mosaic"
+   },
+   {
+    "facet": "object",
+    "value": "tile"
+   },
+   {
+    "facet": "mood",
+    "value": "curious"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_21d91fafa3ddfd8bd9e8-480.webp",
+    "size": 35288
+   },
+   {
+    "w": 960,
+    "file": "a_21d91fafa3ddfd8bd9e8-960.webp",
+    "size": 100422
+   }
+  ]
+ },
+ {
+  "id": "a_7b47b0493638e9f830dc",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "arts",
+  "grade_band": "all",
+  "mood": "calm",
+  "dominant_color": "#e8e8f8",
+  "lqip": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAADwAwCdASoYABIAPu1wsFIppiSrqAgBcB2JQAAD/d9ae7FSQd2rCUUQAPivHoTB2dtLP/ALl6aLGFn1DOM2PfA4rVZEqIG23CeaoJJV2C352eWcIKfwMPlkJ+GAoAKOepdIHIT2g5mQH7+hHQkeiNoCgWBbyjdQpwjAkm7j6aoYDyXGjNUj561/Bv6l8CFAAAA=",
+  "width": 960,
+  "height": 720,
+  "alt_fr": "Une boîte d'aquarelle, des pinceaux et un carnet vierge sur une table en bois",
+  "alt_en": "A watercolour paint set, brushes and a blank notebook on a wooden table",
+  "source_name": "openverse",
+  "source_url": "https://stocksnap.io/photo/still-items-ATTVTHA1AW",
+  "creator": "Tim Arterbury",
+  "creator_url": "https://stocksnap.io/author/34624",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Still Items\" by Tim Arterbury is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "arts"
+   },
+   {
+    "facet": "topic",
+    "value": "painting"
+   },
+   {
+    "facet": "object",
+    "value": "paintbrush"
+   },
+   {
+    "facet": "mood",
+    "value": "calm"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_7b47b0493638e9f830dc-480.webp",
+    "size": 30186
+   },
+   {
+    "w": 960,
+    "file": "a_7b47b0493638e9f830dc-960.webp",
+    "size": 74398
+   }
+  ]
+ },
+ {
+  "id": "a_d86581cbc5473360e67a",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "arts",
+  "grade_band": "all",
+  "mood": "calm",
+  "dominant_color": "#a8b888",
+  "lqip": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAAAQBQCdASoYABIAPu1gqE4ppSOiMBgMATAdiUAZEwG2vOxGAIxYXIlfJwa7mixx6EG4ANbfXhQf0P9PpBb9vNoC4JHqTgGFOg0vuo8Egn7tHrSNXyc8CfxAA7YW8U0tptNQpelhTqSuI6v3VHoyPyNo38Ekv3cSPjN7UrVulQ14HKT7AAA=",
+  "width": 1024,
+  "height": 768,
+  "alt_fr": "Un papillon vert et jaune aux ailes à motifs posé sur une feuille",
+  "alt_en": "A green and yellow butterfly with patterned wings resting on a leaf",
+  "source_name": "openverse",
+  "source_url": "https://www.rawpixel.com/image/3298066/free-photo-image-animal-animals-images-pictures-antennas",
+  "creator": "Unknown",
+  "creator_url": null,
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Butterfly Macro\" is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "arts"
+   },
+   {
+    "facet": "topic",
+    "value": "symmetry"
+   },
+   {
+    "facet": "object",
+    "value": "butterfly"
+   },
+   {
+    "facet": "mood",
+    "value": "calm"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_d86581cbc5473360e67a-480.webp",
+    "size": 12198
+   },
+   {
+    "w": 960,
+    "file": "a_d86581cbc5473360e67a-960.webp",
+    "size": 29990
+   }
+  ]
+ },
+ {
+  "id": "a_fcbfbf87722426a10e9e",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "arts",
+  "grade_band": "all",
+  "mood": "joyful",
+  "dominant_color": "#e8e8e8",
+  "lqip": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAABwAwCdASoYABIAPu1qqFAppiQjKA1RMB2JZQDImBlPW/D14OAA/u9JyS6Y7j8UpZyThEwV+OF6xStAnEaPSu3PDXsxXpEDQQCvauR+bQAAAA==",
+  "width": 960,
+  "height": 720,
+  "alt_fr": "Une rangée de crayons de couleur aux mines taillées",
+  "alt_en": "A row of coloured pencils with sharpened tips",
+  "source_name": "openverse",
+  "source_url": "https://stocksnap.io/photo/colored-pencils-SWKBAF0RNQ",
+  "creator": "Jess Watters",
+  "creator_url": "https://www.designedbyjess.com",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Colored Pencils\" by Jess Watters is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "arts"
+   },
+   {
+    "facet": "topic",
+    "value": "drawing"
+   },
+   {
+    "facet": "object",
+    "value": "pencil"
+   },
+   {
+    "facet": "mood",
+    "value": "joyful"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_fcbfbf87722426a10e9e-480.webp",
+    "size": 5392
+   },
+   {
+    "w": 960,
+    "file": "a_fcbfbf87722426a10e9e-960.webp",
+    "size": 12682
+   }
+  ]
+ }
+]

@@ -1,0 +1,337 @@
+[
+ {
+  "id": "a_59f055964a223a409104",
+  "kind": "photo",
+  "role": "hero",
+  "world_id": "robots",
+  "grade_band": "all",
+  "mood": "joyful",
+  "dominant_color": "#586878",
+  "lqip": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAAAQBACdASoYAA4APu1iqU2ppaOiMAgBMB2JZgCw7Yvqlk4YZtEfee+gAAD9/Qzr1vXyTpXvLZXF00kCsV4qntmIOKIxQ1bJwOHAdg6PvTJzN6LqGWwmQ8NgSPd+lTtcs7TAc09aMaBlOfj67MzKU3T3vt8WphE53PTfo+VqMvdz4eK8Uo9bV87QyUNdduejDKZgrzdcvb/iG7ZZsAAAAA==",
+  "width": 1600,
+  "height": 900,
+  "alt_fr": "Une vitrine remplie de robots jouets colorés",
+  "alt_en": "A shop window crowded with colourful toy robots",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Toy_robots_collection_Amsterdam_2009.jpg",
+  "creator": "eric molina",
+  "creator_url": null,
+  "licence": "CC-BY-2.0",
+  "licence_url": "https://creativecommons.org/licenses/by/2.0/",
+  "attribution_text": "\"Toy robots collection Amsterdam 2009\" by eric molina, CC BY 2.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Toy_robots_collection_Amsterdam_2009.jpg)",
+  "attribution_required": 1,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "robots"
+   },
+   {
+    "facet": "topic",
+    "value": "robots"
+   },
+   {
+    "facet": "object",
+    "value": "robot"
+   },
+   {
+    "facet": "mood",
+    "value": "joyful"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_59f055964a223a409104-480.webp",
+    "size": 30896
+   },
+   {
+    "w": 960,
+    "file": "a_59f055964a223a409104-960.webp",
+    "size": 98398
+   },
+   {
+    "w": 1600,
+    "file": "a_59f055964a223a409104-1600.webp",
+    "size": 244678
+   }
+  ]
+ },
+ {
+  "id": "a_009ff5c78532a49023e2",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "robots",
+  "grade_band": "all",
+  "mood": "adventurous",
+  "dominant_color": "#987868",
+  "lqip": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAAAQBQCdASoYABIAPu1qrFEppaQiqAqpMB2JQBOmXRA1ToO82HN8tJVa7Hg6V6Nqy9UwAP1QeJSxzz4hsTrN/8uU+B2NSUz8n0ER2hxnWT6foz2hY5CxqrLBLl9yCei8P2q3xPf4iEPv00KtBIaBA+Nt1taJTVwP6ZXD4lnPd5WZ3rBwJj6a3tPdWt988AAA",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "Une illustration du robot Curiosity sur la surface de Mars",
+  "alt_en": "An illustration of the Curiosity rover on the surface of Mars",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Curiosity_-_Robot_Geologist_and_Chemist_in_One!.jpg",
+  "creator": "NASA/JPL-Caltech",
+  "creator_url": null,
+  "licence": "PDM",
+  "licence_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "attribution_text": "\"Curiosity - Robot Geologist and Chemist in One!\" by NASA/JPL-Caltech, public domain, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Curiosity_-_Robot_Geologist_and_Chemist_in_One!.jpg)",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "robots"
+   },
+   {
+    "facet": "topic",
+    "value": "rovers"
+   },
+   {
+    "facet": "object",
+    "value": "rover"
+   },
+   {
+    "facet": "mood",
+    "value": "adventurous"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_009ff5c78532a49023e2-480.webp",
+    "size": 22964
+   },
+   {
+    "w": 960,
+    "file": "a_009ff5c78532a49023e2-960.webp",
+    "size": 85644
+   }
+  ]
+ },
+ {
+  "id": "a_1dc6513e9558df323015",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "robots",
+  "grade_band": "all",
+  "mood": "curious",
+  "dominant_color": "#181818",
+  "lqip": "data:image/webp;base64,UklGRsgAAABXRUJQVlA4ILwAAABQBQCdASoYABIAPu1orlCppaQiqAqpMB2JQBAAGiAEq33gvEVLLNw/w56S5dfAszRbsWAA/uAJ5yjXf3Hd+6fzm/NpRl597vxo95JtsB9BmFkCOqRQ5cdWMcmV9Hr2ENfZdW/TlcHkdwX/m9A7EnQhtuJsDr5jlXq2OPtToapbN/QRSAesoK8PTHmr/e8rf5hWSNOZv6w/8o0DfmIJJhVuawlTJ15vzx+lK5HRLR9pkgIi9ReXu/A2tgJYAA==",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "Une petite voiture-robot à roues avec deux capteurs en forme d'yeux, sur un plancher en bois",
+  "alt_en": "A small wheeled robot car with two round sensor eyes on a wooden floor",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Obstacle_avoidance_robot_car.jpg",
+  "creator": "Anani A. George",
+  "creator_url": null,
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Obstacle avoidance robot car\" by Anani A. George, CC0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Obstacle_avoidance_robot_car.jpg)",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "robots"
+   },
+   {
+    "facet": "topic",
+    "value": "robots"
+   },
+   {
+    "facet": "object",
+    "value": "robot-car"
+   },
+   {
+    "facet": "mood",
+    "value": "curious"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_1dc6513e9558df323015-480.webp",
+    "size": 20894
+   },
+   {
+    "w": 960,
+    "file": "a_1dc6513e9558df323015-960.webp",
+    "size": 59412
+   }
+  ]
+ },
+ {
+  "id": "a_bdc463bdfdd87d5bbd1b",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "robots",
+  "grade_band": "all",
+  "mood": "curious",
+  "dominant_color": "#080808",
+  "lqip": "data:image/webp;base64,UklGRuQAAABXRUJQVlA4INgAAABwBQCdASoYABIAPu1ur1IppiQiqAgBMB2JaQAD5jDF9qx1vcftJqEutr90tqG7gFqOqjAAAP7sWv+8tfNDtrGP9FpMldy/+qG7QQktjca2d159bJX8trVfs2q/vU6mx9+7mNeEY0pxogfVve7qoa6QFhxDI+ln+fgxtyVb+tOFHP2WJ7hyFWBqQwAOEeaE0Z3mvHh3e/89H77VnQz8sDS3UNmMm6v+RMSDoNDorzizTkUL+GWcOQ5nZuOkbUmaewRxgsrEkEn6yakhpqW/iF2ecFDXZKAAAAA=",
+  "width": 1024,
+  "height": 768,
+  "alt_fr": "Des engrenages métalliques qui s'emboîtent",
+  "alt_en": "Metal gears and cogwheels meshing together",
+  "source_name": "openverse",
+  "source_url": "https://www.rawpixel.com/image/5920887/photo-image-public-domain-technology-free",
+  "creator": "Unknown",
+  "creator_url": null,
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Free gears photo\" is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "robots"
+   },
+   {
+    "facet": "topic",
+    "value": "gears"
+   },
+   {
+    "facet": "object",
+    "value": "gear"
+   },
+   {
+    "facet": "mood",
+    "value": "curious"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_bdc463bdfdd87d5bbd1b-480.webp",
+    "size": 26256
+   },
+   {
+    "w": 960,
+    "file": "a_bdc463bdfdd87d5bbd1b-960.webp",
+    "size": 62394
+   }
+  ]
+ },
+ {
+  "id": "a_d6ef96706bb3f4141400",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "robots",
+  "grade_band": "all",
+  "mood": "epic",
+  "dominant_color": "#887858",
+  "lqip": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAAAwBQCdASoYABIAPu1ur1KppiQiqAgBMB2JaACdMzRA28AAX9Mj9776r4/EfUi7GDFc0AD8s59ZxcGE0+ga2vLbeOHCkdLEjvJ9brd6oOMa6fFExbecIsN9GPo/1AjXa5xJ3Nh9VcajlVVr61kNUhVT2IBaxsTu2xqme6aqWIlSwc2IOsQSIa/YNEGQOuD/2wxWjncbeEcu0HL2Vq2XZXfkmKksXY3jv+tWLovsn4m9n4rAAAA=",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "Un bras robotisé orange près d'un panier de basketball dans une cage",
+  "alt_en": "An orange robotic arm beside a basketball hoop inside a cage",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Hoops_the_Basketball_Robot.JPG",
+  "creator": "Photojunkie",
+  "creator_url": null,
+  "licence": "PDM",
+  "licence_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "attribution_text": "\"Hoops the Basketball Robot\" by Photojunkie, public domain, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Hoops_the_Basketball_Robot.JPG)",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "robots"
+   },
+   {
+    "facet": "topic",
+    "value": "robots"
+   },
+   {
+    "facet": "object",
+    "value": "robot-arm"
+   },
+   {
+    "facet": "mood",
+    "value": "epic"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_d6ef96706bb3f4141400-480.webp",
+    "size": 32102
+   },
+   {
+    "w": 960,
+    "file": "a_d6ef96706bb3f4141400-960.webp",
+    "size": 105792
+   }
+  ]
+ },
+ {
+  "id": "a_fba57eb05629a1d98b8a",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "robots",
+  "grade_band": "all",
+  "mood": "curious",
+  "dominant_color": "#e8e8d8",
+  "lqip": "data:image/webp;base64,UklGRswAAABXRUJQVlA4IMAAAADQBACdASoYABIAPu1oqk+ppiOiKA1RMB2JQBfnMYJJmF2ybi2NDfcFZttS/APoAAD+ePfGd6b44bQYB+iy4XNrpsdG48XX8dS6g2UaQtogNlKnS0ADhCV0A7abyocFRCBXmA+Gm9+YAAGmZJF1d7d7R6lpptwf15piWPNSrM/3ufrTqdCogK4PnrNZZODobqMffrpJlkAWu4strXf+ateSLWRGa/CfJw06vpeGzE60TKRKjksY5cXh1BOigoQAAAA=",
+  "width": 960,
+  "height": 720,
+  "alt_fr": "Un circuit imprimé rouge avec une puce électronique",
+  "alt_en": "A red electronic circuit board with a chip",
+  "source_name": "openverse",
+  "source_url": "https://stocksnap.io/photo/computer-board-5U2FV0UNXF",
+  "creator": "Lenharth Systems",
+  "creator_url": "https://www.lenharthsystems.com",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Computer Board\" by Lenharth Systems is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "robots"
+   },
+   {
+    "facet": "topic",
+    "value": "electronics"
+   },
+   {
+    "facet": "object",
+    "value": "circuit"
+   },
+   {
+    "facet": "mood",
+    "value": "curious"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_fba57eb05629a1d98b8a-480.webp",
+    "size": 44220
+   },
+   {
+    "w": 960,
+    "file": "a_fba57eb05629a1d98b8a-960.webp",
+    "size": 103382
+   }
+  ]
+ }
+]

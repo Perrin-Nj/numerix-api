@@ -1,0 +1,337 @@
+[
+ {
+  "id": "a_8c18b9d212392ebc2098",
+  "kind": "photo",
+  "role": "hero",
+  "world_id": "pirates",
+  "grade_band": "all",
+  "mood": "adventurous",
+  "dominant_color": "#78a8c8",
+  "lqip": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAQBACdASoYAA4APu1iqU2ppaOiMAgBMB2JQBOmUI+PBLLrcYtr7WF9AAD9zkOh8YIxhDJADhIfgt0RIloiIXUUM6th5yDLMD8/2dS6v8lg/Vk4+Tyi66aW1YRdrJK4AAA=",
+  "width": 1600,
+  "height": 900,
+  "alt_fr": "Un grand voilier aux voiles blanches en pleine mer",
+  "alt_en": "A tall ship with white sails on the open sea",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Amazing_Grace_Tall_Ship_sailing_in_Pacific_Ocean.jpg",
+  "creator": "Port of San Diego from San Diego, CA",
+  "creator_url": null,
+  "licence": "CC-BY-2.0",
+  "licence_url": "https://creativecommons.org/licenses/by/2.0/",
+  "attribution_text": "\"Amazing Grace Tall Ship sailing in Pacific Ocean\" by Port of San Diego from San Diego, CA, CC BY 2.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Amazing_Grace_Tall_Ship_sailing_in_Pacific_Ocean.jpg)",
+  "attribution_required": 1,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "pirates"
+   },
+   {
+    "facet": "topic",
+    "value": "ships"
+   },
+   {
+    "facet": "object",
+    "value": "ship"
+   },
+   {
+    "facet": "mood",
+    "value": "adventurous"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_8c18b9d212392ebc2098-480.webp",
+    "size": 12268
+   },
+   {
+    "w": 960,
+    "file": "a_8c18b9d212392ebc2098-960.webp",
+    "size": 37404
+   },
+   {
+    "w": 1600,
+    "file": "a_8c18b9d212392ebc2098-1600.webp",
+    "size": 93086
+   }
+  ]
+ },
+ {
+  "id": "a_4b02ff07fe7051d84283",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "pirates",
+  "grade_band": "all",
+  "mood": "epic",
+  "dominant_color": "#382818",
+  "lqip": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAABwBQCdASoYABIAPu1ur1IppiQiqAgBMB2JYgC7My/BqhggjWzBS/laby0JHYqIFyOrraYAAP7r5xUFhNWycyG7XPHIyBaettMexjvWV8CmVJVcYd6e/lNFLhoQ7YJ0D5QpqT1yU9oaq3MaESBTrF9xQk/UzyZYHXukj7Ct3mj09DMBq7I78r/dNIupu1L4oJ7vQ60xBtZs3jmxcVyFRuHgxTMIkLhxROkPiNTAAAA=",
+  "width": 1024,
+  "height": 768,
+  "alt_fr": "De vieilles pièces d'argent qui remplissent un baril en bois",
+  "alt_en": "Old silver coins filling a wooden barrel",
+  "source_name": "openverse",
+  "source_url": "https://www.rawpixel.com/image/6056213/free-public-domain-cc0-photo",
+  "creator": "Unknown",
+  "creator_url": null,
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "This work is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "pirates"
+   },
+   {
+    "facet": "topic",
+    "value": "treasure"
+   },
+   {
+    "facet": "object",
+    "value": "chest"
+   },
+   {
+    "facet": "mood",
+    "value": "epic"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_4b02ff07fe7051d84283-480.webp",
+    "size": 36182
+   },
+   {
+    "w": 960,
+    "file": "a_4b02ff07fe7051d84283-960.webp",
+    "size": 107808
+   }
+  ]
+ },
+ {
+  "id": "a_87792558ceb30cde6a09",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "pirates",
+  "grade_band": "all",
+  "mood": "curious",
+  "dominant_color": "#e8a808",
+  "lqip": "data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAABwBQCdASoYABIAPu1qrlCppaQiqAqpMB2JagCdMuOA+rGAMru/zCS/RJFQ9L+ypsT3VZ6wAPqR9yhVToNjYl9cOdhLXpI9QANt9DGdYfYqdOe99RhR5fp26etF4Q+koKI/d3eKdlun4/s8QmzRga37cYaVqfygrfoEMdCvcZDEfzFo8nzqfrtw5/KqdRj6MKllra2YphM3KngRX1MVpJq/1m3WKXoyRxlFg3Di8gl74U+ncPWwoDzwAAA=",
+  "width": 960,
+  "height": 720,
+  "alt_fr": "Une vieille boussole en laiton posée sur une carte ancienne jaunie",
+  "alt_en": "An old brass compass lying on a yellow antique map",
+  "source_name": "openverse",
+  "source_url": "https://stocksnap.io/photo/compass-map-UGFCFONZQA",
+  "creator": "Vintage RS",
+  "creator_url": "https://www.legion.ca",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Compass Map\" by Vintage RS is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "pirates"
+   },
+   {
+    "facet": "topic",
+    "value": "navigation"
+   },
+   {
+    "facet": "object",
+    "value": "compass"
+   },
+   {
+    "facet": "mood",
+    "value": "curious"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_87792558ceb30cde6a09-480.webp",
+    "size": 20842
+   },
+   {
+    "w": 960,
+    "file": "a_87792558ceb30cde6a09-960.webp",
+    "size": 48176
+   }
+  ]
+ },
+ {
+  "id": "a_91a5182cdfd5a21f3345",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "pirates",
+  "grade_band": "all",
+  "mood": "joyful",
+  "dominant_color": "#f8f8f8",
+  "lqip": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAAAQBQCdASoYABIAPu1ur1KppiQiqAgBMB2JYwDImBEuaqAo0xNzQFJv2IflK7j/zvcQAP7zfxGL7lSFvBWomYuL27A4ybGmXyA2iE9B7J+YRC3RPOIqzTycoj4+ANVDLXyZbzlCvQXqe76n9avn170ek+Ad10WED9/mrkauDu4lNhUfZGCoKwXKQAA=",
+  "width": 1024,
+  "height": 768,
+  "alt_fr": "Un ara rouge perché sur une branche",
+  "alt_en": "A scarlet macaw parrot perched on a branch",
+  "source_name": "openverse",
+  "source_url": "https://www.rawpixel.com/image/6041436/photo-image-background-white-public-domain",
+  "creator": "Unknown",
+  "creator_url": null,
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Scarlet Macaw parrot, bird photo\" is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "pirates"
+   },
+   {
+    "facet": "topic",
+    "value": "parrots"
+   },
+   {
+    "facet": "object",
+    "value": "parrot"
+   },
+   {
+    "facet": "mood",
+    "value": "joyful"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_91a5182cdfd5a21f3345-480.webp",
+    "size": 10786
+   },
+   {
+    "w": 960,
+    "file": "a_91a5182cdfd5a21f3345-960.webp",
+    "size": 30594
+   }
+  ]
+ },
+ {
+  "id": "a_f266c21ec76e1e9608b3",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "pirates",
+  "grade_band": "all",
+  "mood": "calm",
+  "dominant_color": "#f8f8f8",
+  "lqip": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAADwBACdASoYABIAPu1qq08ppiOiMBgIATAdiWMAvkgQ7NY3Kxpjj1k1zOZXj4S2eyAA/uqEgnQeEP4K+GtYGYAvbYLhC+I5wRg5UbGOG8ENtY9EHAM3q/AUEgz6rU+3MYCwY1WK14dUDoj/M8JGkzWUN4a0xnEwsXs8TKtBvYcHGBV7D+IKhUILYCAAAA==",
+  "width": 960,
+  "height": 720,
+  "alt_fr": "Une plage tropicale bordée de palmiers au coucher du soleil",
+  "alt_en": "A tropical beach with palm trees at sunset",
+  "source_name": "openverse",
+  "source_url": "https://stocksnap.io/photo/sun-beach-3AR993FEFH",
+  "creator": "Matt Moloney",
+  "creator_url": "https://mjmolo.com",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Sun Beach\" by Matt Moloney is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "pirates"
+   },
+   {
+    "facet": "topic",
+    "value": "islands"
+   },
+   {
+    "facet": "object",
+    "value": "island"
+   },
+   {
+    "facet": "mood",
+    "value": "calm"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_f266c21ec76e1e9608b3-480.webp",
+    "size": 30062
+   },
+   {
+    "w": 960,
+    "file": "a_f266c21ec76e1e9608b3-960.webp",
+    "size": 93582
+   }
+  ]
+ },
+ {
+  "id": "a_f91fc32bb4767cd81e9e",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "pirates",
+  "grade_band": "all",
+  "mood": "adventurous",
+  "dominant_color": "#e8d8c8",
+  "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAADQBACdASoYABIAPu1ur1IppiQiqAgBMB2JZQCdM3JBqJjKFCkRI7N+2v1tZLT3CAD8ihLz95jJtoSe9H//YQ2noHikFdN1/tJcXdEkb9sgEbQVa+2lXkiH86SQuueWsDsKLeqmJGLmr9PLSKFeB8VPDrmMK4G9JxD0jsDN3UAAAA==",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "Une ancienne carte dessinée à la main des concessions minières de Treasure Hill, au Nevada",
+  "alt_en": "An old hand-drawn map of mining claims on Treasure Hill, Nevada",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Map_of_Treasure_Hill,_White_Pine_County,_Nevada._Russell_%26_Struthers,_Engr%27s_N._Y._(to_accompany)_Pocket_Mining_Atlas._Compiled_(IA_dr_map-of-treasure-hill-white-pine-county-nevada-russell-struthers-engr-3054025).jpg",
+  "creator": "Bolitho, Edwin Russell & Struthers, Eng",
+  "creator_url": null,
+  "licence": "PDM",
+  "licence_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "attribution_text": "\"Map of Treasure Hill, White Pine County, Nevada. Russell & Struthers, Engr's N. Y. (to accompany) Pocket Mining Atlas. Compiled (IA dr map-of-treasure-hill-white-pine-county-nevada-russell-struthers-engr-3054025)\" by Bolitho, Edwin Russell & Struthers, Eng, public domain, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Map_of_Treasure_Hill,_White_Pine_County,_Nevada._Russell_%26_Struthers,_Engr%27s_N._Y._(to_accompany)_Pocket_Mining_Atlas._Compiled_(IA_dr_map-of-treasure-hill-white-pine-county-nevada-russell-struthers-engr-3054025).jpg)",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "pirates"
+   },
+   {
+    "facet": "topic",
+    "value": "maps"
+   },
+   {
+    "facet": "object",
+    "value": "map"
+   },
+   {
+    "facet": "mood",
+    "value": "adventurous"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_f91fc32bb4767cd81e9e-480.webp",
+    "size": 20512
+   },
+   {
+    "w": 960,
+    "file": "a_f91fc32bb4767cd81e9e-960.webp",
+    "size": 109980
+   }
+  ]
+ }
+]

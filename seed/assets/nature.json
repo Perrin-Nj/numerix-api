@@ -1,0 +1,344 @@
+[
+ {
+  "id": "a_1a862dfd08ab3deff4ab",
+  "kind": "photo",
+  "role": "hero",
+  "world_id": "nature",
+  "grade_band": "all",
+  "mood": "calm",
+  "dominant_color": "#f8f8f8",
+  "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAABQBACdASoYAA4APu1iqU2ppaOiMAgBMB2JZACdABoqT5McK2/3a98NJYwAAP0zC92k1pFDkPRKmnABSJAwGbt7PHswbzAVZOf8xLDpThB+pT83gwMsqNMHZ2hAUecSnLuvgt0aVIBRXGbhZ8+IDmhfcWBCg8yWeLGP9HowAAA=",
+  "width": 960,
+  "height": 540,
+  "alt_fr": "Sentier de forêt brumeux couvert de feuilles rouges et orangées",
+  "alt_en": "Misty autumn forest trail covered in red and orange leaves",
+  "source_name": "openverse",
+  "source_url": "https://stocksnap.io/photo/path-trail-9XDH29XSFK",
+  "creator": "Sebastian Unrau",
+  "creator_url": "https://stocksnap.io/author/10609",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Path Trail\" by Sebastian Unrau is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "nature"
+   },
+   {
+    "facet": "topic",
+    "value": "trail"
+   },
+   {
+    "facet": "object",
+    "value": "path"
+   },
+   {
+    "facet": "object",
+    "value": "tree"
+   },
+   {
+    "facet": "mood",
+    "value": "calm"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_1a862dfd08ab3deff4ab-480.webp",
+    "size": 29978
+   },
+   {
+    "w": 960,
+    "file": "a_1a862dfd08ab3deff4ab-960.webp",
+    "size": 102882
+   }
+  ]
+ },
+ {
+  "id": "a_4e21187d552c19823597",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "nature",
+  "grade_band": "all",
+  "mood": "cozy",
+  "dominant_color": "#d87808",
+  "lqip": "data:image/webp;base64,UklGRuIAAABXRUJQVlA4INYAAABQBQCdASoYABIAPu1srVCppiQiqAqpMB2JbACsMvUeYBwt1kMBiVH6DqarVgnQRpO2eZAA/un07dY3zUhoBLGho1eE9W/XmeBJR3SPxMSOIJ5ijiEZbXf4P6YiFbIjMnl85ej+yq1h7Ci56/Unz/uI4aWhspQFYdAwwWaVSe5R3gTajBpPEhaYIR680N7PxAqT8iSTwvY/q46PmjJ+R1o7PamYMr+M2644gjT5QKNfuTKVh0JFn6ACIqiYVrjo5Aa8scWRVRN5s1nuGEmYIYXHnRNSEVQA",
+  "width": 960,
+  "height": 720,
+  "alt_fr": "Gros plan de feuilles d'automne orange vif sur un fond flou",
+  "alt_en": "Close-up of bright orange autumn leaves with a blurred background",
+  "source_name": "openverse",
+  "source_url": "https://stocksnap.io/photo/autumn-leaves-0A80BXDFCN",
+  "creator": "Mary",
+  "creator_url": "https://www.instagram.com/maryroseandflowers",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Autumn Leaves\" by Mary is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "nature"
+   },
+   {
+    "facet": "topic",
+    "value": "leaves"
+   },
+   {
+    "facet": "object",
+    "value": "leaf"
+   },
+   {
+    "facet": "object",
+    "value": "maple-leaf"
+   },
+   {
+    "facet": "mood",
+    "value": "cozy"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_4e21187d552c19823597-480.webp",
+    "size": 9660
+   },
+   {
+    "w": 960,
+    "file": "a_4e21187d552c19823597-960.webp",
+    "size": 23020
+   }
+  ]
+ },
+ {
+  "id": "a_52196f49a5f1cdfffed1",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "nature",
+  "grade_band": "all",
+  "mood": "calm",
+  "dominant_color": "#484838",
+  "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAADwBACdASoYABIAPu1urlIppiQiqAgBMB2JZQDGfA0GgtTwDnH+oCj9uYyzQgKq8wAA/RzjH9CvTfbAY5gQv41kYj2UCvz+HriXSMlDGLKr0N10kXiAJ1bk/x7CQOiI1aDsSS3pFnhnV3f3TFHu6P1V3YU/sbAZtqrx+AAAAAA=",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "Un petit ruisseau qui coule sur des roches dans une forêt",
+  "alt_en": "A small stream flowing over rocks through a forest",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Gabes-mountain-trail-stream-gsmnp1.jpg",
+  "creator": "Brian Stansberry",
+  "creator_url": null,
+  "licence": "CC-BY-3.0",
+  "licence_url": "https://creativecommons.org/licenses/by/3.0/",
+  "attribution_text": "\"Gabes-mountain-trail-stream-gsmnp1\" by Brian Stansberry, CC BY 3.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Gabes-mountain-trail-stream-gsmnp1.jpg)",
+  "attribution_required": 1,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "nature"
+   },
+   {
+    "facet": "topic",
+    "value": "rivers"
+   },
+   {
+    "facet": "object",
+    "value": "river"
+   },
+   {
+    "facet": "object",
+    "value": "rock"
+   },
+   {
+    "facet": "mood",
+    "value": "calm"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_52196f49a5f1cdfffed1-480.webp",
+    "size": 27022
+   },
+   {
+    "w": 960,
+    "file": "a_52196f49a5f1cdfffed1-960.webp",
+    "size": 89662
+   }
+  ]
+ },
+ {
+  "id": "a_927afb8fd96dd1847c41",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "nature",
+  "grade_band": "all",
+  "mood": "adventurous",
+  "dominant_color": "#f8f8f8",
+  "lqip": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAABQBQCdASoYABIAPu1srVCppiQiqAqpMB2JYwDBzA5XCC0PhKt3aqDg70FXaz/kX0dlQ4AA/uxDSdVSgdMngd6/z0qn6KmauYjYoz7njAzsUhMvpm2UqG3LzAbn9+I3ven9dyV2dD3eIUAzDWQBDV7Q/oPk9OpLmX/xdHSg4I5oaHYWA8idKqIo6bB74E27XlT6EAmBNeEM/QsNFp+tQaVMv38DxelUInNPs43oAAA=",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "Tente de toile verte installée dans un terrain de camping boisé",
+  "alt_en": "Green canvas tent set up in a wooded campsite",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Quemado_Lake_Coleman_Oasis.jpg",
+  "creator": "Anjbe",
+  "creator_url": null,
+  "licence": "PDM",
+  "licence_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "attribution_text": "\"Quemado Lake Coleman Oasis\" by Anjbe, public domain, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Quemado_Lake_Coleman_Oasis.jpg)",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "nature"
+   },
+   {
+    "facet": "topic",
+    "value": "camping"
+   },
+   {
+    "facet": "object",
+    "value": "tent"
+   },
+   {
+    "facet": "mood",
+    "value": "adventurous"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_927afb8fd96dd1847c41-480.webp",
+    "size": 35556
+   },
+   {
+    "w": 960,
+    "file": "a_927afb8fd96dd1847c41-960.webp",
+    "size": 164922
+   }
+  ]
+ },
+ {
+  "id": "a_cf33427df082b6a157e3",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "nature",
+  "grade_band": "all",
+  "mood": "calm",
+  "dominant_color": "#080808",
+  "lqip": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAABwBACdASoYABIAPu1qrlCppiQiqAqpMB2JQBkTAiHD2WxI9mBeOqWemdDCkAD+7tYx8nCbDVsSqRP0wdx2rqbg/cI6wrl+lzwQOMVeRAUqe9DMANIfWXdPkMux8BRCUUBUisz4e6IjWtw4OJUSzkI8o90QgAAA",
+  "width": 960,
+  "height": 720,
+  "alt_fr": "Un cerf debout au bord d'un ruisseau dans un pré verdoyant",
+  "alt_en": "A deer standing beside a stream in a green meadow",
+  "source_name": "openverse",
+  "source_url": "https://stocksnap.io/photo/deer-nature-R6CKL5OCVW",
+  "creator": "Ian Livesey",
+  "creator_url": "https://www.flickr.com/photos/ianlivesey",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Deer Nature\" by Ian Livesey is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "nature"
+   },
+   {
+    "facet": "topic",
+    "value": "wildlife"
+   },
+   {
+    "facet": "object",
+    "value": "deer"
+   },
+   {
+    "facet": "mood",
+    "value": "calm"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_cf33427df082b6a157e3-480.webp",
+    "size": 23270
+   },
+   {
+    "w": 960,
+    "file": "a_cf33427df082b6a157e3-960.webp",
+    "size": 60060
+   }
+  ]
+ },
+ {
+  "id": "a_e6ab1f9c345d3c73c5aa",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "nature",
+  "grade_band": "all",
+  "mood": "curious",
+  "dominant_color": "#786868",
+  "lqip": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAADwBACdASoYABIAPu1qqlEppaOiqAqpMB2JYwC7BbLAqr9Vey0iNxY2X6cHsRmLeiAA9OJXULNguNzcv7kYnD/YrXnamJVIVfMv9OYsJfvasTFSdJYjCI1PXL6O1ErwEu2k/3HhMi2rfqBqLgFw3W4wuO0cp24IrdlWYAV8ALE5wRNw46MLsIFiNwO4VMzab5q2zk+LxjJXbPNYNhga9z2H2g+b6+tWfhSChv6AAAA=",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "Des cônes de pin éparpillés sur le sol de la forêt, près d'une clairière verte",
+  "alt_en": "Pine cones scattered on the forest floor beside a green clearing",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Pine_Cones_on_the_Forest_Floor_(094b6d5a-852a-4a52-8a5f-ba5871c8a9e6).jpg",
+  "creator": "NPS Photo",
+  "creator_url": null,
+  "licence": "PDM",
+  "licence_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "attribution_text": "\"Pine Cones on the Forest Floor (094b6d5a-852a-4a52-8a5f-ba5871c8a9e6)\" by NPS Photo, public domain, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Pine_Cones_on_the_Forest_Floor_(094b6d5a-852a-4a52-8a5f-ba5871c8a9e6).jpg)",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "nature"
+   },
+   {
+    "facet": "topic",
+    "value": "pinecones"
+   },
+   {
+    "facet": "object",
+    "value": "pine-cone"
+   },
+   {
+    "facet": "mood",
+    "value": "curious"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_e6ab1f9c345d3c73c5aa-480.webp",
+    "size": 53140
+   },
+   {
+    "w": 960,
+    "file": "a_e6ab1f9c345d3c73c5aa-960.webp",
+    "size": 224058
+   }
+  ]
+ }
+]

@@ -1,0 +1,332 @@
+[
+ {
+  "id": "a_3f0a0245f131cbf14ed7",
+  "kind": "photo",
+  "role": "hero",
+  "world_id": "animaux",
+  "grade_band": "all",
+  "mood": "calm",
+  "dominant_color": "#889858",
+  "lqip": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAADQAwCdASoYAA4APu1iqU2ppaOiMAgBMB2JZgC7ABQuk1q6iXYAnAAA+//ZbT32x4o2J45iW1BncORPYJbWU915yDEUrtSdEu31EcR1y++AbiJR8rsA90A5B+hRNT/DpToAgyPeo3M2IcVY4WDQuBvS40YPELynwU8/+46Fg3WJ5jgWQAA=",
+  "width": 1024,
+  "height": 576,
+  "alt_fr": "Des vaches et des veaux bruns dans un pâturage verdoyant bordé d'arbres",
+  "alt_en": "Brown cows and calves in a green pasture with trees",
+  "source_name": "openverse",
+  "source_url": "https://www.flickr.com/photos/62274444@N00/295458103",
+  "creator": "*pascal*",
+  "creator_url": "https://www.flickr.com/photos/62274444@N00",
+  "licence": "CC-BY-2.0",
+  "licence_url": "https://creativecommons.org/licenses/by/2.0/",
+  "attribution_text": "\"Scène des près\" by *pascal* is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/.",
+  "attribution_required": 1,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "animaux"
+   },
+   {
+    "facet": "topic",
+    "value": "farm"
+   },
+   {
+    "facet": "object",
+    "value": "cow"
+   },
+   {
+    "facet": "mood",
+    "value": "calm"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_3f0a0245f131cbf14ed7-480.webp",
+    "size": 28078
+   },
+   {
+    "w": 960,
+    "file": "a_3f0a0245f131cbf14ed7-960.webp",
+    "size": 116534
+   }
+  ]
+ },
+ {
+  "id": "a_223a428af6c1056b6c9b",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "animaux",
+  "grade_band": "all",
+  "mood": "joyful",
+  "dominant_color": "#d8d8e8",
+  "lqip": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADQBACdASoYABIAPu1qq08ppiOiMBgIATAdiWMAxNgQ64y99aPwdlqFHUrSanNqqAD+6nQ+cm3SF5AdzjVk/evaJsz3YRf7y6cebKsjDCCp8Kzr3Tg6NjcPDPW3ZshsEuzgmTBjEAA=",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "Une brebis et ses agneaux dans un champ vert, avec des éoliennes en arrière-plan",
+  "alt_en": "A ewe with her lambs on a green field with wind turbines behind",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Friedrichsgabekoog_schafe_haus_windraeder_01.04.2012_15-11-09.jpg",
+  "creator": "Dirk Ingo Franke",
+  "creator_url": null,
+  "licence": "CC-BY-3.0",
+  "licence_url": "https://creativecommons.org/licenses/by/3.0/",
+  "attribution_text": "\"Friedrichsgabekoog schafe haus windraeder 01.04.2012 15-11-09\" by Dirk Ingo Franke, CC BY 3.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Friedrichsgabekoog_schafe_haus_windraeder_01.04.2012_15-11-09.jpg)",
+  "attribution_required": 1,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "animaux"
+   },
+   {
+    "facet": "topic",
+    "value": "farm"
+   },
+   {
+    "facet": "object",
+    "value": "sheep"
+   },
+   {
+    "facet": "mood",
+    "value": "joyful"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_223a428af6c1056b6c9b-480.webp",
+    "size": 19392
+   },
+   {
+    "w": 960,
+    "file": "a_223a428af6c1056b6c9b-960.webp",
+    "size": 69426
+   }
+  ]
+ },
+ {
+  "id": "a_2318b9437a2dd31eb698",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "animaux",
+  "grade_band": "all",
+  "mood": "calm",
+  "dominant_color": "#b8b858",
+  "lqip": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAADQBACdASoYABIAPu1srVCppaQiqAqpMB2JQBhQAdcH5p1v5lIYsbmyW+F0M3/xgAD+qHkeqgTXnRW69whrAJLS1ExxcoJcaHAOAB2amURdO2m9o8sFHuMT8hrqcDI7lti4RqpT7XBfCc6B3YUod9ILG5x5uQYZICVK9O4nQoy0hvq9to6BNZR5m/TwQY28OzdIoSRdPMqWwAAA",
+  "width": 1024,
+  "height": 768,
+  "alt_fr": "Un cheval brun qui galope dans un champ d'herbe",
+  "alt_en": "A brown horse galloping across a grass field",
+  "source_name": "openverse",
+  "source_url": "https://www.rawpixel.com/image/8733898/photo-image-public-domain-animal",
+  "creator": "The Bureau of Land Management",
+  "creator_url": null,
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Brown horse galloping, grass field\" by The Bureau of Land Management is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "animaux"
+   },
+   {
+    "facet": "topic",
+    "value": "farm"
+   },
+   {
+    "facet": "object",
+    "value": "horse"
+   },
+   {
+    "facet": "mood",
+    "value": "calm"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_2318b9437a2dd31eb698-480.webp",
+    "size": 35644
+   },
+   {
+    "w": 960,
+    "file": "a_2318b9437a2dd31eb698-960.webp",
+    "size": 99338
+   }
+  ]
+ },
+ {
+  "id": "a_25148b5acd41c1a6f2c1",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "animaux",
+  "grade_band": "all",
+  "mood": "joyful",
+  "dominant_color": "#c89878",
+  "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAADQBACdASoYABIAPu1mqk8ppaOiKA1RMB2JYwCsAA5WrNBuJL8VKBu09xtmSBxYIAD+741Ji80idxI2N6C/mR5VZNZJ/NR3d5H3X1x+wmeB1WyR//ZE5V0KnR7Q7Ttybt7nPwechvTTaMSgEuMjofUn4984OrkKWaZtUzhkzzSEGSayaHbdbtTI3UFu8+zXuiE1QUVsAAA=",
+  "width": 960,
+  "height": 720,
+  "alt_fr": "Une poule tachetée qui marche devant une porte de grange en bois",
+  "alt_en": "A speckled hen walking in front of a wooden barn door",
+  "source_name": "openverse",
+  "source_url": "https://stocksnap.io/photo/chicken-hen-HMXLZQKNX2",
+  "creator": "Micha%u0142%20Grosicki",
+  "creator_url": "https://stocksnap.io/author/40727",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Chicken Hen\" by Micha%u0142%20Grosicki is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "animaux"
+   },
+   {
+    "facet": "topic",
+    "value": "farm"
+   },
+   {
+    "facet": "object",
+    "value": "chicken"
+   },
+   {
+    "facet": "mood",
+    "value": "joyful"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_25148b5acd41c1a6f2c1-480.webp",
+    "size": 28222
+   },
+   {
+    "w": 960,
+    "file": "a_25148b5acd41c1a6f2c1-960.webp",
+    "size": 70620
+   }
+  ]
+ },
+ {
+  "id": "a_39ac0ffe62c1eefbfc43",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "animaux",
+  "grade_band": "all",
+  "mood": "curious",
+  "dominant_color": "#6898c8",
+  "lqip": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAACwBACdASoYABIAPu1eq1CppKOisBgIATAdiWYAnTLdfD2IH6qgFvgrRV90tcWAAP5USlMzDGEMPwBryfCtMf6P/eSmok3he7DK7238h6P8bo4dfdomMyppwxaIL11NLHfGCzNc0jLungzMVQn0yxSlpdhwxsU364yv3RKwAkDhZRYL15czbjr4IPJykIsrrbVy4KAA",
+  "width": 960,
+  "height": 720,
+  "alt_fr": "La tête d'une girafe devant un ciel bleu",
+  "alt_en": "A giraffe's head against a blue sky",
+  "source_name": "openverse",
+  "source_url": "https://stocksnap.io/photo/giraffe-animal-PI65INGJA5",
+  "creator": "Gary Bendig",
+  "creator_url": "https://stocksnap.io/author/38142",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Giraffe Animal\" by Gary Bendig is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "animaux"
+   },
+   {
+    "facet": "topic",
+    "value": "zoo"
+   },
+   {
+    "facet": "object",
+    "value": "giraffe"
+   },
+   {
+    "facet": "mood",
+    "value": "curious"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_39ac0ffe62c1eefbfc43-480.webp",
+    "size": 9172
+   },
+   {
+    "w": 960,
+    "file": "a_39ac0ffe62c1eefbfc43-960.webp",
+    "size": 27006
+   }
+  ]
+ },
+ {
+  "id": "a_ffffb3ee0fb715c0c494",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "animaux",
+  "grade_band": "all",
+  "mood": "calm",
+  "dominant_color": "#a8a8b8",
+  "lqip": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAAAQBQCdASoYABIAPu1iq1AppSOmsBgIATAdiWIAuwAQ3xaKhb0wGuQItEnrOw84eiQAAP5SvMITop0deiNJxu/T6J3TeAkQWfkUu1m9lougoOIqnOyf0nhixi8ozVtUpmPHzjVFafi9erbDyr7OyOvAsy6j0iVOGPxdrvscQjVWZ7tSGyZLo4Ldp0A9pgAA",
+  "width": 1024,
+  "height": 768,
+  "alt_fr": "Des éléphants d'Afrique debout sur une plaine herbeuse",
+  "alt_en": "African elephants standing on a grassy plain",
+  "source_name": "openverse",
+  "source_url": "https://www.rawpixel.com/image/6043399/photo-image-public-domain-nature-family",
+  "creator": "Unknown",
+  "creator_url": null,
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"African elephant herd teh serengeti\" is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "animaux"
+   },
+   {
+    "facet": "topic",
+    "value": "zoo"
+   },
+   {
+    "facet": "object",
+    "value": "elephant"
+   },
+   {
+    "facet": "mood",
+    "value": "calm"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_ffffb3ee0fb715c0c494-480.webp",
+    "size": 23664
+   },
+   {
+    "w": 960,
+    "file": "a_ffffb3ee0fb715c0c494-960.webp",
+    "size": 80902
+   }
+  ]
+ }
+]

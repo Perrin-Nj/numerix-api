@@ -1,0 +1,277 @@
+[
+ {
+  "id": "a_18c54a41f800e66f3802",
+  "kind": "photo",
+  "role": "hero",
+  "world_id": "sport",
+  "grade_band": "all",
+  "mood": "joyful",
+  "dominant_color": "#e8e8e8",
+  "lqip": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAAAwBACdASoYAA4APu1kqU2ppaOiMAgBMB2JZwDImCGsXbWQSeRQIubt/AAA/u1HbOvsOSKb38KMDOV8F71CTwn+KpfIi1ntgChdWMk+34Ge+B7dRMXD5SiOaPSIVjMDfWD67jPWDm8fIefxPOYQQTyw2SEAAA==",
+  "width": 960,
+  "height": 540,
+  "alt_fr": "Un ballon de soccer sur un terrain gazonné au crépuscule, avec un but en arrière-plan",
+  "alt_en": "A soccer ball on a grass field at dusk with a goal in the background",
+  "source_name": "openverse",
+  "source_url": "https://stocksnap.io/photo/still-items-KTQZYM7YXM",
+  "creator": "Markus Spiske",
+  "creator_url": "https://freeforcommercialuse.net",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Still Items\" by Markus Spiske is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "sport"
+   },
+   {
+    "facet": "topic",
+    "value": "soccer"
+   },
+   {
+    "facet": "object",
+    "value": "soccer-ball"
+   },
+   {
+    "facet": "mood",
+    "value": "joyful"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_18c54a41f800e66f3802-480.webp",
+    "size": 19714
+   },
+   {
+    "w": 960,
+    "file": "a_18c54a41f800e66f3802-960.webp",
+    "size": 65218
+   }
+  ]
+ },
+ {
+  "id": "a_1684008ff9958b7b5269",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "sport",
+  "grade_band": "all",
+  "mood": "calm",
+  "dominant_color": "#080808",
+  "lqip": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAAAQBQCdASoYABIAPu1qrVCppaQiqAqpMB2JQBWCP/wD5aDAi0xAQ1/v4HE/VuIKYDRAAP6RqRBjuCWJlLRm742Nu+PwUYA77hYNo2x1y8U5RiD0KgOBo6CRnZojQ17pTcCfQuYH2BMloLcXXZNXpMBut2RQoF721aH+1II2vdLg3mTejwovT5BdlPP0FMyIyjjlIMAjOz0WElsyrTj2nFsHMxgRjUAA",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "Une piscine extérieure avec des couloirs et des auvents bleus",
+  "alt_en": "An outdoor swimming pool with lanes and blue shade canopies",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Bellbowrie_swimming_pool,_main_pool_with_lanes,_2025.jpg",
+  "creator": "Kerry Raymond",
+  "creator_url": null,
+  "licence": "CC-BY-4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution_text": "\"Bellbowrie swimming pool, main pool with lanes, 2025\" by Kerry Raymond, CC BY 4.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Bellbowrie_swimming_pool,_main_pool_with_lanes,_2025.jpg)",
+  "attribution_required": 1,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "sport"
+   },
+   {
+    "facet": "topic",
+    "value": "swimming"
+   },
+   {
+    "facet": "object",
+    "value": "pool"
+   },
+   {
+    "facet": "mood",
+    "value": "calm"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_1684008ff9958b7b5269-480.webp",
+    "size": 23284
+   },
+   {
+    "w": 960,
+    "file": "a_1684008ff9958b7b5269-960.webp",
+    "size": 105592
+   }
+  ]
+ },
+ {
+  "id": "a_57d8de906136df605ab0",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "sport",
+  "grade_band": "all",
+  "mood": "epic",
+  "dominant_color": "#0868b8",
+  "lqip": "data:image/webp;base64,UklGRtoAAABXRUJQVlA4IM4AAABQBQCdASoYABIAPu1srFEppaQiqAqpMB2JZgC1GuCv/gGKuqrK//94UywudarNdaE/rGYA+xm0aG0fJNLM2ShRk5OXi7rKxc16r9yw88aL68kN2bMYqghGAhvo8a731ZLKzv0Qp5AIPFmJ8VWsYMa787dga2ZX9WfEyht6ovSYgsyyvx3D5UGoZ2LXytQABuGMlL2oGLE9wZk3rJa4sVx2ZK/4LeviSqiEIPww8P1fxFLIZKFgfe4vPmCbGl57PwwtlhP7n6TEnHBWzDHgAA==",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "Une piste de course bleue aux lignes blanches, à côté d'un bâtiment",
+  "alt_en": "A blue running track with white lane lines beside a building",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Varsity_running_track_Toronto_2010.jpg",
+  "creator": "Fiona C from Toronto",
+  "creator_url": null,
+  "licence": "CC-BY-2.0",
+  "licence_url": "https://creativecommons.org/licenses/by/2.0/",
+  "attribution_text": "\"Varsity running track Toronto 2010\" by Fiona C from Toronto, CC BY 2.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Varsity_running_track_Toronto_2010.jpg)",
+  "attribution_required": 1,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "sport"
+   },
+   {
+    "facet": "topic",
+    "value": "running"
+   },
+   {
+    "facet": "object",
+    "value": "track"
+   },
+   {
+    "facet": "mood",
+    "value": "epic"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_57d8de906136df605ab0-480.webp",
+    "size": 29594
+   },
+   {
+    "w": 960,
+    "file": "a_57d8de906136df605ab0-960.webp",
+    "size": 89672
+   }
+  ]
+ },
+ {
+  "id": "a_6540d314539ec2e2fcf1",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "sport",
+  "grade_band": "all",
+  "mood": "joyful",
+  "dominant_color": "#081838",
+  "lqip": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAADwBACdASoYABIAPu1oq0+ppiOmsBgIATAdiWQAnTMJwan9qACILy3mhTcHC7KJZwAA/u6AODRK6xC7EMREauTvk5xwoCPzQTl4t+bkPF3FV1EIOyUq63Evl/d0j/xZ0JxPAOwJRvFHlzlROdP2mMAb/QluVazKvA7fR0sUkLzfzurCDKAAAA==",
+  "width": 960,
+  "height": 720,
+  "alt_fr": "Une balle et une raquette de tennis posées sur un terrain de terre battue rouge",
+  "alt_en": "A tennis ball and racket resting on a red clay court",
+  "source_name": "openverse",
+  "source_url": "https://stocksnap.io/photo/tennis-racket-8ODE0WIMD9",
+  "creator": "Krzysztof%20Puszczy%u0144ski",
+  "creator_url": "https://stocksnap.io/author/5032",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Tennis Racket\" by Krzysztof%20Puszczy%u0144ski is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "sport"
+   },
+   {
+    "facet": "topic",
+    "value": "tennis"
+   },
+   {
+    "facet": "object",
+    "value": "tennis-ball"
+   },
+   {
+    "facet": "mood",
+    "value": "joyful"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_6540d314539ec2e2fcf1-480.webp",
+    "size": 24914
+   },
+   {
+    "w": 960,
+    "file": "a_6540d314539ec2e2fcf1-960.webp",
+    "size": 87892
+   }
+  ]
+ },
+ {
+  "id": "a_a760c39d8f58fc657ccf",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "sport",
+  "grade_band": "all",
+  "mood": "joyful",
+  "dominant_color": "#282828",
+  "lqip": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAAAwBQCdASoYABIAPu1krE6ppaQiKA1RMB2JZQC90A3k+Y7DeibbigZmpdy8qTJAIrwkoAD9JyAW22rGnqS5exgWw0SQEc2txNY4F6xrB75E5DLypLLc1jCLAl7dRBK/IHSYlxelN7ObK05TpykXvq8LFVrBkAdGI5iHIgBxzKZBZTeYOIbxqSdg+YdXMCCDchDUGtptJb1Y/I9i3VZ0YWc+oAA=",
+  "width": 960,
+  "height": 720,
+  "alt_fr": "Un terrain de basketball extérieur vide avec un panier, parmi des arbres dénudés dans la brume",
+  "alt_en": "An empty outdoor basketball court with a hoop among bare trees in fog",
+  "source_name": "openverse",
+  "source_url": "https://stocksnap.io/photo/basketball-court-1ZOXD2YD1H",
+  "creator": "Aaron Burden",
+  "creator_url": "https://instagram.com/aaronburden",
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Basketball Court\" by Aaron Burden is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "sport"
+   },
+   {
+    "facet": "topic",
+    "value": "basketball"
+   },
+   {
+    "facet": "object",
+    "value": "basketball"
+   },
+   {
+    "facet": "mood",
+    "value": "joyful"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_a760c39d8f58fc657ccf-480.webp",
+    "size": 23404
+   },
+   {
+    "w": 960,
+    "file": "a_a760c39d8f58fc657ccf-960.webp",
+    "size": 88370
+   }
+  ]
+ }
+]

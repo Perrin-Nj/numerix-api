@@ -1,0 +1,337 @@
+[
+ {
+  "id": "a_3af166876a3e03d59bb0",
+  "kind": "photo",
+  "role": "hero",
+  "world_id": "dinosaures",
+  "grade_band": "all",
+  "mood": "epic",
+  "dominant_color": "#080808",
+  "lqip": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAwBACdASoYAA4APu1iqU2ppaOiMAgBMB2JZwC/OB6SFeClvNaKCF1PHAAA/vDexcXyD0gptZdsvsdgicxMW37ceir8nDawG3gk1tF4mO/CkD+apbj9cNrPgAA=",
+  "width": 1600,
+  "height": 900,
+  "alt_fr": "Un squelette fossile de dinosaure exposé dans une vitrine de musée",
+  "alt_en": "A fossil skeleton of a dinosaur displayed in a museum case",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Dinosaur_Egg_Museum,_Xixia_Dinosaur_Park-_Psittacosaurus_Skeleton_01.jpg",
+  "creator": "Gary Todd",
+  "creator_url": null,
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Dinosaur Egg Museum, Xixia Dinosaur Park- Psittacosaurus Skeleton 01\" by Gary Todd, CC0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Dinosaur_Egg_Museum,_Xixia_Dinosaur_Park-_Psittacosaurus_Skeleton_01.jpg)",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "dinosaures"
+   },
+   {
+    "facet": "topic",
+    "value": "museum"
+   },
+   {
+    "facet": "object",
+    "value": "dinosaur"
+   },
+   {
+    "facet": "mood",
+    "value": "epic"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_3af166876a3e03d59bb0-480.webp",
+    "size": 11228
+   },
+   {
+    "w": 960,
+    "file": "a_3af166876a3e03d59bb0-960.webp",
+    "size": 39184
+   },
+   {
+    "w": 1600,
+    "file": "a_3af166876a3e03d59bb0-1600.webp",
+    "size": 94366
+   }
+  ]
+ },
+ {
+  "id": "a_267346baf27642f4260d",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "dinosaures",
+  "grade_band": "all",
+  "mood": "epic",
+  "dominant_color": "#282828",
+  "lqip": "data:image/webp;base64,UklGRuQAAABXRUJQVlA4INgAAADQBQCdASoYABIAPu1sq1EppaOiqAqpMB2JQBOkJ3QZQW5GnEdUm5mYuK/YShVxbroPtvv+En8AAPZCsH4D0a0LNXLY+swRp2x72MAZLXFKhTtd2vkW78ZXUAzPmnMs/nAZR0FSN8Uju/PgOnE5gR3Jy+Q1oyiqU7PVzArzBQN4woLZdra44FDP65fJvchRGqIxaVKN6pbV0V7Yi5TsvQVbZulHw+NROSVcqUuYHXU3wk/G+28Qo5IvDOYdVfRenYMuxS095NZW/9zU/4I0M47oaKnE3AQoAAA=",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "Des squelettes de dinosaures montés dans une salle de musée",
+  "alt_en": "Mounted dinosaur skeletons in a museum hall",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Tsintaosaurus_spinorhinus_%26_Tyrannosaurus_Rex.jpg",
+  "creator": "Gary Todd",
+  "creator_url": null,
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Tsintaosaurus spinorhinus & Tyrannosaurus Rex\" by Gary Todd, CC0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Tsintaosaurus_spinorhinus_%26_Tyrannosaurus_Rex.jpg)",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "dinosaures"
+   },
+   {
+    "facet": "topic",
+    "value": "dinosaurs"
+   },
+   {
+    "facet": "object",
+    "value": "t-rex"
+   },
+   {
+    "facet": "mood",
+    "value": "epic"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_267346baf27642f4260d-480.webp",
+    "size": 34830
+   },
+   {
+    "w": 960,
+    "file": "a_267346baf27642f4260d-960.webp",
+    "size": 101482
+   }
+  ]
+ },
+ {
+  "id": "a_2d028533521bbec9f2c6",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "dinosaures",
+  "grade_band": "all",
+  "mood": "curious",
+  "dominant_color": "#98a8b8",
+  "lqip": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAACQBACdASoYABIAPu1sq1EppaOiqAqpMB2JZQDOOA65bXB6CfqWtK3HDQScHAAA/mSOmeGw4/dPU788pRblcKBGh8JI/KVrECQPhVf01wMn+fEJUBkvYRGhNX9I+dL5u1jTbH5oq0CKb+dMkkqbozZnNEX4fM9BwTV1BvhF+/lqMikCS1qTMIZSIgaAAA==",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "Un fossile d'ammonite en spirale dans la pierre",
+  "alt_en": "A spiral ammonite fossil in stone",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Ammonite_fossil_(8606998286).jpg",
+  "creator": "Becks",
+  "creator_url": null,
+  "licence": "CC-BY-2.0",
+  "licence_url": "https://creativecommons.org/licenses/by/2.0/",
+  "attribution_text": "\"Ammonite fossil (8606998286)\" by Becks, CC BY 2.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Ammonite_fossil_(8606998286).jpg)",
+  "attribution_required": 1,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "dinosaures"
+   },
+   {
+    "facet": "topic",
+    "value": "fossils"
+   },
+   {
+    "facet": "object",
+    "value": "fossil"
+   },
+   {
+    "facet": "mood",
+    "value": "curious"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_2d028533521bbec9f2c6-480.webp",
+    "size": 35042
+   },
+   {
+    "w": 960,
+    "file": "a_2d028533521bbec9f2c6-960.webp",
+    "size": 127748
+   }
+  ]
+ },
+ {
+  "id": "a_5b5fa7e183f5faebf658",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "dinosaures",
+  "grade_band": "all",
+  "mood": "calm",
+  "dominant_color": "#081808",
+  "lqip": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAACwBQCdASoYABIAPu1qq1EppaOiqAqpMB2JQBOmcin/H0AHFDVk29tK8M0CQtuXbC3Ln779PUAA/umIRA+cKB8B6ZuwhfaVR6BGqx4zfoO2VWm+5Tdk3z4GDde1f+GzSk7QWQaSrgqo/raIr4tq2j2q+GyL8IZCnK+bv+4dnxLtYhEoGtjyT1MPJO8ts8zSahPvFSkwOXDI/p+fz8CnEZw7isjfZDbw7nWiTAka9UaiNIFQAAA=",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "Des fougères vertes qui poussent au sol sous les arbres",
+  "alt_en": "Green ferns growing on a forest floor beneath trees",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Beech_and_ferns_in_Gullmarsskogen.jpg",
+  "creator": "W.carter",
+  "creator_url": null,
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Beech and ferns in Gullmarsskogen\" by W.carter, CC0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Beech_and_ferns_in_Gullmarsskogen.jpg)",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "dinosaures"
+   },
+   {
+    "facet": "topic",
+    "value": "plants"
+   },
+   {
+    "facet": "object",
+    "value": "fern"
+   },
+   {
+    "facet": "mood",
+    "value": "calm"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_5b5fa7e183f5faebf658-480.webp",
+    "size": 43942
+   },
+   {
+    "w": 960,
+    "file": "a_5b5fa7e183f5faebf658-960.webp",
+    "size": 181318
+   }
+  ]
+ },
+ {
+  "id": "a_68c50d1ce443b8737114",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "dinosaures",
+  "grade_band": "all",
+  "mood": "adventurous",
+  "dominant_color": "#887868",
+  "lqip": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAAAQBQCdASoYABIAPu1ur1KppiQiqAgBMB2JZQDG9YmUC4fY0zbOO1MMmKQorsGTo4CAAPo46zqL07qlX6w+VM/JgOKjHRoJRRxwzM3v5kGDncqiuRMcSGlr2dI4CgtWPB4WtibTYF+m9oS/2lYzuLU/q7jBjCdde5O65KeZ/lE3MujA39ZmqtDaYu98K4BNj1XgAA==",
+  "width": 1048,
+  "height": 786,
+  "alt_fr": "Un squelette de tricératops monté, sur une vieille photo de musée",
+  "alt_en": "A mounted Triceratops skeleton in an old museum photograph",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Triceratops_skeleton_National_Museum_1.jpg",
+  "creator": "Biodiversity Heritage Library",
+  "creator_url": null,
+  "licence": "CC-BY-2.0",
+  "licence_url": "https://creativecommons.org/licenses/by/2.0/",
+  "attribution_text": "\"Triceratops skeleton National Museum 1\" by Biodiversity Heritage Library, CC BY 2.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Triceratops_skeleton_National_Museum_1.jpg)",
+  "attribution_required": 1,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "dinosaures"
+   },
+   {
+    "facet": "topic",
+    "value": "dinosaurs"
+   },
+   {
+    "facet": "object",
+    "value": "dinosaur"
+   },
+   {
+    "facet": "mood",
+    "value": "adventurous"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_68c50d1ce443b8737114-480.webp",
+    "size": 24148
+   },
+   {
+    "w": 960,
+    "file": "a_68c50d1ce443b8737114-960.webp",
+    "size": 94396
+   }
+  ]
+ },
+ {
+  "id": "a_c4a2eae74e0c5009d402",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "dinosaures",
+  "grade_band": "all",
+  "mood": "curious",
+  "dominant_color": "#b8b8b8",
+  "lqip": "data:image/webp;base64,UklGRuIAAABXRUJQVlA4INYAAADQBQCdASoYABIAPu1sqlEppaOiqAqpMB2JZwAIEEgA6yw+BCk/34rkGyP6juc/ruM5X9jyX00AAPzOCPWroVkrTO1h44M1niOGAft9HmnOFTBa4Ez1f8SscnyOS8VNufRYGGP2xBGxNSRTvrYU0Oti1lOVfvV1FlY+WaAt4Cy7fHjQrOvtlhzeVAmsYRD9STvRbF2h5bbjM0ZjnMNkjlqBfJiGvQKbpNgKpy/oMZXCZW+uz/Wmbeidk5P9NRKJS76r36ZRmyrXNzrgZQkZ830T7Z8cY4AA",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "Une empreinte de dinosaure à trois doigts dans la roche, avec un crayon pour l'échelle",
+  "alt_en": "A three-toed dinosaur track in rock with a pencil for scale",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Magnoavipes_(theropod_dinosaur_track)_(Dakota_Sandstone,_Lower_Cretaceous;_Dinosaur_Ridge,_Colorado,_USA)_7.jpg",
+  "creator": "James St. John",
+  "creator_url": null,
+  "licence": "CC-BY-2.0",
+  "licence_url": "https://creativecommons.org/licenses/by/2.0/",
+  "attribution_text": "\"Magnoavipes (theropod dinosaur track) (Dakota Sandstone, Lower Cretaceous; Dinosaur Ridge, Colorado, USA) 7\" by James St. John, CC BY 2.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Magnoavipes_(theropod_dinosaur_track)_(Dakota_Sandstone,_Lower_Cretaceous;_Dinosaur_Ridge,_Colorado,_USA)_7.jpg)",
+  "attribution_required": 1,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "dinosaures"
+   },
+   {
+    "facet": "topic",
+    "value": "tracks"
+   },
+   {
+    "facet": "object",
+    "value": "footprint"
+   },
+   {
+    "facet": "mood",
+    "value": "curious"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_c4a2eae74e0c5009d402-480.webp",
+    "size": 42672
+   },
+   {
+    "w": 960,
+    "file": "a_c4a2eae74e0c5009d402-960.webp",
+    "size": 173036
+   }
+  ]
+ }
+]

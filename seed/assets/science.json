@@ -1,0 +1,337 @@
+[
+ {
+  "id": "a_7018091db72e5cdb38b0",
+  "kind": "photo",
+  "role": "hero",
+  "world_id": "science",
+  "grade_band": "all",
+  "mood": "curious",
+  "dominant_color": "#585838",
+  "lqip": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAACwAwCdASoYAA4APu1iqU2ppaQiMAgBMB2JQBOgA3LMvwoaJ97/AAD0MS5jBDcD0OXjhNz4SZ1hKRsMbxOTyaM4T6FMK871NNrvX7vu2O8vvMLMUcPyiT2C84Og4AjWkqtXwqAA",
+  "width": 1600,
+  "height": 900,
+  "alt_fr": "Vieux ballons et bouteilles de laboratoire en verre près d'une fenêtre",
+  "alt_en": "Old glass laboratory flasks and bottles beside a window",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Vintage_laboratory_glassware.jpg",
+  "creator": "LukaszKatlewa",
+  "creator_url": null,
+  "licence": "CC-BY-4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution_text": "\"Vintage laboratory glassware\" by LukaszKatlewa, CC BY 4.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Vintage_laboratory_glassware.jpg)",
+  "attribution_required": 1,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "science"
+   },
+   {
+    "facet": "topic",
+    "value": "experiments"
+   },
+   {
+    "facet": "object",
+    "value": "flask"
+   },
+   {
+    "facet": "mood",
+    "value": "curious"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_7018091db72e5cdb38b0-480.webp",
+    "size": 11888
+   },
+   {
+    "w": 960,
+    "file": "a_7018091db72e5cdb38b0-960.webp",
+    "size": 35306
+   },
+   {
+    "w": 1600,
+    "file": "a_7018091db72e5cdb38b0-1600.webp",
+    "size": 88692
+   }
+  ]
+ },
+ {
+  "id": "a_06163ab3ddcb97ec1096",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "science",
+  "grade_band": "all",
+  "mood": "curious",
+  "dominant_color": "#080808",
+  "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAAAwBQCdASoYABIAPu1grFAppSQisBgIATAdiWcAAC52CfQfbTxBi6cEgrH5yO85R9AuQAD+9BvnPW2wAMCYVblZzFEJZmTu5VcYe7jDHzabJKbYmTcotKeTX6Zd7EVUMP4h2DoIYuz2CqHf1rXHj1yJLCUlHP+n1wurH/ZYq1FoadL9aXrUq/ynPZipNYN5F5H0Nsl4AAA=",
+  "width": 1024,
+  "height": 768,
+  "alt_fr": "Une loupe posée sur un journal",
+  "alt_en": "A magnifying glass resting on a newspaper",
+  "source_name": "openverse",
+  "source_url": "https://www.rawpixel.com/image/5904368/photo-image-public-domain-black-newspaper",
+  "creator": "Unknown",
+  "creator_url": null,
+  "licence": "CC0",
+  "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "attribution_text": "\"Free magnifying glass newspaper photo\" is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+  "attribution_required": 0,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "science"
+   },
+   {
+    "facet": "topic",
+    "value": "observation"
+   },
+   {
+    "facet": "object",
+    "value": "magnifying-glass"
+   },
+   {
+    "facet": "mood",
+    "value": "curious"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_06163ab3ddcb97ec1096-480.webp",
+    "size": 25274
+   },
+   {
+    "w": 960,
+    "file": "a_06163ab3ddcb97ec1096-960.webp",
+    "size": 72566
+   }
+  ]
+ },
+ {
+  "id": "a_6c4be8eaeec53b653af6",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "science",
+  "grade_band": "all",
+  "mood": "curious",
+  "dominant_color": "#080808",
+  "lqip": "data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAACwBQCdASoYABIAPu1qrVEppaQiqAqpMB2JZACdMyYBSBLRO9owv5GrRspicX+l2dXNgZf1VoAA/ozmWLVsJWZbOokwc6wWG2kcD98VoehuQA3yOwTAphBvTcZNEEmdnZLSiFFUyLsp01qE+ORgywwOtK9VpCIVhxN75gUdwXZkGh+zEmLbSAn4y/ehhNLAYHIH0ifyLi21EvOFcrL+y4IBIX9CtJagcvgQSaz8eZ6TCIiPfI+yJy6YoAA=",
+  "width": 1398,
+  "height": 1049,
+  "alt_fr": "Des pointes de ferrofluide noir formées par un aimant dans un plat",
+  "alt_en": "Spikes of black ferrofluid shaped by a magnet in a dish",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Ferrofluid_in_magnetic_field.jpg",
+  "creator": "Steve Jurvetson",
+  "creator_url": null,
+  "licence": "CC-BY-2.0",
+  "licence_url": "https://creativecommons.org/licenses/by/2.0/",
+  "attribution_text": "\"Ferrofluid in magnetic field\" by Steve Jurvetson, CC BY 2.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Ferrofluid_in_magnetic_field.jpg)",
+  "attribution_required": 1,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "science"
+   },
+   {
+    "facet": "topic",
+    "value": "magnets"
+   },
+   {
+    "facet": "object",
+    "value": "magnet"
+   },
+   {
+    "facet": "mood",
+    "value": "curious"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_6c4be8eaeec53b653af6-480.webp",
+    "size": 19792
+   },
+   {
+    "w": 960,
+    "file": "a_6c4be8eaeec53b653af6-960.webp",
+    "size": 50110
+   }
+  ]
+ },
+ {
+  "id": "a_72a3572100e499fe8a3f",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "science",
+  "grade_band": "all",
+  "mood": "calm",
+  "dominant_color": "#080808",
+  "lqip": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAABwBACdASoYABIAPu1qrVCppaQiqAqpMB2JQBfJAh7c+r8/dz7Q9SQMX2vjYAD+8QrlTLG73ltjh57DS0/ggf+SAxx8qYZtiqCOIi9FxP2F43j8idj0mt116cslT/HulSGY4umiUEw537H2YbPOTzSoPcxx7CYRgAA=",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "Le dôme d'un grand télescope au crépuscule sous un ciel nocturne bleu",
+  "alt_en": "A large telescope dome at dusk under a blue night sky",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Thirty_Meter_Telescope_Night_Sky_(TMTNightBlueSky).jpg",
+  "creator": "TMT International Observatory",
+  "creator_url": null,
+  "licence": "CC-BY-4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution_text": "\"Thirty Meter Telescope Night Sky (TMTNightBlueSky)\" by TMT International Observatory, CC BY 4.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Thirty_Meter_Telescope_Night_Sky_(TMTNightBlueSky).jpg)",
+  "attribution_required": 1,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "science"
+   },
+   {
+    "facet": "topic",
+    "value": "astronomy"
+   },
+   {
+    "facet": "object",
+    "value": "telescope"
+   },
+   {
+    "facet": "mood",
+    "value": "calm"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_72a3572100e499fe8a3f-480.webp",
+    "size": 18910
+   },
+   {
+    "w": 960,
+    "file": "a_72a3572100e499fe8a3f-960.webp",
+    "size": 83100
+   }
+  ]
+ },
+ {
+  "id": "a_abc3c43a6d9573bc2d1f",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "science",
+  "grade_band": "all",
+  "mood": "curious",
+  "dominant_color": "#c8c8c8",
+  "lqip": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAACwBACdASoYABIAPu1qsFAppiSiqAqpMB2JYwC26SB4AApitRcAQqtjnR/t165QAP4G5UM5dgTF+6AWRQehTAkKrdK3VTG4DKRhiFOjCazcHDGR1nHso08xd+FVRcnsQdb3AToyqhRPQlcagNWynE/jqtnICkZ/8Ia2fz7uzqFSWuV/CZD3bH013+BWc0AA",
+  "width": 1600,
+  "height": 1200,
+  "alt_fr": "Un support d'éprouvettes contenant un liquide bleu",
+  "alt_en": "A rack of test tubes with blue liquid",
+  "source_name": "wikimedia",
+  "source_url": "https://commons.wikimedia.org/wiki/File:Semi-quantitative_analysis_of_sugar_content_2.jpg",
+  "creator": "Extremkreuzer",
+  "creator_url": null,
+  "licence": "CC-BY-4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution_text": "\"Semi-quantitative analysis of sugar content 2\" by Extremkreuzer, CC BY 4.0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Semi-quantitative_analysis_of_sugar_content_2.jpg)",
+  "attribution_required": 1,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "science"
+   },
+   {
+    "facet": "topic",
+    "value": "experiments"
+   },
+   {
+    "facet": "object",
+    "value": "test-tube"
+   },
+   {
+    "facet": "mood",
+    "value": "curious"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_abc3c43a6d9573bc2d1f-480.webp",
+    "size": 31156
+   },
+   {
+    "w": 960,
+    "file": "a_abc3c43a6d9573bc2d1f-960.webp",
+    "size": 101604
+   }
+  ]
+ },
+ {
+  "id": "a_badaac8a66dbd1faf7c9",
+  "kind": "photo",
+  "role": "scene",
+  "world_id": "science",
+  "grade_band": "all",
+  "mood": "epic",
+  "dominant_color": "#383828",
+  "lqip": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAACwBACdASoYABIAPu1gp04ppSMiMBgMATAdiUAYUAG5V9/LDfzXJ/qgQ1fnfp9wAP6Gq92/sYScbUMHOfccqtSaKX7MG4Dgdgmaiirf8vLn8BtUDEACyaYxZJ9vBxedoUCUY3b8WU/rmNcAlKwMqginxqb5dVSTimPvdB5xjjQh3eKJvsDml52EHEAAAA==",
+  "width": 1024,
+  "height": 768,
+  "alt_fr": "Un mouton qui broute dans un champ à côté d'une rangée de panneaux solaires",
+  "alt_en": "A sheep grazing in a field beside a row of solar panels",
+  "source_name": "openverse",
+  "source_url": "https://www.flickr.com/photos/58411470@N00/54228411251",
+  "creator": "kewl",
+  "creator_url": "https://www.flickr.com/photos/58411470@N00",
+  "licence": "CC-BY-2.0",
+  "licence_url": "https://creativecommons.org/licenses/by/2.0/",
+  "attribution_text": "\"The solar shepherd\" by kewl is licensed under CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/.",
+  "attribution_required": 1,
+  "people_free": 1,
+  "brand_free": 1,
+  "review_status": "approved",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "science"
+   },
+   {
+    "facet": "topic",
+    "value": "energy"
+   },
+   {
+    "facet": "object",
+    "value": "solar-panel"
+   },
+   {
+    "facet": "mood",
+    "value": "epic"
+   }
+  ],
+  "variants": [
+   {
+    "w": 480,
+    "file": "a_badaac8a66dbd1faf7c9-480.webp",
+    "size": 29018
+   },
+   {
+    "w": 960,
+    "file": "a_badaac8a66dbd1faf7c9-960.webp",
+    "size": 92742
+   }
+  ]
+ }
+]
