@@ -788,6 +788,7 @@ func properNouns(text string) []string {
 	start := true
 	for _, tok := range strings.Fields(text) {
 		word := strings.TrimFunc(tok, func(r rune) bool { return !unicode.IsLetter(r) })
+		word = strings.TrimSuffix(strings.TrimSuffix(word, "'s"), "’s") // English possessive: "Lea's" is the name Lea
 		if word != "" && !start && unicode.IsUpper([]rune(word)[0]) && utf8.RuneCountInString(word) > 1 {
 			out = append(out, word)
 		}
@@ -953,13 +954,32 @@ func (e *Env) ValidateSet(qs []*Question) []Issue {
 		}
 		for i := range list {
 			for j := i + 1; j < len(list); j++ {
-				if nearDuplicate(list[i].Prompt.FR, list[j].Prompt.FR) {
-					out = append(out, Issue{Code: "near_duplicate", Field: list[i].ID + "," + list[j].ID, Message: "prompts are nearly identical", Warning: true})
+				// a duplicate is the same question asked twice: the same words AND the same solution and picture. A short
+				// prompt such as "How many red tiles?" is shared by questions with other numbers or pictures.
+				if nearDuplicate(statementOf(list[i]), statementOf(list[j])) && sameSolution(list[i], list[j]) {
+					out = append(out, Issue{Code: "near_duplicate", Field: list[i].ID + "," + list[j].ID, Message: "story and prompt are nearly identical", Warning: true})
 				}
 			}
 		}
 	}
 	return out
+}
+
+// statementOf is the French text a child reads before answering: story, prompt and the maths line.
+func statementOf(q *Question) string {
+	return q.Story.FR + " " + q.Prompt.FR + " " + q.MathText
+}
+
+// sameSolution is true when two questions have the same answer, picture, choices and items.
+func sameSolution(a, b *Question) bool {
+	key := func(q *Question) string {
+		raw, err := Canonical([]any{q.Answer, q.Visual, q.Choices, q.Items})
+		if err != nil {
+			return q.ID // cannot compare: treat as different, the question is invalid elsewhere anyway
+		}
+		return string(raw)
+	}
+	return key(a) == key(b)
 }
 
 // nearDuplicate is true when the edit distance is under 25 percent of the longer text.

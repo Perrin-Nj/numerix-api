@@ -89,3 +89,37 @@ Mercury
 Saturn
 Neptune
 Uranus
+
+# English day and month names are capitalised in English text (French keeps them lowercase).
+Monday
+Tuesday
+Wednesday
+Thursday
+Friday
+Saturday
+Sunday
+January
+June
+July
+October
+November
+# Team names of the sport world, both languages (a team is a proper noun in a story).
+Lions
+Lion
+Loups
+Ours
+Aigles
+Faucons
+Tigres
+Tigre
+Étoiles
+Wolves
+Bears
+Eagles
+Falcons
+Tigers
+Tiger
+Stars
+# Parts of place names ("Quebec City", "St. Lawrence").
+City
+St

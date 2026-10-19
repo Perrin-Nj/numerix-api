@@ -245,6 +245,23 @@ func TestValidateSet(t *testing.T) {
 	if !slices.Contains(Codes(testEnv().ValidateSet([]*Question{a, c})), "near_duplicate") {
 		t.Fatal("near duplicate not reported")
 	}
+	// same words but another answer: a numbers variant, not a duplicate
+	d := base()
+	d.ID = "cuisine.fournee.010"
+	d.Prompt.FR += "!"
+	d.Answer.Calc = "9+7"
+	d.Answer.Value = raw("16")
+	if slices.Contains(Codes(testEnv().ValidateSet([]*Question{a, d})), "near_duplicate") {
+		t.Fatal("a question with another answer is not a duplicate")
+	}
+}
+
+// An English possessive is the name itself: "Lea's" is Lea, so only unknown names are reported.
+func TestProperNounsIgnoresThePossessive(t *testing.T) {
+	got := properNouns("Today Lea's cat and Noah’s dog met Zed.")
+	if !slices.Equal(got, []string{"Lea", "Noah", "Zed"}) {
+		t.Fatalf("properNouns = %v", got)
+	}
 }
 
 func TestWorldQuota(t *testing.T) {
