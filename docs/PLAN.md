@@ -1,6 +1,6 @@
 # Numerix API: Go backend plan
 
-Status: plan, awaiting two decisions (section 2). No code yet. Go is not installed on this machine (section 9).
+Status (2026-10-19): built. Phases 1 to 9 are done and the API serves the web app: contract-generated server (68 operations), engine, curated question bank (20 worlds, 89 quests, 1229 published questions, 193 assets, seeded by `cmd/seed`), sessions, platform (auth, passkeys, devices, consent, billing), admin API, Mongo outbox sync, load test tool. Hosting is Oracle Cloud Always Free with Litestream (phase 10, `docs/DEPLOY_ORACLE.md`); the production go-live steps are in `docs/RELEASE_CHECKLIST.md`. Remaining: the Oracle VM and domain are created by the owner, a real Pexels key for better pictures, and the load targets on real hardware (the dev laptop has host stalls, `docs/LOAD_TEST.md`). The sections below keep the original plan and its reasoning; section 8d lists the decisions that were made.
 
 Source of truth for behaviour: `../frontend/contracts/openapi.yaml` (spec first), `../frontend/contracts/BACKEND_REQUIREMENTS.md` (BE-1 to BE-63), `../frontend/docs/BACKEND_GO.md` (engine, bank, visual design, LLM roles). This plan adds storage, sync, hosting, mascots and the build order. The Python engine in `../numerix-` is the reference to port.
 
@@ -127,7 +127,7 @@ Root has no .md files; docs live in `../../docs/` (`NUMERIX_CONTEXT.md`, `Numeri
 
 ## 8d. Decisions made
 
-Hosting: Railway Hobby, embedded SQLite, Litestream. Leaderboard: personal bests plus a family board (siblings under one parent), no ranking against strangers, Mongo holds only that and anonymised stats. Load target: 50 requests per second sustained, bursts to 200.
+Hosting: Oracle Cloud Always Free VM (replaced Railway Hobby to keep the cost at $0), embedded SQLite, Litestream to Object Storage. Leaderboard: personal bests plus a family board (siblings under one parent), no ranking against strangers, Mongo holds only that and anonymised stats. Load target: 50 requests per second sustained, bursts to 200.
 
 ## 9. Risks
 
