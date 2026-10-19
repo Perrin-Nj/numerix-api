@@ -177,8 +177,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_2aa68f1db05750a6fc60"
+    },
+    {
      "role": "object",
-     "asset": "a_82f12779eb8658ebd4ba"
+     "asset": "a_4e1f0044c56a55cc4046"
     }
    ],
    "status": "published",
@@ -411,8 +415,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_2aa68f1db05750a6fc60"
+    },
+    {
      "role": "object",
-     "asset": "a_82f12779eb8658ebd4ba"
+     "asset": "a_4e1f0044c56a55cc4046"
     }
    ],
    "status": "published",
@@ -2614,8 +2622,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_cec35f1c265dc96d53e0"
+    },
+    {
      "role": "object",
-     "asset": "a_82f12779eb8658ebd4ba"
+     "asset": "a_4e1f0044c56a55cc4046"
     }
    ],
    "status": "published",
@@ -2933,7 +2945,7 @@
     },
     {
      "role": "object",
-     "asset": "a_1aa6929e1baa440db535"
+     "asset": "a_68852de5bbbd5124bfcf"
     }
    ],
    "status": "published",
@@ -2993,8 +3005,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_cec35f1c265dc96d53e0"
+    },
+    {
      "role": "object",
-     "asset": "a_1aa6929e1baa440db535"
+     "asset": "a_68852de5bbbd5124bfcf"
     }
    ],
    "status": "published",
@@ -3313,8 +3329,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_cec35f1c265dc96d53e0"
+    },
+    {
      "role": "object",
-     "asset": "a_1aa6929e1baa440db535"
+     "asset": "a_68852de5bbbd5124bfcf"
     }
    ],
    "status": "published",
@@ -3396,8 +3416,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_cec35f1c265dc96d53e0"
+    },
+    {
      "role": "object",
-     "asset": "a_1aa6929e1baa440db535"
+     "asset": "a_68852de5bbbd5124bfcf"
     }
    ],
    "status": "published",
@@ -3479,8 +3503,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_cec35f1c265dc96d53e0"
+    },
+    {
      "role": "object",
-     "asset": "a_1aa6929e1baa440db535"
+     "asset": "a_68852de5bbbd5124bfcf"
     }
    ],
    "status": "published",
@@ -3674,7 +3702,7 @@
     },
     {
      "role": "object",
-     "asset": "a_1aa6929e1baa440db535"
+     "asset": "a_68852de5bbbd5124bfcf"
     }
    ],
    "status": "published",

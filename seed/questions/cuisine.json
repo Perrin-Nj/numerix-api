@@ -60,7 +60,7 @@
     },
     {
      "role": "object",
-     "asset": "a_d3c5f5e2864d3178bf20"
+     "asset": "a_864829410bb73984deef"
     }
    ],
    "status": "published",
@@ -122,6 +122,10 @@
     {
      "role": "scene",
      "asset": "a_993be93a875309e87925"
+    },
+    {
+     "role": "object",
+     "asset": "a_864829410bb73984deef"
     }
    ],
    "status": "published",
@@ -183,6 +187,10 @@
     {
      "role": "scene",
      "asset": "a_993be93a875309e87925"
+    },
+    {
+     "role": "object",
+     "asset": "a_864829410bb73984deef"
     }
    ],
    "status": "published",
@@ -247,7 +255,7 @@
     },
     {
      "role": "object",
-     "asset": "a_d3c5f5e2864d3178bf20"
+     "asset": "a_864829410bb73984deef"
     }
    ],
    "status": "published",
@@ -309,6 +317,10 @@
     {
      "role": "scene",
      "asset": "a_993be93a875309e87925"
+    },
+    {
+     "role": "object",
+     "asset": "a_864829410bb73984deef"
     }
    ],
    "status": "published",
@@ -1118,7 +1130,13 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_da382dc06c6d6138d139"
+    }
+   ]
   },
   {
    "id": "cuisine.recette.002",
@@ -1194,7 +1212,13 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_da382dc06c6d6138d139"
+    }
+   ]
   },
   {
    "id": "cuisine.recette.003",
@@ -1256,7 +1280,13 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_da382dc06c6d6138d139"
+    }
+   ]
   },
   {
    "id": "cuisine.recette.004",
@@ -1311,7 +1341,13 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_da382dc06c6d6138d139"
+    }
+   ]
   },
   {
    "id": "cuisine.recette.005",
@@ -1366,7 +1402,13 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_da382dc06c6d6138d139"
+    }
+   ]
   },
   {
    "id": "cuisine.recette.006",
@@ -1421,7 +1463,13 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_da382dc06c6d6138d139"
+    }
+   ]
   },
   {
    "id": "cuisine.recette.007",
@@ -1476,7 +1524,13 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_da382dc06c6d6138d139"
+    }
+   ]
   },
   {
    "id": "cuisine.recette.008",
@@ -1531,7 +1585,13 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_da382dc06c6d6138d139"
+    }
+   ]
   },
   {
    "id": "cuisine.recette.009",
@@ -1600,7 +1660,13 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_da382dc06c6d6138d139"
+    }
+   ]
   },
   {
    "id": "cuisine.recette.010",
@@ -1669,7 +1735,13 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_da382dc06c6d6138d139"
+    }
+   ]
   },
   {
    "id": "cuisine.recette.011",
@@ -1707,7 +1779,13 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_da382dc06c6d6138d139"
+    }
+   ]
   },
   {
    "id": "cuisine.recette.012",
@@ -1784,7 +1862,13 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_da382dc06c6d6138d139"
+    }
+   ]
   },
   {
    "id": "cuisine.recette.013",
@@ -1900,7 +1984,13 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_da382dc06c6d6138d139"
+    }
+   ]
   },
   {
    "id": "cuisine.recette.014",
@@ -1969,7 +2059,13 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_da382dc06c6d6138d139"
+    }
+   ]
   },
   {
    "id": "cuisine.mesures.001",
@@ -2026,10 +2122,6 @@
     {
      "role": "scene",
      "asset": "a_6e99d1a3b31abdc9e82a"
-    },
-    {
-     "role": "object",
-     "asset": "a_7ee5292b46edaa06d94b"
     }
    ],
    "status": "published",
@@ -2091,10 +2183,6 @@
     {
      "role": "scene",
      "asset": "a_6e99d1a3b31abdc9e82a"
-    },
-    {
-     "role": "object",
-     "asset": "a_7ee5292b46edaa06d94b"
     }
    ],
    "status": "published",
@@ -2278,10 +2366,6 @@
     {
      "role": "scene",
      "asset": "a_6e99d1a3b31abdc9e82a"
-    },
-    {
-     "role": "object",
-     "asset": "a_7ee5292b46edaa06d94b"
     }
    ],
    "status": "published",
@@ -2339,15 +2423,15 @@
     "capacity",
     "subtract"
    ],
-   "media": [
-    {
-     "role": "object",
-     "asset": "a_7ee5292b46edaa06d94b"
-    }
-   ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_da382dc06c6d6138d139"
+    }
+   ]
   },
   {
    "id": "cuisine.mesures.007",
@@ -2466,15 +2550,15 @@
     "capacity",
     "choose-the-unit"
    ],
-   "media": [
-    {
-     "role": "object",
-     "asset": "a_7ee5292b46edaa06d94b"
-    }
-   ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_da382dc06c6d6138d139"
+    }
+   ]
   },
   {
    "id": "cuisine.mesures.009",
@@ -2541,15 +2625,15 @@
     "compare",
     "conversion"
    ],
-   "media": [
-    {
-     "role": "object",
-     "asset": "a_7ee5292b46edaa06d94b"
-    }
-   ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_da382dc06c6d6138d139"
+    }
+   ]
   },
   {
    "id": "cuisine.mesures.010",
@@ -2659,15 +2743,15 @@
     "capacity",
     "conversion"
    ],
-   "media": [
-    {
-     "role": "object",
-     "asset": "a_7ee5292b46edaa06d94b"
-    }
-   ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_da382dc06c6d6138d139"
+    }
+   ]
   },
   {
    "id": "cuisine.mesures.012",
@@ -2742,15 +2826,15 @@
     "capacity",
     "conversion"
    ],
-   "media": [
-    {
-     "role": "object",
-     "asset": "a_7ee5292b46edaa06d94b"
-    }
-   ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_da382dc06c6d6138d139"
+    }
+   ]
   },
   {
    "id": "cuisine.mesures.013",
@@ -2863,15 +2947,15 @@
     "matching",
     "capacity"
    ],
-   "media": [
-    {
-     "role": "object",
-     "asset": "a_7ee5292b46edaa06d94b"
-    }
-   ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_da382dc06c6d6138d139"
+    }
+   ]
   },
   {
    "id": "cuisine.mesures.014",
@@ -2957,15 +3041,15 @@
     "capacity",
     "add"
    ],
-   "media": [
-    {
-     "role": "object",
-     "asset": "a_7ee5292b46edaa06d94b"
-    }
-   ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_da382dc06c6d6138d139"
+    }
+   ]
   },
   {
    "id": "cuisine.mesures.015",
@@ -3016,10 +3100,6 @@
     {
      "role": "scene",
      "asset": "a_6e99d1a3b31abdc9e82a"
-    },
-    {
-     "role": "object",
-     "asset": "a_7ee5292b46edaa06d94b"
     }
    ],
    "status": "published",
@@ -3084,7 +3164,7 @@
     },
     {
      "role": "object",
-     "asset": "a_446d640c24e146d03e83"
+     "asset": "a_9aea653ce5304d7a7410"
     }
    ],
    "status": "published",
@@ -3149,7 +3229,7 @@
     },
     {
      "role": "object",
-     "asset": "a_d3c5f5e2864d3178bf20"
+     "asset": "a_864829410bb73984deef"
     }
    ],
    "status": "published",
@@ -3214,7 +3294,7 @@
     },
     {
      "role": "object",
-     "asset": "a_add5179377b74ccfb6dc"
+     "asset": "a_a3892f2b126586b9cee2"
     }
    ],
    "status": "published",
@@ -3276,10 +3356,6 @@
     {
      "role": "scene",
      "asset": "a_37c884f0ae91a7393bea"
-    },
-    {
-     "role": "object",
-     "asset": "a_648d935809d028ce4b58"
     }
    ],
    "status": "published",
@@ -3400,8 +3476,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_6e99d1a3b31abdc9e82a"
+    },
+    {
      "role": "object",
-     "asset": "a_3ebbdc0c13ab42cdf9b5"
+     "asset": "a_e25d011c7914b417f2ff"
     }
    ],
    "status": "published",
@@ -3466,7 +3546,7 @@
     },
     {
      "role": "object",
-     "asset": "a_446d640c24e146d03e83"
+     "asset": "a_9aea653ce5304d7a7410"
     }
    ],
    "status": "published",
@@ -3661,8 +3741,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_6e99d1a3b31abdc9e82a"
+    },
+    {
      "role": "object",
-     "asset": "a_7e37f4ad4d227d283f9a"
+     "asset": "a_71da0b7beb276c5838cf"
     }
    ],
    "status": "published",

@@ -180,15 +180,15 @@
     "map",
     "left-right"
    ],
-   "media": [
-    {
-     "role": "object",
-     "asset": "a_146e39368bbeb95049ca"
-    }
-   ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_87792558ceb30cde6a09"
+    }
+   ]
   },
   {
    "id": "pirates.carte.004",
@@ -486,7 +486,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_87792558ceb30cde6a09"
+    }
+   ]
   },
   {
    "id": "pirates.carte.009",
@@ -524,7 +530,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_87792558ceb30cde6a09"
+    }
+   ]
   },
   {
    "id": "pirates.carte.010",
@@ -601,7 +613,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_87792558ceb30cde6a09"
+    }
+   ]
   },
   {
    "id": "pirates.carte.011",
@@ -699,8 +717,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_87792558ceb30cde6a09"
+    },
+    {
      "role": "object",
-     "asset": "a_458f758fd9ac7578259f"
+     "asset": "a_60d14015417db00974a5"
     }
    ],
    "status": "published",
@@ -871,7 +893,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_87792558ceb30cde6a09"
+    }
+   ]
   },
   {
    "id": "pirates.carte.014",
@@ -1085,7 +1113,7 @@
     },
     {
      "role": "object",
-     "asset": "a_cec19b9cf0beac5bbd27"
+     "asset": "a_3e8bd1fb845311eabf3a"
     }
    ],
    "status": "published",
@@ -1144,7 +1172,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_87792558ceb30cde6a09"
+    }
+   ]
   },
   {
    "id": "pirates.tresor.003",
@@ -1199,7 +1233,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_87792558ceb30cde6a09"
+    }
+   ]
   },
   {
    "id": "pirates.tresor.004",
@@ -1333,7 +1373,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_87792558ceb30cde6a09"
+    }
+   ]
   },
   {
    "id": "pirates.tresor.006",
@@ -1404,7 +1450,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_87792558ceb30cde6a09"
+    }
+   ]
   },
   {
    "id": "pirates.tresor.007",
@@ -1459,7 +1511,17 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_87792558ceb30cde6a09"
+    },
+    {
+     "role": "object",
+     "asset": "a_3c7d61e7bbb756bf5476"
+    }
+   ]
   },
   {
    "id": "pirates.tresor.008",
@@ -1514,7 +1576,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_87792558ceb30cde6a09"
+    }
+   ]
   },
   {
    "id": "pirates.tresor.009",
@@ -1550,7 +1618,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_87792558ceb30cde6a09"
+    }
+   ]
   },
   {
    "id": "pirates.tresor.010",
@@ -1626,7 +1700,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_87792558ceb30cde6a09"
+    }
+   ]
   },
   {
    "id": "pirates.tresor.011",
@@ -1703,7 +1783,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_87792558ceb30cde6a09"
+    }
+   ]
   },
   {
    "id": "pirates.tresor.012",
@@ -1800,7 +1886,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_87792558ceb30cde6a09"
+    }
+   ]
   },
   {
    "id": "pirates.tresor.013",
@@ -1934,8 +2026,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_87792558ceb30cde6a09"
+    },
+    {
      "role": "object",
-     "asset": "a_17e2a0c226342fe2cdd2"
+     "asset": "a_3c7d61e7bbb756bf5476"
     }
    ],
    "status": "published",
@@ -1994,8 +2090,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_4b02ff07fe7051d84283"
+    },
+    {
      "role": "object",
-     "asset": "a_cec19b9cf0beac5bbd27"
+     "asset": "a_3e8bd1fb845311eabf3a"
     }
    ],
    "status": "published",
@@ -2054,7 +2154,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4b02ff07fe7051d84283"
+    }
+   ]
   },
   {
    "id": "pirates.butin.003",
@@ -2110,6 +2216,10 @@
     {
      "role": "scene",
      "asset": "a_4b02ff07fe7051d84283"
+    },
+    {
+     "role": "object",
+     "asset": "a_3c7d61e7bbb756bf5476"
     }
    ],
    "status": "published",
@@ -2182,7 +2292,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4b02ff07fe7051d84283"
+    }
+   ]
   },
   {
    "id": "pirates.butin.005",
@@ -2250,7 +2366,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4b02ff07fe7051d84283"
+    }
+   ]
   },
   {
    "id": "pirates.butin.006",
@@ -2378,7 +2500,17 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4b02ff07fe7051d84283"
+    },
+    {
+     "role": "object",
+     "asset": "a_3c7d61e7bbb756bf5476"
+    }
+   ]
   },
   {
    "id": "pirates.butin.008",
@@ -2476,7 +2608,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4b02ff07fe7051d84283"
+    }
+   ]
   },
   {
    "id": "pirates.butin.010",
@@ -2552,7 +2690,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4b02ff07fe7051d84283"
+    }
+   ]
   },
   {
    "id": "pirates.butin.011",
@@ -2649,8 +2793,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_4b02ff07fe7051d84283"
+    },
+    {
      "role": "object",
-     "asset": "a_cec19b9cf0beac5bbd27"
+     "asset": "a_3e8bd1fb845311eabf3a"
     }
    ],
    "status": "published",
@@ -2752,7 +2900,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4b02ff07fe7051d84283"
+    }
+   ]
   },
   {
    "id": "pirates.butin.013",
@@ -2899,8 +3053,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_4b02ff07fe7051d84283"
+    },
+    {
      "role": "object",
-     "asset": "a_17e2a0c226342fe2cdd2"
+     "asset": "a_3c7d61e7bbb756bf5476"
     }
    ],
    "status": "published",
@@ -3023,7 +3181,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4b02ff07fe7051d84283"
+    }
+   ]
   },
   {
    "id": "pirates.navire.003",
@@ -3079,7 +3243,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4b02ff07fe7051d84283"
+    }
+   ]
   },
   {
    "id": "pirates.navire.004",
@@ -3150,7 +3320,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4b02ff07fe7051d84283"
+    }
+   ]
   },
   {
    "id": "pirates.navire.005",
@@ -3295,7 +3471,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4b02ff07fe7051d84283"
+    }
+   ]
   },
   {
    "id": "pirates.navire.007",
@@ -3349,7 +3531,17 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4b02ff07fe7051d84283"
+    },
+    {
+     "role": "object",
+     "asset": "a_3c7d61e7bbb756bf5476"
+    }
+   ]
   },
   {
    "id": "pirates.navire.008",
@@ -3447,7 +3639,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4b02ff07fe7051d84283"
+    }
+   ]
   },
   {
    "id": "pirates.navire.010",
@@ -3523,7 +3721,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4b02ff07fe7051d84283"
+    }
+   ]
   },
   {
    "id": "pirates.navire.011",
@@ -3620,7 +3824,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4b02ff07fe7051d84283"
+    }
+   ]
   },
   {
    "id": "pirates.navire.012",
@@ -3780,7 +3990,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4b02ff07fe7051d84283"
+    }
+   ]
   },
   {
    "id": "pirates.navire.014",

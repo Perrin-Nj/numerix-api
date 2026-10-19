@@ -77,7 +77,7 @@
     },
     {
      "role": "object",
-     "asset": "a_d8790d1ca7b8766c739f"
+     "asset": "a_3f006026103a4165e66b"
     }
    ],
    "status": "published",
@@ -315,7 +315,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_0fe341097d5f4008cfee"
+    }
+   ]
   },
   {
    "id": "echecs.cases.005",
@@ -370,7 +376,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_0fe341097d5f4008cfee"
+    }
+   ]
   },
   {
    "id": "echecs.cases.006",
@@ -514,7 +526,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_0fe341097d5f4008cfee"
+    }
+   ]
   },
   {
    "id": "echecs.cases.008",
@@ -586,7 +604,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_0fe341097d5f4008cfee"
+    }
+   ]
   },
   {
    "id": "echecs.cases.009",
@@ -641,7 +665,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_0fe341097d5f4008cfee"
+    }
+   ]
   },
   {
    "id": "echecs.cases.010",
@@ -678,7 +708,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_0fe341097d5f4008cfee"
+    }
+   ]
   },
   {
    "id": "echecs.cases.011",
@@ -755,7 +791,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_0fe341097d5f4008cfee"
+    }
+   ]
   },
   {
    "id": "echecs.cases.012",
@@ -1034,7 +1076,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_0fe341097d5f4008cfee"
+    }
+   ]
   },
   {
    "id": "echecs.parcours.001",
@@ -1167,7 +1215,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e498bd56e1046bb2593f"
+    }
+   ]
   },
   {
    "id": "echecs.parcours.003",
@@ -1222,7 +1276,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e498bd56e1046bb2593f"
+    }
+   ]
   },
   {
    "id": "echecs.parcours.004",
@@ -1277,7 +1337,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e498bd56e1046bb2593f"
+    }
+   ]
   },
   {
    "id": "echecs.parcours.005",
@@ -1332,7 +1398,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e498bd56e1046bb2593f"
+    }
+   ]
   },
   {
    "id": "echecs.parcours.006",
@@ -1400,7 +1472,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e498bd56e1046bb2593f"
+    }
+   ]
   },
   {
    "id": "echecs.parcours.007",
@@ -1469,7 +1547,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e498bd56e1046bb2593f"
+    }
+   ]
   },
   {
    "id": "echecs.parcours.008",
@@ -1541,7 +1625,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e498bd56e1046bb2593f"
+    }
+   ]
   },
   {
    "id": "echecs.parcours.009",
@@ -1596,7 +1686,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e498bd56e1046bb2593f"
+    }
+   ]
   },
   {
    "id": "echecs.parcours.010",
@@ -1632,7 +1728,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e498bd56e1046bb2593f"
+    }
+   ]
   },
   {
    "id": "echecs.parcours.011",
@@ -1709,7 +1811,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e498bd56e1046bb2593f"
+    }
+   ]
   },
   {
    "id": "echecs.parcours.012",
@@ -1807,7 +1915,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e498bd56e1046bb2593f"
+    }
+   ]
   },
   {
    "id": "echecs.parcours.013",
@@ -1942,7 +2056,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e498bd56e1046bb2593f"
+    }
+   ]
   },
   {
    "id": "echecs.valeurs.001",
@@ -2058,7 +2178,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_363661b8b93c27e81892"
+    }
+   ]
   },
   {
    "id": "echecs.valeurs.003",
@@ -2113,7 +2239,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_363661b8b93c27e81892"
+    }
+   ]
   },
   {
    "id": "echecs.valeurs.004",
@@ -2168,7 +2300,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_363661b8b93c27e81892"
+    }
+   ]
   },
   {
    "id": "echecs.valeurs.005",
@@ -2223,7 +2361,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_363661b8b93c27e81892"
+    }
+   ]
   },
   {
    "id": "echecs.valeurs.006",
@@ -2284,7 +2428,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_363661b8b93c27e81892"
+    }
+   ]
   },
   {
    "id": "echecs.valeurs.007",
@@ -2353,7 +2503,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_363661b8b93c27e81892"
+    }
+   ]
   },
   {
    "id": "echecs.valeurs.008",
@@ -2425,7 +2581,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_363661b8b93c27e81892"
+    }
+   ]
   },
   {
    "id": "echecs.valeurs.009",
@@ -2480,7 +2642,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_363661b8b93c27e81892"
+    }
+   ]
   },
   {
    "id": "echecs.valeurs.010",
@@ -2535,7 +2703,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_363661b8b93c27e81892"
+    }
+   ]
   },
   {
    "id": "echecs.valeurs.011",
@@ -2572,7 +2746,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_363661b8b93c27e81892"
+    }
+   ]
   },
   {
    "id": "echecs.valeurs.012",
@@ -2649,7 +2829,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_363661b8b93c27e81892"
+    }
+   ]
   },
   {
    "id": "echecs.valeurs.013",
@@ -2747,7 +2933,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_363661b8b93c27e81892"
+    }
+   ]
   },
   {
    "id": "echecs.valeurs.014",
@@ -2835,7 +3027,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_363661b8b93c27e81892"
+    }
+   ]
   },
   {
    "id": "echecs.valeurs.015",
@@ -2884,7 +3082,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_363661b8b93c27e81892"
+    }
+   ]
   },
   {
    "id": "echecs.motifs.001",
@@ -3134,7 +3338,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_8bf5129e219638daa34a"
+    }
+   ]
   },
   {
    "id": "echecs.motifs.005",
@@ -3189,7 +3399,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_8bf5129e219638daa34a"
+    }
+   ]
   },
   {
    "id": "echecs.motifs.006",
@@ -3244,7 +3460,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_8bf5129e219638daa34a"
+    }
+   ]
   },
   {
    "id": "echecs.motifs.007",
@@ -3299,7 +3521,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_8bf5129e219638daa34a"
+    }
+   ]
   },
   {
    "id": "echecs.motifs.008",
@@ -3395,7 +3623,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_8bf5129e219638daa34a"
+    }
+   ]
   },
   {
    "id": "echecs.motifs.009",
@@ -3432,7 +3666,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_8bf5129e219638daa34a"
+    }
+   ]
   },
   {
    "id": "echecs.motifs.010",
@@ -3509,7 +3749,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_8bf5129e219638daa34a"
+    }
+   ]
   },
   {
    "id": "echecs.motifs.011",
@@ -3607,7 +3853,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_8bf5129e219638daa34a"
+    }
+   ]
   },
   {
    "id": "echecs.motifs.012",
@@ -3679,7 +3931,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_8bf5129e219638daa34a"
+    }
+   ]
   },
   {
    "id": "echecs.motifs.013",
@@ -3852,7 +4110,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e498bd56e1046bb2593f"
+    }
+   ]
   },
   {
    "id": "echecs.partie.003",
@@ -3908,7 +4172,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e498bd56e1046bb2593f"
+    }
+   ]
   },
   {
    "id": "echecs.partie.004",
@@ -3964,7 +4234,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e498bd56e1046bb2593f"
+    }
+   ]
   },
   {
    "id": "echecs.partie.005",
@@ -4098,7 +4374,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e498bd56e1046bb2593f"
+    }
+   ]
   },
   {
    "id": "echecs.partie.007",
@@ -4169,7 +4451,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e498bd56e1046bb2593f"
+    }
+   ]
   },
   {
    "id": "echecs.partie.008",
@@ -4241,7 +4529,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e498bd56e1046bb2593f"
+    }
+   ]
   },
   {
    "id": "echecs.partie.009",
@@ -4296,7 +4590,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e498bd56e1046bb2593f"
+    }
+   ]
   },
   {
    "id": "echecs.partie.010",
@@ -4359,7 +4659,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e498bd56e1046bb2593f"
+    }
+   ]
   },
   {
    "id": "echecs.partie.011",
@@ -4396,7 +4702,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e498bd56e1046bb2593f"
+    }
+   ]
   },
   {
    "id": "echecs.partie.012",
@@ -4472,7 +4784,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e498bd56e1046bb2593f"
+    }
+   ]
   },
   {
    "id": "echecs.partie.013",
@@ -4569,7 +4887,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e498bd56e1046bb2593f"
+    }
+   ]
   },
   {
    "id": "echecs.partie.014",
@@ -4880,7 +5204,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e498bd56e1046bb2593f"
+    }
+   ]
   }
  ]
 }

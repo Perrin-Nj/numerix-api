@@ -239,7 +239,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_68c50d1ce443b8737114"
+    }
+   ]
   },
   {
    "id": "dinosaures.fossiles.004",
@@ -293,7 +299,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_68c50d1ce443b8737114"
+    }
+   ]
   },
   {
    "id": "dinosaures.fossiles.005",
@@ -347,7 +359,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_68c50d1ce443b8737114"
+    }
+   ]
   },
   {
    "id": "dinosaures.fossiles.006",
@@ -479,7 +497,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_68c50d1ce443b8737114"
+    }
+   ]
   },
   {
    "id": "dinosaures.fossiles.008",
@@ -534,7 +558,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_68c50d1ce443b8737114"
+    }
+   ]
   },
   {
    "id": "dinosaures.fossiles.009",
@@ -589,7 +619,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_68c50d1ce443b8737114"
+    }
+   ]
   },
   {
    "id": "dinosaures.fossiles.010",
@@ -627,7 +663,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_68c50d1ce443b8737114"
+    }
+   ]
   },
   {
    "id": "dinosaures.fossiles.011",
@@ -664,7 +706,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_68c50d1ce443b8737114"
+    }
+   ]
   },
   {
    "id": "dinosaures.fossiles.012",
@@ -740,7 +788,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_68c50d1ce443b8737114"
+    }
+   ]
   },
   {
    "id": "dinosaures.fossiles.013",
@@ -838,7 +892,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_68c50d1ce443b8737114"
+    }
+   ]
   },
   {
    "id": "dinosaures.fossiles.014",
@@ -926,7 +986,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_68c50d1ce443b8737114"
+    }
+   ]
   },
   {
    "id": "dinosaures.fossiles.015",
@@ -975,7 +1041,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_68c50d1ce443b8737114"
+    }
+   ]
   },
   {
    "id": "dinosaures.os.001",
@@ -1036,7 +1108,7 @@
     },
     {
      "role": "object",
-     "asset": "a_1de0ccae0a8079e61ed3"
+     "asset": "a_2e61284e0b961b7735db"
     }
    ],
    "status": "published",
@@ -1097,7 +1169,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_68c50d1ce443b8737114"
+    }
+   ]
   },
   {
    "id": "dinosaures.os.003",
@@ -1152,7 +1230,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_68c50d1ce443b8737114"
+    }
+   ]
   },
   {
    "id": "dinosaures.os.004",
@@ -1221,7 +1305,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_68c50d1ce443b8737114"
+    }
+   ]
   },
   {
    "id": "dinosaures.os.005",
@@ -1290,7 +1380,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_68c50d1ce443b8737114"
+    }
+   ]
   },
   {
    "id": "dinosaures.os.006",
@@ -1361,7 +1457,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_68c50d1ce443b8737114"
+    }
+   ]
   },
   {
    "id": "dinosaures.os.007",
@@ -1433,7 +1535,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_68c50d1ce443b8737114"
+    }
+   ]
   },
   {
    "id": "dinosaures.os.008",
@@ -1488,7 +1596,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_68c50d1ce443b8737114"
+    }
+   ]
   },
   {
    "id": "dinosaures.os.009",
@@ -1543,7 +1657,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_68c50d1ce443b8737114"
+    }
+   ]
   },
   {
    "id": "dinosaures.os.010",
@@ -1580,7 +1700,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_68c50d1ce443b8737114"
+    }
+   ]
   },
   {
    "id": "dinosaures.os.011",
@@ -1657,7 +1783,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_68c50d1ce443b8737114"
+    }
+   ]
   },
   {
    "id": "dinosaures.os.012",
@@ -1755,7 +1887,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_68c50d1ce443b8737114"
+    }
+   ]
   },
   {
    "id": "dinosaures.os.013",
@@ -1853,7 +1991,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_68c50d1ce443b8737114"
+    }
+   ]
   },
   {
    "id": "dinosaures.os.014",
@@ -1923,7 +2067,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_68c50d1ce443b8737114"
+    }
+   ]
   },
   {
    "id": "dinosaures.os.015",
@@ -1972,7 +2122,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_68c50d1ce443b8737114"
+    }
+   ]
   },
   {
    "id": "dinosaures.geants.001",
@@ -2065,7 +2221,7 @@
     },
     {
      "role": "object",
-     "asset": "a_6f5008e7922aee11a305"
+     "asset": "a_998b68f60bac4c927594"
     }
    ],
    "status": "published",
@@ -2158,7 +2314,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2d028533521bbec9f2c6"
+    }
+   ]
   },
   {
    "id": "dinosaures.geants.003",
@@ -2252,7 +2414,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2d028533521bbec9f2c6"
+    }
+   ]
   },
   {
    "id": "dinosaures.geants.004",
@@ -2307,7 +2475,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2d028533521bbec9f2c6"
+    }
+   ]
   },
   {
    "id": "dinosaures.geants.005",
@@ -2437,7 +2611,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2d028533521bbec9f2c6"
+    }
+   ]
   },
   {
    "id": "dinosaures.geants.007",
@@ -2498,7 +2678,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2d028533521bbec9f2c6"
+    }
+   ]
   },
   {
    "id": "dinosaures.geants.008",
@@ -2567,7 +2753,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2d028533521bbec9f2c6"
+    }
+   ]
   },
   {
    "id": "dinosaures.geants.009",
@@ -2639,7 +2831,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2d028533521bbec9f2c6"
+    }
+   ]
   },
   {
    "id": "dinosaures.geants.010",
@@ -2736,7 +2934,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2d028533521bbec9f2c6"
+    }
+   ]
   },
   {
    "id": "dinosaures.geants.012",
@@ -2813,7 +3017,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2d028533521bbec9f2c6"
+    }
+   ]
   },
   {
    "id": "dinosaures.geants.013",
@@ -2985,7 +3195,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2d028533521bbec9f2c6"
+    }
+   ]
   },
   {
    "id": "dinosaures.geants.015",
@@ -3034,7 +3250,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2d028533521bbec9f2c6"
+    }
+   ]
   },
   {
    "id": "dinosaures.oeufs.001",
@@ -3152,7 +3374,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2d028533521bbec9f2c6"
+    }
+   ]
   },
   {
    "id": "dinosaures.oeufs.003",
@@ -3208,7 +3436,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2d028533521bbec9f2c6"
+    }
+   ]
   },
   {
    "id": "dinosaures.oeufs.004",
@@ -3264,7 +3498,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2d028533521bbec9f2c6"
+    }
+   ]
   },
   {
    "id": "dinosaures.oeufs.005",
@@ -3332,7 +3572,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2d028533521bbec9f2c6"
+    }
+   ]
   },
   {
    "id": "dinosaures.oeufs.006",
@@ -3403,7 +3649,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2d028533521bbec9f2c6"
+    }
+   ]
   },
   {
    "id": "dinosaures.oeufs.007",
@@ -3475,7 +3727,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2d028533521bbec9f2c6"
+    }
+   ]
   },
   {
    "id": "dinosaures.oeufs.008",
@@ -3530,7 +3788,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2d028533521bbec9f2c6"
+    }
+   ]
   },
   {
    "id": "dinosaures.oeufs.009",
@@ -3585,7 +3849,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2d028533521bbec9f2c6"
+    }
+   ]
   },
   {
    "id": "dinosaures.oeufs.010",
@@ -3622,7 +3892,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2d028533521bbec9f2c6"
+    }
+   ]
   },
   {
    "id": "dinosaures.oeufs.011",
@@ -3699,7 +3975,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2d028533521bbec9f2c6"
+    }
+   ]
   },
   {
    "id": "dinosaures.oeufs.012",
@@ -3797,7 +4079,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2d028533521bbec9f2c6"
+    }
+   ]
   },
   {
    "id": "dinosaures.oeufs.013",
@@ -4036,7 +4324,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2d028533521bbec9f2c6"
+    }
+   ]
   }
  ]
 }

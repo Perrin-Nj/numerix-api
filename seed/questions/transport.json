@@ -60,7 +60,7 @@
     },
     {
      "role": "object",
-     "asset": "a_1aa6929e1baa440db535"
+     "asset": "a_68852de5bbbd5124bfcf"
     }
    ],
    "status": "published",
@@ -186,7 +186,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_98b1c9c7b9a29204c3f8"
+    }
+   ]
   },
   {
    "id": "transport.gare.004",
@@ -254,8 +260,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_98b1c9c7b9a29204c3f8"
+    },
+    {
      "role": "object",
-     "asset": "a_1aa6929e1baa440db535"
+     "asset": "a_68852de5bbbd5124bfcf"
     }
    ],
    "status": "published",
@@ -328,7 +338,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_98b1c9c7b9a29204c3f8"
+    }
+   ]
   },
   {
    "id": "transport.gare.006",
@@ -461,7 +477,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_98b1c9c7b9a29204c3f8"
+    }
+   ]
   },
   {
    "id": "transport.gare.008",
@@ -571,7 +593,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_98b1c9c7b9a29204c3f8"
+    }
+   ]
   },
   {
    "id": "transport.gare.010",
@@ -608,7 +636,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_98b1c9c7b9a29204c3f8"
+    }
+   ]
   },
   {
    "id": "transport.gare.011",
@@ -787,7 +821,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_98b1c9c7b9a29204c3f8"
+    }
+   ]
   },
   {
    "id": "transport.gare.013",
@@ -943,7 +983,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_98b1c9c7b9a29204c3f8"
+    }
+   ]
   },
   {
    "id": "transport.gare.015",
@@ -1018,7 +1064,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_98b1c9c7b9a29204c3f8"
+    }
+   ]
   },
   {
    "id": "transport.gare.016",
@@ -1150,6 +1202,10 @@
     {
      "role": "scene",
      "asset": "a_ec39ac5bd76d5d96906a"
+    },
+    {
+     "role": "object",
+     "asset": "a_2f6ba0bb7dafd4361b4c"
     }
    ],
    "status": "published",
@@ -1210,8 +1266,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_380e46db2262f31817c8"
+    },
+    {
      "role": "object",
-     "asset": "a_d34d9d19e0d9f2751f46"
+     "asset": "a_2f6ba0bb7dafd4361b4c"
     }
    ],
    "status": "published",
@@ -1347,8 +1407,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_380e46db2262f31817c8"
+    },
+    {
      "role": "object",
-     "asset": "a_d34d9d19e0d9f2751f46"
+     "asset": "a_2f6ba0bb7dafd4361b4c"
     }
    ],
    "status": "published",
@@ -1425,7 +1489,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_380e46db2262f31817c8"
+    }
+   ]
   },
   {
    "id": "transport.autobus.006",
@@ -1498,7 +1568,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_380e46db2262f31817c8"
+    }
+   ]
   },
   {
    "id": "transport.autobus.007",
@@ -1658,7 +1734,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_380e46db2262f31817c8"
+    }
+   ]
   },
   {
    "id": "transport.autobus.010",
@@ -1734,7 +1816,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_380e46db2262f31817c8"
+    }
+   ]
   },
   {
    "id": "transport.autobus.011",
@@ -1832,7 +1920,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_380e46db2262f31817c8"
+    }
+   ]
   },
   {
    "id": "transport.autobus.012",
@@ -1999,7 +2093,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_380e46db2262f31817c8"
+    }
+   ]
   },
   {
    "id": "transport.autobus.014",
@@ -2169,7 +2269,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_380e46db2262f31817c8"
+    }
+   ]
   },
   {
    "id": "transport.pistes.003",
@@ -2223,7 +2329,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_380e46db2262f31817c8"
+    }
+   ]
   },
   {
    "id": "transport.pistes.004",
@@ -2291,7 +2403,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_380e46db2262f31817c8"
+    }
+   ]
   },
   {
    "id": "transport.pistes.005",
@@ -2428,7 +2546,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_380e46db2262f31817c8"
+    }
+   ]
   },
   {
    "id": "transport.pistes.007",
@@ -2544,7 +2668,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_380e46db2262f31817c8"
+    }
+   ]
   },
   {
    "id": "transport.pistes.009",
@@ -2580,7 +2710,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_380e46db2262f31817c8"
+    }
+   ]
   },
   {
    "id": "transport.pistes.010",
@@ -2656,7 +2792,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_380e46db2262f31817c8"
+    }
+   ]
   },
   {
    "id": "transport.pistes.011",
@@ -2753,7 +2895,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_380e46db2262f31817c8"
+    }
+   ]
   },
   {
    "id": "transport.pistes.012",
@@ -2879,7 +3027,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_380e46db2262f31817c8"
+    }
+   ]
   },
   {
    "id": "transport.voyage.001",
@@ -2937,6 +3091,10 @@
     {
      "role": "scene",
      "asset": "a_de27167597b6d931b81b"
+    },
+    {
+     "role": "object",
+     "asset": "a_2f6ba0bb7dafd4361b4c"
     }
    ],
    "status": "published",
@@ -3059,7 +3217,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_98b1c9c7b9a29204c3f8"
+    }
+   ]
   },
   {
    "id": "transport.voyage.004",
@@ -3205,15 +3369,15 @@
     "mental-math",
     "compensation"
    ],
-   "media": [
-    {
-     "role": "object",
-     "asset": "a_dda8d8e9ccaca71973f4"
-    }
-   ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_98b1c9c7b9a29204c3f8"
+    }
+   ]
   },
   {
    "id": "transport.voyage.006",
@@ -3407,7 +3571,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_98b1c9c7b9a29204c3f8"
+    }
+   ]
   },
   {
    "id": "transport.voyage.009",
@@ -3445,7 +3615,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_98b1c9c7b9a29204c3f8"
+    }
+   ]
   },
   {
    "id": "transport.voyage.010",
@@ -3522,7 +3698,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_98b1c9c7b9a29204c3f8"
+    }
+   ]
   },
   {
    "id": "transport.voyage.011",
@@ -3598,7 +3780,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_98b1c9c7b9a29204c3f8"
+    }
+   ]
   },
   {
    "id": "transport.voyage.012",
@@ -3696,7 +3884,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_98b1c9c7b9a29204c3f8"
+    }
+   ]
   },
   {
    "id": "transport.voyage.013",
@@ -3794,7 +3988,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_98b1c9c7b9a29204c3f8"
+    }
+   ]
   },
   {
    "id": "transport.voyage.014",

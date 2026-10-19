@@ -116,8 +116,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_42883b10907a9fbadb11"
+    },
+    {
      "role": "object",
-     "asset": "a_490d2d2c795508b7059a"
+     "asset": "a_f6e4bb98019fbe755b87"
     }
    ],
    "status": "published",
@@ -243,7 +247,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_42883b10907a9fbadb11"
+    }
+   ]
   },
   {
    "id": "musique.rythme.005",
@@ -303,7 +313,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_42883b10907a9fbadb11"
+    }
+   ]
   },
   {
    "id": "musique.rythme.006",
@@ -499,6 +515,10 @@
     {
      "role": "scene",
      "asset": "a_267ac67f78abcb12cf71"
+    },
+    {
+     "role": "object",
+     "asset": "a_0c0dbe855a75c0adf22b"
     }
    ],
    "status": "published",
@@ -538,7 +558,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_42883b10907a9fbadb11"
+    }
+   ]
   },
   {
    "id": "musique.rythme.010",
@@ -574,7 +600,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_42883b10907a9fbadb11"
+    }
+   ]
   },
   {
    "id": "musique.rythme.011",
@@ -659,7 +691,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_42883b10907a9fbadb11"
+    }
+   ]
   },
   {
    "id": "musique.rythme.012",
@@ -756,7 +794,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_42883b10907a9fbadb11"
+    }
+   ]
   },
   {
    "id": "musique.rythme.013",
@@ -998,8 +1042,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_42883b10907a9fbadb11"
+    },
+    {
      "role": "object",
-     "asset": "a_490d2d2c795508b7059a"
+     "asset": "a_f6e4bb98019fbe755b87"
     }
    ],
    "status": "published",
@@ -1120,7 +1168,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4f63c9f7cdfc486501d2"
+    }
+   ]
   },
   {
    "id": "musique.mesures.003",
@@ -1175,7 +1229,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4f63c9f7cdfc486501d2"
+    }
+   ]
   },
   {
    "id": "musique.mesures.004",
@@ -1309,7 +1369,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4f63c9f7cdfc486501d2"
+    }
+   ]
   },
   {
    "id": "musique.mesures.006",
@@ -1501,7 +1567,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4f63c9f7cdfc486501d2"
+    }
+   ]
   },
   {
    "id": "musique.mesures.009",
@@ -1536,7 +1608,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4f63c9f7cdfc486501d2"
+    }
+   ]
   },
   {
    "id": "musique.mesures.010",
@@ -1612,7 +1690,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4f63c9f7cdfc486501d2"
+    }
+   ]
   },
   {
    "id": "musique.mesures.011",
@@ -1689,7 +1773,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4f63c9f7cdfc486501d2"
+    }
+   ]
   },
   {
    "id": "musique.mesures.012",
@@ -1786,7 +1876,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4f63c9f7cdfc486501d2"
+    }
+   ]
   },
   {
    "id": "musique.mesures.013",
@@ -1861,7 +1957,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4f63c9f7cdfc486501d2"
+    }
+   ]
   },
   {
    "id": "musique.mesures.014",
@@ -1923,7 +2025,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4f63c9f7cdfc486501d2"
+    }
+   ]
   },
   {
    "id": "musique.mesures.015",
@@ -1971,7 +2079,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4f63c9f7cdfc486501d2"
+    }
+   ]
   },
   {
    "id": "musique.concert.001",
@@ -2089,7 +2203,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4f63c9f7cdfc486501d2"
+    }
+   ]
   },
   {
    "id": "musique.concert.003",
@@ -2160,8 +2280,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_4f63c9f7cdfc486501d2"
+    },
+    {
      "role": "object",
-     "asset": "a_78496ef4bc77bb188f7f"
+     "asset": "a_0c0dbe855a75c0adf22b"
     }
    ],
    "status": "published",
@@ -2314,7 +2438,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4f63c9f7cdfc486501d2"
+    }
+   ]
   },
   {
    "id": "musique.concert.006",
@@ -2369,7 +2499,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4f63c9f7cdfc486501d2"
+    }
+   ]
   },
   {
    "id": "musique.concert.007",
@@ -2426,6 +2562,10 @@
     {
      "role": "scene",
      "asset": "a_267ac67f78abcb12cf71"
+    },
+    {
+     "role": "object",
+     "asset": "a_ac7025b8bdee310ccbb1"
     }
    ],
    "status": "published",
@@ -2467,7 +2607,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4f63c9f7cdfc486501d2"
+    }
+   ]
   },
   {
    "id": "musique.concert.009",
@@ -2543,7 +2689,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4f63c9f7cdfc486501d2"
+    }
+   ]
   },
   {
    "id": "musique.concert.010",
@@ -2659,7 +2811,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4f63c9f7cdfc486501d2"
+    }
+   ]
   },
   {
    "id": "musique.concert.011",
@@ -2757,7 +2915,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4f63c9f7cdfc486501d2"
+    }
+   ]
   },
   {
    "id": "musique.concert.012",
@@ -2937,7 +3101,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4f63c9f7cdfc486501d2"
+    }
+   ]
   },
   {
    "id": "musique.concert.014",
@@ -2986,7 +3156,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4f63c9f7cdfc486501d2"
+    }
+   ]
   },
   {
    "id": "musique.instruments.001",
@@ -3043,6 +3219,10 @@
     {
      "role": "scene",
      "asset": "a_42883b10907a9fbadb11"
+    },
+    {
+     "role": "object",
+     "asset": "a_f6e4bb98019fbe755b87"
     }
    ],
    "status": "published",
@@ -3102,7 +3282,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4f63c9f7cdfc486501d2"
+    }
+   ]
   },
   {
    "id": "musique.instruments.003",
@@ -3305,8 +3491,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_4f63c9f7cdfc486501d2"
+    },
+    {
      "role": "object",
-     "asset": "a_78496ef4bc77bb188f7f"
+     "asset": "a_0c0dbe855a75c0adf22b"
     }
    ],
    "status": "published",
@@ -3383,7 +3573,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4f63c9f7cdfc486501d2"
+    }
+   ]
   },
   {
    "id": "musique.instruments.007",
@@ -3438,7 +3634,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4f63c9f7cdfc486501d2"
+    }
+   ]
   },
   {
    "id": "musique.instruments.008",
@@ -3493,7 +3695,17 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4f63c9f7cdfc486501d2"
+    },
+    {
+     "role": "object",
+     "asset": "a_f6e4bb98019fbe755b87"
+    }
+   ]
   },
   {
    "id": "musique.instruments.009",
@@ -3529,7 +3741,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4f63c9f7cdfc486501d2"
+    }
+   ]
   },
   {
    "id": "musique.instruments.010",
@@ -3605,7 +3823,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4f63c9f7cdfc486501d2"
+    }
+   ]
   },
   {
    "id": "musique.instruments.011",
@@ -3703,8 +3927,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_4f63c9f7cdfc486501d2"
+    },
+    {
      "role": "object",
-     "asset": "a_8539f986974efb1e9fa7"
+     "asset": "a_ac7025b8bdee310ccbb1"
     }
    ],
    "status": "published",
@@ -3937,7 +4165,13 @@
    ],
    "status": "published",
    "author": "numerix-p4c",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4f63c9f7cdfc486501d2"
+    }
+   ]
   }
  ]
 }

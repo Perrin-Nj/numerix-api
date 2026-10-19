@@ -48,3 +48,16 @@ Accepted: CC0, PDM, CC BY 2.0/3.0/4.0 (attribution recorded), Pexels licence, MI
 ## Credits page
 
 Show every `photos[]` line with CC BY licence (required) and, for completeness, the others; plus the `groups[]` MIT notice: "Fluent Emoji by Microsoft, MIT. Copyright (c) Microsoft Corporation." with a link to the licence. Pexels photos need a visible link to Pexels.
+
+## Real-object photos (counting and measuring)
+
+The 75 Fluent 3D emoji sprites are retired: `sprites.json` and their files are gone from the seed (kept only as `tools/assets/sprites-legacy.json`, id and tags, to map old question media to the new photos). Counting objects are real photographs, Wikimedia Commons only (CC0, public domain, CC BY 2.0 to 4.0).
+
+```
+node tools/assets/objects.mjs                  # search, cut out, square, WebP 256 and 512, seed/assets/objects.json
+node tools/assets/objects.mjs --redo a,b       # reject the current pick of slugs a and b (objects-reject.json) and take the next
+node tools/assets/rewire-objects.mjs           # question media: sprite -> matching object photo, scene photo for questions without one
+node tools/assets/credits.mjs                  # rebuild seed/assets/credits.json (every asset, licence, alt fr and en)
+```
+
+A photo with a plain bright border is flood-filled to transparent and centred with 8 percent padding (cutout); any other becomes a square crop shown as a soft rounded tile. `objects-queries.json` holds the search terms per object, `objects-map.json` the chosen file per slug (source page, licence, creator). Titles that name people, brands, weapons, artwork, drawings or museum catalogue items are refused. Every pick was checked on a contact sheet.

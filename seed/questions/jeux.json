@@ -60,7 +60,7 @@
     },
     {
      "role": "object",
-     "asset": "a_454d51562973cf3af447"
+     "asset": "a_5500546fbf466c66b92e"
     }
    ],
    "status": "published",
@@ -264,7 +264,7 @@
     },
     {
      "role": "object",
-     "asset": "a_454d51562973cf3af447"
+     "asset": "a_5500546fbf466c66b92e"
     }
    ],
    "status": "published",
@@ -855,8 +855,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_50559c1e5b392c27f25f"
+    },
+    {
      "role": "object",
-     "asset": "a_454d51562973cf3af447"
+     "asset": "a_5500546fbf466c66b92e"
     }
    ],
    "status": "published",
@@ -1093,8 +1097,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_d404d3557ed20c2ab5b9"
+    },
+    {
      "role": "object",
-     "asset": "a_454d51562973cf3af447"
+     "asset": "a_5500546fbf466c66b92e"
     }
    ],
    "status": "published",
@@ -3611,8 +3619,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_50559c1e5b392c27f25f"
+    },
+    {
      "role": "object",
-     "asset": "a_454d51562973cf3af447"
+     "asset": "a_5500546fbf466c66b92e"
     }
    ],
    "status": "published",

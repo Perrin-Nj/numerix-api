@@ -1012,7 +1012,7 @@
     },
     {
      "role": "object",
-     "asset": "a_a021c0ea3c9525e9acbf"
+     "asset": "a_b49163468739d7579729"
     }
    ],
    "status": "published",
@@ -1090,7 +1090,7 @@
     },
     {
      "role": "object",
-     "asset": "a_0a87edecc4a5f6c4e7dc"
+     "asset": "a_8c136bda650bfd494c5b"
     }
    ],
    "status": "published",
@@ -1481,8 +1481,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_976e9627e5e396a7b3a0"
+    },
+    {
      "role": "object",
-     "asset": "a_a021c0ea3c9525e9acbf"
+     "asset": "a_b49163468739d7579729"
     }
    ],
    "status": "published",
@@ -1542,8 +1546,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_976e9627e5e396a7b3a0"
+    },
+    {
      "role": "object",
-     "asset": "a_a021c0ea3c9525e9acbf"
+     "asset": "a_b49163468739d7579729"
     }
    ],
    "status": "published",
@@ -1925,8 +1933,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_976e9627e5e396a7b3a0"
+    },
+    {
      "role": "object",
-     "asset": "a_a021c0ea3c9525e9acbf"
+     "asset": "a_b49163468739d7579729"
     }
    ],
    "status": "published",
@@ -4187,8 +4199,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_976e9627e5e396a7b3a0"
+    },
+    {
      "role": "object",
-     "asset": "a_874ba44c52745cef96ce"
+     "asset": "a_7601fa0226c06983ca1f"
     }
    ],
    "status": "published",
@@ -4257,8 +4273,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_976e9627e5e396a7b3a0"
+    },
+    {
      "role": "object",
-     "asset": "a_874ba44c52745cef96ce"
+     "asset": "a_7601fa0226c06983ca1f"
     }
    ],
    "status": "published",
@@ -4318,8 +4338,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_976e9627e5e396a7b3a0"
+    },
+    {
      "role": "object",
-     "asset": "a_874ba44c52745cef96ce"
+     "asset": "a_7601fa0226c06983ca1f"
     }
    ],
    "status": "published",
@@ -4379,8 +4403,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_976e9627e5e396a7b3a0"
+    },
+    {
      "role": "object",
-     "asset": "a_874ba44c52745cef96ce"
+     "asset": "a_7601fa0226c06983ca1f"
     }
    ],
    "status": "published",
@@ -4440,8 +4468,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_976e9627e5e396a7b3a0"
+    },
+    {
      "role": "object",
-     "asset": "a_874ba44c52745cef96ce"
+     "asset": "a_7601fa0226c06983ca1f"
     }
    ],
    "status": "published",
@@ -4562,8 +4594,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_976e9627e5e396a7b3a0"
+    },
+    {
      "role": "object",
-     "asset": "a_a021c0ea3c9525e9acbf"
+     "asset": "a_b49163468739d7579729"
     }
    ],
    "status": "published",
@@ -4628,8 +4664,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_976e9627e5e396a7b3a0"
+    },
+    {
      "role": "object",
-     "asset": "a_874ba44c52745cef96ce"
+     "asset": "a_7601fa0226c06983ca1f"
     }
    ],
    "status": "published",
@@ -4694,8 +4734,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_976e9627e5e396a7b3a0"
+    },
+    {
      "role": "object",
-     "asset": "a_874ba44c52745cef96ce"
+     "asset": "a_7601fa0226c06983ca1f"
     }
    ],
    "status": "published",
@@ -4738,8 +4782,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_976e9627e5e396a7b3a0"
+    },
+    {
      "role": "object",
-     "asset": "a_874ba44c52745cef96ce"
+     "asset": "a_7601fa0226c06983ca1f"
     }
    ],
    "status": "published",
@@ -4820,8 +4868,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_976e9627e5e396a7b3a0"
+    },
+    {
      "role": "object",
-     "asset": "a_874ba44c52745cef96ce"
+     "asset": "a_7601fa0226c06983ca1f"
     }
    ],
    "status": "published",
@@ -4942,8 +4994,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_976e9627e5e396a7b3a0"
+    },
+    {
      "role": "object",
-     "asset": "a_874ba44c52745cef96ce"
+     "asset": "a_7601fa0226c06983ca1f"
     }
    ],
    "status": "published",
@@ -5017,8 +5073,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_976e9627e5e396a7b3a0"
+    },
+    {
      "role": "object",
-     "asset": "a_874ba44c52745cef96ce"
+     "asset": "a_7601fa0226c06983ca1f"
     }
    ],
    "status": "published",

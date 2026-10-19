@@ -60,7 +60,7 @@
     },
     {
      "role": "object",
-     "asset": "a_3f9b5a00b53c8bddda36"
+     "asset": "a_859c39aa4afd7f348b26"
     }
    ],
    "status": "published",
@@ -336,8 +336,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_fba57eb05629a1d98b8a"
+    },
+    {
      "role": "object",
-     "asset": "a_3f9b5a00b53c8bddda36"
+     "asset": "a_859c39aa4afd7f348b26"
     }
    ],
    "status": "published",
@@ -576,8 +580,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_fba57eb05629a1d98b8a"
+    },
+    {
      "role": "object",
-     "asset": "a_3f9b5a00b53c8bddda36"
+     "asset": "a_859c39aa4afd7f348b26"
     }
    ],
    "status": "published",
@@ -912,8 +920,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_fba57eb05629a1d98b8a"
+    },
+    {
      "role": "object",
-     "asset": "a_3f9b5a00b53c8bddda36"
+     "asset": "a_859c39aa4afd7f348b26"
     }
    ],
    "status": "published",
@@ -1817,8 +1829,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_fba57eb05629a1d98b8a"
+    },
+    {
      "role": "object",
-     "asset": "a_3f9b5a00b53c8bddda36"
+     "asset": "a_859c39aa4afd7f348b26"
     }
    ],
    "status": "published",
@@ -1938,6 +1954,10 @@
     "robot"
    ],
    "media": [
+    {
+     "role": "scene",
+     "asset": "a_d6ef96706bb3f4141400"
+    },
     {
      "role": "object",
      "asset": "a_d6ef96706bb3f4141400"
@@ -2280,8 +2300,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_d6ef96706bb3f4141400"
+    },
+    {
      "role": "object",
-     "asset": "a_3f9b5a00b53c8bddda36"
+     "asset": "a_859c39aa4afd7f348b26"
     }
    ],
    "status": "published",
@@ -2446,6 +2470,10 @@
     "sides"
    ],
    "media": [
+    {
+     "role": "scene",
+     "asset": "a_d6ef96706bb3f4141400"
+    },
     {
      "role": "object",
      "asset": "a_bdc463bdfdd87d5bbd1b"
@@ -3061,8 +3089,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_fba57eb05629a1d98b8a"
+    },
+    {
      "role": "object",
-     "asset": "a_3f9b5a00b53c8bddda36"
+     "asset": "a_859c39aa4afd7f348b26"
     }
    ],
    "allow_operand_equals_answer": true,

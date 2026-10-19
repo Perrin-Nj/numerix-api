@@ -1,0 +1,1508 @@
+[
+ {
+  "id": "a_7e37f4ad4d227d283f9a",
+  "world_id": "cuisine",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "cuisine"
+   },
+   {
+    "facet": "world",
+    "value": "marche"
+   },
+   {
+    "facet": "world",
+    "value": "nature"
+   },
+   {
+    "facet": "world",
+    "value": "medecine"
+   },
+   {
+    "facet": "topic",
+    "value": "fruit"
+   },
+   {
+    "facet": "object",
+    "value": "red-apple"
+   }
+  ]
+ },
+ {
+  "id": "a_b82cd3cc7e56e70026b5",
+  "world_id": "cuisine",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "cuisine"
+   },
+   {
+    "facet": "world",
+    "value": "marche"
+   },
+   {
+    "facet": "topic",
+    "value": "fruit"
+   },
+   {
+    "facet": "object",
+    "value": "banana"
+   }
+  ]
+ },
+ {
+  "id": "a_446d640c24e146d03e83",
+  "world_id": "cuisine",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "cuisine"
+   },
+   {
+    "facet": "world",
+    "value": "marche"
+   },
+   {
+    "facet": "topic",
+    "value": "fruit"
+   },
+   {
+    "facet": "object",
+    "value": "strawberry"
+   }
+  ]
+ },
+ {
+  "id": "a_3ebbdc0c13ab42cdf9b5",
+  "world_id": "cuisine",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "cuisine"
+   },
+   {
+    "facet": "world",
+    "value": "marche"
+   },
+   {
+    "facet": "topic",
+    "value": "fruit"
+   },
+   {
+    "facet": "object",
+    "value": "cherries"
+   }
+  ]
+ },
+ {
+  "id": "a_862ea99e063a228682b5",
+  "world_id": "cuisine",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "cuisine"
+   },
+   {
+    "facet": "world",
+    "value": "marche"
+   },
+   {
+    "facet": "topic",
+    "value": "fruit"
+   },
+   {
+    "facet": "object",
+    "value": "grapes"
+   }
+  ]
+ },
+ {
+  "id": "a_b0919ced1b7ae879f890",
+  "world_id": "cuisine",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "cuisine"
+   },
+   {
+    "facet": "world",
+    "value": "marche"
+   },
+   {
+    "facet": "topic",
+    "value": "fruit"
+   },
+   {
+    "facet": "object",
+    "value": "lemon"
+   }
+  ]
+ },
+ {
+  "id": "a_1bf8e3a7dce44a916fdb",
+  "world_id": "cuisine",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "cuisine"
+   },
+   {
+    "facet": "world",
+    "value": "marche"
+   },
+   {
+    "facet": "topic",
+    "value": "fruit"
+   },
+   {
+    "facet": "object",
+    "value": "pear"
+   }
+  ]
+ },
+ {
+  "id": "a_dd21b66eb226ea459814",
+  "world_id": "cuisine",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "cuisine"
+   },
+   {
+    "facet": "world",
+    "value": "marche"
+   },
+   {
+    "facet": "topic",
+    "value": "fruit"
+   },
+   {
+    "facet": "object",
+    "value": "tangerine"
+   }
+  ]
+ },
+ {
+  "id": "a_00bacc111ae855cf0621",
+  "world_id": "cuisine",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "cuisine"
+   },
+   {
+    "facet": "world",
+    "value": "marche"
+   },
+   {
+    "facet": "topic",
+    "value": "fruit"
+   },
+   {
+    "facet": "object",
+    "value": "watermelon"
+   }
+  ]
+ },
+ {
+  "id": "a_add5179377b74ccfb6dc",
+  "world_id": "cuisine",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "cuisine"
+   },
+   {
+    "facet": "world",
+    "value": "marche"
+   },
+   {
+    "facet": "world",
+    "value": "animaux"
+   },
+   {
+    "facet": "topic",
+    "value": "vegetables"
+   },
+   {
+    "facet": "object",
+    "value": "carrot"
+   }
+  ]
+ },
+ {
+  "id": "a_efc307f317a1b758eb43",
+  "world_id": "cuisine",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "cuisine"
+   },
+   {
+    "facet": "world",
+    "value": "animaux"
+   },
+   {
+    "facet": "topic",
+    "value": "food"
+   },
+   {
+    "facet": "object",
+    "value": "egg"
+   }
+  ]
+ },
+ {
+  "id": "a_d3c5f5e2864d3178bf20",
+  "world_id": "cuisine",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "cuisine"
+   },
+   {
+    "facet": "world",
+    "value": "marche"
+   },
+   {
+    "facet": "topic",
+    "value": "baking"
+   },
+   {
+    "facet": "object",
+    "value": "cookie"
+   }
+  ]
+ },
+ {
+  "id": "a_1d39177c541e5a325392",
+  "world_id": "cuisine",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "cuisine"
+   },
+   {
+    "facet": "world",
+    "value": "marche"
+   },
+   {
+    "facet": "topic",
+    "value": "baking"
+   },
+   {
+    "facet": "object",
+    "value": "cupcake"
+   }
+  ]
+ },
+ {
+  "id": "a_e597c363b47377aaf24d",
+  "world_id": "cuisine",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "cuisine"
+   },
+   {
+    "facet": "world",
+    "value": "marche"
+   },
+   {
+    "facet": "topic",
+    "value": "baking"
+   },
+   {
+    "facet": "object",
+    "value": "croissant"
+   }
+  ]
+ },
+ {
+  "id": "a_648d935809d028ce4b58",
+  "world_id": "cuisine",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "cuisine"
+   },
+   {
+    "facet": "world",
+    "value": "marche"
+   },
+   {
+    "facet": "topic",
+    "value": "baking"
+   },
+   {
+    "facet": "object",
+    "value": "bread"
+   }
+  ]
+ },
+ {
+  "id": "a_5170256c720af02a4b4a",
+  "world_id": "cuisine",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "cuisine"
+   },
+   {
+    "facet": "world",
+    "value": "hiver"
+   },
+   {
+    "facet": "topic",
+    "value": "baking"
+   },
+   {
+    "facet": "object",
+    "value": "pancakes"
+   }
+  ]
+ },
+ {
+  "id": "a_7ee5292b46edaa06d94b",
+  "world_id": "cuisine",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "cuisine"
+   },
+   {
+    "facet": "world",
+    "value": "animaux"
+   },
+   {
+    "facet": "topic",
+    "value": "food"
+   },
+   {
+    "facet": "object",
+    "value": "glass-of-milk"
+   }
+  ]
+ },
+ {
+  "id": "a_cbaaf7c2e53ff4c1ad41",
+  "world_id": "cuisine",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "cuisine"
+   },
+   {
+    "facet": "world",
+    "value": "nature"
+   },
+   {
+    "facet": "topic",
+    "value": "food"
+   },
+   {
+    "facet": "object",
+    "value": "honey-pot"
+   }
+  ]
+ },
+ {
+  "id": "a_7dfcdcdebd599787719d",
+  "world_id": "nature",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "nature"
+   },
+   {
+    "facet": "world",
+    "value": "animaux"
+   },
+   {
+    "facet": "topic",
+    "value": "animals"
+   },
+   {
+    "facet": "object",
+    "value": "owl"
+   }
+  ]
+ },
+ {
+  "id": "a_7562dc09000d60228668",
+  "world_id": "animaux",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "animaux"
+   },
+   {
+    "facet": "world",
+    "value": "nature"
+   },
+   {
+    "facet": "topic",
+    "value": "animals"
+   },
+   {
+    "facet": "object",
+    "value": "rabbit"
+   }
+  ]
+ },
+ {
+  "id": "a_38ab704ca4ffc464f7ac",
+  "world_id": "animaux",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "animaux"
+   },
+   {
+    "facet": "topic",
+    "value": "animals"
+   },
+   {
+    "facet": "object",
+    "value": "cow"
+   }
+  ]
+ },
+ {
+  "id": "a_86486ad9e55664aad9e2",
+  "world_id": "ocean",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "ocean"
+   },
+   {
+    "facet": "world",
+    "value": "animaux"
+   },
+   {
+    "facet": "topic",
+    "value": "animals"
+   },
+   {
+    "facet": "object",
+    "value": "turtle"
+   }
+  ]
+ },
+ {
+  "id": "a_f5c6da4e8e26ffff4430",
+  "world_id": "ocean",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "ocean"
+   },
+   {
+    "facet": "topic",
+    "value": "animals"
+   },
+   {
+    "facet": "object",
+    "value": "whale"
+   }
+  ]
+ },
+ {
+  "id": "a_03ba3937393cf760b90a",
+  "world_id": "ocean",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "ocean"
+   },
+   {
+    "facet": "topic",
+    "value": "animals"
+   },
+   {
+    "facet": "object",
+    "value": "dolphin"
+   }
+  ]
+ },
+ {
+  "id": "a_4dfd49959bc303d641dc",
+  "world_id": "ocean",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "ocean"
+   },
+   {
+    "facet": "topic",
+    "value": "animals"
+   },
+   {
+    "facet": "object",
+    "value": "octopus"
+   }
+  ]
+ },
+ {
+  "id": "a_5dab35d6ebc98078d272",
+  "world_id": "ocean",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "ocean"
+   },
+   {
+    "facet": "topic",
+    "value": "animals"
+   },
+   {
+    "facet": "object",
+    "value": "crab"
+   }
+  ]
+ },
+ {
+  "id": "a_6179b36bbd40d25863d2",
+  "world_id": "ocean",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "ocean"
+   },
+   {
+    "facet": "topic",
+    "value": "animals"
+   },
+   {
+    "facet": "object",
+    "value": "tropical-fish"
+   }
+  ]
+ },
+ {
+  "id": "a_2ee52f94c6383dafdd29",
+  "world_id": "nature",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "nature"
+   },
+   {
+    "facet": "world",
+    "value": "arts"
+   },
+   {
+    "facet": "topic",
+    "value": "animals"
+   },
+   {
+    "facet": "object",
+    "value": "butterfly"
+   }
+  ]
+ },
+ {
+  "id": "a_7769854974b0fe9d75cc",
+  "world_id": "nature",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "nature"
+   },
+   {
+    "facet": "world",
+    "value": "animaux"
+   },
+   {
+    "facet": "topic",
+    "value": "animals"
+   },
+   {
+    "facet": "object",
+    "value": "honeybee"
+   }
+  ]
+ },
+ {
+  "id": "a_4520e1a8ab0d83d7a42d",
+  "world_id": "nature",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "nature"
+   },
+   {
+    "facet": "world",
+    "value": "animaux"
+   },
+   {
+    "facet": "topic",
+    "value": "animals"
+   },
+   {
+    "facet": "object",
+    "value": "snail"
+   }
+  ]
+ },
+ {
+  "id": "a_ff0729b37bc624b02e11",
+  "world_id": "animaux",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "animaux"
+   },
+   {
+    "facet": "topic",
+    "value": "animals"
+   },
+   {
+    "facet": "object",
+    "value": "horse"
+   }
+  ]
+ },
+ {
+  "id": "a_8446bb06dc2c1049b28e",
+  "world_id": "animaux",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "animaux"
+   },
+   {
+    "facet": "topic",
+    "value": "animals"
+   },
+   {
+    "facet": "object",
+    "value": "pig"
+   }
+  ]
+ },
+ {
+  "id": "a_1de0ccae0a8079e61ed3",
+  "world_id": "dinosaures",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "dinosaures"
+   },
+   {
+    "facet": "topic",
+    "value": "dinosaurs"
+   },
+   {
+    "facet": "object",
+    "value": "t-rex"
+   }
+  ]
+ },
+ {
+  "id": "a_6f5008e7922aee11a305",
+  "world_id": "dinosaures",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "dinosaures"
+   },
+   {
+    "facet": "topic",
+    "value": "dinosaurs"
+   },
+   {
+    "facet": "object",
+    "value": "sauropod"
+   }
+  ]
+ },
+ {
+  "id": "a_17e2a0c226342fe2cdd2",
+  "world_id": "marche",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "marche"
+   },
+   {
+    "facet": "world",
+    "value": "pirates"
+   },
+   {
+    "facet": "topic",
+    "value": "money"
+   },
+   {
+    "facet": "object",
+    "value": "coin"
+   }
+  ]
+ },
+ {
+  "id": "a_cec19b9cf0beac5bbd27",
+  "world_id": "marche",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "marche"
+   },
+   {
+    "facet": "world",
+    "value": "pirates"
+   },
+   {
+    "facet": "topic",
+    "value": "money"
+   },
+   {
+    "facet": "object",
+    "value": "money-bag"
+   }
+  ]
+ },
+ {
+  "id": "a_972991729e1ac8acc79b",
+  "world_id": "marche",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "marche"
+   },
+   {
+    "facet": "topic",
+    "value": "money"
+   },
+   {
+    "facet": "object",
+    "value": "dollar-banknote"
+   }
+  ]
+ },
+ {
+  "id": "a_a021c0ea3c9525e9acbf",
+  "world_id": "construction",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "construction"
+   },
+   {
+    "facet": "topic",
+    "value": "tools"
+   },
+   {
+    "facet": "object",
+    "value": "hammer"
+   }
+  ]
+ },
+ {
+  "id": "a_0a87edecc4a5f6c4e7dc",
+  "world_id": "construction",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "construction"
+   },
+   {
+    "facet": "world",
+    "value": "robots"
+   },
+   {
+    "facet": "topic",
+    "value": "tools"
+   },
+   {
+    "facet": "object",
+    "value": "wrench"
+   }
+  ]
+ },
+ {
+  "id": "a_874ba44c52745cef96ce",
+  "world_id": "construction",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "construction"
+   },
+   {
+    "facet": "world",
+    "value": "science"
+   },
+   {
+    "facet": "topic",
+    "value": "measuring"
+   },
+   {
+    "facet": "object",
+    "value": "straight-ruler"
+   }
+  ]
+ },
+ {
+  "id": "a_bc8b0d817f35fc9319cf",
+  "world_id": "construction",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "construction"
+   },
+   {
+    "facet": "world",
+    "value": "arts"
+   },
+   {
+    "facet": "topic",
+    "value": "measuring"
+   },
+   {
+    "facet": "object",
+    "value": "triangular-ruler"
+   }
+  ]
+ },
+ {
+  "id": "a_0e256f6c048e438cefd0",
+  "world_id": "arts",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "arts"
+   },
+   {
+    "facet": "topic",
+    "value": "tools"
+   },
+   {
+    "facet": "object",
+    "value": "scissors"
+   }
+  ]
+ },
+ {
+  "id": "a_c33b52acc157fe010851",
+  "world_id": "arts",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "arts"
+   },
+   {
+    "facet": "topic",
+    "value": "tools"
+   },
+   {
+    "facet": "object",
+    "value": "pencil"
+   }
+  ]
+ },
+ {
+  "id": "a_b935cdf502b69054bc2b",
+  "world_id": "espace",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "espace"
+   },
+   {
+    "facet": "topic",
+    "value": "shapes"
+   },
+   {
+    "facet": "object",
+    "value": "star"
+   }
+  ]
+ },
+ {
+  "id": "a_bf8597110e987c13b8a3",
+  "world_id": "sport",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "sport"
+   },
+   {
+    "facet": "topic",
+    "value": "sport"
+   },
+   {
+    "facet": "object",
+    "value": "soccer-ball"
+   }
+  ]
+ },
+ {
+  "id": "a_cdca1c9b81130ab7b1f8",
+  "world_id": "sport",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "sport"
+   },
+   {
+    "facet": "topic",
+    "value": "sport"
+   },
+   {
+    "facet": "object",
+    "value": "basketball"
+   }
+  ]
+ },
+ {
+  "id": "a_48991f754eda621e8f84",
+  "world_id": "sport",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "sport"
+   },
+   {
+    "facet": "topic",
+    "value": "sport"
+   },
+   {
+    "facet": "object",
+    "value": "tennis"
+   }
+  ]
+ },
+ {
+  "id": "a_684b85d6e0db2180ea0f",
+  "world_id": "sport",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "sport"
+   },
+   {
+    "facet": "topic",
+    "value": "sport"
+   },
+   {
+    "facet": "object",
+    "value": "volleyball"
+   }
+  ]
+ },
+ {
+  "id": "a_83a21f6f53b4e428d679",
+  "world_id": "sport",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "sport"
+   },
+   {
+    "facet": "world",
+    "value": "hiver"
+   },
+   {
+    "facet": "topic",
+    "value": "sport"
+   },
+   {
+    "facet": "object",
+    "value": "ice-hockey"
+   }
+  ]
+ },
+ {
+  "id": "a_490d2d2c795508b7059a",
+  "world_id": "musique",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "musique"
+   },
+   {
+    "facet": "topic",
+    "value": "music"
+   },
+   {
+    "facet": "object",
+    "value": "drum"
+   }
+  ]
+ },
+ {
+  "id": "a_a993e9066855f890c1c8",
+  "world_id": "musique",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "musique"
+   },
+   {
+    "facet": "topic",
+    "value": "music"
+   },
+   {
+    "facet": "object",
+    "value": "guitar"
+   }
+  ]
+ },
+ {
+  "id": "a_8539f986974efb1e9fa7",
+  "world_id": "musique",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "musique"
+   },
+   {
+    "facet": "topic",
+    "value": "music"
+   },
+   {
+    "facet": "object",
+    "value": "violin"
+   }
+  ]
+ },
+ {
+  "id": "a_78496ef4bc77bb188f7f",
+  "world_id": "musique",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "musique"
+   },
+   {
+    "facet": "topic",
+    "value": "music"
+   },
+   {
+    "facet": "object",
+    "value": "trumpet"
+   }
+  ]
+ },
+ {
+  "id": "a_dbaa3e3571d5baf68ca7",
+  "world_id": "musique",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "musique"
+   },
+   {
+    "facet": "topic",
+    "value": "music"
+   },
+   {
+    "facet": "object",
+    "value": "musical-keyboard"
+   }
+  ]
+ },
+ {
+  "id": "a_c9bb15d03d4b1e6151d9",
+  "world_id": "meteo",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "meteo"
+   },
+   {
+    "facet": "topic",
+    "value": "weather"
+   },
+   {
+    "facet": "object",
+    "value": "sun"
+   }
+  ]
+ },
+ {
+  "id": "a_75dd1e6fc5f6b92cbc22",
+  "world_id": "meteo",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "meteo"
+   },
+   {
+    "facet": "topic",
+    "value": "weather"
+   },
+   {
+    "facet": "object",
+    "value": "cloud-with-rain"
+   }
+  ]
+ },
+ {
+  "id": "a_82f12779eb8658ebd4ba",
+  "world_id": "meteo",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "meteo"
+   },
+   {
+    "facet": "world",
+    "value": "hiver"
+   },
+   {
+    "facet": "topic",
+    "value": "weather"
+   },
+   {
+    "facet": "object",
+    "value": "snowflake"
+   }
+  ]
+ },
+ {
+  "id": "a_2c5f9e611931a759211f",
+  "world_id": "meteo",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "meteo"
+   },
+   {
+    "facet": "topic",
+    "value": "weather"
+   },
+   {
+    "facet": "object",
+    "value": "umbrella"
+   }
+  ]
+ },
+ {
+  "id": "a_5bde254ad0f29e3b3280",
+  "world_id": "meteo",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "meteo"
+   },
+   {
+    "facet": "world",
+    "value": "medecine"
+   },
+   {
+    "facet": "topic",
+    "value": "weather"
+   },
+   {
+    "facet": "object",
+    "value": "thermometer"
+   }
+  ]
+ },
+ {
+  "id": "a_81c60a96369047dd287b",
+  "world_id": "meteo",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "meteo"
+   },
+   {
+    "facet": "topic",
+    "value": "weather"
+   },
+   {
+    "facet": "object",
+    "value": "rainbow"
+   }
+  ]
+ },
+ {
+  "id": "a_1aa6929e1baa440db535",
+  "world_id": "transport",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "transport"
+   },
+   {
+    "facet": "world",
+    "value": "espace"
+   },
+   {
+    "facet": "topic",
+    "value": "time"
+   },
+   {
+    "facet": "object",
+    "value": "alarm-clock"
+   }
+  ]
+ },
+ {
+  "id": "a_454d51562973cf3af447",
+  "world_id": "jeux",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "jeux"
+   },
+   {
+    "facet": "topic",
+    "value": "games"
+   },
+   {
+    "facet": "object",
+    "value": "game-die"
+   }
+  ]
+ },
+ {
+  "id": "a_c0f47e02e87bd6111898",
+  "world_id": "jeux",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "jeux"
+   },
+   {
+    "facet": "topic",
+    "value": "games"
+   },
+   {
+    "facet": "object",
+    "value": "puzzle-piece"
+   }
+  ]
+ },
+ {
+  "id": "a_d8790d1ca7b8766c739f",
+  "world_id": "echecs",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "echecs"
+   },
+   {
+    "facet": "world",
+    "value": "jeux"
+   },
+   {
+    "facet": "topic",
+    "value": "games"
+   },
+   {
+    "facet": "object",
+    "value": "chess-pawn"
+   }
+  ]
+ },
+ {
+  "id": "a_3f9b5a00b53c8bddda36",
+  "world_id": "robots",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "robots"
+   },
+   {
+    "facet": "topic",
+    "value": "robots"
+   },
+   {
+    "facet": "object",
+    "value": "robot"
+   }
+  ]
+ },
+ {
+  "id": "a_147e62f6523e7e923add",
+  "world_id": "arts",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "arts"
+   },
+   {
+    "facet": "topic",
+    "value": "art"
+   },
+   {
+    "facet": "object",
+    "value": "artist-palette"
+   }
+  ]
+ },
+ {
+  "id": "a_146e39368bbeb95049ca",
+  "world_id": "pirates",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "pirates"
+   },
+   {
+    "facet": "topic",
+    "value": "maps"
+   },
+   {
+    "facet": "object",
+    "value": "compass"
+   }
+  ]
+ },
+ {
+  "id": "a_458f758fd9ac7578259f",
+  "world_id": "pirates",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "pirates"
+   },
+   {
+    "facet": "world",
+    "value": "animaux"
+   },
+   {
+    "facet": "topic",
+    "value": "animals"
+   },
+   {
+    "facet": "object",
+    "value": "parrot"
+   }
+  ]
+ },
+ {
+  "id": "a_4636925a1dfc76a45dc8",
+  "world_id": "espace",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "espace"
+   },
+   {
+    "facet": "topic",
+    "value": "space"
+   },
+   {
+    "facet": "object",
+    "value": "rocket"
+   }
+  ]
+ },
+ {
+  "id": "a_e810d03a3d347da5d0cf",
+  "world_id": "espace",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "espace"
+   },
+   {
+    "facet": "topic",
+    "value": "space"
+   },
+   {
+    "facet": "object",
+    "value": "ringed-planet"
+   }
+  ]
+ },
+ {
+  "id": "a_dda8d8e9ccaca71973f4",
+  "world_id": "transport",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "transport"
+   },
+   {
+    "facet": "topic",
+    "value": "vehicles"
+   },
+   {
+    "facet": "object",
+    "value": "airplane"
+   }
+  ]
+ },
+ {
+  "id": "a_d34d9d19e0d9f2751f46",
+  "world_id": "transport",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "transport"
+   },
+   {
+    "facet": "topic",
+    "value": "vehicles"
+   },
+   {
+    "facet": "object",
+    "value": "bus"
+   }
+  ]
+ },
+ {
+  "id": "a_69f1b75015c8cbdff5fe",
+  "world_id": "transport",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "transport"
+   },
+   {
+    "facet": "topic",
+    "value": "vehicles"
+   },
+   {
+    "facet": "object",
+    "value": "bicycle"
+   }
+  ]
+ },
+ {
+  "id": "a_afac9f137599084a542b",
+  "world_id": "transport",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "transport"
+   },
+   {
+    "facet": "world",
+    "value": "pirates"
+   },
+   {
+    "facet": "topic",
+    "value": "vehicles"
+   },
+   {
+    "facet": "object",
+    "value": "sailboat"
+   }
+  ]
+ },
+ {
+  "id": "a_4ee5fd92113fec82f486",
+  "world_id": "transport",
+  "tags": [
+   {
+    "facet": "world",
+    "value": "transport"
+   },
+   {
+    "facet": "topic",
+    "value": "vehicles"
+   },
+   {
+    "facet": "object",
+    "value": "locomotive"
+   }
+  ]
+ }
+]

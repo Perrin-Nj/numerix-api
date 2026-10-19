@@ -61,7 +61,7 @@
     },
     {
      "role": "object",
-     "asset": "a_6179b36bbd40d25863d2"
+     "asset": "a_5a614ee88bf8eb16f55e"
     }
    ],
    "status": "published",
@@ -182,7 +182,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_32be86e37f2fd0cade35"
+    }
+   ]
   },
   {
    "id": "ocean.recif.004",
@@ -236,7 +242,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_32be86e37f2fd0cade35"
+    }
+   ]
   },
   {
    "id": "ocean.recif.005",
@@ -307,7 +319,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_32be86e37f2fd0cade35"
+    }
+   ]
   },
   {
    "id": "ocean.recif.006",
@@ -379,7 +397,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_32be86e37f2fd0cade35"
+    }
+   ]
   },
   {
    "id": "ocean.recif.007",
@@ -551,7 +575,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_32be86e37f2fd0cade35"
+    }
+   ]
   },
   {
    "id": "ocean.recif.009",
@@ -606,7 +636,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_32be86e37f2fd0cade35"
+    }
+   ]
   },
   {
    "id": "ocean.recif.010",
@@ -659,15 +695,15 @@
     "doubles",
     "word-problem"
    ],
-   "media": [
-    {
-     "role": "object",
-     "asset": "a_4dfd49959bc303d641dc"
-    }
-   ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_32be86e37f2fd0cade35"
+    }
+   ]
   },
   {
    "id": "ocean.recif.011",
@@ -703,8 +739,12 @@
    ],
    "media": [
     {
+     "role": "scene",
+     "asset": "a_32be86e37f2fd0cade35"
+    },
+    {
      "role": "object",
-     "asset": "a_5dab35d6ebc98078d272"
+     "asset": "a_e90b5cb9453ce74961ba"
     }
    ],
    "status": "published",
@@ -785,7 +825,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_32be86e37f2fd0cade35"
+    }
+   ]
   },
   {
    "id": "ocean.recif.013",
@@ -883,7 +929,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_32be86e37f2fd0cade35"
+    }
+   ]
   },
   {
    "id": "ocean.recif.014",
@@ -932,7 +984,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_32be86e37f2fd0cade35"
+    }
+   ]
   },
   {
    "id": "ocean.profondeur.001",
@@ -1173,7 +1231,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_adf463cfa434ad389b07"
+    }
+   ]
   },
   {
    "id": "ocean.profondeur.004",
@@ -1228,7 +1292,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_adf463cfa434ad389b07"
+    }
+   ]
   },
   {
    "id": "ocean.profondeur.005",
@@ -1283,7 +1353,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_adf463cfa434ad389b07"
+    }
+   ]
   },
   {
    "id": "ocean.profondeur.006",
@@ -1355,7 +1431,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_adf463cfa434ad389b07"
+    }
+   ]
   },
   {
    "id": "ocean.profondeur.007",
@@ -1423,7 +1505,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_adf463cfa434ad389b07"
+    }
+   ]
   },
   {
    "id": "ocean.profondeur.008",
@@ -1495,7 +1583,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_adf463cfa434ad389b07"
+    }
+   ]
   },
   {
    "id": "ocean.profondeur.009",
@@ -1550,7 +1644,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_adf463cfa434ad389b07"
+    }
+   ]
   },
   {
    "id": "ocean.profondeur.010",
@@ -1605,7 +1705,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_adf463cfa434ad389b07"
+    }
+   ]
   },
   {
    "id": "ocean.profondeur.011",
@@ -1640,7 +1746,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_adf463cfa434ad389b07"
+    }
+   ]
   },
   {
    "id": "ocean.profondeur.012",
@@ -1716,7 +1828,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_adf463cfa434ad389b07"
+    }
+   ]
   },
   {
    "id": "ocean.profondeur.013",
@@ -1814,7 +1932,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_adf463cfa434ad389b07"
+    }
+   ]
   },
   {
    "id": "ocean.profondeur.014",
@@ -1863,7 +1987,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_adf463cfa434ad389b07"
+    }
+   ]
   },
   {
    "id": "ocean.baleines.001",
@@ -1922,7 +2052,7 @@
     },
     {
      "role": "object",
-     "asset": "a_f5c6da4e8e26ffff4430"
+     "asset": "a_6fa85f46dbb874ee9ac9"
     }
    ],
    "status": "published",
@@ -2043,7 +2173,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_adf463cfa434ad389b07"
+    }
+   ]
   },
   {
    "id": "ocean.baleines.004",
@@ -2115,7 +2251,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_adf463cfa434ad389b07"
+    }
+   ]
   },
   {
    "id": "ocean.baleines.005",
@@ -2186,7 +2328,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_adf463cfa434ad389b07"
+    }
+   ]
   },
   {
    "id": "ocean.baleines.006",
@@ -2258,7 +2406,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_adf463cfa434ad389b07"
+    }
+   ]
   },
   {
    "id": "ocean.baleines.007",
@@ -2313,7 +2467,17 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_adf463cfa434ad389b07"
+    },
+    {
+     "role": "object",
+     "asset": "a_669ed92715d89a18b82b"
+    }
+   ]
   },
   {
    "id": "ocean.baleines.008",
@@ -2368,7 +2532,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_adf463cfa434ad389b07"
+    }
+   ]
   },
   {
    "id": "ocean.baleines.009",
@@ -2405,7 +2575,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_adf463cfa434ad389b07"
+    }
+   ]
   },
   {
    "id": "ocean.baleines.010",
@@ -2443,7 +2619,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_adf463cfa434ad389b07"
+    }
+   ]
   },
   {
    "id": "ocean.baleines.011",
@@ -2520,7 +2702,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_adf463cfa434ad389b07"
+    }
+   ]
   },
   {
    "id": "ocean.baleines.012",
@@ -2597,7 +2785,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_adf463cfa434ad389b07"
+    }
+   ]
   },
   {
    "id": "ocean.baleines.013",
@@ -2695,7 +2889,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_adf463cfa434ad389b07"
+    }
+   ]
   },
   {
    "id": "ocean.baleines.014",
@@ -2793,7 +2993,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_adf463cfa434ad389b07"
+    }
+   ]
   },
   {
    "id": "ocean.baleines.015",
@@ -2881,7 +3087,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_adf463cfa434ad389b07"
+    }
+   ]
   },
   {
    "id": "ocean.sous-marin.001",
@@ -2997,7 +3209,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_32be86e37f2fd0cade35"
+    }
+   ]
   },
   {
    "id": "ocean.sous-marin.003",
@@ -3052,7 +3270,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_32be86e37f2fd0cade35"
+    }
+   ]
   },
   {
    "id": "ocean.sous-marin.004",
@@ -3196,7 +3420,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_32be86e37f2fd0cade35"
+    }
+   ]
   },
   {
    "id": "ocean.sous-marin.006",
@@ -3265,7 +3495,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_32be86e37f2fd0cade35"
+    }
+   ]
   },
   {
    "id": "ocean.sous-marin.007",
@@ -3337,7 +3573,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_32be86e37f2fd0cade35"
+    }
+   ]
   },
   {
    "id": "ocean.sous-marin.008",
@@ -3392,7 +3634,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_32be86e37f2fd0cade35"
+    }
+   ]
   },
   {
    "id": "ocean.sous-marin.009",
@@ -3447,7 +3695,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_32be86e37f2fd0cade35"
+    }
+   ]
   },
   {
    "id": "ocean.sous-marin.010",
@@ -3484,7 +3738,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_32be86e37f2fd0cade35"
+    }
+   ]
   },
   {
    "id": "ocean.sous-marin.011",
@@ -3561,7 +3821,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_32be86e37f2fd0cade35"
+    }
+   ]
   },
   {
    "id": "ocean.sous-marin.012",
@@ -3659,7 +3925,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_32be86e37f2fd0cade35"
+    }
+   ]
   },
   {
    "id": "ocean.sous-marin.013",
@@ -3747,7 +4019,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_32be86e37f2fd0cade35"
+    }
+   ]
   },
   {
    "id": "ocean.sous-marin.014",
@@ -3796,7 +4074,13 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_32be86e37f2fd0cade35"
+    }
+   ]
   }
  ]
 }
