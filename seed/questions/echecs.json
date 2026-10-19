@@ -1,0 +1,4886 @@
+{
+ "world": "echecs",
+ "schema": 1,
+ "questions": [
+  {
+   "id": "echecs.cases.001",
+   "quest": "echecs.cases",
+   "skill": "GEO-A01",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa joue sur un petit échiquier de 4 colonnes.",
+    "en": "Lea plays on a small board with 4 columns."
+   },
+   "prompt": {
+    "fr": "Dans quelle colonne est le pion ? Compte depuis la gauche.",
+    "en": "Which column is the pawn in? Count from the left."
+   },
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 4,
+     "cells": [
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3,
+    "calc": "3"
+   },
+   "common_errors": [
+    {
+     "value": 2,
+     "misconception": "mis_grid_axes",
+     "feedback": {
+      "fr": "2 est sa rangée. Cherche sa colonne.",
+      "en": "2 is its row. Look for its column."
+     }
+    },
+    {
+     "value": 4,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les colonnes depuis la gauche.",
+      "en": "Close! Count the columns from the left again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Une colonne va de haut en bas.",
+    "en": "A column goes from top to bottom."
+   },
+   "explain": {
+    "fr": "Le pion est dans la 3e colonne en partant de la gauche.",
+    "en": "The pawn is in the 3rd column from the left."
+   },
+   "tags": [
+    "board",
+    "column",
+    "grid"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9a644174f475121aacf0"
+    },
+    {
+     "role": "object",
+     "asset": "a_d8790d1ca7b8766c739f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.cases.002",
+   "quest": "echecs.cases",
+   "skill": "GEO-A01",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah regarde la tour sur la grille.",
+    "en": "Noah looks at the rook on the grid."
+   },
+   "prompt": {
+    "fr": "Dans quelle rangée est la tour ? Compte depuis le bas.",
+    "en": "Which row is the rook in? Count from the bottom."
+   },
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 4,
+     "cells": [
+      {
+       "x": 2,
+       "y": 4,
+       "label": {
+        "fr": "tour",
+        "en": "rook"
+       }
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 4,
+    "calc": "4"
+   },
+   "common_errors": [
+    {
+     "value": 2,
+     "misconception": "mis_grid_axes",
+     "feedback": {
+      "fr": "2 est sa colonne. Cherche sa rangée.",
+      "en": "2 is its column. Look for its row."
+     }
+    },
+    {
+     "value": 3,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les rangées depuis le bas.",
+      "en": "Close! Count the rows from the bottom again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Une rangée va de gauche à droite.",
+    "en": "A row goes from left to right."
+   },
+   "explain": {
+    "fr": "La tour est dans la 4e rangée en partant du bas.",
+    "en": "The rook is in the 4th row from the bottom."
+   },
+   "tags": [
+    "board",
+    "row",
+    "grid"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9a644174f475121aacf0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.cases.003",
+   "quest": "echecs.cases",
+   "skill": "GEO-A01",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa cherche le cavalier sur la grille.",
+    "en": "Lea looks for the knight on the grid."
+   },
+   "prompt": {
+    "fr": "Où est le cavalier ?",
+    "en": "Where is the knight?"
+   },
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 4,
+     "cells": [
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "cavalier",
+        "en": "knight"
+       }
+      }
+     ]
+    }
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Colonne 4, rangée 1",
+      "en": "Column 4, row 1"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Colonne 1, rangée 4",
+      "en": "Column 1, row 4"
+     },
+     "misconception": "mis_grid_axes"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Colonne 4, rangée 3",
+      "en": "Column 4, row 3"
+     },
+     "misconception": "mis_read_wrong_bar"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "Colonne 1, rangée 3",
+      "en": "Column 1, row 3"
+     },
+     "misconception": "mis_read_wrong_bar"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Lis la colonne d’abord, puis la rangée.",
+    "en": "Read the column first, then the row."
+   },
+   "explain": {
+    "fr": "Le cavalier est tout à droite (colonne 4) et tout en bas (rangée 1).",
+    "en": "The knight is far right (column 4) and at the bottom (row 1)."
+   },
+   "tags": [
+    "board",
+    "coordinates",
+    "grid"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_8bf5129e219638daa34a"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.cases.004",
+   "quest": "echecs.cases",
+   "skill": "GEO-A01",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Une rangée de l’échiquier a 8 cases.",
+    "en": "A row of the board has 8 squares."
+   },
+   "prompt": {
+    "fr": "Des pions couvrent 6 cases. Combien de cases sont libres ?",
+    "en": "Pawns cover 6 squares. How many squares are free?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 2,
+    "calc": "8-6"
+   },
+   "common_errors": [
+    {
+     "value": 14,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche les cases libres : on enlève.",
+      "en": "We look for the free squares, so we take away."
+     }
+    },
+    {
+     "value": 3,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les cases libres.",
+      "en": "Close! Count the free squares again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 6 jusqu’à 8.",
+    "en": "Count from 6 up to 8."
+   },
+   "explain": {
+    "fr": "De 6 à 8, il y a 2 cases. 8 - 6 = 2.",
+    "en": "From 6 to 8 is 2 squares. 8 - 6 = 2."
+   },
+   "tags": [
+    "board",
+    "row",
+    "subtract"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.cases.005",
+   "quest": "echecs.cases",
+   "skill": "GEO-A01",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah construit un petit échiquier pour s’entraîner.",
+    "en": "Noah builds a small board to practise."
+   },
+   "prompt": {
+    "fr": "Il a 4 colonnes et 3 rangées de cases. Combien de cases en tout ?",
+    "en": "It has 4 columns and 3 rows of squares. How many squares in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 12,
+    "calc": "4*3"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Trois rangées égales de 4 : on répète l’addition.",
+      "en": "Three equal rows of 4: we repeat the addition."
+     }
+    },
+    {
+     "value": 16,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "Tu as compté une rangée de trop.",
+      "en": "You counted one row too many."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne 4 trois fois.",
+    "en": "Add 4 three times."
+   },
+   "explain": {
+    "fr": "4 + 4 + 4 = 12 cases.",
+    "en": "4 + 4 + 4 = 12 squares."
+   },
+   "tags": [
+    "board",
+    "grid",
+    "count"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.cases.006",
+   "quest": "echecs.cases",
+   "skill": "GEO-A01",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa lit le nom d’une case.",
+    "en": "Lea reads the name of a square."
+   },
+   "prompt": {
+    "fr": "Quelle case est dans la colonne b et la rangée 3 ?",
+    "en": "Which square is in column b and row 3?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "b3",
+      "en": "b3"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "3b",
+      "en": "3b"
+     },
+     "misconception": "mis_grid_axes"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "a3",
+      "en": "a3"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "b2",
+      "en": "b2"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "La lettre donne la colonne.",
+    "en": "The letter gives the column."
+   },
+   "explain": {
+    "fr": "La lettre b est la colonne et 3 est la rangée : b3.",
+    "en": "The letter b is the column and 3 is the row: b3."
+   },
+   "tags": [
+    "board",
+    "notation",
+    "coordinates"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9a644174f475121aacf0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.cases.007",
+   "quest": "echecs.cases",
+   "skill": "GEO-A01",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah déplace une pièce vers le côté.",
+    "en": "Noah moves a piece sideways."
+   },
+   "prompt": {
+    "fr": "Quelle case est juste à droite de c4 ?",
+    "en": "Which square is just to the right of c4?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "b4",
+      "en": "b4"
+     },
+     "misconception": "mis_direction"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "d4",
+      "en": "d4"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "c5",
+      "en": "c5"
+     },
+     "misconception": "mis_direction"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "c3",
+      "en": "c3"
+     },
+     "misconception": "mis_direction"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Les lettres avancent vers la droite : a, b, c, ...",
+    "en": "Letters move to the right: a, b, c, ..."
+   },
+   "explain": {
+    "fr": "Après c vient d. La case à droite est d4.",
+    "en": "After c comes d. The square on the right is d4."
+   },
+   "tags": [
+    "board",
+    "direction",
+    "coordinates"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.cases.008",
+   "quest": "echecs.cases",
+   "skill": "GEO-A01",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa prépare ses pions sur l’échiquier.",
+    "en": "Lea sets her pawns on the board."
+   },
+   "prompt": {
+    "fr": "Elle met 3 pions en rangée 2 et 4 pions en rangée 3. Combien de pions en tout ?",
+    "en": "She puts 3 pawns on row 2 and 4 pawns on row 3. How many pawns in all?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "1",
+      "en": "1"
+     },
+     "misconception": "mis_subtract_instead_of_add"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "7",
+      "en": "7"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "12",
+      "en": "12"
+     },
+     "misconception": "mis_multiply_instead_of_add"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "6",
+      "en": "6"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b",
+    "calc_choice": {
+     "b": "3+4"
+    }
+   },
+   "hint": {
+    "fr": "Réunis les pions des deux rangées.",
+    "en": "Put the pawns of both rows together."
+   },
+   "explain": {
+    "fr": "3 + 4 = 7 pions.",
+    "en": "3 + 4 = 7 pawns."
+   },
+   "tags": [
+    "board",
+    "word-problem",
+    "add"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.cases.009",
+   "quest": "echecs.cases",
+   "skill": "GEO-A01",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "L’échiquier a 8 rangées.",
+    "en": "The board has 8 rows."
+   },
+   "prompt": {
+    "fr": "Noah a rempli 5 rangées avec des pions. Combien de rangées restent vides ?",
+    "en": "Noah filled 5 rows with pawns. How many rows are still empty?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3,
+    "calc": "8-5"
+   },
+   "common_errors": [
+    {
+     "value": 13,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche les rangées vides : on enlève.",
+      "en": "We look for the empty rows, so we take away."
+     }
+    },
+    {
+     "value": 2,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les rangées vides.",
+      "en": "Close! Count the empty rows again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 5 jusqu’à 8.",
+    "en": "Count from 5 up to 8."
+   },
+   "explain": {
+    "fr": "8 - 5 = 3 rangées vides.",
+    "en": "8 - 5 = 3 empty rows."
+   },
+   "tags": [
+    "board",
+    "word-problem",
+    "subtract"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.cases.010",
+   "quest": "echecs.cases",
+   "skill": "GEO-A01",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa lit la case « colonne 3, rangée 1 » sur la grille.",
+    "en": "Lea reads the square “column 3, row 1” on the grid."
+   },
+   "prompt": {
+    "fr": "Noah dit que c’est la case « colonne 1, rangée 3 ». A-t-il raison ?",
+    "en": "Noah says it is the square “column 1, row 3”. Is he right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_grid_axes"
+   },
+   "hint": {
+    "fr": "La colonne et la rangée ne se lisent pas pareil.",
+    "en": "The column and the row are not read the same way."
+   },
+   "explain": {
+    "fr": "Ce sont deux cases différentes : l’ordre colonne puis rangée compte.",
+    "en": "They are two different squares: the order column then row matters."
+   },
+   "tags": [
+    "board",
+    "true-false",
+    "coordinates"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.cases.011",
+   "quest": "echecs.cases",
+   "skill": "GEO-A01",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Quatre pièces sont alignées sur la rangée 4.",
+    "en": "Four pieces stand in a line on row 4."
+   },
+   "prompt": {
+    "fr": "Range les cases de la plus à gauche à la plus à droite.",
+    "en": "Put the squares in order, from the far left to the far right."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "c4",
+      "en": "c4"
+     },
+     "key": "3"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "f4",
+      "en": "f4"
+     },
+     "key": "6"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "a4",
+      "en": "a4"
+     },
+     "key": "1"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "d4",
+      "en": "d4"
+     },
+     "key": "4"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "c",
+     "a",
+     "d",
+     "b"
+    ],
+    "by": "asc",
+    "misconception": "mis_direction"
+   },
+   "hint": {
+    "fr": "a est tout à gauche de l’échiquier.",
+    "en": "a is at the far left of the board."
+   },
+   "explain": {
+    "fr": "Dans l’ordre : a4, c4, d4 puis f4.",
+    "en": "In order: a4, c4, d4 then f4."
+   },
+   "tags": [
+    "board",
+    "ordering",
+    "columns"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.cases.012",
+   "quest": "echecs.cases",
+   "skill": "GEO-A01",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Les coins de l’échiquier ont des noms de cases.",
+    "en": "The corners of the board have square names."
+   },
+   "prompt": {
+    "fr": "Relie chaque case à sa place sur l’échiquier.",
+    "en": "Match each square to its place on the board."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "a1",
+       "en": "a1"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "h1",
+       "en": "h1"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "a8",
+       "en": "a8"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "coin en haut à gauche",
+       "en": "top left corner"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "coin en bas à gauche",
+       "en": "bottom left corner"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "coin en bas à droite",
+       "en": "bottom right corner"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r2"
+     ],
+     [
+      "l2",
+      "r3"
+     ],
+     [
+      "l3",
+      "r1"
+     ]
+    ],
+    "misconception": "mis_grid_axes"
+   },
+   "hint": {
+    "fr": "La rangée 1 est en bas. La colonne a est à gauche.",
+    "en": "Row 1 is at the bottom. Column a is on the left."
+   },
+   "explain": {
+    "fr": "a1 est en bas à gauche. h1 est en bas à droite. a8 est en haut à gauche.",
+    "en": "a1 is bottom left. h1 is bottom right. a8 is top left."
+   },
+   "tags": [
+    "board",
+    "matching",
+    "corners"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9a644174f475121aacf0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.cases.013",
+   "quest": "echecs.cases",
+   "skill": "GEO-A01",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa regarde le grand échiquier du club.",
+    "en": "Lea looks at the club’s big board."
+   },
+   "prompt": {
+    "fr": "Il a 8 rangées de 8 cases. Environ combien de cases en tout ?",
+    "en": "It has 8 rows of 8 squares. About how many squares in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 58,
+    "max": 70,
+    "exact_for_check": 64,
+    "calc": "8*8"
+   },
+   "common_errors": [
+    {
+     "value": 16,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Huit rangées égales : on multiplie.",
+      "en": "Eight equal rows: we multiply."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "8 × 8 est un peu moins que 8 × 10.",
+    "en": "8 × 8 is a bit less than 8 × 10."
+   },
+   "explain": {
+    "fr": "8 × 10 = 80. Chaque rangée a 2 cases de moins : 80 - 16 = 64.",
+    "en": "8 × 10 = 80. Each row has 2 fewer squares: 80 - 16 = 64."
+   },
+   "tags": [
+    "board",
+    "estimation",
+    "multiply"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e498bd56e1046bb2593f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.cases.014",
+   "quest": "echecs.cases",
+   "skill": "GEO-A01",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Les pions de Noah sont placés sur la grille.",
+    "en": "Noah’s pawns are placed on the grid."
+   },
+   "prompt": {
+    "fr": "Combien de pions y a-t-il sur la grille ?",
+    "en": "How many pawns are on the grid?"
+   },
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 5,
+     "rows": 4,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      },
+      {
+       "x": 5,
+       "y": 3,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      },
+      {
+       "x": 1,
+       "y": 4,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      },
+      {
+       "x": 3,
+       "y": 4,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 7,
+    "calc": "7"
+   },
+   "common_errors": [
+    {
+     "value": 6,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte rangée par rangée.",
+      "en": "Close! Count row by row."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Tu as compté un pion deux fois.",
+      "en": "Close! You counted a pawn twice."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte rangée par rangée, en partant du bas.",
+    "en": "Count row by row, starting at the bottom."
+   },
+   "explain": {
+    "fr": "Rangée 1 : 3 pions. Rangée 2 : 1. Rangée 3 : 1. Rangée 4 : 2. En tout 7.",
+    "en": "Row 1: 3 pawns. Row 2: 1. Row 3: 1. Row 4: 2. In all 7."
+   },
+   "tags": [
+    "board",
+    "counting",
+    "grid"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.parcours.001",
+   "quest": "echecs.parcours",
+   "skill": "GEO-A02",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Le cavalier de Léa part de la colonne 1.",
+    "en": "Lea’s knight starts in column 1."
+   },
+   "prompt": {
+    "fr": "Il avance de 2 cases vers la droite. Dans quelle colonne arrive-t-il ?",
+    "en": "It moves 2 squares to the right. Which column does it reach?"
+   },
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 5,
+     "rows": 3,
+     "cells": [
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "cavalier",
+        "en": "knight"
+       }
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3,
+    "calc": "1+2"
+   },
+   "common_errors": [
+    {
+     "value": 2,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Compte les cases après le départ.",
+      "en": "Close! Count the squares after the start."
+     }
+    },
+    {
+     "value": 1,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "1 est la colonne de départ. Avance de 2 cases.",
+      "en": "1 is the starting column. Move 2 squares."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Avance d’une case, puis d’une autre case.",
+    "en": "Move one square, then another square."
+   },
+   "explain": {
+    "fr": "De la colonne 1, on avance de 2 : colonne 2 puis colonne 3.",
+    "en": "From column 1, we move 2: column 2 then column 3."
+   },
+   "tags": [
+    "path",
+    "knight",
+    "columns"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_8bf5129e219638daa34a"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.parcours.002",
+   "quest": "echecs.parcours",
+   "skill": "GEO-A02",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Le pion de Noah avance d’une case à chaque tour.",
+    "en": "Noah’s pawn moves one square each turn."
+   },
+   "prompt": {
+    "fr": "Il part de la rangée 2. Dans quelle rangée est-il après 3 tours ?",
+    "en": "It starts on row 2. Which row is it on after 3 turns?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "2+3"
+   },
+   "common_errors": [
+    {
+     "value": 3,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as fait un seul pas. Il y a 3 tours.",
+      "en": "You made just one step. There are 3 turns."
+     }
+    },
+    {
+     "value": 6,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Ne compte pas la rangée de départ.",
+      "en": "Close! Do not count the starting row."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Avance d’une rangée à chaque tour.",
+    "en": "Move up one row each turn."
+   },
+   "explain": {
+    "fr": "Rangée 3, puis 4, puis 5. Il arrive dans la rangée 5.",
+    "en": "Row 3, then 4, then 5. It reaches row 5."
+   },
+   "tags": [
+    "path",
+    "pawn",
+    "rows"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.parcours.003",
+   "quest": "echecs.parcours",
+   "skill": "GEO-A02",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "La tour de Léa roule sur une rangée.",
+    "en": "Lea’s rook rolls along a row."
+   },
+   "prompt": {
+    "fr": "La tour glisse de 4 cases, puis encore de 3 cases. Quel total de cases ?",
+    "en": "The rook slides 4 squares, then 3 more squares. What is the total number of squares?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 7,
+    "calc": "4+3"
+   },
+   "common_errors": [
+    {
+     "value": 1,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Les deux déplacements s’ajoutent.",
+      "en": "Both moves add up."
+     }
+    },
+    {
+     "value": 6,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les cases.",
+      "en": "Close! Count the squares again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pars de 4 et avance de 3.",
+    "en": "Start at 4 and move on by 3."
+   },
+   "explain": {
+    "fr": "4 + 3 = 7 cases.",
+    "en": "4 + 3 = 7 squares."
+   },
+   "tags": [
+    "path",
+    "rook",
+    "add"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.parcours.004",
+   "quest": "echecs.parcours",
+   "skill": "GEO-A02",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah place sa tour dans la colonne 2.",
+    "en": "Noah puts his rook in column 2."
+   },
+   "prompt": {
+    "fr": "Elle se déplace de 4 cases vers la droite. Quelle colonne atteint-elle ?",
+    "en": "It travels 4 squares to the right. Which column does it reach?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 6,
+    "calc": "2+4"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! La case de départ ne compte pas.",
+      "en": "Close! The starting square does not count."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_multiply_instead_of_add",
+     "feedback": {
+      "fr": "On avance : on additionne.",
+      "en": "We move forward, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte 4 pas à partir de la colonne 2.",
+    "en": "Count 4 steps from column 2."
+   },
+   "explain": {
+    "fr": "2 + 4 = 6. Elle arrive dans la colonne 6.",
+    "en": "2 + 4 = 6. It reaches column 6."
+   },
+   "tags": [
+    "path",
+    "rook",
+    "columns"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.parcours.005",
+   "quest": "echecs.parcours",
+   "skill": "GEO-A02",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le fou de Léa glisse en diagonale.",
+    "en": "Lea’s bishop slides along a diagonal."
+   },
+   "prompt": {
+    "fr": "Il fait 3 pas de 2 cases chacun. Combien de cases en tout ?",
+    "en": "It makes 3 steps of 2 squares each. How many squares in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 6,
+    "calc": "3*2"
+   },
+   "common_errors": [
+    {
+     "value": 5,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Trois pas égaux : on répète l’addition de 2.",
+      "en": "Three equal steps: we repeat the addition of 2."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Compte par bonds de 2.",
+      "en": "Close! Count by jumps of 2."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte par bonds de 2, trois fois.",
+    "en": "Count by jumps of 2, three times."
+   },
+   "explain": {
+    "fr": "2, 4, 6. Le fou parcourt 6 cases.",
+    "en": "2, 4, 6. The bishop covers 6 squares."
+   },
+   "tags": [
+    "path",
+    "bishop",
+    "skip-count"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.parcours.006",
+   "quest": "echecs.parcours",
+   "skill": "GEO-A02",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Noah fait avancer un pion sur l’échiquier.",
+    "en": "Noah moves a pawn on the board."
+   },
+   "prompt": {
+    "fr": "Le pion monte d’une case. Dans quelle direction va-t-il ?",
+    "en": "The pawn goes up one square. Which direction does it go?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Vers le haut",
+      "en": "Upward"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Vers le bas",
+      "en": "Downward"
+     },
+     "misconception": "mis_direction"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Vers la gauche",
+      "en": "To the left"
+     },
+     "misconception": "mis_direction"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "Vers la droite",
+      "en": "To the right"
+     },
+     "misconception": "mis_direction"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Monter, c’est aller vers le ciel.",
+    "en": "Going up means heading toward the sky."
+   },
+   "explain": {
+    "fr": "Monter veut dire aller vers le haut.",
+    "en": "Going up means heading upward."
+   },
+   "tags": [
+    "path",
+    "directions"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.parcours.007",
+   "quest": "echecs.parcours",
+   "skill": "GEO-A02",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le cavalier de Léa part de b1.",
+    "en": "Lea’s knight starts on b1."
+   },
+   "prompt": {
+    "fr": "Il avance de 2 cases vers le haut, puis d’une case vers la droite. Où arrive-t-il ?",
+    "en": "It moves 2 squares up, then one square to the right. Where does it land?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "a3",
+      "en": "a3"
+     },
+     "misconception": "mis_direction"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "c3",
+      "en": "c3"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "c2",
+      "en": "c2"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "c4",
+      "en": "c4"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Monte d’abord, puis va à droite.",
+    "en": "Go up first, then go right."
+   },
+   "explain": {
+    "fr": "b1 devient b3 en montant de 2. Puis c3 en allant à droite.",
+    "en": "b1 becomes b3 going up 2. Then c3 going right."
+   },
+   "tags": [
+    "path",
+    "knight",
+    "coordinates"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.parcours.008",
+   "quest": "echecs.parcours",
+   "skill": "GEO-A02",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "La tour de Noah fait deux types de pas.",
+    "en": "Noah’s rook makes two kinds of steps."
+   },
+   "prompt": {
+    "fr": "Elle fait 3 pas de 2 cases, puis 1 pas de 4 cases. Combien de cases en tout ?",
+    "en": "It makes 3 steps of 2 squares, then 1 step of 4 squares. How many squares in all?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "6",
+      "en": "6"
+     },
+     "misconception": "mis_partial_result"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "9",
+      "en": "9"
+     },
+     "misconception": "mis_add_instead_of_multiply"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "10",
+      "en": "10"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "11",
+      "en": "11"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "3*2+4"
+    }
+   },
+   "hint": {
+    "fr": "Calcule d’abord les trois pas de 2.",
+    "en": "First work out the three steps of 2."
+   },
+   "explain": {
+    "fr": "3 × 2 = 6, puis 6 + 4 = 10 cases.",
+    "en": "3 × 2 = 6, then 6 + 4 = 10 squares."
+   },
+   "tags": [
+    "path",
+    "word-problem",
+    "rook"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.parcours.009",
+   "quest": "echecs.parcours",
+   "skill": "GEO-A02",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 4,
+   "story": {
+    "fr": "Le pion de Léa se met en route.",
+    "en": "Lea’s pawn sets off."
+   },
+   "prompt": {
+    "fr": "Il avance de 2 cases, puis d’une case à chacun des 5 tours suivants. Combien en tout ?",
+    "en": "It moves 2 squares, then 1 square on each of the next 5 turns. How many in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 7,
+    "calc": "2+5*1"
+   },
+   "common_errors": [
+    {
+     "value": 3,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as compté un seul des 5 tours suivants.",
+      "en": "You counted just one of the next 5 turns."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les tours.",
+      "en": "Close! Count the turns again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les 5 petits pas, puis ajoute le premier.",
+    "en": "Count the 5 small steps, then add the first one."
+   },
+   "explain": {
+    "fr": "5 petits pas de 1 font 5. Puis 2 + 5 = 7.",
+    "en": "5 small steps of 1 make 5. Then 2 + 5 = 7."
+   },
+   "tags": [
+    "path",
+    "word-problem",
+    "pawn"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.parcours.010",
+   "quest": "echecs.parcours",
+   "skill": "GEO-A02",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Noah fait monter son pion sur l’échiquier.",
+    "en": "Noah moves his pawn up the board."
+   },
+   "prompt": {
+    "fr": "Il dit que son pion se rapproche de la rangée 8. A-t-il raison ?",
+    "en": "He says his pawn is getting closer to row 8. Is he right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": true
+   },
+   "hint": {
+    "fr": "Les rangées montent de 1 jusqu’à 8.",
+    "en": "Rows go up from 1 to 8."
+   },
+   "explain": {
+    "fr": "Quand le pion monte, il se rapproche de la rangée 8.",
+    "en": "When the pawn goes up, it gets closer to row 8."
+   },
+   "tags": [
+    "path",
+    "true-false",
+    "rows"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.parcours.011",
+   "quest": "echecs.parcours",
+   "skill": "GEO-A02",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "La tour de Léa monte le long de la colonne a.",
+    "en": "Lea’s rook goes up along column a."
+   },
+   "prompt": {
+    "fr": "Range les cases dans l’ordre du parcours, de a1 vers a5.",
+    "en": "Put the squares in the order of the path, from a1 toward a5."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "a3",
+      "en": "a3"
+     },
+     "key": "3"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "a1",
+      "en": "a1"
+     },
+     "key": "1"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "a5",
+      "en": "a5"
+     },
+     "key": "5"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "a2",
+      "en": "a2"
+     },
+     "key": "2"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "d",
+     "a",
+     "c"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_partial"
+   },
+   "hint": {
+    "fr": "Le parcours monte d’une rangée à la fois.",
+    "en": "The path goes up one row at a time."
+   },
+   "explain": {
+    "fr": "Dans l’ordre : a1, a2, a3 puis a5.",
+    "en": "In order: a1, a2, a3 then a5."
+   },
+   "tags": [
+    "path",
+    "ordering",
+    "rook"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.parcours.012",
+   "quest": "echecs.parcours",
+   "skill": "GEO-A02",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah décrit des déplacements à partir de b2.",
+    "en": "Noah describes moves from b2."
+   },
+   "prompt": {
+    "fr": "Relie chaque déplacement à sa description.",
+    "en": "Match each move to its description."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "b2 vers b4",
+       "en": "b2 to b4"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "b2 vers d2",
+       "en": "b2 to d2"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "b2 vers b1",
+       "en": "b2 to b1"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "une case vers le bas",
+       "en": "one square down"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "deux cases vers la droite",
+       "en": "two squares to the right"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "deux cases vers le haut",
+       "en": "two squares up"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r3"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r1"
+     ]
+    ],
+    "misconception": "mis_direction"
+   },
+   "hint": {
+    "fr": "Regarde d’abord si la lettre ou le chiffre change.",
+    "en": "First see if the letter or the number changes."
+   },
+   "explain": {
+    "fr": "b4 est 2 cases plus haut. d2 est 2 cases à droite. b1 est une case plus bas.",
+    "en": "b4 is 2 squares higher. d2 is 2 squares to the right. b1 is one square lower."
+   },
+   "tags": [
+    "path",
+    "matching",
+    "directions"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.parcours.013",
+   "quest": "echecs.parcours",
+   "skill": "GEO-A02",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le fou de Léa va du départ à l’arrivée en diagonale.",
+    "en": "Lea’s bishop goes from start to finish along a diagonal."
+   },
+   "prompt": {
+    "fr": "Combien de pas de 1 case en diagonale fait-il ?",
+    "en": "How many diagonal steps of 1 square does it make?"
+   },
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 4,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "départ",
+        "en": "start"
+       }
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": {
+        "fr": "arrivée",
+        "en": "finish"
+       }
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 2,
+    "calc": "3-1"
+   },
+   "common_errors": [
+    {
+     "value": 3,
+     "misconception": "mis_fence_post",
+     "feedback": {
+      "fr": "Tu as compté la case de départ. On compte les pas.",
+      "en": "You counted the starting square. We count the steps."
+     }
+    },
+    {
+     "value": 4,
+     "misconception": "mis_grid_axes",
+     "feedback": {
+      "fr": "Compte les pas, pas les cases de la grille.",
+      "en": "Count the steps, not the grid squares."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les pas entre les cases, pas les cases.",
+    "en": "Count the steps between squares, not the squares."
+   },
+   "explain": {
+    "fr": "De la case 1 à la case 3, il y a 2 pas.",
+    "en": "From square 1 to square 3 there are 2 steps."
+   },
+   "tags": [
+    "path",
+    "bishop",
+    "diagonal"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9a644174f475121aacf0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.parcours.014",
+   "quest": "echecs.parcours",
+   "skill": "GEO-A02",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "La tour de Noah parcourt deux longues rangées.",
+    "en": "Noah’s rook travels along two long rows."
+   },
+   "prompt": {
+    "fr": "Elle fait 18 cases, puis 21 cases de plus. Environ combien de cases en tout ?",
+    "en": "It does 18 squares, then 21 more. About how many squares in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 36,
+    "max": 42,
+    "exact_for_check": 39,
+    "calc": "18+21"
+   },
+   "common_errors": [
+    {
+     "value": 3,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Les deux déplacements s’ajoutent.",
+      "en": "Both moves add up."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis chaque nombre à la dizaine.",
+    "en": "Round each number to the nearest ten."
+   },
+   "explain": {
+    "fr": "18 devient 20 et 21 devient 20. 20 + 20 = 40, donc environ 40.",
+    "en": "18 becomes 20 and 21 becomes 20. 20 + 20 = 40, so about 40."
+   },
+   "tags": [
+    "path",
+    "estimation",
+    "rounding"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.valeurs.001",
+   "quest": "echecs.valeurs",
+   "skill": "ARI-OPE-A04a",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Aux échecs, chaque pièce vaut des points.",
+    "en": "In chess, each piece is worth points."
+   },
+   "prompt": {
+    "fr": "Un pion vaut 1 point et un cavalier vaut 3 points. Combien de points en tout ?",
+    "en": "A pawn is worth 1 point and a knight is worth 3 points. How many points in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 4,
+    "calc": "1+3"
+   },
+   "common_errors": [
+    {
+     "value": 2,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les deux pièces : on additionne.",
+      "en": "We put both pieces together, so we add."
+     }
+    },
+    {
+     "value": 5,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte à partir de 3.",
+      "en": "Close! Count again from 3."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pars de 3 et avance de 1.",
+    "en": "Start at 3 and move on by 1."
+   },
+   "explain": {
+    "fr": "3 + 1 font 4 points.",
+    "en": "3 + 1 makes 4 points."
+   },
+   "tags": [
+    "pieces",
+    "value",
+    "add"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_363661b8b93c27e81892"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.valeurs.002",
+   "quest": "echecs.valeurs",
+   "skill": "ARI-OPE-A04a",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa a gagné une dame et un pion.",
+    "en": "Lea won a queen and a pawn."
+   },
+   "prompt": {
+    "fr": "La dame vaut 9 points et le pion 1 point. Combien de points en tout ?",
+    "en": "The queen is worth 9 points and the pawn 1 point. How many points in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 10,
+    "calc": "9+1"
+   },
+   "common_errors": [
+    {
+     "value": 8,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les deux pièces : on additionne.",
+      "en": "We put both pieces together, so we add."
+     }
+    },
+    {
+     "value": 91,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "On additionne les points, on n’écrit pas les nombres côte à côte.",
+      "en": "We add the points, we do not write the numbers side by side."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Que manque-t-il à 9 pour faire une dizaine ?",
+    "en": "What does 9 need to reach the next round number?"
+   },
+   "explain": {
+    "fr": "9 + 1 font 10 points.",
+    "en": "9 + 1 makes 10 points."
+   },
+   "tags": [
+    "pieces",
+    "value",
+    "make-ten"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.valeurs.003",
+   "quest": "echecs.valeurs",
+   "skill": "ARI-OPE-A04a",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah compte les points de ses pièces.",
+    "en": "Noah counts the points of his pieces."
+   },
+   "prompt": {
+    "fr": "Une tour vaut 5, un fou vaut 3 et un pion vaut 1. Combien de points en tout ?",
+    "en": "A rook is worth 5, a bishop 3 and a pawn 1. How many points in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 9,
+    "calc": "5+3+1"
+   },
+   "common_errors": [
+    {
+     "value": 8,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié le pion.",
+      "en": "You left out the pawn."
+     }
+    },
+    {
+     "value": 15,
+     "misconception": "mis_multiply_instead_of_add",
+     "feedback": {
+      "fr": "On additionne les points, on ne les multiplie pas.",
+      "en": "We add the points, we do not multiply them."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne 5 et 3, puis ajoute le pion.",
+    "en": "Add 5 and 3, then add the pawn."
+   },
+   "explain": {
+    "fr": "5 + 3 = 8, puis 8 + 1 = 9 points.",
+    "en": "5 + 3 = 8, then 8 + 1 = 9 points."
+   },
+   "tags": [
+    "pieces",
+    "value",
+    "add"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.valeurs.004",
+   "quest": "echecs.valeurs",
+   "skill": "ARI-OPE-A04a",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa garde deux tours et une dame.",
+    "en": "Lea keeps two rooks and a queen."
+   },
+   "prompt": {
+    "fr": "Chaque tour vaut 5 points, la dame 9 points. Quel est le total ?",
+    "en": "Each rook is worth 5 points, the queen 9 points. What is the total?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 19,
+    "calc": "5+5+9"
+   },
+   "common_errors": [
+    {
+     "value": 14,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as compté une seule tour.",
+      "en": "You counted just one rook."
+     }
+    },
+    {
+     "value": 18,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Refais l’addition.",
+      "en": "Close! Do the addition again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "5 + 5 fait 10. Ajoute ensuite la dame.",
+    "en": "5 + 5 makes 10. Then add the queen."
+   },
+   "explain": {
+    "fr": "5 + 5 = 10, puis 10 + 9 = 19 points.",
+    "en": "5 + 5 = 10, then 10 + 9 = 19 points."
+   },
+   "tags": [
+    "pieces",
+    "value",
+    "add"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.valeurs.005",
+   "quest": "echecs.valeurs",
+   "skill": "ARI-OPE-A04a",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah prend trois pions, un cavalier et une tour.",
+    "en": "Noah captures three pawns, a knight and a rook."
+   },
+   "prompt": {
+    "fr": "Les pions valent 1 point chacun, le cavalier 3 et la tour 5. Quel total ?",
+    "en": "The pawns are worth 1 point each, the knight 3 and the rook 5. What is the total?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 11,
+    "calc": "1+1+1+3+5"
+   },
+   "common_errors": [
+    {
+     "value": 8,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié les pions.",
+      "en": "You left out the pawns."
+     }
+    },
+    {
+     "value": 10,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Tu as compté un pion de moins.",
+      "en": "Close! You counted one pawn too few."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte d’abord les 3 pions, puis ajoute le reste.",
+    "en": "First count the 3 pawns, then add the rest."
+   },
+   "explain": {
+    "fr": "3 pions valent 3 points. 3 + 3 = 6, puis 6 + 5 = 11.",
+    "en": "3 pawns are worth 3 points. 3 + 3 = 6, then 6 + 5 = 11."
+   },
+   "tags": [
+    "pieces",
+    "value",
+    "add"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.valeurs.006",
+   "quest": "echecs.valeurs",
+   "skill": "ARI-OPE-A04a",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa compare la valeur de trois pièces.",
+    "en": "Lea compares the value of three pieces."
+   },
+   "prompt": {
+    "fr": "Un pion vaut 1, un fou 3 et une tour 5. Quelle pièce vaut le plus ?",
+    "en": "A pawn is worth 1, a bishop 3 and a rook 5. Which piece is worth the most?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Le pion",
+      "en": "The pawn"
+     },
+     "misconception": "mis_order_reversed"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Le fou",
+      "en": "The bishop"
+     },
+     "misconception": "mis_order_reversed"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "La tour",
+      "en": "The rook"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c"
+   },
+   "hint": {
+    "fr": "Cherche le plus grand nombre.",
+    "en": "Look for the biggest number."
+   },
+   "explain": {
+    "fr": "5 est plus grand que 3 et que 1. La tour vaut le plus.",
+    "en": "5 is bigger than 3 and than 1. The rook is worth the most."
+   },
+   "tags": [
+    "pieces",
+    "value",
+    "compare"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.valeurs.007",
+   "quest": "echecs.valeurs",
+   "skill": "ARI-OPE-A04a",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah écrit la valeur de deux pièces.",
+    "en": "Noah writes the value of two pieces."
+   },
+   "prompt": {
+    "fr": "Une tour vaut 5 et un fou vaut 3. Quelle addition donne la valeur des deux ?",
+    "en": "A rook is worth 5 and a bishop 3. Which addition gives the value of both?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "5 + 3",
+      "en": "5 + 3"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "5 - 3",
+      "en": "5 - 3"
+     },
+     "misconception": "mis_subtract_instead_of_add"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "5 × 3",
+      "en": "5 × 3"
+     },
+     "misconception": "mis_multiply_instead_of_add"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "3 + 3",
+      "en": "3 + 3"
+     },
+     "misconception": "mis_missing_term"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "On réunit les deux pièces.",
+    "en": "We put the two pieces together."
+   },
+   "explain": {
+    "fr": "On réunit : 5 + 3 = 8 points.",
+    "en": "We put them together: 5 + 3 = 8 points."
+   },
+   "tags": [
+    "pieces",
+    "value",
+    "choose-operation"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.valeurs.008",
+   "quest": "echecs.valeurs",
+   "skill": "ARI-OPE-A04a",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa a 12 points de pièces sur l’échiquier.",
+    "en": "Lea has 12 points of pieces on the board."
+   },
+   "prompt": {
+    "fr": "Elle perd une tour de 5 points. Combien de points lui reste-t-il ?",
+    "en": "She loses a rook worth 5 points. How many points does she have left?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "17",
+      "en": "17"
+     },
+     "misconception": "mis_add_instead_of_subtract"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "6",
+      "en": "6"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "7",
+      "en": "7"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "5",
+      "en": "5"
+     },
+     "misconception": "mis_missing_term"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "12-5"
+    }
+   },
+   "hint": {
+    "fr": "Enlève d’abord 2 pour arriver à 10.",
+    "en": "First take away 2 to reach 10."
+   },
+   "explain": {
+    "fr": "12 - 5, c’est 12 - 2 - 3, donc 7 points.",
+    "en": "12 - 5 is 12 - 2 - 3, so 7 points."
+   },
+   "tags": [
+    "pieces",
+    "word-problem",
+    "subtract"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.valeurs.009",
+   "quest": "echecs.valeurs",
+   "skill": "ARI-OPE-A04a",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 4,
+   "story": {
+    "fr": "L’équipe de Noah a des pions et des tours.",
+    "en": "Noah’s team has pawns and rooks."
+   },
+   "prompt": {
+    "fr": "Elle a 8 pions de 1 point et 2 tours de 5 points. Combien de points en tout ?",
+    "en": "It has 8 pawns worth 1 point and 2 rooks worth 5 points. How many points in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 18,
+    "calc": "8+2*5"
+   },
+   "common_errors": [
+    {
+     "value": 10,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as compté 2 points par tour au lieu de 5.",
+      "en": "You counted 2 points per rook instead of 5."
+     }
+    },
+    {
+     "value": 40,
+     "misconception": "mis_multiply_instead_of_add",
+     "feedback": {
+      "fr": "On additionne les points des pions et des tours.",
+      "en": "We add the points of the pawns and the rooks."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Calcule d’abord les points des 2 tours.",
+    "en": "First work out the points of the 2 rooks."
+   },
+   "explain": {
+    "fr": "2 tours : 5 + 5 = 10. Puis 8 + 10 = 18 points.",
+    "en": "2 rooks: 5 + 5 = 10. Then 8 + 10 = 18 points."
+   },
+   "tags": [
+    "pieces",
+    "word-problem",
+    "two-steps"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.valeurs.010",
+   "quest": "echecs.valeurs",
+   "skill": "ARI-OPE-A04a",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa compare la dame et la tour.",
+    "en": "Lea compares the queen and the rook."
+   },
+   "prompt": {
+    "fr": "La dame vaut 9 points et la tour 5 points. De combien de points la dame vaut-elle plus ?",
+    "en": "The queen is worth 9 points and the rook 5 points. By how many points is the queen worth more?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 4,
+    "calc": "9-5"
+   },
+   "common_errors": [
+    {
+     "value": 14,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On compare : on cherche l’écart.",
+      "en": "We compare, so we look for the gap."
+     }
+    },
+    {
+     "value": 3,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Compte de 5 jusqu’à 9.",
+      "en": "Close! Count from 5 up to 9."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 5 jusqu’à 9.",
+    "en": "Count from 5 up to 9."
+   },
+   "explain": {
+    "fr": "9 - 5 = 4 points de plus.",
+    "en": "9 - 5 = 4 points more."
+   },
+   "tags": [
+    "pieces",
+    "word-problem",
+    "compare"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.valeurs.011",
+   "quest": "echecs.valeurs",
+   "skill": "ARI-OPE-A04a",
+   "type": "truefalse",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah a deux tours de 5 points chacune.",
+    "en": "Noah has two rooks worth 5 points each."
+   },
+   "prompt": {
+    "fr": "Il dit qu’elles valent 12 points ensemble. A-t-il raison ?",
+    "en": "He says they are worth 12 points together. Is he right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_off_by_one"
+   },
+   "hint": {
+    "fr": "Additionne 5 et 5.",
+    "en": "Add 5 and 5."
+   },
+   "explain": {
+    "fr": "5 + 5 = 10, pas 12.",
+    "en": "5 + 5 = 10, not 12."
+   },
+   "tags": [
+    "pieces",
+    "true-false",
+    "add"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.valeurs.012",
+   "quest": "echecs.valeurs",
+   "skill": "ARI-OPE-A04a",
+   "type": "order",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa range quatre pièces selon leur valeur.",
+    "en": "Lea sorts four pieces by their value."
+   },
+   "prompt": {
+    "fr": "Range les pièces de la moins précieuse à la plus précieuse.",
+    "en": "Put the pieces in order, from least valuable to most valuable."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "La tour (5)",
+      "en": "The rook (5)"
+     },
+     "key": "5"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Le pion (1)",
+      "en": "The pawn (1)"
+     },
+     "key": "1"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "La dame (9)",
+      "en": "The queen (9)"
+     },
+     "key": "9"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "Le cavalier (3)",
+      "en": "The knight (3)"
+     },
+     "key": "3"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "d",
+     "a",
+     "c"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Le plus petit nombre vient en premier.",
+    "en": "The smallest number comes first."
+   },
+   "explain": {
+    "fr": "1, 3, 5 puis 9 : pion, cavalier, tour, dame.",
+    "en": "1, 3, 5 then 9: pawn, knight, rook, queen."
+   },
+   "tags": [
+    "pieces",
+    "ordering",
+    "value"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.valeurs.013",
+   "quest": "echecs.valeurs",
+   "skill": "ARI-OPE-A04a",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah relie des totaux à des paires de pièces.",
+    "en": "Noah links totals to pairs of pieces."
+   },
+   "prompt": {
+    "fr": "Relie chaque total à la bonne paire de pièces.",
+    "en": "Match each total to the right pair of pieces."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "4 points",
+       "en": "4 points"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "6 points",
+       "en": "6 points"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "8 points",
+       "en": "8 points"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "cavalier + cavalier",
+       "en": "knight + knight"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "tour + fou",
+       "en": "rook + bishop"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "pion + cavalier",
+       "en": "pawn + knight"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r3"
+     ],
+     [
+      "l2",
+      "r1"
+     ],
+     [
+      "l3",
+      "r2"
+     ]
+    ],
+    "misconception": "mis_match"
+   },
+   "hint": {
+    "fr": "Un cavalier vaut 3, une tour 5, un pion 1.",
+    "en": "A knight is 3, a rook is 5, a pawn is 1."
+   },
+   "explain": {
+    "fr": "1 + 3 = 4, 3 + 3 = 6 et 5 + 3 = 8.",
+    "en": "1 + 3 = 4, 3 + 3 = 6 and 5 + 3 = 8."
+   },
+   "tags": [
+    "pieces",
+    "matching",
+    "add"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.valeurs.014",
+   "quest": "echecs.valeurs",
+   "skill": "ARI-OPE-A04a",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le tableau montre les pièces prises pendant la partie.",
+    "en": "The chart shows the pieces captured during the game."
+   },
+   "prompt": {
+    "fr": "Combien de pièces ont été prises en tout ?",
+    "en": "How many pieces were captured in all?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Pièces prises",
+      "en": "Captured pieces"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "pions",
+        "en": "pawns"
+       },
+       "count": 4
+      },
+      {
+       "label": {
+        "fr": "cavaliers",
+        "en": "knights"
+       },
+       "count": 2
+      },
+      {
+       "label": {
+        "fr": "tours",
+        "en": "rooks"
+       },
+       "count": 1
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 7,
+    "calc": "4+2+1"
+   },
+   "common_errors": [
+    {
+     "value": 6,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié une ligne.",
+      "en": "You left out a row."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les images.",
+      "en": "Close! Count the pictures again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les images de chaque ligne.",
+    "en": "Count the pictures in each row."
+   },
+   "explain": {
+    "fr": "4 + 2 = 6, puis 6 + 1 = 7 pièces.",
+    "en": "4 + 2 = 6, then 6 + 1 = 7 pieces."
+   },
+   "tags": [
+    "pieces",
+    "pictograph",
+    "add"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.valeurs.015",
+   "quest": "echecs.valeurs",
+   "skill": "ARI-OPE-A04a",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa garde deux dames et une tour.",
+    "en": "Lea keeps two queens and a rook."
+   },
+   "prompt": {
+    "fr": "Les deux dames valent 9 points chacune, la tour 5 points. Environ combien de points en tout ?",
+    "en": "The two queens are worth 9 points each, the rook 5 points. About how many points in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 21,
+    "max": 25,
+    "exact_for_check": 23,
+    "calc": "9+9+5"
+   },
+   "common_errors": [
+    {
+     "value": 14,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as compté une seule dame.",
+      "en": "You counted just one queen."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis 9 à 10.",
+    "en": "Round 9 to 10."
+   },
+   "explain": {
+    "fr": "10 + 10 + 5 = 25, donc environ 25 points.",
+    "en": "10 + 10 + 5 = 25, so about 25 points."
+   },
+   "tags": [
+    "pieces",
+    "estimation",
+    "rounding"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.motifs.001",
+   "quest": "echecs.motifs",
+   "skill": "ARI-OPE-A13a",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Les cases de l’échiquier forment un motif.",
+    "en": "The squares of the board make a pattern."
+   },
+   "prompt": {
+    "fr": "Une rangée alterne deux couleurs et commence par du noir. De quelle couleur est la 2e case ?",
+    "en": "A row alternates two colours and starts with black. What colour is the 2nd square?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Blanche",
+      "en": "White"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Noire",
+      "en": "Black"
+     },
+     "misconception": "mis_pattern_wrong_rule"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Rouge",
+      "en": "Red"
+     },
+     "random": true
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Les couleurs changent à chaque case.",
+    "en": "The colours change at every square."
+   },
+   "explain": {
+    "fr": "La 1re case est noire, donc la 2e est blanche.",
+    "en": "The 1st square is black, so the 2nd is white."
+   },
+   "tags": [
+    "pattern",
+    "colours",
+    "board"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e498bd56e1046bb2593f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.motifs.002",
+   "quest": "echecs.motifs",
+   "skill": "ARI-OPE-A13a",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa regarde une rangée de cases qui alternent.",
+    "en": "Lea looks at a row of alternating squares."
+   },
+   "prompt": {
+    "fr": "Quelle case a la même couleur que la 1re case ?",
+    "en": "Which square has the same colour as the 1st square?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "La 2e case",
+      "en": "The 2nd square"
+     },
+     "misconception": "mis_pattern_wrong_rule"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "La 3e case",
+      "en": "The 3rd square"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "La 4e case",
+      "en": "The 4th square"
+     },
+     "misconception": "mis_pattern_wrong_rule"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Les couleurs alternent : une, puis l’autre.",
+    "en": "The colours alternate: one, then the other."
+   },
+   "explain": {
+    "fr": "Les cases 1, 3, 5 ont la même couleur.",
+    "en": "Squares 1, 3, 5 have the same colour."
+   },
+   "tags": [
+    "pattern",
+    "alternate",
+    "board"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e498bd56e1046bb2593f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.motifs.003",
+   "quest": "echecs.motifs",
+   "skill": "ARI-OPE-A13a",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Une rangée de l’échiquier alterne noir et blanc.",
+    "en": "A row of the board alternates black and white."
+   },
+   "prompt": {
+    "fr": "La rangée a 8 cases. Combien de cases sont noires ?",
+    "en": "The row has 8 squares. How many squares are black?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 4,
+    "calc": "8/2"
+   },
+   "common_errors": [
+    {
+     "value": 8,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "Seule la moitié des cases est noire.",
+      "en": "Only half of the squares are black."
+     }
+    },
+    {
+     "value": 3,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Une case sur deux est noire.",
+      "en": "Close! Every other square is black."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Une case sur deux est noire.",
+    "en": "Every other square is black."
+   },
+   "explain": {
+    "fr": "La moitié de 8 est 4 cases noires.",
+    "en": "Half of 8 is 4 black squares."
+   },
+   "tags": [
+    "pattern",
+    "half",
+    "board"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9a644174f475121aacf0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.motifs.004",
+   "quest": "echecs.motifs",
+   "skill": "ARI-OPE-A13a",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa numérote les cases blanches d’une rangée.",
+    "en": "Lea numbers the white squares of a row."
+   },
+   "prompt": {
+    "fr": "Les numéros sont 1, 3, 5, 7. Quel numéro vient ensuite ?",
+    "en": "The numbers are 1, 3, 5, 7. Which number comes next?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 9,
+    "calc": "7+2"
+   },
+   "common_errors": [
+    {
+     "value": 8,
+     "misconception": "mis_even_odd",
+     "feedback": {
+      "fr": "On saute un numéro à chaque fois : 8 est pair.",
+      "en": "We skip a number each time: 8 is even."
+     }
+    },
+    {
+     "value": 10,
+     "misconception": "mis_pattern_wrong_rule",
+     "feedback": {
+      "fr": "On ajoute 2 chaque fois.",
+      "en": "We add 2 each time."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Regarde de combien on avance à chaque fois.",
+    "en": "See how much we move on each time."
+   },
+   "explain": {
+    "fr": "On ajoute 2 chaque fois. 7 + 2 = 9.",
+    "en": "We add 2 each time. 7 + 2 = 9."
+   },
+   "tags": [
+    "pattern",
+    "odd",
+    "numbers"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.motifs.005",
+   "quest": "echecs.motifs",
+   "skill": "ARI-OPE-A13a",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah numérote les cases noires de la même rangée.",
+    "en": "Noah numbers the black squares of the same row."
+   },
+   "prompt": {
+    "fr": "Les cases noires portent les numéros 2, 4, 6, 8. Quel numéro suit ?",
+    "en": "The black squares carry the numbers 2, 4, 6, 8. Which number follows?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 10,
+    "calc": "8+2"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_even_odd",
+     "feedback": {
+      "fr": "9 est un numéro des cases blanches.",
+      "en": "9 is a number of the white squares."
+     }
+    },
+    {
+     "value": 12,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as sauté un numéro.",
+      "en": "You skipped a number."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "On avance de 2 à chaque fois.",
+    "en": "We move on by 2 each time."
+   },
+   "explain": {
+    "fr": "2, 4, 6, 8, 10 : on ajoute 2.",
+    "en": "2, 4, 6, 8, 10: we add 2."
+   },
+   "tags": [
+    "pattern",
+    "even",
+    "numbers"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.motifs.006",
+   "quest": "echecs.motifs",
+   "skill": "ARI-OPE-A13a",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa pose des pions en suivant un motif.",
+    "en": "Lea lays pawns following a pattern."
+   },
+   "prompt": {
+    "fr": "Elle pose 1 pion, puis 2, puis 3, puis 4. Combien de pions pose-t-elle ensuite ?",
+    "en": "She lays 1 pawn, then 2, then 3, then 4. How many pawns does she lay next?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "4+1"
+   },
+   "common_errors": [
+    {
+     "value": 4,
+     "misconception": "mis_pattern_last_step",
+     "feedback": {
+      "fr": "Ne répète pas le dernier nombre : il en faut un de plus.",
+      "en": "Do not repeat the last number: we need one more."
+     }
+    },
+    {
+     "value": 6,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as sauté un nombre.",
+      "en": "You skipped a number."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Chaque fois, elle pose un pion de plus.",
+    "en": "Each time she lays one more pawn."
+   },
+   "explain": {
+    "fr": "Chaque fois on ajoute 1 : 1, 2, 3, 4, 5.",
+    "en": "Each time we add 1: 1, 2, 3, 4, 5."
+   },
+   "tags": [
+    "pattern",
+    "growing",
+    "pawns"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.motifs.007",
+   "quest": "echecs.motifs",
+   "skill": "ARI-OPE-A13a",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 4,
+   "story": {
+    "fr": "Noah fait un collier de pions.",
+    "en": "Noah makes a necklace of pawns."
+   },
+   "prompt": {
+    "fr": "Il y a 8 pions et le motif répète 2 pions. Combien de fois apparaît-il ?",
+    "en": "There are 8 pawns and the pattern repeats 2 pawns. How many times does it appear?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 4,
+    "calc": "8/2"
+   },
+   "common_errors": [
+    {
+     "value": 6,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On cherche combien de groupes de 2 : on partage.",
+      "en": "We look for how many groups of 2: we share."
+     }
+    },
+    {
+     "value": 10,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche des groupes, on n’additionne pas.",
+      "en": "We look for groups, we do not add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Fais des groupes de 2 pions.",
+    "en": "Make groups of 2 pawns."
+   },
+   "explain": {
+    "fr": "2, 4, 6, 8 : on fait 4 groupes de 2.",
+    "en": "2, 4, 6, 8: we make 4 groups of 2."
+   },
+   "tags": [
+    "pattern",
+    "groups",
+    "necklace"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.motifs.008",
+   "quest": "echecs.motifs",
+   "skill": "ARI-OPE-A13a",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "La grille montre les cases noires d’un petit damier.",
+    "en": "The grid shows the black squares of a small checkerboard."
+   },
+   "prompt": {
+    "fr": "Combien de cases noires y a-t-il sur la grille ?",
+    "en": "How many black squares are on the grid?"
+   },
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 2,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "noire",
+        "en": "black"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "noire",
+        "en": "black"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "noire",
+        "en": "black"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "noire",
+        "en": "black"
+       }
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 4,
+    "calc": "4"
+   },
+   "common_errors": [
+    {
+     "value": 3,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte rangée par rangée.",
+      "en": "Close! Count row by row."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "Tu as compté toutes les cases, pas seulement les noires.",
+      "en": "You counted all the squares, not just the black ones."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte seulement les cases marquées.",
+    "en": "Count only the marked squares."
+   },
+   "explain": {
+    "fr": "Il y a 2 cases noires dans chaque rangée : 2 + 2 = 4.",
+    "en": "There are 2 black squares in each row: 2 + 2 = 4."
+   },
+   "tags": [
+    "pattern",
+    "checkerboard",
+    "grid"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.motifs.009",
+   "quest": "echecs.motifs",
+   "skill": "ARI-OPE-A13a",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa observe le damier de l’échiquier.",
+    "en": "Lea studies the board’s checkerboard."
+   },
+   "prompt": {
+    "fr": "Elle dit que deux cases voisines ont toujours la même couleur. A-t-elle raison ?",
+    "en": "She says two neighbouring squares always have the same colour. Is she right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_pattern_wrong_rule"
+   },
+   "hint": {
+    "fr": "Regarde deux cases côte à côte.",
+    "en": "Look at two squares side by side."
+   },
+   "explain": {
+    "fr": "Deux cases voisines ont deux couleurs différentes.",
+    "en": "Two neighbouring squares have different colours."
+   },
+   "tags": [
+    "pattern",
+    "true-false",
+    "board"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.motifs.010",
+   "quest": "echecs.motifs",
+   "skill": "ARI-OPE-A13a",
+   "type": "order",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah note les numéros des cases noires d’une rangée.",
+    "en": "Noah writes the numbers of the black squares in a row."
+   },
+   "prompt": {
+    "fr": "Range les numéros du plus petit au plus grand.",
+    "en": "Put the numbers in order, smallest to biggest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "6",
+      "en": "6"
+     },
+     "key": "6"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "2",
+      "en": "2"
+     },
+     "key": "2"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "8",
+      "en": "8"
+     },
+     "key": "8"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "4",
+      "en": "4"
+     },
+     "key": "4"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "d",
+     "a",
+     "c"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_partial"
+   },
+   "hint": {
+    "fr": "Cherche d’abord le plus petit numéro.",
+    "en": "First find the smallest number."
+   },
+   "explain": {
+    "fr": "2, 4, 6 puis 8 : on ajoute 2 chaque fois.",
+    "en": "2, 4, 6 then 8: we add 2 each time."
+   },
+   "tags": [
+    "pattern",
+    "ordering",
+    "numbers"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.motifs.011",
+   "quest": "echecs.motifs",
+   "skill": "ARI-OPE-A13a",
+   "type": "match",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa associe chaque motif à sa règle.",
+    "en": "Lea matches each pattern with its rule."
+   },
+   "prompt": {
+    "fr": "Relie chaque suite à sa règle.",
+    "en": "Match each sequence to its rule."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "2, 4, 6, 8",
+       "en": "2, 4, 6, 8"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "1, 3, 5, 7",
+       "en": "1, 3, 5, 7"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "5, 10, 15, 20",
+       "en": "5, 10, 15, 20"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "on ajoute 5",
+       "en": "add 5"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "on ajoute 2 depuis 2",
+       "en": "add 2 starting at 2"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "on ajoute 2 depuis 1",
+       "en": "add 2 starting at 1"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r2"
+     ],
+     [
+      "l2",
+      "r3"
+     ],
+     [
+      "l3",
+      "r1"
+     ]
+    ],
+    "misconception": "mis_pattern_wrong_rule"
+   },
+   "hint": {
+    "fr": "Regarde le premier nombre de chaque suite.",
+    "en": "Look at the first number of each sequence."
+   },
+   "explain": {
+    "fr": "2, 4, 6, 8 commence à 2. 1, 3, 5, 7 commence à 1. 5, 10, 15, 20 avance de 5.",
+    "en": "2, 4, 6, 8 starts at 2. 1, 3, 5, 7 starts at 1. 5, 10, 15, 20 moves by 5."
+   },
+   "tags": [
+    "pattern",
+    "matching",
+    "rule"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.motifs.012",
+   "quest": "echecs.motifs",
+   "skill": "ARI-OPE-A13a",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa suit le motif de ses pions.",
+    "en": "Lea follows the pattern of her pawns."
+   },
+   "prompt": {
+    "fr": "Chaque tour, elle ajoute un pion de plus : 1, 2, 3, 4. Combien de pions a-t-elle posés en tout ?",
+    "en": "Each turn she adds one more pawn: 1, 2, 3, 4. How many pawns has she laid in all?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "4",
+      "en": "4"
+     },
+     "misconception": "mis_pattern_last_step"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "9",
+      "en": "9"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "10",
+      "en": "10"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "24",
+      "en": "24"
+     },
+     "misconception": "mis_multiply_instead_of_add"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "1+2+3+4"
+    }
+   },
+   "hint": {
+    "fr": "Additionne un nombre à la fois.",
+    "en": "Add one number at a time."
+   },
+   "explain": {
+    "fr": "1 + 2 = 3, puis 3 + 3 = 6, puis 6 + 4 = 10.",
+    "en": "1 + 2 = 3, then 3 + 3 = 6, then 6 + 4 = 10."
+   },
+   "tags": [
+    "pattern",
+    "word-problem",
+    "add"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.motifs.013",
+   "quest": "echecs.motifs",
+   "skill": "ARI-OPE-A13a",
+   "type": "estimate",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un échiquier a 64 cases qui alternent.",
+    "en": "A board has 64 alternating squares."
+   },
+   "prompt": {
+    "fr": "Environ combien de cases sont noires ?",
+    "en": "About how many squares are black?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 29,
+    "max": 35,
+    "exact_for_check": 32,
+    "calc": "64/2"
+   },
+   "common_errors": [
+    {
+     "value": 64,
+     "misconception": "mis_estimate_exact",
+     "feedback": {
+      "fr": "Toutes les cases ne sont pas noires.",
+      "en": "Not all squares are black."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Une case sur deux est noire.",
+    "en": "Every other square is black."
+   },
+   "explain": {
+    "fr": "La moitié de 64 est 32 cases noires.",
+    "en": "Half of 64 is 32 black squares."
+   },
+   "tags": [
+    "pattern",
+    "estimation",
+    "half"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9a644174f475121aacf0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.partie.001",
+   "quest": "echecs.partie",
+   "skill": "ARI-OPE-A06a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa aligne des pions pour la partie.",
+    "en": "Lea lines up pawns for the game."
+   },
+   "prompt": {
+    "fr": "Elle fait 2 rangées de 8 pions. Combien de pions en tout ?",
+    "en": "She makes 2 rows of 8 pawns. How many pawns in all?"
+   },
+   "math_text": "2 × 8 = ?",
+   "answer": {
+    "kind": "numeric",
+    "value": 16,
+    "calc": "2*8"
+   },
+   "common_errors": [
+    {
+     "value": 10,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Deux rangées égales de 8 : on multiplie.",
+      "en": "Two equal rows of 8: we multiply."
+     }
+    },
+    {
+     "value": 14,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Double 8.",
+      "en": "Close! Double 8."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense au double de 8.",
+    "en": "Think of double 8."
+   },
+   "explain": {
+    "fr": "8 + 8 = 16 pions.",
+    "en": "8 + 8 = 16 pawns."
+   },
+   "tags": [
+    "rows-of-8",
+    "multiplication",
+    "pawns"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_8bf5129e219638daa34a"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.partie.002",
+   "quest": "echecs.partie",
+   "skill": "ARI-OPE-A06a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Noah prépare trois rangées pour un exercice.",
+    "en": "Noah sets up three rows for an exercise."
+   },
+   "prompt": {
+    "fr": "Chaque rangée a 8 pions. Combien de pions y a-t-il en tout ?",
+    "en": "Each row has 8 pawns. How many pawns are there in all?"
+   },
+   "math_text": "3 × 8 = ?",
+   "answer": {
+    "kind": "numeric",
+    "value": 24,
+    "calc": "3*8"
+   },
+   "common_errors": [
+    {
+     "value": 11,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Trois rangées égales de 8 : on multiplie.",
+      "en": "Three equal rows of 8: we multiply."
+     }
+    },
+    {
+     "value": 32,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as compté un bond de trop.",
+      "en": "You counted one jump too many."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte par bonds de 8 : 8, 16, ...",
+    "en": "Count by jumps of 8: 8, 16, ..."
+   },
+   "explain": {
+    "fr": "8, 16, 24. Il y a 24 pions.",
+    "en": "8, 16, 24. There are 24 pawns."
+   },
+   "tags": [
+    "rows-of-8",
+    "multiplication",
+    "skip-count"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.partie.003",
+   "quest": "echecs.partie",
+   "skill": "ARI-OPE-A06a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa prépare six rangées de pièces pour une démonstration.",
+    "en": "Lea sets up six rows of pieces for a demonstration."
+   },
+   "prompt": {
+    "fr": "Il y a 8 pièces dans chaque rangée. Combien de pièces en tout ?",
+    "en": "There are 8 pieces in each row. How many pieces in all?"
+   },
+   "math_text": "6 × 8 = ?",
+   "answer": {
+    "kind": "numeric",
+    "value": 48,
+    "calc": "6*8"
+   },
+   "common_errors": [
+    {
+     "value": 14,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Six rangées égales de 8 : on multiplie.",
+      "en": "Six equal rows of 8: we multiply."
+     }
+    },
+    {
+     "value": 84,
+     "misconception": "mis_digit_swap",
+     "feedback": {
+      "fr": "Attention : tu as inversé les chiffres.",
+      "en": "Careful: you swapped the digits."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à 5 × 8, puis ajoute une rangée.",
+    "en": "Think 5 × 8, then add one more row."
+   },
+   "explain": {
+    "fr": "5 × 8 = 40, puis 40 + 8 = 48.",
+    "en": "5 × 8 = 40, then 40 + 8 = 48."
+   },
+   "tags": [
+    "rows-of-8",
+    "multiplication",
+    "decompose"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.partie.004",
+   "quest": "echecs.partie",
+   "skill": "ARI-OPE-A06a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah compte les chaises du club d’échecs.",
+    "en": "Noah counts the chairs of the chess club."
+   },
+   "prompt": {
+    "fr": "Le club a 7 rangées de 8 chaises. Combien de chaises en tout ?",
+    "en": "The club has 7 rows of 8 chairs. How many chairs in all?"
+   },
+   "math_text": "7 × 8 = ?",
+   "answer": {
+    "kind": "numeric",
+    "value": 56,
+    "calc": "7*8"
+   },
+   "common_errors": [
+    {
+     "value": 15,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Sept rangées égales de 8 : on multiplie.",
+      "en": "Seven equal rows of 8: we multiply."
+     }
+    },
+    {
+     "value": 65,
+     "misconception": "mis_digit_swap",
+     "feedback": {
+      "fr": "Attention : tu as inversé les chiffres.",
+      "en": "Careful: you swapped the digits."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à 7 × 8 comme 7 × 10 moins 7 × 2.",
+    "en": "Think of 7 × 8 as 7 × 10 minus 7 × 2."
+   },
+   "explain": {
+    "fr": "70 - 14 = 56 chaises.",
+    "en": "70 - 14 = 56 chairs."
+   },
+   "tags": [
+    "rows-of-8",
+    "multiplication",
+    "chairs"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.partie.005",
+   "quest": "echecs.partie",
+   "skill": "ARI-OPE-A06a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa regarde un échiquier complet.",
+    "en": "Lea looks at a full board."
+   },
+   "prompt": {
+    "fr": "Il est formé de 8 rangées de 8 cases. Quel est le nombre total de cases ?",
+    "en": "It is made of 8 rows of 8 squares. What is the total number of squares?"
+   },
+   "math_text": "8 × 8 = ?",
+   "answer": {
+    "kind": "numeric",
+    "value": 64,
+    "calc": "8*8"
+   },
+   "common_errors": [
+    {
+     "value": 16,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Huit rangées égales de 8 : on multiplie.",
+      "en": "Eight equal rows of 8: we multiply."
+     }
+    },
+    {
+     "value": 46,
+     "misconception": "mis_digit_swap",
+     "feedback": {
+      "fr": "Attention : tu as inversé les chiffres.",
+      "en": "Careful: you swapped the digits."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Double le résultat de 4 × 8.",
+    "en": "Double the result of 4 × 8."
+   },
+   "explain": {
+    "fr": "4 × 8 = 32, et le double de 32 est 64.",
+    "en": "4 × 8 = 32, and double 32 is 64."
+   },
+   "tags": [
+    "rows-of-8",
+    "multiplication",
+    "board"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9a644174f475121aacf0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.partie.006",
+   "quest": "echecs.partie",
+   "skill": "ARI-OPE-A06a",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah compte des pions par grands paquets.",
+    "en": "Noah counts pawns in big bunches."
+   },
+   "prompt": {
+    "fr": "Combien de pions y a-t-il dans 10 rangées de 8 ?",
+    "en": "How many pawns are there in 10 rows of 8?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "18",
+      "en": "18"
+     },
+     "misconception": "mis_add_instead_of_multiply"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "80",
+      "en": "80"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "8",
+      "en": "8"
+     },
+     "misconception": "mis_missing_term"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "800",
+      "en": "800"
+     },
+     "misconception": "mis_place_value"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b",
+    "calc_choice": {
+     "b": "10*8"
+    }
+   },
+   "hint": {
+    "fr": "Multiplier par 10 ajoute un zéro.",
+    "en": "Multiplying by 10 adds a zero."
+   },
+   "explain": {
+    "fr": "10 × 8 = 80 pions.",
+    "en": "10 × 8 = 80 pawns."
+   },
+   "tags": [
+    "rows-of-8",
+    "multiplication",
+    "tens"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.partie.007",
+   "quest": "echecs.partie",
+   "skill": "ARI-OPE-A06a",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa compte par bonds de 8 sur une rangée.",
+    "en": "Lea counts by jumps of 8 along a row."
+   },
+   "prompt": {
+    "fr": "Quel nombre apparaît quand on compte par bonds de 8 ?",
+    "en": "Which number shows up when counting by jumps of 8?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "36",
+      "en": "36"
+     },
+     "misconception": "mis_skip_count"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "40",
+      "en": "40"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "28",
+      "en": "28"
+     },
+     "misconception": "mis_skip_count"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "44",
+      "en": "44"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b",
+    "calc_choice": {
+     "b": "5*8"
+    }
+   },
+   "hint": {
+    "fr": "8, 16, 24, 32, ...",
+    "en": "8, 16, 24, 32, ..."
+   },
+   "explain": {
+    "fr": "8, 16, 24, 32, 40 : le cinquième bond tombe sur 40.",
+    "en": "8, 16, 24, 32, 40: the fifth jump lands on 40."
+   },
+   "tags": [
+    "rows-of-8",
+    "skip-count"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.partie.008",
+   "quest": "echecs.partie",
+   "skill": "ARI-OPE-A06a",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le club d’échecs organise un petit tournoi.",
+    "en": "The chess club organises a small tournament."
+   },
+   "prompt": {
+    "fr": "Chaque table accueille 2 joueurs. Il y a 8 tables. Combien de joueurs en tout ?",
+    "en": "Each table seats 2 players. There are 8 tables. How many players in all?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "10",
+      "en": "10"
+     },
+     "misconception": "mis_add_instead_of_multiply"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "16",
+      "en": "16"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "6",
+      "en": "6"
+     },
+     "misconception": "mis_subtract_instead_of_add"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "18",
+      "en": "18"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b",
+    "calc_choice": {
+     "b": "8*2"
+    }
+   },
+   "hint": {
+    "fr": "Huit groupes de 2 : compte par 2.",
+    "en": "Eight groups of 2: count by 2s."
+   },
+   "explain": {
+    "fr": "2, 4, 6, 8, 10, 12, 14, 16. Il y a 16 joueurs.",
+    "en": "2, 4, 6, 8, 10, 12, 14, 16. There are 16 players."
+   },
+   "tags": [
+    "rows-of-8",
+    "word-problem",
+    "tournament"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.partie.009",
+   "quest": "echecs.partie",
+   "skill": "ARI-OPE-A06a",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "La salle du club a des rangées de chaises.",
+    "en": "The club room has rows of chairs."
+   },
+   "prompt": {
+    "fr": "Il y a 7 rangées de 8 chaises. Six chaises sont vides. Combien de chaises sont occupées ?",
+    "en": "There are 7 rows of 8 chairs. Six chairs are empty. How many chairs are taken?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 50,
+    "calc": "7*8-6"
+   },
+   "common_errors": [
+    {
+     "value": 56,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié d’enlever les chaises vides.",
+      "en": "You forgot to take away the empty chairs."
+     }
+    },
+    {
+     "value": 62,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Les chaises vides sont enlevées du total.",
+      "en": "The empty chairs are taken away from the total."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Cherche d’abord le total de chaises.",
+    "en": "First find the total number of chairs."
+   },
+   "explain": {
+    "fr": "7 × 8 = 56, puis 56 - 6 = 50 chaises occupées.",
+    "en": "7 × 8 = 56, then 56 - 6 = 50 chairs taken."
+   },
+   "tags": [
+    "rows-of-8",
+    "word-problem",
+    "two-steps"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.partie.010",
+   "quest": "echecs.partie",
+   "skill": "ARI-OPE-A06a",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Un grand tournoi réunit des équipes.",
+    "en": "A big tournament brings teams together."
+   },
+   "prompt": {
+    "fr": "Il y a 9 équipes de 8 joueurs. Combien de joueurs au tournoi ?",
+    "en": "There are 9 teams of 8 players. How many players are at the tournament?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 72,
+    "calc": "9*8"
+   },
+   "common_errors": [
+    {
+     "value": 17,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Neuf équipes égales de 8 : on multiplie.",
+      "en": "Nine equal teams of 8: we multiply."
+     }
+    },
+    {
+     "value": 27,
+     "misconception": "mis_digit_swap",
+     "feedback": {
+      "fr": "Attention : tu as inversé les chiffres.",
+      "en": "Careful: you swapped the digits."
+     }
+    },
+    {
+     "value": 63,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as perdu un bond en comptant par 8.",
+      "en": "You lost a jump counting by 8."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à 10 × 8, puis enlève 8.",
+    "en": "Think 10 × 8, then take away 8."
+   },
+   "explain": {
+    "fr": "10 × 8 = 80, puis 80 - 8 = 72 joueurs.",
+    "en": "10 × 8 = 80, then 80 - 8 = 72 players."
+   },
+   "tags": [
+    "rows-of-8",
+    "word-problem",
+    "tournament"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.partie.011",
+   "quest": "echecs.partie",
+   "skill": "ARI-OPE-A06a",
+   "type": "truefalse",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa vérifie un calcul de son ami.",
+    "en": "Lea checks her friend’s calculation."
+   },
+   "prompt": {
+    "fr": "Noah dit que 7 × 8 donne 54. A-t-il raison ?",
+    "en": "Noah says 7 × 8 makes 54. Is he right?"
+   },
+   "math_text": "7 × 8 = 54",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_skip_count"
+   },
+   "hint": {
+    "fr": "Compte par bonds de 8 : 8, 16, 24, ...",
+    "en": "Count by jumps of 8: 8, 16, 24, ..."
+   },
+   "explain": {
+    "fr": "7 × 8 = 56, pas 54.",
+    "en": "7 × 8 = 56, not 54."
+   },
+   "tags": [
+    "rows-of-8",
+    "true-false"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.partie.012",
+   "quest": "echecs.partie",
+   "skill": "ARI-OPE-A06a",
+   "type": "order",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa écrit quatre calculs de la table de 8.",
+    "en": "Lea writes four sums from the table of 8."
+   },
+   "prompt": {
+    "fr": "Range les produits du plus petit au plus grand.",
+    "en": "Put the products in order, smallest to biggest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "3 × 8",
+      "en": "3 × 8"
+     },
+     "key": "24"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "6 × 8",
+      "en": "6 × 8"
+     },
+     "key": "48"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "2 × 8",
+      "en": "2 × 8"
+     },
+     "key": "16"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "5 × 8",
+      "en": "5 × 8"
+     },
+     "key": "40"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "c",
+     "a",
+     "d",
+     "b"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_partial"
+   },
+   "hint": {
+    "fr": "Plus on a de rangées de 8, plus le total est grand.",
+    "en": "The more rows of 8, the bigger the total."
+   },
+   "explain": {
+    "fr": "2 × 8 = 16, 3 × 8 = 24, 5 × 8 = 40, 6 × 8 = 48.",
+    "en": "2 × 8 = 16, 3 × 8 = 24, 5 × 8 = 40, 6 × 8 = 48."
+   },
+   "tags": [
+    "rows-of-8",
+    "ordering"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.partie.013",
+   "quest": "echecs.partie",
+   "skill": "ARI-OPE-A06a",
+   "type": "match",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah associe des calculs à leurs résultats.",
+    "en": "Noah matches sums with their results."
+   },
+   "prompt": {
+    "fr": "Relie chaque multiplication à son résultat.",
+    "en": "Match each multiplication to its result."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "4 × 8",
+       "en": "4 × 8"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "6 × 8",
+       "en": "6 × 8"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "9 × 8",
+       "en": "9 × 8"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "48",
+       "en": "48"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "72",
+       "en": "72"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "32",
+       "en": "32"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r3"
+     ],
+     [
+      "l2",
+      "r1"
+     ],
+     [
+      "l3",
+      "r2"
+     ]
+    ],
+    "misconception": "mis_skip_count"
+   },
+   "hint": {
+    "fr": "4 × 8 est le double de 2 × 8.",
+    "en": "4 × 8 is double 2 × 8."
+   },
+   "explain": {
+    "fr": "4 × 8 = 32, 6 × 8 = 48 et 9 × 8 = 72.",
+    "en": "4 × 8 = 32, 6 × 8 = 48 and 9 × 8 = 72."
+   },
+   "tags": [
+    "rows-of-8",
+    "matching"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.partie.014",
+   "quest": "echecs.partie",
+   "skill": "ARI-OPE-A06a",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Les pions sont alignés en rangées égales sur la grille.",
+    "en": "The pawns are lined up in equal rows on the grid."
+   },
+   "prompt": {
+    "fr": "Combien de pions y a-t-il sur la grille ?",
+    "en": "How many pawns are on the grid?"
+   },
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 8,
+     "rows": 3,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      },
+      {
+       "x": 5,
+       "y": 1,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      },
+      {
+       "x": 6,
+       "y": 1,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      },
+      {
+       "x": 7,
+       "y": 1,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      },
+      {
+       "x": 8,
+       "y": 1,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      },
+      {
+       "x": 5,
+       "y": 2,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      },
+      {
+       "x": 6,
+       "y": 2,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      },
+      {
+       "x": 7,
+       "y": 2,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      },
+      {
+       "x": 8,
+       "y": 2,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      },
+      {
+       "x": 4,
+       "y": 3,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      },
+      {
+       "x": 5,
+       "y": 3,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      },
+      {
+       "x": 6,
+       "y": 3,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      },
+      {
+       "x": 7,
+       "y": 3,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      },
+      {
+       "x": 8,
+       "y": 3,
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       }
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 24,
+    "calc": "3*8"
+   },
+   "common_errors": [
+    {
+     "value": 11,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Il y a des rangées égales : on multiplie.",
+      "en": "There are equal rows: we multiply."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_missing_term",
+     "feedback": {
+      "fr": "8 est le nombre de pions par rangée. Compte les rangées aussi.",
+      "en": "8 is the number of pawns per row. Count the rows too."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les rangées, puis les pions par rangée.",
+    "en": "Count the rows, then the pawns per row."
+   },
+   "explain": {
+    "fr": "3 rangées de 8 : 8 + 8 + 8 = 24 pions.",
+    "en": "3 rows of 8: 8 + 8 + 8 = 24 pawns."
+   },
+   "tags": [
+    "rows-of-8",
+    "array",
+    "multiplication"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_363661b8b93c27e81892"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "echecs.partie.015",
+   "quest": "echecs.partie",
+   "skill": "ARI-OPE-A06a",
+   "type": "estimate",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le tournoi de printemps a huit tables.",
+    "en": "The spring tournament has eight tables."
+   },
+   "prompt": {
+    "fr": "Chaque table accueille 12 joueurs. Environ combien de joueurs au total ?",
+    "en": "Each table seats 12 players. About how many players in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 88,
+    "max": 104,
+    "exact_for_check": 96,
+    "calc": "8*12"
+   },
+   "common_errors": [
+    {
+     "value": 20,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Huit tables égales : on multiplie.",
+      "en": "Eight equal tables: we multiply."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à 8 × 10, puis ajoute un peu.",
+    "en": "Think 8 × 10, then add a little."
+   },
+   "explain": {
+    "fr": "8 × 10 = 80 et 8 × 2 = 16. Donc environ 96, soit près de 100.",
+    "en": "8 × 10 = 80 and 8 × 2 = 16. So about 96, close to 100."
+   },
+   "tags": [
+    "rows-of-8",
+    "estimation",
+    "multiplication"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  }
+ ]
+}
