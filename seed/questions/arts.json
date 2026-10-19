@@ -1,0 +1,3645 @@
+{
+ "world": "arts",
+ "schema": 1,
+ "questions": [
+  {
+   "id": "arts.formes.001",
+   "quest": "arts.formes",
+   "skill": "GEO-C02",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa dessine un carré sur son affiche.",
+    "en": "Lea draws a square on her poster."
+   },
+   "prompt": {
+    "fr": "Combien de coins a un carré ?",
+    "en": "How many corners does a square have?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 4,
+    "calc": "4"
+   },
+   "common_errors": [
+    {
+     "value": 3,
+     "misconception": "mis_shape_name",
+     "feedback": {
+      "fr": "Trois coins, c'est un triangle. Le carré en a plus.",
+      "en": "Three corners is a triangle. The square has more."
+     }
+    },
+    {
+     "value": 5,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Compte les coins un par un.",
+      "en": "Close! Count the corners one by one."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Suis le contour du carré avec ton doigt.",
+    "en": "Trace the square's edge with your finger."
+   },
+   "explain": {
+    "fr": "Un carré a 4 coins et 4 côtés égaux.",
+    "en": "A square has 4 corners and 4 equal sides."
+   },
+   "tags": [
+    "shapes",
+    "square",
+    "corners"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_fcbfbf87722426a10e9e"
+    },
+    {
+     "role": "object",
+     "asset": "a_c33b52acc157fe010851"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.formes.002",
+   "quest": "arts.formes",
+   "skill": "GEO-C02",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa dessine 3 triangles et 2 carrés.",
+    "en": "Lea draws 3 triangles and 2 squares."
+   },
+   "prompt": {
+    "fr": "Combien de formes a-t-elle dessinées en tout ?",
+    "en": "How many shapes did she draw in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "3+2"
+   },
+   "common_errors": [
+    {
+     "value": 1,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Les formes vont ensemble : on additionne.",
+      "en": "The shapes go together, so we add."
+     }
+    },
+    {
+     "value": 6,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les formes.",
+      "en": "Close! Count the shapes again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les triangles, puis ajoute les carrés.",
+    "en": "Count the triangles, then add the squares."
+   },
+   "explain": {
+    "fr": "3 + 2 = 5. Léa a dessiné 5 formes.",
+    "en": "3 + 2 = 5. Lea drew 5 shapes."
+   },
+   "tags": [
+    "shapes",
+    "add-within-20"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_ea1845bde116a82f1451"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.formes.003",
+   "quest": "arts.formes",
+   "skill": "GEO-C02",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Un triangle a 3 côtés. Léa dessine 3 triangles.",
+    "en": "A triangle has 3 sides. Lea draws 3 triangles."
+   },
+   "prompt": {
+    "fr": "Combien de côtés a-t-elle dessinés en tout ?",
+    "en": "How many sides did she draw in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 9,
+    "calc": "3+3+3"
+   },
+   "common_errors": [
+    {
+     "value": 6,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Il y a trois triangles. Tu en as compté deux.",
+      "en": "There are three triangles. You counted two."
+     }
+    },
+    {
+     "value": 7,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Chaque triangle a 3 côtés : répète 3, trois fois.",
+      "en": "Each triangle has 3 sides: repeat 3 three times."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Ajoute 3 une fois pour chaque triangle.",
+    "en": "Add 3 once for each triangle."
+   },
+   "explain": {
+    "fr": "3 + 3 = 6, puis 6 + 3 = 9.",
+    "en": "3 + 3 = 6, then 6 + 3 = 9."
+   },
+   "tags": [
+    "shapes",
+    "triangle",
+    "repeated-addition"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_b935cdf502b69054bc2b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.formes.004",
+   "quest": "arts.formes",
+   "skill": "GEO-C02",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa cherche une forme dans sa boîte de crayons.",
+    "en": "Lea looks for a shape in her pencil box."
+   },
+   "prompt": {
+    "fr": "Quelle forme est toute ronde, sans coin ?",
+    "en": "Which shape is all round, with no corner?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Un carré",
+      "en": "Un carré"
+     },
+     "misconception": "mis_shape_name"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Un triangle",
+      "en": "Un triangle"
+     },
+     "misconception": "mis_shape_name"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Un cercle",
+      "en": "Un cercle"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "Un rectangle",
+      "en": "Un rectangle"
+     },
+     "misconception": "mis_shape_name"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c"
+   },
+   "hint": {
+    "fr": "Pense à une roue.",
+    "en": "Think of a wheel."
+   },
+   "explain": {
+    "fr": "Le cercle est rond. Il n'a ni coin ni côté droit.",
+    "en": "The circle is round. It has no corner and no straight side."
+   },
+   "tags": [
+    "shapes",
+    "circle"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_ea1845bde116a82f1451"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.formes.005",
+   "quest": "arts.formes",
+   "skill": "GEO-C02",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah choisit une tuile pour la mosaïque.",
+    "en": "Noah picks a tile for the mosaic."
+   },
+   "prompt": {
+    "fr": "Quelle forme a 4 côtés égaux et 4 coins droits ?",
+    "en": "Which shape has 4 equal sides and 4 square corners?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Un rectangle",
+      "en": "Un rectangle"
+     },
+     "misconception": "mis_shape_name"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Un carré",
+      "en": "Un carré"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Un triangle",
+      "en": "Un triangle"
+     },
+     "misconception": "mis_shape_name"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "Un cercle",
+      "en": "Un cercle"
+     },
+     "random": true
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Tous ses côtés ont la même longueur.",
+    "en": "All its sides have the same length."
+   },
+   "explain": {
+    "fr": "Le carré a 4 côtés égaux. Le rectangle a des côtés égaux deux par deux.",
+    "en": "The square has 4 equal sides. The rectangle has sides equal in pairs."
+   },
+   "tags": [
+    "shapes",
+    "square",
+    "properties"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_21d91fafa3ddfd8bd9e8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.formes.006",
+   "quest": "arts.formes",
+   "skill": "GEO-C02",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le vitrail de l'école a 4 triangles, 3 cercles et 2 carrés.",
+    "en": "In the school's stained glass there are 4 triangles, 3 circles and 2 squares."
+   },
+   "prompt": {
+    "fr": "Combien de formes ont des coins ?",
+    "en": "How many shapes have corners?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "9",
+      "en": "9"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "7",
+      "en": "7"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "6",
+      "en": "6"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "5",
+      "en": "5"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "4+2"
+    }
+   },
+   "hint": {
+    "fr": "Les cercles n'ont pas de coin.",
+    "en": "Circles have no corners."
+   },
+   "explain": {
+    "fr": "Triangles et carrés ont des coins. 4 + 2 = 6.",
+    "en": "Triangles and squares have corners. 4 + 2 = 6."
+   },
+   "tags": [
+    "shapes",
+    "corners",
+    "add-within-20"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_ea1845bde116a82f1451"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.formes.007",
+   "quest": "arts.formes",
+   "skill": "GEO-C02",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah colle 6 triangles sur la feuille. Léa en colle 5.",
+    "en": "Noah glues 6 triangles on the sheet. Lea glues 5."
+   },
+   "prompt": {
+    "fr": "Combien de triangles y a-t-il en tout ?",
+    "en": "How many triangles are there in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 11,
+    "calc": "6+5"
+   },
+   "common_errors": [
+    {
+     "value": 1,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Les deux collages vont ensemble : on additionne.",
+      "en": "Both glue jobs go together, so we add."
+     }
+    },
+    {
+     "value": 10,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Refais l'addition.",
+      "en": "Close! Do the sum again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pars de 6 et avance de 5.",
+    "en": "Start at 6 and go up 5."
+   },
+   "explain": {
+    "fr": "6 + 5 = 6 + 4 + 1 = 11.",
+    "en": "6 + 5 = 6 + 4 + 1 = 11."
+   },
+   "tags": [
+    "word-problem",
+    "triangle",
+    "add-within-20"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_21d91fafa3ddfd8bd9e8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.formes.008",
+   "quest": "arts.formes",
+   "skill": "GEO-C02",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Une affiche a 12 formes. Il y a 7 cercles. Les autres formes sont des carrés.",
+    "en": "A poster has 12 shapes. There are 7 circles. The other shapes are squares."
+   },
+   "prompt": {
+    "fr": "Combien de carrés y a-t-il ?",
+    "en": "How many squares are there?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "12-7"
+   },
+   "common_errors": [
+    {
+     "value": 19,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche ce qui reste : on soustrait.",
+      "en": "We want what is left, so we subtract."
+     }
+    },
+    {
+     "value": 4,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte à reculons.",
+      "en": "Close! Count back again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Enlève les cercles du total.",
+    "en": "Take the circles away from the total."
+   },
+   "explain": {
+    "fr": "12 - 7 = 5. Il y a 5 carrés.",
+    "en": "12 - 7 = 5. There are 5 squares."
+   },
+   "tags": [
+    "word-problem",
+    "shapes",
+    "subtract"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_ea1845bde116a82f1451"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.formes.009",
+   "quest": "arts.formes",
+   "skill": "GEO-C02",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa parle des rectangles.",
+    "en": "Lea talks about rectangles."
+   },
+   "prompt": {
+    "fr": "Vrai ou faux : un rectangle a toujours 4 côtés égaux.",
+    "en": "True or false: a rectangle always has 4 equal sides."
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_shape_name"
+   },
+   "hint": {
+    "fr": "Pense à une porte : elle est plus haute que large.",
+    "en": "Think of a door: it is taller than it is wide."
+   },
+   "explain": {
+    "fr": "Un rectangle a 4 coins droits. Ses côtés sont égaux deux par deux.",
+    "en": "A rectangle has 4 square corners. Its sides are equal in pairs."
+   },
+   "tags": [
+    "shapes",
+    "rectangle",
+    "properties"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_21d91fafa3ddfd8bd9e8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.formes.010",
+   "quest": "arts.formes",
+   "skill": "GEO-C02",
+   "type": "order",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa range ses formes selon leurs côtés.",
+    "en": "Lea sorts her shapes by their sides."
+   },
+   "prompt": {
+    "fr": "Range-les du moins de côtés au plus de côtés.",
+    "en": "Put them in order, from fewest sides to most sides."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "pentagone",
+      "en": "pentagon"
+     },
+     "key": "5"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "triangle",
+      "en": "triangle"
+     },
+     "key": "3"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "carré",
+      "en": "square"
+     },
+     "key": "4"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "c",
+     "a"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Le triangle a le moins de côtés.",
+    "en": "The triangle has the fewest sides."
+   },
+   "explain": {
+    "fr": "Triangle (3), carré (4), pentagone (5).",
+    "en": "Triangle (3), square (4), pentagon (5)."
+   },
+   "tags": [
+    "shapes",
+    "ordering",
+    "sides"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_b935cdf502b69054bc2b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.formes.011",
+   "quest": "arts.formes",
+   "skill": "GEO-C02",
+   "type": "match",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah repère des formes dans la classe.",
+    "en": "Noah spots shapes in the classroom."
+   },
+   "prompt": {
+    "fr": "Relie chaque objet à sa forme.",
+    "en": "Match each object to its shape."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "La roue d'un vélo",
+       "en": "A bicycle wheel"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "Une fenêtre carrée",
+       "en": "A square window"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "Le toit d'une tente",
+       "en": "The side of a tent"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "carré",
+       "en": "square"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "triangle",
+       "en": "triangle"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "cercle",
+       "en": "circle"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ]
+    ],
+    "misconception": "mis_shape_name"
+   },
+   "hint": {
+    "fr": "Pense au contour de chaque objet.",
+    "en": "Think of the outline of each object."
+   },
+   "explain": {
+    "fr": "La roue est un cercle. La fenêtre est un carré. Le côté de la tente est un triangle.",
+    "en": "The wheel is a circle. The window is a square. The tent's side is a triangle."
+   },
+   "tags": [
+    "shapes",
+    "matching",
+    "real-life"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_ea1845bde116a82f1451"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.formes.012",
+   "quest": "arts.formes",
+   "skill": "GEO-C02",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa a compté les formes de son dessin. Voici son tableau d'images.",
+    "en": "Lea counted the shapes in her drawing. Here is her picture chart."
+   },
+   "prompt": {
+    "fr": "Combien de formes y a-t-il en tout ?",
+    "en": "How many shapes are there in all?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Formes du dessin",
+      "en": "Shapes in the drawing"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "triangles",
+        "en": "triangles"
+       },
+       "count": 4
+      },
+      {
+       "label": {
+        "fr": "carrés",
+        "en": "squares"
+       },
+       "count": 6
+      },
+      {
+       "label": {
+        "fr": "cercles",
+        "en": "circles"
+       },
+       "count": 3
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 13,
+    "calc": "4+6+3"
+   },
+   "common_errors": [
+    {
+     "value": 10,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié une ligne. Compte les trois lignes.",
+      "en": "You left out a row. Count all three rows."
+     }
+    },
+    {
+     "value": 12,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte chaque ligne.",
+      "en": "Close! Count each row again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les images de chaque ligne, puis additionne.",
+    "en": "Count the pictures in each row, then add."
+   },
+   "explain": {
+    "fr": "4 + 6 = 10, puis 10 + 3 = 13.",
+    "en": "4 + 6 = 10, then 10 + 3 = 13."
+   },
+   "tags": [
+    "pictograph",
+    "shapes",
+    "add-within-20"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_ea1845bde116a82f1451"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.formes.013",
+   "quest": "arts.formes",
+   "skill": "GEO-C02",
+   "type": "estimate",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa a 39 perles rondes et 41 perles carrées.",
+    "en": "Lea has 39 round beads and 41 square beads."
+   },
+   "prompt": {
+    "fr": "Environ combien de perles a-t-elle en tout ?",
+    "en": "About how many beads does she have in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 72,
+    "max": 88,
+    "exact_for_check": 80,
+    "calc": "39+41"
+   },
+   "common_errors": [
+    {
+     "value": 60,
+     "misconception": "mis_estimate_rounding",
+     "feedback": {
+      "fr": "Tu as arrondi trop bas.",
+      "en": "You rounded too low."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis chaque nombre à la dizaine.",
+    "en": "Round each number to the nearest ten."
+   },
+   "explain": {
+    "fr": "39 est proche de 40 et 41 aussi. 40 + 40 = 80.",
+    "en": "39 is close to 40 and so is 41. 40 + 40 = 80."
+   },
+   "tags": [
+    "estimation",
+    "shapes",
+    "rounding"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_ea1845bde116a82f1451"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.frises.001",
+   "quest": "arts.frises",
+   "skill": "GEO-D03a",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa dessine une frise avec ce motif : carré, triangle.",
+    "en": "Lea draws a frieze with this pattern: square, triangle."
+   },
+   "prompt": {
+    "fr": "Elle le répète 3 fois. Combien de formes en tout ?",
+    "en": "She repeats it 3 times. How many shapes in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 6,
+    "calc": "2+2+2"
+   },
+   "common_errors": [
+    {
+     "value": 5,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Chaque motif a 2 formes : compte par bonds de 2.",
+      "en": "Each pattern has 2 shapes: count by twos."
+     }
+    },
+    {
+     "value": 3,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as compté les motifs. Compte les formes.",
+      "en": "You counted the patterns. Count the shapes."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte par bonds de 2.",
+    "en": "Count by twos."
+   },
+   "explain": {
+    "fr": "2, 4, 6. Trois motifs de 2 formes font 6 formes.",
+    "en": "2, 4, 6. Three patterns of 2 shapes make 6 shapes."
+   },
+   "tags": [
+    "frieze",
+    "pattern",
+    "skip-count"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_21d91fafa3ddfd8bd9e8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.frises.002",
+   "quest": "arts.frises",
+   "skill": "GEO-D03a",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Un motif de frise a 3 formes. Il est répété 4 fois.",
+    "en": "A frieze pattern has 3 shapes. It repeats 4 times."
+   },
+   "prompt": {
+    "fr": "Combien de formes y a-t-il en tout ?",
+    "en": "How many shapes are there in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 12,
+    "calc": "3+3+3+3"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Chaque motif a 3 formes : compte par bonds de 3.",
+      "en": "Each pattern has 3 shapes: count by threes."
+     }
+    },
+    {
+     "value": 9,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Il y a quatre motifs. Tu en as compté trois.",
+      "en": "There are four patterns. You counted three."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte par bonds de 3, quatre fois.",
+    "en": "Count by threes, four times."
+   },
+   "explain": {
+    "fr": "3, 6, 9, 12. Quatre motifs de 3 formes font 12.",
+    "en": "3, 6, 9, 12. Four patterns of 3 shapes make 12."
+   },
+   "tags": [
+    "frieze",
+    "pattern",
+    "skip-count"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_ea1845bde116a82f1451"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.frises.003",
+   "quest": "arts.frises",
+   "skill": "GEO-D03a",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Une bordure a 20 formes. Un motif en a 4.",
+    "en": "A border has 20 shapes. One pattern has 4."
+   },
+   "prompt": {
+    "fr": "Combien de fois le motif est-il répété ?",
+    "en": "How many times is the pattern repeated?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "20/4"
+   },
+   "common_errors": [
+    {
+     "value": 16,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "On cherche combien de groupes de 4 : pas une soustraction.",
+      "en": "We want how many groups of 4, not a subtraction."
+     }
+    },
+    {
+     "value": 24,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Il y a 20 formes en tout. Fais des groupes de 4.",
+      "en": "There are 20 shapes in all. Make groups of 4."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte par bonds de 4 jusqu'à 20.",
+    "en": "Count by fours up to 20."
+   },
+   "explain": {
+    "fr": "4, 8, 12, 16, 20. Il y a 5 groupes de 4.",
+    "en": "4, 8, 12, 16, 20. There are 5 groups of 4."
+   },
+   "tags": [
+    "frieze",
+    "pattern",
+    "grouping"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_21d91fafa3ddfd8bd9e8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.frises.004",
+   "quest": "arts.frises",
+   "skill": "GEO-D03a",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "La frise de Léa : cercle, carré, cercle, carré, cercle.",
+    "en": "Lea's frieze: circle, square, circle, square, circle."
+   },
+   "prompt": {
+    "fr": "Quelle forme vient ensuite ?",
+    "en": "Which shape comes next?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "cercle",
+      "en": "cercle"
+     },
+     "misconception": "mis_pattern_wrong_rule"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "triangle",
+      "en": "triangle"
+     },
+     "random": true
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "carré",
+      "en": "carré"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c"
+   },
+   "hint": {
+    "fr": "Regarde comment les formes alternent.",
+    "en": "Look at how the shapes take turns."
+   },
+   "explain": {
+    "fr": "Le motif est cercle, carré. Après un cercle, il y a un carré.",
+    "en": "The pattern is circle, square. After a circle comes a square."
+   },
+   "tags": [
+    "frieze",
+    "pattern"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_ea1845bde116a82f1451"
+    }
+   ],
+   "allow_operand_equals_answer": true,
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.frises.005",
+   "quest": "arts.frises",
+   "skill": "GEO-D03a",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "La frise de Noah : étoile, rond, rond, étoile, rond, rond, étoile, ...",
+    "en": "Noah's frieze: star, circle, circle, star, circle, circle, star, ..."
+   },
+   "prompt": {
+    "fr": "Quelle est la 8e forme ?",
+    "en": "What is the 8th shape?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "étoile",
+      "en": "étoile"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "carré",
+      "en": "carré"
+     },
+     "random": true
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "rond",
+      "en": "rond"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c"
+   },
+   "hint": {
+    "fr": "Écris la suite jusqu'à la 8e forme.",
+    "en": "Write the sequence up to the 8th shape."
+   },
+   "explain": {
+    "fr": "Les formes 1 à 7 sont données. La 7e est une étoile, donc la 8e est un rond.",
+    "en": "Shapes 1 to 7 are given. The 7th is a star, so the 8th is a circle."
+   },
+   "tags": [
+    "frieze",
+    "pattern",
+    "position"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_21d91fafa3ddfd8bd9e8"
+    }
+   ],
+   "allow_operand_equals_answer": true,
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.frises.006",
+   "quest": "arts.frises",
+   "skill": "GEO-D03a",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Une frise a 8 carrés bleus et 6 carrés rouges.",
+    "en": "A frieze has 8 blue squares and 6 red squares."
+   },
+   "prompt": {
+    "fr": "Combien de carrés y a-t-il en tout ?",
+    "en": "How many squares are there in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 14,
+    "calc": "8+6"
+   },
+   "common_errors": [
+    {
+     "value": 2,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Les deux couleurs vont ensemble : on additionne.",
+      "en": "Both colours go together, so we add."
+     }
+    },
+    {
+     "value": 13,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Refais l'addition.",
+      "en": "Close! Do the sum again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pars de 8 et avance de 6.",
+    "en": "Start at 8 and go up 6."
+   },
+   "explain": {
+    "fr": "8 + 6 = 8 + 2 + 4 = 14.",
+    "en": "8 + 6 = 8 + 2 + 4 = 14."
+   },
+   "tags": [
+    "word-problem",
+    "frieze",
+    "add-within-20"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_ea1845bde116a82f1451"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.frises.007",
+   "quest": "arts.frises",
+   "skill": "GEO-D03a",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah colorie une frise de 18 formes. Il en a déjà colorié 11.",
+    "en": "Noah colours a frieze of 18 shapes. He has already coloured 11."
+   },
+   "prompt": {
+    "fr": "Combien de formes reste-t-il à colorier ?",
+    "en": "How many shapes are left to colour?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 7,
+    "calc": "18-11"
+   },
+   "common_errors": [
+    {
+     "value": 29,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche ce qui reste : on soustrait.",
+      "en": "We want what is left, so we subtract."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte à reculons.",
+      "en": "Close! Count back again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Recule de 11 en partant de 18.",
+    "en": "Count back 11 from 18."
+   },
+   "explain": {
+    "fr": "18 - 11 = 7. Il reste 7 formes.",
+    "en": "18 - 11 = 7. There are 7 shapes left."
+   },
+   "tags": [
+    "word-problem",
+    "frieze",
+    "subtract"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_147e62f6523e7e923add"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.frises.008",
+   "quest": "arts.frises",
+   "skill": "GEO-D03a",
+   "type": "truefalse",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa regarde la frise : triangle, triangle, rond, triangle, triangle, rond.",
+    "en": "Lea looks at the frieze: triangle, triangle, circle, triangle, triangle, circle."
+   },
+   "prompt": {
+    "fr": "Vrai ou faux : le motif qui se répète a 2 formes.",
+    "en": "True or false: the repeating pattern has 2 shapes."
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_pattern_wrong_rule"
+   },
+   "hint": {
+    "fr": "Cherche le plus petit groupe qui revient.",
+    "en": "Find the smallest group that comes back."
+   },
+   "explain": {
+    "fr": "Le groupe qui revient est triangle, triangle, rond. Il a 3 formes.",
+    "en": "The group that comes back is triangle, triangle, circle. It has 3 shapes."
+   },
+   "tags": [
+    "frieze",
+    "pattern",
+    "properties"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_21d91fafa3ddfd8bd9e8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.frises.009",
+   "quest": "arts.frises",
+   "skill": "GEO-D03a",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa fabrique une frise sur une bande de papier.",
+    "en": "Lea makes a frieze on a strip of paper."
+   },
+   "prompt": {
+    "fr": "Mets les étapes dans le bon ordre.",
+    "en": "Put the steps in the right order."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Colorier la frise",
+      "en": "Colour the frieze"
+     },
+     "key": "4"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Répéter le motif",
+      "en": "Repeat the pattern"
+     },
+     "key": "3"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Tracer une ligne",
+      "en": "Draw a line"
+     },
+     "key": "1"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "Dessiner le motif",
+      "en": "Draw the pattern"
+     },
+     "key": "2"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "c",
+     "d",
+     "b",
+     "a"
+    ],
+    "by": "asc",
+    "misconception": "mis_order"
+   },
+   "hint": {
+    "fr": "On a besoin d'une ligne avant de dessiner.",
+    "en": "We need a line before we draw."
+   },
+   "explain": {
+    "fr": "D'abord la ligne, puis le motif, puis on le répète, enfin on colorie.",
+    "en": "First the line, then the pattern, then repeat it, finally colour."
+   },
+   "tags": [
+    "frieze",
+    "algorithm",
+    "ordering"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_7b47b0493638e9f830dc"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.frises.010",
+   "quest": "arts.frises",
+   "skill": "GEO-D03a",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah décrit chaque frise par la taille de son motif.",
+    "en": "Noah describes each frieze by the size of its pattern."
+   },
+   "prompt": {
+    "fr": "Relie chaque frise à son motif.",
+    "en": "Match each frieze to its pattern."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "cercle, carré, cercle, carré",
+       "en": "circle, square, circle, square"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "étoile, rond, rond, étoile, rond, rond",
+       "en": "star, circle, circle, star, circle, circle"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "A, B, C, D, A, B, C, D",
+       "en": "A, B, C, D, A, B, C, D"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "motif de 3 formes",
+       "en": "pattern of 3 shapes"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "motif de 4 formes",
+       "en": "pattern of 4 shapes"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "motif de 2 formes",
+       "en": "pattern of 2 shapes"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ]
+    ],
+    "misconception": "mis_pattern_wrong_rule"
+   },
+   "hint": {
+    "fr": "Trouve le groupe qui se répète.",
+    "en": "Find the group that repeats."
+   },
+   "explain": {
+    "fr": "Le groupe qui revient a 2, 3 ou 4 formes.",
+    "en": "The group that comes back has 2, 3 or 4 shapes."
+   },
+   "tags": [
+    "frieze",
+    "pattern",
+    "matching"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_ea1845bde116a82f1451"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.frises.011",
+   "quest": "arts.frises",
+   "skill": "GEO-D03a",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Trois amis ont dessiné des formes pour leur frise.",
+    "en": "Three friends drew shapes for their frieze."
+   },
+   "prompt": {
+    "fr": "Combien de formes de plus Emma que Noah a-t-elle dessinées ?",
+    "en": "How many more shapes did Emma draw than Noah?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Formes dessinées",
+      "en": "Shapes drawn"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "Léa",
+        "en": "Lea"
+       },
+       "value": 12
+      },
+      {
+       "label": {
+        "fr": "Noah",
+        "en": "Noah"
+       },
+       "value": 9
+      },
+      {
+       "label": {
+        "fr": "Emma",
+        "en": "Emma"
+       },
+       "value": 15
+      }
+     ],
+     "max": 16
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 6,
+    "calc": "15-9"
+   },
+   "common_errors": [
+    {
+     "value": 24,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On compare : on soustrait.",
+      "en": "We compare, so we subtract."
+     }
+    },
+    {
+     "value": 3,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as comparé Léa et Noah. Compare Emma et Noah.",
+      "en": "You compared Lea and Noah. Compare Emma and Noah."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Lis la hauteur des barres d'Emma et de Noah.",
+    "en": "Read the height of Emma's and Noah's bars."
+   },
+   "explain": {
+    "fr": "Emma a 15 formes et Noah en a 9. 15 - 9 = 6.",
+    "en": "Emma has 15 shapes and Noah has 9. 15 - 9 = 6."
+   },
+   "tags": [
+    "bar-chart",
+    "frieze",
+    "compare"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_ea1845bde116a82f1451"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.frises.012",
+   "quest": "arts.frises",
+   "skill": "GEO-D03a",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Une bande de 8 cases est coloriée en rouge une case sur deux.",
+    "en": "A strip of 8 squares is coloured red every other square."
+   },
+   "prompt": {
+    "fr": "Combien de cases rouges y a-t-il ?",
+    "en": "How many red squares are there?"
+   },
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 8,
+     "rows": 2,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "rouge",
+        "en": "red"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "rouge",
+        "en": "red"
+       }
+      },
+      {
+       "x": 5,
+       "y": 1,
+       "label": {
+        "fr": "rouge",
+        "en": "red"
+       }
+      },
+      {
+       "x": 7,
+       "y": 1,
+       "label": {
+        "fr": "rouge",
+        "en": "red"
+       }
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 4,
+    "calc": "4"
+   },
+   "common_errors": [
+    {
+     "value": 8,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "8 est le nombre de cases en tout. Compte seulement les rouges.",
+      "en": "That is all the squares. Count only the red ones."
+     }
+    },
+    {
+     "value": 3,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les cases rouges.",
+      "en": "Close! Count the red squares again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte seulement les cases rouges.",
+    "en": "Count only the red squares."
+   },
+   "explain": {
+    "fr": "Une case sur deux est rouge : 1, 3, 5 et 7. Cela fait 4 cases.",
+    "en": "Every other square is red: 1, 3, 5 and 7. That makes 4 squares."
+   },
+   "tags": [
+    "grid",
+    "frieze",
+    "pattern"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_21d91fafa3ddfd8bd9e8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.frises.013",
+   "quest": "arts.frises",
+   "skill": "GEO-D03a",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Une bordure a 38 formes d'un côté et 41 formes de l'autre.",
+    "en": "A border has 38 shapes on one side and 41 on the other."
+   },
+   "prompt": {
+    "fr": "Environ combien de formes en tout ?",
+    "en": "About how many shapes in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 72,
+    "max": 86,
+    "exact_for_check": 79,
+    "calc": "38+41"
+   },
+   "common_errors": [
+    {
+     "value": 60,
+     "misconception": "mis_estimate_rounding",
+     "feedback": {
+      "fr": "Tu as arrondi trop bas.",
+      "en": "You rounded too low."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis chaque nombre à la dizaine.",
+    "en": "Round each number to the nearest ten."
+   },
+   "explain": {
+    "fr": "38 est proche de 40 et 41 aussi. 40 + 40 = 80. Le vrai total est 79.",
+    "en": "38 is close to 40 and so is 41. 40 + 40 = 80. The exact total is 79."
+   },
+   "tags": [
+    "estimation",
+    "frieze",
+    "rounding"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_ea1845bde116a82f1451"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.mosaique.001",
+   "quest": "arts.mosaique",
+   "skill": "ARI-SEN-B03",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Une mosaïque a 8 carreaux. Il y en a 3 qui sont bleus.",
+    "en": "A mosaic has 8 tiles. 3 of them are blue."
+   },
+   "prompt": {
+    "fr": "Combien de carreaux ne sont pas bleus ?",
+    "en": "How many tiles are not blue?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "8-3"
+   },
+   "common_errors": [
+    {
+     "value": 11,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche ce qui reste : on soustrait.",
+      "en": "We want what is left, so we subtract."
+     }
+    },
+    {
+     "value": 4,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte à reculons.",
+      "en": "Close! Count back again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Enlève les carreaux bleus du total.",
+    "en": "Take the blue tiles away from the total."
+   },
+   "explain": {
+    "fr": "8 - 3 = 5. Il y a 5 carreaux d'une autre couleur.",
+    "en": "8 - 3 = 5. There are 5 tiles of another colour."
+   },
+   "tags": [
+    "mosaic",
+    "fractions",
+    "subtract"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_21d91fafa3ddfd8bd9e8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.mosaique.002",
+   "quest": "arts.mosaique",
+   "skill": "ARI-SEN-B03",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Une mosaïque a 12 carreaux. Le quart des carreaux est rouge.",
+    "en": "A mosaic has 12 tiles. A quarter of the tiles is red."
+   },
+   "prompt": {
+    "fr": "Combien de carreaux rouges y a-t-il ?",
+    "en": "How many red tiles are there?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3,
+    "calc": "12/4"
+   },
+   "common_errors": [
+    {
+     "value": 8,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "Un quart veut dire 1 part sur 4 parts égales : on partage 12 en 4.",
+      "en": "A quarter is 1 part of 4 equal parts: share 12 into 4."
+     }
+    },
+    {
+     "value": 48,
+     "misconception": "mis_multiply_instead_of_add",
+     "feedback": {
+      "fr": "On partage en 4 groupes égaux, on ne multiplie pas.",
+      "en": "We share into 4 equal groups, we do not multiply."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Partage les 12 carreaux en 4 groupes égaux.",
+    "en": "Share the 12 tiles into 4 equal groups."
+   },
+   "explain": {
+    "fr": "12 / 4 = 3. Un quart de 12 carreaux, c'est 3 carreaux.",
+    "en": "12 / 4 = 3. A quarter of 12 tiles is 3 tiles."
+   },
+   "tags": [
+    "mosaic",
+    "fractions",
+    "quarter"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_21d91fafa3ddfd8bd9e8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.mosaique.003",
+   "quest": "arts.mosaique",
+   "skill": "ARI-SEN-B03",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Une mosaïque est coupée en 4 parts égales. Une part est jaune.",
+    "en": "A mosaic is cut into 4 equal parts. One part is yellow."
+   },
+   "prompt": {
+    "fr": "Quelle fraction de la mosaïque est jaune ?",
+    "en": "What fraction of the mosaic is yellow?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "1/3",
+      "en": "1/3"
+     },
+     "misconception": "mis_fraction_denominator"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "3/4",
+      "en": "3/4"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "1/4",
+      "en": "1/4"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "4/1",
+      "en": "4/1"
+     },
+     "misconception": "mis_digit_swap"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c"
+   },
+   "hint": {
+    "fr": "Le bas de la fraction dit combien de parts égales.",
+    "en": "The bottom of the fraction says how many equal parts."
+   },
+   "explain": {
+    "fr": "1 part jaune sur 4 parts égales : 1/4.",
+    "en": "1 yellow part out of 4 equal parts: 1/4."
+   },
+   "tags": [
+    "fractions",
+    "mosaic",
+    "quarter"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_21d91fafa3ddfd8bd9e8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.mosaique.004",
+   "quest": "arts.mosaique",
+   "skill": "ARI-SEN-B03",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa a colorié 1/2 de sa mosaïque, Noah 1/4 et Emma 1/3. Les mosaïques sont de la même taille.",
+    "en": "Lea coloured 1/2 of her mosaic, Noah 1/4 and Emma 1/3. The mosaics are the same size."
+   },
+   "prompt": {
+    "fr": "Qui a colorié la plus grande partie ?",
+    "en": "Who coloured the biggest part?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Noah, 1/4",
+      "en": "Noah, 1/4"
+     },
+     "misconception": "mis_fraction_denominator"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Léa, 1/2",
+      "en": "Léa, 1/2"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Emma, 1/3",
+      "en": "Emma, 1/3"
+     },
+     "misconception": "mis_fraction_denominator"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Plus on coupe en parts, plus les parts sont petites.",
+    "en": "The more parts we cut, the smaller each part is."
+   },
+   "explain": {
+    "fr": "Une moitié est plus grande qu'un tiers, et un tiers est plus grand qu'un quart.",
+    "en": "A half is bigger than a third, and a third is bigger than a quarter."
+   },
+   "tags": [
+    "fractions",
+    "compare",
+    "mosaic"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_ea1845bde116a82f1451"
+    }
+   ],
+   "allow_operand_equals_answer": true,
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.mosaique.005",
+   "quest": "arts.mosaique",
+   "skill": "ARI-SEN-B03",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Une mosaïque a 10 carreaux. La moitié est bleue.",
+    "en": "A mosaic has 10 tiles. Half of them are blue."
+   },
+   "prompt": {
+    "fr": "Combien de carreaux faut-il colorier en bleu ?",
+    "en": "How many tiles must be coloured blue?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "20",
+      "en": "20"
+     },
+     "misconception": "mis_multiply_instead_of_add"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "2",
+      "en": "2"
+     },
+     "misconception": "mis_fraction_denominator"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "5",
+      "en": "5"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "8",
+      "en": "8"
+     },
+     "misconception": "mis_wrong_operation"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "10/2"
+    }
+   },
+   "hint": {
+    "fr": "Partage les 10 carreaux en 2 groupes égaux.",
+    "en": "Share the 10 tiles into 2 equal groups."
+   },
+   "explain": {
+    "fr": "10 / 2 = 5. La moitié de 10 carreaux, c'est 5 carreaux.",
+    "en": "10 / 2 = 5. Half of 10 tiles is 5 tiles."
+   },
+   "tags": [
+    "fractions",
+    "half",
+    "mosaic"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_21d91fafa3ddfd8bd9e8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.mosaique.006",
+   "quest": "arts.mosaique",
+   "skill": "ARI-SEN-B03",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa a colorié une partie de sa mosaïque.",
+    "en": "Lea coloured part of her mosaic."
+   },
+   "prompt": {
+    "fr": "Quelle fraction de la mosaïque est coloriée ?",
+    "en": "What fraction of the mosaic is coloured?"
+   },
+   "visual": {
+    "kind": "fraction",
+    "data": {
+     "parts": 8,
+     "filled": 3
+    }
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "5/8",
+      "en": "5/8"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "3/8",
+      "en": "3/8"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "3/5",
+      "en": "3/5"
+     },
+     "misconception": "mis_fraction_parts_unequal"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "8/3",
+      "en": "8/3"
+     },
+     "misconception": "mis_digit_swap"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Compte les parts coloriées, puis toutes les parts.",
+    "en": "Count the coloured parts, then all the parts."
+   },
+   "explain": {
+    "fr": "3 parts coloriées sur 8 parts égales : 3/8.",
+    "en": "3 coloured parts out of 8 equal parts: 3/8."
+   },
+   "tags": [
+    "fractions",
+    "mosaic",
+    "fraction-model"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_21d91fafa3ddfd8bd9e8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.mosaique.007",
+   "quest": "arts.mosaique",
+   "skill": "ARI-SEN-B03",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Une mosaïque a 12 carreaux : 5 bleus, 4 rouges et le reste jaunes.",
+    "en": "A mosaic has 12 tiles: 5 blue, 4 red and the rest yellow."
+   },
+   "prompt": {
+    "fr": "Combien de carreaux jaunes y a-t-il ?",
+    "en": "How many yellow tiles are there?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3,
+    "calc": "12-5-4"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as enlevé seulement les bleus. Enlève aussi les rouges.",
+      "en": "You took away only the blue ones. Take away the red ones too."
+     }
+    },
+    {
+     "value": 21,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche ce qui reste : on soustrait.",
+      "en": "We want what is left, so we subtract."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Enlève les bleus, puis les rouges.",
+    "en": "Take away the blue ones, then the red ones."
+   },
+   "explain": {
+    "fr": "12 - 5 = 7, puis 7 - 4 = 3. Il y a 3 carreaux jaunes.",
+    "en": "12 - 5 = 7, then 7 - 4 = 3. There are 3 yellow tiles."
+   },
+   "tags": [
+    "word-problem",
+    "mosaic",
+    "two-step"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_21d91fafa3ddfd8bd9e8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.mosaique.008",
+   "quest": "arts.mosaique",
+   "skill": "ARI-SEN-B03",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Pour faire du vert, Léa mélange 2 pots de bleu avec 1 pot de jaune. Elle fait la recette 3 fois.",
+    "en": "To make green, Lea mixes 2 pots of blue with 1 pot of yellow. She makes the recipe 3 times."
+   },
+   "prompt": {
+    "fr": "Combien de pots de bleu utilise-t-elle ?",
+    "en": "How many pots of blue does she use?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 6,
+    "calc": "2*3"
+   },
+   "common_errors": [
+    {
+     "value": 3,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "3, c'est le nombre de recettes. Compte les pots de bleu.",
+      "en": "That is the number of recipes. Count the blue pots."
+     }
+    },
+    {
+     "value": 9,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as compté tous les pots. Compte seulement le bleu.",
+      "en": "You counted all the pots. Count only the blue."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Une recette utilise 2 pots de bleu. Combien de recettes ?",
+    "en": "One recipe uses 2 pots of blue. How many recipes?"
+   },
+   "explain": {
+    "fr": "2 + 2 + 2 = 6. Elle utilise 6 pots de bleu.",
+    "en": "2 + 2 + 2 = 6. She uses 6 pots of blue."
+   },
+   "tags": [
+    "word-problem",
+    "colour-mixing",
+    "ratio"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_ea1845bde116a82f1451"
+    },
+    {
+     "role": "object",
+     "asset": "a_147e62f6523e7e923add"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.mosaique.009",
+   "quest": "arts.mosaique",
+   "skill": "ARI-SEN-B03",
+   "type": "truefalse",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah coupe une mosaïque en parts égales.",
+    "en": "Noah cuts a mosaic into equal parts."
+   },
+   "prompt": {
+    "fr": "Vrai ou faux : 4 parts égales s'appellent des quarts.",
+    "en": "True or false: 4 equal parts are called quarters."
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": true
+   },
+   "hint": {
+    "fr": "Pense au quart d'heure ou à un quart de tarte.",
+    "en": "Think of a quarter of a pie."
+   },
+   "explain": {
+    "fr": "Quatre parts égales sont des quarts. Chaque part est 1/4.",
+    "en": "Four equal parts are quarters. Each part is 1/4."
+   },
+   "tags": [
+    "fractions",
+    "quarter",
+    "vocabulary"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_21d91fafa3ddfd8bd9e8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.mosaique.010",
+   "quest": "arts.mosaique",
+   "skill": "ARI-SEN-B03",
+   "type": "truefalse",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Emma compare deux fractions de la même mosaïque.",
+    "en": "Emma compares two fractions of the same mosaic."
+   },
+   "prompt": {
+    "fr": "Vrai ou faux : 1/3 est plus grand que 1/2.",
+    "en": "True or false: 1/3 is bigger than 1/2."
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_fraction_denominator"
+   },
+   "hint": {
+    "fr": "Imagine une tarte coupée en 2, puis en 3.",
+    "en": "Imagine a pie cut in 2, then in 3."
+   },
+   "explain": {
+    "fr": "Avec 2 parts, chaque part est plus grande qu'avec 3 parts. Donc 1/2 est plus grand que 1/3.",
+    "en": "With 2 parts, each part is bigger than with 3 parts. So 1/2 is bigger than 1/3."
+   },
+   "tags": [
+    "fractions",
+    "compare"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_ea1845bde116a82f1451"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.mosaique.011",
+   "quest": "arts.mosaique",
+   "skill": "ARI-SEN-B03",
+   "type": "order",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa coupe sa mosaïque de plusieurs façons.",
+    "en": "Lea cuts her mosaic in several ways."
+   },
+   "prompt": {
+    "fr": "Range ces fractions de la plus petite à la plus grande.",
+    "en": "Put these fractions in order, from smallest to biggest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "1/2",
+      "en": "1/2"
+     },
+     "key": "1/2"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "1/8",
+      "en": "1/8"
+     },
+     "key": "1/8"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "3/4",
+      "en": "3/4"
+     },
+     "key": "3/4"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "1/4",
+      "en": "1/4"
+     },
+     "key": "1/4"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "d",
+     "a",
+     "c"
+    ],
+    "by": "asc",
+    "misconception": "mis_fraction_denominator"
+   },
+   "hint": {
+    "fr": "Une part de 8 est plus petite qu'une part de 4.",
+    "en": "A part out of 8 is smaller than a part out of 4."
+   },
+   "explain": {
+    "fr": "1/8, 1/4, 1/2, 3/4. Plus on coupe de parts, plus chaque part est petite.",
+    "en": "1/8, 1/4, 1/2, 3/4. The more parts we cut, the smaller each part is."
+   },
+   "tags": [
+    "fractions",
+    "ordering"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_21d91fafa3ddfd8bd9e8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.mosaique.012",
+   "quest": "arts.mosaique",
+   "skill": "ARI-SEN-B03",
+   "type": "match",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa apprend les mots des fractions.",
+    "en": "Lea learns the words for fractions."
+   },
+   "prompt": {
+    "fr": "Relie chaque fraction à son nom.",
+    "en": "Match each fraction to its name."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "1/2",
+       "en": "1/2"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "1/4",
+       "en": "1/4"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "3/4",
+       "en": "3/4"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "un quart",
+       "en": "a quarter"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "trois quarts",
+       "en": "three quarters"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "la moitié",
+       "en": "half"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ]
+    ],
+    "misconception": "mis_match"
+   },
+   "hint": {
+    "fr": "Pense à une pizza coupée en parts égales.",
+    "en": "Think of a pizza cut into equal parts."
+   },
+   "explain": {
+    "fr": "1/2 est la moitié, 1/4 est un quart et 3/4 est trois quarts.",
+    "en": "1/2 is half, 1/4 is a quarter and 3/4 is three quarters."
+   },
+   "tags": [
+    "fractions",
+    "vocabulary",
+    "matching"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_ea1845bde116a82f1451"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.mosaique.013",
+   "quest": "arts.mosaique",
+   "skill": "ARI-SEN-B03",
+   "type": "match",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "À l'atelier, Léa mélange deux couleurs pour en faire une troisième.",
+    "en": "In the studio, Lea mixes two colours to make a third."
+   },
+   "prompt": {
+    "fr": "Relie chaque mélange à la couleur obtenue.",
+    "en": "Match each mix to the colour you get."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "bleu et jaune",
+       "en": "blue and yellow"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "rouge et jaune",
+       "en": "red and yellow"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "rouge et bleu",
+       "en": "red and blue"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "orange",
+       "en": "orange"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "mauve",
+       "en": "purple"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "vert",
+       "en": "green"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ]
+    ],
+    "misconception": "mis_match"
+   },
+   "hint": {
+    "fr": "Pense aux couleurs de l'arc-en-ciel.",
+    "en": "Think of the colours of the rainbow."
+   },
+   "explain": {
+    "fr": "Bleu et jaune font du vert. Rouge et jaune font de l'orange. Rouge et bleu font du mauve.",
+    "en": "Blue and yellow make green. Red and yellow make orange. Red and blue make purple."
+   },
+   "tags": [
+    "colour-mixing",
+    "matching"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_ea1845bde116a82f1451"
+    },
+    {
+     "role": "object",
+     "asset": "a_147e62f6523e7e923add"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.mosaique.014",
+   "quest": "arts.mosaique",
+   "skill": "ARI-SEN-B03",
+   "type": "estimate",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "La grande mosaïque a 98 carreaux. La moitié environ est bleue.",
+    "en": "The big mosaic has 98 tiles. About half of them are blue."
+   },
+   "prompt": {
+    "fr": "Environ combien de carreaux bleus y a-t-il ?",
+    "en": "About how many blue tiles are there?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 45,
+    "max": 53,
+    "exact_for_check": 49,
+    "calc": "98/2"
+   },
+   "common_errors": [
+    {
+     "value": 98,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "98 est le nombre total. Il faut en prendre la moitié.",
+      "en": "98 is the whole number. Take half of it."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis 98 à 100, puis prends la moitié.",
+    "en": "Round 98 to 100, then take half."
+   },
+   "explain": {
+    "fr": "La moitié de 100 est 50. La moitié de 98 est 49.",
+    "en": "Half of 100 is 50. Half of 98 is 49."
+   },
+   "tags": [
+    "estimation",
+    "fractions",
+    "half"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_21d91fafa3ddfd8bd9e8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.symetrie.001",
+   "quest": "arts.symetrie",
+   "skill": "GEO-C05",
+   "type": "numeric",
+   "grade": 4,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa regarde un cadre de peinture. C'est un rectangle.",
+    "en": "Lea looks at a painting frame. It is a rectangle."
+   },
+   "prompt": {
+    "fr": "Combien de paires de côtés parallèles a-t-il ?",
+    "en": "How many pairs of parallel sides does it have?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 2,
+    "calc": "2"
+   },
+   "common_errors": [
+    {
+     "value": 4,
+     "misconception": "mis_perimeter_missing_side",
+     "feedback": {
+      "fr": "4 est le nombre de côtés. Les côtés parallèles vont par paires.",
+      "en": "That is the number of sides. Parallel sides come in pairs."
+     }
+    },
+    {
+     "value": 3,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Regarde les côtés qui font face l'un à l'autre.",
+      "en": "Close! Look at the sides facing each other."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Les côtés parallèles se font face et ne se touchent jamais.",
+    "en": "Parallel sides face each other and never touch."
+   },
+   "explain": {
+    "fr": "Les deux côtés longs sont parallèles. Les deux côtés courts aussi : 2 paires.",
+    "en": "The two long sides are parallel. So are the two short sides: 2 pairs."
+   },
+   "tags": [
+    "parallel",
+    "rectangle",
+    "lines"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_7b47b0493638e9f830dc"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.symetrie.002",
+   "quest": "arts.symetrie",
+   "skill": "GEO-C05",
+   "type": "numeric",
+   "grade": 4,
+   "difficulty": 2,
+   "story": {
+    "fr": "Un carré a 4 angles droits. Léa a 3 cadres carrés.",
+    "en": "A square has 4 right angles. Lea has 3 square frames."
+   },
+   "prompt": {
+    "fr": "Combien d'angles droits y a-t-il en tout ?",
+    "en": "How many right angles are there in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 12,
+    "calc": "4*3"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Il y a 3 cadres de 4 angles : 4 + 4 + 4.",
+      "en": "There are 3 frames of 4 angles: 4 + 4 + 4."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Il y a trois cadres. Tu en as compté deux.",
+      "en": "There are three frames. You counted two."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les angles droits d'un cadre, puis répète.",
+    "en": "Count the right angles of one frame, then repeat."
+   },
+   "explain": {
+    "fr": "4 + 4 + 4 = 12. Il y a 12 angles droits.",
+    "en": "4 + 4 + 4 = 12. There are 12 right angles."
+   },
+   "tags": [
+    "perpendicular",
+    "right-angle",
+    "multiply"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_fcbfbf87722426a10e9e"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.symetrie.003",
+   "quest": "arts.symetrie",
+   "skill": "GEO-C05",
+   "type": "choice",
+   "grade": 4,
+   "difficulty": 1,
+   "story": {
+    "fr": "Deux lignes sur la toile ne se rencontrent jamais, même si on les prolonge.",
+    "en": "Two lines on the canvas never meet, even if we extend them."
+   },
+   "prompt": {
+    "fr": "Comment appelle-t-on ces lignes ?",
+    "en": "What do we call these lines?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "À angle droit",
+      "en": "Perpendicular"
+     },
+     "misconception": "mis_match"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Courbes",
+      "en": "Courbes"
+     },
+     "random": true
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Parallèles",
+      "en": "Parallèles"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c"
+   },
+   "hint": {
+    "fr": "Pense aux rails d'un train.",
+    "en": "Think of train tracks."
+   },
+   "explain": {
+    "fr": "Des lignes qui ne se rencontrent jamais sont parallèles.",
+    "en": "Lines that never meet are parallel."
+   },
+   "tags": [
+    "parallel",
+    "vocabulary",
+    "lines"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_7b47b0493638e9f830dc"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.symetrie.004",
+   "quest": "arts.symetrie",
+   "skill": "GEO-C05",
+   "type": "choice",
+   "grade": 4,
+   "difficulty": 2,
+   "story": {
+    "fr": "Deux lignes d'un tableau se croisent et forment quatre coins carrés, comme le coin d'une feuille.",
+    "en": "Two lines in a picture cross and make four square corners, like the corner of a sheet."
+   },
+   "prompt": {
+    "fr": "Quelle phrase décrit ces lignes ?",
+    "en": "Which sentence describes these lines?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Elles ne se rencontrent jamais",
+      "en": "Elles ne se rencontrent jamais"
+     },
+     "misconception": "mis_match"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Elles se coupent à angle droit",
+      "en": "Elles se coupent à angle droit"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Elles sont courbes",
+      "en": "Elles sont courbes"
+     },
+     "random": true
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Un coin carré s'appelle un angle droit.",
+    "en": "A square corner is called a right angle."
+   },
+   "explain": {
+    "fr": "Les quatre coins sont carrés. Ces lignes se coupent à angle droit.",
+    "en": "The four corners are square. These lines cross at a right angle: they are perpendicular."
+   },
+   "tags": [
+    "perpendicular",
+    "vocabulary",
+    "lines"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_fcbfbf87722426a10e9e"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.symetrie.005",
+   "quest": "arts.symetrie",
+   "skill": "GEO-C05",
+   "type": "word",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa colle un ruban autour d'un cadre rectangle. Les côtés mesurent 30 cm, 20 cm, 30 cm et 20 cm.",
+    "en": "Lea glues ribbon around a rectangular frame. The sides measure 30 cm, 20 cm, 30 cm and 20 cm."
+   },
+   "prompt": {
+    "fr": "Combien de cm de ruban lui faut-il ?",
+    "en": "How many cm of ribbon does she need?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 100,
+    "calc": "30+20+30+20"
+   },
+   "common_errors": [
+    {
+     "value": 50,
+     "misconception": "mis_perimeter_missing_side",
+     "feedback": {
+      "fr": "Tu as compté deux côtés. Un rectangle en a quatre.",
+      "en": "You counted two sides. A rectangle has four."
+     }
+    },
+    {
+     "value": 600,
+     "misconception": "mis_perimeter_area",
+     "feedback": {
+      "fr": "Tu as multiplié. Pour un ruban, on additionne les côtés.",
+      "en": "You multiplied. For a ribbon, add the sides."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne les quatre côtés.",
+    "en": "Add the four sides."
+   },
+   "explain": {
+    "fr": "30 + 20 = 50, puis 50 + 30 + 20 = 100. Il faut 100 cm.",
+    "en": "30 + 20 = 50, then 50 + 30 + 20 = 100. She needs 100 cm."
+   },
+   "tags": [
+    "word-problem",
+    "perimeter",
+    "rectangle"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_ea1845bde116a82f1451"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.symetrie.006",
+   "quest": "arts.symetrie",
+   "skill": "GEO-C05",
+   "type": "word",
+   "grade": 4,
+   "difficulty": 4,
+   "story": {
+    "fr": "L'atelier a 5 étagères parallèles. Chaque étagère porte 4 pots de peinture. Noah en retire 7.",
+    "en": "The studio has 5 parallel shelves. Each shelf holds 4 paint pots. Noah takes 7 away."
+   },
+   "prompt": {
+    "fr": "Combien de pots restent sur les étagères ?",
+    "en": "How many pots are left on the shelves?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 13,
+    "calc": "5*4-7"
+   },
+   "common_errors": [
+    {
+     "value": 20,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "20 pots, c'est avant que Noah en retire.",
+      "en": "That is before Noah takes any away."
+     }
+    },
+    {
+     "value": 27,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Noah retire des pots : on soustrait.",
+      "en": "Noah takes pots away, so we subtract."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Trouve d'abord combien de pots il y a au départ.",
+    "en": "First find how many pots there are at the start."
+   },
+   "explain": {
+    "fr": "5 x 4 = 20 pots au départ. 20 - 7 = 13 pots.",
+    "en": "5 x 4 = 20 pots at the start. 20 - 7 = 13 pots."
+   },
+   "tags": [
+    "word-problem",
+    "parallel",
+    "two-step"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_ea1845bde116a82f1451"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.symetrie.007",
+   "quest": "arts.symetrie",
+   "skill": "GEO-C05",
+   "type": "truefalse",
+   "grade": 4,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa regarde sa règle.",
+    "en": "Lea looks at her ruler."
+   },
+   "prompt": {
+    "fr": "Vrai ou faux : les deux bords longs d'une règle sont parallèles.",
+    "en": "True or false: the two long edges of a ruler are parallel."
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": true
+   },
+   "hint": {
+    "fr": "Ces deux bords se font face sans jamais se toucher.",
+    "en": "These two edges face each other and never touch."
+   },
+   "explain": {
+    "fr": "Les bords longs d'une règle restent toujours à la même distance : ils sont parallèles.",
+    "en": "A ruler's long edges always stay the same distance apart: they are parallel."
+   },
+   "tags": [
+    "parallel",
+    "lines",
+    "real-life"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_fcbfbf87722426a10e9e"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.symetrie.008",
+   "quest": "arts.symetrie",
+   "skill": "GEO-C05",
+   "type": "order",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah classe des figures selon leurs paires de côtés parallèles.",
+    "en": "Noah sorts shapes by their pairs of parallel sides."
+   },
+   "prompt": {
+    "fr": "Range-les de celle qui a le moins de paires à celle qui en a le plus.",
+    "en": "Put them in order, from the fewest pairs to the most pairs."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "rectangle",
+      "en": "rectangle"
+     },
+     "key": "2"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "triangle",
+      "en": "triangle"
+     },
+     "key": "0"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "hexagone",
+      "en": "hexagon"
+     },
+     "key": "3"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "trapèze",
+      "en": "trapezoid"
+     },
+     "key": "1"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "d",
+     "a",
+     "c"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Un triangle n'a aucun côté parallèle.",
+    "en": "A triangle has no parallel sides."
+   },
+   "explain": {
+    "fr": "Triangle (0), trapèze (1), rectangle (2), hexagone (3).",
+    "en": "Triangle (0), trapezoid (1), rectangle (2), hexagon (3)."
+   },
+   "tags": [
+    "parallel",
+    "ordering",
+    "shapes"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_7b47b0493638e9f830dc"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.symetrie.009",
+   "quest": "arts.symetrie",
+   "skill": "GEO-C05",
+   "type": "order",
+   "grade": 4,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa trace une ligne à angle droit avec une équerre.",
+    "en": "Lea draws a perpendicular line with a set square."
+   },
+   "prompt": {
+    "fr": "Mets les étapes dans le bon ordre.",
+    "en": "Put the steps in the right order."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Tracer le long du côté droit",
+      "en": "Draw along the straight edge"
+     },
+     "key": "2"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Poser l'équerre sur la ligne",
+      "en": "Place the set square on the line"
+     },
+     "key": "1"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Retirer l'équerre",
+      "en": "Remove the set square"
+     },
+     "key": "3"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "a",
+     "c"
+    ],
+    "by": "asc",
+    "misconception": "mis_order"
+   },
+   "hint": {
+    "fr": "Quel geste vient avant de tracer ?",
+    "en": "Which action comes before drawing?"
+   },
+   "explain": {
+    "fr": "On pose l'équerre, on trace, puis on la retire.",
+    "en": "We place the set square, draw, then remove it."
+   },
+   "tags": [
+    "perpendicular",
+    "algorithm",
+    "ordering"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_fcbfbf87722426a10e9e"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.symetrie.010",
+   "quest": "arts.symetrie",
+   "skill": "GEO-C05",
+   "type": "match",
+   "grade": 4,
+   "difficulty": 2,
+   "story": {
+    "fr": "À l'atelier, Léa repère des lignes autour d'elle.",
+    "en": "In the studio, Lea spots lines around her."
+   },
+   "prompt": {
+    "fr": "Relie chaque objet au bon mot.",
+    "en": "Match each object to the right word."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "Deux bords d'une règle",
+       "en": "Two edges of a ruler"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "Le coin d'un cadre",
+       "en": "The corner of a frame"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "Les branches d'un compas ouvert",
+       "en": "The legs of an open compass"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "à angle droit",
+       "en": "perpendicular"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "ni l'un ni l'autre",
+       "en": "neither"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "parallèles",
+       "en": "parallel"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ]
+    ],
+    "misconception": "mis_match"
+   },
+   "hint": {
+    "fr": "Un compas ouvert forme un angle qui n'est pas droit.",
+    "en": "An open compass makes an angle that is not square."
+   },
+   "explain": {
+    "fr": "Les bords de la règle sont parallèles. Le coin du cadre est un angle droit. Le compas ouvert n'est ni l'un ni l'autre.",
+    "en": "The ruler edges are parallel. The frame corner is a right angle. The open compass is neither."
+   },
+   "tags": [
+    "parallel",
+    "perpendicular",
+    "matching"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_7b47b0493638e9f830dc"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.symetrie.011",
+   "quest": "arts.symetrie",
+   "skill": "GEO-C05",
+   "type": "visual",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "L'école a compté les cadres de son atelier. Voici son tableau d'images.",
+    "en": "The school counted the frames in its studio. Here is its picture chart."
+   },
+   "prompt": {
+    "fr": "Combien de cadres ont des côtés parallèles (rectangles et carrés) ?",
+    "en": "How many frames have parallel sides (rectangles and squares)?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Cadres de l'atelier",
+      "en": "Studio frames"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "rectangles",
+        "en": "rectangles"
+       },
+       "count": 6
+      },
+      {
+       "label": {
+        "fr": "carrés",
+        "en": "squares"
+       },
+       "count": 4
+      },
+      {
+       "label": {
+        "fr": "triangles",
+        "en": "triangles"
+       },
+       "count": 3
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 10,
+    "calc": "6+4"
+   },
+   "common_errors": [
+    {
+     "value": 13,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "Un triangle n'a pas de côtés parallèles. Ne le compte pas.",
+      "en": "A triangle has no parallel sides. Do not count it."
+     }
+    },
+    {
+     "value": 6,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié les carrés, qui ont aussi des côtés parallèles.",
+      "en": "You left out the squares, which also have parallel sides."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Quelles figures ont des côtés parallèles ?",
+    "en": "Which shapes have parallel sides?"
+   },
+   "explain": {
+    "fr": "Rectangles et carrés ont des côtés parallèles. 6 + 4 = 10.",
+    "en": "Rectangles and squares have parallel sides. 6 + 4 = 10."
+   },
+   "tags": [
+    "pictograph",
+    "parallel",
+    "shapes"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_ea1845bde116a82f1451"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "arts.symetrie.012",
+   "quest": "arts.symetrie",
+   "skill": "GEO-C05",
+   "type": "estimate",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un cadre rectangle mesure 38 cm sur 22 cm.",
+    "en": "A rectangular frame measures 38 cm by 22 cm."
+   },
+   "prompt": {
+    "fr": "Environ combien de cm de ruban pour faire le tour ?",
+    "en": "About how many cm of ribbon to go around it?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 110,
+    "max": 130,
+    "exact_for_check": 120,
+    "calc": "2*(38+22)"
+   },
+   "common_errors": [
+    {
+     "value": 60,
+     "misconception": "mis_perimeter_missing_side",
+     "feedback": {
+      "fr": "Tu n'as compté que deux côtés. Il y en a quatre.",
+      "en": "You counted only two sides. There are four."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis 38 à 40 et 22 à 20, puis fais le tour.",
+    "en": "Round 38 to 40 and 22 to 20, then go all the way around."
+   },
+   "explain": {
+    "fr": "40 + 20 = 60 pour deux côtés. Le tour fait environ 120 cm.",
+    "en": "40 + 20 = 60 for two sides. The distance around is about 120 cm."
+   },
+   "tags": [
+    "estimation",
+    "perimeter",
+    "rectangle"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_7b47b0493638e9f830dc"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  }
+ ]
+}
