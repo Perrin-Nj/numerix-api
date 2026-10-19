@@ -25,14 +25,14 @@ func Choose(gr *Graph, prof *Profile, world string, grade int, g *RNG, now time.
 	}
 	var inWorld []string
 	for _, id := range gr.ByWorld(world) {
-		if s, _ := gr.Get(id); s.YearIntro <= grade {
+		if s, _ := gr.Get(id); s.YearIntro <= grade && gr.PlayableFor(world, id, grade) { // only chapters this grade can really be served
 			inWorld = append(inWorld, id)
 		}
 	}
 
 	// revision ignores the world: same skill, new story
 	for _, due := range prof.ToReview(now) {
-		if impl[due.SkillID] && gr.PlayableIn(world, due.SkillID) {
+		if impl[due.SkillID] && gr.PlayableFor(world, due.SkillID, grade) {
 			return Selection{due.SkillID, "revision"}, nil
 		}
 	}

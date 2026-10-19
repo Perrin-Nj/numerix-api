@@ -160,6 +160,24 @@ func (e FeedItemKind) Valid() bool {
 	}
 }
 
+// Defines values for JourneyNodeLockedReason.
+const (
+	Grade         JourneyNodeLockedReason = "grade"
+	Prerequisites JourneyNodeLockedReason = "prerequisites"
+)
+
+// Valid indicates whether the value is a known member of the JourneyNodeLockedReason enum.
+func (e JourneyNodeLockedReason) Valid() bool {
+	switch e {
+	case Grade:
+		return true
+	case Prerequisites:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for MethodVisualKind.
 const (
 	AddCarry    MethodVisualKind = "add_carry"
@@ -1362,6 +1380,11 @@ type JourneyNode struct {
 	// Level How many times the child has revisited and kept it (0 = new). Shown as shine on the node, not as a score.
 	Level *int `json:"level,omitempty"`
 
+	// LockedReason Present only when `state` is `locked`. `prerequisites`: earlier chapters first. `grade`: the quest has fewer
+	// published questions than the playable threshold (8) for the child's school year, so it is shown but cannot
+	// be started yet (starting it answers 422 on `skill_id`). The client shows a soft locked node, never an error.
+	LockedReason *JourneyNodeLockedReason `json:"locked_reason,omitempty"`
+
 	// Media Icon of the quest when one is approved (CR-18)
 	Media        *MediaRef  `json:"media,omitempty"`
 	NextReviewAt *time.Time `json:"next_review_at,omitempty"`
@@ -1381,6 +1404,11 @@ type JourneyNode struct {
 	SkillId SkillId   `json:"skill_id"`
 	State   NodeState `json:"state"`
 }
+
+// JourneyNodeLockedReason Present only when `state` is `locked`. `prerequisites`: earlier chapters first. `grade`: the quest has fewer
+// published questions than the playable threshold (8) for the child's school year, so it is shown but cannot
+// be started yet (starting it answers 422 on `skill_id`). The client shows a soft locked node, never an error.
+type JourneyNodeLockedReason string
 
 // JourneyQuest defines model for JourneyQuest.
 type JourneyQuest struct {

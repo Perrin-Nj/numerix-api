@@ -171,6 +171,7 @@ func (s *Server) GetJourney(ctx context.Context, req api.GetJourneyRequestObject
 	if base == "" {
 		base = "/assets"
 	}
+	grade := gradeOf(c)
 	nodes := make([]api.JourneyNode, 0, len(order))
 	for i, nd := range order {
 		label := g.skillLabel(nd.skill, lang)
@@ -179,6 +180,16 @@ func (s *Server) GetJourney(ctx context.Context, req api.GetJourneyRequestObject
 		}
 		n := api.JourneyNode{SkillId: nd.skill, Label: label, State: g.skillState(prof, nd.skill, mastered, due)}
 		n.Position.Row, n.Position.Col = i, journeyCols[i%len(journeyCols)]
+		// A quest with fewer published questions than the threshold for THIS child's school year is shown locked,
+		// never offered: starting it would end in 409 no_question_available on the first answer.
+		if !g.graph.PlayableFor(world, nd.skill, grade) {
+			n.State = api.NodeStateLocked
+			reason := api.Grade // locked_reason is a pointer: nil means "absent" in the JSON (Spring: a nullable field)
+			n.LockedReason = &reason
+		} else if n.State == api.NodeStateLocked {
+			reason := api.Prerequisites
+			n.LockedReason = &reason
+		}
 		if nd.quest != nil {
 			n.Quest = &api.JourneyQuest{Id: nd.quest.ID, Name: label, Goal: nd.quest.Goal.Get(lang)}
 			if nd.quest.IconAssetID != "" {
@@ -202,7 +213,7 @@ func (s *Server) GetJourney(ctx context.Context, req api.GetJourneyRequestObject
 		nodes = append(nodes, n)
 	}
 	out := api.Journey{World: req.Params.World, Nodes: nodes}
-	if sel, err := engine.Choose(g.graph, prof, world, gradeOf(c), engine.NewRNG(g.seed()), now); err == nil {
+	if sel, err := engine.Choose(g.graph, prof, world, grade, engine.NewRNG(g.seed()), now); err == nil {
 		out.CurrentSkillId = &sel.SkillID
 	}
 	return api.GetJourney200JSONResponse(out), nil

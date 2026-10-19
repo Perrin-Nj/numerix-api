@@ -193,29 +193,45 @@ func (r *Repo) Quests(ctx context.Context, q Querier, worldID string) ([]QuestRo
 	return out, rows.Err()
 }
 
-// BankCount is the number of published questions of one quest.
+// BankCount is the number of published questions of one quest, in total and per question grade.
 type BankCount struct {
 	World, Skill string
 	Published    int
+	ByGrade      map[int]int
 }
 
-// BankCounts feeds the skill graph: how many published questions each (world, skill) has, and every quest
-// (even with 0 questions) so the world lists its skills.
+// BankCounts feeds the skill graph: how many published questions each (world, skill) has by question grade, and
+// every quest (even with 0 questions) so the world lists its skills.
 func (r *Repo) BankCounts(ctx context.Context, q Querier) ([]BankCount, error) {
-	rows, err := q.QueryContext(ctx, `SELECT wq.world_id, wq.skill_id,
-		(SELECT COUNT(*) FROM bank_questions b WHERE b.world_id = wq.world_id AND b.skill_id = wq.skill_id AND b.status = 'published')
-		FROM world_quests wq WHERE wq.status = 'published'`)
+	// LEFT JOIN: a quest without any published question still yields one row (grade NULL, count 0)
+	rows, err := q.QueryContext(ctx, `SELECT wq.world_id, wq.skill_id, COALESCE(b.grade, 0), COUNT(b.id)
+		FROM world_quests wq
+		LEFT JOIN bank_questions b ON b.world_id = wq.world_id AND b.skill_id = wq.skill_id AND b.status = 'published'
+		WHERE wq.status = 'published'
+		GROUP BY wq.world_id, wq.skill_id, b.grade
+		ORDER BY wq.world_id, wq.skill_id`)
 	if err != nil {
 		return nil, fmt.Errorf("count bank: %w", err)
 	}
 	defer rows.Close()
 	var out []BankCount
+	idx := map[string]int{} // "world|skill" -> position in out
 	for rows.Next() {
-		var c BankCount
-		if err := rows.Scan(&c.World, &c.Skill, &c.Published); err != nil {
+		var world, skill string
+		var grade, n int
+		if err := rows.Scan(&world, &skill, &grade, &n); err != nil {
 			return nil, fmt.Errorf("scan bank count: %w", err)
 		}
-		out = append(out, c)
+		i, ok := idx[world+"|"+skill]
+		if !ok {
+			i = len(out)
+			idx[world+"|"+skill] = i
+			out = append(out, BankCount{World: world, Skill: skill, ByGrade: map[int]int{}})
+		}
+		if n > 0 {
+			out[i].ByGrade[grade] += n
+			out[i].Published += n
+		}
 	}
 	return out, rows.Err()
 }

@@ -73,7 +73,7 @@ func (s *Server) syncBank(ctx context.Context) {
 	}
 	entries := make([]engine.BankEntry, len(counts))
 	for i, c := range counts {
-		entries[i] = engine.BankEntry{World: c.World, Skill: c.Skill, Published: c.Published}
+		entries[i] = engine.BankEntry{World: c.World, Skill: c.Skill, Published: c.Published, ByGrade: c.ByGrade}
 	}
 	s.game().graph.SetBank(entries)
 }

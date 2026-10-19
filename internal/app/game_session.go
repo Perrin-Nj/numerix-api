@@ -85,7 +85,7 @@ func (s *Server) StartSession(ctx context.Context, req api.StartSessionRequestOb
 	skill, reason := "", "choisie"
 	if req.Body.SkillId != nil {
 		sk, gerr := g.graph.Get(*req.Body.SkillId)
-		if gerr != nil || !g.graph.PlayableIn(world, sk.ID) {
+		if gerr != nil || !g.graph.PlayableFor(world, sk.ID, gradeOf(c)) { // also refuses a chapter this grade has too few questions for
 			return nil, httpapi.Validation(plField("skill_id", "unknown or not available yet"))
 		}
 		skill = sk.ID

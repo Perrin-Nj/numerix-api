@@ -8,6 +8,7 @@ import (
 	"context"
 	"database/sql"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"net/http/httptest"
 	"strings"
@@ -30,10 +31,22 @@ func seedBank(t *testing.T, f feedFixture, mutate func(*seedload.Files)) {
 	if err != nil {
 		t.Fatal(err)
 	}
+	// these tests exercise the sample questions only; the full bank needs the real assets (the seed command loads both)
+	var examples []seedload.QuestionFile
+	for _, qf := range files.QuestionFiles {
+		if qf.Name == seedload.ExamplesFile {
+			examples = append(examples, qf)
+		}
+	}
+	files.QuestionFiles = examples
 	if mutate != nil {
 		mutate(files)
 	}
 	if _, err := seedload.Apply(context.Background(), f.s.Content, f.s.Assets, f.s.game().graph, files, seedload.Options{Actor: "test"}); err != nil {
+		var ve *seedload.ValidationError
+		if errors.As(err, &ve) {
+			t.Fatalf("seed: %v", content.Errors(ve.Issues))
+		}
 		t.Fatalf("seed: %v", err)
 	}
 }
@@ -545,5 +558,68 @@ func TestAssetsEndpointsAndMedia(t *testing.T) {
 	}
 	if ill := beat["scene"].(map[string]any)["illustration_url"]; ill != "/assets/"+good+"-960.webp" {
 		t.Fatalf("scene illustration: %v", ill)
+	}
+}
+
+// journeyNode returns the journey node of a skill in a world for the fixture child (nil when it is not listed).
+func (f feedFixture) journeyNode(t *testing.T, world, skill string) map[string]any {
+	t.Helper()
+	code, j, raw := f.gcall(t, "GET", "/v1/children/"+f.childID+"/journey?world="+world, f.childTok, "", nil)
+	if code != 200 {
+		t.Fatalf("journey %s: %d %s", world, code, raw)
+	}
+	for _, n := range j["nodes"].([]any) {
+		if m := n.(map[string]any); m["skill_id"] == skill {
+			return m
+		}
+	}
+	return nil
+}
+
+// A quest whose published questions are all above the child's school year is returned locked with the reason
+// "grade" and cannot be started (422), instead of being offered and failing with 409 no_question_available on the
+// first answer. When the grade reaches the questions, the same quest opens.
+func TestQuestWithTooFewQuestionsForTheGradeIsLockedNotOffered(t *testing.T) {
+	f := newFeedFixture(t, true)
+	grade4 := func(files *seedload.Files) {
+		onlyClones("jeux.cartes.901", 8)(files)
+		for i := range files.Quests {
+			if files.Quests[i].ID == "jeux.cartes" {
+				files.Quests[i].GradeMax = 6 // the quest itself spans the years; only its questions are all for year 4
+			}
+		}
+		for _, qf := range files.QuestionFiles {
+			for _, q := range qf.Questions {
+				q.Grade = 4 // eight published questions, every one for school year 4
+			}
+		}
+	}
+	seedBank(t, f, grade4)
+	setGrade := func(g int) {
+		if _, err := f.s.Store.W.Exec(`UPDATE children SET grade = ? WHERE id = ?`, g, f.childID); err != nil {
+			t.Fatal(err)
+		}
+	}
+	setGrade(2)
+	n := f.journeyNode(t, "jeux", "ARI-SEN-A08")
+	if n == nil || n["state"] != "locked" || n["locked_reason"] != "grade" {
+		t.Fatalf("year 2 child must see the quest locked for grade, got %v", n)
+	}
+	if code, _, _ := f.gcall(t, "POST", "/v1/children/"+f.childID+"/sessions", f.childTok, `{"world":"jeux","kind":"chapter","skill_id":"ARI-SEN-A08"}`, nil); code != 422 {
+		t.Fatalf("a locked quest must not start, got %d", code)
+	}
+	// the automatic choice never picks it either (the world still has generator chapters)
+	_, j, _ := f.gcall(t, "GET", "/v1/children/"+f.childID+"/journey?world=jeux", f.childTok, "", nil)
+	if j["current_skill_id"] == "ARI-SEN-A08" {
+		t.Fatalf("the planner must not choose a chapter this grade cannot be served")
+	}
+	setGrade(4)
+	n = f.journeyNode(t, "jeux", "ARI-SEN-A08")
+	if n == nil || n["state"] == "locked" || n["locked_reason"] != nil {
+		t.Fatalf("year 4 child must see it open, got %v", n)
+	}
+	sid := f.startIn(t, "jeux", "ARI-SEN-A08")
+	if _, raw := f.nextBeat(t, sid); raw == "" {
+		t.Fatal("the opened quest must serve a beat")
 	}
 }

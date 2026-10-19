@@ -316,3 +316,29 @@ func TestPlanner(t *testing.T) {
 		t.Fatalf("grade 0 should find nothing, got %v", err)
 	}
 }
+
+// PlayableFor counts only the bank questions a child of that school year can be served (question grade <= child grade).
+func TestPlayableForCountsOnlyQuestionsUpToTheChildGrade(t *testing.T) {
+	gr, err := LoadGraph()
+	if err != nil {
+		t.Fatal(err)
+	}
+	const skill = "ARI-SEN-A08" // a skill without generator: only the bank makes it playable
+	if gr.HasGenerator(skill) {
+		t.Skip("skill has a generator now; pick a bank-only skill")
+	}
+	gr.SetBank([]BankEntry{{World: "jeux", Skill: skill, Published: 10, ByGrade: map[int]int{1: 3, 3: 7}}})
+	cases := []struct {
+		grade int
+		want  int
+		play  bool
+	}{{1, 3, false}, {2, 3, false}, {3, 10, true}, {6, 10, true}}
+	for _, c := range cases {
+		if got := gr.BankFor("jeux", skill, c.grade); got != c.want {
+			t.Errorf("grade %d: BankFor = %d, want %d", c.grade, got, c.want)
+		}
+		if got := gr.PlayableFor("jeux", skill, c.grade); got != c.play {
+			t.Errorf("grade %d: PlayableFor = %v, want %v", c.grade, got, c.play)
+		}
+	}
+}

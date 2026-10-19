@@ -66,7 +66,8 @@ const MinBankQuestions = 8
 // BankEntry says how many published curated questions a quest (one skill in one world) has.
 type BankEntry struct {
 	World, Skill string
-	Published    int
+	Published    int         // all published questions of the quest
+	ByGrade      map[int]int // published questions per question grade (a child sees grades up to their own)
 }
 
 // Graph is the skill graph (Python: GraphePDA). The curriculum part never changes; the bank overlay (which
@@ -78,23 +79,26 @@ type Graph struct {
 	skills map[string]*Skill
 
 	mu          sync.RWMutex
-	bank        map[string]int      // "world|skill" -> published bank questions
-	questWorlds map[string][]string // skill -> worlds that have a quest for it (any number of questions)
+	bank        map[string]int         // "world|skill" -> published bank questions
+	bankGrade   map[string]map[int]int // "world|skill" -> published questions per question grade
+	questWorlds map[string][]string    // skill -> worlds that have a quest for it (any number of questions)
 }
 
 // SetBank replaces the bank overlay (called when the question bank changed).
 func (gr *Graph) SetBank(entries []BankEntry) {
 	bank := map[string]int{}
+	byGrade := map[string]map[int]int{}
 	qw := map[string][]string{}
 	for _, e := range entries {
 		bank[e.World+"|"+e.Skill] = e.Published
+		byGrade[e.World+"|"+e.Skill] = e.ByGrade
 		if !slices.Contains(qw[e.Skill], e.World) {
 			qw[e.Skill] = append(qw[e.Skill], e.World)
 		}
 	}
 	gr.mu.Lock()
 	defer gr.mu.Unlock()
-	gr.bank, gr.questWorlds = bank, qw
+	gr.bank, gr.bankGrade, gr.questWorlds = bank, byGrade, qw
 }
 
 // implemented reports whether a skill can be played: a generator exists, or some world has enough bank questions.
@@ -128,6 +132,34 @@ func (gr *Graph) PlayableIn(world, id string) bool {
 	defer gr.mu.RUnlock()
 	s, ok := gr.skills[id]
 	return ok && (s.Implementation || gr.bank[world+"|"+id] >= MinBankQuestions)
+}
+
+// BankFor counts the published bank questions of a quest that a child of this school year can be served
+// (question grade up to the child's grade, the same rule as the question picker).
+func (gr *Graph) BankFor(world, id string, grade int) int {
+	gr.mu.RLock()
+	defer gr.mu.RUnlock()
+	return gr.bankFor(world, id, grade)
+}
+
+// bankFor is BankFor with the lock already held.
+func (gr *Graph) bankFor(world, id string, grade int) int {
+	n := 0
+	for g, c := range gr.bankGrade[world+"|"+id] {
+		if g <= grade {
+			n += c
+		}
+	}
+	return n
+}
+
+// PlayableFor is PlayableIn for one school year: a generator exists, or the quest has at least MinBankQuestions
+// published questions this grade can be served. Below that the chapter is locked, never offered.
+func (gr *Graph) PlayableFor(world, id string, grade int) bool {
+	gr.mu.RLock()
+	defer gr.mu.RUnlock()
+	s, ok := gr.skills[id]
+	return ok && (s.Implementation || gr.bankFor(world, id, grade) >= MinBankQuestions)
 }
 
 // HasGenerator reports whether a generator exists for the skill.
