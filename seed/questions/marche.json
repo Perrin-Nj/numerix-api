@@ -1,0 +1,4326 @@
+{
+ "world": "marche",
+ "schema": 1,
+ "questions": [
+  {
+   "id": "marche.pieces.001",
+   "quest": "marche.pieces",
+   "skill": "ARI-SEN-A05",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa vide sa tirelire au marché.",
+    "en": "Lea empties her piggy bank at the market."
+   },
+   "prompt": {
+    "fr": "Elle a une pièce de 2 $ et 3 pièces de 1 $. Combien de dollars en tout ?",
+    "en": "She has one $2 coin and three $1 coins. How many dollars in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "2+3"
+   },
+   "common_errors": [
+    {
+     "value": 6,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte chaque pièce.",
+      "en": "Close! Count each coin again."
+     }
+    },
+    {
+     "value": 4,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Il manque une pièce. Compte toutes les pièces.",
+      "en": "A coin is missing. Count all the coins."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Commence par la pièce de 2 $.",
+    "en": "Start with the $2 coin."
+   },
+   "explain": {
+    "fr": "2 $ + 1 $ + 1 $ + 1 $ = 5 $.",
+    "en": "$2 + $1 + $1 + $1 = $5."
+   },
+   "tags": [
+    "money",
+    "decompose",
+    "coins"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_6b6d33ab525d33568147"
+    },
+    {
+     "role": "object",
+     "asset": "a_17e2a0c226342fe2cdd2"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.pieces.002",
+   "quest": "marche.pieces",
+   "skill": "ARI-SEN-A05",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Zoé a un billet de 10 $ et des pièces.",
+    "en": "Zoe has a $10 bill and some coins."
+   },
+   "prompt": {
+    "fr": "Elle a aussi une pièce de 2 $ et 3 pièces de 1 $. Combien de dollars en tout ?",
+    "en": "She also has a $2 coin and three $1 coins. How many dollars in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 15,
+    "calc": "10+2+3"
+   },
+   "common_errors": [
+    {
+     "value": 5,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié le billet de 10 $.",
+      "en": "You left out the $10 bill."
+     }
+    },
+    {
+     "value": 14,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les pièces.",
+      "en": "Close! Count the coins again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Commence par le billet de 10 $.",
+    "en": "Start with the $10 bill."
+   },
+   "explain": {
+    "fr": "10 + 2 = 12, puis 12 + 3 = 15 $.",
+    "en": "10 + 2 = 12, then 12 + 3 = 15 dollars."
+   },
+   "tags": [
+    "money",
+    "decompose",
+    "bills"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_972991729e1ac8acc79b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.pieces.003",
+   "quest": "marche.pieces",
+   "skill": "ARI-SEN-A05",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah veut payer 11 $ au marché.",
+    "en": "Noah wants to pay $11 at the market."
+   },
+   "prompt": {
+    "fr": "Il a déjà 4 pièces de 2 $. Combien de pièces de 1 $ doit-il ajouter ?",
+    "en": "He already has four $2 coins. How many $1 coins must he add?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3,
+    "calc": "11-4*2"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "4 pièces de 2 $ valent plus que 4 $.",
+      "en": "Four $2 coins are worth more than $4."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "8 $, c’est ce qu’il a déjà. Combien manque-t-il ?",
+      "en": "$8 is what he already has. How much is missing?"
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Combien valent 4 pièces de 2 $ ?",
+    "en": "How much are four $2 coins worth?"
+   },
+   "explain": {
+    "fr": "4 × 2 = 8 $ et 11 - 8 = 3 pièces de 1 $.",
+    "en": "4 × 2 = $8 and 11 - 8 = 3 one-dollar coins."
+   },
+   "tags": [
+    "money",
+    "decompose",
+    "missing-addend"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_78021ccadcec2b17ebcd"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.pieces.004",
+   "quest": "marche.pieces",
+   "skill": "ARI-SEN-A05",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa veut payer exactement 5 $.",
+    "en": "Lea wants to pay exactly $5."
+   },
+   "prompt": {
+    "fr": "Quelles pièces de monnaie font 5 $ ?",
+    "en": "Which coins make $5?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "2 $ + 2 $",
+      "en": "2 $ + 2 $"
+     },
+     "misconception": "mis_partial_result"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "2 $ + 2 $ + 1 $",
+      "en": "2 $ + 2 $ + 1 $"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "2 $ + 2 $ + 2 $",
+      "en": "2 $ + 2 $ + 2 $"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "1 $ + 1 $ + 1 $",
+      "en": "1 $ + 1 $ + 1 $"
+     },
+     "misconception": "mis_partial_result"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Additionne les pièces de chaque choix.",
+    "en": "Add up the coins in each choice."
+   },
+   "explain": {
+    "fr": "2 + 2 + 1 = 5 $.",
+    "en": "2 + 2 + 1 = $5."
+   },
+   "tags": [
+    "money",
+    "decompose"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_17e2a0c226342fe2cdd2"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.pieces.005",
+   "quest": "marche.pieces",
+   "skill": "ARI-SEN-A05",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah paie un pain avec un billet et une pièce.",
+    "en": "Noah pays for bread with a bill and a coin."
+   },
+   "prompt": {
+    "fr": "Quelle somme fait 7 $ ?",
+    "en": "Which amount makes $7?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "5 $ + 1 $",
+      "en": "5 $ + 1 $"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "5 $ + 2 $",
+      "en": "5 $ + 2 $"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "5 $ + 5 $",
+      "en": "5 $ + 5 $"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "2 $ + 2 $",
+      "en": "2 $ + 2 $"
+     },
+     "misconception": "mis_partial_result"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Additionne les deux montants.",
+    "en": "Add the two amounts."
+   },
+   "explain": {
+    "fr": "5 + 2 = 7 $.",
+    "en": "5 + 2 = $7."
+   },
+   "tags": [
+    "money",
+    "decompose"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.pieces.006",
+   "quest": "marche.pieces",
+   "skill": "ARI-SEN-A05",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa doit payer 10 $ et n’a que des pièces de 2 $.",
+    "en": "Lea must pay $10 and only has $2 coins."
+   },
+   "prompt": {
+    "fr": "De combien de pièces a-t-elle besoin ?",
+    "en": "How many coins does she need?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "8",
+      "en": "8"
+     },
+     "misconception": "mis_subtract_instead_of_add"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "12",
+      "en": "12"
+     },
+     "misconception": "mis_add_instead_of_subtract"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "20",
+      "en": "20"
+     },
+     "misconception": "mis_multiply_instead_of_add"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "5",
+      "en": "5"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d",
+    "calc_choice": {
+     "d": "10/2"
+    }
+   },
+   "hint": {
+    "fr": "Compte de 2 en 2 jusqu’à 10.",
+    "en": "Count by 2s up to 10."
+   },
+   "explain": {
+    "fr": "2, 4, 6, 8, 10 : il faut 5 pièces.",
+    "en": "2, 4, 6, 8, 10: she needs 5 coins."
+   },
+   "tags": [
+    "money",
+    "division",
+    "skip-counting"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_78021ccadcec2b17ebcd"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.pieces.007",
+   "quest": "marche.pieces",
+   "skill": "ARI-SEN-A05",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un petit jouet coûte 8 $.",
+    "en": "A small toy costs $8."
+   },
+   "prompt": {
+    "fr": "Léa a 5 $. Combien de dollars lui manque-t-il ?",
+    "en": "Lea has $5. How many dollars is she missing?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3,
+    "calc": "8-5"
+   },
+   "common_errors": [
+    {
+     "value": 13,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Il manque de l’argent : on soustrait.",
+      "en": "Money is missing, so we subtract."
+     }
+    },
+    {
+     "value": 2,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Compte de 5 jusqu’à 8.",
+      "en": "Close! Count from 5 up to 8."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Combien faut-il ajouter à 5 pour arriver à 8 ?",
+    "en": "How much must you add to 5 to reach 8?"
+   },
+   "explain": {
+    "fr": "5 + 3 = 8, donc il manque 3 $.",
+    "en": "5 + 3 = 8, so $3 is missing."
+   },
+   "tags": [
+    "word-problem",
+    "money",
+    "subtraction"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_87f844559800d5f812fb"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.pieces.008",
+   "quest": "marche.pieces",
+   "skill": "ARI-SEN-A05",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 4,
+   "story": {
+    "fr": "Noah a 6 pièces de 1 $ et 2 pièces de 2 $ dans sa tirelire.",
+    "en": "Noah has six $1 coins and two $2 coins in his piggy bank."
+   },
+   "prompt": {
+    "fr": "Il donne 3 pièces de 1 $. Combien de dollars lui reste-t-il ?",
+    "en": "He gives away three $1 coins. How many dollars does he have left?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 7,
+    "calc": "6+2*2-3"
+   },
+   "common_errors": [
+    {
+     "value": 3,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Il reste aussi les 2 pièces de 2 $.",
+      "en": "The two $2 coins are left too."
+     }
+    },
+    {
+     "value": 10,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Il donne de l’argent : on soustrait.",
+      "en": "He gives money away, so we subtract."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte d’abord tout son argent.",
+    "en": "First count all his money."
+   },
+   "explain": {
+    "fr": "6 + 4 = 10 $, puis 10 - 3 = 7 $.",
+    "en": "6 + 4 = $10, then 10 - 3 = $7."
+   },
+   "tags": [
+    "word-problem",
+    "money",
+    "two-steps"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_6b6d33ab525d33568147"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.pieces.009",
+   "quest": "marche.pieces",
+   "skill": "ARI-SEN-A05",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa compte ses pièces de 2 $.",
+    "en": "Lea counts her $2 coins."
+   },
+   "prompt": {
+    "fr": "Léa dit que 2 $ + 2 $ + 2 $ font 5 $. A-t-elle raison ?",
+    "en": "Lea says that $2 + $2 + $2 makes $5. Is she right?"
+   },
+   "math_text": "2 + 2 + 2 = 5",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_off_by_one"
+   },
+   "hint": {
+    "fr": "Compte 2, 4, 6.",
+    "en": "Count 2, 4, 6."
+   },
+   "explain": {
+    "fr": "2 + 2 + 2 = 6 $, pas 5 $.",
+    "en": "2 + 2 + 2 = $6, not $5."
+   },
+   "tags": [
+    "true-false",
+    "money"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.pieces.010",
+   "quest": "marche.pieces",
+   "skill": "ARI-SEN-A05",
+   "type": "order",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah range ses montants du plus petit au plus grand.",
+    "en": "Noah puts his amounts in order from smallest to biggest."
+   },
+   "prompt": {
+    "fr": "Range ces montants du plus petit au plus grand.",
+    "en": "Put these amounts in order, from the smallest to the biggest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "5 $",
+      "en": "$5"
+     },
+     "key": "5"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "1 $ + 1 $",
+      "en": "$1 + $1"
+     },
+     "key": "2"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "2 $ + 2 $ + 2 $",
+      "en": "$2 + $2 + $2"
+     },
+     "key": "6"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "10 $",
+      "en": "$10"
+     },
+     "key": "10"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "a",
+     "c",
+     "d"
+    ],
+    "by": "asc",
+    "misconception": "mis_order"
+   },
+   "hint": {
+    "fr": "Calcule la valeur de chaque montant.",
+    "en": "Work out the value of each amount."
+   },
+   "explain": {
+    "fr": "2 $, 5 $, 6 $, puis 10 $.",
+    "en": "$2, $5, $6, then $10."
+   },
+   "tags": [
+    "ordering",
+    "money"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.pieces.011",
+   "quest": "marche.pieces",
+   "skill": "ARI-SEN-A05",
+   "type": "match",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Au marché, Léa forme des montants avec ses pièces.",
+    "en": "At the market, Lea makes amounts with her coins."
+   },
+   "prompt": {
+    "fr": "Relie chaque groupe de pièces à son total.",
+    "en": "Match each group of coins to its total."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "2 $ + 2 $ + 1 $",
+       "en": "$2 + $2 + $1"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "5 $ + 2 $",
+       "en": "$5 + $2"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "10 $ + 1 $",
+       "en": "$10 + $1"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "7 $",
+       "en": "7 $"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "11 $",
+       "en": "11 $"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "5 $",
+       "en": "5 $"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r3"
+     ],
+     [
+      "l2",
+      "r1"
+     ],
+     [
+      "l3",
+      "r2"
+     ]
+    ],
+    "misconception": "mis_off_by_one"
+   },
+   "hint": {
+    "fr": "Additionne chaque groupe.",
+    "en": "Add up each group."
+   },
+   "explain": {
+    "fr": "2 + 2 + 1 = 5, 5 + 2 = 7 et 10 + 1 = 11.",
+    "en": "2 + 2 + 1 = 5, 5 + 2 = 7 and 10 + 1 = 11."
+   },
+   "tags": [
+    "matching",
+    "money"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.pieces.012",
+   "quest": "marche.pieces",
+   "skill": "ARI-SEN-A05",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le tableau montre les pièces de la tirelire.",
+    "en": "The chart shows the coins in the piggy bank."
+   },
+   "prompt": {
+    "fr": "Combien de dollars y a-t-il en tout ?",
+    "en": "How many dollars are there in all?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Pièces de la tirelire",
+      "en": "Piggy bank coins"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "pièces de 1 $",
+        "en": "$1 coins"
+       },
+       "count": 6
+      },
+      {
+       "label": {
+        "fr": "pièces de 2 $",
+        "en": "$2 coins"
+       },
+       "count": 3
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 12,
+    "calc": "6*1+3*2"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as compté les pièces, pas leur valeur.",
+      "en": "You counted the coins, not their value."
+     }
+    },
+    {
+     "value": 6,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as compté seulement les pièces de 1 $.",
+      "en": "You counted only the $1 coins."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Une pièce de 2 $ vaut 2 dollars.",
+    "en": "A $2 coin is worth 2 dollars."
+   },
+   "explain": {
+    "fr": "6 × 1 = 6 $ et 3 × 2 = 6 $. 6 + 6 = 12 $.",
+    "en": "6 × 1 = $6 and 3 × 2 = $6. 6 + 6 = $12."
+   },
+   "tags": [
+    "pictograph",
+    "money",
+    "decompose"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_f1d10c2647dd86857b18"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.pieces.013",
+   "quest": "marche.pieces",
+   "skill": "ARI-SEN-A05",
+   "type": "estimate",
+   "grade": 1,
+   "difficulty": 4,
+   "story": {
+    "fr": "Noah a une pile de pièces de 2 $.",
+    "en": "Noah has a pile of $2 coins."
+   },
+   "prompt": {
+    "fr": "Il en a 11. Environ combien de dollars cela fait-il ?",
+    "en": "He has 11 of them. About how many dollars is that?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 20,
+    "max": 24,
+    "exact_for_check": 22,
+    "calc": "11*2"
+   },
+   "common_errors": [
+    {
+     "value": 13,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Chaque pièce vaut 2 $ : on compte de 2 en 2.",
+      "en": "Each coin is worth $2, so count by 2s."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à 10 pièces de 2 $.",
+    "en": "Think of ten $2 coins."
+   },
+   "explain": {
+    "fr": "10 pièces font 20 $, et une de plus fait 22 $.",
+    "en": "Ten coins make $20, and one more makes $22."
+   },
+   "tags": [
+    "estimation",
+    "money",
+    "doubling"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_78021ccadcec2b17ebcd"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.prix.001",
+   "quest": "marche.prix",
+   "skill": "ARI-SEN-C03",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Au marché, Léa lit les prix des fruits.",
+    "en": "At the market, Lea reads the fruit prices."
+   },
+   "prompt": {
+    "fr": "Combien de cents y a-t-il dans 3 $ ?",
+    "en": "How many cents are in $3?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 300,
+    "calc": "3*100"
+   },
+   "common_errors": [
+    {
+     "value": 30,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "1 $ vaut 100 cents, pas 10.",
+      "en": "$1 is worth 100 cents, not 10."
+     }
+    },
+    {
+     "value": 3,
+     "misconception": "mis_unit_confusion",
+     "feedback": {
+      "fr": "3 est le nombre de dollars. Il faut le convertir en cents.",
+      "en": "3 is the number of dollars. It must be converted to cents."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "1 $ vaut 100 cents.",
+    "en": "$1 is worth 100 cents."
+   },
+   "explain": {
+    "fr": "3 × 100 = 300 cents. C’est la réponse.",
+    "en": "3 × 100 = 300 cents. That is the answer."
+   },
+   "tags": [
+    "prices",
+    "cents",
+    "decimals"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_87f844559800d5f812fb"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.prix.002",
+   "quest": "marche.prix",
+   "skill": "ARI-SEN-C03",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un bonbon coûte 0,05 $.",
+    "en": "A candy costs $0.05."
+   },
+   "prompt": {
+    "fr": "Combien de bonbons Noah peut-il acheter avec 1 $ ?",
+    "en": "How many candies can Noah buy with $1?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 20,
+    "calc": "1/0.05"
+   },
+   "common_errors": [
+    {
+     "value": 5,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "0,05 $ est 5 cents, pas 5 dollars. 1 $ vaut 100 cents.",
+      "en": "$0.05 is 5 cents, not 5 dollars. $1 is 100 cents."
+     }
+    },
+    {
+     "value": 2,
+     "misconception": "mis_decimal_longer_bigger",
+     "feedback": {
+      "fr": "100 cents divisés par 5 cents font plus que 2.",
+      "en": "100 cents divided by 5 cents is more than 2."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte combien de fois 5 cents vont dans 100 cents.",
+    "en": "Count how many times 5 cents fits in 100 cents."
+   },
+   "explain": {
+    "fr": "1 $ = 100 cents et 100 ÷ 5 = 20 bonbons.",
+    "en": "$1 = 100 cents and 100 ÷ 5 = 20 candies."
+   },
+   "tags": [
+    "prices",
+    "cents",
+    "division"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_17e2a0c226342fe2cdd2"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.prix.003",
+   "quest": "marche.prix",
+   "skill": "ARI-SEN-C03",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Zoé a 6 pièces de 25 cents, soit 0,25 $ chacune.",
+    "en": "Zoe has six 25-cent coins, worth $0.25 each."
+   },
+   "prompt": {
+    "fr": "Combien de dollars cela fait-il en tout ?",
+    "en": "How many dollars is that in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 1.5,
+    "calc": "6*0.25"
+   },
+   "common_errors": [
+    {
+     "value": 150,
+     "misconception": "mis_unit_confusion",
+     "feedback": {
+      "fr": "150 est un nombre de cents. On cherche des dollars.",
+      "en": "150 is a number of cents. We want dollars."
+     }
+    },
+    {
+     "value": 0.75,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as compté trois pièces seulement.",
+      "en": "You counted only three coins."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "4 pièces de 25 cents font 1 $.",
+    "en": "Four 25-cent coins make $1."
+   },
+   "explain": {
+    "fr": "4 pièces font 1 $ et 2 pièces font 0,50 $. Total : 1,50 $.",
+    "en": "Four coins make $1 and two coins make $0.50. Total: $1.50."
+   },
+   "tags": [
+    "prices",
+    "decimals",
+    "money"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_f1d10c2647dd86857b18"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.prix.004",
+   "quest": "marche.prix",
+   "skill": "ARI-SEN-C03",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "L’étiquette d’un pain dit 3,50 $.",
+    "en": "The label on a loaf says $3.50."
+   },
+   "prompt": {
+    "fr": "Comment lit-on ce prix ?",
+    "en": "How do we read this price?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "350 dollars",
+      "en": "350 dollars"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "3 dollars et 50 cents",
+      "en": "3 dollars and 50 cents"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "53 dollars",
+      "en": "53 dollars"
+     },
+     "misconception": "mis_digit_swap"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "3 dollars et 5 cents",
+      "en": "3 dollars and 5 cents"
+     },
+     "misconception": "mis_place_value"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "La virgule sépare les dollars et les cents.",
+    "en": "The comma separates dollars and cents."
+   },
+   "explain": {
+    "fr": "3 avant la virgule : 3 dollars. 50 après : 50 cents.",
+    "en": "3 before the comma: 3 dollars. 50 after: 50 cents."
+   },
+   "tags": [
+    "prices",
+    "read-decimals"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a4367ba0f5eb97907b51"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.prix.005",
+   "quest": "marche.prix",
+   "skill": "ARI-SEN-C03",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa écrit le prix d’un jus au marché.",
+    "en": "Lea writes the price of a juice at the market."
+   },
+   "prompt": {
+    "fr": "Quatre dollars et vingt-cinq cents s’écrivent comment ?",
+    "en": "How do you write four dollars and twenty-five cents?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "4,52 $",
+      "en": "4,52 $"
+     },
+     "misconception": "mis_digit_swap"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "425 $",
+      "en": "425 $"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "4,25 $",
+      "en": "4,25 $"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "42,5 $",
+      "en": "42,5 $"
+     },
+     "misconception": "mis_place_value"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c"
+   },
+   "hint": {
+    "fr": "Les cents s’écrivent après la virgule.",
+    "en": "The cents are written after the comma."
+   },
+   "explain": {
+    "fr": "4 dollars, une virgule, puis 25 cents : 4,25 $.",
+    "en": "4 dollars, a comma, then 25 cents: $4.25."
+   },
+   "tags": [
+    "prices",
+    "write-decimals"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.prix.006",
+   "quest": "marche.prix",
+   "skill": "ARI-SEN-C03",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Un fruit coûte 6,78 $.",
+    "en": "A fruit costs $6.78."
+   },
+   "prompt": {
+    "fr": "Que vaut le chiffre 7 dans ce prix ?",
+    "en": "What is the digit 7 worth in this price?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "7 dixièmes",
+      "en": "7 tenths"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "7 centièmes",
+      "en": "7 hundredths"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "7 unités",
+      "en": "7 ones"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "7 dizaines",
+      "en": "7 tens"
+     },
+     "misconception": "mis_place_value"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Le premier chiffre après la virgule compte les dixièmes.",
+    "en": "The first digit after the comma counts tenths."
+   },
+   "explain": {
+    "fr": "Le 7 est juste après la virgule : 7 dixièmes.",
+    "en": "The 7 is right after the comma: 7 tenths."
+   },
+   "tags": [
+    "prices",
+    "place-value",
+    "decimals"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.prix.007",
+   "quest": "marche.prix",
+   "skill": "ARI-SEN-C03",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah paie avec des pièces.",
+    "en": "Noah pays with coins."
+   },
+   "prompt": {
+    "fr": "Il donne une pièce de 2 $, une pièce de 1 $ et 3 pièces de 0,25 $. Combien de dollars ?",
+    "en": "He gives a $2 coin, a $1 coin and three $0.25 coins. How many dollars?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3.75,
+    "calc": "2+1+3*0.25"
+   },
+   "common_errors": [
+    {
+     "value": 6,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Les pièces de 0,25 $ ne valent pas 1 $ chacune.",
+      "en": "The $0.25 coins are not worth $1 each."
+     }
+    },
+    {
+     "value": 3.25,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! 3 pièces de 25 cents font 75 cents.",
+      "en": "Close! Three 25-cent coins make 75 cents."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "3 pièces de 25 cents font 75 cents.",
+    "en": "Three 25-cent coins make 75 cents."
+   },
+   "explain": {
+    "fr": "2 + 1 = 3 $, puis 3 × 0,25 = 0,75 $. Total : 3,75 $.",
+    "en": "2 + 1 = $3, then 3 × 0.25 = $0.75. Total: $3.75."
+   },
+   "tags": [
+    "word-problem",
+    "decimals",
+    "money"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_f1d10c2647dd86857b18"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.prix.008",
+   "quest": "marche.prix",
+   "skill": "ARI-SEN-C03",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Une baguette coûte 3,25 $ chez le boulanger.",
+    "en": "A baguette costs $3.25 at the bakery."
+   },
+   "prompt": {
+    "fr": "Quel est son prix en cents ?",
+    "en": "What is its price in cents?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 325,
+    "calc": "3.25*100"
+   },
+   "common_errors": [
+    {
+     "value": 3.25,
+     "misconception": "mis_unit_confusion",
+     "feedback": {
+      "fr": "3,25 est en dollars. On veut des cents.",
+      "en": "3.25 is in dollars. We want cents."
+     }
+    },
+    {
+     "value": 32.5,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "1 $ vaut 100 cents, pas 10.",
+      "en": "$1 is worth 100 cents, not 10."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "1 $ vaut 100 cents.",
+    "en": "$1 is worth 100 cents."
+   },
+   "explain": {
+    "fr": "3 $ = 300 cents et 0,25 $ = 25 cents. Total : 325 cents.",
+    "en": "$3 = 300 cents and $0.25 = 25 cents. Total: 325 cents."
+   },
+   "tags": [
+    "word-problem",
+    "prices",
+    "cents"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9cd96c9682038748d725"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.prix.009",
+   "quest": "marche.prix",
+   "skill": "ARI-SEN-C03",
+   "type": "truefalse",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa lit des prix au marché.",
+    "en": "Lea reads prices at the market."
+   },
+   "prompt": {
+    "fr": "Léa dit que 2,5 $ s’écrit aussi 2,05 $. A-t-elle raison ?",
+    "en": "Lea says that $2.5 can also be written $2.05. Is she right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_place_value"
+   },
+   "hint": {
+    "fr": "Combien de cents y a-t-il dans 2,5 $ ?",
+    "en": "How many cents are in $2.5?"
+   },
+   "explain": {
+    "fr": "2,5 $ = 2,50 $. Et 2,05 $ est 2 dollars et 5 cents.",
+    "en": "$2.5 = $2.50. And $2.05 is 2 dollars and 5 cents."
+   },
+   "tags": [
+    "true-false",
+    "decimals"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.prix.010",
+   "quest": "marche.prix",
+   "skill": "ARI-SEN-C03",
+   "type": "order",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah range des étiquettes de prix.",
+    "en": "Noah sorts price tags."
+   },
+   "prompt": {
+    "fr": "Range ces prix du plus petit au plus grand.",
+    "en": "Put these prices in order, from the smallest to the biggest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "1,25 $",
+      "en": "$1.25"
+     },
+     "key": "1.25"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "0,95 $",
+      "en": "$0.95"
+     },
+     "key": "0.95"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "1,05 $",
+      "en": "$1.05"
+     },
+     "key": "1.05"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "0,5 $",
+      "en": "$0.5"
+     },
+     "key": "0.5"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "d",
+     "b",
+     "c",
+     "a"
+    ],
+    "by": "asc",
+    "misconception": "mis_decimal_longer_bigger"
+   },
+   "hint": {
+    "fr": "Compare d’abord les dollars, puis les dixièmes.",
+    "en": "Compare the dollars first, then the tenths."
+   },
+   "explain": {
+    "fr": "0,5 $, 0,95 $, 1,05 $ puis 1,25 $.",
+    "en": "$0.5, $0.95, $1.05 then $1.25."
+   },
+   "tags": [
+    "ordering",
+    "decimals",
+    "prices"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.prix.011",
+   "quest": "marche.prix",
+   "skill": "ARI-SEN-C03",
+   "type": "match",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Zoé écrit des prix en chiffres.",
+    "en": "Zoe writes prices with digits."
+   },
+   "prompt": {
+    "fr": "Relie chaque prix en mots à son écriture en chiffres.",
+    "en": "Match each price in words to its written form."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "trois dollars et vingt cents",
+       "en": "three dollars and twenty cents"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "quatre dollars",
+       "en": "four dollars"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "deux dollars et cinq cents",
+       "en": "two dollars and five cents"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "4,00 $",
+       "en": "4,00 $"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "2,05 $",
+       "en": "2,05 $"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "3,20 $",
+       "en": "3,20 $"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r3"
+     ],
+     [
+      "l2",
+      "r1"
+     ],
+     [
+      "l3",
+      "r2"
+     ]
+    ],
+    "misconception": "mis_place_value"
+   },
+   "hint": {
+    "fr": "Les cents s’écrivent avec deux chiffres.",
+    "en": "Cents are written with two digits."
+   },
+   "explain": {
+    "fr": "3,20 $, 4,00 $ et 2,05 $.",
+    "en": "$3.20, $4.00 and $2.05."
+   },
+   "tags": [
+    "matching",
+    "prices",
+    "decimals"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.prix.012",
+   "quest": "marche.prix",
+   "skill": "ARI-SEN-C03",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le tableau montre le prix de trois fruits en dollars.",
+    "en": "The chart shows the price of three fruits in dollars."
+   },
+   "prompt": {
+    "fr": "Combien de cents coûte la banane ?",
+    "en": "How many cents does the banana cost?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Prix des fruits ($)",
+      "en": "Fruit prices ($)"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "pomme",
+        "en": "apple"
+       },
+       "value": 1.2
+      },
+      {
+       "label": {
+        "fr": "banane",
+        "en": "banana"
+       },
+       "value": 0.65
+      },
+      {
+       "label": {
+        "fr": "poire",
+        "en": "pear"
+       },
+       "value": 0.9
+      }
+     ],
+     "max": 1.5
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 65,
+    "calc": "0.65*100"
+   },
+   "common_errors": [
+    {
+     "value": 0.65,
+     "misconception": "mis_unit_confusion",
+     "feedback": {
+      "fr": "0,65 est en dollars. On veut des cents.",
+      "en": "0.65 is in dollars. We want cents."
+     }
+    },
+    {
+     "value": 90,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "90 cents, c’est la poire.",
+      "en": "90 cents is the pear."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Lis la barre de la banane, puis multiplie par 100.",
+    "en": "Read the banana bar, then multiply by 100."
+   },
+   "explain": {
+    "fr": "0,65 $ × 100 = 65 cents.",
+    "en": "$0.65 × 100 = 65 cents."
+   },
+   "tags": [
+    "bar-chart",
+    "prices",
+    "cents"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_b82cd3cc7e56e70026b5"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.prix.013",
+   "quest": "marche.prix",
+   "skill": "ARI-SEN-C03",
+   "type": "estimate",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Chaque pomme coûte 1,95 $ au marché.",
+    "en": "Each apple costs $1.95 at the market."
+   },
+   "prompt": {
+    "fr": "Léa en achète 2. Environ combien de dollars paie-t-elle ?",
+    "en": "Lea buys 2. About how many dollars does she pay?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 3.8,
+    "max": 4.2,
+    "exact_for_check": 3.9,
+    "calc": "2*1.95"
+   },
+   "common_errors": [
+    {
+     "value": 3.5,
+     "misconception": "mis_estimate_rounding",
+     "feedback": {
+      "fr": "Presque, mais 2 pommes à presque 2 $ font près de 4 $.",
+      "en": "Close, but 2 apples at almost $2 each is close to $4."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis 1,95 $ à 2 $.",
+    "en": "Round $1.95 to $2."
+   },
+   "explain": {
+    "fr": "2 × 2 = 4 $. Le prix exact est 3,90 $.",
+    "en": "2 × 2 = $4. The exact price is $3.90."
+   },
+   "tags": [
+    "estimation",
+    "decimals",
+    "rounding"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a4367ba0f5eb97907b51"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.monnaie.001",
+   "quest": "marche.monnaie",
+   "skill": "ARI-OPE-C02a",
+   "type": "numeric",
+   "grade": 4,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa achète un pain à 3,40 $.",
+    "en": "Lea buys a loaf of bread for $3.40."
+   },
+   "prompt": {
+    "fr": "Elle paie avec un billet de 5 $. Combien de monnaie reçoit-elle ?",
+    "en": "She pays with a $5 bill. How much change does she get?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 1.6,
+    "calc": "5-3.4"
+   },
+   "common_errors": [
+    {
+     "value": 2.6,
+     "misconception": "mis_forgot_borrow",
+     "feedback": {
+      "fr": "Pour 0 - 4 dixièmes, il faut emprunter.",
+      "en": "For 0 - 4 tenths, you must borrow."
+     }
+    },
+    {
+     "value": 8.4,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "La monnaie, c’est ce qui reste : on soustrait.",
+      "en": "Change is what is left, so we subtract."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 3,40 $ jusqu’à 5 $.",
+    "en": "Count up from $3.40 to $5."
+   },
+   "explain": {
+    "fr": "5,00 - 3,40 = 1,60 $.",
+    "en": "5.00 - 3.40 = $1.60."
+   },
+   "tags": [
+    "change",
+    "subtraction",
+    "decimals"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_87f844559800d5f812fb"
+    },
+    {
+     "role": "object",
+     "asset": "a_972991729e1ac8acc79b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.monnaie.002",
+   "quest": "marche.monnaie",
+   "skill": "ARI-OPE-C02a",
+   "type": "numeric",
+   "grade": 4,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah achète du lait et du pain.",
+    "en": "Noah buys milk and bread."
+   },
+   "prompt": {
+    "fr": "Le lait coûte 2,35 $ et le pain coûte 1,50 $. Combien en tout ?",
+    "en": "The milk costs $2.35 and the bread costs $1.50. How much in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3.85,
+    "calc": "2.35+1.5"
+   },
+   "common_errors": [
+    {
+     "value": 3.75,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les centièmes.",
+      "en": "Close! Check the hundredths."
+     }
+    },
+    {
+     "value": 0.85,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On cherche le total : on additionne.",
+      "en": "We want the total, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne les dollars, puis les cents.",
+    "en": "Add the dollars, then the cents."
+   },
+   "explain": {
+    "fr": "2,35 + 1,50 = 3,85 $.",
+    "en": "2.35 + 1.50 = $3.85."
+   },
+   "tags": [
+    "addition",
+    "decimals",
+    "money"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_7ee5292b46edaa06d94b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.monnaie.003",
+   "quest": "marche.monnaie",
+   "skill": "ARI-OPE-C02a",
+   "type": "numeric",
+   "grade": 4,
+   "difficulty": 4,
+   "story": {
+    "fr": "Noah achète un jus à 2,75 $ et un biscuit à 1,85 $.",
+    "en": "Noah buys a juice for $2.75 and a cookie for $1.85."
+   },
+   "prompt": {
+    "fr": "Il paie avec un billet de 10 $. Combien de monnaie reçoit-il ?",
+    "en": "He pays with a $10 bill. How much change does he get?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5.4,
+    "calc": "10-(2.75+1.85)"
+   },
+   "common_errors": [
+    {
+     "value": 4.6,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "4,60 $ est le total des achats. Il reste à trouver la monnaie.",
+      "en": "$4.60 is the total of the purchases. The change is still to find."
+     }
+    },
+    {
+     "value": 7.25,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as enlevé seulement le jus. Enlève aussi le biscuit.",
+      "en": "You took away only the juice. Take away the cookie too."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Trouve d’abord le total des achats.",
+    "en": "First find the total of the purchases."
+   },
+   "explain": {
+    "fr": "2,75 + 1,85 = 4,60 $, puis 10 - 4,60 = 5,40 $.",
+    "en": "2.75 + 1.85 = $4.60, then 10 - 4.60 = $5.40."
+   },
+   "tags": [
+    "change",
+    "decimals",
+    "two-steps"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_87f844559800d5f812fb"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.monnaie.004",
+   "quest": "marche.monnaie",
+   "skill": "ARI-OPE-C02a",
+   "type": "choice",
+   "grade": 4,
+   "difficulty": 2,
+   "story": {
+    "fr": "Un fruit coûte 0,80 $ au marché.",
+    "en": "A fruit costs $0.80 at the market."
+   },
+   "prompt": {
+    "fr": "Léa paie avec 1 $. Combien de monnaie reçoit-elle ?",
+    "en": "Lea pays with $1. How much change does she get?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "1,80 $",
+      "en": "1,80 $"
+     },
+     "misconception": "mis_add_instead_of_subtract"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "0,20 $",
+      "en": "0,20 $"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "0,80 $",
+      "en": "0,80 $"
+     },
+     "misconception": "mis_partial_result"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "0,02 $",
+      "en": "0,02 $"
+     },
+     "misconception": "mis_place_value"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Compte de 0,80 $ jusqu’à 1 $.",
+    "en": "Count up from $0.80 to $1."
+   },
+   "explain": {
+    "fr": "1,00 - 0,80 = 0,20 $.",
+    "en": "1.00 - 0.80 = $0.20."
+   },
+   "tags": [
+    "change",
+    "decimals"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.monnaie.005",
+   "quest": "marche.monnaie",
+   "skill": "ARI-OPE-C02a",
+   "type": "choice",
+   "grade": 4,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah paie 10 $ pour un achat de 6,25 $.",
+    "en": "Noah pays $10 for a $6.25 purchase."
+   },
+   "prompt": {
+    "fr": "Quel calcul donne la monnaie ?",
+    "en": "Which sum gives the change?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "10 + 6,25",
+      "en": "10 + 6,25"
+     },
+     "misconception": "mis_add_instead_of_subtract"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "6,25 - 10",
+      "en": "6,25 - 10"
+     },
+     "misconception": "mis_order"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "10 - 6,25",
+      "en": "10 - 6,25"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "10 × 6,25",
+      "en": "10 × 6,25"
+     },
+     "misconception": "mis_wrong_operation"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c"
+   },
+   "hint": {
+    "fr": "La monnaie, c’est ce qui reste après l’achat.",
+    "en": "Change is what is left after the purchase."
+   },
+   "explain": {
+    "fr": "On enlève le prix de la somme payée : 10 - 6,25 = 3,75 $.",
+    "en": "We take the price from the money paid: 10 - 6.25 = $3.75."
+   },
+   "tags": [
+    "change",
+    "operation-choice"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_972991729e1ac8acc79b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.monnaie.006",
+   "quest": "marche.monnaie",
+   "skill": "ARI-OPE-C02a",
+   "type": "choice",
+   "grade": 4,
+   "difficulty": 4,
+   "story": {
+    "fr": "Léa additionne deux prix à la caisse.",
+    "en": "Lea adds two prices at the till."
+   },
+   "prompt": {
+    "fr": "Combien font 12,40 $ + 3,75 $ ?",
+    "en": "What is $12.40 + $3.75?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "15,15 $",
+      "en": "15,15 $"
+     },
+     "misconception": "mis_forgot_carry"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "16,05 $",
+      "en": "16,05 $"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "16,15 $",
+      "en": "16,15 $"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "17,15 $",
+      "en": "17,15 $"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c"
+   },
+   "hint": {
+    "fr": "Aligne les virgules, puis additionne de droite à gauche.",
+    "en": "Line up the commas, then add from right to left."
+   },
+   "explain": {
+    "fr": "On aligne les virgules : 12,40 + 3,75 = 16,15 $.",
+    "en": "12.40 + 3.75 = $16.15."
+   },
+   "tags": [
+    "addition",
+    "decimals",
+    "carry"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.monnaie.007",
+   "quest": "marche.monnaie",
+   "skill": "ARI-OPE-C02a",
+   "type": "word",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa achète une pomme à 1,25 $ et une poire à 0,90 $.",
+    "en": "Lea buys an apple for $1.25 and a pear for $0.90."
+   },
+   "prompt": {
+    "fr": "Combien de dollars paie-t-elle en tout ?",
+    "en": "How many dollars does she pay in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 2.15,
+    "calc": "1.25+0.9"
+   },
+   "common_errors": [
+    {
+     "value": 1.15,
+     "misconception": "mis_forgot_carry",
+     "feedback": {
+      "fr": "2 dixièmes + 9 dixièmes = 11 dixièmes : retiens 1 dollar.",
+      "en": "2 tenths + 9 tenths = 11 tenths: carry 1 dollar."
+     }
+    },
+    {
+     "value": 0.35,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On cherche le total : on additionne.",
+      "en": "We want the total, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne les cents, puis les dollars.",
+    "en": "Add the cents, then the dollars."
+   },
+   "explain": {
+    "fr": "1,25 + 0,90 = 2,15 $.",
+    "en": "1.25 + 0.90 = $2.15."
+   },
+   "tags": [
+    "word-problem",
+    "addition",
+    "decimals"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a4367ba0f5eb97907b51"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.monnaie.008",
+   "quest": "marche.monnaie",
+   "skill": "ARI-OPE-C02a",
+   "type": "word",
+   "grade": 4,
+   "difficulty": 5,
+   "story": {
+    "fr": "Noah a 20 $ pour le marché.",
+    "en": "Noah has $20 for the market."
+   },
+   "prompt": {
+    "fr": "Il achète un livre à 8,95 $ et un jeu à 6,50 $. Combien d’argent lui reste-t-il ?",
+    "en": "He buys a book for $8.95 and a game for $6.50. How much money does he have left?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 4.55,
+    "calc": "20-8.95-6.5"
+   },
+   "common_errors": [
+    {
+     "value": 11.05,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as enlevé seulement le livre. Enlève aussi le jeu.",
+      "en": "You took away only the book. Take away the game too."
+     }
+    },
+    {
+     "value": 35.45,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Il dépense de l’argent : on soustrait.",
+      "en": "He spends money, so we subtract."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Enlève le livre, puis enlève le jeu.",
+    "en": "Take away the book, then take away the game."
+   },
+   "explain": {
+    "fr": "20 - 8,95 = 11,05 $, puis 11,05 - 6,50 = 4,55 $.",
+    "en": "20 - 8.95 = $11.05, then 11.05 - 6.50 = $4.55."
+   },
+   "tags": [
+    "word-problem",
+    "subtraction",
+    "decimals",
+    "two-steps"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_6b6d33ab525d33568147"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.monnaie.009",
+   "quest": "marche.monnaie",
+   "skill": "ARI-OPE-C02a",
+   "type": "truefalse",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa vérifie une monnaie.",
+    "en": "Lea checks some change."
+   },
+   "prompt": {
+    "fr": "Léa dit que 7,50 $ - 2,75 $ donne 5,25 $. A-t-elle raison ?",
+    "en": "Lea says that $7.50 - $2.75 makes $5.25. Is she right?"
+   },
+   "math_text": "7,50 - 2,75 = 5,25",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_forgot_borrow"
+   },
+   "hint": {
+    "fr": "Vérifie : 5,25 + 2,75 donne-t-il 7,50 ?",
+    "en": "Check: does 5.25 + 2.75 make 7.50?"
+   },
+   "explain": {
+    "fr": "7,50 - 2,75 = 4,75 $, car 4,75 + 2,75 = 7,50.",
+    "en": "7.50 - 2.75 = $4.75, because 4.75 + 2.75 = 7.50."
+   },
+   "tags": [
+    "true-false",
+    "subtraction",
+    "decimals"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.monnaie.010",
+   "quest": "marche.monnaie",
+   "skill": "ARI-OPE-C02a",
+   "type": "order",
+   "grade": 4,
+   "difficulty": 4,
+   "story": {
+    "fr": "Noah compare les monnaies de quatre achats.",
+    "en": "Noah compares the change from four purchases."
+   },
+   "prompt": {
+    "fr": "Range ces monnaies de la plus petite à la plus grande.",
+    "en": "Put these amounts of change in order, from the smallest to the biggest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "5 - 3,40",
+      "en": "5 - 3.40"
+     },
+     "key": "1.6"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "10 - 7,25",
+      "en": "10 - 7.25"
+     },
+     "key": "2.75"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "2 - 0,85",
+      "en": "2 - 0.85"
+     },
+     "key": "1.15"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "20 - 18,5",
+      "en": "20 - 18.5"
+     },
+     "key": "1.5"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "c",
+     "d",
+     "a",
+     "b"
+    ],
+    "by": "asc",
+    "misconception": "mis_order"
+   },
+   "hint": {
+    "fr": "Calcule chaque monnaie d’abord.",
+    "en": "Work out each amount of change first."
+   },
+   "explain": {
+    "fr": "1,15 $, 1,50 $, 1,60 $ puis 2,75 $.",
+    "en": "$1.15, $1.50, $1.60 then $2.75."
+   },
+   "tags": [
+    "ordering",
+    "change",
+    "decimals"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.monnaie.011",
+   "quest": "marche.monnaie",
+   "skill": "ARI-OPE-C02a",
+   "type": "match",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Zoé paie toujours avec un billet de 10 $.",
+    "en": "Zoe always pays with a $10 bill."
+   },
+   "prompt": {
+    "fr": "Relie chaque achat à la monnaie rendue.",
+    "en": "Match each purchase to the change given back."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "achat de 9,50 $",
+       "en": "purchase of $9.50"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "achat de 7,25 $",
+       "en": "purchase of $7.25"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "achat de 4,80 $",
+       "en": "purchase of $4.80"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "5,20 $",
+       "en": "5,20 $"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "0,50 $",
+       "en": "0,50 $"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "2,75 $",
+       "en": "2,75 $"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r2"
+     ],
+     [
+      "l2",
+      "r3"
+     ],
+     [
+      "l3",
+      "r1"
+     ]
+    ],
+    "misconception": "mis_forgot_borrow"
+   },
+   "hint": {
+    "fr": "Soustrais chaque achat de 10 $.",
+    "en": "Subtract each purchase from $10."
+   },
+   "explain": {
+    "fr": "10 - 9,50 = 0,50 $. 10 - 7,25 = 2,75 $. 10 - 4,80 = 5,20 $.",
+    "en": "10 - 9.50 = $0.50. 10 - 7.25 = $2.75. 10 - 4.80 = $5.20."
+   },
+   "tags": [
+    "matching",
+    "change",
+    "decimals"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.monnaie.012",
+   "quest": "marche.monnaie",
+   "skill": "ARI-OPE-C02a",
+   "type": "visual",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le tableau montre trois articles du dépanneur en dollars.",
+    "en": "The chart shows three corner-store items in dollars."
+   },
+   "prompt": {
+    "fr": "Combien coûtent le pain et le lait ensemble ?",
+    "en": "How much do the bread and the milk cost together?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Prix des articles ($)",
+      "en": "Item prices ($)"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "pain",
+        "en": "bread"
+       },
+       "value": 2.25
+      },
+      {
+       "label": {
+        "fr": "lait",
+        "en": "milk"
+       },
+       "value": 3.1
+      },
+      {
+       "label": {
+        "fr": "fromage",
+        "en": "cheese"
+       },
+       "value": 4.6
+      }
+     ],
+     "max": 5
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5.35,
+    "calc": "2.25+3.1"
+   },
+   "common_errors": [
+    {
+     "value": 9.95,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as additionné les trois articles.",
+      "en": "You added all three items."
+     }
+    },
+    {
+     "value": 0.85,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On cherche le total : on additionne.",
+      "en": "We want the total, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Lis la barre du pain et celle du lait.",
+    "en": "Read the bread bar and the milk bar."
+   },
+   "explain": {
+    "fr": "2,25 + 3,10 = 5,35 $.",
+    "en": "2.25 + 3.10 = $5.35."
+   },
+   "tags": [
+    "bar-chart",
+    "addition",
+    "decimals"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_648d935809d028ce4b58"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.monnaie.013",
+   "quest": "marche.monnaie",
+   "skill": "ARI-OPE-C02a",
+   "type": "estimate",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa achète un plat à 7,95 $ et un jus à 3,10 $.",
+    "en": "Lea buys a meal for $7.95 and a juice for $3.10."
+   },
+   "prompt": {
+    "fr": "Environ combien de dollars paie-t-elle en tout ?",
+    "en": "About how many dollars does she pay in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 10.5,
+    "max": 11.5,
+    "exact_for_check": 11.05,
+    "calc": "7.95+3.1"
+   },
+   "common_errors": [
+    {
+     "value": 4.85,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On cherche le total : on additionne.",
+      "en": "We want the total, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis 7,95 à 8 et 3,10 à 3.",
+    "en": "Round 7.95 to 8 and 3.10 to 3."
+   },
+   "explain": {
+    "fr": "8 + 3 = 11 $. Le total exact est 11,05 $.",
+    "en": "8 + 3 = $11. The exact total is $11.05."
+   },
+   "tags": [
+    "estimation",
+    "decimals",
+    "rounding"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9cd96c9682038748d725"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.panier.001",
+   "quest": "marche.panier",
+   "skill": "ARI-OPE-A01a",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa arrondit les prix de son panier.",
+    "en": "Lea rounds the prices in her basket."
+   },
+   "prompt": {
+    "fr": "Elle arrondit 38 $ à la dizaine la plus proche. Quel nombre obtient-elle ?",
+    "en": "She rounds $38 to the nearest ten. What number does she get?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 40,
+    "calc": "40"
+   },
+   "common_errors": [
+    {
+     "value": 30,
+     "misconception": "mis_estimate_rounding",
+     "feedback": {
+      "fr": "38 est plus près de 40 que de 30.",
+      "en": "38 is closer to 40 than to 30."
+     }
+    },
+    {
+     "value": 39,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "On arrondit à la dizaine : le résultat finit par 0.",
+      "en": "We round to the ten, so the result ends in 0."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Regarde le chiffre des unités : 8.",
+    "en": "Look at the ones digit: 8."
+   },
+   "explain": {
+    "fr": "38 est tout près de 40.",
+    "en": "38 is very close to 40."
+   },
+   "tags": [
+    "rounding",
+    "tens",
+    "basket"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_87f844559800d5f812fb"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.panier.002",
+   "quest": "marche.panier",
+   "skill": "ARI-OPE-A01a",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah arrondit deux prix du panier.",
+    "en": "Noah rounds two prices in the basket."
+   },
+   "prompt": {
+    "fr": "Il arrondit 62 $ et 29 $ à la dizaine. Quelle est la somme des deux nombres arrondis ?",
+    "en": "He rounds $62 and $29 to the nearest ten. What is the sum of the two rounded numbers?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 90,
+    "calc": "60+30"
+   },
+   "common_errors": [
+    {
+     "value": 91,
+     "misconception": "mis_estimate_exact",
+     "feedback": {
+      "fr": "On additionne les nombres arrondis, pas les prix exacts.",
+      "en": "We add the rounded numbers, not the exact prices."
+     }
+    },
+    {
+     "value": 80,
+     "misconception": "mis_estimate_rounding",
+     "feedback": {
+      "fr": "29 s’arrondit à 30, pas à 20.",
+      "en": "29 rounds to 30, not 20."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis chaque prix, puis additionne.",
+    "en": "Round each price, then add."
+   },
+   "explain": {
+    "fr": "62 devient 60, 29 devient 30. 60 + 30 = 90.",
+    "en": "62 becomes 60, 29 becomes 30. 60 + 30 = 90."
+   },
+   "tags": [
+    "rounding",
+    "estimation",
+    "basket"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.panier.003",
+   "quest": "marche.panier",
+   "skill": "ARI-OPE-A01a",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa lit le prix d’une salade.",
+    "en": "Lea reads the price of a salad."
+   },
+   "prompt": {
+    "fr": "La salade coûte 47 $. Quelle dizaine est la plus proche ?",
+    "en": "The salad costs $47. Which ten is the closest?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "40",
+      "en": "40"
+     },
+     "misconception": "mis_estimate_rounding"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "50",
+      "en": "50"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "45",
+      "en": "45"
+     },
+     "random": true
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Regarde le chiffre des unités.",
+    "en": "Look at the ones digit."
+   },
+   "explain": {
+    "fr": "7 unités : on monte à la dizaine suivante, 50.",
+    "en": "7 ones: we go up to the next ten, 50."
+   },
+   "tags": [
+    "rounding",
+    "tens"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a4367ba0f5eb97907b51"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.panier.004",
+   "quest": "marche.panier",
+   "skill": "ARI-OPE-A01a",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah estime le prix de deux articles.",
+    "en": "Noah estimates the price of two items."
+   },
+   "prompt": {
+    "fr": "Un article coûte 29 $ et l’autre 41 $. Environ combien en tout ?",
+    "en": "One item costs $29 and the other $41. About how much in all?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "60",
+      "en": "60"
+     },
+     "misconception": "mis_estimate_rounding"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "80",
+      "en": "80"
+     },
+     "misconception": "mis_estimate_rounding"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "70",
+      "en": "70"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "12",
+      "en": "12"
+     },
+     "misconception": "mis_subtract_instead_of_add"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "30+40"
+    }
+   },
+   "hint": {
+    "fr": "Arrondis 29 à 30 et 41 à 40.",
+    "en": "Round 29 to 30 and 41 to 40."
+   },
+   "explain": {
+    "fr": "30 + 40 = 70, donc environ 70 $.",
+    "en": "30 + 40 = 70, so about $70."
+   },
+   "tags": [
+    "estimation",
+    "rounding",
+    "basket"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.panier.005",
+   "quest": "marche.panier",
+   "skill": "ARI-OPE-A01a",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le panier de Léa a trois articles.",
+    "en": "Lea’s basket has three items."
+   },
+   "prompt": {
+    "fr": "Ils coûtent 19 $, 22 $ et 18 $. Environ combien en tout ?",
+    "en": "They cost $19, $22 and $18. About how much in all?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "50",
+      "en": "50"
+     },
+     "misconception": "mis_estimate_rounding"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "70",
+      "en": "70"
+     },
+     "misconception": "mis_estimate_rounding"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "6",
+      "en": "6"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "60",
+      "en": "60"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d",
+    "calc_choice": {
+     "d": "20+20+20"
+    }
+   },
+   "hint": {
+    "fr": "Arrondis chaque prix à 20.",
+    "en": "Round each price to 20."
+   },
+   "explain": {
+    "fr": "Chaque prix est près de 20 : 20 + 20 + 20 = 60 $.",
+    "en": "Each price is close to 20: 20 + 20 + 20 = $60."
+   },
+   "tags": [
+    "estimation",
+    "rounding",
+    "basket"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_87f844559800d5f812fb"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.panier.006",
+   "quest": "marche.panier",
+   "skill": "ARI-OPE-A01a",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah met des fruits et du pain dans son panier.",
+    "en": "Noah puts fruit and bread in his basket."
+   },
+   "prompt": {
+    "fr": "Les fruits coûtent 28 $ et le pain 31 $. Quel est le total exact ?",
+    "en": "The fruit costs $28 and the bread $31. What is the exact total?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 59,
+    "calc": "28+31"
+   },
+   "common_errors": [
+    {
+     "value": 60,
+     "misconception": "mis_estimate_exact",
+     "feedback": {
+      "fr": "On veut le total exact, pas une estimation.",
+      "en": "We want the exact total, not an estimate."
+     }
+    },
+    {
+     "value": 3,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Le total, c’est une addition.",
+      "en": "A total is an addition."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne les dizaines, puis les unités.",
+    "en": "Add the tens, then the ones."
+   },
+   "explain": {
+    "fr": "28 + 31 = 59 $.",
+    "en": "28 + 31 = $59."
+   },
+   "tags": [
+    "word-problem",
+    "addition",
+    "basket"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a4367ba0f5eb97907b51"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.panier.007",
+   "quest": "marche.panier",
+   "skill": "ARI-OPE-A01a",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 4,
+   "story": {
+    "fr": "Léa a 100 $ pour faire ses courses.",
+    "en": "Lea has $100 to do her shopping."
+   },
+   "prompt": {
+    "fr": "Elle achète pour 38 $, 27 $ et 19 $. Combien d’argent lui reste-t-il ?",
+    "en": "She buys items for $38, $27 and $19. How much money does she have left?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 16,
+    "calc": "100-38-27-19"
+   },
+   "common_errors": [
+    {
+     "value": 84,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "84 $ est le total des achats. Il reste à trouver ce qui reste.",
+      "en": "$84 is the total of the purchases. What is left is still to find."
+     }
+    },
+    {
+     "value": 62,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as enlevé seulement un achat. Enlève les trois.",
+      "en": "You took away only one purchase. Take away all three."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne les achats, puis enlève de 100.",
+    "en": "Add the purchases, then take away from 100."
+   },
+   "explain": {
+    "fr": "38 + 27 + 19 = 84 $, puis 100 - 84 = 16 $.",
+    "en": "38 + 27 + 19 = $84, then 100 - 84 = $16."
+   },
+   "tags": [
+    "word-problem",
+    "subtraction",
+    "basket",
+    "two-steps"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.panier.008",
+   "quest": "marche.panier",
+   "skill": "ARI-OPE-A01a",
+   "type": "truefalse",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah estime le total de son panier.",
+    "en": "Noah estimates his basket total."
+   },
+   "prompt": {
+    "fr": "Noah dit que 49 $ + 31 $ font environ 90 $. A-t-il raison ?",
+    "en": "Noah says that $49 + $31 is about $90. Is he right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_estimate_rounding"
+   },
+   "hint": {
+    "fr": "Arrondis 49 à 50 et 31 à 30.",
+    "en": "Round 49 to 50 and 31 to 30."
+   },
+   "explain": {
+    "fr": "50 + 30 = 80, donc environ 80 $.",
+    "en": "50 + 30 = 80, so about $80."
+   },
+   "tags": [
+    "true-false",
+    "estimation",
+    "rounding"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.panier.009",
+   "quest": "marche.panier",
+   "skill": "ARI-OPE-A01a",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa compare quatre paniers.",
+    "en": "Lea compares four baskets."
+   },
+   "prompt": {
+    "fr": "Range ces paniers du total le plus petit au plus grand.",
+    "en": "Put these baskets in order, from the smallest total to the biggest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "19 $ + 21 $",
+      "en": "$19 + $21"
+     },
+     "key": "40"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "48 $ + 52 $",
+      "en": "$48 + $52"
+     },
+     "key": "100"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "29 $ + 31 $",
+      "en": "$29 + $31"
+     },
+     "key": "60"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "11 $ + 9 $",
+      "en": "$11 + $9"
+     },
+     "key": "20"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "d",
+     "a",
+     "c",
+     "b"
+    ],
+    "by": "asc",
+    "misconception": "mis_order"
+   },
+   "hint": {
+    "fr": "Arrondis chaque prix à la dizaine.",
+    "en": "Round each price to the nearest ten."
+   },
+   "explain": {
+    "fr": "20, 40, 60 puis 100 : les totaux sont près de ces nombres.",
+    "en": "20, 40, 60 then 100: the totals are close to these numbers."
+   },
+   "tags": [
+    "ordering",
+    "estimation",
+    "basket"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.panier.010",
+   "quest": "marche.panier",
+   "skill": "ARI-OPE-A01a",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Zoé arrondit les prix de son panier.",
+    "en": "Zoe rounds the prices in her basket."
+   },
+   "prompt": {
+    "fr": "Relie chaque prix à la dizaine la plus proche.",
+    "en": "Match each price to the nearest ten."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "27 $",
+       "en": "$27"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "42 $",
+       "en": "$42"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "68 $",
+       "en": "$68"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "70 $",
+       "en": "70 $"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "30 $",
+       "en": "30 $"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "40 $",
+       "en": "40 $"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r2"
+     ],
+     [
+      "l2",
+      "r3"
+     ],
+     [
+      "l3",
+      "r1"
+     ]
+    ],
+    "misconception": "mis_estimate_rounding"
+   },
+   "hint": {
+    "fr": "Regarde le chiffre des unités de chaque prix.",
+    "en": "Look at the ones digit of each price."
+   },
+   "explain": {
+    "fr": "27 devient 30, 42 devient 40 et 68 devient 70.",
+    "en": "27 becomes 30, 42 becomes 40 and 68 becomes 70."
+   },
+   "tags": [
+    "matching",
+    "rounding",
+    "tens"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.panier.011",
+   "quest": "marche.panier",
+   "skill": "ARI-OPE-A01a",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le tableau montre le prix de trois articles du panier.",
+    "en": "The chart shows the price of three items in the basket."
+   },
+   "prompt": {
+    "fr": "Arrondis chaque prix à la dizaine. Quelle est la somme ?",
+    "en": "Round each price to the nearest ten. What is the sum?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Prix du panier ($)",
+      "en": "Basket prices ($)"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "fromage",
+        "en": "cheese"
+       },
+       "value": 19
+      },
+      {
+       "label": {
+        "fr": "pain",
+        "en": "bread"
+       },
+       "value": 11
+      },
+      {
+       "label": {
+        "fr": "fruits",
+        "en": "fruit"
+       },
+       "value": 28
+      }
+     ],
+     "max": 30
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 60,
+    "calc": "20+10+30"
+   },
+   "common_errors": [
+    {
+     "value": 58,
+     "misconception": "mis_estimate_exact",
+     "feedback": {
+      "fr": "On additionne les nombres arrondis, pas les prix exacts.",
+      "en": "We add the rounded numbers, not the exact prices."
+     }
+    },
+    {
+     "value": 50,
+     "misconception": "mis_estimate_rounding",
+     "feedback": {
+      "fr": "28 s’arrondit à 30, pas à 20.",
+      "en": "28 rounds to 30, not 20."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Lis chaque barre, puis arrondis.",
+    "en": "Read each bar, then round."
+   },
+   "explain": {
+    "fr": "19 devient 20, 11 devient 10, 28 devient 30. Total : 60.",
+    "en": "19 becomes 20, 11 becomes 10, 28 becomes 30. Total: 60."
+   },
+   "tags": [
+    "bar-chart",
+    "rounding",
+    "estimation"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_87f844559800d5f812fb"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.panier.012",
+   "quest": "marche.panier",
+   "skill": "ARI-OPE-A01a",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le panier de Noah est presque plein.",
+    "en": "Noah’s basket is almost full."
+   },
+   "prompt": {
+    "fr": "Il contient des articles à 39 $, 41 $ et 18 $. Environ combien en tout ?",
+    "en": "It holds items costing $39, $41 and $18. About how much in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 90,
+    "max": 106,
+    "exact_for_check": 98,
+    "calc": "39+41+18"
+   },
+   "common_errors": [
+    {
+     "value": 60,
+     "misconception": "mis_estimate_rounding",
+     "feedback": {
+      "fr": "Tu as oublié un article. Il y en a trois.",
+      "en": "You left out an item. There are three."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis 39 à 40, 41 à 40 et 18 à 20.",
+    "en": "Round 39 to 40, 41 to 40 and 18 to 20."
+   },
+   "explain": {
+    "fr": "40 + 40 + 20 = 100. Le total exact est 98 $.",
+    "en": "40 + 40 + 20 = 100. The exact total is $98."
+   },
+   "tags": [
+    "estimation",
+    "rounding",
+    "basket"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a4367ba0f5eb97907b51"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.panier.013",
+   "quest": "marche.panier",
+   "skill": "ARI-OPE-A01a",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa dépense 52 $ le matin et 47 $ le soir.",
+    "en": "Lea spends $52 in the morning and $47 in the evening."
+   },
+   "prompt": {
+    "fr": "Environ combien dépense-t-elle en tout ?",
+    "en": "About how much does she spend in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 95,
+    "max": 103,
+    "exact_for_check": 99,
+    "calc": "52+47"
+   },
+   "common_errors": [
+    {
+     "value": 5,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On cherche le total : on additionne.",
+      "en": "We want the total, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis 52 à 50 et 47 à 50.",
+    "en": "Round 52 to 50 and 47 to 50."
+   },
+   "explain": {
+    "fr": "50 + 50 = 100. Le total exact est 99 $.",
+    "en": "50 + 50 = 100. The exact total is $99."
+   },
+   "tags": [
+    "estimation",
+    "rounding",
+    "basket"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.economies.001",
+   "quest": "marche.economies",
+   "skill": "ARI-SEN-C08",
+   "type": "numeric",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa a économisé 2,50 $ et Noah 2,35 $.",
+    "en": "Lea saved $2.50 and Noah saved $2.35."
+   },
+   "prompt": {
+    "fr": "Combien de cents de plus Léa a-t-elle économisés ?",
+    "en": "How many more cents has Lea saved?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 15,
+    "calc": "(2.5-2.35)*100"
+   },
+   "common_errors": [
+    {
+     "value": 0.15,
+     "misconception": "mis_unit_confusion",
+     "feedback": {
+      "fr": "0,15 est en dollars. On veut des cents.",
+      "en": "0.15 is in dollars. We want cents."
+     }
+    },
+    {
+     "value": 85,
+     "misconception": "mis_decimal_longer_bigger",
+     "feedback": {
+      "fr": "Compare 50 cents et 35 cents, pas 5 et 35.",
+      "en": "Compare 50 cents and 35 cents, not 5 and 35."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compare les cents : 50 et 35.",
+    "en": "Compare the cents: 50 and 35."
+   },
+   "explain": {
+    "fr": "2,50 - 2,35 = 0,15 $, soit 15 cents.",
+    "en": "2.50 - 2.35 = $0.15, which is 15 cents."
+   },
+   "tags": [
+    "compare",
+    "decimals",
+    "saving"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_6b6d33ab525d33568147"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.economies.002",
+   "quest": "marche.economies",
+   "skill": "ARI-SEN-C08",
+   "type": "numeric",
+   "grade": 4,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah met 0,50 $ dans sa tirelire chaque semaine.",
+    "en": "Noah puts $0.50 in his piggy bank every week."
+   },
+   "prompt": {
+    "fr": "Combien de dollars a-t-il après 6 semaines ?",
+    "en": "How many dollars does he have after 6 weeks?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3,
+    "calc": "6*0.5"
+   },
+   "common_errors": [
+    {
+     "value": 6.5,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Il ajoute 0,50 $ chaque semaine : on multiplie.",
+      "en": "He adds $0.50 each week, so we multiply."
+     }
+    },
+    {
+     "value": 30,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "0,50 $ est la moitié d’un dollar, pas 5 dollars.",
+      "en": "$0.50 is half a dollar, not 5 dollars."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Deux semaines font 1 $.",
+    "en": "Two weeks make $1."
+   },
+   "explain": {
+    "fr": "6 × 0,50 = 3 $.",
+    "en": "6 × 0.50 = $3."
+   },
+   "tags": [
+    "saving",
+    "decimals",
+    "multiplication"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_6b6d33ab525d33568147"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.economies.003",
+   "quest": "marche.economies",
+   "skill": "ARI-SEN-C08",
+   "type": "numeric",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Zoé a 12,35 $ et veut acheter un livre à 15 $.",
+    "en": "Zoe has $12.35 and wants a book that costs $15."
+   },
+   "prompt": {
+    "fr": "Combien de dollars lui manque-t-il ?",
+    "en": "How many dollars is she missing?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 2.65,
+    "calc": "15-12.35"
+   },
+   "common_errors": [
+    {
+     "value": 3.35,
+     "misconception": "mis_forgot_borrow",
+     "feedback": {
+      "fr": "Pour 0 - 5 centièmes, il faut emprunter.",
+      "en": "For 0 - 5 hundredths, you must borrow."
+     }
+    },
+    {
+     "value": 27.35,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Il manque de l’argent : on soustrait.",
+      "en": "Money is missing, so we subtract."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 12,35 $ jusqu’à 13 $, puis jusqu’à 15 $.",
+    "en": "Count from $12.35 up to $13, then up to $15."
+   },
+   "explain": {
+    "fr": "0,65 $ pour atteindre 13 $, puis 2 $ de plus : 2,65 $.",
+    "en": "$0.65 to reach $13, then $2 more: $2.65."
+   },
+   "tags": [
+    "saving",
+    "subtraction",
+    "decimals"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.economies.004",
+   "quest": "marche.economies",
+   "skill": "ARI-SEN-C08",
+   "type": "choice",
+   "grade": 4,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa veut choisir le plus grand prix de vente.",
+    "en": "Lea wants to pick the biggest selling price."
+   },
+   "prompt": {
+    "fr": "Quel prix est le plus grand ?",
+    "en": "Which price is the biggest?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "0,45 $",
+      "en": "0,45 $"
+     },
+     "misconception": "mis_decimal_longer_bigger"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "0,9 $",
+      "en": "0,9 $"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "0,09 $",
+      "en": "0,09 $"
+     },
+     "misconception": "mis_place_value"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Compare d’abord les dixièmes.",
+    "en": "Compare the tenths first."
+   },
+   "explain": {
+    "fr": "9 dixièmes est plus que 4 dixièmes : 0,9 $ est le plus grand.",
+    "en": "9 tenths is more than 4 tenths: $0.9 is the biggest."
+   },
+   "tags": [
+    "compare",
+    "decimals"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_f1d10c2647dd86857b18"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.economies.005",
+   "quest": "marche.economies",
+   "skill": "ARI-SEN-C08",
+   "type": "choice",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah cherche le prix le plus bas au marché.",
+    "en": "Noah looks for the lowest price at the market."
+   },
+   "prompt": {
+    "fr": "Quel prix est le plus petit ?",
+    "en": "Which price is the smallest?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "3,7 $",
+      "en": "3,7 $"
+     },
+     "misconception": "mis_decimal_longer_bigger"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "3,17 $",
+      "en": "3,17 $"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "3,07 $",
+      "en": "3,07 $"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c"
+   },
+   "hint": {
+    "fr": "Les dollars sont pareils. Compare les dixièmes.",
+    "en": "The dollars are the same. Compare the tenths."
+   },
+   "explain": {
+    "fr": "3,07 a 0 dixième, les autres en ont plus. C’est le plus petit.",
+    "en": "3.07 has 0 tenths, the others have more. It is the smallest."
+   },
+   "tags": [
+    "compare",
+    "decimals"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_87f844559800d5f812fb"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.economies.006",
+   "quest": "marche.economies",
+   "skill": "ARI-SEN-C08",
+   "type": "choice",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa compare deux montants d’économies.",
+    "en": "Lea compares two amounts of savings."
+   },
+   "prompt": {
+    "fr": "Compare 4,2 $ et 4,15 $. Quel signe va entre les deux ?",
+    "en": "Compare $4.2 and $4.15. Which sign goes between them?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "<",
+      "en": "<"
+     },
+     "misconception": "mis_decimal_longer_bigger"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": ">",
+      "en": ">"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "=",
+      "en": "="
+     },
+     "random": true
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Écris 4,2 sous la forme 4,20.",
+    "en": "Write 4.2 as 4.20."
+   },
+   "explain": {
+    "fr": "4,20 est plus grand que 4,15 : 4,2 > 4,15.",
+    "en": "4.20 is bigger than 4.15: 4.2 > 4.15."
+   },
+   "tags": [
+    "compare",
+    "decimals",
+    "symbols"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.economies.007",
+   "quest": "marche.economies",
+   "skill": "ARI-SEN-C08",
+   "type": "word",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa a économisé 12,50 $ et Noah 12,05 $.",
+    "en": "Lea saved $12.50 and Noah saved $12.05."
+   },
+   "prompt": {
+    "fr": "Combien de cents de plus a celui qui a le plus ?",
+    "en": "How many more cents has the one who saved more?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 45,
+    "calc": "(12.5-12.05)*100"
+   },
+   "common_errors": [
+    {
+     "value": 0.45,
+     "misconception": "mis_unit_confusion",
+     "feedback": {
+      "fr": "0,45 est en dollars. On veut des cents.",
+      "en": "0.45 is in dollars. We want cents."
+     }
+    },
+    {
+     "value": 45.5,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "12,05 a 5 centièmes, pas 5 dixièmes.",
+      "en": "12.05 has 5 hundredths, not 5 tenths."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compare 50 cents et 5 cents.",
+    "en": "Compare 50 cents and 5 cents."
+   },
+   "explain": {
+    "fr": "12,50 - 12,05 = 0,45 $, soit 45 cents.",
+    "en": "12.50 - 12.05 = $0.45, which is 45 cents."
+   },
+   "tags": [
+    "word-problem",
+    "compare",
+    "decimals"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.economies.008",
+   "quest": "marche.economies",
+   "skill": "ARI-SEN-C08",
+   "type": "word",
+   "grade": 4,
+   "difficulty": 4,
+   "story": {
+    "fr": "Zoé a 8,40 $ dans sa tirelire.",
+    "en": "Zoe has $8.40 in her piggy bank."
+   },
+   "prompt": {
+    "fr": "Elle ajoute 3,75 $ puis dépense 5 $. Combien lui reste-t-il ?",
+    "en": "She adds $3.75 then spends $5. How much does she have left?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 7.15,
+    "calc": "8.4+3.75-5"
+   },
+   "common_errors": [
+    {
+     "value": 12.15,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "12,15 $, c’est avant la dépense. Il faut enlever 5 $.",
+      "en": "$12.15 is before the spending. Take away $5."
+     }
+    },
+    {
+     "value": 6.65,
+     "misconception": "mis_forgot_carry",
+     "feedback": {
+      "fr": "40 + 75 cents = 115 cents : retiens 1 dollar.",
+      "en": "40 + 75 cents = 115 cents: carry 1 dollar."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne d’abord, puis soustrais.",
+    "en": "Add first, then subtract."
+   },
+   "explain": {
+    "fr": "8,40 + 3,75 = 12,15 $, puis 12,15 - 5 = 7,15 $.",
+    "en": "8.40 + 3.75 = $12.15, then 12.15 - 5 = $7.15."
+   },
+   "tags": [
+    "word-problem",
+    "decimals",
+    "two-steps"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_6b6d33ab525d33568147"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.economies.009",
+   "quest": "marche.economies",
+   "skill": "ARI-SEN-C08",
+   "type": "truefalse",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa et Noah comparent des prix.",
+    "en": "Lea and Noah compare prices."
+   },
+   "prompt": {
+    "fr": "Léa dit que 0,45 $ est plus grand que 0,5 $, car 45 est plus grand que 5. A-t-elle raison ?",
+    "en": "Lea says that $0.45 is bigger than $0.5, because 45 is bigger than 5. Is she right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_decimal_longer_bigger"
+   },
+   "hint": {
+    "fr": "Écris 0,5 sous la forme 0,50.",
+    "en": "Write 0.5 as 0.50."
+   },
+   "explain": {
+    "fr": "0,50 est plus grand que 0,45. Donc 0,5 $ est plus grand.",
+    "en": "0.50 is bigger than 0.45. So $0.5 is bigger."
+   },
+   "tags": [
+    "true-false",
+    "compare",
+    "decimals"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.economies.010",
+   "quest": "marche.economies",
+   "skill": "ARI-SEN-C08",
+   "type": "order",
+   "grade": 4,
+   "difficulty": 4,
+   "story": {
+    "fr": "Noah range ses pièces par valeur.",
+    "en": "Noah sorts his coins by value."
+   },
+   "prompt": {
+    "fr": "Range ces montants du plus petit au plus grand.",
+    "en": "Put these amounts in order, from the smallest to the biggest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "0,6 $",
+      "en": "$0.6"
+     },
+     "key": "0.6"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "0,45 $",
+      "en": "$0.45"
+     },
+     "key": "0.45"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "0,08 $",
+      "en": "$0.08"
+     },
+     "key": "0.08"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "0,5 $",
+      "en": "$0.5"
+     },
+     "key": "0.5"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "c",
+     "b",
+     "d",
+     "a"
+    ],
+    "by": "asc",
+    "misconception": "mis_decimal_longer_bigger"
+   },
+   "hint": {
+    "fr": "Écris tous les montants avec deux décimales.",
+    "en": "Write all the amounts with two decimals."
+   },
+   "explain": {
+    "fr": "0,08 $, 0,45 $, 0,50 $ puis 0,60 $.",
+    "en": "$0.08, $0.45, $0.50 then $0.60."
+   },
+   "tags": [
+    "ordering",
+    "compare",
+    "decimals"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.economies.011",
+   "quest": "marche.economies",
+   "skill": "ARI-SEN-C08",
+   "type": "match",
+   "grade": 4,
+   "difficulty": 2,
+   "story": {
+    "fr": "Zoé change ses dollars en cents.",
+    "en": "Zoe changes her dollars into cents."
+   },
+   "prompt": {
+    "fr": "Relie chaque montant en dollars à sa valeur en cents.",
+    "en": "Match each amount in dollars to its value in cents."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "0,25 $",
+       "en": "$0.25"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "0,5 $",
+       "en": "$0.5"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "0,05 $",
+       "en": "$0.05"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "50 cents",
+       "en": "50 cents"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "5 cents",
+       "en": "5 cents"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "25 cents",
+       "en": "25 cents"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r3"
+     ],
+     [
+      "l2",
+      "r1"
+     ],
+     [
+      "l3",
+      "r2"
+     ]
+    ],
+    "misconception": "mis_place_value"
+   },
+   "hint": {
+    "fr": "1 $ vaut 100 cents.",
+    "en": "$1 is worth 100 cents."
+   },
+   "explain": {
+    "fr": "0,25 $ = 25 cents, 0,5 $ = 50 cents et 0,05 $ = 5 cents.",
+    "en": "$0.25 = 25 cents, $0.5 = 50 cents and $0.05 = 5 cents."
+   },
+   "tags": [
+    "matching",
+    "decimals",
+    "cents"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.economies.012",
+   "quest": "marche.economies",
+   "skill": "ARI-SEN-C08",
+   "type": "visual",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Une flèche montre la somme économisée par Léa.",
+    "en": "An arrow shows the amount Lea has saved."
+   },
+   "prompt": {
+    "fr": "Quelle somme en dollars la flèche montre-t-elle ?",
+    "en": "Which amount in dollars does the arrow show?"
+   },
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 1,
+     "max": 2,
+     "step": 0.1,
+     "labels": [
+      1,
+      1.5,
+      2
+     ],
+     "arrow": 1.3
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 1.3,
+    "calc": "1.3"
+   },
+   "common_errors": [
+    {
+     "value": 1.03,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "La flèche est à 3 dixièmes, pas à 3 centièmes.",
+      "en": "The arrow is at 3 tenths, not 3 hundredths."
+     }
+    },
+    {
+     "value": 1.2,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Compte bien les petits traits.",
+      "en": "Close! Count the small marks carefully."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les petits traits après 1.",
+    "en": "Count the small marks after 1."
+   },
+   "explain": {
+    "fr": "La flèche est 3 traits après 1 : 1,3 $.",
+    "en": "The arrow is 3 marks after 1: $1.3."
+   },
+   "tags": [
+    "number-line",
+    "decimals"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_6b6d33ab525d33568147"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "marche.economies.013",
+   "quest": "marche.economies",
+   "skill": "ARI-SEN-C08",
+   "type": "estimate",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa avait 9,95 $ et a dépensé 4,05 $.",
+    "en": "Lea had $9.95 and spent $4.05."
+   },
+   "prompt": {
+    "fr": "Environ combien d’argent lui reste-t-il ?",
+    "en": "About how much money does she have left?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 5.5,
+    "max": 6.3,
+    "exact_for_check": 5.9,
+    "calc": "9.95-4.05"
+   },
+   "common_errors": [
+    {
+     "value": 14,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Elle a dépensé de l’argent : on soustrait.",
+      "en": "She spent money, so we subtract."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis 9,95 à 10 et 4,05 à 4.",
+    "en": "Round 9.95 to 10 and 4.05 to 4."
+   },
+   "explain": {
+    "fr": "10 - 4 = 6 $. Le résultat exact est 5,90 $.",
+    "en": "10 - 4 = $6. The exact result is $5.90."
+   },
+   "tags": [
+    "estimation",
+    "decimals",
+    "saving"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  }
+ ]
+}
