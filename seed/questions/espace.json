@@ -1,0 +1,5088 @@
+{
+ "world": "espace",
+ "schema": 1,
+ "questions": [
+  {
+   "id": "espace.decompte.001",
+   "quest": "espace.decompte",
+   "skill": "ARI-SEN-A08",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Le centre de lancement a quatre fiches de contrôle. Chacune porte un numéro.",
+    "en": "The launch centre has four check sheets. Each one has a number."
+   },
+   "prompt": {
+    "fr": "Range les fiches, du plus petit numéro au plus grand.",
+    "en": "Put the sheets in order, from the smallest number to the biggest."
+   },
+   "items": [
+    {
+     "id": "i1",
+     "text": {
+      "fr": "45",
+      "en": "45"
+     },
+     "key": "45"
+    },
+    {
+     "id": "i2",
+     "text": {
+      "fr": "12",
+      "en": "12"
+     },
+     "key": "12"
+    },
+    {
+     "id": "i3",
+     "text": {
+      "fr": "78",
+      "en": "78"
+     },
+     "key": "78"
+    },
+    {
+     "id": "i4",
+     "text": {
+      "fr": "31",
+      "en": "31"
+     },
+     "key": "31"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "i2",
+     "i4",
+     "i1",
+     "i3"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Cherche d'abord le plus petit numéro.",
+    "en": "First look for the smallest number."
+   },
+   "explain": {
+    "fr": "12, 31, 45, 78 : chaque numéro est plus grand que le précédent.",
+    "en": "12, 31, 45, 78: each number is bigger than the one before."
+   },
+   "tags": [
+    "ordering",
+    "launch-sheet"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a6f33c352e4a2f7706a8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.decompte.002",
+   "quest": "espace.decompte",
+   "skill": "ARI-SEN-A08",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Les ingénieurs lisent cinq numéros de réservoirs à haute voix.",
+    "en": "The engineers read out five tank numbers."
+   },
+   "prompt": {
+    "fr": "Range-les du plus grand au plus petit.",
+    "en": "Put them in order, from the biggest to the smallest."
+   },
+   "items": [
+    {
+     "id": "i1",
+     "text": {
+      "fr": "50",
+      "en": "50"
+     },
+     "key": "50"
+    },
+    {
+     "id": "i2",
+     "text": {
+      "fr": "9",
+      "en": "9"
+     },
+     "key": "9"
+    },
+    {
+     "id": "i3",
+     "text": {
+      "fr": "63",
+      "en": "63"
+     },
+     "key": "63"
+    },
+    {
+     "id": "i4",
+     "text": {
+      "fr": "27",
+      "en": "27"
+     },
+     "key": "27"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "i3",
+     "i1",
+     "i4",
+     "i2"
+    ],
+    "by": "desc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Commence par le plus grand nombre.",
+    "en": "Start with the biggest number."
+   },
+   "explain": {
+    "fr": "63 est le plus grand, puis 50, puis 27. Le plus petit est 9.",
+    "en": "63 is the biggest, then 50, then 27. The smallest is 9."
+   },
+   "tags": [
+    "ordering",
+    "descending"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a6f33c352e4a2f7706a8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.decompte.003",
+   "quest": "espace.decompte",
+   "skill": "ARI-SEN-A08",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Quatre codes de lancement ont trois chiffres.",
+    "en": "Four launch codes have three digits."
+   },
+   "prompt": {
+    "fr": "Range les codes, du plus petit au plus grand.",
+    "en": "Put the codes in order, from the smallest to the biggest."
+   },
+   "items": [
+    {
+     "id": "i1",
+     "text": {
+      "fr": "120",
+      "en": "120"
+     },
+     "key": "120"
+    },
+    {
+     "id": "i2",
+     "text": {
+      "fr": "102",
+      "en": "102"
+     },
+     "key": "102"
+    },
+    {
+     "id": "i3",
+     "text": {
+      "fr": "210",
+      "en": "210"
+     },
+     "key": "210"
+    },
+    {
+     "id": "i4",
+     "text": {
+      "fr": "201",
+      "en": "201"
+     },
+     "key": "201"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "i2",
+     "i1",
+     "i4",
+     "i3"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_partial"
+   },
+   "hint": {
+    "fr": "Compare d'abord les centaines, puis les dizaines.",
+    "en": "Compare the hundreds first, then the tens."
+   },
+   "explain": {
+    "fr": "Avec 1 centaine : 102 puis 120. Avec 2 centaines : 201 puis 210.",
+    "en": "With 1 hundred: 102 then 120. With 2 hundreds: 201 then 210."
+   },
+   "tags": [
+    "ordering",
+    "place-value",
+    "three-digit"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a6f33c352e4a2f7706a8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.decompte.004",
+   "quest": "espace.decompte",
+   "skill": "ARI-SEN-A08",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Sur la fiche de lancement, Léa lit le numéro 39.",
+    "en": "On the launch sheet, Lea reads the number 39."
+   },
+   "prompt": {
+    "fr": "Quel nombre vient juste après 39 ?",
+    "en": "Which number comes right after 39?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 40,
+    "calc": "39+1"
+   },
+   "common_errors": [
+    {
+     "value": 38,
+     "misconception": "mis_order",
+     "feedback": {
+      "fr": "38 vient avant 39, pas après.",
+      "en": "38 comes before 39, not after."
+     }
+    },
+    {
+     "value": 50,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Il faut avancer d'un seul pas.",
+      "en": "You only need to go up one step."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Avance d'un pas, comme sur une droite numérique.",
+    "en": "Move up one step, as on a number line."
+   },
+   "explain": {
+    "fr": "Après 39 vient 40, la dizaine suivante.",
+    "en": "After 39 comes 40, the next ten."
+   },
+   "tags": [
+    "number-after",
+    "counting"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a6f33c352e4a2f7706a8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.decompte.005",
+   "quest": "espace.decompte",
+   "skill": "ARI-SEN-A08",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah remet les fiches en ordre. Il lui manque celle qui précède 70.",
+    "en": "Noah puts the sheets back in order. He is missing the one before 70."
+   },
+   "prompt": {
+    "fr": "Quel numéro précède 70 ?",
+    "en": "Which number comes before 70?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 69,
+    "calc": "70-1"
+   },
+   "common_errors": [
+    {
+     "value": 71,
+     "misconception": "mis_order",
+     "feedback": {
+      "fr": "71 vient après 70, pas avant.",
+      "en": "71 comes after 70, not before."
+     }
+    },
+    {
+     "value": 60,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "60 est une dizaine plus bas : trop loin.",
+      "en": "60 is a whole ten lower: too far."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Recule d'un seul pas.",
+    "en": "Step back just one."
+   },
+   "explain": {
+    "fr": "Juste avant 70, on trouve 69.",
+    "en": "Right before 70 we find 69."
+   },
+   "tags": [
+    "number-before",
+    "counting"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a6f33c352e4a2f7706a8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.decompte.006",
+   "quest": "espace.decompte",
+   "skill": "ARI-SEN-A08",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Deux fiches voisines portent 84 et 86. Une fiche est tombée entre les deux.",
+    "en": "Two neighbouring sheets show 84 and 86. A sheet fell between them."
+   },
+   "prompt": {
+    "fr": "Quel numéro est écrit sur la fiche tombée ?",
+    "en": "Which number is on the fallen sheet?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 85,
+    "calc": "84+1"
+   },
+   "common_errors": [
+    {
+     "value": 83,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "83 est avant 84.",
+      "en": "83 is before 84."
+     }
+    },
+    {
+     "value": 87,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "87 est après 86.",
+      "en": "87 is after 86."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à la suite : 84, ?, 86.",
+    "en": "Think of the sequence: 84, ?, 86."
+   },
+   "explain": {
+    "fr": "Entre 84 et 86, il y a 85.",
+    "en": "Between 84 and 86 there is 85."
+   },
+   "tags": [
+    "number-between",
+    "counting"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a6f33c352e4a2f7706a8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.decompte.007",
+   "quest": "espace.decompte",
+   "skill": "ARI-SEN-A08",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Quatre fusées portent un numéro sur leur côté.",
+    "en": "Four rockets have a number on their side."
+   },
+   "prompt": {
+    "fr": "Quel est le plus grand numéro ?",
+    "en": "Which is the biggest number?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "85",
+      "en": "85"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "58",
+      "en": "58"
+     },
+     "misconception": "mis_digit_swap"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "76",
+      "en": "76"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "67",
+      "en": "67"
+     },
+     "misconception": "mis_place_value"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Compare d'abord les dizaines.",
+    "en": "Compare the tens first."
+   },
+   "explain": {
+    "fr": "85 a 8 dizaines, c'est le plus de dizaines.",
+    "en": "85 has 8 tens, the most tens."
+   },
+   "tags": [
+    "compare",
+    "two-digit"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_4636925a1dfc76a45dc8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.decompte.008",
+   "quest": "espace.decompte",
+   "skill": "ARI-SEN-A08",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Sur la fiche, quatre nombres sont presque les mêmes.",
+    "en": "On the sheet, four numbers are almost the same."
+   },
+   "prompt": {
+    "fr": "Quel est le plus grand nombre ?",
+    "en": "Which is the biggest number?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "100",
+      "en": "100"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "99",
+      "en": "99"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "98",
+      "en": "98"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "89",
+      "en": "89"
+     },
+     "misconception": "mis_order_partial"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Combien de chiffres ont ces nombres ?",
+    "en": "How many digits do these numbers have?"
+   },
+   "explain": {
+    "fr": "100 a trois chiffres, il est plus grand que les nombres à deux chiffres.",
+    "en": "100 has three digits, so it is bigger than the two-digit numbers."
+   },
+   "tags": [
+    "compare",
+    "hundred"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a6f33c352e4a2f7706a8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.decompte.009",
+   "quest": "espace.decompte",
+   "skill": "ARI-SEN-A08",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Le dernier numéro de la fiche est 99. Il manque le suivant.",
+    "en": "The last number on the sheet is 99. The next one is missing."
+   },
+   "prompt": {
+    "fr": "Quel nombre vient juste après 99 ?",
+    "en": "Which number comes right after 99?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "100",
+      "en": "100"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "98",
+      "en": "98"
+     },
+     "misconception": "mis_order"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "90",
+      "en": "90"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "1000",
+      "en": "1000"
+     },
+     "misconception": "mis_place_value"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a",
+    "calc_choice": {
+     "a": "99+1"
+    }
+   },
+   "hint": {
+    "fr": "Après 9 unités, on passe à la dizaine suivante.",
+    "en": "After 9 ones, we move to the next ten."
+   },
+   "explain": {
+    "fr": "99 + 1 = 100. On passe à trois chiffres.",
+    "en": "99 + 1 = 100. We move to three digits."
+   },
+   "tags": [
+    "number-after",
+    "hundred"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a6f33c352e4a2f7706a8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.decompte.010",
+   "quest": "espace.decompte",
+   "skill": "ARI-SEN-A08",
+   "type": "truefalse",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Sur la fiche, un technicien lit 62 puis 26.",
+    "en": "On the sheet, a technician reads 62 then 26."
+   },
+   "prompt": {
+    "fr": "Il dit que 62 est plus petit que 26. A-t-il raison ?",
+    "en": "He says 62 is smaller than 26. Is he right?"
+   },
+   "math_text": "62 < 26",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_digit_swap"
+   },
+   "hint": {
+    "fr": "Compare les dizaines : 6 et 2.",
+    "en": "Compare the tens: 6 and 2."
+   },
+   "explain": {
+    "fr": "62 a 6 dizaines et 26 en a 2. Donc 62 est plus grand que 26.",
+    "en": "62 has 6 tens and 26 has 2. So 62 is bigger than 26."
+   },
+   "tags": [
+    "true-false",
+    "compare",
+    "digit-order"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a6f33c352e4a2f7706a8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.decompte.011",
+   "quest": "espace.decompte",
+   "skill": "ARI-SEN-A08",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "La fiche de lancement a des cases à remplir avec le nombre suivant.",
+    "en": "The launch sheet has boxes to fill with the next number."
+   },
+   "prompt": {
+    "fr": "Relie chaque nombre au nombre qui vient juste après.",
+    "en": "Match each number to the number that comes right after."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "19",
+       "en": "19"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "49",
+       "en": "49"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "99",
+       "en": "99"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "59",
+       "en": "59"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "50",
+       "en": "50"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "100",
+       "en": "100"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "60",
+       "en": "60"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "20",
+       "en": "20"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ],
+     [
+      "l4",
+      "r4"
+     ]
+    ],
+    "misconception": "mis_match"
+   },
+   "hint": {
+    "fr": "Pense à la dizaine qui suit.",
+    "en": "Think of the ten that follows."
+   },
+   "explain": {
+    "fr": "Après 19 vient 20. Après 49 vient 50. Après 99 vient 100. Après 59 vient 60.",
+    "en": "After 19 comes 20. After 49 comes 50. After 99 comes 100. After 59 comes 60."
+   },
+   "tags": [
+    "matching",
+    "number-after"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a6f33c352e4a2f7706a8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.decompte.012",
+   "quest": "espace.decompte",
+   "skill": "ARI-SEN-A08",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa classe les fiches en piles de 10. Elle a 6 piles et 5 fiches seules.",
+    "en": "Lea sorts sheets into piles of 10. She has 6 piles and 5 single sheets."
+   },
+   "prompt": {
+    "fr": "Quel nombre de fiches cela fait-il en tout ?",
+    "en": "How many sheets is that in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 65,
+    "calc": "6*10+5"
+   },
+   "common_errors": [
+    {
+     "value": 11,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "Un tas vaut 10 fiches.",
+      "en": "A pile is worth 10 sheets."
+     }
+    },
+    {
+     "value": 56,
+     "misconception": "mis_digit_swap",
+     "feedback": {
+      "fr": "Les dizaines s'écrivent avant les unités.",
+      "en": "The tens are written before the ones."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "6 piles de 10, puis les fiches seules.",
+    "en": "6 piles of 10, then the single sheets."
+   },
+   "explain": {
+    "fr": "6 piles de 10 font 60. Avec 5 fiches de plus : 65.",
+    "en": "6 piles of 10 make 60. With 5 more sheets: 65."
+   },
+   "tags": [
+    "word-problem",
+    "tens-and-ones"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a6f33c352e4a2f7706a8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.decompte.013",
+   "quest": "espace.decompte",
+   "skill": "ARI-SEN-A08",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Sur la droite numérique de la fiche, la flèche montre le numéro d'un module.",
+    "en": "On the sheet's number line, the arrow shows a module's number."
+   },
+   "prompt": {
+    "fr": "Quel est ce numéro ?",
+    "en": "What is this number?"
+   },
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 40,
+     "max": 50,
+     "step": 1,
+     "arrow": 47
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 47,
+    "calc": "47"
+   },
+   "common_errors": [
+    {
+     "value": 46,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Compte bien les petits traits depuis 40.",
+      "en": "Count the small marks carefully from 40."
+     }
+    },
+    {
+     "value": 43,
+     "misconception": "mis_order",
+     "feedback": {
+      "fr": "Tu as lu à partir de la mauvaise extrémité.",
+      "en": "You read from the wrong end."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les traits à partir de 40.",
+    "en": "Count the marks from 40."
+   },
+   "explain": {
+    "fr": "Depuis 40, il y a 7 traits jusqu'à la flèche : c'est 47.",
+    "en": "From 40, there are 7 marks up to the arrow: it is 47."
+   },
+   "tags": [
+    "numberline",
+    "read-scale"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_4636925a1dfc76a45dc8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.decompte.014",
+   "quest": "espace.decompte",
+   "skill": "ARI-SEN-A08",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le numéro de la fusée est 59.",
+    "en": "The rocket's number is 59."
+   },
+   "prompt": {
+    "fr": "Il est tout près de quelle dizaine ?",
+    "en": "Which ten is it closest to?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "60",
+      "en": "60"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "50",
+      "en": "50"
+     },
+     "misconception": "mis_estimate_rounding"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "90",
+      "en": "90"
+     },
+     "misconception": "mis_digit_swap"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "500",
+      "en": "500"
+     },
+     "misconception": "mis_place_value"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Regarde l'unité : est-elle proche de 0 ou de 10 ?",
+    "en": "Look at the ones digit: is it close to 0 or to 10?"
+   },
+   "explain": {
+    "fr": "59 est à un pas de 60 et à neuf pas de 50. Il est plus près de 60.",
+    "en": "59 is one step from 60 and nine steps from 50. It is closer to 60."
+   },
+   "tags": [
+    "estimation",
+    "rounding",
+    "nearest-ten"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_4636925a1dfc76a45dc8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.fusee.001",
+   "quest": "espace.fusee",
+   "skill": "ARI-OPE-A03a",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "L'équipe de vol remplit la fusée avec du carburant. Elle a déjà 45 bidons.",
+    "en": "The flight team fills the rocket with fuel. It already has 45 cans."
+   },
+   "prompt": {
+    "fr": "On apporte 20 bidons de plus. Combien de bidons y a-t-il ?",
+    "en": "20 more cans are brought. How many cans are there?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 65,
+    "calc": "45+20"
+   },
+   "common_errors": [
+    {
+     "value": 25,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On ajoute des bidons : on additionne.",
+      "en": "We add cans, so we add."
+     }
+    },
+    {
+     "value": 47,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "20 vaut 2 dizaines, pas 2 unités.",
+      "en": "20 is 2 tens, not 2 ones."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Ajoute les dizaines : 4 dizaines et 2 dizaines.",
+    "en": "Add the tens: 4 tens and 2 tens."
+   },
+   "explain": {
+    "fr": "45 + 20 : 4 dizaines + 2 dizaines = 6 dizaines. Donc 65.",
+    "en": "45 + 20: 4 tens + 2 tens = 6 tens. So 65."
+   },
+   "tags": [
+    "mental-addition",
+    "fuel"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_4636925a1dfc76a45dc8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.fusee.002",
+   "quest": "espace.fusee",
+   "skill": "ARI-OPE-A03a",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Deux réservoirs de la fusée contiennent 34 L et 25 L de carburant.",
+    "en": "Two rocket tanks hold 34 L and 25 L of fuel."
+   },
+   "prompt": {
+    "fr": "Combien de litres y a-t-il en tout ?",
+    "en": "How many litres are there in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 59,
+    "calc": "34+25"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit le carburant : on additionne.",
+      "en": "We put the fuel together, so we add."
+     }
+    },
+    {
+     "value": 58,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Refais les unités : 4 + 5.",
+      "en": "Close! Redo the ones: 4 + 5."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne les dizaines, puis les unités.",
+    "en": "Add the tens, then the ones."
+   },
+   "explain": {
+    "fr": "30 + 20 = 50 et 4 + 5 = 9. Donc 59 L.",
+    "en": "30 + 20 = 50 and 4 + 5 = 9. So 59 L."
+   },
+   "tags": [
+    "mental-addition",
+    "fuel"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a6f33c352e4a2f7706a8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.fusee.003",
+   "quest": "espace.fusee",
+   "skill": "ARI-OPE-A03a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un camion apporte 48 bouteilles d'oxygène. Un deuxième en apporte 37.",
+    "en": "One truck brings 48 oxygen bottles. A second brings 37."
+   },
+   "prompt": {
+    "fr": "Combien de bouteilles ont-ils apporté ?",
+    "en": "How many bottles did they bring?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 85,
+    "calc": "48+37"
+   },
+   "common_errors": [
+    {
+     "value": 75,
+     "misconception": "mis_forgot_carry",
+     "feedback": {
+      "fr": "Tu as oublié la retenue : 8 + 7 = 15.",
+      "en": "You forgot to carry: 8 + 7 = 15."
+     }
+    },
+    {
+     "value": 11,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les bouteilles : on additionne.",
+      "en": "We put the bottles together, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Fais 48 + 30, puis ajoute 7.",
+    "en": "Do 48 + 30, then add 7."
+   },
+   "explain": {
+    "fr": "48 + 30 = 78, puis 78 + 7 = 85.",
+    "en": "48 + 30 = 78, then 78 + 7 = 85."
+   },
+   "tags": [
+    "mental-addition",
+    "carry",
+    "oxygen"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a6f33c352e4a2f7706a8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.fusee.004",
+   "quest": "espace.fusee",
+   "skill": "ARI-OPE-A03a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "La fusée emporte 83 L d'eau potable. L'équipage en boit 47 L pendant la mission.",
+    "en": "The rocket carries 83 L of drinking water. The crew drinks 47 L during the mission."
+   },
+   "prompt": {
+    "fr": "Combien de litres d'eau reste-t-il ?",
+    "en": "How many litres of water are left?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 36,
+    "calc": "83-47"
+   },
+   "common_errors": [
+    {
+     "value": 44,
+     "misconception": "mis_forgot_borrow",
+     "feedback": {
+      "fr": "Tu as soustrait le petit chiffre du grand : emprunte une dizaine.",
+      "en": "You took the small digit from the big one: borrow a ten."
+     }
+    },
+    {
+     "value": 130,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "L'équipage boit : on enlève, on soustrait.",
+      "en": "The crew drinks, so we take away."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Enlève 40, puis enlève encore 7.",
+    "en": "Take away 40, then take away 7 more."
+   },
+   "explain": {
+    "fr": "83 - 40 = 43, puis 43 - 7 = 36 L.",
+    "en": "83 - 40 = 43, then 43 - 7 = 36 L."
+   },
+   "tags": [
+    "mental-subtraction",
+    "borrow",
+    "water"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a6f33c352e4a2f7706a8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.fusee.005",
+   "quest": "espace.fusee",
+   "skill": "ARI-OPE-A03a",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le réservoir principal contient 60 L. La fusée en utilise 25 L au décollage.",
+    "en": "The main tank holds 60 L. The rocket uses 25 L at lift-off."
+   },
+   "prompt": {
+    "fr": "Combien de litres reste-t-il ?",
+    "en": "How many litres are left?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 35,
+    "calc": "60-25"
+   },
+   "common_errors": [
+    {
+     "value": 45,
+     "misconception": "mis_forgot_borrow",
+     "feedback": {
+      "fr": "Tu as soustrait 5 de 0 à l'envers : emprunte une dizaine.",
+      "en": "You subtracted 5 from 0 the wrong way: borrow a ten."
+     }
+    },
+    {
+     "value": 85,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "La fusée en utilise : on enlève.",
+      "en": "The rocket uses it, so we take away."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Enlève 20, puis enlève encore 5.",
+    "en": "Take away 20, then take away 5 more."
+   },
+   "explain": {
+    "fr": "60 - 20 = 40, puis 40 - 5 = 35 L.",
+    "en": "60 - 20 = 40, then 40 - 5 = 35 L."
+   },
+   "tags": [
+    "mental-subtraction",
+    "fuel"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_4636925a1dfc76a45dc8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.fusee.006",
+   "quest": "espace.fusee",
+   "skill": "ARI-OPE-A03a",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "L'équipage compte 12 personnes. Cinq d'entre elles font une sortie dans l'espace.",
+    "en": "The crew has 12 people. Five of them go on a spacewalk."
+   },
+   "prompt": {
+    "fr": "Combien de personnes restent dans la station ?",
+    "en": "How many people stay in the station?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 7,
+    "calc": "12-5"
+   },
+   "common_errors": [
+    {
+     "value": 17,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Des personnes sortent : on enlève.",
+      "en": "People go out, so we take away."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recule de 5 depuis 12.",
+      "en": "Close! Count back 5 from 12."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Recule de 5 depuis 12, en passant par 10.",
+    "en": "Count back 5 from 12, going through 10."
+   },
+   "explain": {
+    "fr": "12 - 2 = 10, puis 10 - 3 = 7. Il reste 7 personnes.",
+    "en": "12 - 2 = 10, then 10 - 3 = 7. 7 people remain."
+   },
+   "tags": [
+    "word-problem",
+    "mental-subtraction",
+    "crew"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_56328e63721b70ce0328"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.fusee.007",
+   "quest": "espace.fusee",
+   "skill": "ARI-OPE-A03a",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "La fusée a 128 L d'eau. L'équipage en utilise 45 L, puis on en ajoute 30 L.",
+    "en": "The rocket has 128 L of water. The crew uses 45 L, then 30 L are added."
+   },
+   "prompt": {
+    "fr": "Combien de litres y a-t-il à la fin ?",
+    "en": "How many litres are there at the end?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 113,
+    "calc": "128-45+30"
+   },
+   "common_errors": [
+    {
+     "value": 83,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu t'es arrêté trop tôt : on ajoute ensuite 30 L.",
+      "en": "You stopped too soon: 30 L are added after."
+     }
+    },
+    {
+     "value": 203,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "L'équipage utilise 45 L : on soustrait cette quantité.",
+      "en": "The crew uses 45 L, so subtract that amount."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Fais les deux étapes dans l'ordre de l'histoire.",
+    "en": "Do the two steps in the order of the story."
+   },
+   "explain": {
+    "fr": "128 - 45 = 83. Puis 83 + 30 = 113 L.",
+    "en": "128 - 45 = 83. Then 83 + 30 = 113 L."
+   },
+   "tags": [
+    "word-problem",
+    "two-step",
+    "water"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a6f33c352e4a2f7706a8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.fusee.008",
+   "quest": "espace.fusee",
+   "skill": "ARI-OPE-A03a",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le réservoir contient 38 L. On ajoute 20 L de carburant.",
+    "en": "The tank holds 38 L. 20 L of fuel are added."
+   },
+   "prompt": {
+    "fr": "Combien de litres y a-t-il maintenant ?",
+    "en": "How many litres are there now?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "58",
+      "en": "58"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "18",
+      "en": "18"
+     },
+     "misconception": "mis_subtract_instead_of_add"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "40",
+      "en": "40"
+     },
+     "misconception": "mis_partial_result"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "59",
+      "en": "59"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a",
+    "calc_choice": {
+     "a": "38+20"
+    }
+   },
+   "hint": {
+    "fr": "Ajoute 2 dizaines à 38.",
+    "en": "Add 2 tens to 38."
+   },
+   "explain": {
+    "fr": "38 + 20 = 58. Il y a 58 L.",
+    "en": "38 + 20 = 58. There are 58 L."
+   },
+   "tags": [
+    "mental-addition",
+    "fuel"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_4636925a1dfc76a45dc8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.fusee.009",
+   "quest": "espace.fusee",
+   "skill": "ARI-OPE-A03a",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "La fusée a parcouru 92 km. Un module a déjà fait 38 km de ce trajet.",
+    "en": "The rocket travelled 92 km. A module already did 38 km of that trip."
+   },
+   "prompt": {
+    "fr": "Combien de km reste-t-il à faire au module ?",
+    "en": "How many km does the module still have to travel?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "54",
+      "en": "54"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "66",
+      "en": "66"
+     },
+     "misconception": "mis_forgot_borrow"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "130",
+      "en": "130"
+     },
+     "misconception": "mis_add_instead_of_subtract"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "56",
+      "en": "56"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a",
+    "calc_choice": {
+     "a": "92-38"
+    }
+   },
+   "hint": {
+    "fr": "Enlève 40, puis rends 2.",
+    "en": "Take away 40, then give back 2."
+   },
+   "explain": {
+    "fr": "92 - 38 = 92 - 40 + 2 = 54. Il reste 54 km.",
+    "en": "92 - 38 = 92 - 40 + 2 = 54. There are 54 km left."
+   },
+   "tags": [
+    "mental-subtraction",
+    "borrow"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a6f33c352e4a2f7706a8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.fusee.010",
+   "quest": "espace.fusee",
+   "skill": "ARI-OPE-A03a",
+   "type": "truefalse",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Zoé calcule le carburant qui reste dans un réservoir.",
+    "en": "Zoe works out the fuel left in a tank."
+   },
+   "prompt": {
+    "fr": "Elle dit que 60 - 8 donne 54. A-t-elle raison ?",
+    "en": "She says 60 - 8 makes 54. Is she right?"
+   },
+   "math_text": "60 - 8 = 54",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_off_by_one"
+   },
+   "hint": {
+    "fr": "Recule de 8 depuis 60, en passant par 50.",
+    "en": "Count back 8 from 60, going through 50."
+   },
+   "explain": {
+    "fr": "60 - 8 = 52. Le calcul de Zoé donne 2 de trop.",
+    "en": "60 - 8 = 52. Zoe's answer is 2 too big."
+   },
+   "tags": [
+    "true-false",
+    "mental-subtraction"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_4636925a1dfc76a45dc8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.fusee.011",
+   "quest": "espace.fusee",
+   "skill": "ARI-OPE-A03a",
+   "type": "order",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Quatre pièces de la fusée portent un calcul de carburant.",
+    "en": "Four rocket parts carry a fuel calculation."
+   },
+   "prompt": {
+    "fr": "Range les calculs, du plus petit résultat au plus grand.",
+    "en": "Put the sums in order, from the smallest result to the biggest."
+   },
+   "items": [
+    {
+     "id": "i1",
+     "text": {
+      "fr": "35 + 20",
+      "en": "35 + 20"
+     },
+     "key": "55"
+    },
+    {
+     "id": "i2",
+     "text": {
+      "fr": "80 - 30",
+      "en": "80 - 30"
+     },
+     "key": "50"
+    },
+    {
+     "id": "i3",
+     "text": {
+      "fr": "29 + 29",
+      "en": "29 + 29"
+     },
+     "key": "58"
+    },
+    {
+     "id": "i4",
+     "text": {
+      "fr": "100 - 41",
+      "en": "100 - 41"
+     },
+     "key": "59"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "i2",
+     "i1",
+     "i3",
+     "i4"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Calcule d'abord chaque résultat.",
+    "en": "Work out each result first."
+   },
+   "explain": {
+    "fr": "Les résultats sont 50, 55, 58 et 59.",
+    "en": "The results are 50, 55, 58 and 59."
+   },
+   "tags": [
+    "ordering",
+    "mental-math"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_4636925a1dfc76a45dc8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.fusee.012",
+   "quest": "espace.fusee",
+   "skill": "ARI-OPE-A03a",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "L'équipe de contrôle vérifie des calculs de tête.",
+    "en": "The control team checks some mental sums."
+   },
+   "prompt": {
+    "fr": "Relie chaque calcul à son résultat.",
+    "en": "Match each sum to its result."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "30 + 40",
+       "en": "30 + 40"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "90 - 50",
+       "en": "90 - 50"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "25 + 25",
+       "en": "25 + 25"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "65 - 5",
+       "en": "65 - 5"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "40",
+       "en": "40"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "50",
+       "en": "50"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "60",
+       "en": "60"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "70",
+       "en": "70"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ],
+     [
+      "l4",
+      "r4"
+     ]
+    ],
+    "misconception": "mis_match"
+   },
+   "hint": {
+    "fr": "Fais chaque calcul avec des dizaines.",
+    "en": "Do each sum with tens."
+   },
+   "explain": {
+    "fr": "30 + 40 = 70. 90 - 50 = 40. 25 + 25 = 50. 65 - 5 = 60.",
+    "en": "30 + 40 = 70. 90 - 50 = 40. 25 + 25 = 50. 65 - 5 = 60."
+   },
+   "tags": [
+    "matching",
+    "mental-math"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_4636925a1dfc76a45dc8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.fusee.013",
+   "quest": "espace.fusee",
+   "skill": "ARI-OPE-A03a",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Trois réservoirs de la fusée sont montrés sur le diagramme, en litres.",
+    "en": "Three rocket tanks are shown on the chart, in litres."
+   },
+   "prompt": {
+    "fr": "Combien de litres y a-t-il dans les trois réservoirs ?",
+    "en": "How many litres are in the three tanks?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Carburant (L)",
+      "en": "Fuel (L)"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "A",
+        "en": "A"
+       },
+       "value": 45
+      },
+      {
+       "label": {
+        "fr": "B",
+        "en": "B"
+       },
+       "value": 30
+      },
+      {
+       "label": {
+        "fr": "C",
+        "en": "C"
+       },
+       "value": 25
+      }
+     ],
+     "max": 50
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 100,
+    "calc": "45+30+25"
+   },
+   "common_errors": [
+    {
+     "value": 75,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié un réservoir.",
+      "en": "You left out a tank."
+     }
+    },
+    {
+     "value": 70,
+     "misconception": "mis_read_scale",
+     "feedback": {
+      "fr": "Relis la hauteur de chaque barre.",
+      "en": "Read the height of each bar again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne 30 et 25 d'abord, puis ajoute 45.",
+    "en": "Add 30 and 25 first, then add 45."
+   },
+   "explain": {
+    "fr": "30 + 25 = 55, puis 55 + 45 = 100 L.",
+    "en": "30 + 25 = 55, then 55 + 45 = 100 L."
+   },
+   "tags": [
+    "bar-chart",
+    "mental-addition",
+    "fuel"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_4636925a1dfc76a45dc8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.fusee.014",
+   "quest": "espace.fusee",
+   "skill": "ARI-OPE-A03a",
+   "type": "estimate",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le premier réservoir contient 49 L. Le deuxième en contient 52 L.",
+    "en": "The first tank holds 49 L. The second holds 52 L."
+   },
+   "prompt": {
+    "fr": "Environ combien de litres ont-ils en tout ?",
+    "en": "About how many litres do they hold in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 95,
+    "max": 105,
+    "exact_for_check": 101,
+    "calc": "49+52"
+   },
+   "common_errors": [
+    {
+     "value": 3,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les deux réservoirs : on additionne.",
+      "en": "We put the two tanks together, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à 50 + 50.",
+    "en": "Think of 50 + 50."
+   },
+   "explain": {
+    "fr": "49 est près de 50 et 52 est près de 50. Le total est environ 100 L.",
+    "en": "49 is close to 50 and 52 is close to 50. The total is about 100 L."
+   },
+   "tags": [
+    "estimation",
+    "mental-addition"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_4636925a1dfc76a45dc8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.orbites.001",
+   "quest": "espace.orbites",
+   "skill": "ARI-OPE-A06a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Sur la station, les panneaux solaires sont en rangées. Il y a 3 rangées de 4 panneaux.",
+    "en": "On the station, solar panels sit in rows. There are 3 rows of 4 panels."
+   },
+   "prompt": {
+    "fr": "Combien de panneaux y a-t-il ?",
+    "en": "How many panels are there?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 12,
+    "calc": "3*4"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "3 rangées de 4, c'est 4 + 4 + 4.",
+      "en": "3 rows of 4 is 4 + 4 + 4."
+     }
+    },
+    {
+     "value": 16,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as compté une rangée de trop.",
+      "en": "You counted one row too many."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 4 en 4, une fois par rangée.",
+    "en": "Count by 4s, once for each row."
+   },
+   "explain": {
+    "fr": "4, 8, 12. Trois rangées de 4 font 12 panneaux.",
+    "en": "4, 8, 12. Three rows of 4 make 12 panels."
+   },
+   "tags": [
+    "multiplication",
+    "arrays",
+    "solar-panels"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_56328e63721b70ce0328"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.orbites.002",
+   "quest": "espace.orbites",
+   "skill": "ARI-OPE-A06a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Une aile solaire a 5 rangées. Chaque rangée compte 5 panneaux.",
+    "en": "A solar wing has 5 rows. Each row has 5 panels."
+   },
+   "prompt": {
+    "fr": "Combien de panneaux l'aile compte-t-elle ?",
+    "en": "How many panels does the wing have?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 25,
+    "calc": "5*5"
+   },
+   "common_errors": [
+    {
+     "value": 10,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Il faut répéter 5 cinq fois, pas additionner seulement 5 et 5.",
+      "en": "You must repeat 5 five times, not just add 5 and 5."
+     }
+    },
+    {
+     "value": 20,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Il manque une rangée.",
+      "en": "One row is missing."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 5 en 5, cinq fois.",
+    "en": "Count by 5s, five times."
+   },
+   "explain": {
+    "fr": "5, 10, 15, 20, 25. Cinq rangées de 5 font 25.",
+    "en": "5, 10, 15, 20, 25. Five rows of 5 make 25."
+   },
+   "tags": [
+    "multiplication",
+    "arrays",
+    "times-5"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_56328e63721b70ce0328"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.orbites.003",
+   "quest": "espace.orbites",
+   "skill": "ARI-OPE-A06a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Un côté de la station a 6 rangées de 4 panneaux.",
+    "en": "One side of the station has 6 rows of 4 panels."
+   },
+   "prompt": {
+    "fr": "Combien de panneaux y a-t-il sur ce côté ?",
+    "en": "How many panels are on that side?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 24,
+    "calc": "6*4"
+   },
+   "common_errors": [
+    {
+     "value": 10,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "6 rangées de 4, ce n'est pas 6 + 4.",
+      "en": "6 rows of 4 is not 6 + 4."
+     }
+    },
+    {
+     "value": 20,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as sauté une rangée en comptant de 4 en 4.",
+      "en": "You skipped a row counting by 4s."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Utilise ce que tu sais : 5 x 4 = 20.",
+    "en": "Use what you know: 5 x 4 = 20."
+   },
+   "explain": {
+    "fr": "5 x 4 = 20 et une rangée de 4 de plus : 24 panneaux.",
+    "en": "5 x 4 = 20 and one more row of 4 makes 24 panels."
+   },
+   "tags": [
+    "multiplication",
+    "arrays",
+    "times-4"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_56328e63721b70ce0328"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.orbites.004",
+   "quest": "espace.orbites",
+   "skill": "ARI-OPE-A06a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un grand champ solaire a 8 rangées de 6 panneaux.",
+    "en": "A large solar field has 8 rows of 6 panels."
+   },
+   "prompt": {
+    "fr": "Combien de panneaux y a-t-il ?",
+    "en": "How many panels are there?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 48,
+    "calc": "8*6"
+   },
+   "common_errors": [
+    {
+     "value": 14,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Il faut répéter 6 huit fois.",
+      "en": "You must repeat 6 eight times."
+     }
+    },
+    {
+     "value": 54,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Vérifie : 6 x 8, pas 6 x 9.",
+      "en": "Check: 6 x 8, not 6 x 9."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à 8 x 5 = 40, puis ajoute 8.",
+    "en": "Think of 8 x 5 = 40, then add 8."
+   },
+   "explain": {
+    "fr": "8 x 5 = 40 et 8 x 1 = 8. Donc 8 x 6 = 48.",
+    "en": "8 x 5 = 40 and 8 x 1 = 8. So 8 x 6 = 48."
+   },
+   "tags": [
+    "multiplication",
+    "arrays",
+    "times-6"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_56328e63721b70ce0328"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.orbites.005",
+   "quest": "espace.orbites",
+   "skill": "ARI-OPE-A06a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un satellite a 9 rangées de 4 panneaux solaires.",
+    "en": "A satellite has 9 rows of 4 solar panels."
+   },
+   "prompt": {
+    "fr": "Combien de panneaux a-t-il en tout ?",
+    "en": "How many panels does it have in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 36,
+    "calc": "9*4"
+   },
+   "common_errors": [
+    {
+     "value": 13,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "9 rangées de 4, ce n'est pas 9 + 4.",
+      "en": "9 rows of 4 is not 9 + 4."
+     }
+    },
+    {
+     "value": 32,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Il y a encore une rangée à ajouter.",
+      "en": "There is still one more row to add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Fais 10 x 4, puis enlève une rangée de 4.",
+    "en": "Do 10 x 4, then take away one row of 4."
+   },
+   "explain": {
+    "fr": "10 x 4 = 40 et 40 - 4 = 36 panneaux.",
+    "en": "10 x 4 = 40 and 40 - 4 = 36 panels."
+   },
+   "tags": [
+    "multiplication",
+    "times-9",
+    "satellite"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_e810d03a3d347da5d0cf"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.orbites.006",
+   "quest": "espace.orbites",
+   "skill": "ARI-OPE-A06a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le grand module a 7 rangées de 8 panneaux solaires.",
+    "en": "The large module has 7 rows of 8 solar panels."
+   },
+   "prompt": {
+    "fr": "Combien de panneaux y a-t-il ?",
+    "en": "How many panels are there?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 56,
+    "calc": "7*8"
+   },
+   "common_errors": [
+    {
+     "value": 15,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "7 rangées de 8, ce n'est pas 7 + 8.",
+      "en": "7 rows of 8 is not 7 + 8."
+     }
+    },
+    {
+     "value": 54,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Vérifie 7 x 8 avec 7 x 7 + 7.",
+      "en": "Check 7 x 8 with 7 x 7 + 7."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à 7 x 8 = 7 x 4 + 7 x 4.",
+    "en": "Think of 7 x 8 = 7 x 4 + 7 x 4."
+   },
+   "explain": {
+    "fr": "7 x 4 = 28 et 28 + 28 = 56 panneaux.",
+    "en": "7 x 4 = 28 and 28 + 28 = 56 panels."
+   },
+   "tags": [
+    "multiplication",
+    "times-7",
+    "times-8"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_56328e63721b70ce0328"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.orbites.007",
+   "quest": "espace.orbites",
+   "skill": "ARI-OPE-A06a",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "La station a 2 ailes solaires. Chaque aile a 4 rangées de 6 panneaux.",
+    "en": "The station has 2 solar wings. Each wing has 4 rows of 6 panels."
+   },
+   "prompt": {
+    "fr": "Combien de panneaux y a-t-il sur les deux ailes ?",
+    "en": "How many panels are on the two wings?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 48,
+    "calc": "2*4*6"
+   },
+   "common_errors": [
+    {
+     "value": 24,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as compté une seule aile.",
+      "en": "You counted just one wing."
+     }
+    },
+    {
+     "value": 12,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Il faut multiplier, pas additionner 2, 4 et 6.",
+      "en": "You need to multiply, not add 2, 4 and 6."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Cherche d'abord les panneaux d'une aile.",
+    "en": "First find the panels on one wing."
+   },
+   "explain": {
+    "fr": "Une aile : 4 x 6 = 24. Deux ailes : 24 + 24 = 48 panneaux.",
+    "en": "One wing: 4 x 6 = 24. Two wings: 24 + 24 = 48 panels."
+   },
+   "tags": [
+    "word-problem",
+    "multiplication",
+    "two-step"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_56328e63721b70ce0328"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.orbites.008",
+   "quest": "espace.orbites",
+   "skill": "ARI-OPE-A06a",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Sur un satellite, il y a 9 rangées de 3 panneaux.",
+    "en": "On a satellite, there are 9 rows of 3 panels."
+   },
+   "prompt": {
+    "fr": "Combien de panneaux y a-t-il en tout ?",
+    "en": "How many panels are there in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 27,
+    "calc": "9*3"
+   },
+   "common_errors": [
+    {
+     "value": 12,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Il y a 9 groupes de 3 : multiplie.",
+      "en": "There are 9 groups of 3: multiply."
+     }
+    },
+    {
+     "value": 24,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Il manque un groupe de 3.",
+      "en": "One group of 3 is missing."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 3 en 3 : 3, 6, 9, ...",
+    "en": "Count by 3s: 3, 6, 9, ..."
+   },
+   "explain": {
+    "fr": "3 x 9 = 27. Neuf rangées de 3 font 27 panneaux.",
+    "en": "3 x 9 = 27. Nine rows of 3 make 27 panels."
+   },
+   "tags": [
+    "word-problem",
+    "multiplication",
+    "times-3"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_e810d03a3d347da5d0cf"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.orbites.009",
+   "quest": "espace.orbites",
+   "skill": "ARI-OPE-A06a",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Une aile a 4 rangées de 6 panneaux.",
+    "en": "A wing has 4 rows of 6 panels."
+   },
+   "prompt": {
+    "fr": "Quelle multiplication donne le nombre de panneaux ?",
+    "en": "Which multiplication gives the number of panels?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "4 x 6",
+      "en": "4 x 6"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "4 + 6",
+      "en": "4 + 6"
+     },
+     "misconception": "mis_add_instead_of_multiply"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "6 + 6 + 6",
+      "en": "6 + 6 + 6"
+     },
+     "misconception": "mis_skip_count"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "6 x 6",
+      "en": "6 x 6"
+     },
+     "misconception": "mis_wrong_operation"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Il y a 4 rangées, chacune avec 6 panneaux.",
+    "en": "There are 4 rows, each with 6 panels."
+   },
+   "explain": {
+    "fr": "4 rangées de 6 panneaux : 4 x 6.",
+    "en": "4 rows of 6 panels: 4 x 6."
+   },
+   "tags": [
+    "multiplication",
+    "choose-the-operation"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_56328e63721b70ce0328"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.orbites.010",
+   "quest": "espace.orbites",
+   "skill": "ARI-OPE-A06a",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le chef de mission demande combien font 6 x 7.",
+    "en": "The mission chief asks how much 6 x 7 is."
+   },
+   "prompt": {
+    "fr": "Quel est le bon produit ?",
+    "en": "Which is the right product?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "42",
+      "en": "42"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "36",
+      "en": "36"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "48",
+      "en": "48"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "13",
+      "en": "13"
+     },
+     "misconception": "mis_add_instead_of_multiply"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a",
+    "calc_choice": {
+     "a": "6*7"
+    }
+   },
+   "hint": {
+    "fr": "Pense à 6 x 7 comme 6 x 5 plus 6 x 2.",
+    "en": "Think of 6 x 7 as 6 x 5 plus 6 x 2."
+   },
+   "explain": {
+    "fr": "6 x 5 = 30 et 6 x 2 = 12. Donc 6 x 7 = 42.",
+    "en": "6 x 5 = 30 and 6 x 2 = 12. So 6 x 7 = 42."
+   },
+   "tags": [
+    "multiplication",
+    "times-6",
+    "times-7"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_56328e63721b70ce0328"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.orbites.011",
+   "quest": "espace.orbites",
+   "skill": "ARI-OPE-A06a",
+   "type": "truefalse",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Une aile solaire a 7 rangées de 4 panneaux.",
+    "en": "A solar wing has 7 rows of 4 panels."
+   },
+   "prompt": {
+    "fr": "Théo dit qu'il y a 24 panneaux. A-t-il raison ?",
+    "en": "Theo says there are 24 panels. Is he right?"
+   },
+   "math_text": "7 x 4 = 24",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_skip_count"
+   },
+   "hint": {
+    "fr": "Compte de 4 en 4 jusqu'à la septième rangée.",
+    "en": "Count by 4s up to the seventh row."
+   },
+   "explain": {
+    "fr": "4, 8, 12, 16, 20, 24, 28. Il y a 28 panneaux.",
+    "en": "4, 8, 12, 16, 20, 24, 28. There are 28 panels."
+   },
+   "tags": [
+    "true-false",
+    "multiplication",
+    "times-4"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_56328e63721b70ce0328"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.orbites.012",
+   "quest": "espace.orbites",
+   "skill": "ARI-OPE-A06a",
+   "type": "order",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Quatre ailes solaires ont des rangées différentes de panneaux.",
+    "en": "Four solar wings have different rows of panels."
+   },
+   "prompt": {
+    "fr": "Range les ailes, de celle qui a le moins de panneaux à celle qui en a le plus.",
+    "en": "Put the wings in order, from the fewest panels to the most."
+   },
+   "items": [
+    {
+     "id": "i1",
+     "text": {
+      "fr": "3 x 8",
+      "en": "3 x 8"
+     },
+     "key": "24"
+    },
+    {
+     "id": "i2",
+     "text": {
+      "fr": "5 x 5",
+      "en": "5 x 5"
+     },
+     "key": "25"
+    },
+    {
+     "id": "i3",
+     "text": {
+      "fr": "4 x 7",
+      "en": "4 x 7"
+     },
+     "key": "28"
+    },
+    {
+     "id": "i4",
+     "text": {
+      "fr": "9 x 2",
+      "en": "9 x 2"
+     },
+     "key": "18"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "i4",
+     "i1",
+     "i2",
+     "i3"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Calcule chaque produit avant de comparer.",
+    "en": "Work out each product before comparing."
+   },
+   "explain": {
+    "fr": "Les produits sont 18, 24, 25 et 28.",
+    "en": "The products are 18, 24, 25 and 28."
+   },
+   "tags": [
+    "ordering",
+    "multiplication"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_56328e63721b70ce0328"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.orbites.013",
+   "quest": "espace.orbites",
+   "skill": "ARI-OPE-A06a",
+   "type": "match",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Aya prépare un tableau des panneaux solaires du centre de contrôle.",
+    "en": "Aya prepares a table of the control centre's solar panels."
+   },
+   "prompt": {
+    "fr": "Relie chaque multiplication à son produit.",
+    "en": "Match each multiplication to its product."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "3 x 4",
+       "en": "3 x 4"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "5 x 6",
+       "en": "5 x 6"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "7 x 7",
+       "en": "7 x 7"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "8 x 3",
+       "en": "8 x 3"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "30",
+       "en": "30"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "49",
+       "en": "49"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "24",
+       "en": "24"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "12",
+       "en": "12"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ],
+     [
+      "l4",
+      "r4"
+     ]
+    ],
+    "misconception": "mis_match"
+   },
+   "hint": {
+    "fr": "Fais chaque multiplication avec des sauts réguliers.",
+    "en": "Do each multiplication with steady jumps."
+   },
+   "explain": {
+    "fr": "Les produits sont 3 x 4 = 12. 5 x 6 = 30. 7 x 7 = 49. 8 x 3 = 24.",
+    "en": "The products are 3 x 4 = 12. 5 x 6 = 30. 7 x 7 = 49. 8 x 3 = 24."
+   },
+   "tags": [
+    "matching",
+    "multiplication"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_56328e63721b70ce0328"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.orbites.014",
+   "quest": "espace.orbites",
+   "skill": "ARI-OPE-A06a",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Voici les panneaux solaires du module, vus de face. Chaque point est un panneau.",
+    "en": "Here are the module's solar panels, seen from the front. Each dot is a panel."
+   },
+   "prompt": {
+    "fr": "Combien y a-t-il de panneaux sur la grille ?",
+    "en": "How many panels are on the grid?"
+   },
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 5,
+     "rows": 3,
+     "cells": [
+      {
+       "x": 0,
+       "y": 0,
+       "label": "P"
+      },
+      {
+       "x": 1,
+       "y": 0,
+       "label": "P"
+      },
+      {
+       "x": 2,
+       "y": 0,
+       "label": "P"
+      },
+      {
+       "x": 3,
+       "y": 0,
+       "label": "P"
+      },
+      {
+       "x": 4,
+       "y": 0,
+       "label": "P"
+      },
+      {
+       "x": 0,
+       "y": 1,
+       "label": "P"
+      },
+      {
+       "x": 1,
+       "y": 1,
+       "label": "P"
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": "P"
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": "P"
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": "P"
+      },
+      {
+       "x": 0,
+       "y": 2,
+       "label": "P"
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": "P"
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": "P"
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": "P"
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": "P"
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 15,
+    "calc": "5*3"
+   },
+   "common_errors": [
+    {
+     "value": 8,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Il y a 3 rangées de 5 : multiplie.",
+      "en": "There are 3 rows of 5: multiply."
+     }
+    },
+    {
+     "value": 5,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as compté une seule rangée.",
+      "en": "You counted only one row."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les panneaux d'une rangée, puis les rangées.",
+    "en": "Count the panels in one row, then the rows."
+   },
+   "explain": {
+    "fr": "3 rangées de 5 panneaux : 5, 10, 15.",
+    "en": "3 rows of 5 panels: 5, 10, 15."
+   },
+   "tags": [
+    "grid",
+    "arrays",
+    "multiplication"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_56328e63721b70ce0328"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.orbites.015",
+   "quest": "espace.orbites",
+   "skill": "ARI-OPE-A06a",
+   "type": "estimate",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un grand champ solaire a 11 rangées. Chaque rangée a 9 panneaux.",
+    "en": "A large solar field has 11 rows. Each row has 9 panels."
+   },
+   "prompt": {
+    "fr": "Environ combien de panneaux y a-t-il ?",
+    "en": "About how many panels are there?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 95,
+    "max": 105,
+    "exact_for_check": 99,
+    "calc": "9*11"
+   },
+   "common_errors": [
+    {
+     "value": 20,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "11 rangées de 9 : multiplie.",
+      "en": "11 rows of 9: multiply."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à 10 rangées de 9, puis une de plus.",
+    "en": "Think of 10 rows of 9, then one more."
+   },
+   "explain": {
+    "fr": "10 x 9 = 90, plus 9 de plus : environ 100 panneaux.",
+    "en": "10 x 9 = 90, plus 9 more: about 100 panels."
+   },
+   "tags": [
+    "estimation",
+    "multiplication"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_56328e63721b70ce0328"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.horloge.001",
+   "quest": "espace.horloge",
+   "skill": "MES-G01",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "L'horloge du centre de contrôle est ronde, avec une petite et une grande aiguille.",
+    "en": "The control centre clock is round, with a small hand and a big hand."
+   },
+   "prompt": {
+    "fr": "Quelle heure l'horloge montre-t-elle ?",
+    "en": "What time does the clock show?"
+   },
+   "visual": {
+    "kind": "clock",
+    "data": {
+     "hour": 3,
+     "minute": 0
+    }
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "3 h",
+      "en": "3 h"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "12 h 15",
+      "en": "12 h 15"
+     },
+     "misconception": "mis_clock_hands"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "4 h",
+      "en": "4 h"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "3 h 30",
+      "en": "3 h 30"
+     },
+     "misconception": "mis_time_base"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "La petite aiguille donne l'heure.",
+    "en": "The small hand gives the hour."
+   },
+   "explain": {
+    "fr": "La petite aiguille est sur le 3 et la grande est sur le 12. Il est 3 h.",
+    "en": "The small hand is on 3 and the big hand is on 12. It is 3 o'clock."
+   },
+   "tags": [
+    "clock",
+    "oclock"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a6f33c352e4a2f7706a8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.horloge.002",
+   "quest": "espace.horloge",
+   "skill": "MES-G01",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "La base lunaire a une horloge pour les équipes de la nuit.",
+    "en": "The moon base has a clock for the night crews."
+   },
+   "prompt": {
+    "fr": "Quelle heure l'horloge montre-t-elle ?",
+    "en": "What time does the clock show?"
+   },
+   "visual": {
+    "kind": "clock",
+    "data": {
+     "hour": 7,
+     "minute": 30
+    }
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "7 h 30",
+      "en": "7 h 30"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "7 h 06",
+      "en": "7 h 06"
+     },
+     "misconception": "mis_clock_hands"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "6 h 35",
+      "en": "6 h 35"
+     },
+     "misconception": "mis_clock_hands"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "8 h 30",
+      "en": "8 h 30"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "La grande aiguille sur le 6 veut dire une demi-heure.",
+    "en": "The big hand on 6 means half an hour."
+   },
+   "explain": {
+    "fr": "La petite aiguille est entre le 7 et le 8. La grande est sur le 6. Il est 7 h 30.",
+    "en": "The small hand is between 7 and 8. The big hand is on 6. It is half past 7."
+   },
+   "tags": [
+    "clock",
+    "half-past"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_8f934f2223ce02443238"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.horloge.003",
+   "quest": "espace.horloge",
+   "skill": "MES-G01",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Dans la salle de contrôle, l'horloge est à 2 heures passées de quelques minutes.",
+    "en": "In the control room, the clock is a few minutes past 2 o'clock."
+   },
+   "prompt": {
+    "fr": "Combien de minutes après 2 h l'horloge montre-t-elle ?",
+    "en": "How many minutes past 2 does the clock show?"
+   },
+   "visual": {
+    "kind": "clock",
+    "data": {
+     "hour": 2,
+     "minute": 45
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 45,
+    "calc": "45"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_clock_hands",
+     "feedback": {
+      "fr": "Le 9 est la place de la grande aiguille, mais il compte 5 minutes par chiffre.",
+      "en": "The 9 is where the big hand is, but each number counts 5 minutes."
+     }
+    },
+    {
+     "value": 15,
+     "misconception": "mis_time_base",
+     "feedback": {
+      "fr": "Pense au quart d'heure qui reste.",
+      "en": "Think of the quarter hour that remains."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 5 en 5 de 12 jusqu'à la grande aiguille.",
+    "en": "Count by 5s from 12 to the big hand."
+   },
+   "explain": {
+    "fr": "La grande aiguille est sur le 9 : 9 x 5 = 45 minutes.",
+    "en": "The big hand is on 9: 9 x 5 = 45 minutes."
+   },
+   "tags": [
+    "clock",
+    "minutes",
+    "skip-counting"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_8f934f2223ce02443238"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.horloge.004",
+   "quest": "espace.horloge",
+   "skill": "MES-G01",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Un technicien lit l'horloge du hangar avant le départ.",
+    "en": "A technician reads the hangar clock before departure."
+   },
+   "prompt": {
+    "fr": "Quelle heure l'horloge montre-t-elle ?",
+    "en": "What time does the clock show?"
+   },
+   "visual": {
+    "kind": "clock",
+    "data": {
+     "hour": 10,
+     "minute": 15
+    }
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "10 h 15",
+      "en": "10 h 15"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "10 h 03",
+      "en": "10 h 03"
+     },
+     "misconception": "mis_clock_hands"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "10 h 45",
+      "en": "10 h 45"
+     },
+     "misconception": "mis_direction"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "3 h 10",
+      "en": "3 h 10"
+     },
+     "misconception": "mis_clock_hands"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "La grande aiguille sur le 3 veut dire un quart d'heure.",
+    "en": "The big hand on 3 means a quarter of an hour."
+   },
+   "explain": {
+    "fr": "La grande aiguille est sur le 3 : 15 minutes. Il est 10 h 15.",
+    "en": "The big hand is on 3: 15 minutes. It is a quarter past 10."
+   },
+   "tags": [
+    "clock",
+    "quarter-past"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a6f33c352e4a2f7706a8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.horloge.005",
+   "quest": "espace.horloge",
+   "skill": "MES-G01",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Une équipe travaille pendant une heure au centre de contrôle.",
+    "en": "A crew works for one hour at the control centre."
+   },
+   "prompt": {
+    "fr": "Combien de minutes y a-t-il dans une heure ?",
+    "en": "How many minutes are there in one hour?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 60,
+    "calc": "60"
+   },
+   "common_errors": [
+    {
+     "value": 100,
+     "misconception": "mis_time_base",
+     "feedback": {
+      "fr": "Une heure a 60 minutes, pas 100.",
+      "en": "An hour has 60 minutes, not 100."
+     }
+    },
+    {
+     "value": 12,
+     "misconception": "mis_clock_hands",
+     "feedback": {
+      "fr": "12 est le nombre de chiffres sur l'horloge.",
+      "en": "12 is the number of numbers on the clock."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Fais un tour complet de la grande aiguille.",
+    "en": "Make one full turn of the big hand."
+   },
+   "explain": {
+    "fr": "La grande aiguille fait un tour en 60 minutes, soit une heure.",
+    "en": "The big hand makes one turn in 60 minutes, which is one hour."
+   },
+   "tags": [
+    "time",
+    "minutes-in-hour"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a6f33c352e4a2f7706a8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.horloge.006",
+   "quest": "espace.horloge",
+   "skill": "MES-G01",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le test de la fusée commence à 3 h. Il dure 2 heures.",
+    "en": "The rocket test starts at 3 o'clock. It lasts 2 hours."
+   },
+   "prompt": {
+    "fr": "À quelle heure le test finit-il ? Réponds avec l'heure seulement.",
+    "en": "At what time does the test end? Answer with the hour only."
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "3+2"
+   },
+   "common_errors": [
+    {
+     "value": 1,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Le test avance dans le temps : on ajoute.",
+      "en": "The test moves forward in time, so we add."
+     }
+    },
+    {
+     "value": 4,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Avance de 2 heures complètes.",
+      "en": "Move forward 2 full hours."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Avance de 2 heures à partir de 3.",
+    "en": "Move forward 2 hours from 3."
+   },
+   "explain": {
+    "fr": "De 3 h, on avance de 2 heures : 4 h puis 5 h.",
+    "en": "From 3 o'clock, go forward 2 hours: 4 then 5."
+   },
+   "tags": [
+    "time",
+    "elapsed-time"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a6f33c352e4a2f7706a8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.horloge.007",
+   "quest": "espace.horloge",
+   "skill": "MES-G01",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "L'équipe commence la vérification à 10 h. Elle finit à 12 h.",
+    "en": "The crew starts the check at 10 o'clock. It finishes at 12 o'clock."
+   },
+   "prompt": {
+    "fr": "Combien d'heures la vérification a-t-elle duré ?",
+    "en": "How many hours did the check last?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 2,
+    "calc": "12-10"
+   },
+   "common_errors": [
+    {
+     "value": 22,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche le temps entre deux heures : on soustrait.",
+      "en": "We look for the time between two hours, so we subtract."
+     }
+    },
+    {
+     "value": 1,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Compte chaque heure de 10 h à 12 h.",
+      "en": "Count each hour from 10 to 12."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les heures de 10 à 12.",
+    "en": "Count the hours from 10 to 12."
+   },
+   "explain": {
+    "fr": "De 10 h à 11 h, c'est 1 heure. De 11 h à 12 h, c'est une autre heure : 2 heures.",
+    "en": "From 10 to 11 is 1 hour. From 11 to 12 is another hour: 2 hours."
+   },
+   "tags": [
+    "word-problem",
+    "elapsed-time"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a6f33c352e4a2f7706a8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.horloge.008",
+   "quest": "espace.horloge",
+   "skill": "MES-G01",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa veut dessiner une horloge qui montre 6 h.",
+    "en": "Lea wants to draw a clock that shows 6 o'clock."
+   },
+   "prompt": {
+    "fr": "Où doit être la grande aiguille ?",
+    "en": "Where should the big hand be?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Sur le 12",
+      "en": "On the 12"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Sur le 6",
+      "en": "On the 6"
+     },
+     "misconception": "mis_clock_hands"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Sur le 3",
+      "en": "On the 3"
+     },
+     "misconception": "mis_clock_hands"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "Sur le 9",
+      "en": "On the 9"
+     },
+     "misconception": "mis_clock_hands"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Pour les heures pile, la grande aiguille est en haut.",
+    "en": "For exact hours, the big hand points up."
+   },
+   "explain": {
+    "fr": "À 6 h, la petite aiguille est sur le 6. La grande est sur le 12.",
+    "en": "At 6 o'clock the small hand is on 6. The big hand is on 12."
+   },
+   "tags": [
+    "clock",
+    "oclock",
+    "hands"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_4636925a1dfc76a45dc8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.horloge.009",
+   "quest": "espace.horloge",
+   "skill": "MES-G01",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "La petite aiguille est entre le 4 et le 5. La grande est sur le 6.",
+    "en": "The small hand is between 4 and 5. The big hand is on 6."
+   },
+   "prompt": {
+    "fr": "Quelle heure est-il ?",
+    "en": "What time is it?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "4 h 30",
+      "en": "4 h 30"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "5 h 30",
+      "en": "5 h 30"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "4 h 06",
+      "en": "4 h 06"
+     },
+     "misconception": "mis_clock_hands"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "6 h 20",
+      "en": "6 h 20"
+     },
+     "misconception": "mis_clock_hands"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "La petite aiguille a passé le 4 sans atteindre le 5.",
+    "en": "The small hand has passed 4 but not reached 5."
+   },
+   "explain": {
+    "fr": "L'heure est 4 h, car la petite aiguille a dépassé le 4. Le 6 donne 30 minutes.",
+    "en": "The hour is 4, since the small hand has passed 4. The 6 gives 30 minutes."
+   },
+   "tags": [
+    "clock",
+    "half-past"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_8f934f2223ce02443238"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.horloge.010",
+   "quest": "espace.horloge",
+   "skill": "MES-G01",
+   "type": "truefalse",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Sur l'horloge de la base, la grande aiguille est sur le 3.",
+    "en": "On the base clock, the big hand is on the 3."
+   },
+   "prompt": {
+    "fr": "Mathis dit qu'il est 3 minutes après l'heure. A-t-il raison ?",
+    "en": "Mathis says it is 3 minutes past the hour. Is he right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_clock_hands"
+   },
+   "hint": {
+    "fr": "Chaque chiffre compte 5 minutes.",
+    "en": "Each number counts 5 minutes."
+   },
+   "explain": {
+    "fr": "Le 3 vaut 3 x 5 = 15 minutes. C'est un quart d'heure, pas 3 minutes.",
+    "en": "The 3 is worth 3 x 5 = 15 minutes. That is a quarter hour, not 3 minutes."
+   },
+   "tags": [
+    "true-false",
+    "clock",
+    "minutes"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_8f934f2223ce02443238"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.horloge.011",
+   "quest": "espace.horloge",
+   "skill": "MES-G01",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le planning de la base a quatre heures de départ dans la journée.",
+    "en": "The base schedule has four departure times during the day."
+   },
+   "prompt": {
+    "fr": "Range ces heures, de la plus tôt à la plus tard.",
+    "en": "Put these times in order, from the earliest to the latest."
+   },
+   "items": [
+    {
+     "id": "i1",
+     "text": {
+      "fr": "7 h",
+      "en": "7 h"
+     },
+     "key": "7"
+    },
+    {
+     "id": "i2",
+     "text": {
+      "fr": "3 h",
+      "en": "3 h"
+     },
+     "key": "3"
+    },
+    {
+     "id": "i3",
+     "text": {
+      "fr": "11 h",
+      "en": "11 h"
+     },
+     "key": "11"
+    },
+    {
+     "id": "i4",
+     "text": {
+      "fr": "9 h",
+      "en": "9 h"
+     },
+     "key": "9"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "i2",
+     "i1",
+     "i4",
+     "i3"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "La plus tôt est celle avec le plus petit nombre.",
+    "en": "The earliest has the smallest number."
+   },
+   "explain": {
+    "fr": "3 h vient avant 7 h. Puis viennent 9 h et 11 h.",
+    "en": "3 comes before 7. Then come 9 and 11."
+   },
+   "tags": [
+    "ordering",
+    "time"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a6f33c352e4a2f7706a8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.horloge.012",
+   "quest": "espace.horloge",
+   "skill": "MES-G01",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Sur l'horloge de la base, Samuel relie des durées avec leurs minutes.",
+    "en": "On the base clock, Samuel matches times with their minutes."
+   },
+   "prompt": {
+    "fr": "Relie chaque durée au bon nombre de minutes.",
+    "en": "Match each length of time to the right number of minutes."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "1 heure",
+       "en": "1 hour"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "une demi-heure",
+       "en": "half an hour"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "un quart d'heure",
+       "en": "a quarter of an hour"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "trois quarts d'heure",
+       "en": "three quarters of an hour"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "30 minutes",
+       "en": "30 minutes"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "15 minutes",
+       "en": "15 minutes"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "45 minutes",
+       "en": "45 minutes"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "60 minutes",
+       "en": "60 minutes"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ],
+     [
+      "l4",
+      "r4"
+     ]
+    ],
+    "misconception": "mis_time_base"
+   },
+   "hint": {
+    "fr": "Une heure vaut 60 minutes. Coupe-la en parts.",
+    "en": "An hour is 60 minutes. Cut it into parts."
+   },
+   "explain": {
+    "fr": "La moitié de 60 est 30. Le quart de 60 est 15. Trois quarts font 45.",
+    "en": "Half of 60 is 30. A quarter of 60 is 15. Three quarters make 45."
+   },
+   "tags": [
+    "matching",
+    "time",
+    "fractions-of-an-hour"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_8f934f2223ce02443238"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.horloge.013",
+   "quest": "espace.horloge",
+   "skill": "MES-G01",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "La fusée décolle à 4 h 58.",
+    "en": "The rocket lifts off at 4:58."
+   },
+   "prompt": {
+    "fr": "C'est presque quelle heure ?",
+    "en": "It is almost what time?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "5 h",
+      "en": "5 h"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "4 h",
+      "en": "4 h"
+     },
+     "misconception": "mis_estimate_rounding"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "6 h",
+      "en": "6 h"
+     },
+     "misconception": "mis_digit_swap"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "9 h",
+      "en": "9 h"
+     },
+     "misconception": "mis_clock_hands"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "58 minutes, c'est presque une heure complète.",
+    "en": "58 minutes is almost a whole hour."
+   },
+   "explain": {
+    "fr": "Il manque 2 minutes pour 5 h. Il est presque 5 h.",
+    "en": "2 minutes are missing for 5 o'clock. It is almost 5 o'clock."
+   },
+   "tags": [
+    "estimation",
+    "time",
+    "nearest-hour"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a6f33c352e4a2f7706a8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.distances.001",
+   "quest": "espace.distances",
+   "skill": "ARI-OPE-A01a",
+   "type": "estimate",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Une sonde fait 305 km le premier jour. Elle fait 296 km le deuxième jour.",
+    "en": "A probe goes 305 km on day one. It goes 296 km on day two."
+   },
+   "prompt": {
+    "fr": "Environ combien de km a-t-elle faits en tout ?",
+    "en": "About how many km did it go in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 580,
+    "max": 620,
+    "exact_for_check": 601,
+    "calc": "305+296"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Les deux jours se suivent : on additionne.",
+      "en": "The two days add up, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis chaque nombre à la centaine.",
+    "en": "Round each number to the nearest hundred."
+   },
+   "explain": {
+    "fr": "305 est près de 300 et 296 est près de 300. Le total est environ 600 km.",
+    "en": "305 is close to 300 and 296 is close to 300. The total is about 600 km."
+   },
+   "tags": [
+    "estimation",
+    "rounding",
+    "hundreds"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_dfb0470d4c6fc4784f47"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.distances.002",
+   "quest": "espace.distances",
+   "skill": "ARI-OPE-A01a",
+   "type": "estimate",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un satellite parcourt 2 985 km le matin et 3 020 km l'après-midi.",
+    "en": "A satellite travels 2,985 km in the morning and 3,020 km in the afternoon."
+   },
+   "prompt": {
+    "fr": "Environ combien de km parcourt-il en tout ?",
+    "en": "About how many km does it travel in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 5700,
+    "max": 6300,
+    "exact_for_check": 6005,
+    "calc": "2985+3020"
+   },
+   "common_errors": [
+    {
+     "value": 600,
+     "misconception": "mis_estimate_rounding",
+     "feedback": {
+      "fr": "Tu as arrondi au mauvais rang.",
+      "en": "You rounded to the wrong place."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis chaque nombre au millier.",
+    "en": "Round each number to the nearest thousand."
+   },
+   "explain": {
+    "fr": "2 985 est près de 3 000 et 3 020 est près de 3 000. Le total est environ 6 000 km.",
+    "en": "2,985 is close to 3,000 and 3,020 is close to 3,000. The total is about 6,000 km."
+   },
+   "tags": [
+    "estimation",
+    "rounding",
+    "thousands"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_56328e63721b70ce0328"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.distances.003",
+   "quest": "espace.distances",
+   "skill": "ARI-OPE-A01a",
+   "type": "estimate",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Une fusée doit faire 8 120 km. Elle en a déjà fait 3 905.",
+    "en": "A rocket must travel 8,120 km. It has already gone 3,905."
+   },
+   "prompt": {
+    "fr": "Environ combien de km lui reste-t-il à faire ?",
+    "en": "About how many km does it have left to go?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 4100,
+    "max": 4300,
+    "exact_for_check": 4215,
+    "calc": "8120-3905"
+   },
+   "common_errors": [
+    {
+     "value": 12025,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Il reste ce qui n'est pas fait : on soustrait.",
+      "en": "What is left is what is not done, so we subtract."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis 8 120 et 3 905 au millier.",
+    "en": "Round 8,120 and 3,905 to the nearest thousand."
+   },
+   "explain": {
+    "fr": "8 000 - 4 000 = 4 000. Il reste environ 4 000 km, un peu plus.",
+    "en": "8,000 - 4,000 = 4,000. About 4,000 km are left, a bit more."
+   },
+   "tags": [
+    "estimation",
+    "subtraction",
+    "thousands"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_dfb0470d4c6fc4784f47"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.distances.004",
+   "quest": "espace.distances",
+   "skill": "ARI-OPE-A01a",
+   "type": "estimate",
+   "grade": 4,
+   "difficulty": 4,
+   "story": {
+    "fr": "Deux sondes ont parcouru 19 870 km et 30 150 km.",
+    "en": "Two probes have travelled 19,870 km and 30,150 km."
+   },
+   "prompt": {
+    "fr": "Environ combien de km ont-elles parcourus ensemble ?",
+    "en": "About how many km have they travelled together?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 48000,
+    "max": 52000,
+    "exact_for_check": 50020,
+    "calc": "19870+30150"
+   },
+   "common_errors": [
+    {
+     "value": 10280,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les deux trajets : on additionne.",
+      "en": "We put the two trips together, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis chaque distance aux 10 000.",
+    "en": "Round each distance to the nearest 10,000."
+   },
+   "explain": {
+    "fr": "19 870 est près de 20 000 et 30 150 près de 30 000. Le total est environ 50 000 km.",
+    "en": "19,870 is close to 20,000 and 30,150 is close to 30,000. The total is about 50,000 km."
+   },
+   "tags": [
+    "estimation",
+    "rounding",
+    "ten-thousands"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e4c6c235429cdc537779"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.distances.005",
+   "quest": "espace.distances",
+   "skill": "ARI-OPE-A01a",
+   "type": "estimate",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Une fusée fait 498 km, puis 502 km.",
+    "en": "A rocket goes 498 km, then 502 km."
+   },
+   "prompt": {
+    "fr": "Quelle estimation du total est la meilleure ?",
+    "en": "Which estimate of the total is best?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "1 000 km",
+      "en": "1,000 km"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "100 km",
+      "en": "100 km"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "900 km",
+      "en": "900 km"
+     },
+     "misconception": "mis_estimate_rounding"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "10 000 km",
+      "en": "10,000 km"
+     },
+     "misconception": "mis_place_value"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Arrondis 498 et 502 à la centaine.",
+    "en": "Round 498 and 502 to the nearest hundred."
+   },
+   "explain": {
+    "fr": "500 + 500 = 1 000. Le total est environ 1 000 km.",
+    "en": "500 + 500 = 1,000. The total is about 1,000 km."
+   },
+   "tags": [
+    "estimation",
+    "rounding"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_dfb0470d4c6fc4784f47"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.distances.006",
+   "quest": "espace.distances",
+   "skill": "ARI-OPE-A01a",
+   "type": "estimate",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un module est à 4 987 km de la base. Un autre est à 1 012 km.",
+    "en": "One module is 4,987 km from the base. Another is 1,012 km away."
+   },
+   "prompt": {
+    "fr": "Environ combien de km de plus le premier est-il éloigné ?",
+    "en": "About how many km farther away is the first one?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "4 000 km",
+      "en": "4,000 km"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "6 000 km",
+      "en": "6,000 km"
+     },
+     "misconception": "mis_add_instead_of_subtract"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "5 000 km",
+      "en": "5,000 km"
+     },
+     "misconception": "mis_estimate_rounding"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "400 km",
+      "en": "400 km"
+     },
+     "misconception": "mis_place_value"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Arrondis au millier, puis soustrais.",
+    "en": "Round to the nearest thousand, then subtract."
+   },
+   "explain": {
+    "fr": "5 000 - 1 000 = 4 000. La différence est environ 4 000 km.",
+    "en": "5,000 - 1,000 = 4,000. The difference is about 4,000 km."
+   },
+   "tags": [
+    "estimation",
+    "subtraction",
+    "rounding"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e4c6c235429cdc537779"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.distances.007",
+   "quest": "espace.distances",
+   "skill": "ARI-OPE-A01a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Une sonde a parcouru 748 km.",
+    "en": "A probe has travelled 748 km."
+   },
+   "prompt": {
+    "fr": "Arrondis ce nombre à la centaine près.",
+    "en": "Round this number to the nearest hundred."
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 700,
+    "calc": "700"
+   },
+   "common_errors": [
+    {
+     "value": 800,
+     "misconception": "mis_estimate_rounding",
+     "feedback": {
+      "fr": "748 est plus près de 700 que de 800.",
+      "en": "748 is closer to 700 than to 800."
+     }
+    },
+    {
+     "value": 750,
+     "misconception": "mis_estimate_rounding",
+     "feedback": {
+      "fr": "750 est arrondi à la dizaine, pas à la centaine.",
+      "en": "750 is rounded to the ten, not the hundred."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Regarde le chiffre des dizaines : 4 est-il petit ou grand ?",
+    "en": "Look at the tens digit: is 4 small or big?"
+   },
+   "explain": {
+    "fr": "Le chiffre des dizaines est 4, alors on garde 7 centaines : 700 km.",
+    "en": "The tens digit is 4, so we keep 7 hundreds: 700 km."
+   },
+   "tags": [
+    "rounding",
+    "hundreds"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_dfb0470d4c6fc4784f47"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.distances.008",
+   "quest": "espace.distances",
+   "skill": "ARI-OPE-A01a",
+   "type": "numeric",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un vaisseau a fait 6 479 km pendant la mission.",
+    "en": "A spaceship travelled 6,479 km during the mission."
+   },
+   "prompt": {
+    "fr": "Arrondis cette distance au millier près.",
+    "en": "Round this distance to the nearest thousand."
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 6000,
+    "calc": "6000"
+   },
+   "common_errors": [
+    {
+     "value": 7000,
+     "misconception": "mis_estimate_rounding",
+     "feedback": {
+      "fr": "Les centaines sont 4 : on arrondit vers le bas.",
+      "en": "The hundreds digit is 4, so we round down."
+     }
+    },
+    {
+     "value": 6500,
+     "misconception": "mis_estimate_rounding",
+     "feedback": {
+      "fr": "6 500 est arrondi à la centaine, pas au millier.",
+      "en": "6,500 is rounded to the hundred, not the thousand."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Regarde le chiffre des centaines : 4 est-il petit ou grand ?",
+    "en": "Look at the hundreds digit: is 4 small or big?"
+   },
+   "explain": {
+    "fr": "Le chiffre des centaines est 4, alors on garde 6 milliers : 6 000 km.",
+    "en": "The hundreds digit is 4, so we keep 6 thousands: 6,000 km."
+   },
+   "tags": [
+    "rounding",
+    "thousands"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e4c6c235429cdc537779"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.distances.009",
+   "quest": "espace.distances",
+   "skill": "ARI-OPE-A01a",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "La fusée a fait 398 km le premier jour et 405 km le deuxième jour.",
+    "en": "The rocket went 398 km on the first day and 405 km on the second day."
+   },
+   "prompt": {
+    "fr": "Arrondis chaque trajet à la centaine, puis additionne. Combien obtiens-tu ?",
+    "en": "Round each trip to the nearest hundred, then add. What do you get?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 800,
+    "calc": "400+400"
+   },
+   "common_errors": [
+    {
+     "value": 803,
+     "misconception": "mis_estimate_exact",
+     "feedback": {
+      "fr": "On demande une estimation, pas le total exact.",
+      "en": "We ask for an estimate, not the exact total."
+     }
+    },
+    {
+     "value": 8000,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "400 + 400 fait 800, pas 8 000.",
+      "en": "400 + 400 makes 800, not 8,000."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "398 est près de 400. 405 est près de 400.",
+    "en": "398 is close to 400. 405 is close to 400."
+   },
+   "explain": {
+    "fr": "400 + 400 = 800. L'estimation est 800 km.",
+    "en": "400 + 400 = 800. The estimate is 800 km."
+   },
+   "tags": [
+    "word-problem",
+    "estimation",
+    "rounding"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_dfb0470d4c6fc4784f47"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.distances.010",
+   "quest": "espace.distances",
+   "skill": "ARI-OPE-A01a",
+   "type": "word",
+   "grade": 4,
+   "difficulty": 4,
+   "story": {
+    "fr": "Un satellite doit faire 3 980 km. Il en a déjà fait 1 995.",
+    "en": "A satellite must travel 3,980 km. It has already gone 1,995."
+   },
+   "prompt": {
+    "fr": "Arrondis chaque nombre au millier. Environ combien de km lui reste-t-il ?",
+    "en": "Round each number to the nearest thousand. About how many km does it have left?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 2000,
+    "calc": "4000-2000"
+   },
+   "common_errors": [
+    {
+     "value": 6000,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Il reste ce qui n'est pas fait : on soustrait.",
+      "en": "What is left is what is not done, so we subtract."
+     }
+    },
+    {
+     "value": 1985,
+     "misconception": "mis_estimate_exact",
+     "feedback": {
+      "fr": "On demande une estimation, pas le résultat exact.",
+      "en": "We ask for an estimate, not the exact result."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "3 980 est près de 4 000. 1 995 est près de 2 000.",
+    "en": "3,980 is close to 4,000. 1,995 is close to 2,000."
+   },
+   "explain": {
+    "fr": "4 000 - 2 000 = 2 000. Il reste environ 2 000 km.",
+    "en": "4,000 - 2,000 = 2,000. About 2,000 km are left."
+   },
+   "tags": [
+    "word-problem",
+    "estimation",
+    "subtraction"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e4c6c235429cdc537779"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.distances.011",
+   "quest": "espace.distances",
+   "skill": "ARI-OPE-A01a",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Une sonde a parcouru une distance qui, arrondie à la centaine, donne 500 km.",
+    "en": "A probe travelled a distance that rounds to 500 km to the nearest hundred."
+   },
+   "prompt": {
+    "fr": "Quelle distance peut-elle être ?",
+    "en": "Which distance could it be?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "478 km",
+      "en": "478 km"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "449 km",
+      "en": "449 km"
+     },
+     "misconception": "mis_estimate_rounding"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "552 km",
+      "en": "552 km"
+     },
+     "misconception": "mis_estimate_rounding"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "399 km",
+      "en": "399 km"
+     },
+     "misconception": "mis_estimate_rounding"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Cherche un nombre entre 450 et 549.",
+    "en": "Look for a number between 450 and 549."
+   },
+   "explain": {
+    "fr": "478 est plus près de 500 que de 400. Les autres s'arrondissent à 400 ou à 600.",
+    "en": "478 is closer to 500 than 400. The others round to 400 or 600."
+   },
+   "tags": [
+    "rounding",
+    "hundreds"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_dfb0470d4c6fc4784f47"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.distances.012",
+   "quest": "espace.distances",
+   "skill": "ARI-OPE-A01a",
+   "type": "truefalse",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa veut estimer 302 + 299.",
+    "en": "Lea wants to estimate 302 + 299."
+   },
+   "prompt": {
+    "fr": "Elle fait 300 + 200 = 500. Son estimation est-elle bonne ?",
+    "en": "She does 300 + 200 = 500. Is her estimate good?"
+   },
+   "math_text": "302 + 299 = 500",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_estimate_rounding"
+   },
+   "hint": {
+    "fr": "Arrondis chaque nombre à la centaine.",
+    "en": "Round each number to the nearest hundred."
+   },
+   "explain": {
+    "fr": "299 est près de 300, pas de 200. L'estimation juste est 300 + 300 = 600.",
+    "en": "299 is close to 300, not 200. The right estimate is 300 + 300 = 600."
+   },
+   "tags": [
+    "true-false",
+    "estimation",
+    "rounding"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_dfb0470d4c6fc4784f47"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.distances.013",
+   "quest": "espace.distances",
+   "skill": "ARI-OPE-A01a",
+   "type": "order",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Des engins spatiaux sont à des distances différentes de la Terre.",
+    "en": "Spacecraft are at different distances from Earth."
+   },
+   "prompt": {
+    "fr": "Range-les, du plus proche au plus éloigné de la Terre.",
+    "en": "Put them in order, from closest to farthest from Earth."
+   },
+   "items": [
+    {
+     "id": "i1",
+     "text": {
+      "fr": "Lune : 384 000 km",
+      "en": "Moon: 384,000 km"
+     },
+     "key": "384000"
+    },
+    {
+     "id": "i2",
+     "text": {
+      "fr": "Station spatiale : 400 km",
+      "en": "Space station: 400 km"
+     },
+     "key": "400"
+    },
+    {
+     "id": "i3",
+     "text": {
+      "fr": "Satellite de télévision : 36 000 km",
+      "en": "TV satellite: 36,000 km"
+     },
+     "key": "36000"
+    },
+    {
+     "id": "i4",
+     "text": {
+      "fr": "Satellite GPS : 20 000 km",
+      "en": "GPS satellite: 20,000 km"
+     },
+     "key": "20000"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "i2",
+     "i4",
+     "i3",
+     "i1"
+    ],
+    "by": "asc",
+    "misconception": "mis_compare_by_length"
+   },
+   "hint": {
+    "fr": "Compte les chiffres, puis compare.",
+    "en": "Count the digits, then compare."
+   },
+   "explain": {
+    "fr": "Les distances sont 400, 20 000, 36 000 et 384 000 km.",
+    "en": "The distances are 400, 20,000, 36,000 and 384,000 km."
+   },
+   "tags": [
+    "ordering",
+    "big-numbers",
+    "space"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_8f934f2223ce02443238"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.distances.014",
+   "quest": "espace.distances",
+   "skill": "ARI-OPE-A01a",
+   "type": "match",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Nora estime des calculs de distance avant de les faire avec précision.",
+    "en": "Nora estimates distance sums before working them out exactly."
+   },
+   "prompt": {
+    "fr": "Relie chaque calcul à la bonne estimation.",
+    "en": "Match each sum to the right estimate."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "498 + 503",
+       "en": "498 + 503"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "612 - 195",
+       "en": "612 - 195"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "299 + 301",
+       "en": "299 + 301"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "905 - 395",
+       "en": "905 - 395"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "environ 400",
+       "en": "about 400"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "environ 600",
+       "en": "about 600"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "environ 500",
+       "en": "about 500"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "environ 1 000",
+       "en": "about 1,000"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ],
+     [
+      "l4",
+      "r4"
+     ]
+    ],
+    "misconception": "mis_estimate_rounding"
+   },
+   "hint": {
+    "fr": "Arrondis chaque nombre à la centaine.",
+    "en": "Round each number to the nearest hundred."
+   },
+   "explain": {
+    "fr": "500 + 500 = 1 000. 600 - 200 = 400. 300 + 300 = 600. 900 - 400 = 500.",
+    "en": "500 + 500 = 1,000. 600 - 200 = 400. 300 + 300 = 600. 900 - 400 = 500."
+   },
+   "tags": [
+    "matching",
+    "estimation"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_dfb0470d4c6fc4784f47"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "espace.distances.015",
+   "quest": "espace.distances",
+   "skill": "ARI-OPE-A01a",
+   "type": "visual",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le diagramme montre les distances de trois sondes, en km.",
+    "en": "The chart shows the distances of three probes, in km."
+   },
+   "prompt": {
+    "fr": "Environ combien de km font les sondes A et B ensemble ?",
+    "en": "About how many km do probes A and B make together?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Distance (km)",
+      "en": "Distance (km)"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "A",
+        "en": "A"
+       },
+       "value": 3020
+      },
+      {
+       "label": {
+        "fr": "B",
+        "en": "B"
+       },
+       "value": 4985
+      },
+      {
+       "label": {
+        "fr": "C",
+        "en": "C"
+       },
+       "value": 2010
+      }
+     ],
+     "max": 5000
+    }
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "8 000 km",
+      "en": "8,000 km"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "2 000 km",
+      "en": "2,000 km"
+     },
+     "misconception": "mis_subtract_instead_of_add"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "80 000 km",
+      "en": "80,000 km"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "7 000 km",
+      "en": "7,000 km"
+     },
+     "misconception": "mis_estimate_rounding"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Arrondis chaque barre au millier.",
+    "en": "Round each bar to the nearest thousand."
+   },
+   "explain": {
+    "fr": "3 020 est près de 3 000 et 4 985 est près de 5 000. Le total est environ 8 000 km.",
+    "en": "3,020 is close to 3,000 and 4,985 is close to 5,000. The total is about 8,000 km."
+   },
+   "tags": [
+    "bar-chart",
+    "estimation",
+    "rounding"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e4c6c235429cdc537779"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  }
+ ]
+}
