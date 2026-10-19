@@ -1,0 +1,5029 @@
+{
+ "world": "construction",
+ "schema": 1,
+ "questions": [
+  {
+   "id": "construction.formes.001",
+   "quest": "construction.formes",
+   "skill": "GEO-C02",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Sur le plan, une fenêtre a 4 côtés égaux et 4 coins droits.",
+    "en": "On the plan, a window has 4 equal sides and 4 square corners."
+   },
+   "prompt": {
+    "fr": "Quelle figure est cette fenêtre ?",
+    "en": "Which shape is this window?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "un carré",
+      "en": "a square"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "un triangle",
+      "en": "a triangle"
+     },
+     "misconception": "mis_shape_name"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "un cercle",
+      "en": "a circle"
+     },
+     "misconception": "mis_shape_name"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "un rectangle",
+      "en": "a rectangle"
+     },
+     "misconception": "mis_shape_name"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Les quatre côtés ont la même longueur.",
+    "en": "All four sides have the same length."
+   },
+   "explain": {
+    "fr": "Un carré a 4 côtés égaux et 4 coins droits.",
+    "en": "A square has 4 equal sides and 4 square corners."
+   },
+   "tags": [
+    "shapes",
+    "square"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9c0a11db00c3d9f41672"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.formes.002",
+   "quest": "construction.formes",
+   "skill": "GEO-C02",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Le toit de la cabane, vu de côté sur le plan, a 3 côtés.",
+    "en": "The treehouse roof, seen from the side on the plan, has 3 sides."
+   },
+   "prompt": {
+    "fr": "Quelle figure est ce toit ?",
+    "en": "Which shape is this roof?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "un triangle",
+      "en": "a triangle"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "un carré",
+      "en": "a square"
+     },
+     "misconception": "mis_shape_name"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "un cercle",
+      "en": "a circle"
+     },
+     "misconception": "mis_shape_name"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "un rectangle",
+      "en": "a rectangle"
+     },
+     "misconception": "mis_shape_name"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Compte les côtés de la figure.",
+    "en": "Count the sides of the shape."
+   },
+   "explain": {
+    "fr": "Une figure à 3 côtés est un triangle.",
+    "en": "A shape with 3 sides is a triangle."
+   },
+   "tags": [
+    "shapes",
+    "triangle"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9c0a11db00c3d9f41672"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.formes.003",
+   "quest": "construction.formes",
+   "skill": "GEO-C02",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "La cabane a un hublot tout rond, sans aucun côté droit.",
+    "en": "The treehouse has a round porthole with no straight side."
+   },
+   "prompt": {
+    "fr": "Quelle figure est ce hublot ?",
+    "en": "Which shape is this porthole?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "un cercle",
+      "en": "a circle"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "un carré",
+      "en": "a square"
+     },
+     "misconception": "mis_shape_name"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "un triangle",
+      "en": "a triangle"
+     },
+     "misconception": "mis_shape_name"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "un rectangle",
+      "en": "a rectangle"
+     },
+     "misconception": "mis_shape_name"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Une figure sans côté droit est toute ronde.",
+    "en": "A shape with no straight side is round."
+   },
+   "explain": {
+    "fr": "Un cercle est tout rond et n'a pas de côté droit.",
+    "en": "A circle is round and has no straight side."
+   },
+   "tags": [
+    "shapes",
+    "circle"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9c0a11db00c3d9f41672"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.formes.004",
+   "quest": "construction.formes",
+   "skill": "GEO-C02",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "La porte du plan a 4 côtés et 4 coins droits. Deux côtés sont longs et deux sont courts.",
+    "en": "The door on the plan has 4 sides and 4 square corners. Two sides are long and two are short."
+   },
+   "prompt": {
+    "fr": "Quelle figure est cette porte ?",
+    "en": "Which shape is this door?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "un rectangle",
+      "en": "a rectangle"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "un carré",
+      "en": "a square"
+     },
+     "misconception": "mis_shape_name"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "un losange",
+      "en": "a diamond"
+     },
+     "misconception": "mis_shape_orientation"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "un triangle",
+      "en": "a triangle"
+     },
+     "misconception": "mis_shape_name"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Compare la longueur des côtés.",
+    "en": "Compare the lengths of the sides."
+   },
+   "explain": {
+    "fr": "Quatre coins droits et des côtés longs et courts : c'est un rectangle.",
+    "en": "Four square corners with long and short sides: it is a rectangle."
+   },
+   "tags": [
+    "shapes",
+    "rectangle"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9c0a11db00c3d9f41672"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.formes.005",
+   "quest": "construction.formes",
+   "skill": "GEO-C02",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa dessine un triangle pour le toit de sa cabane.",
+    "en": "Lea draws a triangle for the roof of her treehouse."
+   },
+   "prompt": {
+    "fr": "Combien de côtés a ce triangle ?",
+    "en": "How many sides does this triangle have?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3,
+    "calc": "3"
+   },
+   "common_errors": [
+    {
+     "value": 4,
+     "misconception": "mis_shape_name",
+     "feedback": {
+      "fr": "4 côtés, c'est un carré ou un rectangle.",
+      "en": "4 sides is a square or a rectangle."
+     }
+    },
+    {
+     "value": 2,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les côtés.",
+      "en": "Close! Count the sides again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Le mot triangle commence par tri.",
+    "en": "The word triangle starts with tri."
+   },
+   "explain": {
+    "fr": "Un triangle a 3 côtés et 3 coins.",
+    "en": "A triangle has 3 sides and 3 corners."
+   },
+   "tags": [
+    "shapes",
+    "triangle",
+    "sides"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9c0a11db00c3d9f41672"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.formes.006",
+   "quest": "construction.formes",
+   "skill": "GEO-C02",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le plan de la cabane montre 2 triangles et 1 carré.",
+    "en": "The treehouse plan shows 2 triangles and 1 square."
+   },
+   "prompt": {
+    "fr": "Combien de côtés ces figures ont-elles en tout ?",
+    "en": "How many sides do these shapes have in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 10,
+    "calc": "3+3+4"
+   },
+   "common_errors": [
+    {
+     "value": 6,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié les côtés du carré.",
+      "en": "You left out the sides of the square."
+     }
+    },
+    {
+     "value": 3,
+     "misconception": "mis_shape_name",
+     "feedback": {
+      "fr": "Tu as compté les figures, pas les côtés.",
+      "en": "You counted the shapes, not the sides."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Un triangle a 3 côtés et un carré en a 4.",
+    "en": "A triangle has 3 sides and a square has 4."
+   },
+   "explain": {
+    "fr": "3 + 3 + 4 = 10 côtés.",
+    "en": "3 + 3 + 4 = 10 sides."
+   },
+   "tags": [
+    "shapes",
+    "sides",
+    "add"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9c0a11db00c3d9f41672"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.formes.007",
+   "quest": "construction.formes",
+   "skill": "GEO-C02",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "La cabane a 3 fenêtres carrées et 2 fenêtres rondes.",
+    "en": "The treehouse has 3 square windows and 2 round windows."
+   },
+   "prompt": {
+    "fr": "Combien de fenêtres la cabane a-t-elle ?",
+    "en": "How many windows does the treehouse have?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "3+2"
+   },
+   "common_errors": [
+    {
+     "value": 1,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les fenêtres : on additionne.",
+      "en": "We put the windows together, so we add."
+     }
+    },
+    {
+     "value": 6,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les fenêtres rondes.",
+      "en": "Close! Count the round windows again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne les deux sortes de fenêtres.",
+    "en": "Add the two kinds of windows."
+   },
+   "explain": {
+    "fr": "3 + 2 = 5 fenêtres.",
+    "en": "3 + 2 = 5 windows."
+   },
+   "tags": [
+    "word-problem",
+    "shapes",
+    "add"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9c0a11db00c3d9f41672"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.formes.008",
+   "quest": "construction.formes",
+   "skill": "GEO-C02",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah dessine 3 triangles pour le toit. Chaque triangle a 3 côtés.",
+    "en": "Noah draws 3 triangles for the roof. Each triangle has 3 sides."
+   },
+   "prompt": {
+    "fr": "Combien de côtés dessine-t-il en tout ?",
+    "en": "How many sides does he draw in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 9,
+    "calc": "3*3"
+   },
+   "common_errors": [
+    {
+     "value": 6,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "3 triangles de 3 côtés : multiplie.",
+      "en": "3 triangles of 3 sides: multiply."
+     }
+    },
+    {
+     "value": 3,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "3 est le nombre de côtés d'un seul triangle.",
+      "en": "3 is the number of sides of just one triangle."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 3 en 3, trois fois.",
+    "en": "Count by 3s, three times."
+   },
+   "explain": {
+    "fr": "3, 6, 9. Trois triangles ont 9 côtés.",
+    "en": "3, 6, 9. Three triangles have 9 sides."
+   },
+   "tags": [
+    "word-problem",
+    "shapes",
+    "multiplication"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9c0a11db00c3d9f41672"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.formes.009",
+   "quest": "construction.formes",
+   "skill": "GEO-C02",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Mia regarde le plan de la cabane.",
+    "en": "Mia looks at the treehouse plan."
+   },
+   "prompt": {
+    "fr": "Elle dit qu'un carré a 3 côtés. A-t-elle raison ?",
+    "en": "She says a square has 3 sides. Is she right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_shape_name"
+   },
+   "hint": {
+    "fr": "Compte les côtés d'un carré dessiné.",
+    "en": "Count the sides of a drawn square."
+   },
+   "explain": {
+    "fr": "Un carré a 4 côtés. C'est le triangle qui en a 3.",
+    "en": "A square has 4 sides. It is the triangle that has 3."
+   },
+   "tags": [
+    "true-false",
+    "shapes",
+    "square"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9c0a11db00c3d9f41672"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.formes.010",
+   "quest": "construction.formes",
+   "skill": "GEO-C02",
+   "type": "truefalse",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le plan montre un carré tourné comme un diamant.",
+    "en": "The plan shows a square turned like a diamond."
+   },
+   "prompt": {
+    "fr": "Zoé dit que c'est encore un carré. A-t-elle raison ?",
+    "en": "Zoe says it is still a square. Is she right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": true
+   },
+   "hint": {
+    "fr": "Les côtés et les coins ont-ils changé quand on tourne la figure ?",
+    "en": "Did the sides and corners change when the shape turned?"
+   },
+   "explain": {
+    "fr": "Tourner une figure ne la change pas. Le carré reste un carré.",
+    "en": "Turning a shape does not change it. The square stays a square."
+   },
+   "tags": [
+    "true-false",
+    "shapes",
+    "rotation"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9c0a11db00c3d9f41672"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.formes.011",
+   "quest": "construction.formes",
+   "skill": "GEO-C02",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Quatre figures sont dessinées sur le plan de la cabane.",
+    "en": "Four shapes are drawn on the treehouse plan."
+   },
+   "prompt": {
+    "fr": "Range-les du moins de côtés au plus de côtés.",
+    "en": "Put them in order from the fewest sides to the most."
+   },
+   "items": [
+    {
+     "id": "i1",
+     "text": {
+      "fr": "carré",
+      "en": "square"
+     },
+     "key": "4"
+    },
+    {
+     "id": "i2",
+     "text": {
+      "fr": "hexagone",
+      "en": "hexagon"
+     },
+     "key": "6"
+    },
+    {
+     "id": "i3",
+     "text": {
+      "fr": "triangle",
+      "en": "triangle"
+     },
+     "key": "3"
+    },
+    {
+     "id": "i4",
+     "text": {
+      "fr": "pentagone",
+      "en": "pentagon"
+     },
+     "key": "5"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "i3",
+     "i1",
+     "i4",
+     "i2"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Chaque nom donne un indice sur le nombre de côtés.",
+    "en": "Each name gives a clue about the number of sides."
+   },
+   "explain": {
+    "fr": "Triangle 3, carré 4, pentagone 5, hexagone 6.",
+    "en": "Triangle 3, square 4, pentagon 5, hexagon 6."
+   },
+   "tags": [
+    "ordering",
+    "shapes",
+    "sides"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9c0a11db00c3d9f41672"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.formes.012",
+   "quest": "construction.formes",
+   "skill": "GEO-C02",
+   "type": "match",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa sort les formes du plan de la cabane.",
+    "en": "Lea sorts the shapes of the treehouse plan."
+   },
+   "prompt": {
+    "fr": "Relie chaque description à la bonne figure.",
+    "en": "Match each description to the right shape."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "3 côtés",
+       "en": "3 sides"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "4 côtés égaux",
+       "en": "4 equal sides"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "tout rond",
+       "en": "perfectly round"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "2 côtés longs et 2 courts",
+       "en": "2 long sides and 2 short sides"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "carré",
+       "en": "square"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "cercle",
+       "en": "circle"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "rectangle",
+       "en": "rectangle"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "triangle",
+       "en": "triangle"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ],
+     [
+      "l4",
+      "r4"
+     ]
+    ],
+    "misconception": "mis_shape_name"
+   },
+   "hint": {
+    "fr": "Compte les côtés de chaque figure.",
+    "en": "Count the sides of each shape."
+   },
+   "explain": {
+    "fr": "3 côtés : triangle. 4 côtés égaux : carré. Tout rond : cercle. Long et court : rectangle.",
+    "en": "3 sides: triangle. 4 equal sides: square. Round: circle. Long and short: rectangle."
+   },
+   "tags": [
+    "matching",
+    "shapes"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9c0a11db00c3d9f41672"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.formes.013",
+   "quest": "construction.formes",
+   "skill": "GEO-C02",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Sur la grille : T est un triangle. C est un carré. R est un rond.",
+    "en": "On the grid: T is a triangle. C is a square. R is a circle."
+   },
+   "prompt": {
+    "fr": "Combien de triangles y a-t-il sur la grille ?",
+    "en": "How many triangles are on the grid?"
+   },
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 2,
+     "cells": [
+      {
+       "x": 0,
+       "y": 0,
+       "label": "T"
+      },
+      {
+       "x": 1,
+       "y": 0,
+       "label": "C"
+      },
+      {
+       "x": 2,
+       "y": 0,
+       "label": "T"
+      },
+      {
+       "x": 3,
+       "y": 0,
+       "label": "R"
+      },
+      {
+       "x": 0,
+       "y": 1,
+       "label": "R"
+      },
+      {
+       "x": 1,
+       "y": 1,
+       "label": "T"
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": "C"
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": "C"
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3,
+    "calc": "3"
+   },
+   "common_errors": [
+    {
+     "value": 2,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Cherche la lettre T dans les deux lignes.",
+      "en": "Close! Look for the letter T in both rows."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "8 est le nombre de figures en tout.",
+      "en": "8 is the number of shapes in all."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Cherche la lettre T sur les deux lignes.",
+    "en": "Look for the letter T on both rows."
+   },
+   "explain": {
+    "fr": "On voit T en haut deux fois et en bas une fois : 3 triangles.",
+    "en": "T shows twice on top and once below: 3 triangles."
+   },
+   "tags": [
+    "grid",
+    "shapes",
+    "counting"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9c0a11db00c3d9f41672"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.solides.001",
+   "quest": "construction.solides",
+   "skill": "GEO-B03",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Noah joue avec un dé. Toutes ses faces sont des carrés pareils.",
+    "en": "Noah plays with a die. All its faces are the same squares."
+   },
+   "prompt": {
+    "fr": "Quel solide est un dé ?",
+    "en": "Which solid is a die?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "un cube",
+      "en": "a cube"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "un cylindre",
+      "en": "a cylinder"
+     },
+     "misconception": "mis_shape_name"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "un cône",
+      "en": "a cone"
+     },
+     "misconception": "mis_shape_name"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "une sphère",
+      "en": "a sphere"
+     },
+     "misconception": "mis_shape_name"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Pense à six faces carrées.",
+    "en": "Think of six square faces."
+   },
+   "explain": {
+    "fr": "Un cube a 6 faces carrées pareilles.",
+    "en": "A cube has 6 identical square faces."
+   },
+   "tags": [
+    "solids",
+    "cube"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_7ffb7673e08da5ff9380"
+    },
+    {
+     "role": "object",
+     "asset": "a_a021c0ea3c9525e9acbf"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.solides.002",
+   "quest": "construction.solides",
+   "skill": "GEO-B03",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Dans l'atelier, il y a une boîte de conserve pleine de clous.",
+    "en": "In the workshop there is a can full of nails."
+   },
+   "prompt": {
+    "fr": "Quel solide ressemble à cette boîte ?",
+    "en": "Which solid looks like this can?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "un cylindre",
+      "en": "a cylinder"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "un cône",
+      "en": "a cone"
+     },
+     "misconception": "mis_shape_name"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "un cube",
+      "en": "a cube"
+     },
+     "misconception": "mis_shape_name"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "une sphère",
+      "en": "a sphere"
+     },
+     "misconception": "mis_shape_name"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Elle a deux ronds plats, en haut et en bas.",
+    "en": "It has two flat circles, top and bottom."
+   },
+   "explain": {
+    "fr": "Un cylindre a deux faces rondes et un côté courbé.",
+    "en": "A cylinder has two round faces and a curved side."
+   },
+   "tags": [
+    "solids",
+    "cylinder"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_7ffb7673e08da5ff9380"
+    },
+    {
+     "role": "object",
+     "asset": "a_0a87edecc4a5f6c4e7dc"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.solides.003",
+   "quest": "construction.solides",
+   "skill": "GEO-B03",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Un ballon roule dans tous les sens. Il n'a aucune face plate.",
+    "en": "A ball rolls in every direction. It has no flat face."
+   },
+   "prompt": {
+    "fr": "Quel solide est un ballon ?",
+    "en": "Which solid is a ball?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "une sphère",
+      "en": "a sphere"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "un cube",
+      "en": "a cube"
+     },
+     "misconception": "mis_shape_name"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "un cylindre",
+      "en": "a cylinder"
+     },
+     "misconception": "mis_shape_name"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "un cône",
+      "en": "a cone"
+     },
+     "misconception": "mis_shape_name"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Il n'a ni coin ni face plate.",
+    "en": "It has no corner and no flat face."
+   },
+   "explain": {
+    "fr": "Une sphère est tout ronde, comme un ballon.",
+    "en": "A sphere is perfectly round, like a ball."
+   },
+   "tags": [
+    "solids",
+    "sphere"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_7ffb7673e08da5ff9380"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.solides.004",
+   "quest": "construction.solides",
+   "skill": "GEO-B03",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Un chapeau de fête est pointu en haut. Sa base est ronde.",
+    "en": "A party hat is pointed at the top. Its base is round."
+   },
+   "prompt": {
+    "fr": "Quel solide ressemble à ce chapeau ?",
+    "en": "Which solid looks like this hat?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "un cône",
+      "en": "a cone"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "un cylindre",
+      "en": "a cylinder"
+     },
+     "misconception": "mis_shape_name"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "un cube",
+      "en": "a cube"
+     },
+     "misconception": "mis_shape_name"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "une sphère",
+      "en": "a sphere"
+     },
+     "misconception": "mis_shape_name"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Pense à une pointe et à une base ronde.",
+    "en": "Think of a point and a round base."
+   },
+   "explain": {
+    "fr": "Un cône a une pointe et une base ronde.",
+    "en": "A cone has a point and a round base."
+   },
+   "tags": [
+    "solids",
+    "cone"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_30414011d01af2b89174"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.solides.005",
+   "quest": "construction.solides",
+   "skill": "GEO-B03",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa construit un jouet avec un cube.",
+    "en": "Lea builds a toy with a cube."
+   },
+   "prompt": {
+    "fr": "Combien de faces un cube a-t-il ?",
+    "en": "How many faces does a cube have?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 6,
+    "calc": "6"
+   },
+   "common_errors": [
+    {
+     "value": 4,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Il y a aussi le dessus et le dessous.",
+      "en": "There are also the top and the bottom."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_shape_name",
+     "feedback": {
+      "fr": "8 est le nombre de coins, pas de faces.",
+      "en": "8 is the number of corners, not faces."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les murs, le plafond et le plancher d'une pièce.",
+    "en": "Count the walls, the ceiling and the floor of a room."
+   },
+   "explain": {
+    "fr": "Un cube a 4 côtés, un dessus et un dessous : 6 faces.",
+    "en": "A cube has 4 sides, a top and a bottom: 6 faces."
+   },
+   "tags": [
+    "solids",
+    "cube",
+    "faces"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_7ffb7673e08da5ff9380"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.solides.006",
+   "quest": "construction.solides",
+   "skill": "GEO-B03",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Samuel tient un cube de bois. Il compte ses coins.",
+    "en": "Samuel holds a wooden cube. He counts its corners."
+   },
+   "prompt": {
+    "fr": "Combien de coins un cube a-t-il ?",
+    "en": "How many corners does a cube have?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 8,
+    "calc": "8"
+   },
+   "common_errors": [
+    {
+     "value": 6,
+     "misconception": "mis_shape_name",
+     "feedback": {
+      "fr": "6 est le nombre de faces, pas de coins.",
+      "en": "6 is the number of faces, not corners."
+     }
+    },
+    {
+     "value": 12,
+     "misconception": "mis_shape_name",
+     "feedback": {
+      "fr": "12 est le nombre d'arêtes.",
+      "en": "12 is the number of edges."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Il y a 4 coins en haut et 4 en bas.",
+    "en": "There are 4 corners on top and 4 on the bottom."
+   },
+   "explain": {
+    "fr": "4 coins en haut et 4 coins en bas font 8 coins.",
+    "en": "4 corners on top and 4 on the bottom make 8 corners."
+   },
+   "tags": [
+    "solids",
+    "cube",
+    "corners"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_7ffb7673e08da5ff9380"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.solides.007",
+   "quest": "construction.solides",
+   "skill": "GEO-B03",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un cylindre a des faces plates et un côté courbé.",
+    "en": "A cylinder has flat faces and a curved side."
+   },
+   "prompt": {
+    "fr": "Combien de faces plates un cylindre a-t-il ?",
+    "en": "How many flat faces does a cylinder have?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 2,
+    "calc": "2"
+   },
+   "common_errors": [
+    {
+     "value": 3,
+     "misconception": "mis_shape_name",
+     "feedback": {
+      "fr": "Le côté courbé n'est pas une face plate.",
+      "en": "The curved side is not a flat face."
+     }
+    },
+    {
+     "value": 1,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Il y a un rond en haut et un en bas.",
+      "en": "There is a circle on top and one on the bottom."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à une boîte de conserve : haut et bas.",
+    "en": "Think of a can: top and bottom."
+   },
+   "explain": {
+    "fr": "Il y a un rond plat en haut et un en bas. Cela fait 2 faces plates.",
+    "en": "There is a flat circle on top and one on the bottom. That makes 2 flat faces."
+   },
+   "tags": [
+    "solids",
+    "cylinder",
+    "faces"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_7ffb7673e08da5ff9380"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.solides.008",
+   "quest": "construction.solides",
+   "skill": "GEO-B03",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah empile 3 cubes rouges et 4 cubes bleus pour faire une tour.",
+    "en": "Noah stacks 3 red cubes and 4 blue cubes to make a tower."
+   },
+   "prompt": {
+    "fr": "Combien de cubes y a-t-il dans la tour ?",
+    "en": "How many cubes are in the tower?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 7,
+    "calc": "3+4"
+   },
+   "common_errors": [
+    {
+     "value": 1,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les cubes : on additionne.",
+      "en": "We put the cubes together, so we add."
+     }
+    },
+    {
+     "value": 6,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les cubes bleus.",
+      "en": "Close! Count the blue cubes again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne les deux couleurs.",
+    "en": "Add the two colours."
+   },
+   "explain": {
+    "fr": "3 + 4 = 7. La tour a 7 cubes.",
+    "en": "3 + 4 = 7 cubes."
+   },
+   "tags": [
+    "word-problem",
+    "solids",
+    "add"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_a021c0ea3c9525e9acbf"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.solides.009",
+   "quest": "construction.solides",
+   "skill": "GEO-B03",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa a 12 blocs de bois. Cinq blocs sont des cubes.",
+    "en": "Lea has 12 wooden blocks. Five blocks are cubes."
+   },
+   "prompt": {
+    "fr": "Combien de blocs ne sont pas des cubes ?",
+    "en": "How many blocks are not cubes?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 7,
+    "calc": "12-5"
+   },
+   "common_errors": [
+    {
+     "value": 17,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche les blocs qui restent : on soustrait.",
+      "en": "We look for the blocks left over, so we subtract."
+     }
+    },
+    {
+     "value": 5,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "5 est le nombre de cubes, pas des autres blocs.",
+      "en": "5 is the number of cubes, not the other blocks."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Enlève les cubes du total.",
+    "en": "Take the cubes away from the total."
+   },
+   "explain": {
+    "fr": "12 - 5 = 7. Il y a 7 blocs de formes différentes.",
+    "en": "12 - 5 = 7. There are 7 blocks of other shapes."
+   },
+   "tags": [
+    "word-problem",
+    "solids",
+    "subtract"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_a021c0ea3c9525e9acbf"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.solides.010",
+   "quest": "construction.solides",
+   "skill": "GEO-B03",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Mia veut faire rouler ses blocs sur le sol.",
+    "en": "Mia wants to roll her blocks on the floor."
+   },
+   "prompt": {
+    "fr": "Elle dit qu'un cube roule comme une balle. A-t-elle raison ?",
+    "en": "She says a cube rolls like a ball. Is she right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_shape_name"
+   },
+   "hint": {
+    "fr": "Un cube a des faces plates et des coins.",
+    "en": "A cube has flat faces and corners."
+   },
+   "explain": {
+    "fr": "Un cube a des faces plates et il ne roule pas comme une balle.",
+    "en": "A cube has flat faces and does not roll like a ball."
+   },
+   "tags": [
+    "true-false",
+    "solids",
+    "cube"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_7ffb7673e08da5ff9380"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.solides.011",
+   "quest": "construction.solides",
+   "skill": "GEO-B03",
+   "type": "truefalse",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Zoé regarde un cône de chantier.",
+    "en": "Zoe looks at a construction cone."
+   },
+   "prompt": {
+    "fr": "Elle dit qu'un cône a une pointe. A-t-elle raison ?",
+    "en": "She says a cone has a point. Is she right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": true
+   },
+   "hint": {
+    "fr": "Imagine le haut d'un cône.",
+    "en": "Picture the top of a cone."
+   },
+   "explain": {
+    "fr": "Un cône a une pointe en haut et une base ronde.",
+    "en": "A cone has a point at the top and a round base."
+   },
+   "tags": [
+    "true-false",
+    "solids",
+    "cone"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_7ffb7673e08da5ff9380"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.solides.012",
+   "quest": "construction.solides",
+   "skill": "GEO-B03",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Quatre solides ont un nombre différent de faces plates.",
+    "en": "Four solids have a different number of flat faces."
+   },
+   "prompt": {
+    "fr": "Range-les du moins au plus de faces plates.",
+    "en": "Put them in order from the fewest to the most flat faces."
+   },
+   "items": [
+    {
+     "id": "i1",
+     "text": {
+      "fr": "cube",
+      "en": "cube"
+     },
+     "key": "6"
+    },
+    {
+     "id": "i2",
+     "text": {
+      "fr": "sphère",
+      "en": "sphere"
+     },
+     "key": "0"
+    },
+    {
+     "id": "i3",
+     "text": {
+      "fr": "cylindre",
+      "en": "cylinder"
+     },
+     "key": "2"
+    },
+    {
+     "id": "i4",
+     "text": {
+      "fr": "cône",
+      "en": "cone"
+     },
+     "key": "1"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "i2",
+     "i4",
+     "i3",
+     "i1"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "La sphère n'a aucune face plate.",
+    "en": "The sphere has no flat face."
+   },
+   "explain": {
+    "fr": "Sphère 0, cône 1, cylindre 2, cube 6.",
+    "en": "Sphere 0, cone 1, cylinder 2, cube 6."
+   },
+   "tags": [
+    "ordering",
+    "solids",
+    "faces"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_7ffb7673e08da5ff9380"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.solides.013",
+   "quest": "construction.solides",
+   "skill": "GEO-B03",
+   "type": "match",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Dans l'atelier, Omar relie des objets avec leurs solides.",
+    "en": "In the workshop, Omar matches objects with their solids."
+   },
+   "prompt": {
+    "fr": "Relie chaque objet à son solide.",
+    "en": "Match each object to its solid."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "un dé",
+       "en": "a die"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "une boîte de conserve",
+       "en": "a can"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "un ballon",
+       "en": "a ball"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "un chapeau de fête",
+       "en": "a party hat"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "cylindre",
+       "en": "cylinder"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "sphère",
+       "en": "sphere"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "cône",
+       "en": "cone"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "cube",
+       "en": "cube"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ],
+     [
+      "l4",
+      "r4"
+     ]
+    ],
+    "misconception": "mis_match"
+   },
+   "hint": {
+    "fr": "Pense à la forme de chaque objet.",
+    "en": "Think of the shape of each object."
+   },
+   "explain": {
+    "fr": "Le dé est un cube. La boîte est un cylindre. Le ballon est une sphère. Le chapeau est un cône.",
+    "en": "The die is a cube. The can is a cylinder. The ball is a sphere. The hat is a cone."
+   },
+   "tags": [
+    "matching",
+    "solids"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_7ffb7673e08da5ff9380"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.solides.014",
+   "quest": "construction.solides",
+   "skill": "GEO-B03",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le pictogramme montre les blocs du coffre. Une image représente 1 bloc.",
+    "en": "The pictograph shows the blocks in the box. One picture stands for 1 block."
+   },
+   "prompt": {
+    "fr": "Combien de blocs y a-t-il en tout ?",
+    "en": "How many blocks are there in all?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Blocs du coffre",
+      "en": "Blocks in the box"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "cubes",
+        "en": "cubes"
+       },
+       "count": 4
+      },
+      {
+       "label": {
+        "fr": "cônes",
+        "en": "cones"
+       },
+       "count": 2
+      },
+      {
+       "label": {
+        "fr": "cylindres",
+        "en": "cylinders"
+       },
+       "count": 5
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 11,
+    "calc": "4+2+5"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié une ligne.",
+      "en": "You left out a row."
+     }
+    },
+    {
+     "value": 10,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte chaque ligne.",
+      "en": "Close! Count each row again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne deux lignes, puis la troisième.",
+    "en": "Add two rows, then the third."
+   },
+   "explain": {
+    "fr": "4 + 2 = 6, puis 6 + 5 = 11 blocs.",
+    "en": "4 + 2 = 6, then 6 + 5 = 11 blocks."
+   },
+   "tags": [
+    "pictograph",
+    "solids",
+    "add-three-numbers"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_a021c0ea3c9525e9acbf"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.solides.015",
+   "quest": "construction.solides",
+   "skill": "GEO-B03",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Chaque cube de la tour mesure à peu près 5 cm de haut. Léa empile 9 cubes.",
+    "en": "Each cube in the tower is about 5 cm tall. Lea stacks 9 cubes."
+   },
+   "prompt": {
+    "fr": "Environ quelle est la hauteur de la tour, en cm ?",
+    "en": "About how tall is the tower, in cm?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 42,
+    "max": 48,
+    "exact_for_check": 45,
+    "calc": "9*5"
+   },
+   "common_errors": [
+    {
+     "value": 14,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "9 cubes de 5 cm : multiplie.",
+      "en": "9 cubes of 5 cm: multiply."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 5 en 5, neuf fois.",
+    "en": "Count by 5s, nine times."
+   },
+   "explain": {
+    "fr": "9 x 5 = 45. La tour mesure environ 45 cm.",
+    "en": "9 x 5 = 45. The tower is about 45 cm tall."
+   },
+   "tags": [
+    "estimation",
+    "cube",
+    "height"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_7ffb7673e08da5ff9380"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.perimetre.001",
+   "quest": "construction.perimetre",
+   "skill": "MES-A06",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Le plancher de la cabane est un carré de 3 m de côté.",
+    "en": "The treehouse floor is a square 3 m on each side."
+   },
+   "prompt": {
+    "fr": "Quel est le périmètre du plancher, en mètres ?",
+    "en": "What is the perimeter of the floor, in metres?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 12,
+    "calc": "4*3"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_perimeter_missing_side",
+     "feedback": {
+      "fr": "Un carré a 4 côtés : tu en as compté 3.",
+      "en": "A square has 4 sides: you counted 3."
+     }
+    },
+    {
+     "value": 6,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as additionné seulement deux côtés.",
+      "en": "You added only two sides."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne les quatre côtés du carré.",
+    "en": "Add the four sides of the square."
+   },
+   "explain": {
+    "fr": "3 + 3 + 3 + 3 = 12. Le périmètre est de 12 m.",
+    "en": "3 + 3 + 3 + 3 = 12. The perimeter is 12 m."
+   },
+   "tags": [
+    "perimeter",
+    "square",
+    "treehouse"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9c0a11db00c3d9f41672"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.perimetre.002",
+   "quest": "construction.perimetre",
+   "skill": "MES-A06",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Une terrasse rectangulaire mesure 4 m de long et 3 m de large.",
+    "en": "A rectangular deck is 4 m long and 3 m wide."
+   },
+   "prompt": {
+    "fr": "Quel est son périmètre, en mètres ?",
+    "en": "What is its perimeter, in metres?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 14,
+    "calc": "2*(4+3)"
+   },
+   "common_errors": [
+    {
+     "value": 12,
+     "misconception": "mis_perimeter_area",
+     "feedback": {
+      "fr": "4 x 3 donne l'aire. Le périmètre est le tour.",
+      "en": "4 x 3 gives the area. The perimeter is the distance around."
+     }
+    },
+    {
+     "value": 7,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as additionné seulement deux côtés.",
+      "en": "You added only two sides."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Un rectangle a deux longueurs et deux largeurs.",
+    "en": "A rectangle has two lengths and two widths."
+   },
+   "explain": {
+    "fr": "4 + 3 + 4 + 3 = 14. Le périmètre est de 14 m.",
+    "en": "4 + 3 + 4 + 3 = 14. The perimeter is 14 m."
+   },
+   "tags": [
+    "perimeter",
+    "rectangle",
+    "deck"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9c0a11db00c3d9f41672"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.perimetre.003",
+   "quest": "construction.perimetre",
+   "skill": "MES-A06",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le plancher d'un petit abri mesure 6 m de long et 2 m de large.",
+    "en": "The floor of a small shelter is 6 m long and 2 m wide."
+   },
+   "prompt": {
+    "fr": "Quel est le périmètre du plancher, en mètres ?",
+    "en": "What is the perimeter of the floor, in metres?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 16,
+    "calc": "2*(6+2)"
+   },
+   "common_errors": [
+    {
+     "value": 12,
+     "misconception": "mis_perimeter_area",
+     "feedback": {
+      "fr": "6 x 2 donne l'aire, pas le périmètre.",
+      "en": "6 x 2 gives the area, not the perimeter."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Il faut aussi les deux autres côtés.",
+      "en": "You also need the other two sides."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne longueur et largeur, puis double.",
+    "en": "Add length and width, then double."
+   },
+   "explain": {
+    "fr": "6 + 2 = 8 et 8 + 8 = 16. Le périmètre est de 16 m.",
+    "en": "6 + 2 = 8 and 8 + 8 = 16. The perimeter is 16 m."
+   },
+   "tags": [
+    "perimeter",
+    "rectangle"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9c0a11db00c3d9f41672"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.perimetre.004",
+   "quest": "construction.perimetre",
+   "skill": "MES-A06",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Une plateforme triangulaire a des côtés de 4 m, 5 m et 6 m.",
+    "en": "A triangular platform has sides of 4 m, 5 m and 6 m."
+   },
+   "prompt": {
+    "fr": "Quel est son périmètre, en mètres ?",
+    "en": "What is its perimeter, in metres?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 15,
+    "calc": "4+5+6"
+   },
+   "common_errors": [
+    {
+     "value": 11,
+     "misconception": "mis_perimeter_missing_side",
+     "feedback": {
+      "fr": "Tu as oublié un côté.",
+      "en": "You forgot a side."
+     }
+    },
+    {
+     "value": 120,
+     "misconception": "mis_perimeter_area",
+     "feedback": {
+      "fr": "Pour le périmètre, on additionne les côtés.",
+      "en": "For the perimeter we add the sides."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne les trois côtés.",
+    "en": "Add the three sides."
+   },
+   "explain": {
+    "fr": "4 + 5 = 9 et 9 + 6 = 15. Le périmètre est de 15 m.",
+    "en": "4 + 5 = 9 and 9 + 6 = 15. The perimeter is 15 m."
+   },
+   "tags": [
+    "perimeter",
+    "triangle"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9c0a11db00c3d9f41672"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.perimetre.005",
+   "quest": "construction.perimetre",
+   "skill": "MES-A06",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Le plancher est un rectangle de 6 m de long. Son périmètre est de 20 m.",
+    "en": "The floor is a rectangle 6 m long. Its perimeter is 20 m."
+   },
+   "prompt": {
+    "fr": "Quelle est sa largeur, en mètres ?",
+    "en": "What is its width, in metres?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 4,
+    "calc": "(20-2*6)/2"
+   },
+   "common_errors": [
+    {
+     "value": 14,
+     "misconception": "mis_missing_term",
+     "feedback": {
+      "fr": "20 - 6 donne les trois autres côtés. Il faut les séparer.",
+      "en": "20 - 6 gives the other three sides. They must be split up."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "20 - 12 donne les deux largeurs ensemble.",
+      "en": "20 - 12 gives both widths together."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Enlève les deux longueurs du périmètre.",
+    "en": "Take the two lengths away from the perimeter."
+   },
+   "explain": {
+    "fr": "20 - 12 = 8 pour les deux largeurs. Une largeur : 8 ÷ 2 = 4 m.",
+    "en": "20 - 12 = 8 for both widths. One width: 8 ÷ 2 = 4 m."
+   },
+   "tags": [
+    "perimeter",
+    "missing-side",
+    "rectangle"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9c0a11db00c3d9f41672"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.perimetre.006",
+   "quest": "construction.perimetre",
+   "skill": "MES-A06",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa met une rampe autour d'un balcon de 5 m sur 3 m.",
+    "en": "Lea puts a railing around a 5 m by 3 m balcony."
+   },
+   "prompt": {
+    "fr": "Combien de mètres de rampe lui faut-il pour faire tout le tour ?",
+    "en": "How many metres of railing does she need to go all the way around?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 16,
+    "calc": "2*(5+3)"
+   },
+   "common_errors": [
+    {
+     "value": 15,
+     "misconception": "mis_perimeter_area",
+     "feedback": {
+      "fr": "5 x 3 donne l'aire. Il faut le tour.",
+      "en": "5 x 3 gives the area. She needs the distance around."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Il faut aussi les deux autres côtés.",
+      "en": "You also need the other two sides."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne les quatre côtés du balcon.",
+    "en": "Add the four sides of the balcony."
+   },
+   "explain": {
+    "fr": "5 + 3 + 5 + 3 = 16. Il lui faut 16 m de rampe.",
+    "en": "5 + 3 + 5 + 3 = 16. She needs 16 m of railing."
+   },
+   "tags": [
+    "word-problem",
+    "perimeter",
+    "railing"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9c0a11db00c3d9f41672"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.perimetre.007",
+   "quest": "construction.perimetre",
+   "skill": "MES-A06",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Noah marche autour de la cabane qui mesure 8 m sur 6 m. Il fait le tour 2 fois.",
+    "en": "Noah walks around the treehouse, which is 8 m by 6 m. He goes around 2 times."
+   },
+   "prompt": {
+    "fr": "Combien de mètres Noah marche-t-il en tout ?",
+    "en": "How many metres does Noah walk in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 56,
+    "calc": "2*2*(8+6)"
+   },
+   "common_errors": [
+    {
+     "value": 28,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as compté un seul tour.",
+      "en": "You counted just one lap."
+     }
+    },
+    {
+     "value": 96,
+     "misconception": "mis_perimeter_area",
+     "feedback": {
+      "fr": "8 x 6 donne l'aire. Il faut le tour.",
+      "en": "8 x 6 gives the area. You need the distance around."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Trouve d'abord la longueur d'un tour.",
+    "en": "First find the length of one lap."
+   },
+   "explain": {
+    "fr": "Un tour : 8 + 6 + 8 + 6 = 28 m. Deux tours : 28 + 28 = 56 m.",
+    "en": "One lap: 8 + 6 + 8 + 6 = 28 m. Two laps: 28 + 28 = 56 m."
+   },
+   "tags": [
+    "word-problem",
+    "perimeter",
+    "two-step"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_b67297c7e78cc1e356d9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.perimetre.008",
+   "quest": "construction.perimetre",
+   "skill": "MES-A06",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Zoé veut mettre une bordure de bois autour du plancher.",
+    "en": "Zoe wants to put a wooden border around the floor."
+   },
+   "prompt": {
+    "fr": "Que doit-elle trouver ?",
+    "en": "What must she find?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "le périmètre",
+      "en": "the perimeter"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "l'aire",
+      "en": "the area"
+     },
+     "misconception": "mis_perimeter_area"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "le volume",
+      "en": "the volume"
+     },
+     "random": true
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "la hauteur",
+      "en": "the height"
+     },
+     "misconception": "mis_unit_confusion"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Une bordure suit le tour de la figure.",
+    "en": "A border follows the distance around the shape."
+   },
+   "explain": {
+    "fr": "Le tour du plancher, c'est son périmètre.",
+    "en": "The distance around the floor is its perimeter."
+   },
+   "tags": [
+    "perimeter",
+    "vocabulary"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9c0a11db00c3d9f41672"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.perimetre.009",
+   "quest": "construction.perimetre",
+   "skill": "MES-A06",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Quatre planchers rectangulaires sont à comparer.",
+    "en": "Four rectangular floors need to be compared."
+   },
+   "prompt": {
+    "fr": "Lequel a le plus grand périmètre ?",
+    "en": "Which one has the biggest perimeter?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "8 m sur 3 m",
+      "en": "8 m by 3 m"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "5 m sur 5 m",
+      "en": "5 m by 5 m"
+     },
+     "misconception": "mis_perimeter_area"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "6 m sur 3 m",
+      "en": "6 m by 3 m"
+     },
+     "misconception": "mis_partial_result"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "7 m sur 2 m",
+      "en": "7 m by 2 m"
+     },
+     "misconception": "mis_partial_result"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Calcule le tour de chaque plancher.",
+    "en": "Work out the distance around each floor."
+   },
+   "explain": {
+    "fr": "Les périmètres sont 20, 18, 18 et 22 m. Le plus grand est 22 m.",
+    "en": "The perimeters are 20, 18, 18 and 22 m. The biggest is 22 m."
+   },
+   "tags": [
+    "perimeter",
+    "compare"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9c0a11db00c3d9f41672"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.perimetre.010",
+   "quest": "construction.perimetre",
+   "skill": "MES-A06",
+   "type": "truefalse",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Mathis regarde un rectangle de 7 m sur 3 m.",
+    "en": "Mathis looks at a rectangle 7 m by 3 m."
+   },
+   "prompt": {
+    "fr": "Il dit que son périmètre est 21 m. A-t-il raison ?",
+    "en": "He says its perimeter is 21 m. Is he right?"
+   },
+   "math_text": "P = 21 m",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_perimeter_area"
+   },
+   "hint": {
+    "fr": "Additionne les quatre côtés, pas deux côtés multipliés.",
+    "en": "Add the four sides, not two sides multiplied."
+   },
+   "explain": {
+    "fr": "7 + 3 + 7 + 3 = 20 m. Le nombre 21 est l'aire en m².",
+    "en": "7 + 3 + 7 + 3 = 20 m. The number 21 is the area in m²."
+   },
+   "tags": [
+    "true-false",
+    "perimeter",
+    "area-vs-perimeter"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9c0a11db00c3d9f41672"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.perimetre.011",
+   "quest": "construction.perimetre",
+   "skill": "MES-A06",
+   "type": "order",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Quatre planchers rectangulaires ont des mesures différentes.",
+    "en": "Four rectangular floors have different measurements."
+   },
+   "prompt": {
+    "fr": "Range-les, du plus petit périmètre au plus grand.",
+    "en": "Put them in order, from the smallest perimeter to the biggest."
+   },
+   "items": [
+    {
+     "id": "i1",
+     "text": {
+      "fr": "1 m x 6 m",
+      "en": "1 m x 6 m"
+     },
+     "key": "14"
+    },
+    {
+     "id": "i2",
+     "text": {
+      "fr": "3 m x 3 m",
+      "en": "3 m x 3 m"
+     },
+     "key": "12"
+    },
+    {
+     "id": "i3",
+     "text": {
+      "fr": "4 m x 4 m",
+      "en": "4 m x 4 m"
+     },
+     "key": "16"
+    },
+    {
+     "id": "i4",
+     "text": {
+      "fr": "2 m x 2 m",
+      "en": "2 m x 2 m"
+     },
+     "key": "8"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "i4",
+     "i2",
+     "i1",
+     "i3"
+    ],
+    "by": "asc",
+    "misconception": "mis_perimeter_area"
+   },
+   "hint": {
+    "fr": "Calcule le périmètre de chaque plancher.",
+    "en": "Work out the perimeter of each floor."
+   },
+   "explain": {
+    "fr": "Les périmètres sont 8, 12, 14 et 16 m.",
+    "en": "The perimeters are 8, 12, 14 and 16 m."
+   },
+   "tags": [
+    "ordering",
+    "perimeter"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9c0a11db00c3d9f41672"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.perimetre.012",
+   "quest": "construction.perimetre",
+   "skill": "MES-A06",
+   "type": "match",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Aya relie des planchers rectangulaires avec leur périmètre.",
+    "en": "Aya matches rectangular floors with their perimeters."
+   },
+   "prompt": {
+    "fr": "Relie chaque plancher à son périmètre.",
+    "en": "Match each floor to its perimeter."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "2 m x 4 m",
+       "en": "2 m x 4 m"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "3 m x 5 m",
+       "en": "3 m x 5 m"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "6 m x 6 m",
+       "en": "6 m x 6 m"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "1 m x 9 m",
+       "en": "1 m x 9 m"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "16 m",
+       "en": "16 m"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "24 m",
+       "en": "24 m"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "20 m",
+       "en": "20 m"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "12 m",
+       "en": "12 m"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ],
+     [
+      "l4",
+      "r4"
+     ]
+    ],
+    "misconception": "mis_perimeter_area"
+   },
+   "hint": {
+    "fr": "Additionne longueur et largeur, puis double.",
+    "en": "Add length and width, then double."
+   },
+   "explain": {
+    "fr": "Les périmètres sont 12, 16, 24 et 20 m.",
+    "en": "The perimeters are 12, 16, 24 and 20 m."
+   },
+   "tags": [
+    "matching",
+    "perimeter"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9c0a11db00c3d9f41672"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.perimetre.013",
+   "quest": "construction.perimetre",
+   "skill": "MES-A06",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "La grille montre le plancher de la cabane. Chaque carré mesure 1 m de côté.",
+    "en": "The grid shows the treehouse floor. Each square is 1 m on each side."
+   },
+   "prompt": {
+    "fr": "Quel est le périmètre du plancher, en mètres ?",
+    "en": "What is the perimeter of the floor, in metres?"
+   },
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 5,
+     "rows": 3,
+     "cells": [
+      {
+       "x": 0,
+       "y": 0,
+       "label": "m"
+      },
+      {
+       "x": 1,
+       "y": 0,
+       "label": "m"
+      },
+      {
+       "x": 2,
+       "y": 0,
+       "label": "m"
+      },
+      {
+       "x": 3,
+       "y": 0,
+       "label": "m"
+      },
+      {
+       "x": 4,
+       "y": 0,
+       "label": "m"
+      },
+      {
+       "x": 0,
+       "y": 1,
+       "label": "m"
+      },
+      {
+       "x": 1,
+       "y": 1,
+       "label": "m"
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": "m"
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": "m"
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": "m"
+      },
+      {
+       "x": 0,
+       "y": 2,
+       "label": "m"
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": "m"
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": "m"
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": "m"
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": "m"
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 16,
+    "calc": "2*(5+3)"
+   },
+   "common_errors": [
+    {
+     "value": 15,
+     "misconception": "mis_perimeter_area",
+     "feedback": {
+      "fr": "Compter les carrés donne l'aire, pas le périmètre.",
+      "en": "Counting squares gives the area, not the perimeter."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Il faut aussi les deux autres côtés.",
+      "en": "You also need the other two sides."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les carrés le long du bord, tout autour.",
+    "en": "Count the squares along the edge, all the way around."
+   },
+   "explain": {
+    "fr": "Longueur 5, largeur 3 : 5 + 3 + 5 + 3 = 16 m.",
+    "en": "Length 5, width 3: 5 + 3 + 5 + 3 = 16 m."
+   },
+   "tags": [
+    "grid",
+    "perimeter",
+    "rectangle"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9c0a11db00c3d9f41672"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.perimetre.014",
+   "quest": "construction.perimetre",
+   "skill": "MES-A06",
+   "type": "estimate",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le plancher d'une cabane mesure à peu près 7 m sur 5 m.",
+    "en": "A treehouse floor measures about 7 m by 5 m."
+   },
+   "prompt": {
+    "fr": "Environ combien de mètres mesure son tour ?",
+    "en": "About how many metres is the distance around it?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 22,
+    "max": 26,
+    "exact_for_check": 24,
+    "calc": "2*(7+5)"
+   },
+   "common_errors": [
+    {
+     "value": 35,
+     "misconception": "mis_perimeter_area",
+     "feedback": {
+      "fr": "7 x 5 donne l'aire, pas le tour.",
+      "en": "7 x 5 gives the area, not the distance around."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne 7 et 5, puis double.",
+    "en": "Add 7 and 5, then double."
+   },
+   "explain": {
+    "fr": "7 + 5 = 12 et 12 + 12 = 24. Le tour mesure environ 24 m.",
+    "en": "7 + 5 = 12 and 12 + 12 = 24. The distance around is about 24 m."
+   },
+   "tags": [
+    "estimation",
+    "perimeter"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9c0a11db00c3d9f41672"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.surface.001",
+   "quest": "construction.surface",
+   "skill": "MES-B01b",
+   "type": "visual",
+   "grade": 4,
+   "difficulty": 1,
+   "story": {
+    "fr": "Le mur de la cabane est couvert de carrés. Chaque carré fait 1 m².",
+    "en": "The treehouse wall is covered with squares. Each square is 1 m²."
+   },
+   "prompt": {
+    "fr": "Quelle est l'aire du mur, en m² ?",
+    "en": "What is the area of the wall, in m²?"
+   },
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 3,
+     "cells": [
+      {
+       "x": 0,
+       "y": 0,
+       "label": "m²"
+      },
+      {
+       "x": 1,
+       "y": 0,
+       "label": "m²"
+      },
+      {
+       "x": 2,
+       "y": 0,
+       "label": "m²"
+      },
+      {
+       "x": 3,
+       "y": 0,
+       "label": "m²"
+      },
+      {
+       "x": 0,
+       "y": 1,
+       "label": "m²"
+      },
+      {
+       "x": 1,
+       "y": 1,
+       "label": "m²"
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": "m²"
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": "m²"
+      },
+      {
+       "x": 0,
+       "y": 2,
+       "label": "m²"
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": "m²"
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": "m²"
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": "m²"
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 12,
+    "calc": "4*3"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Il y a 3 rangées de 4 carrés : multiplie.",
+      "en": "There are 3 rows of 4 squares: multiply."
+     }
+    },
+    {
+     "value": 14,
+     "misconception": "mis_perimeter_area",
+     "feedback": {
+      "fr": "14 est le tour du mur, pas son aire.",
+      "en": "14 is the distance around the wall, not its area."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les carrés d'une rangée, puis les rangées.",
+    "en": "Count the squares in one row, then the rows."
+   },
+   "explain": {
+    "fr": "3 rangées de 4 carrés : 4, 8, 12. L'aire est de 12 m².",
+    "en": "3 rows of 4 squares: 4, 8, 12. The area is 12 m²."
+   },
+   "tags": [
+    "area",
+    "unit-squares",
+    "wall"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_b67297c7e78cc1e356d9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.surface.002",
+   "quest": "construction.surface",
+   "skill": "MES-B01b",
+   "type": "visual",
+   "grade": 4,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa peint un mur couvert de carrés. Chaque carré fait 1 m².",
+    "en": "Lea paints a wall covered in squares. Each square is 1 m²."
+   },
+   "prompt": {
+    "fr": "Quelle est l'aire du mur, en m² ?",
+    "en": "What is the area of the wall, in m²?"
+   },
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 6,
+     "rows": 4,
+     "cells": [
+      {
+       "x": 0,
+       "y": 0,
+       "label": "m²"
+      },
+      {
+       "x": 1,
+       "y": 0,
+       "label": "m²"
+      },
+      {
+       "x": 2,
+       "y": 0,
+       "label": "m²"
+      },
+      {
+       "x": 3,
+       "y": 0,
+       "label": "m²"
+      },
+      {
+       "x": 4,
+       "y": 0,
+       "label": "m²"
+      },
+      {
+       "x": 5,
+       "y": 0,
+       "label": "m²"
+      },
+      {
+       "x": 0,
+       "y": 1,
+       "label": "m²"
+      },
+      {
+       "x": 1,
+       "y": 1,
+       "label": "m²"
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": "m²"
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": "m²"
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": "m²"
+      },
+      {
+       "x": 5,
+       "y": 1,
+       "label": "m²"
+      },
+      {
+       "x": 0,
+       "y": 2,
+       "label": "m²"
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": "m²"
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": "m²"
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": "m²"
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": "m²"
+      },
+      {
+       "x": 5,
+       "y": 2,
+       "label": "m²"
+      },
+      {
+       "x": 0,
+       "y": 3,
+       "label": "m²"
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": "m²"
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": "m²"
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": "m²"
+      },
+      {
+       "x": 4,
+       "y": 3,
+       "label": "m²"
+      },
+      {
+       "x": 5,
+       "y": 3,
+       "label": "m²"
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 24,
+    "calc": "6*4"
+   },
+   "common_errors": [
+    {
+     "value": 10,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Il y a 4 rangées de 6 carrés : multiplie.",
+      "en": "There are 4 rows of 6 squares: multiply."
+     }
+    },
+    {
+     "value": 20,
+     "misconception": "mis_perimeter_area",
+     "feedback": {
+      "fr": "20 est le tour du mur, pas son aire.",
+      "en": "20 is the distance around the wall, not its area."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les carrés d'une rangée, puis les rangées.",
+    "en": "Count the squares in one row, then the rows."
+   },
+   "explain": {
+    "fr": "4 rangées de 6 carrés : 6, 12, 18, 24. L'aire est de 24 m².",
+    "en": "4 rows of 6 squares: 6, 12, 18, 24. The area is 24 m²."
+   },
+   "tags": [
+    "area",
+    "unit-squares",
+    "wall"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_b67297c7e78cc1e356d9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.surface.003",
+   "quest": "construction.surface",
+   "skill": "MES-B01b",
+   "type": "numeric",
+   "grade": 4,
+   "difficulty": 1,
+   "story": {
+    "fr": "Un mur est couvert de 5 rangées de 3 carrés d'un mètre carré chacun.",
+    "en": "A wall is covered with 5 rows of 3 squares of one square metre each."
+   },
+   "prompt": {
+    "fr": "Quelle est l'aire du mur, en m² ?",
+    "en": "What is the area of the wall, in m²?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 15,
+    "calc": "5*3"
+   },
+   "common_errors": [
+    {
+     "value": 8,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "5 rangées de 3 carrés : multiplie.",
+      "en": "5 rows of 3 squares: multiply."
+     }
+    },
+    {
+     "value": 16,
+     "misconception": "mis_perimeter_area",
+     "feedback": {
+      "fr": "16 est le tour, pas l'aire.",
+      "en": "16 is the distance around, not the area."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 3 en 3, cinq fois.",
+    "en": "Count by 3s, five times."
+   },
+   "explain": {
+    "fr": "3, 6, 9, 12, 15. L'aire est de 15 m².",
+    "en": "3, 6, 9, 12, 15. The area is 15 m²."
+   },
+   "tags": [
+    "area",
+    "unit-squares"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_b67297c7e78cc1e356d9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.surface.004",
+   "quest": "construction.surface",
+   "skill": "MES-B01b",
+   "type": "numeric",
+   "grade": 4,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le mur du fond de la cabane mesure 8 m de long et 3 m de haut.",
+    "en": "The back wall of the treehouse is 8 m long and 3 m high."
+   },
+   "prompt": {
+    "fr": "Quelle est son aire, en m² ?",
+    "en": "What is its area, in m²?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 24,
+    "calc": "8*3"
+   },
+   "common_errors": [
+    {
+     "value": 22,
+     "misconception": "mis_perimeter_area",
+     "feedback": {
+      "fr": "22 est le tour du mur, pas son aire.",
+      "en": "22 is the distance around the wall, not its area."
+     }
+    },
+    {
+     "value": 11,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Il faut multiplier la longueur par la hauteur.",
+      "en": "You must multiply the length by the height."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Imagine 3 rangées de 8 carrés.",
+    "en": "Picture 3 rows of 8 squares."
+   },
+   "explain": {
+    "fr": "8 x 3 = 24. L'aire est de 24 m².",
+    "en": "8 x 3 = 24. The area is 24 m²."
+   },
+   "tags": [
+    "area",
+    "rectangle",
+    "wall"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_b67297c7e78cc1e356d9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.surface.005",
+   "quest": "construction.surface",
+   "skill": "MES-B01b",
+   "type": "numeric",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un grand mur mesure 9 m de long et 6 m de haut.",
+    "en": "A big wall is 9 m long and 6 m high."
+   },
+   "prompt": {
+    "fr": "Quelle est son aire, en m² ?",
+    "en": "What is its area, in m²?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 54,
+    "calc": "9*6"
+   },
+   "common_errors": [
+    {
+     "value": 30,
+     "misconception": "mis_perimeter_area",
+     "feedback": {
+      "fr": "30 est le tour du mur, pas son aire.",
+      "en": "30 is the distance around the wall, not its area."
+     }
+    },
+    {
+     "value": 15,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Il faut multiplier la longueur par la hauteur.",
+      "en": "You must multiply the length by the height."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à 10 x 6, puis enlève 6.",
+    "en": "Think of 10 x 6, then take away 6."
+   },
+   "explain": {
+    "fr": "10 x 6 = 60 et 60 - 6 = 54. L'aire est de 54 m².",
+    "en": "10 x 6 = 60 and 60 - 6 = 54. The area is 54 m²."
+   },
+   "tags": [
+    "area",
+    "rectangle",
+    "times-9"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_b67297c7e78cc1e356d9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.surface.006",
+   "quest": "construction.surface",
+   "skill": "MES-B01b",
+   "type": "numeric",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un mur est fait de 5 rangées de 12 carrés d'un mètre carré chacun.",
+    "en": "A wall is made of 5 rows of 12 squares of one square metre each."
+   },
+   "prompt": {
+    "fr": "Quelle est l'aire du mur, en m² ?",
+    "en": "What is the area of the wall, in m²?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 60,
+    "calc": "5*12"
+   },
+   "common_errors": [
+    {
+     "value": 17,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "5 rangées de 12 : multiplie.",
+      "en": "5 rows of 12: multiply."
+     }
+    },
+    {
+     "value": 34,
+     "misconception": "mis_perimeter_area",
+     "feedback": {
+      "fr": "34 est le tour, pas l'aire.",
+      "en": "34 is the distance around, not the area."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Fais 5 x 10, puis 5 x 2.",
+    "en": "Do 5 x 10, then 5 x 2."
+   },
+   "explain": {
+    "fr": "5 x 10 = 50 et 5 x 2 = 10. Donc 60 m².",
+    "en": "5 x 10 = 50 and 5 x 2 = 10. So 60 m²."
+   },
+   "tags": [
+    "area",
+    "unit-squares",
+    "multiplication"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_b67297c7e78cc1e356d9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.surface.007",
+   "quest": "construction.surface",
+   "skill": "MES-B01b",
+   "type": "word",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un mur mesure 6 m sur 3 m. Une fenêtre de 2 m² ne sera pas peinte.",
+    "en": "A wall is 6 m by 3 m. A 2 m² window will not be painted."
+   },
+   "prompt": {
+    "fr": "Combien de m² faut-il peindre ?",
+    "en": "How many m² need to be painted?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 16,
+    "calc": "6*3-2"
+   },
+   "common_errors": [
+    {
+     "value": 18,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Enlève aussi la surface de la fenêtre.",
+      "en": "Also take away the area of the window."
+     }
+    },
+    {
+     "value": 20,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "La fenêtre n'est pas peinte : on enlève.",
+      "en": "The window is not painted, so we take it away."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Trouve d'abord l'aire du mur entier.",
+    "en": "First find the area of the whole wall."
+   },
+   "explain": {
+    "fr": "6 x 3 = 18 m². Puis 18 - 2 = 16 m² à peindre.",
+    "en": "6 x 3 = 18 m². Then 18 - 2 = 16 m² to paint."
+   },
+   "tags": [
+    "word-problem",
+    "area",
+    "two-step"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_b67297c7e78cc1e356d9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.surface.008",
+   "quest": "construction.surface",
+   "skill": "MES-B01b",
+   "type": "word",
+   "grade": 4,
+   "difficulty": 4,
+   "story": {
+    "fr": "Noah peint deux murs. Le premier mesure 5 m sur 2 m. Le second mesure 4 m sur 3 m.",
+    "en": "Noah paints two walls. The first is 5 m by 2 m. The second is 4 m by 3 m."
+   },
+   "prompt": {
+    "fr": "Quelle est l'aire des deux murs ensemble, en m² ?",
+    "en": "What is the area of the two walls together, in m²?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 22,
+    "calc": "5*2+4*3"
+   },
+   "common_errors": [
+    {
+     "value": 14,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Il faut multiplier pour chaque mur.",
+      "en": "You must multiply for each wall."
+     }
+    },
+    {
+     "value": 12,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié un des deux murs.",
+      "en": "You left out one of the two walls."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Cherche l'aire de chaque mur, puis additionne.",
+    "en": "Find the area of each wall, then add."
+   },
+   "explain": {
+    "fr": "5 x 2 = 10 m² et 4 x 3 = 12 m². Ensemble : 22 m².",
+    "en": "5 x 2 = 10 m² and 4 x 3 = 12 m². Together: 22 m²."
+   },
+   "tags": [
+    "word-problem",
+    "area",
+    "two-step"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_b67297c7e78cc1e356d9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.surface.009",
+   "quest": "construction.surface",
+   "skill": "MES-B01b",
+   "type": "choice",
+   "grade": 4,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa veut savoir combien de peinture il faut pour un mur.",
+    "en": "Lea wants to know how much paint a wall needs."
+   },
+   "prompt": {
+    "fr": "Que doit-elle trouver ?",
+    "en": "What must she find?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "l'aire du mur",
+      "en": "the area of the wall"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "le périmètre du mur",
+      "en": "the perimeter of the wall"
+     },
+     "misconception": "mis_perimeter_area"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "la hauteur du toit",
+      "en": "the height of the roof"
+     },
+     "misconception": "mis_unit_confusion"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "La peinture couvre toute la surface du mur.",
+    "en": "Paint covers the whole surface of the wall."
+   },
+   "explain": {
+    "fr": "Pour couvrir une surface, on cherche son aire.",
+    "en": "To cover a surface, we find its area."
+   },
+   "tags": [
+    "area",
+    "vocabulary"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_b67297c7e78cc1e356d9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.surface.010",
+   "quest": "construction.surface",
+   "skill": "MES-B01b",
+   "type": "choice",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un menuisier écrit l'aire d'un mur sur son plan.",
+    "en": "A carpenter writes the area of a wall on his plan."
+   },
+   "prompt": {
+    "fr": "Quelle unité convient pour l'aire ?",
+    "en": "Which unit suits area?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "le m²",
+      "en": "the m²"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "le m",
+      "en": "the m"
+     },
+     "misconception": "mis_unit_confusion"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "le m³",
+      "en": "the m³"
+     },
+     "misconception": "mis_unit_confusion"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "L'aire compte des carrés de 1 m sur 1 m.",
+    "en": "Area counts squares of 1 m by 1 m."
+   },
+   "explain": {
+    "fr": "L'aire se mesure en mètres carrés, notés m².",
+    "en": "Area is measured in square metres, written m²."
+   },
+   "tags": [
+    "area",
+    "units"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_b67297c7e78cc1e356d9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.surface.011",
+   "quest": "construction.surface",
+   "skill": "MES-B01b",
+   "type": "truefalse",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un mur mesure 4 m sur 5 m.",
+    "en": "A wall is 4 m by 5 m."
+   },
+   "prompt": {
+    "fr": "Théo dit que son aire est 18 m². A-t-il raison ?",
+    "en": "Theo says its area is 18 m². Is he right?"
+   },
+   "math_text": "A = 18 m²",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_perimeter_area"
+   },
+   "hint": {
+    "fr": "Multiplie la longueur par la hauteur.",
+    "en": "Multiply the length by the height."
+   },
+   "explain": {
+    "fr": "4 x 5 = 20 m². Le nombre 18 est le tour du mur.",
+    "en": "4 x 5 = 20 m². The number 18 is the distance around the wall."
+   },
+   "tags": [
+    "true-false",
+    "area",
+    "area-vs-perimeter"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_b67297c7e78cc1e356d9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.surface.012",
+   "quest": "construction.surface",
+   "skill": "MES-B01b",
+   "type": "order",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Quatre murs rectangulaires ont des mesures différentes.",
+    "en": "Four rectangular walls have different measurements."
+   },
+   "prompt": {
+    "fr": "Range-les, de la plus petite aire à la plus grande.",
+    "en": "Put them in order, from the smallest area to the biggest."
+   },
+   "items": [
+    {
+     "id": "i1",
+     "text": {
+      "fr": "3 m x 8 m",
+      "en": "3 m x 8 m"
+     },
+     "key": "24"
+    },
+    {
+     "id": "i2",
+     "text": {
+      "fr": "5 m x 6 m",
+      "en": "5 m x 6 m"
+     },
+     "key": "30"
+    },
+    {
+     "id": "i3",
+     "text": {
+      "fr": "4 m x 4 m",
+      "en": "4 m x 4 m"
+     },
+     "key": "16"
+    },
+    {
+     "id": "i4",
+     "text": {
+      "fr": "7 m x 2 m",
+      "en": "7 m x 2 m"
+     },
+     "key": "14"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "i4",
+     "i3",
+     "i1",
+     "i2"
+    ],
+    "by": "asc",
+    "misconception": "mis_perimeter_area"
+   },
+   "hint": {
+    "fr": "Calcule l'aire de chaque mur.",
+    "en": "Work out the area of each wall."
+   },
+   "explain": {
+    "fr": "Les aires sont 14, 16, 24 et 30 m².",
+    "en": "The areas are 14, 16, 24 and 30 m²."
+   },
+   "tags": [
+    "ordering",
+    "area"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_b67297c7e78cc1e356d9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.surface.013",
+   "quest": "construction.surface",
+   "skill": "MES-B01b",
+   "type": "match",
+   "grade": 4,
+   "difficulty": 2,
+   "story": {
+    "fr": "Samuel relie des murs avec leur aire.",
+    "en": "Samuel matches walls with their area."
+   },
+   "prompt": {
+    "fr": "Relie chaque mur à son aire.",
+    "en": "Match each wall to its area."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "2 m x 5 m",
+       "en": "2 m x 5 m"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "4 m x 4 m",
+       "en": "4 m x 4 m"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "3 m x 9 m",
+       "en": "3 m x 9 m"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "6 m x 5 m",
+       "en": "6 m x 5 m"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "16 m²",
+       "en": "16 m²"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "27 m²",
+       "en": "27 m²"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "30 m²",
+       "en": "30 m²"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "10 m²",
+       "en": "10 m²"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ],
+     [
+      "l4",
+      "r4"
+     ]
+    ],
+    "misconception": "mis_perimeter_area"
+   },
+   "hint": {
+    "fr": "Multiplie les deux mesures de chaque mur.",
+    "en": "Multiply the two measurements of each wall."
+   },
+   "explain": {
+    "fr": "Les aires sont 10, 16, 27 et 30 m².",
+    "en": "The areas are 10, 16, 27 and 30 m²."
+   },
+   "tags": [
+    "matching",
+    "area"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_b67297c7e78cc1e356d9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.surface.014",
+   "quest": "construction.surface",
+   "skill": "MES-B01b",
+   "type": "estimate",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un grand mur de la cabane mesure à peu près 11 m sur 4 m.",
+    "en": "A big treehouse wall is about 11 m by 4 m."
+   },
+   "prompt": {
+    "fr": "Environ combien de m² de peinture couvre-t-il ?",
+    "en": "About how many m² does it need painting?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 40,
+    "max": 48,
+    "exact_for_check": 44,
+    "calc": "11*4"
+   },
+   "common_errors": [
+    {
+     "value": 15,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "11 m sur 4 m : multiplie.",
+      "en": "11 m by 4 m: multiply."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à 10 x 4, puis ajoute 4.",
+    "en": "Think of 10 x 4, then add 4."
+   },
+   "explain": {
+    "fr": "10 x 4 = 40 et 4 de plus : environ 44 m².",
+    "en": "10 x 4 = 40 and 4 more: about 44 m²."
+   },
+   "tags": [
+    "estimation",
+    "area"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_b67297c7e78cc1e356d9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.regles.001",
+   "quest": "construction.regles",
+   "skill": "MES-A04a",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa mesure un clou avec sa règle. Le début du clou est à 0 et sa pointe est à la flèche.",
+    "en": "Lea measures a nail with her ruler. The nail starts at 0 and its tip is at the arrow."
+   },
+   "prompt": {
+    "fr": "Combien de centimètres le clou mesure-t-il ?",
+    "en": "How many centimetres long is the nail?"
+   },
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 0,
+     "max": 15,
+     "step": 1,
+     "arrow": 8
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 8,
+    "calc": "8"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Commence à compter à partir de 0, pas de 1.",
+      "en": "Close! Start counting from 0, not 1."
+     }
+    },
+    {
+     "value": 9,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Un trait de trop : arrête-toi à la flèche.",
+      "en": "One mark too many: stop at the arrow."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les petits traits depuis 0.",
+    "en": "Count the small marks from 0."
+   },
+   "explain": {
+    "fr": "Depuis 0, il y a 8 traits jusqu'à la flèche : 8 cm.",
+    "en": "From 0 there are 8 marks up to the arrow: 8 cm."
+   },
+   "tags": [
+    "ruler",
+    "centimetre",
+    "measure"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_874ba44c52745cef96ce"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.regles.002",
+   "quest": "construction.regles",
+   "skill": "MES-A04a",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah mesure une vis avec la règle. Le début de la vis est à 0.",
+    "en": "Noah measures a screw with the ruler. The screw starts at 0."
+   },
+   "prompt": {
+    "fr": "Combien de centimètres la vis mesure-t-elle ?",
+    "en": "How many centimetres long is the screw?"
+   },
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 0,
+     "max": 20,
+     "step": 1,
+     "arrow": 13
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 13,
+    "calc": "13"
+   },
+   "common_errors": [
+    {
+     "value": 12,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Commence à compter à partir de 0.",
+      "en": "Close! Start counting from 0."
+     }
+    },
+    {
+     "value": 14,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Un trait de trop.",
+      "en": "One mark too many."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 5 en 5, puis les petits traits.",
+    "en": "Count by 5s, then the small marks."
+   },
+   "explain": {
+    "fr": "10 + 3 = 13. La vis mesure 13 cm.",
+    "en": "10 + 3 = 13. The screw is 13 cm long."
+   },
+   "tags": [
+    "ruler",
+    "centimetre",
+    "measure"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_874ba44c52745cef96ce"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.regles.003",
+   "quest": "construction.regles",
+   "skill": "MES-A04a",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Sur la règle de Léa, un décimètre est marqué.",
+    "en": "On Lea's ruler, one decimetre is marked."
+   },
+   "prompt": {
+    "fr": "Combien de centimètres y a-t-il dans 1 décimètre ?",
+    "en": "How many centimetres are in 1 decimetre?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 10,
+    "calc": "10"
+   },
+   "common_errors": [
+    {
+     "value": 1,
+     "misconception": "mis_unit_confusion",
+     "feedback": {
+      "fr": "Un décimètre est plus long qu'un centimètre.",
+      "en": "A decimetre is longer than a centimetre."
+     }
+    },
+    {
+     "value": 100,
+     "misconception": "mis_unit_confusion",
+     "feedback": {
+      "fr": "100 cm font 1 mètre.",
+      "en": "100 cm make 1 metre."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les centimètres jusqu'au premier gros trait.",
+    "en": "Count the centimetres up to the first big mark."
+   },
+   "explain": {
+    "fr": "1 dm = 10 cm. Un décimètre contient dix centimètres.",
+    "en": "1 dm = 10 cm. A decimetre holds ten centimetres."
+   },
+   "tags": [
+    "ruler",
+    "decimetre",
+    "conversion"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_874ba44c52745cef96ce"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.regles.004",
+   "quest": "construction.regles",
+   "skill": "MES-A04a",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Une planche de la cabane mesure 2 décimètres de long.",
+    "en": "A treehouse board is 2 decimetres long."
+   },
+   "prompt": {
+    "fr": "Combien de centimètres mesure-t-elle ?",
+    "en": "How many centimetres long is it?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 20,
+    "calc": "2*10"
+   },
+   "common_errors": [
+    {
+     "value": 2,
+     "misconception": "mis_unit_ignored",
+     "feedback": {
+      "fr": "Il faut changer les décimètres en centimètres.",
+      "en": "You need to change decimetres into centimetres."
+     }
+    },
+    {
+     "value": 200,
+     "misconception": "mis_unit_confusion",
+     "feedback": {
+      "fr": "200 cm font 2 mètres.",
+      "en": "200 cm make 2 metres."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Un décimètre vaut 10 cm. Il y en a deux.",
+    "en": "A decimetre is 10 cm. There are two."
+   },
+   "explain": {
+    "fr": "2 x 10 = 20. La planche mesure 20 cm.",
+    "en": "2 x 10 = 20. The board is 20 cm long."
+   },
+   "tags": [
+    "ruler",
+    "decimetre",
+    "conversion"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_874ba44c52745cef96ce"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.regles.005",
+   "quest": "construction.regles",
+   "skill": "MES-A04a",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Une baguette de bois mesure 30 cm.",
+    "en": "A wooden stick is 30 cm long."
+   },
+   "prompt": {
+    "fr": "Combien de décimètres cela fait-il ?",
+    "en": "How many decimetres is that?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3,
+    "calc": "30/10"
+   },
+   "common_errors": [
+    {
+     "value": 30,
+     "misconception": "mis_unit_ignored",
+     "feedback": {
+      "fr": "Il faut changer les centimètres en décimètres.",
+      "en": "You need to change centimetres into decimetres."
+     }
+    },
+    {
+     "value": 10,
+     "misconception": "mis_unit_confusion",
+     "feedback": {
+      "fr": "10 est le nombre de cm dans un dm.",
+      "en": "10 is the number of cm in a dm."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les groupes de 10 cm dans la baguette.",
+    "en": "Count the groups of 10 cm in the stick."
+   },
+   "explain": {
+    "fr": "10 cm, 20 cm, 30 cm : 3 groupes. La baguette mesure 3 dm.",
+    "en": "10 cm, 20 cm, 30 cm: 3 groups. The stick is 3 dm long."
+   },
+   "tags": [
+    "ruler",
+    "decimetre",
+    "conversion"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_874ba44c52745cef96ce"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.regles.006",
+   "quest": "construction.regles",
+   "skill": "MES-A04a",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Omar met deux planches bout à bout. L'une fait 15 cm et l'autre 12 cm.",
+    "en": "Omar puts two boards end to end. One is 15 cm and the other 12 cm."
+   },
+   "prompt": {
+    "fr": "Quelle est la longueur totale, en cm ?",
+    "en": "What is the total length, in cm?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 27,
+    "calc": "15+12"
+   },
+   "common_errors": [
+    {
+     "value": 3,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On met les planches bout à bout : on additionne.",
+      "en": "The boards go end to end, so we add."
+     }
+    },
+    {
+     "value": 26,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Refais l'addition des unités.",
+      "en": "Close! Redo the ones."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne d'abord les dizaines, puis les unités.",
+    "en": "Add the tens first, then the ones."
+   },
+   "explain": {
+    "fr": "15 + 12 = 27. Les planches font 27 cm.",
+    "en": "15 + 12 = 27. The boards are 27 cm long."
+   },
+   "tags": [
+    "word-problem",
+    "centimetre",
+    "add"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_7ffb7673e08da5ff9380"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.regles.007",
+   "quest": "construction.regles",
+   "skill": "MES-A04a",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un clou mesure 6 cm et un tournevis mesure 15 cm.",
+    "en": "A nail is 6 cm long and a screwdriver is 15 cm long."
+   },
+   "prompt": {
+    "fr": "Le tournevis est plus long de combien de cm ?",
+    "en": "By how many cm is the screwdriver longer?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 9,
+    "calc": "15-6"
+   },
+   "common_errors": [
+    {
+     "value": 21,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On compare les deux longueurs : on soustrait.",
+      "en": "We compare the two lengths, so we subtract."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Compte de 6 jusqu'à 15.",
+      "en": "Close! Count from 6 up to 15."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Avance de 6 jusqu'à 15.",
+    "en": "Count up from 6 to 15."
+   },
+   "explain": {
+    "fr": "6 + 4 = 10, puis 10 + 5 = 15. La différence est 4 + 5 = 9 cm.",
+    "en": "6 + 4 = 10, then 10 + 5 = 15. The difference is 4 + 5 = 9 cm."
+   },
+   "tags": [
+    "word-problem",
+    "centimetre",
+    "compare"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_a021c0ea3c9525e9acbf"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.regles.008",
+   "quest": "construction.regles",
+   "skill": "MES-A04a",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa va mesurer un crayon avec sa règle.",
+    "en": "Lea is going to measure a pencil with her ruler."
+   },
+   "prompt": {
+    "fr": "Quelle unité convient le mieux ?",
+    "en": "Which unit suits best?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "le centimètre",
+      "en": "the centimetre"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "le mètre",
+      "en": "the metre"
+     },
+     "misconception": "mis_unit_confusion"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "le kilomètre",
+      "en": "the kilometre"
+     },
+     "random": true
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Un crayon est petit.",
+    "en": "A pencil is small."
+   },
+   "explain": {
+    "fr": "Pour un petit objet, on mesure en centimètres.",
+    "en": "For a small object, we measure in centimetres."
+   },
+   "tags": [
+    "ruler",
+    "choose-the-unit"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_874ba44c52745cef96ce"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.regles.009",
+   "quest": "construction.regles",
+   "skill": "MES-A04a",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Pour bien mesurer, on place le début de l'objet au bon endroit.",
+    "en": "To measure well, we put the start of the object in the right spot."
+   },
+   "prompt": {
+    "fr": "Où doit-on le placer ?",
+    "en": "Where should it go?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "sur le 0",
+      "en": "on the 0"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "sur le 1",
+      "en": "on the 1"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "sur le 10",
+      "en": "on the 10"
+     },
+     "misconception": "mis_place_value"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "La mesure commence au début de la règle.",
+    "en": "The measure starts at the beginning of the ruler."
+   },
+   "explain": {
+    "fr": "On place le début de l'objet sur le 0 de la règle.",
+    "en": "We place the start of the object on the ruler's 0."
+   },
+   "tags": [
+    "ruler",
+    "how-to-measure"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_874ba44c52745cef96ce"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.regles.010",
+   "quest": "construction.regles",
+   "skill": "MES-A04a",
+   "type": "truefalse",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Un crayon neuf mesure 15 cm de long.",
+    "en": "A new pencil is 15 cm long."
+   },
+   "prompt": {
+    "fr": "Mia dit qu'il mesure 15 dm. A-t-elle raison ?",
+    "en": "Mia says it is 15 dm long. Is she right?"
+   },
+   "math_text": "15 cm = 15 dm",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_unit_confusion"
+   },
+   "hint": {
+    "fr": "Un décimètre est long comme dix centimètres.",
+    "en": "A decimetre is as long as ten centimetres."
+   },
+   "explain": {
+    "fr": "15 dm feraient plus d'un mètre et demi. Le crayon mesure 15 cm.",
+    "en": "15 dm would be more than a metre and a half. The pencil is 15 cm long."
+   },
+   "tags": [
+    "true-false",
+    "units",
+    "centimetre"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_874ba44c52745cef96ce"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.regles.011",
+   "quest": "construction.regles",
+   "skill": "MES-A04a",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Quatre vis ont des longueurs notées avec des unités différentes.",
+    "en": "Four screws have lengths written in different units."
+   },
+   "prompt": {
+    "fr": "Range-les, de la plus courte à la plus longue.",
+    "en": "Put them in order, from the shortest to the longest."
+   },
+   "items": [
+    {
+     "id": "i1",
+     "text": {
+      "fr": "5 cm",
+      "en": "5 cm"
+     },
+     "key": "5"
+    },
+    {
+     "id": "i2",
+     "text": {
+      "fr": "1 dm",
+      "en": "1 dm"
+     },
+     "key": "10"
+    },
+    {
+     "id": "i3",
+     "text": {
+      "fr": "12 cm",
+      "en": "12 cm"
+     },
+     "key": "12"
+    },
+    {
+     "id": "i4",
+     "text": {
+      "fr": "2 dm",
+      "en": "2 dm"
+     },
+     "key": "20"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "i1",
+     "i2",
+     "i3",
+     "i4"
+    ],
+    "by": "asc",
+    "misconception": "mis_unit_confusion"
+   },
+   "hint": {
+    "fr": "Change tout en centimètres.",
+    "en": "Change everything into centimetres."
+   },
+   "explain": {
+    "fr": "En cm : 5, 10, 12 et 20.",
+    "en": "In cm: 5, 10, 12 and 20."
+   },
+   "tags": [
+    "ordering",
+    "units"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_874ba44c52745cef96ce"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.regles.012",
+   "quest": "construction.regles",
+   "skill": "MES-A04a",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Zoé relie des mesures de sa règle d'atelier.",
+    "en": "Zoe matches measures on her workshop ruler."
+   },
+   "prompt": {
+    "fr": "Relie chaque mesure à son égale.",
+    "en": "Match each measure to its equal."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "1 dm",
+       "en": "1 dm"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "3 dm",
+       "en": "3 dm"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "2 dm",
+       "en": "2 dm"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "5 dm",
+       "en": "5 dm"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "30 cm",
+       "en": "30 cm"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "20 cm",
+       "en": "20 cm"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "50 cm",
+       "en": "50 cm"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "10 cm",
+       "en": "10 cm"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ],
+     [
+      "l4",
+      "r4"
+     ]
+    ],
+    "misconception": "mis_unit_confusion"
+   },
+   "hint": {
+    "fr": "1 dm vaut 10 cm.",
+    "en": "1 dm is worth 10 cm."
+   },
+   "explain": {
+    "fr": "Voici les égalités. 1 dm = 10 cm. 3 dm = 30 cm. 2 dm = 20 cm. 5 dm = 50 cm.",
+    "en": "Here are the equalities. 1 dm = 10 cm. 3 dm = 30 cm. 2 dm = 20 cm. 5 dm = 50 cm."
+   },
+   "tags": [
+    "matching",
+    "decimetre",
+    "centimetre"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_874ba44c52745cef96ce"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "construction.regles.013",
+   "quest": "construction.regles",
+   "skill": "MES-A04a",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Louis veut deviner la longueur d'un crayon neuf avant de le mesurer.",
+    "en": "Louis wants to guess the length of a new pencil before measuring it."
+   },
+   "prompt": {
+    "fr": "Environ combien mesure-t-il ?",
+    "en": "About how long is it?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "environ 18 cm",
+      "en": "about 18 cm"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "environ 2 cm",
+      "en": "about 2 cm"
+     },
+     "misconception": "mis_estimate_rounding"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "environ 100 cm",
+      "en": "about 100 cm"
+     },
+     "misconception": "mis_unit_confusion"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "environ 5 dm",
+      "en": "about 5 dm"
+     },
+     "misconception": "mis_unit_confusion"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Compare avec la longueur de ta main.",
+    "en": "Compare with the length of your hand."
+   },
+   "explain": {
+    "fr": "Un crayon neuf mesure à peu près 18 cm, moins de 2 dm.",
+    "en": "A new pencil is about 18 cm long, less than 2 dm."
+   },
+   "tags": [
+    "estimation",
+    "centimetre",
+    "measure"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_874ba44c52745cef96ce"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  }
+ ]
+}
