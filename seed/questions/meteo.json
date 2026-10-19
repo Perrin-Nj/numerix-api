@@ -1,0 +1,3695 @@
+{
+ "world": "meteo",
+ "schema": 1,
+ "questions": [
+  {
+   "id": "meteo.pluie.001",
+   "quest": "meteo.pluie",
+   "skill": "STA-04a",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa mesure la pluie avec un pot. Lundi, il tombe 6 mm. Mardi, il tombe 3 mm.",
+    "en": "Lea measures rain with a jar. On Monday, 6 mm falls. On Tuesday, 3 mm falls."
+   },
+   "prompt": {
+    "fr": "Combien de mm de pluie en tout ?",
+    "en": "How many mm of rain in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 9,
+    "calc": "6+3"
+   },
+   "common_errors": [
+    {
+     "value": 3,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Les deux jours vont ensemble : on additionne.",
+      "en": "Both days go together, so we add."
+     }
+    },
+    {
+     "value": 10,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte avec soin.",
+      "en": "Close! Count again carefully."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Réunis les deux jours de pluie.",
+    "en": "Put the two rainy days together."
+   },
+   "explain": {
+    "fr": "6 + 3 = 9. Il est tombé 9 mm de pluie.",
+    "en": "6 + 3 = 9. It rained 9 mm."
+   },
+   "tags": [
+    "rain",
+    "add-within-20",
+    "mm"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_5a2783efe63826d8fbf8"
+    },
+    {
+     "role": "object",
+     "asset": "a_75dd1e6fc5f6b92cbc22"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.pluie.002",
+   "quest": "meteo.pluie",
+   "skill": "STA-04a",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa a dessiné le diagramme à bandes de la pluie de la semaine.",
+    "en": "Lea drew a bar chart of the week's rain."
+   },
+   "prompt": {
+    "fr": "Combien de mm de pluie mardi ?",
+    "en": "How many mm of rain on Tuesday?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Pluie en mm",
+      "en": "Rain in mm"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "lundi",
+        "en": "Monday"
+       },
+       "value": 4
+      },
+      {
+       "label": {
+        "fr": "mardi",
+        "en": "Tuesday"
+       },
+       "value": 7
+      },
+      {
+       "label": {
+        "fr": "mercredi",
+        "en": "Wednesday"
+       },
+       "value": 3
+      },
+      {
+       "label": {
+        "fr": "jeudi",
+        "en": "Thursday"
+       },
+       "value": 5
+      }
+     ],
+     "max": 8
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 7,
+    "calc": "7"
+   },
+   "common_errors": [
+    {
+     "value": 4,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as lu la barre de lundi. Cherche mardi.",
+      "en": "You read Monday's bar. Look for Tuesday."
+     }
+    },
+    {
+     "value": 5,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as lu la barre de jeudi. Cherche mardi.",
+      "en": "You read Thursday's bar. Look for Tuesday."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Trouve la barre de mardi, puis regarde sa hauteur.",
+    "en": "Find Tuesday's bar, then look at its height."
+   },
+   "explain": {
+    "fr": "La barre de mardi monte jusqu'à 7 mm.",
+    "en": "Tuesday's bar goes up to 7 mm."
+   },
+   "tags": [
+    "bar-chart",
+    "rain"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_5a2783efe63826d8fbf8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.pluie.003",
+   "quest": "meteo.pluie",
+   "skill": "STA-04a",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Lundi, il tombe 9 mm de pluie. Mardi, il en tombe 4 mm.",
+    "en": "On Monday, 9 mm of rain falls. On Tuesday, 4 mm falls."
+   },
+   "prompt": {
+    "fr": "Combien de mm de plus lundi que mardi ?",
+    "en": "How many more mm on Monday than on Tuesday?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "13",
+      "en": "13"
+     },
+     "misconception": "mis_add_instead_of_subtract"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "5",
+      "en": "5"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "6",
+      "en": "6"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "4",
+      "en": "4"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b",
+    "calc_choice": {
+     "b": "9-4"
+    }
+   },
+   "hint": {
+    "fr": "Compare les deux barres : on cherche l'écart.",
+    "en": "Compare the two bars: find the gap."
+   },
+   "explain": {
+    "fr": "9 - 4 = 5. Lundi a 5 mm de plus.",
+    "en": "9 - 4 = 5. Monday has 5 mm more."
+   },
+   "tags": [
+    "rain",
+    "compare",
+    "subtract"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_5a2783efe63826d8fbf8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.pluie.004",
+   "quest": "meteo.pluie",
+   "skill": "STA-04a",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Sur le papier, un carreau vaut 2 mm de pluie.",
+    "en": "On the paper, one square is worth 2 mm of rain."
+   },
+   "prompt": {
+    "fr": "Pour 8 mm de pluie, combien de carreaux colorier ?",
+    "en": "For 8 mm of rain, how many squares do you colour?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "16",
+      "en": "16"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "8",
+      "en": "8"
+     },
+     "misconception": "mis_read_scale"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "4",
+      "en": "4"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "6",
+      "en": "6"
+     },
+     "misconception": "mis_read_scale"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "8/2"
+    }
+   },
+   "hint": {
+    "fr": "Combien de fois 2 mm entre-t-il dans 8 mm ?",
+    "en": "How many times does 2 mm fit in 8 mm?"
+   },
+   "explain": {
+    "fr": "Chaque carreau vaut 2 mm. 8 / 2 = 4 carreaux.",
+    "en": "Each square is 2 mm. 8 / 2 = 4 squares."
+   },
+   "tags": [
+    "bar-chart",
+    "scale",
+    "rain"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_75dd1e6fc5f6b92cbc22"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.pluie.005",
+   "quest": "meteo.pluie",
+   "skill": "STA-04a",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah vide son pot deux fois. Le matin : 6 mm. L'après-midi : 8 mm.",
+    "en": "Noah empties his jar twice. Morning: 6 mm. Afternoon: 8 mm."
+   },
+   "prompt": {
+    "fr": "Combien de mm de pluie dans la journée ?",
+    "en": "How many mm of rain during the day?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "2",
+      "en": "2"
+     },
+     "misconception": "mis_subtract_instead_of_add"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "13",
+      "en": "13"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "41",
+      "en": "41"
+     },
+     "misconception": "mis_digit_swap"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "14",
+      "en": "14"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d",
+    "calc_choice": {
+     "d": "6+8"
+    }
+   },
+   "hint": {
+    "fr": "Additionne le matin et l'après-midi.",
+    "en": "Add the morning and the afternoon."
+   },
+   "explain": {
+    "fr": "6 + 8 = 6 + 4 + 4 = 14. Il est tombé 14 mm.",
+    "en": "6 + 8 = 6 + 4 + 4 = 14. It rained 14 mm."
+   },
+   "tags": [
+    "rain",
+    "add-within-20"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_5a2783efe63826d8fbf8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.pluie.006",
+   "quest": "meteo.pluie",
+   "skill": "STA-04a",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Il pleut 5 mm mercredi, 4 mm jeudi et 6 mm vendredi.",
+    "en": "It rains 5 mm Wednesday, 4 mm Thursday and 6 mm Friday."
+   },
+   "prompt": {
+    "fr": "Combien de mm de pluie en tout ?",
+    "en": "How many mm of rain in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 15,
+    "calc": "5+4+6"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié vendredi.",
+      "en": "You forgot Friday."
+     }
+    },
+    {
+     "value": 14,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Refais l'addition.",
+      "en": "Close! Do the sum again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne deux jours, puis ajoute le troisième.",
+    "en": "Add two days, then add the third."
+   },
+   "explain": {
+    "fr": "5 + 4 = 9, puis 9 + 6 = 15.",
+    "en": "5 + 4 = 9, then 9 + 6 = 15."
+   },
+   "tags": [
+    "word-problem",
+    "rain",
+    "add-three"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_5a2783efe63826d8fbf8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.pluie.007",
+   "quest": "meteo.pluie",
+   "skill": "STA-04a",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un pot peut contenir 12 mm de pluie. On en a déjà vidé 5 mm.",
+    "en": "A jar holds 12 mm of rain. We already poured out 5 mm."
+   },
+   "prompt": {
+    "fr": "Combien de mm de pluie reste-t-il dans le pot ?",
+    "en": "How many mm of rain are left in the jar?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 7,
+    "calc": "12-5"
+   },
+   "common_errors": [
+    {
+     "value": 17,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On enlève de la pluie : on soustrait.",
+      "en": "We take rain away, so we subtract."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte à reculons.",
+      "en": "Close! Count back again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pars de 12 et recule de 5.",
+    "en": "Start at 12 and count back 5."
+   },
+   "explain": {
+    "fr": "12 - 5 = 7. Il reste 7 mm.",
+    "en": "12 - 5 = 7. 7 mm are left."
+   },
+   "tags": [
+    "word-problem",
+    "rain",
+    "subtract"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_2c5f9e611931a759211f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.pluie.008",
+   "quest": "meteo.pluie",
+   "skill": "STA-04a",
+   "type": "truefalse",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa compare deux barres du diagramme.",
+    "en": "Lea compares two bars on the chart."
+   },
+   "prompt": {
+    "fr": "Vrai ou faux : 5 mm de pluie, c'est plus que 8 mm.",
+    "en": "True or false: 5 mm of rain is more than 8 mm."
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Compare 5 et 8 sur la droite des nombres.",
+    "en": "Compare 5 and 8 on the number line."
+   },
+   "explain": {
+    "fr": "5 est plus petit que 8. La barre de 5 mm est plus courte.",
+    "en": "5 is smaller than 8. The 5 mm bar is shorter."
+   },
+   "tags": [
+    "compare",
+    "rain"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_75dd1e6fc5f6b92cbc22"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.pluie.009",
+   "quest": "meteo.pluie",
+   "skill": "STA-04a",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa range les journées de la semaine selon la pluie.",
+    "en": "Lea sorts the days of the week by rain."
+   },
+   "prompt": {
+    "fr": "Range les journées de la moins pluvieuse à la plus pluvieuse.",
+    "en": "Put the days in order, from least rainy to most rainy."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "samedi, 6 mm",
+      "en": "Saturday, 6 mm"
+     },
+     "key": "6"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "dimanche, 2 mm",
+      "en": "Sunday, 2 mm"
+     },
+     "key": "2"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "vendredi, 9 mm",
+      "en": "Friday, 9 mm"
+     },
+     "key": "9"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "jeudi, 4 mm",
+      "en": "Thursday, 4 mm"
+     },
+     "key": "4"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "d",
+     "a",
+     "c"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Cherche d'abord le plus petit nombre de mm.",
+    "en": "First find the smallest number of mm."
+   },
+   "explain": {
+    "fr": "2, 4, 6, 9 : du plus petit au plus grand nombre de mm.",
+    "en": "2, 4, 6, 9: from the smallest to the biggest number of mm."
+   },
+   "tags": [
+    "ordering",
+    "rain"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_5a2783efe63826d8fbf8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.pluie.010",
+   "quest": "meteo.pluie",
+   "skill": "STA-04a",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un carreau vaut 2 mm de pluie. Léa colorie des barres.",
+    "en": "One square is worth 2 mm of rain. Lea colours bars."
+   },
+   "prompt": {
+    "fr": "Relie chaque barre à la pluie qu'elle montre.",
+    "en": "Match each bar to the rain it shows."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "3 carreaux",
+       "en": "3 squares"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "5 carreaux",
+       "en": "5 squares"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "4 carreaux",
+       "en": "4 squares"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "10 mm",
+       "en": "10 mm"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "8 mm",
+       "en": "8 mm"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "6 mm",
+       "en": "6 mm"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ]
+    ],
+    "misconception": "mis_read_scale"
+   },
+   "hint": {
+    "fr": "Compte par bonds de 2.",
+    "en": "Count by twos."
+   },
+   "explain": {
+    "fr": "Un carreau vaut 2 mm. 3 carreaux font 6 mm, 4 font 8 mm et 5 font 10 mm.",
+    "en": "One square is 2 mm. 3 squares make 6 mm, 4 make 8 mm and 5 make 10 mm."
+   },
+   "tags": [
+    "bar-chart",
+    "scale",
+    "skip-count"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_75dd1e6fc5f6b92cbc22"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.pluie.011",
+   "quest": "meteo.pluie",
+   "skill": "STA-04a",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Il a plu 19 mm samedi et 31 mm dimanche.",
+    "en": "It rained 19 mm on Saturday and 31 mm on Sunday."
+   },
+   "prompt": {
+    "fr": "Environ combien de mm de pluie en tout ?",
+    "en": "About how many mm of rain in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 45,
+    "max": 55,
+    "exact_for_check": 50,
+    "calc": "19+31"
+   },
+   "common_errors": [
+    {
+     "value": 40,
+     "misconception": "mis_estimate_rounding",
+     "feedback": {
+      "fr": "Tu as arrondi à la mauvaise dizaine.",
+      "en": "You rounded to the wrong ten."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis chaque nombre à la dizaine.",
+    "en": "Round each number to the nearest ten."
+   },
+   "explain": {
+    "fr": "19 est proche de 20 et 31 est proche de 30. 20 + 30 = 50.",
+    "en": "19 is close to 20 and 31 is close to 30. 20 + 30 = 50."
+   },
+   "tags": [
+    "estimation",
+    "rounding",
+    "rain"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_5a2783efe63826d8fbf8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.pluie.012",
+   "quest": "meteo.pluie",
+   "skill": "STA-04a",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 4,
+   "story": {
+    "fr": "Un carreau vaut 5 mm de pluie. La barre de lundi a 4 carreaux.",
+    "en": "One square is worth 5 mm of rain. Monday's bar has 4 squares."
+   },
+   "prompt": {
+    "fr": "Combien de mm de pluie lundi ?",
+    "en": "How many mm of rain on Monday?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 20,
+    "calc": "4*5"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Chaque carreau vaut 5 : compte par bonds de 5.",
+      "en": "Each square is 5: count by fives."
+     }
+    },
+    {
+     "value": 45,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "Il faut répéter 5 quatre fois.",
+      "en": "Repeat 5 four times."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte par bonds de 5, une fois par carreau.",
+    "en": "Count by fives, once for each square."
+   },
+   "explain": {
+    "fr": "5, 10, 15, 20. Quatre carreaux de 5 mm font 20 mm.",
+    "en": "5, 10, 15, 20. Four squares of 5 mm make 20 mm."
+   },
+   "tags": [
+    "bar-chart",
+    "scale",
+    "skip-count"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_5a2783efe63826d8fbf8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.pluie.013",
+   "quest": "meteo.pluie",
+   "skill": "STA-04a",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 5,
+   "story": {
+    "fr": "Le pot de Noah est plein à 40 mm. Il contient 12 mm, puis 15 mm de plus tombent.",
+    "en": "Noah's jar is full at 40 mm. It has 12 mm, then 15 mm more falls."
+   },
+   "prompt": {
+    "fr": "Combien de mm peuvent encore tomber avant qu'il déborde ?",
+    "en": "How many more mm can fall before it overflows?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 13,
+    "calc": "40-12-15"
+   },
+   "common_errors": [
+    {
+     "value": 27,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "27 mm, c'est la pluie déjà tombée. Soustrais-la de 40.",
+      "en": "27 mm is the rain already in. Take it from 40."
+     }
+    },
+    {
+     "value": 67,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche ce qui manque : on soustrait.",
+      "en": "We want what is missing, so we subtract."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Trouve d'abord la pluie déjà dans le pot.",
+    "en": "First find the rain already in the jar."
+   },
+   "explain": {
+    "fr": "12 + 15 = 27 mm sont dans le pot. 40 - 27 = 13 mm.",
+    "en": "12 + 15 = 27 mm are in the jar. 40 - 27 = 13 mm."
+   },
+   "tags": [
+    "rain",
+    "two-step",
+    "subtract"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_75dd1e6fc5f6b92cbc22"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.temperature.001",
+   "quest": "meteo.temperature",
+   "skill": "STA-03b",
+   "type": "numeric",
+   "grade": 4,
+   "difficulty": 1,
+   "story": {
+    "fr": "À 8 h, il fait 4 °C dehors. À midi, il fait 9 °C.",
+    "en": "At 8 a.m. it is 4 °C outside. At noon it is 9 °C."
+   },
+   "prompt": {
+    "fr": "De combien de degrés la température a-t-elle monté ?",
+    "en": "By how many degrees did the temperature rise?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "9-4"
+   },
+   "common_errors": [
+    {
+     "value": 13,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche l'écart : on soustrait.",
+      "en": "We want the gap, so we subtract."
+     }
+    },
+    {
+     "value": 6,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte l'écart.",
+      "en": "Close! Count the gap again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 4 jusqu'à 9.",
+    "en": "Count from 4 up to 9."
+   },
+   "explain": {
+    "fr": "9 - 4 = 5. La température a monté de 5 °C.",
+    "en": "9 - 4 = 5. The temperature rose by 5 °C."
+   },
+   "tags": [
+    "temperature",
+    "line-graph",
+    "subtract"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_5bde254ad0f29e3b3280"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.temperature.002",
+   "quest": "meteo.temperature",
+   "skill": "STA-03b",
+   "type": "visual",
+   "grade": 4,
+   "difficulty": 1,
+   "story": {
+    "fr": "Zoé note la température de l'après-midi. Voici son diagramme.",
+    "en": "Zoe notes the afternoon temperature. Here is her chart."
+   },
+   "prompt": {
+    "fr": "Quelle température fait-il à 13 h ?",
+    "en": "What is the temperature at 1 p.m.?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Température en °C",
+      "en": "Temperature in °C"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "9 h",
+        "en": "9 a.m."
+       },
+       "value": 2
+      },
+      {
+       "label": {
+        "fr": "11 h",
+        "en": "11 a.m."
+       },
+       "value": 5
+      },
+      {
+       "label": {
+        "fr": "13 h",
+        "en": "1 p.m."
+       },
+       "value": 8
+      },
+      {
+       "label": {
+        "fr": "15 h",
+        "en": "3 p.m."
+       },
+       "value": 7
+      },
+      {
+       "label": {
+        "fr": "17 h",
+        "en": "5 p.m."
+       },
+       "value": 3
+      }
+     ],
+     "max": 10
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 8,
+    "calc": "8"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as lu l'heure suivante. Cherche 13 h.",
+      "en": "You read the next hour. Look for 1 p.m."
+     }
+    },
+    {
+     "value": 5,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as lu 11 h. Cherche 13 h.",
+      "en": "You read 11 a.m. Look for 1 p.m."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Suis la barre de 13 h jusqu'au sommet.",
+    "en": "Follow the 1 p.m. bar up to the top."
+   },
+   "explain": {
+    "fr": "La barre de 13 h s'arrête à 8 °C.",
+    "en": "The 1 p.m. bar stops at 8 °C."
+   },
+   "tags": [
+    "bar-chart",
+    "temperature"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_530aa618a672c6811369"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.temperature.003",
+   "quest": "meteo.temperature",
+   "skill": "STA-03b",
+   "type": "visual",
+   "grade": 4,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le thermomètre de la cour affiche une température sous zéro.",
+    "en": "The yard thermometer shows a temperature below zero."
+   },
+   "prompt": {
+    "fr": "Quelle température la flèche montre-t-elle ?",
+    "en": "What temperature does the arrow show?"
+   },
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": -10,
+     "max": 10,
+     "step": 1,
+     "labels": [
+      -10,
+      -5,
+      0,
+      5,
+      10
+     ],
+     "arrow": -3
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": -3,
+    "calc": "0-3"
+   },
+   "common_errors": [
+    {
+     "value": 3,
+     "misconception": "mis_direction",
+     "feedback": {
+      "fr": "Elle est à gauche de zéro : c'est sous zéro.",
+      "en": "It is left of zero: below zero."
+     }
+    },
+    {
+     "value": -2,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Compte les traits à partir de zéro.",
+      "en": "Close! Count the marks from zero."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pars de zéro et va vers la gauche, trait par trait.",
+    "en": "Start at zero and go left, mark by mark."
+   },
+   "explain": {
+    "fr": "La flèche est 3 traits à gauche de zéro : -3 °C.",
+    "en": "The arrow is 3 marks left of zero: -3 °C."
+   },
+   "tags": [
+    "thermometer",
+    "negative-numbers"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_5bde254ad0f29e3b3280"
+    },
+    {
+     "role": "scene",
+     "asset": "a_530aa618a672c6811369"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.temperature.004",
+   "quest": "meteo.temperature",
+   "skill": "STA-03b",
+   "type": "numeric",
+   "grade": 4,
+   "difficulty": 2,
+   "story": {
+    "fr": "Il fait -7 °C le matin. À midi, il fait 4 °C de plus.",
+    "en": "It is -7 °C in the morning. At noon it is 4 °C warmer."
+   },
+   "prompt": {
+    "fr": "Quelle température fait-il à midi ?",
+    "en": "What is the temperature at noon?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": -3,
+    "calc": "0-7+4"
+   },
+   "common_errors": [
+    {
+     "value": -11,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Plus chaud veut dire qu'on monte sur le thermomètre.",
+      "en": "Warmer means going up the thermometer."
+     }
+    },
+    {
+     "value": 3,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "Il fait encore sous zéro : le nombre est négatif.",
+      "en": "It is still below zero: the number is negative."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pars de -7 et monte de 4 traits.",
+    "en": "Start at -7 and go up 4 marks."
+   },
+   "explain": {
+    "fr": "De -7, on monte de 4 : -6, -5, -4, -3. Il fait -3 °C.",
+    "en": "From -7 go up 4: -6, -5, -4, -3. It is -3 °C."
+   },
+   "tags": [
+    "negative-numbers",
+    "temperature"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_5bde254ad0f29e3b3280"
+    },
+    {
+     "role": "scene",
+     "asset": "a_530aa618a672c6811369"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.temperature.005",
+   "quest": "meteo.temperature",
+   "skill": "STA-03b",
+   "type": "numeric",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "La température monte de 2 °C chaque heure. À 9 h, il fait 5 °C.",
+    "en": "The temperature rises 2 °C every hour. At 9 a.m. it is 5 °C."
+   },
+   "prompt": {
+    "fr": "Quelle température fait-il à 14 h ?",
+    "en": "What is the temperature at 2 p.m.?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 15,
+    "calc": "5+5*2"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Il y a 5 heures entre 9 h et 14 h, pas une seule.",
+      "en": "There are 5 hours from 9 a.m. to 2 p.m., not one."
+     }
+    },
+    {
+     "value": 10,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "10 °C, c'est la hausse. Ajoute la température de départ.",
+      "en": "10 °C is the rise. Add the starting temperature."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les heures entre 9 h et 14 h.",
+    "en": "Count the hours from 9 a.m. to 2 p.m."
+   },
+   "explain": {
+    "fr": "5 heures x 2 °C = 10 °C de hausse. 5 + 10 = 15 °C.",
+    "en": "5 hours x 2 °C = 10 °C of rise. 5 + 10 = 15 °C."
+   },
+   "tags": [
+    "temperature",
+    "line-graph",
+    "two-step"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_530aa618a672c6811369"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.temperature.006",
+   "quest": "meteo.temperature",
+   "skill": "STA-03b",
+   "type": "choice",
+   "grade": 4,
+   "difficulty": 2,
+   "story": {
+    "fr": "Un matin, le thermomètre passe de 12 °C à 5 °C.",
+    "en": "One morning the thermometer goes from 12 °C to 5 °C."
+   },
+   "prompt": {
+    "fr": "De combien la température a-t-elle baissé ?",
+    "en": "By how much did the temperature fall?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "17",
+      "en": "17"
+     },
+     "misconception": "mis_add_instead_of_subtract"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "6",
+      "en": "6"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "7",
+      "en": "7"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "8",
+      "en": "8"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "12-5"
+    }
+   },
+   "hint": {
+    "fr": "Compte à reculons de 12 jusqu'à 5.",
+    "en": "Count back from 12 to 5."
+   },
+   "explain": {
+    "fr": "12 - 5 = 7. La température a baissé de 7 °C.",
+    "en": "12 - 5 = 7. The temperature fell by 7 °C."
+   },
+   "tags": [
+    "temperature",
+    "subtract"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_5bde254ad0f29e3b3280"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.temperature.007",
+   "quest": "meteo.temperature",
+   "skill": "STA-03b",
+   "type": "choice",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Quatre thermomètres affichent des températures différentes ce matin à Québec.",
+    "en": "Four thermometers show different temperatures this morning in Quebec City."
+   },
+   "prompt": {
+    "fr": "Laquelle est la plus froide ?",
+    "en": "Which one is the coldest?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "-2 °C",
+      "en": "-2 °C"
+     },
+     "misconception": "mis_order_reversed"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "-9 °C",
+      "en": "-9 °C"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "0 °C",
+      "en": "0 °C"
+     },
+     "misconception": "mis_order_partial"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "4 °C",
+      "en": "4 °C"
+     },
+     "random": true
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Sous zéro, plus le nombre sans signe est grand, plus il fait froid.",
+    "en": "Below zero, the bigger the number without its sign, the colder it is."
+   },
+   "explain": {
+    "fr": "-9 est le plus loin sous zéro : c'est la température la plus froide.",
+    "en": "-9 is the furthest below zero: it is the coldest."
+   },
+   "tags": [
+    "negative-numbers",
+    "thermometer",
+    "compare"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_530aa618a672c6811369"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.temperature.008",
+   "quest": "meteo.temperature",
+   "skill": "STA-03b",
+   "type": "word",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "À 7 h, il fait -8 °C. À 15 h, il fait 6 °C.",
+    "en": "At 7 a.m. it is -8 °C. At 3 p.m. it is 6 °C."
+   },
+   "prompt": {
+    "fr": "De combien de degrés la température a-t-elle monté ?",
+    "en": "By how many degrees did the temperature rise?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 14,
+    "calc": "8+6"
+   },
+   "common_errors": [
+    {
+     "value": 2,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "Il faut passer par zéro : 8 degrés pour arriver à 0, puis encore 6.",
+      "en": "You go through zero: 8 degrees to reach 0, then 6 more."
+     }
+    },
+    {
+     "value": 13,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Refais le trajet jusqu'à zéro, puis après.",
+      "en": "Close! Redo the trip to zero, then beyond."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Combien de degrés de -8 jusqu'à zéro ?",
+    "en": "How many degrees from -8 up to zero?"
+   },
+   "explain": {
+    "fr": "De -8 à 0, il y a 8 degrés. De 0 à 6, encore 6. 8 + 6 = 14.",
+    "en": "From -8 to 0 is 8 degrees. From 0 to 6 is 6 more. 8 + 6 = 14."
+   },
+   "tags": [
+    "word-problem",
+    "negative-numbers",
+    "temperature"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_530aa618a672c6811369"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.temperature.009",
+   "quest": "meteo.temperature",
+   "skill": "STA-03b",
+   "type": "word",
+   "grade": 4,
+   "difficulty": 4,
+   "story": {
+    "fr": "À 8 h, il fait -3 °C. À 10 h, il fait 5 °C de plus qu'à 8 h. À midi, il fait 4 °C de moins qu'à 10 h.",
+    "en": "At 8 a.m. it is -3 °C. At 10 a.m. it is 5 °C warmer than at 8. At noon it is 4 °C colder than at 10."
+   },
+   "prompt": {
+    "fr": "Quelle température fait-il à midi ?",
+    "en": "What is the temperature at noon?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": -2,
+    "calc": "0-3+5-4"
+   },
+   "common_errors": [
+    {
+     "value": 2,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "À midi, il fait 2 °C de moins qu'à 10 h : 2 - 4 passe sous zéro.",
+      "en": "At noon it is 4 colder than at 10, so you go below zero."
+     }
+    },
+    {
+     "value": -6,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Le chiffre -6 oublie la hausse de 10 h. Reprends étape par étape.",
+      "en": "-6 forgets the 10 a.m. rise. Go step by step."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Trouve d'abord la température à 10 h.",
+    "en": "First find the temperature at 10 a.m."
+   },
+   "explain": {
+    "fr": "À 10 h : -3 + 5 = 2 °C. À midi : 2 - 4 = -2 °C.",
+    "en": "At 10 a.m.: -3 + 5 = 2 °C. At noon: 2 - 4 = -2 °C."
+   },
+   "tags": [
+    "temperature",
+    "negative-numbers",
+    "two-step"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_530aa618a672c6811369"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.temperature.010",
+   "quest": "meteo.temperature",
+   "skill": "STA-03b",
+   "type": "truefalse",
+   "grade": 4,
+   "difficulty": 2,
+   "story": {
+    "fr": "Emma lit le thermomètre au parc.",
+    "en": "Emma reads the thermometer at the park."
+   },
+   "prompt": {
+    "fr": "Vrai ou faux : -6 °C est plus froid que 2 °C.",
+    "en": "True or false: -6 °C is colder than 2 °C."
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": true
+   },
+   "hint": {
+    "fr": "Un nombre sous zéro est plus froid qu'un nombre au-dessus de zéro.",
+    "en": "A number below zero is colder than a number above zero."
+   },
+   "explain": {
+    "fr": "-6 est sous zéro et 2 est au-dessus de zéro, donc -6 °C est plus froid.",
+    "en": "-6 is below zero and 2 is above zero, so -6 °C is colder."
+   },
+   "tags": [
+    "negative-numbers",
+    "compare"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_5bde254ad0f29e3b3280"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.temperature.011",
+   "quest": "meteo.temperature",
+   "skill": "STA-03b",
+   "type": "order",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Cinq villes du Québec donnent leur température du matin.",
+    "en": "Five Quebec towns give their morning temperature."
+   },
+   "prompt": {
+    "fr": "Range les températures de la plus froide à la plus chaude.",
+    "en": "Put the temperatures in order, from coldest to warmest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "3 °C",
+      "en": "3 °C"
+     },
+     "key": "3"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "-7 °C",
+      "en": "-7 °C"
+     },
+     "key": "-7"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "0 °C",
+      "en": "0 °C"
+     },
+     "key": "0"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "5 °C",
+      "en": "5 °C"
+     },
+     "key": "5"
+    },
+    {
+     "id": "e",
+     "text": {
+      "fr": "-2 °C",
+      "en": "-2 °C"
+     },
+     "key": "-2"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "e",
+     "c",
+     "a",
+     "d"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Les nombres sous zéro sont les plus froids.",
+    "en": "The numbers below zero are the coldest."
+   },
+   "explain": {
+    "fr": "-7, -2, 0, 3, 5 : de plus en plus chaud.",
+    "en": "-7, -2, 0, 3, 5: getting warmer each time."
+   },
+   "tags": [
+    "negative-numbers",
+    "ordering",
+    "temperature"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_530aa618a672c6811369"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.temperature.012",
+   "quest": "meteo.temperature",
+   "skill": "STA-03b",
+   "type": "match",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le thermomètre aide à comprendre la vie de tous les jours.",
+    "en": "The thermometer helps us understand everyday life."
+   },
+   "prompt": {
+    "fr": "Relie chaque situation à sa température.",
+    "en": "Match each situation to its temperature."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "L'eau gèle",
+       "en": "Water freezes"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "Une journée d'été chaude",
+       "en": "A hot summer day"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "Le corps en santé",
+       "en": "A healthy body"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "30 °C",
+       "en": "30 °C"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "37 °C",
+       "en": "37 °C"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "0 °C",
+       "en": "0 °C"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ]
+    ],
+    "misconception": "mis_match"
+   },
+   "hint": {
+    "fr": "L'eau devient de la glace à zéro.",
+    "en": "Water turns to ice at zero."
+   },
+   "explain": {
+    "fr": "L'eau gèle à 0 °C. Un été chaud est près de 30 °C. Le corps est à 37 °C.",
+    "en": "Water freezes at 0 °C. A hot summer is near 30 °C. The body is at 37 °C."
+   },
+   "tags": [
+    "thermometer",
+    "matching"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_5bde254ad0f29e3b3280"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.temperature.013",
+   "quest": "meteo.temperature",
+   "skill": "STA-03b",
+   "type": "estimate",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Dans la journée, la température passe de 18 °C à 31 °C.",
+    "en": "During the day, the temperature goes from 18 °C to 31 °C."
+   },
+   "prompt": {
+    "fr": "Environ de combien de degrés a-t-elle monté ?",
+    "en": "About how many degrees did it rise?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 12,
+    "max": 14,
+    "exact_for_check": 13,
+    "calc": "31-18"
+   },
+   "common_errors": [
+    {
+     "value": 50,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche l'écart, pas le total.",
+      "en": "We want the gap, not the total."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis chaque température à la dizaine, puis compare.",
+    "en": "Round each temperature to the nearest ten, then compare."
+   },
+   "explain": {
+    "fr": "30 - 20 = 10, donc environ 10 à 15 °C. Exactement : 31 - 18 = 13 °C.",
+    "en": "30 - 20 = 10, so about 10 to 15 °C. Exactly: 31 - 18 = 13 °C."
+   },
+   "tags": [
+    "estimation",
+    "temperature"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_530aa618a672c6811369"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.prevision.001",
+   "quest": "meteo.prevision",
+   "skill": "PRO-05b",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa note le temps pendant 10 jours.",
+    "en": "Lea notes the weather for 10 days."
+   },
+   "prompt": {
+    "fr": "Il y a eu 7 jours de pluie. Combien de jours sans pluie ?",
+    "en": "There were 7 rainy days. How many days without rain?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3,
+    "calc": "10-7"
+   },
+   "common_errors": [
+    {
+     "value": 17,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche les jours qui restent : on soustrait.",
+      "en": "We want the days that are left, so we subtract."
+     }
+    },
+    {
+     "value": 4,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte à partir de 7.",
+      "en": "Close! Count again from 7."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Combien de jours restent quand on enlève les jours de pluie ?",
+    "en": "How many days are left when you remove the rainy days?"
+   },
+   "explain": {
+    "fr": "10 - 7 = 3. Il y a 3 jours sans pluie.",
+    "en": "10 - 7 = 3. There are 3 days without rain."
+   },
+   "tags": [
+    "weather",
+    "chance",
+    "subtract"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_75dd1e6fc5f6b92cbc22"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.prevision.002",
+   "quest": "meteo.prevision",
+   "skill": "PRO-05b",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Une roue de météo a 12 cases : 7 de soleil, 3 de nuages et 2 de pluie.",
+    "en": "A weather wheel has 12 spaces: 7 sun, 3 clouds and 2 rain."
+   },
+   "prompt": {
+    "fr": "Combien de cases ne sont pas du soleil ?",
+    "en": "How many spaces are not sun?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "12-7"
+   },
+   "common_errors": [
+    {
+     "value": 19,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On enlève les cases de soleil : on soustrait.",
+      "en": "We take away the sun spaces, so we subtract."
+     }
+    },
+    {
+     "value": 3,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as compté seulement les nuages. Compte aussi la pluie.",
+      "en": "You counted only the clouds. Count the rain too."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Les cases sans soleil sont les nuages et la pluie.",
+    "en": "The spaces without sun are clouds and rain."
+   },
+   "explain": {
+    "fr": "3 + 2 = 5 cases. Aussi : 12 - 7 = 5.",
+    "en": "3 + 2 = 5 spaces. Also: 12 - 7 = 5."
+   },
+   "tags": [
+    "spinner",
+    "chance",
+    "subtract"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_c9bb15d03d4b1e6151d9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.prevision.003",
+   "quest": "meteo.prevision",
+   "skill": "PRO-05b",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Dans un sac, il y a 9 jetons de soleil et 3 jetons de pluie. Noah pige sans regarder.",
+    "en": "A bag holds 9 sun tokens and 3 rain tokens. Noah draws without looking."
+   },
+   "prompt": {
+    "fr": "Quel jeton est le plus probable ?",
+    "en": "Which token is more likely?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Un jeton de pluie",
+      "en": "Un jeton de pluie"
+     },
+     "random": true
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Un jeton de soleil",
+      "en": "Un jeton de soleil"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Autant de chance pour les deux",
+      "en": "Autant de chance pour les deux"
+     },
+     "misconception": "mis_chance_equal"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Quel jeton y a-t-il en plus grand nombre ?",
+    "en": "Which token is there more of?"
+   },
+   "explain": {
+    "fr": "Il y a plus de jetons de soleil, donc c'est le plus probable.",
+    "en": "There are more sun tokens, so it is the most likely."
+   },
+   "tags": [
+    "chance",
+    "more-likely"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_c9bb15d03d4b1e6151d9"
+    },
+    {
+     "role": "scene",
+     "asset": "a_a4c132ab7d6f8725b634"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.prevision.004",
+   "quest": "meteo.prevision",
+   "skill": "PRO-05b",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Une roue a 1 case de neige et 5 cases de soleil. Léa la fait tourner.",
+    "en": "A wheel has 1 snow space and 5 sun spaces. Lea spins it."
+   },
+   "prompt": {
+    "fr": "Est-il probable de tomber sur la neige ?",
+    "en": "Is it likely to land on snow?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Certain",
+      "en": "Certain"
+     },
+     "misconception": "mis_chance_certain"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Très probable",
+      "en": "Très probable"
+     },
+     "random": true
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Peu probable",
+      "en": "Peu probable"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c"
+   },
+   "hint": {
+    "fr": "Compare la case de neige aux cases de soleil.",
+    "en": "Compare the snow space with the sun spaces."
+   },
+   "explain": {
+    "fr": "La neige a une seule case sur six : c'est peu probable.",
+    "en": "Snow has one space out of six: it is not very likely."
+   },
+   "tags": [
+    "chance",
+    "spinner",
+    "likely"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_82f12779eb8658ebd4ba"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.prevision.005",
+   "quest": "meteo.prevision",
+   "skill": "PRO-05b",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Sur 10 jours : 7 de soleil, 2 de pluie et 1 de neige.",
+    "en": "Over 10 days: 7 sunny, 2 rainy and 1 snowy."
+   },
+   "prompt": {
+    "fr": "Combien de jours de soleil de plus que de jours de pluie ?",
+    "en": "How many more sunny days than rainy days?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "9",
+      "en": "9"
+     },
+     "misconception": "mis_add_instead_of_subtract"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "6",
+      "en": "6"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "5",
+      "en": "5"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "4",
+      "en": "4"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "7-2"
+    }
+   },
+   "hint": {
+    "fr": "Compare les deux nombres de jours.",
+    "en": "Compare the two numbers of days."
+   },
+   "explain": {
+    "fr": "7 - 2 = 5. Il y a 5 jours de soleil de plus.",
+    "en": "7 - 2 = 5. There are 5 more sunny days."
+   },
+   "tags": [
+    "weather",
+    "compare",
+    "subtract"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a4c132ab7d6f8725b634"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.prevision.006",
+   "quest": "meteo.prevision",
+   "skill": "PRO-05b",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Chaque matin, Noah note le temps.",
+    "en": "Every morning Noah notes the weather."
+   },
+   "prompt": {
+    "fr": "Sur 14 jours, il a plu 6 jours. Combien de jours sans pluie ?",
+    "en": "Over 14 days it rained on 6 days. How many days without rain?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 8,
+    "calc": "14-6"
+   },
+   "common_errors": [
+    {
+     "value": 20,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Les jours sans pluie, c'est ce qui reste.",
+      "en": "Days without rain are what is left."
+     }
+    },
+    {
+     "value": 9,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte à reculons.",
+      "en": "Close! Count back again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Enlève les jours de pluie du total.",
+    "en": "Take the rainy days away from the total."
+   },
+   "explain": {
+    "fr": "14 - 6 = 8. Il y a 8 jours sans pluie.",
+    "en": "14 - 6 = 8. There are 8 days without rain."
+   },
+   "tags": [
+    "word-problem",
+    "weather",
+    "subtract"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_75dd1e6fc5f6b92cbc22"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.prevision.007",
+   "quest": "meteo.prevision",
+   "skill": "PRO-05b",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Dans une semaine, il y a 7 jours. Il pleut 2 jours et il neige 1 jour. Les autres jours sont ensoleillés.",
+    "en": "A week has 7 days. It rains on 2 days and snows on 1 day. The other days are sunny."
+   },
+   "prompt": {
+    "fr": "Combien de jours sont ensoleillés ?",
+    "en": "How many days are sunny?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 4,
+    "calc": "7-2-1"
+   },
+   "common_errors": [
+    {
+     "value": 5,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié le jour de neige.",
+      "en": "You forgot the snow day."
+     }
+    },
+    {
+     "value": 10,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On enlève les jours de pluie et de neige.",
+      "en": "We remove the rain and snow days."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Retire les jours de pluie, puis le jour de neige.",
+    "en": "Remove the rain days, then the snow day."
+   },
+   "explain": {
+    "fr": "7 - 2 = 5, puis 5 - 1 = 4. Il y a 4 jours ensoleillés.",
+    "en": "7 - 2 = 5, then 5 - 1 = 4. There are 4 sunny days."
+   },
+   "tags": [
+    "word-problem",
+    "weather",
+    "two-step"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a4c132ab7d6f8725b634"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.prevision.008",
+   "quest": "meteo.prevision",
+   "skill": "PRO-05b",
+   "type": "truefalse",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "En janvier, Mia regarde par la fenêtre.",
+    "en": "In January, Mia looks out the window."
+   },
+   "prompt": {
+    "fr": "Vrai ou faux : il est possible qu'il neige en janvier au Québec.",
+    "en": "True or false: it is possible for it to snow in January in Quebec."
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": true
+   },
+   "hint": {
+    "fr": "Pense aux hivers du Québec.",
+    "en": "Think of Quebec winters."
+   },
+   "explain": {
+    "fr": "Il neige souvent en janvier, donc c'est possible.",
+    "en": "It often snows in January, so it is possible."
+   },
+   "tags": [
+    "chance",
+    "possible"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_530aa618a672c6811369"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.prevision.009",
+   "quest": "meteo.prevision",
+   "skill": "PRO-05b",
+   "type": "truefalse",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le ciel est gris ce matin.",
+    "en": "The sky is grey this morning."
+   },
+   "prompt": {
+    "fr": "Vrai ou faux : il est certain qu'il pleuvra aujourd'hui.",
+    "en": "True or false: it is certain that it will rain today."
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_chance_certain"
+   },
+   "hint": {
+    "fr": "Un ciel gris ne garantit pas la pluie.",
+    "en": "A grey sky does not guarantee rain."
+   },
+   "explain": {
+    "fr": "Il peut pleuvoir, mais ce n'est pas sûr. C'est possible, pas certain.",
+    "en": "It might rain, but it is not sure. It is possible, not certain."
+   },
+   "tags": [
+    "chance",
+    "certain"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_3ad0adb9d29a41b0fff3"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.prevision.010",
+   "quest": "meteo.prevision",
+   "skill": "PRO-05b",
+   "type": "order",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un sac contient 1 jeton de neige, 6 de soleil et 3 de pluie.",
+    "en": "A bag holds 1 snow token, 6 sun tokens and 3 rain tokens."
+   },
+   "prompt": {
+    "fr": "Range les jetons du moins probable au plus probable.",
+    "en": "Put the tokens in order, from least likely to most likely."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "jeton de pluie",
+      "en": "rain token"
+     },
+     "key": "3"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "jeton de soleil",
+      "en": "sun token"
+     },
+     "key": "6"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "jeton de neige",
+      "en": "snow token"
+     },
+     "key": "1"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "c",
+     "a",
+     "b"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Le jeton le moins probable est celui qu'il y a le moins.",
+    "en": "The least likely token is the one there is least of."
+   },
+   "explain": {
+    "fr": "Neige (1), pluie (3), soleil (6) : plus il y a de jetons, plus c'est probable.",
+    "en": "Snow (1), rain (3), sun (6): the more tokens, the more likely."
+   },
+   "tags": [
+    "chance",
+    "ordering"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_c9bb15d03d4b1e6151d9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.prevision.011",
+   "quest": "meteo.prevision",
+   "skill": "PRO-05b",
+   "type": "match",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa parle du ciel avec ses amis.",
+    "en": "Lea talks about the sky with her friends."
+   },
+   "prompt": {
+    "fr": "Relie chaque phrase au bon mot.",
+    "en": "Match each sentence to the right word."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "Il neige en juillet à Montréal",
+       "en": "It snows in July in Montreal"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "Le soleil se lève demain",
+       "en": "The sun rises tomorrow"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "Il pleut cette semaine",
+       "en": "It rains this week"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "certain",
+       "en": "certain"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "possible",
+       "en": "possible"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "impossible",
+       "en": "impossible"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ]
+    ],
+    "misconception": "mis_chance_certain"
+   },
+   "hint": {
+    "fr": "Demande-toi si ça peut arriver, et si ça arrive toujours.",
+    "en": "Ask if it can happen, and if it always happens."
+   },
+   "explain": {
+    "fr": "Le soleil se lève toujours : certain. La pluie peut venir : possible. La neige en juillet n'arrive pas : impossible.",
+    "en": "The sun always rises: certain. Rain may come: possible. Snow in July does not happen: impossible."
+   },
+   "tags": [
+    "chance",
+    "matching",
+    "vocabulary"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_5a2783efe63826d8fbf8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.prevision.012",
+   "quest": "meteo.prevision",
+   "skill": "PRO-05b",
+   "type": "match",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa regarde trois sacs de jetons.",
+    "en": "Lea looks at three bags of tokens."
+   },
+   "prompt": {
+    "fr": "Relie chaque sac à son résultat le plus probable.",
+    "en": "Match each bag to its most likely result."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "8 jetons de soleil, 2 de pluie",
+       "en": "8 sun tokens, 2 rain tokens"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "2 jetons de soleil, 8 de pluie",
+       "en": "2 sun tokens, 8 rain tokens"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "5 jetons de soleil, 5 de pluie",
+       "en": "5 sun tokens, 5 rain tokens"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "pluie",
+       "en": "rain"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "même chance",
+       "en": "same chance"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "soleil",
+       "en": "sun"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ]
+    ],
+    "misconception": "mis_chance_equal"
+   },
+   "hint": {
+    "fr": "Cherche le jeton qui est le plus nombreux dans chaque sac.",
+    "en": "Find the token there is most of in each bag."
+   },
+   "explain": {
+    "fr": "Le plus nombreux est le plus probable. Avec 5 et 5, les deux ont la même chance.",
+    "en": "The one with more is more likely. With 5 and 5, both have the same chance."
+   },
+   "tags": [
+    "chance",
+    "matching"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_75dd1e6fc5f6b92cbc22"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.prevision.013",
+   "quest": "meteo.prevision",
+   "skill": "PRO-05b",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah a noté le temps de la saison dans un tableau d'images.",
+    "en": "Noah noted the season's weather in a picture chart."
+   },
+   "prompt": {
+    "fr": "Combien de jours de soleil de plus que de jours de pluie ?",
+    "en": "How many more sunny days than rainy days?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Jours de la saison",
+      "en": "Days of the season"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "soleil",
+        "en": "sun"
+       },
+       "count": 8
+      },
+      {
+       "label": {
+        "fr": "pluie",
+        "en": "rain"
+       },
+       "count": 3
+      },
+      {
+       "label": {
+        "fr": "neige",
+        "en": "snow"
+       },
+       "count": 1
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "8-3"
+   },
+   "common_errors": [
+    {
+     "value": 11,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On compare : on soustrait.",
+      "en": "We compare, so we subtract."
+     }
+    },
+    {
+     "value": 3,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "3, c'est la pluie. Compare-la au soleil.",
+      "en": "That is the rain row. Compare it with the sun."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les images de chaque ligne, puis compare.",
+    "en": "Count the pictures in each row, then compare."
+   },
+   "explain": {
+    "fr": "8 images de soleil et 3 de pluie. 8 - 3 = 5.",
+    "en": "8 sun pictures and 3 rain pictures. 8 - 3 = 5."
+   },
+   "tags": [
+    "pictograph",
+    "weather",
+    "compare"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a4c132ab7d6f8725b634"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.prevision.014",
+   "quest": "meteo.prevision",
+   "skill": "PRO-05b",
+   "type": "estimate",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Il a plu 18 jours en juin et 22 jours en juillet.",
+    "en": "It rained 18 days in June and 22 days in July."
+   },
+   "prompt": {
+    "fr": "Environ combien de jours de pluie en tout ?",
+    "en": "About how many rainy days in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 36,
+    "max": 44,
+    "exact_for_check": 40,
+    "calc": "18+22"
+   },
+   "common_errors": [
+    {
+     "value": 30,
+     "misconception": "mis_estimate_rounding",
+     "feedback": {
+      "fr": "Tu as arrondi trop bas.",
+      "en": "You rounded too low."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis chaque nombre à la dizaine.",
+    "en": "Round each number to the nearest ten."
+   },
+   "explain": {
+    "fr": "18 est proche de 20 et 22 est proche de 20. 20 + 20 = 40.",
+    "en": "18 is close to 20 and 22 is close to 20. 20 + 20 = 40."
+   },
+   "tags": [
+    "estimation",
+    "weather",
+    "rounding"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_75dd1e6fc5f6b92cbc22"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.saisons.001",
+   "quest": "meteo.saisons",
+   "skill": "ARI-SEN-A08",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Au printemps, il fait 12 °C. En été, il fait 10 °C de plus.",
+    "en": "In spring it is 12 °C. In summer it is 10 °C warmer."
+   },
+   "prompt": {
+    "fr": "Quelle température fait-il en été ?",
+    "en": "What is the temperature in summer?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 22,
+    "calc": "12+10"
+   },
+   "common_errors": [
+    {
+     "value": 2,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Plus chaud veut dire qu'on ajoute.",
+      "en": "Warmer means we add."
+     }
+    },
+    {
+     "value": 13,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "Ajoute 10, c'est une dizaine de plus.",
+      "en": "Adding 10 means one more ten."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Ajouter 10, c'est avancer d'une dizaine.",
+    "en": "Adding 10 means moving up one ten."
+   },
+   "explain": {
+    "fr": "12 + 10 = 22. Il fait 22 °C en été.",
+    "en": "12 + 10 = 22. It is 22 °C in summer."
+   },
+   "tags": [
+    "seasons",
+    "add-ten",
+    "temperature"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_5bde254ad0f29e3b3280"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.saisons.002",
+   "quest": "meteo.saisons",
+   "skill": "ARI-SEN-A08",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "En automne, Noah numérote les jours. Le jour 45 est froid et le jour 47 est doux.",
+    "en": "In autumn Noah numbers the days. Day 45 is cold and day 47 is mild."
+   },
+   "prompt": {
+    "fr": "Quel numéro de jour est entre les deux ?",
+    "en": "Which day number is between the two?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 46,
+    "calc": "45+1"
+   },
+   "common_errors": [
+    {
+     "value": 44,
+     "misconception": "mis_direction",
+     "feedback": {
+      "fr": "44 est avant 45. Cherche entre 45 et 47.",
+      "en": "44 is before 45. Look between 45 and 47."
+     }
+    },
+    {
+     "value": 48,
+     "misconception": "mis_direction",
+     "feedback": {
+      "fr": "48 est après 47. Cherche entre 45 et 47.",
+      "en": "48 is after 47. Look between 45 and 47."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte un pas après 45.",
+    "en": "Count one step after 45."
+   },
+   "explain": {
+    "fr": "45, 46, 47. Le nombre du milieu est 46.",
+    "en": "45, 46, 47. The middle number is 46."
+   },
+   "tags": [
+    "seasons",
+    "between",
+    "number-sense"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_5a2783efe63826d8fbf8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.saisons.003",
+   "quest": "meteo.saisons",
+   "skill": "ARI-SEN-A08",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Quatre amis mesurent la hauteur de neige dans leur cour.",
+    "en": "Four friends measure the snow depth in their yards."
+   },
+   "prompt": {
+    "fr": "Quelle hauteur est la plus grande ?",
+    "en": "Which depth is the biggest?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "28 cm",
+      "en": "28 cm"
+     },
+     "misconception": "mis_digit_swap"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "82 cm",
+      "en": "82 cm"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "18 cm",
+      "en": "18 cm"
+     },
+     "misconception": "mis_order_reversed"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "80 cm",
+      "en": "80 cm"
+     },
+     "misconception": "mis_order_partial"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Compare d'abord les dizaines.",
+    "en": "Compare the tens first."
+   },
+   "explain": {
+    "fr": "8 dizaines, c'est plus que 2 dizaines ou 1 dizaine. Et 82 est plus grand que 80.",
+    "en": "8 tens is more than 2 tens or 1 ten. And 82 is bigger than 80."
+   },
+   "tags": [
+    "seasons",
+    "compare",
+    "snow"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_530aa618a672c6811369"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.saisons.004",
+   "quest": "meteo.saisons",
+   "skill": "ARI-SEN-A08",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "En automne, Zoé compte les feuilles rouges par dizaines : 30, 40, ?, 60.",
+    "en": "In autumn Zoe counts red leaves by tens: 30, 40, ?, 60."
+   },
+   "prompt": {
+    "fr": "Quel nombre manque dans la suite ?",
+    "en": "Which number is missing in the sequence?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "45",
+      "en": "45"
+     },
+     "misconception": "mis_skip_count"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "50",
+      "en": "50"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "55",
+      "en": "55"
+     },
+     "misconception": "mis_skip_count"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "100",
+      "en": "100"
+     },
+     "misconception": "mis_place_value"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b",
+    "calc_choice": {
+     "b": "40+10"
+    }
+   },
+   "hint": {
+    "fr": "De 30 à 40, on avance de 10. Continue.",
+    "en": "From 30 to 40 we go up by 10. Keep going."
+   },
+   "explain": {
+    "fr": "30, 40, 50, 60 : on ajoute 10 chaque fois.",
+    "en": "30, 40, 50, 60: we add 10 each time."
+   },
+   "tags": [
+    "seasons",
+    "skip-count",
+    "sequence"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_6b4abbb808894bacbbfe"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.saisons.005",
+   "quest": "meteo.saisons",
+   "skill": "ARI-SEN-A08",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Les élèves ramassent des feuilles : 34 lundi et 27 mardi.",
+    "en": "The students pick up leaves: 34 on Monday and 27 on Tuesday."
+   },
+   "prompt": {
+    "fr": "Combien de feuilles en tout ?",
+    "en": "How many leaves in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 61,
+    "calc": "34+27"
+   },
+   "common_errors": [
+    {
+     "value": 51,
+     "misconception": "mis_forgot_carry",
+     "feedback": {
+      "fr": "4 + 7 fait 11 : n'oublie pas la retenue.",
+      "en": "4 + 7 makes 11: do not forget to carry."
+     }
+    },
+    {
+     "value": 7,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Les deux jours vont ensemble : on additionne.",
+      "en": "Both days go together, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne les unités, puis les dizaines.",
+    "en": "Add the ones, then the tens."
+   },
+   "explain": {
+    "fr": "34 + 27 : 4 + 7 = 11, 30 + 20 = 50, 50 + 11 = 61.",
+    "en": "34 + 27: 4 + 7 = 11, 30 + 20 = 50, 50 + 11 = 61."
+   },
+   "tags": [
+    "word-problem",
+    "seasons",
+    "add-two-digit"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_6b4abbb808894bacbbfe"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.saisons.006",
+   "quest": "meteo.saisons",
+   "skill": "ARI-SEN-A08",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un érable a 52 feuilles. Le vent en fait tomber 28.",
+    "en": "A maple tree has 52 leaves. The wind blows 28 down."
+   },
+   "prompt": {
+    "fr": "Combien de feuilles restent dans l'arbre ?",
+    "en": "How many leaves are left on the tree?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 24,
+    "calc": "52-28"
+   },
+   "common_errors": [
+    {
+     "value": 80,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Les feuilles tombent : on enlève.",
+      "en": "Leaves fall off, so we take away."
+     }
+    },
+    {
+     "value": 34,
+     "misconception": "mis_forgot_borrow",
+     "feedback": {
+      "fr": "2 - 8 ne marche pas : il faut emprunter une dizaine.",
+      "en": "2 - 8 does not work: borrow a ten."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Enlève 20, puis enlève 8.",
+    "en": "Take away 20, then take away 8."
+   },
+   "explain": {
+    "fr": "52 - 20 = 32, puis 32 - 8 = 24.",
+    "en": "52 - 20 = 32, then 32 - 8 = 24."
+   },
+   "tags": [
+    "word-problem",
+    "seasons",
+    "subtract-two-digit"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_6b4abbb808894bacbbfe"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.saisons.007",
+   "quest": "meteo.saisons",
+   "skill": "ARI-SEN-A08",
+   "type": "truefalse",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa vérifie les nombres que son frère a rangés.",
+    "en": "Lea checks the numbers her brother put in order."
+   },
+   "prompt": {
+    "fr": "Vrai ou faux : 38, 45, 54, 49 vont du plus petit au plus grand.",
+    "en": "True or false: 38, 45, 54, 49 are in order from smallest to biggest."
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_order_partial"
+   },
+   "hint": {
+    "fr": "Compare 54 et 49.",
+    "en": "Compare 54 and 49."
+   },
+   "explain": {
+    "fr": "54 vient avant 49, mais 49 est plus petit. Le bon ordre : 38, 45, 49, 54.",
+    "en": "54 comes before 49, but 49 is smaller. The right order: 38, 45, 49, 54."
+   },
+   "tags": [
+    "ordering",
+    "compare"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_6b4abbb808894bacbbfe"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.saisons.008",
+   "quest": "meteo.saisons",
+   "skill": "ARI-SEN-A08",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Trois jours de l'été ont ces dates.",
+    "en": "Three summer days have these dates."
+   },
+   "prompt": {
+    "fr": "Range les nombres du plus petit au plus grand.",
+    "en": "Put the numbers in order, from smallest to biggest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "23",
+      "en": "23"
+     },
+     "key": "23"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "8",
+      "en": "8"
+     },
+     "key": "8"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "15",
+      "en": "15"
+     },
+     "key": "15"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "c",
+     "a"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Quel nombre n'a qu'un seul chiffre ?",
+    "en": "Which number has only one digit?"
+   },
+   "explain": {
+    "fr": "8 est plus petit que 15 et 15 est plus petit que 23.",
+    "en": "8 is smaller than 15 and 15 is smaller than 23."
+   },
+   "tags": [
+    "ordering",
+    "seasons"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a4c132ab7d6f8725b634"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.saisons.009",
+   "quest": "meteo.saisons",
+   "skill": "ARI-SEN-A08",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Cinq érables ont perdu des feuilles cet automne.",
+    "en": "Five maple trees lost leaves this autumn."
+   },
+   "prompt": {
+    "fr": "Range ces nombres de feuilles du plus grand au plus petit.",
+    "en": "Put these leaf counts in order, from biggest to smallest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "63",
+      "en": "63"
+     },
+     "key": "63"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "36",
+      "en": "36"
+     },
+     "key": "36"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "48",
+      "en": "48"
+     },
+     "key": "48"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "84",
+      "en": "84"
+     },
+     "key": "84"
+    },
+    {
+     "id": "e",
+     "text": {
+      "fr": "74",
+      "en": "74"
+     },
+     "key": "74"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "d",
+     "e",
+     "a",
+     "c",
+     "b"
+    ],
+    "by": "desc",
+    "misconception": "mis_digit_swap"
+   },
+   "hint": {
+    "fr": "Compare d'abord les dizaines.",
+    "en": "Compare the tens first."
+   },
+   "explain": {
+    "fr": "84, 74, 63, 48, 36 : les dizaines vont de 8 à 3.",
+    "en": "84, 74, 63, 48, 36: the tens go from 8 down to 3."
+   },
+   "tags": [
+    "ordering",
+    "seasons",
+    "place-value"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_6b4abbb808894bacbbfe"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.saisons.010",
+   "quest": "meteo.saisons",
+   "skill": "ARI-SEN-A08",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah lit les nombres sur le calendrier des saisons.",
+    "en": "Noah reads the numbers on the seasons calendar."
+   },
+   "prompt": {
+    "fr": "Relie chaque nombre écrit en lettres à ses chiffres.",
+    "en": "Match each number in words to its digits."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "soixante-deux",
+       "en": "sixty-two"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "quarante-cinq",
+       "en": "forty-five"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "quatre-vingt-trois",
+       "en": "eighty-three"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "trente-six",
+       "en": "thirty-six"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "45",
+       "en": "45"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "83",
+       "en": "83"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "36",
+       "en": "36"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "62",
+       "en": "62"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ],
+     [
+      "l4",
+      "r4"
+     ]
+    ],
+    "misconception": "mis_digit_swap"
+   },
+   "hint": {
+    "fr": "Cherche la dizaine, puis les unités.",
+    "en": "Find the tens, then the ones."
+   },
+   "explain": {
+    "fr": "Soixante-deux est 62, quarante-cinq est 45, quatre-vingt-trois est 83 et trente-six est 36.",
+    "en": "Sixty-two is 62, forty-five is 45, eighty-three is 83 and thirty-six is 36."
+   },
+   "tags": [
+    "number-words",
+    "matching",
+    "seasons"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a4c132ab7d6f8725b634"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.saisons.011",
+   "quest": "meteo.saisons",
+   "skill": "ARI-SEN-A08",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa note un nombre de jours de l'hiver sur la droite numérique.",
+    "en": "Lea marks a number of winter days on the number line."
+   },
+   "prompt": {
+    "fr": "Quel nombre la flèche indique-t-elle ?",
+    "en": "Which number does the arrow show?"
+   },
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 0,
+     "max": 100,
+     "step": 5,
+     "labels": [
+      0,
+      50,
+      100
+     ],
+     "arrow": 65
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 65,
+    "calc": "65"
+   },
+   "common_errors": [
+    {
+     "value": 60,
+     "misconception": "mis_estimate_exact",
+     "feedback": {
+      "fr": "Tu es presque là. Regarde le trait après 60.",
+      "en": "You are nearly there. Look at the mark after 60."
+     }
+    },
+    {
+     "value": 55,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Compte les bonds de 5 depuis 50.",
+      "en": "Count the jumps of 5 from 50."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pars de 50 et compte par bonds de 5.",
+    "en": "Start at 50 and count by fives."
+   },
+   "explain": {
+    "fr": "Depuis 50, on avance de 3 bonds de 5 : 55, 60, 65.",
+    "en": "From 50 we go 3 jumps of 5: 55, 60, 65."
+   },
+   "tags": [
+    "numberline",
+    "seasons",
+    "skip-count"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_530aa618a672c6811369"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "meteo.saisons.012",
+   "quest": "meteo.saisons",
+   "skill": "ARI-SEN-A08",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Dans la cour, il y a 48 feuilles rouges et 52 feuilles jaunes.",
+    "en": "In the yard there are 48 red leaves and 52 yellow leaves."
+   },
+   "prompt": {
+    "fr": "Environ combien de feuilles en tout ?",
+    "en": "About how many leaves in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 92,
+    "max": 108,
+    "exact_for_check": 100,
+    "calc": "48+52"
+   },
+   "common_errors": [
+    {
+     "value": 80,
+     "misconception": "mis_estimate_rounding",
+     "feedback": {
+      "fr": "Tu as arrondi à la mauvaise dizaine.",
+      "en": "You rounded to the wrong ten."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis chaque nombre à la dizaine.",
+    "en": "Round each number to the nearest ten."
+   },
+   "explain": {
+    "fr": "48 est proche de 50 et 52 est proche de 50. 50 + 50 = 100.",
+    "en": "48 is close to 50 and 52 is close to 50. 50 + 50 = 100."
+   },
+   "tags": [
+    "estimation",
+    "seasons",
+    "rounding"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_6b4abbb808894bacbbfe"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  }
+ ]
+}
