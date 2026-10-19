@@ -2975,8 +2975,8 @@
     "en": "An ant is tiny. A diplodocus is giant."
    },
    "explain": {
-    "fr": "Une fourmi fait 1 cm, un chien 60 cm et un diplodocus 25 m.",
-    "en": "An ant is 1 cm, a dog is 60 cm and a diplodocus is 25 m."
+    "fr": "Une fourmi fait 1 cm. Un chien fait 60 cm. Un diplodocus fait 25 m.",
+    "en": "An ant is 1 cm. A dog is 60 cm. A diplodocus is 25 m."
    },
    "tags": [
     "dinosaurs",
