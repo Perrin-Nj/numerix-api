@@ -21,3 +21,12 @@ jobs:
       - run: go install golang.org/x/vuln/cmd/govulncheck@latest && govulncheck ./...
       # Same static build the Oracle VM runs.
       - run: GOOS=linux GOARCH=arm64 CGO_ENABLED=0 go build -o /dev/null ./cmd/api
+      - name: Seed files validate
+        run: go run ./cmd/seed --validate-only --exclude _examples
+      - name: Load test smoke (20 rps x 10 s, zero 5xx)
+        run: |
+          go build -o bin/api ./cmd/api && go build -o bin/loadtest ./cmd/loadtest
+          PORT=8090 DB_PATH=./data/ci.db APP_ENV=development FEATURE_WELCOME_GIFT=false TRUST_PROXY=true ./bin/api & 
+          sleep 3
+          ./bin/loadtest -rps 20 -duration 10s -families 50 | tee load.log
+          ! grep -E "conn-errors=[1-9]" load.log
