@@ -1,0 +1,3943 @@
+{
+ "world": "musique",
+ "schema": 1,
+ "questions": [
+  {
+   "id": "musique.rythme.001",
+   "quest": "musique.rythme",
+   "skill": "ARI-OPE-A13b",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa joue des notes sur le piano.",
+    "en": "Lea plays notes on the piano."
+   },
+   "prompt": {
+    "fr": "Elle joue 1, 3, 5, 7, … Quel nombre vient ensuite ?",
+    "en": "She plays 1, 3, 5, 7, … Which number comes next?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 9,
+    "calc": "7+2"
+   },
+   "common_errors": [
+    {
+     "value": 8,
+     "misconception": "mis_pattern_last_step",
+     "feedback": {
+      "fr": "Regarde l’écart : il est de 2 chaque fois.",
+      "en": "Look at the gap: it is 2 each time."
+     }
+    },
+    {
+     "value": 10,
+     "misconception": "mis_pattern_wrong_rule",
+     "feedback": {
+      "fr": "La suite saute de 2 en 2, elle ne passe pas par 10.",
+      "en": "The list jumps by 2 and does not land on 10."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Ajoute 2 au dernier nombre.",
+    "en": "Add 2 to the last number."
+   },
+   "explain": {
+    "fr": "On ajoute 2 chaque fois : 7 + 2 = 9.",
+    "en": "We add 2 each time: 7 + 2 = 9."
+   },
+   "tags": [
+    "pattern",
+    "by-2",
+    "piano"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_207c83d5931a977e1a76"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.rythme.002",
+   "quest": "musique.rythme",
+   "skill": "ARI-OPE-A13b",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah tape sur le tambour en comptant.",
+    "en": "Noah taps the drum while counting."
+   },
+   "prompt": {
+    "fr": "Il compte 10, 20, 30, 40, … Quel nombre vient ensuite ?",
+    "en": "He counts 10, 20, 30, 40, … Which number comes next?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 50,
+    "calc": "40+10"
+   },
+   "common_errors": [
+    {
+     "value": 41,
+     "misconception": "mis_pattern_wrong_rule",
+     "feedback": {
+      "fr": "La suite saute de 10 en 10.",
+      "en": "The list jumps by 10."
+     }
+    },
+    {
+     "value": 45,
+     "misconception": "mis_pattern_last_step",
+     "feedback": {
+      "fr": "L’écart est 10, pas 5.",
+      "en": "The gap is 10, not 5."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Ajoute 10 au dernier nombre.",
+    "en": "Add 10 to the last number."
+   },
+   "explain": {
+    "fr": "40 + 10 = 50.",
+    "en": "40 + 10 = 50."
+   },
+   "tags": [
+    "pattern",
+    "by-10",
+    "drum"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_490d2d2c795508b7059a"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.rythme.003",
+   "quest": "musique.rythme",
+   "skill": "ARI-OPE-A13b",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Zoé frappe le glockenspiel de plus en plus haut.",
+    "en": "Zoe strikes the glockenspiel higher and higher."
+   },
+   "prompt": {
+    "fr": "Elle compte 4, 8, 12, 16, … Quel nombre vient ensuite ?",
+    "en": "She counts 4, 8, 12, 16, … Which number comes next?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 20,
+    "calc": "16+4"
+   },
+   "common_errors": [
+    {
+     "value": 18,
+     "misconception": "mis_pattern_wrong_rule",
+     "feedback": {
+      "fr": "La suite saute de 4 en 4, pas de 2 en 2.",
+      "en": "The list jumps by 4, not by 2."
+     }
+    },
+    {
+     "value": 24,
+     "misconception": "mis_pattern_last_step",
+     "feedback": {
+      "fr": "Ajoute 4 à 16, pas 8.",
+      "en": "Add 4 to 16, not 8."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Trouve l’écart entre 12 et 16.",
+    "en": "Find the gap between 12 and 16."
+   },
+   "explain": {
+    "fr": "L’écart est 4. Donc 16 + 4 = 20.",
+    "en": "The gap is 4. So 16 + 4 = 20."
+   },
+   "tags": [
+    "pattern",
+    "by-4"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4f63c9f7cdfc486501d2"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.rythme.004",
+   "quest": "musique.rythme",
+   "skill": "ARI-OPE-A13b",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le X veut dire une frappe et le _ veut dire un silence.",
+    "en": "X means a clap and _ means a rest."
+   },
+   "prompt": {
+    "fr": "Le rythme est X X _ X X _ X X … Que vient-il ensuite ?",
+    "en": "The rhythm is X X _ X X _ X X … What comes next?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "X (frappe)",
+      "en": "X (clap)"
+     },
+     "misconception": "mis_pattern_wrong_rule"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "_ (silence)",
+      "en": "_ (rest)"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "X X",
+      "en": "X X"
+     },
+     "misconception": "mis_pattern_last_step"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Cherche le petit groupe qui se répète.",
+    "en": "Look for the small group that repeats."
+   },
+   "explain": {
+    "fr": "Le groupe X X _ se répète. Après X X vient _.",
+    "en": "The group X X _ repeats. After X X comes _."
+   },
+   "tags": [
+    "pattern",
+    "repeating",
+    "rhythm"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.rythme.005",
+   "quest": "musique.rythme",
+   "skill": "ARI-OPE-A13b",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah écrit la règle de son rythme.",
+    "en": "Noah writes the rule of his rhythm."
+   },
+   "prompt": {
+    "fr": "Quelle règle suit la suite 5, 10, 15, 20, 25 ?",
+    "en": "Which rule does the list 5, 10, 15, 20, 25 follow?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "On ajoute 10",
+      "en": "On ajoute 10"
+     },
+     "misconception": "mis_pattern_wrong_rule"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "On ajoute 1",
+      "en": "On ajoute 1"
+     },
+     "misconception": "mis_pattern_wrong_rule"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "On ajoute 5",
+      "en": "On ajoute 5"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c"
+   },
+   "hint": {
+    "fr": "Regarde l’écart entre deux nombres.",
+    "en": "Look at the gap between two numbers."
+   },
+   "explain": {
+    "fr": "10 - 5 = 5 et 15 - 10 = 5. On ajoute 5.",
+    "en": "10 - 5 = 5 and 15 - 10 = 5. We add 5."
+   },
+   "tags": [
+    "pattern",
+    "rule"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.rythme.006",
+   "quest": "musique.rythme",
+   "skill": "ARI-OPE-A13b",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 4,
+   "story": {
+    "fr": "Léa joue des notes sur la guitare.",
+    "en": "Lea plays notes on the guitar."
+   },
+   "prompt": {
+    "fr": "Quel nombre manque dans 3, 6, __, 12, 15 ?",
+    "en": "Which number is missing in 3, 6, __, 12, 15?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "8",
+      "en": "8"
+     },
+     "misconception": "mis_pattern_last_step"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "9",
+      "en": "9"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "10",
+      "en": "10"
+     },
+     "misconception": "mis_pattern_wrong_rule"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "7",
+      "en": "7"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b",
+    "calc_choice": {
+     "b": "6+3"
+    }
+   },
+   "hint": {
+    "fr": "Trouve l’écart entre 3 et 6.",
+    "en": "Find the gap between 3 and 6."
+   },
+   "explain": {
+    "fr": "L’écart est 3. Donc 6 + 3 = 9.",
+    "en": "The gap is 3. So 6 + 3 = 9."
+   },
+   "tags": [
+    "pattern",
+    "missing-term",
+    "by-3"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_8ef0bb8a4bad9956f1af"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.rythme.007",
+   "quest": "musique.rythme",
+   "skill": "ARI-OPE-A13b",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa joue du violon : 10, 15, puis 20 minutes aux jours 1, 2, 3.",
+    "en": "Lea plays the violin: 10, 15, then 20 minutes on days 1, 2, 3."
+   },
+   "prompt": {
+    "fr": "Elle ajoute toujours la même durée. Combien de minutes le jour 4 ?",
+    "en": "She always adds the same time. How many minutes on day 4?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 25,
+    "calc": "20+5"
+   },
+   "common_errors": [
+    {
+     "value": 24,
+     "misconception": "mis_pattern_wrong_rule",
+     "feedback": {
+      "fr": "Chaque jour, Léa ajoute 5 minutes.",
+      "en": "Each day, Lea adds 5 minutes."
+     }
+    },
+    {
+     "value": 30,
+     "misconception": "mis_pattern_last_step",
+     "feedback": {
+      "fr": "Ajoute 5 à 20, pas 10.",
+      "en": "Add 5 to 20, not 10."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Trouve combien de minutes s’ajoutent chaque jour.",
+    "en": "Find how many minutes are added each day."
+   },
+   "explain": {
+    "fr": "On ajoute 5 minutes par jour : 20 + 5 = 25.",
+    "en": "We add 5 minutes a day: 20 + 5 = 25."
+   },
+   "tags": [
+    "word-problem",
+    "pattern",
+    "by-5"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_caf205558d296438c392"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.rythme.008",
+   "quest": "musique.rythme",
+   "skill": "ARI-OPE-A13b",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 5,
+   "story": {
+    "fr": "La fanfare de l’école se met en rangs, avec 4 trompettes au rang 1.",
+    "en": "The school band lines up in rows, with 4 trumpets in row 1."
+   },
+   "prompt": {
+    "fr": "Chaque rang en a 3 de plus. Combien de trompettes au rang 4 ?",
+    "en": "Each row has 3 more. How many trumpets in row 4?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 13,
+    "calc": "4+3*3"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "7 est le rang 2. Continue jusqu’au rang 4.",
+      "en": "7 is row 2. Keep going to row 4."
+     }
+    },
+    {
+     "value": 16,
+     "misconception": "mis_pattern_wrong_rule",
+     "feedback": {
+      "fr": "Il y a 3 ajouts à partir du rang 1, pas 4.",
+      "en": "From row 1 there are 3 additions, not 4."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Écris 4, 7, … jusqu’au rang 4.",
+    "en": "Write 4, 7, … up to row 4."
+   },
+   "explain": {
+    "fr": "4, 7, 10, 13 : le rang 4 a 13 trompettes.",
+    "en": "4, 7, 10, 13: row 4 has 13 trumpets."
+   },
+   "tags": [
+    "word-problem",
+    "pattern",
+    "by-3"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_267ac67f78abcb12cf71"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.rythme.009",
+   "quest": "musique.rythme",
+   "skill": "ARI-OPE-A13b",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa écoute une suite de coups de tambour.",
+    "en": "Lea listens to a list of drum beats."
+   },
+   "prompt": {
+    "fr": "Léa dit que 2, 4, 6, 8 augmente de 2 chaque fois. A-t-elle raison ?",
+    "en": "Lea says that 2, 4, 6, 8 goes up by 2 each time. Is she right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": true
+   },
+   "hint": {
+    "fr": "Regarde l’écart entre deux nombres.",
+    "en": "Look at the gap between two numbers."
+   },
+   "explain": {
+    "fr": "4 - 2 = 2, 6 - 4 = 2 et 8 - 6 = 2.",
+    "en": "4 - 2 = 2, 6 - 4 = 2 and 8 - 6 = 2."
+   },
+   "tags": [
+    "true-false",
+    "pattern"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.rythme.010",
+   "quest": "musique.rythme",
+   "skill": "ARI-OPE-A13b",
+   "type": "truefalse",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah invente un rythme avec des nombres.",
+    "en": "Noah makes up a rhythm with numbers."
+   },
+   "prompt": {
+    "fr": "Noah dit que 5, 10, 15, 25 suit toujours la même règle. A-t-il raison ?",
+    "en": "Noah says that 5, 10, 15, 25 always follows the same rule. Is he right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_pattern_wrong_rule"
+   },
+   "hint": {
+    "fr": "Compare les écarts un à un.",
+    "en": "Compare the gaps one by one."
+   },
+   "explain": {
+    "fr": "Les écarts sont 5, 5 puis 10. La règle change.",
+    "en": "The gaps are 5, 5 then 10. The rule changes."
+   },
+   "tags": [
+    "true-false",
+    "pattern"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.rythme.011",
+   "quest": "musique.rythme",
+   "skill": "ARI-OPE-A13b",
+   "type": "order",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa lit les numéros des pièces de piano.",
+    "en": "Lea reads the numbers of the piano pieces."
+   },
+   "prompt": {
+    "fr": "Range ces nombres du plus petit au plus grand.",
+    "en": "Put these numbers in order, from the smallest to the biggest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "7",
+      "en": "7"
+     },
+     "key": "7"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "3",
+      "en": "3"
+     },
+     "key": "3"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "9",
+      "en": "9"
+     },
+     "key": "9"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "5",
+      "en": "5"
+     },
+     "key": "5"
+    },
+    {
+     "id": "e",
+     "text": {
+      "fr": "1",
+      "en": "1"
+     },
+     "key": "1"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "e",
+     "b",
+     "d",
+     "a",
+     "c"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Cherche d’abord le plus petit.",
+    "en": "First find the smallest."
+   },
+   "explain": {
+    "fr": "1, 3, 5, 7, 9 : on ajoute 2 chaque fois.",
+    "en": "1, 3, 5, 7, 9: we add 2 each time."
+   },
+   "tags": [
+    "ordering",
+    "pattern"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.rythme.012",
+   "quest": "musique.rythme",
+   "skill": "ARI-OPE-A13b",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah complète des suites de battements.",
+    "en": "Noah finishes lists of beats."
+   },
+   "prompt": {
+    "fr": "Relie chaque suite au nombre qui vient ensuite.",
+    "en": "Match each list to the number that comes next."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "2, 4, 6, 8, …",
+       "en": "2, 4, 6, 8, …"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "5, 10, 15, …",
+       "en": "5, 10, 15, …"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "10, 20, 30, …",
+       "en": "10, 20, 30, …"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "40",
+       "en": "40"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "10",
+       "en": "10"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "20",
+       "en": "20"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r2"
+     ],
+     [
+      "l2",
+      "r3"
+     ],
+     [
+      "l3",
+      "r1"
+     ]
+    ],
+    "misconception": "mis_pattern_wrong_rule"
+   },
+   "hint": {
+    "fr": "Trouve l’écart de chaque suite.",
+    "en": "Find the gap of each list."
+   },
+   "explain": {
+    "fr": "2, 4, 6, 8, 10. 5, 10, 15, 20. 10, 20, 30, 40.",
+    "en": "2, 4, 6, 8, 10. 5, 10, 15, 20. 10, 20, 30, 40."
+   },
+   "tags": [
+    "matching",
+    "pattern"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.rythme.013",
+   "quest": "musique.rythme",
+   "skill": "ARI-OPE-A13b",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa dessine des notes de musique sur la partition.",
+    "en": "Lea draws music notes on the score."
+   },
+   "prompt": {
+    "fr": "Regarde les rangées. Combien de notes dans la rangée suivante ?",
+    "en": "Look at the rows. How many notes in the next row?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Notes par rangée",
+      "en": "Notes per row"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "rangée 1",
+        "en": "row 1"
+       },
+       "count": 2
+      },
+      {
+       "label": {
+        "fr": "rangée 2",
+        "en": "row 2"
+       },
+       "count": 4
+      },
+      {
+       "label": {
+        "fr": "rangée 3",
+        "en": "row 3"
+       },
+       "count": 6
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 8,
+    "calc": "6+2"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_pattern_last_step",
+     "feedback": {
+      "fr": "L’écart est 2, pas 1.",
+      "en": "The gap is 2, not 1."
+     }
+    },
+    {
+     "value": 6,
+     "misconception": "mis_pattern_wrong_rule",
+     "feedback": {
+      "fr": "6 est la rangée 3. Cherche la suivante.",
+      "en": "6 is row 3. Look for the next one."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les notes de chaque rangée.",
+    "en": "Count the notes in each row."
+   },
+   "explain": {
+    "fr": "2, 4, 6, puis 8 : on ajoute 2 notes à chaque rangée.",
+    "en": "2, 4, 6, then 8: we add 2 notes each row."
+   },
+   "tags": [
+    "pictograph",
+    "pattern"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_207c83d5931a977e1a76"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.rythme.014",
+   "quest": "musique.rythme",
+   "skill": "ARI-OPE-A13b",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 4,
+   "story": {
+    "fr": "Le tambour joue de plus en plus fort au fil des minutes.",
+    "en": "The drum plays louder and louder as the minutes pass."
+   },
+   "prompt": {
+    "fr": "Combien de coups à la minute 5 si la suite continue ?",
+    "en": "How many beats in minute 5 if the pattern continues?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Coups de tambour",
+      "en": "Drum beats"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "minute 1",
+        "en": "minute 1"
+       },
+       "value": 5
+      },
+      {
+       "label": {
+        "fr": "minute 2",
+        "en": "minute 2"
+       },
+       "value": 10
+      },
+      {
+       "label": {
+        "fr": "minute 3",
+        "en": "minute 3"
+       },
+       "value": 15
+      },
+      {
+       "label": {
+        "fr": "minute 4",
+        "en": "minute 4"
+       },
+       "value": 20
+      }
+     ],
+     "max": 30
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 25,
+    "calc": "20+5"
+   },
+   "common_errors": [
+    {
+     "value": 24,
+     "misconception": "mis_pattern_wrong_rule",
+     "feedback": {
+      "fr": "Chaque minute ajoute 5 coups.",
+      "en": "Each minute adds 5 beats."
+     }
+    },
+    {
+     "value": 30,
+     "misconception": "mis_pattern_last_step",
+     "feedback": {
+      "fr": "Ajoute 5 à 20, pas 10.",
+      "en": "Add 5 to 20, not 10."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Regarde la différence entre deux barres.",
+    "en": "Look at the difference between two bars."
+   },
+   "explain": {
+    "fr": "5, 10, 15, 20, puis 25 : on ajoute 5 chaque minute.",
+    "en": "5, 10, 15, 20, then 25: we add 5 each minute."
+   },
+   "tags": [
+    "bar-chart",
+    "pattern"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_42883b10907a9fbadb11"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.rythme.015",
+   "quest": "musique.rythme",
+   "skill": "ARI-OPE-A13b",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le tambour ajoute 10 coups chaque minute.",
+    "en": "The drum adds 10 beats every minute."
+   },
+   "prompt": {
+    "fr": "Il joue 10, 20, 30, … Environ combien de coups à la minute 7 ?",
+    "en": "It plays 10, 20, 30, … About how many beats in minute 7?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 66,
+    "max": 74,
+    "exact_for_check": 70,
+    "calc": "7*10"
+   },
+   "common_errors": [
+    {
+     "value": 17,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Chaque minute ajoute 10 : compte de 10 en 10.",
+      "en": "Each minute adds 10, so count by 10s."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 10 en 10 sept fois.",
+    "en": "Count by 10s seven times."
+   },
+   "explain": {
+    "fr": "10, 20, 30, 40, 50, 60, 70 : environ 70 coups.",
+    "en": "10, 20, 30, 40, 50, 60, 70: about 70 beats."
+   },
+   "tags": [
+    "estimation",
+    "pattern",
+    "by-10"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_490d2d2c795508b7059a"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.mesures.001",
+   "quest": "musique.mesures",
+   "skill": "ARI-SEN-B01",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Une mesure de valse a 6 temps.",
+    "en": "A waltz bar has 6 beats."
+   },
+   "prompt": {
+    "fr": "Combien de temps y a-t-il dans la moitié de la mesure ?",
+    "en": "How many beats are in half of the bar?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3,
+    "calc": "6/2"
+   },
+   "common_errors": [
+    {
+     "value": 12,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "La moitié veut dire partager en 2 : on divise.",
+      "en": "Half means sharing in 2, so we divide."
+     }
+    },
+    {
+     "value": 4,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "La moitié veut dire diviser par 2.",
+      "en": "Half means dividing by 2."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Partage 6 temps en 2 groupes égaux.",
+    "en": "Share 6 beats into 2 equal groups."
+   },
+   "explain": {
+    "fr": "6 ÷ 2 = 3. La moitié a 3 temps.",
+    "en": "6 ÷ 2 = 3. Half has 3 beats."
+   },
+   "tags": [
+    "fractions",
+    "half",
+    "bar"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_207c83d5931a977e1a76"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.mesures.002",
+   "quest": "musique.mesures",
+   "skill": "ARI-SEN-B01",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa lit une mesure de 8 temps.",
+    "en": "Lea reads a bar of 8 beats."
+   },
+   "prompt": {
+    "fr": "Combien de temps y a-t-il dans un quart de la mesure ?",
+    "en": "How many beats are in a quarter of the bar?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 2,
+    "calc": "8/4"
+   },
+   "common_errors": [
+    {
+     "value": 4,
+     "misconception": "mis_fraction_denominator",
+     "feedback": {
+      "fr": "4 temps, c’est la moitié. Un quart est plus petit.",
+      "en": "4 beats is half. A quarter is smaller."
+     }
+    },
+    {
+     "value": 32,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "Un quart veut dire partager en 4 : on divise.",
+      "en": "A quarter means sharing in 4, so we divide."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Partage 8 temps en 4 groupes égaux.",
+    "en": "Share 8 beats into 4 equal groups."
+   },
+   "explain": {
+    "fr": "8 ÷ 4 = 2. Un quart a 2 temps.",
+    "en": "8 ÷ 4 = 2. A quarter has 2 beats."
+   },
+   "tags": [
+    "fractions",
+    "quarter",
+    "bar"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.mesures.003",
+   "quest": "musique.mesures",
+   "skill": "ARI-SEN-B01",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 4,
+   "story": {
+    "fr": "Noah joue une grande mesure de 16 temps.",
+    "en": "Noah plays a long bar of 16 beats."
+   },
+   "prompt": {
+    "fr": "Combien de temps y a-t-il dans trois quarts de la mesure ?",
+    "en": "How many beats are in three quarters of the bar?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 12,
+    "calc": "16/4*3"
+   },
+   "common_errors": [
+    {
+     "value": 4,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "4 temps, c’est un seul quart. Il en faut trois.",
+      "en": "4 beats is one quarter. We need three."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_fraction_denominator",
+     "feedback": {
+      "fr": "8 temps, c’est la moitié. Trois quarts font plus.",
+      "en": "8 beats is half. Three quarters is more."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Trouve d’abord un quart de la mesure.",
+    "en": "First find one quarter of the bar."
+   },
+   "explain": {
+    "fr": "16 ÷ 4 = 4 temps par quart. 3 × 4 = 12.",
+    "en": "16 ÷ 4 = 4 beats per quarter. 3 × 4 = 12."
+   },
+   "tags": [
+    "fractions",
+    "three-quarters",
+    "bar"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.mesures.004",
+   "quest": "musique.mesures",
+   "skill": "ARI-SEN-B01",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Une mesure est coupée en 2 parties égales.",
+    "en": "A bar is cut into 2 equal parts."
+   },
+   "prompt": {
+    "fr": "Léa joue une partie. Quelle fraction de la mesure joue-t-elle ?",
+    "en": "Lea plays one part. What fraction of the bar does she play?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "2/1",
+      "en": "2/1"
+     },
+     "misconception": "mis_digit_swap"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "1/2",
+      "en": "1/2"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "1/3",
+      "en": "1/3"
+     },
+     "misconception": "mis_fraction_parts_unequal"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "2",
+      "en": "2"
+     },
+     "misconception": "mis_fraction_denominator"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Une partie sur combien de parties égales ?",
+    "en": "One part out of how many equal parts?"
+   },
+   "explain": {
+    "fr": "1 partie sur 2 parties égales : 1/2.",
+    "en": "1 part out of 2 equal parts: 1/2."
+   },
+   "tags": [
+    "fractions",
+    "half"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_caf205558d296438c392"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.mesures.005",
+   "quest": "musique.mesures",
+   "skill": "ARI-SEN-B01",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa hésite entre deux morceaux d’une mesure.",
+    "en": "Lea hesitates between two pieces of a bar."
+   },
+   "prompt": {
+    "fr": "Quel morceau est le plus long : un demi ou un quart ?",
+    "en": "Which piece is longer: a half or a quarter?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "1/4 de la mesure",
+      "en": "1/4 de la mesure"
+     },
+     "misconception": "mis_fraction_denominator"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "1/2 de la mesure",
+      "en": "1/2 de la mesure"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Pareils",
+      "en": "Pareils"
+     },
+     "random": true
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Plus on coupe en parts, plus les parts sont petites.",
+    "en": "The more parts we cut, the smaller each part is."
+   },
+   "explain": {
+    "fr": "Une moitié est coupée en 2, un quart en 4. Les quarts sont plus petits.",
+    "en": "A half is cut in 2, a quarter in 4. Quarters are smaller."
+   },
+   "tags": [
+    "fractions",
+    "compare"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.mesures.006",
+   "quest": "musique.mesures",
+   "skill": "ARI-SEN-B01",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 4,
+   "story": {
+    "fr": "Une mesure a 8 temps.",
+    "en": "A bar has 8 beats."
+   },
+   "prompt": {
+    "fr": "Noah joue trois quarts de la mesure. Combien de temps joue-t-il ?",
+    "en": "Noah plays three quarters of the bar. How many beats does he play?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "2",
+      "en": "2"
+     },
+     "misconception": "mis_partial_result"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "4",
+      "en": "4"
+     },
+     "misconception": "mis_fraction_denominator"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "5",
+      "en": "5"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "6",
+      "en": "6"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d",
+    "calc_choice": {
+     "d": "8/4*3"
+    }
+   },
+   "hint": {
+    "fr": "Trouve un quart, puis prends-en trois.",
+    "en": "Find one quarter, then take three of them."
+   },
+   "explain": {
+    "fr": "Un quart = 2 temps. Trois quarts = 3 × 2 = 6 temps.",
+    "en": "One quarter = 2 beats. Three quarters = 3 × 2 = 6 beats."
+   },
+   "tags": [
+    "fractions",
+    "three-quarters"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_42883b10907a9fbadb11"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.mesures.007",
+   "quest": "musique.mesures",
+   "skill": "ARI-SEN-B01",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Une chanson a 8 mesures.",
+    "en": "A song has 8 bars."
+   },
+   "prompt": {
+    "fr": "Léa joue la moitié des mesures. Combien de mesures joue-t-elle ?",
+    "en": "Lea plays half of the bars. How many bars does she play?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 4,
+    "calc": "8/2"
+   },
+   "common_errors": [
+    {
+     "value": 16,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "La moitié veut dire diviser par 2.",
+      "en": "Half means dividing by 2."
+     }
+    },
+    {
+     "value": 2,
+     "misconception": "mis_fraction_denominator",
+     "feedback": {
+      "fr": "2 mesures, c’est un quart. La moitié est plus grande.",
+      "en": "2 bars is a quarter. Half is bigger."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Partage 8 mesures en 2 groupes égaux.",
+    "en": "Share 8 bars into 2 equal groups."
+   },
+   "explain": {
+    "fr": "8 ÷ 2 = 4 mesures.",
+    "en": "8 ÷ 2 = 4 bars."
+   },
+   "tags": [
+    "word-problem",
+    "half"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_8ef0bb8a4bad9956f1af"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.mesures.008",
+   "quest": "musique.mesures",
+   "skill": "ARI-SEN-B01",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 5,
+   "story": {
+    "fr": "Une mesure a 8 temps.",
+    "en": "A bar has 8 beats."
+   },
+   "prompt": {
+    "fr": "Noah joue un quart, puis encore un quart de la mesure. Combien de temps joue-t-il en tout ?",
+    "en": "Noah plays a quarter, then another quarter of the bar. How many beats does he play in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 4,
+    "calc": "8/4+8/4"
+   },
+   "common_errors": [
+    {
+     "value": 2,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "2 temps, c’est un seul quart. Ajoute le deuxième.",
+      "en": "2 beats is only one quarter. Add the second."
+     }
+    },
+    {
+     "value": 6,
+     "misconception": "mis_fraction_denominator",
+     "feedback": {
+      "fr": "Deux quarts font la moitié de la mesure.",
+      "en": "Two quarters make half of the bar."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Combien de temps dans un quart ?",
+    "en": "How many beats are in a quarter?"
+   },
+   "explain": {
+    "fr": "Un quart = 2 temps. 2 + 2 = 4 temps, la moitié.",
+    "en": "One quarter = 2 beats. 2 + 2 = 4 beats, which is half."
+   },
+   "tags": [
+    "word-problem",
+    "quarter",
+    "addition"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.mesures.009",
+   "quest": "musique.mesures",
+   "skill": "ARI-SEN-B01",
+   "type": "truefalse",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Zoé compare des morceaux de mesure.",
+    "en": "Zoe compares pieces of a bar."
+   },
+   "prompt": {
+    "fr": "Zoé dit que deux quarts de mesure valent une moitié de mesure. A-t-elle raison ?",
+    "en": "Zoe says that two quarters of a bar equal one half of a bar. Is she right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": true
+   },
+   "hint": {
+    "fr": "Coupe une mesure en 4 et prends 2 parts.",
+    "en": "Cut a bar in 4 and take 2 parts."
+   },
+   "explain": {
+    "fr": "2 parts sur 4 font la même chose que 1 part sur 2.",
+    "en": "2 parts out of 4 are the same as 1 part out of 2."
+   },
+   "tags": [
+    "true-false",
+    "fractions"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.mesures.010",
+   "quest": "musique.mesures",
+   "skill": "ARI-SEN-B01",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa joue des morceaux de mesure de longueurs différentes.",
+    "en": "Lea plays pieces of a bar of different lengths."
+   },
+   "prompt": {
+    "fr": "Range ces morceaux du plus court au plus long.",
+    "en": "Put these pieces in order, from the shortest to the longest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "1/2 de mesure",
+      "en": "1/2 of a bar"
+     },
+     "key": "0.5"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "1/4 de mesure",
+      "en": "1/4 of a bar"
+     },
+     "key": "0.25"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "3/4 de mesure",
+      "en": "3/4 of a bar"
+     },
+     "key": "0.75"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "une mesure",
+      "en": "a whole bar"
+     },
+     "key": "1"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "a",
+     "c",
+     "d"
+    ],
+    "by": "asc",
+    "misconception": "mis_fraction_denominator"
+   },
+   "hint": {
+    "fr": "Plus il y a de parts, plus chaque part est petite.",
+    "en": "The more parts, the smaller each part is."
+   },
+   "explain": {
+    "fr": "1/4 est plus court que 1/2, puis 3/4, puis la mesure entière.",
+    "en": "1/4 is shorter than 1/2, then 3/4, then the whole bar."
+   },
+   "tags": [
+    "ordering",
+    "fractions"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.mesures.011",
+   "quest": "musique.mesures",
+   "skill": "ARI-SEN-B01",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 4,
+   "story": {
+    "fr": "Noah choisit combien de la mesure il joue.",
+    "en": "Noah chooses how much of the bar he plays."
+   },
+   "prompt": {
+    "fr": "Range ces morceaux du plus long au plus court.",
+    "en": "Put these pieces in order, from the longest to the shortest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "1/4 de mesure",
+      "en": "1/4 of a bar"
+     },
+     "key": "0.25"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "3/4 de mesure",
+      "en": "3/4 of a bar"
+     },
+     "key": "0.75"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "une mesure",
+      "en": "a whole bar"
+     },
+     "key": "1"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "1/2 de mesure",
+      "en": "1/2 of a bar"
+     },
+     "key": "0.5"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "c",
+     "b",
+     "d",
+     "a"
+    ],
+    "by": "desc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Commence par la mesure entière.",
+    "en": "Start with the whole bar."
+   },
+   "explain": {
+    "fr": "La mesure entière, puis 3/4, puis 1/2, puis 1/4.",
+    "en": "The whole bar, then 3/4, then 1/2, then 1/4."
+   },
+   "tags": [
+    "ordering",
+    "fractions",
+    "descending"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.mesures.012",
+   "quest": "musique.mesures",
+   "skill": "ARI-SEN-B01",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Une mesure complète a 8 temps.",
+    "en": "A whole bar has 8 beats."
+   },
+   "prompt": {
+    "fr": "Relie chaque morceau de la mesure à son nombre de temps.",
+    "en": "Match each piece of the bar to its number of beats."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "la moitié",
+       "en": "half"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "un quart",
+       "en": "a quarter"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "toute la mesure",
+       "en": "the whole bar"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "8 temps",
+       "en": "8 temps"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "2 temps",
+       "en": "2 temps"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "4 temps",
+       "en": "4 temps"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r3"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r1"
+     ]
+    ],
+    "misconception": "mis_fraction_denominator"
+   },
+   "hint": {
+    "fr": "Divise 8 par 2, puis par 4.",
+    "en": "Divide 8 by 2, then by 4."
+   },
+   "explain": {
+    "fr": "La moitié = 4 temps, un quart = 2 temps, tout = 8 temps.",
+    "en": "Half = 4 beats, a quarter = 2 beats, the whole = 8 beats."
+   },
+   "tags": [
+    "matching",
+    "fractions"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.mesures.013",
+   "quest": "musique.mesures",
+   "skill": "ARI-SEN-B01",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa colore la partition en parts égales.",
+    "en": "Lea colours the score in equal parts."
+   },
+   "prompt": {
+    "fr": "Quelle fraction de la mesure est colorée ?",
+    "en": "What fraction of the bar is coloured?"
+   },
+   "visual": {
+    "kind": "fraction",
+    "data": {
+     "parts": 4,
+     "filled": 3
+    }
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "4/3",
+      "en": "4/3"
+     },
+     "misconception": "mis_digit_swap"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "2/4",
+      "en": "2/4"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "1/4",
+      "en": "1/4"
+     },
+     "misconception": "mis_read_wrong_bar"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "3/4",
+      "en": "3/4"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d"
+   },
+   "hint": {
+    "fr": "Compte les parts colorées et toutes les parts.",
+    "en": "Count the coloured parts and all the parts."
+   },
+   "explain": {
+    "fr": "3 parts colorées sur 4 parts égales : 3/4.",
+    "en": "3 coloured parts out of 4 equal parts: 3/4."
+   },
+   "tags": [
+    "fraction-visual",
+    "three-quarters"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.mesures.014",
+   "quest": "musique.mesures",
+   "skill": "ARI-SEN-B01",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 4,
+   "story": {
+    "fr": "Noah coupe une mesure en huit parts égales.",
+    "en": "Noah cuts a bar into eight equal parts."
+   },
+   "prompt": {
+    "fr": "Combien de quarts de mesure sont colorés ?",
+    "en": "How many quarters of the bar are coloured?"
+   },
+   "visual": {
+    "kind": "fraction",
+    "data": {
+     "parts": 8,
+     "filled": 6
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3,
+    "calc": "6/2"
+   },
+   "common_errors": [
+    {
+     "value": 6,
+     "misconception": "mis_fraction_denominator",
+     "feedback": {
+      "fr": "6 est le nombre de petites parts. Un quart en contient 2.",
+      "en": "6 is the number of small parts. A quarter holds 2."
+     }
+    },
+    {
+     "value": 2,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Regarde encore : 6 petites parts font plus de 2 quarts.",
+      "en": "Look again: 6 small parts make more than 2 quarters."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Un quart de 8 parts, c’est 2 parts.",
+    "en": "A quarter of 8 parts is 2 parts."
+   },
+   "explain": {
+    "fr": "6 parts ÷ 2 parts par quart = 3 quarts.",
+    "en": "6 parts ÷ 2 parts per quarter = 3 quarters."
+   },
+   "tags": [
+    "fraction-visual",
+    "quarter",
+    "equivalence"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.mesures.015",
+   "quest": "musique.mesures",
+   "skill": "ARI-SEN-B01",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un morceau a 19 mesures.",
+    "en": "A piece has 19 bars."
+   },
+   "prompt": {
+    "fr": "La moitié des mesures sont chantées. Environ combien de mesures sont chantées ?",
+    "en": "Half of the bars are sung. About how many bars are sung?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 9,
+    "max": 10,
+    "exact_for_check": 9.5,
+    "calc": "19/2"
+   },
+   "common_errors": [
+    {
+     "value": 38,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "La moitié veut dire diviser par 2.",
+      "en": "Half means dividing by 2."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à 20 mesures.",
+    "en": "Think of 20 bars."
+   },
+   "explain": {
+    "fr": "La moitié de 20 est 10. Avec 19, c’est un peu moins : environ 10.",
+    "en": "Half of 20 is 10. With 19 it is a little less: about 10."
+   },
+   "tags": [
+    "estimation",
+    "half"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.concert.001",
+   "quest": "musique.concert",
+   "skill": "ARI-OPE-A06a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "L’orchestre de l’école prépare le concert.",
+    "en": "The school orchestra gets ready for the concert."
+   },
+   "prompt": {
+    "fr": "Il y a 5 rangées de 6 chaises. Combien de chaises en tout ?",
+    "en": "There are 5 rows of 6 chairs. How many chairs in all?"
+   },
+   "math_text": "5 × 6 = ?",
+   "answer": {
+    "kind": "numeric",
+    "value": 30,
+    "calc": "5*6"
+   },
+   "common_errors": [
+    {
+     "value": 11,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Il y a 5 rangées de 6 chaises : on multiplie.",
+      "en": "There are 5 rows of 6 chairs, so we multiply."
+     }
+    },
+    {
+     "value": 24,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Il y a 5 rangées, pas 4.",
+      "en": "There are 5 rows, not 4."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 6 en 6, cinq fois.",
+    "en": "Count by 6s, five times."
+   },
+   "explain": {
+    "fr": "5 × 6 = 30 chaises.",
+    "en": "5 × 6 = 30 chairs."
+   },
+   "tags": [
+    "multiplication",
+    "rows",
+    "chairs"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_207c83d5931a977e1a76"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.concert.002",
+   "quest": "musique.concert",
+   "skill": "ARI-OPE-A06a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "La salle de concert a des rangées de chaises.",
+    "en": "The concert hall has rows of chairs."
+   },
+   "prompt": {
+    "fr": "Chaque rangée a 8 chaises et il y a 7 rangées. Combien de chaises en tout ?",
+    "en": "Each row has 8 chairs and there are 7 rows. How many chairs in all?"
+   },
+   "math_text": "7 × 8 = ?",
+   "answer": {
+    "kind": "numeric",
+    "value": 56,
+    "calc": "7*8"
+   },
+   "common_errors": [
+    {
+     "value": 15,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Il y a 7 rangées de 8 chaises : on multiplie.",
+      "en": "There are 7 rows of 8 chairs, so we multiply."
+     }
+    },
+    {
+     "value": 48,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Il y a 7 rangées, pas 6.",
+      "en": "There are 7 rows, not 6."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à 7 × 7 = 49, puis ajoute 7.",
+    "en": "Think 7 × 7 = 49, then add 7."
+   },
+   "explain": {
+    "fr": "7 × 8 = 56 chaises.",
+    "en": "7 × 8 = 56 chairs."
+   },
+   "tags": [
+    "multiplication",
+    "rows",
+    "chairs"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.concert.003",
+   "quest": "musique.concert",
+   "skill": "ARI-OPE-A06a",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Les musiciens comptent leurs partitions.",
+    "en": "The musicians count their sheets of music."
+   },
+   "prompt": {
+    "fr": "Combien font 6 × 7 ?",
+    "en": "What is 6 × 7?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "13",
+      "en": "13"
+     },
+     "misconception": "mis_add_instead_of_multiply"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "36",
+      "en": "36"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "42",
+      "en": "42"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "49",
+      "en": "49"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "6*7"
+    }
+   },
+   "hint": {
+    "fr": "Pense à 6 × 6 = 36, puis ajoute 6.",
+    "en": "Think 6 × 6 = 36, then add 6."
+   },
+   "explain": {
+    "fr": "6 × 7 = 42.",
+    "en": "6 × 7 = 42."
+   },
+   "tags": [
+    "multiplication",
+    "facts"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_78496ef4bc77bb188f7f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.concert.004",
+   "quest": "musique.concert",
+   "skill": "ARI-OPE-A06a",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le chef compte les violons.",
+    "en": "The conductor counts the violins."
+   },
+   "prompt": {
+    "fr": "Quatre rangées ont chacune 9 violons. Combien de violons en tout ?",
+    "en": "Four rows have 9 violins each. How many violins in all?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "32",
+      "en": "32"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "13",
+      "en": "13"
+     },
+     "misconception": "mis_add_instead_of_multiply"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "45",
+      "en": "45"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "36",
+      "en": "36"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d",
+    "calc_choice": {
+     "d": "4*9"
+    }
+   },
+   "hint": {
+    "fr": "Compte de 9 en 9, quatre fois.",
+    "en": "Count by 9s, four times."
+   },
+   "explain": {
+    "fr": "9, 18, 27, 36 : 4 × 9 = 36.",
+    "en": "9, 18, 27, 36: 4 × 9 = 36."
+   },
+   "tags": [
+    "multiplication",
+    "groups"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_caf205558d296438c392"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.concert.005",
+   "quest": "musique.concert",
+   "skill": "ARI-OPE-A06a",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Chaque musicien joue 8 pièces, 9 fois cette année.",
+    "en": "Each musician plays 8 pieces, 9 times this year."
+   },
+   "prompt": {
+    "fr": "Combien font 8 × 9 ?",
+    "en": "What is 8 × 9?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "64",
+      "en": "64"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "72",
+      "en": "72"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "81",
+      "en": "81"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "17",
+      "en": "17"
+     },
+     "misconception": "mis_add_instead_of_multiply"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b",
+    "calc_choice": {
+     "b": "8*9"
+    }
+   },
+   "hint": {
+    "fr": "Pense à 8 × 10 = 80, puis enlève 8.",
+    "en": "Think 8 × 10 = 80, then take away 8."
+   },
+   "explain": {
+    "fr": "8 × 9 = 80 - 8 = 72.",
+    "en": "8 × 9 = 80 - 8 = 72."
+   },
+   "tags": [
+    "multiplication",
+    "facts"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.concert.006",
+   "quest": "musique.concert",
+   "skill": "ARI-OPE-A06a",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "La chorale se place sur la scène.",
+    "en": "The choir stands on the stage."
+   },
+   "prompt": {
+    "fr": "Il y a 9 pupitres de 3 chanteurs. Combien de chanteurs en tout ?",
+    "en": "There are 9 stands with 3 singers each. How many singers in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 27,
+    "calc": "9*3"
+   },
+   "common_errors": [
+    {
+     "value": 12,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Il y a 9 groupes de 3 : on multiplie.",
+      "en": "There are 9 groups of 3, so we multiply."
+     }
+    },
+    {
+     "value": 24,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Il y a 9 groupes, pas 8.",
+      "en": "There are 9 groups, not 8."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 3 en 3, neuf fois.",
+    "en": "Count by 3s, nine times."
+   },
+   "explain": {
+    "fr": "9 × 3 = 27 chanteurs.",
+    "en": "9 × 3 = 27 singers."
+   },
+   "tags": [
+    "word-problem",
+    "multiplication",
+    "groups"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.concert.007",
+   "quest": "musique.concert",
+   "skill": "ARI-OPE-A06a",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "L’orchestre s’installe pour le grand concert.",
+    "en": "The orchestra settles in for the big concert."
+   },
+   "prompt": {
+    "fr": "Il y a 4 rangées de 6 violons et 3 rangées de 5 flûtes. Combien d’instruments en tout ?",
+    "en": "There are 4 rows of 6 violins and 3 rows of 5 flutes. How many instruments in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 39,
+    "calc": "4*6+3*5"
+   },
+   "common_errors": [
+    {
+     "value": 24,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as compté seulement les violons.",
+      "en": "You counted only the violins."
+     }
+    },
+    {
+     "value": 18,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Chaque rangée a plusieurs instruments : on multiplie.",
+      "en": "Each row has many instruments, so we multiply."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Calcule les violons, puis les flûtes.",
+    "en": "Work out the violins, then the flutes."
+   },
+   "explain": {
+    "fr": "4 × 6 = 24 et 3 × 5 = 15. 24 + 15 = 39.",
+    "en": "4 × 6 = 24 and 3 × 5 = 15. 24 + 15 = 39."
+   },
+   "tags": [
+    "word-problem",
+    "multiplication",
+    "two-steps"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_267ac67f78abcb12cf71"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.concert.008",
+   "quest": "musique.concert",
+   "skill": "ARI-OPE-A06a",
+   "type": "truefalse",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah vérifie sa table de multiplication.",
+    "en": "Noah checks his times table."
+   },
+   "prompt": {
+    "fr": "Noah dit que 6 × 8 donne 46. A-t-il raison ?",
+    "en": "Noah says that 6 × 8 makes 46. Is he right?"
+   },
+   "math_text": "6 × 8 = 46",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_off_by_one"
+   },
+   "hint": {
+    "fr": "Pense à 5 × 8 = 40, puis ajoute 8.",
+    "en": "Think 5 × 8 = 40, then add 8."
+   },
+   "explain": {
+    "fr": "6 × 8 = 48, pas 46.",
+    "en": "6 × 8 = 48, not 46."
+   },
+   "tags": [
+    "true-false",
+    "multiplication"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.concert.009",
+   "quest": "musique.concert",
+   "skill": "ARI-OPE-A06a",
+   "type": "order",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa range les calculs du concert.",
+    "en": "Lea sorts the concert sums."
+   },
+   "prompt": {
+    "fr": "Range ces calculs du plus petit au plus grand résultat.",
+    "en": "Put these sums in order, from the smallest result to the biggest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "6 × 5",
+      "en": "6 × 5"
+     },
+     "key": "30"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "8 × 6",
+      "en": "8 × 6"
+     },
+     "key": "48"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "7 × 3",
+      "en": "7 × 3"
+     },
+     "key": "21"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "4 × 9",
+      "en": "4 × 9"
+     },
+     "key": "36"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "c",
+     "a",
+     "d",
+     "b"
+    ],
+    "by": "asc",
+    "misconception": "mis_order"
+   },
+   "hint": {
+    "fr": "Calcule chaque produit d’abord.",
+    "en": "Work out each product first."
+   },
+   "explain": {
+    "fr": "7 × 3 = 21, 6 × 5 = 30, 4 × 9 = 36, 8 × 6 = 48.",
+    "en": "7 × 3 = 21, 6 × 5 = 30, 4 × 9 = 36, 8 × 6 = 48."
+   },
+   "tags": [
+    "ordering",
+    "multiplication"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.concert.010",
+   "quest": "musique.concert",
+   "skill": "ARI-OPE-A06a",
+   "type": "match",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Les musiciens apprennent leurs tables.",
+    "en": "The musicians learn their times tables."
+   },
+   "prompt": {
+    "fr": "Relie chaque multiplication à son résultat.",
+    "en": "Match each multiplication to its result."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "3 × 9",
+       "en": "3 × 9"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "4 × 8",
+       "en": "4 × 8"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "6 × 6",
+       "en": "6 × 6"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "5 × 7",
+       "en": "5 × 7"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "32",
+       "en": "32"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "35",
+       "en": "35"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "27",
+       "en": "27"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "36",
+       "en": "36"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r3"
+     ],
+     [
+      "l2",
+      "r1"
+     ],
+     [
+      "l3",
+      "r4"
+     ],
+     [
+      "l4",
+      "r2"
+     ]
+    ],
+    "misconception": "mis_off_by_one"
+   },
+   "hint": {
+    "fr": "Fais les calculs un à la fois.",
+    "en": "Do the sums one at a time."
+   },
+   "explain": {
+    "fr": "3 × 9 = 27, 4 × 8 = 32, 6 × 6 = 36 et 5 × 7 = 35.",
+    "en": "3 × 9 = 27, 4 × 8 = 32, 6 × 6 = 36 and 5 × 7 = 35."
+   },
+   "tags": [
+    "matching",
+    "multiplication",
+    "facts"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.concert.011",
+   "quest": "musique.concert",
+   "skill": "ARI-OPE-A06a",
+   "type": "match",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Léa voit que certains calculs ont le même résultat.",
+    "en": "Lea sees that some sums have the same result."
+   },
+   "prompt": {
+    "fr": "Relie les calculs qui donnent le même résultat.",
+    "en": "Match the sums that give the same result."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "3 × 8",
+       "en": "3 × 8"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "4 × 9",
+       "en": "4 × 9"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "5 × 8",
+       "en": "5 × 8"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "4 × 10",
+       "en": "4 × 10"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "6 × 6",
+       "en": "6 × 6"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "6 × 4",
+       "en": "6 × 4"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r3"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r1"
+     ]
+    ],
+    "misconception": "mis_match"
+   },
+   "hint": {
+    "fr": "Calcule les deux côtés de chaque paire.",
+    "en": "Work out both sides of each pair."
+   },
+   "explain": {
+    "fr": "3 × 8 = 24 = 6 × 4. 4 × 9 = 36 = 6 × 6. 5 × 8 = 40 = 4 × 10.",
+    "en": "3 × 8 = 24 = 6 × 4. 4 × 9 = 36 = 6 × 6. 5 × 8 = 40 = 4 × 10."
+   },
+   "tags": [
+    "matching",
+    "multiplication",
+    "equivalence"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.concert.012",
+   "quest": "musique.concert",
+   "skill": "ARI-OPE-A06a",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa lit le tableau d’images des musiciens.",
+    "en": "Lea reads the picture chart of the musicians."
+   },
+   "prompt": {
+    "fr": "Combien de violonistes y a-t-il ?",
+    "en": "How many violinists are there?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Musiciens de l’orchestre",
+      "en": "Orchestra musicians"
+     },
+     "each": 4,
+     "rows": [
+      {
+       "label": {
+        "fr": "violonistes",
+        "en": "violinists"
+       },
+       "count": 7
+      },
+      {
+       "label": {
+        "fr": "flûtistes",
+        "en": "flute players"
+       },
+       "count": 3
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 28,
+    "calc": "7*4"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_read_scale",
+     "feedback": {
+      "fr": "Chaque image vaut 4 musiciens, pas 1.",
+      "en": "Each picture is worth 4 musicians, not 1."
+     }
+    },
+    {
+     "value": 11,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Il y a 7 images de 4 : on multiplie.",
+      "en": "There are 7 pictures of 4, so we multiply."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 4 en 4, sept fois.",
+    "en": "Count by 4s, seven times."
+   },
+   "explain": {
+    "fr": "7 images de 4 : 7 × 4 = 28.",
+    "en": "7 pictures of 4: 7 × 4 = 28."
+   },
+   "tags": [
+    "pictograph",
+    "multiplication"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_caf205558d296438c392"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.concert.013",
+   "quest": "musique.concert",
+   "skill": "ARI-OPE-A06a",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Chaque rangée de l’orchestre compte autant de musiciens.",
+    "en": "Each row of the orchestra has the same number of musicians."
+   },
+   "prompt": {
+    "fr": "Combien de musiciens y a-t-il dans les 4 rangées ?",
+    "en": "How many musicians are in the 4 rows?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Musiciens par rangée",
+      "en": "Musicians per row"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "rangée A",
+        "en": "row A"
+       },
+       "value": 8
+      },
+      {
+       "label": {
+        "fr": "rangée B",
+        "en": "row B"
+       },
+       "value": 8
+      },
+      {
+       "label": {
+        "fr": "rangée C",
+        "en": "row C"
+       },
+       "value": 8
+      },
+      {
+       "label": {
+        "fr": "rangée D",
+        "en": "row D"
+       },
+       "value": 8
+      }
+     ],
+     "max": 10
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 32,
+    "calc": "4*8"
+   },
+   "common_errors": [
+    {
+     "value": 8,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "8 est une seule rangée. Il y en a 4.",
+      "en": "8 is one row only. There are 4."
+     }
+    },
+    {
+     "value": 12,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "4 rangées de 8 : on multiplie.",
+      "en": "4 rows of 8, so we multiply."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Chaque barre vaut la même chose.",
+    "en": "Every bar is worth the same."
+   },
+   "explain": {
+    "fr": "4 rangées de 8 : 4 × 8 = 32 musiciens.",
+    "en": "4 rows of 8: 4 × 8 = 32 musicians."
+   },
+   "tags": [
+    "bar-chart",
+    "multiplication"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.concert.014",
+   "quest": "musique.concert",
+   "skill": "ARI-OPE-A06a",
+   "type": "estimate",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "La salle de concert est presque pleine.",
+    "en": "The concert hall is almost full."
+   },
+   "prompt": {
+    "fr": "Il y a 9 rangées de 21 chaises. Environ combien de chaises en tout ?",
+    "en": "There are 9 rows of 21 chairs. About how many chairs in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 171,
+    "max": 207,
+    "exact_for_check": 189,
+    "calc": "9*21"
+   },
+   "common_errors": [
+    {
+     "value": 30,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Il y a 9 rangées de 21 chaises : on multiplie.",
+      "en": "There are 9 rows of 21 chairs, so we multiply."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis 21 à 20.",
+    "en": "Round 21 to 20."
+   },
+   "explain": {
+    "fr": "9 × 20 = 180. Le total exact est 189.",
+    "en": "9 × 20 = 180. The exact total is 189."
+   },
+   "tags": [
+    "estimation",
+    "multiplication",
+    "rounding"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.instruments.001",
+   "quest": "musique.instruments",
+   "skill": "STA-02",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa trie les instruments de la classe de musique.",
+    "en": "Lea sorts the instruments in the music class."
+   },
+   "prompt": {
+    "fr": "Il y a 4 tambours, 3 guitares et 2 trompettes. Combien d’instruments en tout ?",
+    "en": "There are 4 drums, 3 guitars and 2 trumpets. How many instruments in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 9,
+    "calc": "4+3+2"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié un groupe. Compte les trois.",
+      "en": "You left out a group. Count all three."
+     }
+    },
+    {
+     "value": 10,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte chaque groupe.",
+      "en": "Close! Count each group again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Ajoute 4 et 3, puis ajoute le reste.",
+    "en": "Add 4 and 3, then add the rest."
+   },
+   "explain": {
+    "fr": "4 + 3 = 7, puis 7 + 2 = 9.",
+    "en": "4 + 3 = 7, then 7 + 2 = 9."
+   },
+   "tags": [
+    "data",
+    "sorting",
+    "addition"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_42883b10907a9fbadb11"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.instruments.002",
+   "quest": "musique.instruments",
+   "skill": "STA-02",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah trie les instruments en trois groupes.",
+    "en": "Noah sorts the instruments into three groups."
+   },
+   "prompt": {
+    "fr": "Il a 5 cordes, 4 vents et 3 percussions. Combien de cordes de plus que de percussions ?",
+    "en": "He has 5 string, 4 wind and 3 percussion instruments. How many more strings than percussion?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 2,
+    "calc": "5-3"
+   },
+   "common_errors": [
+    {
+     "value": 8,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Pour comparer, on soustrait.",
+      "en": "To compare, we subtract."
+     }
+    },
+    {
+     "value": 1,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as comparé avec les vents (4). Compare avec les percussions.",
+      "en": "You compared with the winds (4). Compare with the percussion."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Enlève le plus petit nombre du plus grand.",
+    "en": "Take the smaller number from the bigger one."
+   },
+   "explain": {
+    "fr": "5 - 3 = 2. Il y a 2 cordes de plus.",
+    "en": "5 - 3 = 2. There are 2 more strings."
+   },
+   "tags": [
+    "data",
+    "compare",
+    "subtraction"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.instruments.003",
+   "quest": "musique.instruments",
+   "skill": "STA-02",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Les votes de la classe : tambour 6, piano 4 et violon 5.",
+    "en": "The class votes: drum 6, piano 4 and violin 5."
+   },
+   "prompt": {
+    "fr": "Combien d’enfants ont voté en tout ?",
+    "en": "How many children voted in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 15,
+    "calc": "6+4+5"
+   },
+   "common_errors": [
+    {
+     "value": 10,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Il manque un groupe de votes.",
+      "en": "One group of votes is missing."
+     }
+    },
+    {
+     "value": 14,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les votes.",
+      "en": "Close! Count the votes again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Ajoute 6 et 4, puis ajoute 5.",
+    "en": "Add 6 and 4, then add 5."
+   },
+   "explain": {
+    "fr": "6 + 4 = 10, puis 10 + 5 = 15 enfants.",
+    "en": "6 + 4 = 10, then 10 + 5 = 15 children."
+   },
+   "tags": [
+    "data",
+    "survey",
+    "addition"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_207c83d5931a977e1a76"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.instruments.004",
+   "quest": "musique.instruments",
+   "skill": "STA-02",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa trie les instruments selon la façon d’en jouer.",
+    "en": "Lea sorts instruments by how they are played."
+   },
+   "prompt": {
+    "fr": "Quel instrument se joue en le frappant ?",
+    "en": "Which instrument is played by hitting it?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "la trompette",
+      "en": "the trumpet"
+     },
+     "misconception": "mis_match"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "le violon",
+      "en": "the violin"
+     },
+     "misconception": "mis_match"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "le tambour",
+      "en": "the drum"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "la guitare",
+      "en": "the guitar"
+     },
+     "misconception": "mis_match"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c"
+   },
+   "hint": {
+    "fr": "Pense à des baguettes.",
+    "en": "Think of drumsticks."
+   },
+   "explain": {
+    "fr": "Le tambour se frappe avec des baguettes. C’est une percussion.",
+    "en": "The drum is hit with sticks. It is a percussion instrument."
+   },
+   "tags": [
+    "sorting",
+    "instruments"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_42883b10907a9fbadb11"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.instruments.005",
+   "quest": "musique.instruments",
+   "skill": "STA-02",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah compte les groupes d’instruments.",
+    "en": "Noah counts the groups of instruments."
+   },
+   "prompt": {
+    "fr": "Quel groupe compte le moins d’instruments ?",
+    "en": "Which group has the fewest instruments?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "4 guitares",
+      "en": "4 guitars"
+     },
+     "misconception": "mis_order"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "9 flûtes",
+      "en": "9 flutes"
+     },
+     "misconception": "mis_order"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "3 trompettes",
+      "en": "3 trumpets"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "6 violons",
+      "en": "6 violins"
+     },
+     "misconception": "mis_order"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c"
+   },
+   "hint": {
+    "fr": "Compare les nombres devant chaque instrument.",
+    "en": "Compare the numbers in front of each instrument."
+   },
+   "explain": {
+    "fr": "3 est le plus petit nombre : 3 trompettes.",
+    "en": "3 is the smallest number: 3 trumpets."
+   },
+   "tags": [
+    "data",
+    "compare"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_78496ef4bc77bb188f7f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.instruments.006",
+   "quest": "musique.instruments",
+   "skill": "STA-02",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah note les choix : violon 7, piano 5 et trompette 9.",
+    "en": "Noah notes the choices: violin 7, piano 5 and trumpet 9."
+   },
+   "prompt": {
+    "fr": "Combien d’enfants de plus ont choisi la trompette que le piano ?",
+    "en": "How many more children chose the trumpet than the piano?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "14",
+      "en": "14"
+     },
+     "misconception": "mis_add_instead_of_subtract"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "2",
+      "en": "2"
+     },
+     "misconception": "mis_read_wrong_bar"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "3",
+      "en": "3"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "4",
+      "en": "4"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d",
+    "calc_choice": {
+     "d": "9-5"
+    }
+   },
+   "hint": {
+    "fr": "Compare 9 et 5 avec une soustraction.",
+    "en": "Compare 9 and 5 with a subtraction."
+   },
+   "explain": {
+    "fr": "9 - 5 = 4 enfants de plus.",
+    "en": "9 - 5 = 4 more children."
+   },
+   "tags": [
+    "data",
+    "compare",
+    "subtraction"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.instruments.007",
+   "quest": "musique.instruments",
+   "skill": "STA-02",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa range 12 instruments dans deux boîtes.",
+    "en": "Lea puts 12 instruments into two boxes."
+   },
+   "prompt": {
+    "fr": "Sept vont dans la première boîte, le reste dans la deuxième. Combien dans la deuxième ?",
+    "en": "Seven go in the first box and the rest in the second. How many in the second?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "12-7"
+   },
+   "common_errors": [
+    {
+     "value": 19,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Le reste, c’est ce qui n’est pas dans la première boîte.",
+      "en": "The rest is what is not in the first box."
+     }
+    },
+    {
+     "value": 6,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte à partir de 7.",
+      "en": "Close! Count again from 7."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Combien faut-il ajouter à 7 pour faire 12 ?",
+    "en": "How many must you add to 7 to make 12?"
+   },
+   "explain": {
+    "fr": "12 - 7 = 5 instruments dans la deuxième boîte.",
+    "en": "12 - 7 = 5 instruments in the second box."
+   },
+   "tags": [
+    "word-problem",
+    "sorting",
+    "subtraction"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.instruments.008",
+   "quest": "musique.instruments",
+   "skill": "STA-02",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 4,
+   "story": {
+    "fr": "Dans la classe, les enfants choisissent un instrument.",
+    "en": "In class, the children each choose an instrument."
+   },
+   "prompt": {
+    "fr": "Six aiment le tambour, 8 la guitare et 5 le piano. Combien n’aiment pas le tambour ?",
+    "en": "Six like the drum, 8 the guitar and 5 the piano. How many do not like the drum?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 13,
+    "calc": "8+5"
+   },
+   "common_errors": [
+    {
+     "value": 19,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "19 est le total de la classe. Retire ceux du tambour.",
+      "en": "19 is the class total. Take away the drum fans."
+     }
+    },
+    {
+     "value": 6,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "6 aiment le tambour. On cherche ceux qui ne l’aiment pas.",
+      "en": "6 like the drum. We want those who do not."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne les autres groupes.",
+    "en": "Add the other groups."
+   },
+   "explain": {
+    "fr": "8 + 5 = 13 enfants n’aiment pas le tambour.",
+    "en": "8 + 5 = 13 children do not like the drum."
+   },
+   "tags": [
+    "word-problem",
+    "data",
+    "addition"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.instruments.009",
+   "quest": "musique.instruments",
+   "skill": "STA-02",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah lit son tableau de tri.",
+    "en": "Noah reads his sorting chart."
+   },
+   "prompt": {
+    "fr": "Noah dit que 7 guitares, c’est plus que 9 flûtes. A-t-il raison ?",
+    "en": "Noah says that 7 guitars is more than 9 flutes. Is he right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_order"
+   },
+   "hint": {
+    "fr": "Compare 7 et 9.",
+    "en": "Compare 7 and 9."
+   },
+   "explain": {
+    "fr": "7 est plus petit que 9. Il y a moins de guitares.",
+    "en": "7 is smaller than 9. There are fewer guitars."
+   },
+   "tags": [
+    "true-false",
+    "compare"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.instruments.010",
+   "quest": "musique.instruments",
+   "skill": "STA-02",
+   "type": "order",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa compte chaque groupe d’instruments.",
+    "en": "Lea counts each group of instruments."
+   },
+   "prompt": {
+    "fr": "Range les groupes du plus petit au plus grand.",
+    "en": "Put the groups in order, from the smallest to the biggest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "6 tambours",
+      "en": "6 drums"
+     },
+     "key": "6"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "3 trompettes",
+      "en": "3 trumpets"
+     },
+     "key": "3"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "8 flûtes",
+      "en": "8 flutes"
+     },
+     "key": "8"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "5 guitares",
+      "en": "5 guitars"
+     },
+     "key": "5"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "d",
+     "a",
+     "c"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Cherche d’abord le plus petit nombre.",
+    "en": "First find the smallest number."
+   },
+   "explain": {
+    "fr": "3, 5, 6 puis 8.",
+    "en": "3, 5, 6 then 8."
+   },
+   "tags": [
+    "ordering",
+    "data"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.instruments.011",
+   "quest": "musique.instruments",
+   "skill": "STA-02",
+   "type": "match",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Noah trie les instruments par famille.",
+    "en": "Noah sorts the instruments by family."
+   },
+   "prompt": {
+    "fr": "Relie chaque instrument à sa famille.",
+    "en": "Match each instrument to its family."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "le violon",
+       "en": "the violin"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "le tambour",
+       "en": "the drum"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "la trompette",
+       "en": "the trumpet"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "les percussions",
+       "en": "percussion"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "les vents",
+       "en": "wind"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "les cordes",
+       "en": "strings"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r3"
+     ],
+     [
+      "l2",
+      "r1"
+     ],
+     [
+      "l3",
+      "r2"
+     ]
+    ],
+    "misconception": "mis_match"
+   },
+   "hint": {
+    "fr": "Pense à comment on en joue.",
+    "en": "Think about how it is played."
+   },
+   "explain": {
+    "fr": "Le violon a des cordes. Le tambour se frappe. La trompette se souffle.",
+    "en": "The violin has strings. The drum is hit. The trumpet is blown."
+   },
+   "tags": [
+    "matching",
+    "sorting",
+    "instruments"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_8539f986974efb1e9fa7"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.instruments.012",
+   "quest": "musique.instruments",
+   "skill": "STA-02",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "La classe a fait un diagramme à barres des votes.",
+    "en": "The class made a bar chart of the votes."
+   },
+   "prompt": {
+    "fr": "Combien d’enfants ont choisi la guitare ?",
+    "en": "How many children chose the guitar?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Instrument préféré",
+      "en": "Favourite instrument"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "tambour",
+        "en": "drum"
+       },
+       "value": 6
+      },
+      {
+       "label": {
+        "fr": "guitare",
+        "en": "guitar"
+       },
+       "value": 4
+      },
+      {
+       "label": {
+        "fr": "piano",
+        "en": "piano"
+       },
+       "value": 8
+      }
+     ],
+     "max": 10
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 4,
+    "calc": "4"
+   },
+   "common_errors": [
+    {
+     "value": 6,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "6 est la barre du tambour.",
+      "en": "6 is the drum bar."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "8 est la barre du piano.",
+      "en": "8 is the piano bar."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Trouve la barre de la guitare.",
+    "en": "Find the guitar bar."
+   },
+   "explain": {
+    "fr": "La barre de la guitare monte jusqu’à 4.",
+    "en": "The guitar bar goes up to 4."
+   },
+   "tags": [
+    "bar-chart",
+    "survey"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_8ef0bb8a4bad9956f1af"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.instruments.013",
+   "quest": "musique.instruments",
+   "skill": "STA-02",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Chaque image du tableau représente 2 enfants.",
+    "en": "Each picture in the chart stands for 2 children."
+   },
+   "prompt": {
+    "fr": "Combien d’enfants ont choisi la trompette ?",
+    "en": "How many children chose the trumpet?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Instrument préféré",
+      "en": "Favourite instrument"
+     },
+     "each": 2,
+     "rows": [
+      {
+       "label": {
+        "fr": "tambour",
+        "en": "drum"
+       },
+       "count": 3
+      },
+      {
+       "label": {
+        "fr": "trompette",
+        "en": "trumpet"
+       },
+       "count": 4
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 8,
+    "calc": "4*2"
+   },
+   "common_errors": [
+    {
+     "value": 4,
+     "misconception": "mis_read_scale",
+     "feedback": {
+      "fr": "Chaque image vaut 2 enfants, pas 1.",
+      "en": "Each picture is worth 2 children, not 1."
+     }
+    },
+    {
+     "value": 6,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "6 enfants ont choisi le tambour.",
+      "en": "6 children chose the drum."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 2 en 2 les images.",
+    "en": "Count the pictures by 2s."
+   },
+   "explain": {
+    "fr": "4 images de 2 enfants : 2, 4, 6, 8.",
+    "en": "4 pictures of 2 children: 2, 4, 6, 8."
+   },
+   "tags": [
+    "pictograph",
+    "survey",
+    "skip-counting"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_267ac67f78abcb12cf71"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "musique.instruments.014",
+   "quest": "musique.instruments",
+   "skill": "STA-02",
+   "type": "estimate",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Au concert de l’école, tout le monde participe.",
+    "en": "At the school concert, everyone takes part."
+   },
+   "prompt": {
+    "fr": "Il y a 28 enfants à la chorale et 11 à l’orchestre. Environ combien d’enfants en tout ?",
+    "en": "There are 28 children in the choir and 11 in the orchestra. About how many children in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 37,
+    "max": 41,
+    "exact_for_check": 39,
+    "calc": "28+11"
+   },
+   "common_errors": [
+    {
+     "value": 17,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Les deux groupes sont réunis : on additionne.",
+      "en": "The two groups are put together, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis 28 à 30 et 11 à 10.",
+    "en": "Round 28 to 30 and 11 to 10."
+   },
+   "explain": {
+    "fr": "30 + 10 = 40. Le total exact est 39.",
+    "en": "30 + 10 = 40. The exact total is 39."
+   },
+   "tags": [
+    "estimation",
+    "rounding"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  }
+ ]
+}
