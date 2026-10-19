@@ -1,0 +1,4042 @@
+{
+ "world": "dinosaures",
+ "schema": 1,
+ "questions": [
+  {
+   "id": "dinosaures.fossiles.001",
+   "quest": "dinosaures.fossiles",
+   "skill": "ARI-SEN-A07",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Trois amis cherchent des fossiles au bord d’une falaise.",
+    "en": "Three friends look for fossils at the foot of a cliff."
+   },
+   "prompt": {
+    "fr": "Qui a trouvé le plus de fossiles ?",
+    "en": "Who found the most fossils?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Fossiles trouvés",
+      "en": "Fossils found"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "Léa",
+        "en": "Lea"
+       },
+       "count": 5
+      },
+      {
+       "label": {
+        "fr": "Noah",
+        "en": "Noah"
+       },
+       "count": 8
+      },
+      {
+       "label": {
+        "fr": "Mia",
+        "en": "Mia"
+       },
+       "count": 6
+      }
+     ]
+    }
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "C’est Léa",
+      "en": "It is Lea"
+     },
+     "misconception": "mis_read_wrong_bar"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "C’est Noah",
+      "en": "It is Noah"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "C’est Mia",
+      "en": "It is Mia"
+     },
+     "misconception": "mis_read_wrong_bar"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Cherche la ligne qui a le plus d’images.",
+    "en": "Look for the row with the most pictures."
+   },
+   "explain": {
+    "fr": "Noah a 8 images : c’est la ligne la plus longue.",
+    "en": "Noah has 8 pictures: it is the longest row."
+   },
+   "tags": [
+    "fossils",
+    "pictograph",
+    "compare"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2d028533521bbec9f2c6"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.fossiles.002",
+   "quest": "dinosaures.fossiles",
+   "skill": "ARI-SEN-A07",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Trois paniers de fossiles ont des étiquettes.",
+    "en": "Three baskets of fossils have labels."
+   },
+   "prompt": {
+    "fr": "Quel panier a le plus de fossiles ?",
+    "en": "Which basket has the most fossils?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Le panier de 14 fossiles",
+      "en": "The basket of 14 fossils"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Le panier de 9 fossiles",
+      "en": "The basket of 9 fossils"
+     },
+     "misconception": "mis_order_reversed"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Le panier de 11 fossiles",
+      "en": "The basket of 11 fossils"
+     },
+     "misconception": "mis_order_partial"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Compare d’abord les dizaines.",
+    "en": "Compare the tens first."
+   },
+   "explain": {
+    "fr": "14 a une dizaine. 9 n’en a pas. 14 est plus grand que 11.",
+    "en": "14 has a ten. 9 has none. 14 is bigger than 11."
+   },
+   "tags": [
+    "fossils",
+    "compare",
+    "numbers"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_3af166876a3e03d59bb0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.fossiles.003",
+   "quest": "dinosaures.fossiles",
+   "skill": "ARI-SEN-A07",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah lit les étiquettes de la vitrine du musée.",
+    "en": "Noah reads the labels on the museum case."
+   },
+   "prompt": {
+    "fr": "Quel nombre est plus petit que 40 ?",
+    "en": "Which number is smaller than 40?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "48",
+      "en": "48"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "31",
+      "en": "31"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "40",
+      "en": "40"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "59",
+      "en": "59"
+     },
+     "misconception": "mis_order_reversed"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b",
+    "calc_choice": {
+     "b": "31"
+    }
+   },
+   "hint": {
+    "fr": "Regarde d’abord le chiffre des dizaines.",
+    "en": "Look at the tens digit first."
+   },
+   "explain": {
+    "fr": "31 a 3 dizaines, 40 en a 4. Donc 31 est plus petit.",
+    "en": "31 has 3 tens, 40 has 4. So 31 is smaller."
+   },
+   "tags": [
+    "fossils",
+    "compare",
+    "tens"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.fossiles.004",
+   "quest": "dinosaures.fossiles",
+   "skill": "ARI-SEN-A07",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa a trouvé 6 fossiles et Noah en a trouvé 9.",
+    "en": "Lea found 6 fossils and Noah found 9."
+   },
+   "prompt": {
+    "fr": "Combien de fossiles de plus Noah a-t-il trouvés ?",
+    "en": "How many more fossils did Noah find?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3,
+    "calc": "9-6"
+   },
+   "common_errors": [
+    {
+     "value": 15,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On compare : on cherche l’écart.",
+      "en": "We compare, so we look for the gap."
+     }
+    },
+    {
+     "value": 2,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Compte de 6 jusqu’à 9.",
+      "en": "Close! Count from 6 up to 9."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 6 jusqu’à 9.",
+    "en": "Count from 6 up to 9."
+   },
+   "explain": {
+    "fr": "9 - 6 = 3 fossiles de plus.",
+    "en": "9 - 6 = 3 more fossils."
+   },
+   "tags": [
+    "fossils",
+    "difference"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.fossiles.005",
+   "quest": "dinosaures.fossiles",
+   "skill": "ARI-SEN-A07",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Noah numérote ses fossiles, un par un.",
+    "en": "Noah numbers his fossils, one by one."
+   },
+   "prompt": {
+    "fr": "Il vient d’écrire 19. Quel nombre écrit-il ensuite ?",
+    "en": "He has just written 19. Which number does he write next?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 20,
+    "calc": "19+1"
+   },
+   "common_errors": [
+    {
+     "value": 18,
+     "misconception": "mis_order_reversed",
+     "feedback": {
+      "fr": "Ce nombre vient avant 19. Cherche celui d’après.",
+      "en": "That number comes before 19. Find the next one."
+     }
+    },
+    {
+     "value": 29,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "Après 19 vient la dizaine suivante.",
+      "en": "After 19 comes the next ten."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Ajoute 1 à 19.",
+    "en": "Add 1 to 19."
+   },
+   "explain": {
+    "fr": "Après 19 vient 20, la dizaine suivante.",
+    "en": "After 19 comes 20, the next ten."
+   },
+   "tags": [
+    "fossils",
+    "next-number"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.fossiles.006",
+   "quest": "dinosaures.fossiles",
+   "skill": "ARI-SEN-A07",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah range des fossiles dans une grande boîte.",
+    "en": "Noah puts fossils in a big box."
+   },
+   "prompt": {
+    "fr": "Il en a 30 et en sort 4 pour les montrer. Combien en reste-t-il ?",
+    "en": "He has 30 and takes out 4 to show them. How many are left?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 26,
+    "calc": "30-4"
+   },
+   "common_errors": [
+    {
+     "value": 34,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Il en sort : il en reste moins.",
+      "en": "He takes some out, so fewer are left."
+     }
+    },
+    {
+     "value": 27,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte à partir de 30.",
+      "en": "Close! Count again from 30."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Recule de 4 à partir de 30.",
+    "en": "Count back 4 from 30."
+   },
+   "explain": {
+    "fr": "30 - 4 = 26 fossiles.",
+    "en": "30 - 4 = 26 fossils."
+   },
+   "tags": [
+    "fossils",
+    "subtract"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2d028533521bbec9f2c6"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.fossiles.007",
+   "quest": "dinosaures.fossiles",
+   "skill": "ARI-SEN-A07",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le musée a deux étagères de fossiles.",
+    "en": "The museum has two shelves of fossils."
+   },
+   "prompt": {
+    "fr": "Il y en a 8 sur l’une et 7 sur l’autre. Combien en tout ?",
+    "en": "There are 8 on one and 7 on the other. How many in all?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "1",
+      "en": "1"
+     },
+     "misconception": "mis_subtract_instead_of_add"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "14",
+      "en": "14"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "15",
+      "en": "15"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "87",
+      "en": "87"
+     },
+     "misconception": "mis_place_value"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "8+7"
+    }
+   },
+   "hint": {
+    "fr": "Complète à 10 avec 2, puis ajoute le reste.",
+    "en": "Fill up to 10 with 2, then add the rest."
+   },
+   "explain": {
+    "fr": "8 + 2 = 10, puis 10 + 5 = 15.",
+    "en": "8 + 2 = 10, then 10 + 5 = 15."
+   },
+   "tags": [
+    "fossils",
+    "word-problem",
+    "add"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.fossiles.008",
+   "quest": "dinosaures.fossiles",
+   "skill": "ARI-SEN-A07",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un panier de fossiles est prêt pour le musée.",
+    "en": "A basket of fossils is ready for the museum."
+   },
+   "prompt": {
+    "fr": "Un panier a 10 fossiles ; Léa en ajoute 6, puis Noah en enlève 3. Combien reste-t-il ?",
+    "en": "A basket holds 10 fossils; Lea adds 6, then Noah takes out 3. How many are left?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 13,
+    "calc": "10+6-3"
+   },
+   "common_errors": [
+    {
+     "value": 16,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié les 3 fossiles que Noah enlève.",
+      "en": "You forgot the 3 fossils Noah takes out."
+     }
+    },
+    {
+     "value": 19,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Noah enlève des fossiles : on soustrait.",
+      "en": "Noah takes fossils out, so we subtract."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Ajoute d’abord, puis enlève.",
+    "en": "Add first, then take away."
+   },
+   "explain": {
+    "fr": "10 + 6 = 16, puis 16 - 3 = 13.",
+    "en": "10 + 6 = 16, then 16 - 3 = 13."
+   },
+   "tags": [
+    "fossils",
+    "word-problem",
+    "two-steps"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.fossiles.009",
+   "quest": "dinosaures.fossiles",
+   "skill": "ARI-SEN-A07",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah a 25 fossiles et les range en deux tas.",
+    "en": "Noah has 25 fossils and sorts them into two piles."
+   },
+   "prompt": {
+    "fr": "Le premier tas en a 12. Combien en a le deuxième ?",
+    "en": "The first pile has 12. How many does the second have?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 13,
+    "calc": "25-12"
+   },
+   "common_errors": [
+    {
+     "value": 37,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche le reste : on enlève.",
+      "en": "We look for what is left, so we take away."
+     }
+    },
+    {
+     "value": 12,
+     "misconception": "mis_missing_term",
+     "feedback": {
+      "fr": "12 est le premier tas. Cherche le deuxième.",
+      "en": "12 is the first pile. Find the second."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Enlève 12 de 25.",
+    "en": "Take 12 away from 25."
+   },
+   "explain": {
+    "fr": "25 - 12 = 13 fossiles dans le deuxième tas.",
+    "en": "25 - 12 = 13 fossils in the second pile."
+   },
+   "tags": [
+    "fossils",
+    "word-problem",
+    "subtract"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.fossiles.010",
+   "quest": "dinosaures.fossiles",
+   "skill": "ARI-SEN-A07",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa lit deux étiquettes dans la vitrine.",
+    "en": "Lea reads two labels in the case."
+   },
+   "prompt": {
+    "fr": "Elle dit que 27 est plus grand que 72. A-t-elle raison ?",
+    "en": "She says 27 is bigger than 72. Is she right?"
+   },
+   "math_text": "27 > 72",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_digit_swap"
+   },
+   "hint": {
+    "fr": "Regarde les dizaines de chaque nombre.",
+    "en": "Look at the tens of each number."
+   },
+   "explain": {
+    "fr": "27 a 2 dizaines et 72 en a 7. 72 est plus grand.",
+    "en": "27 has 2 tens and 72 has 7. 72 is bigger."
+   },
+   "tags": [
+    "fossils",
+    "true-false",
+    "digits"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.fossiles.011",
+   "quest": "dinosaures.fossiles",
+   "skill": "ARI-SEN-A07",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Noah compare un petit nombre et un grand nombre.",
+    "en": "Noah compares a small number and a big number."
+   },
+   "prompt": {
+    "fr": "Il dit que 15 dépasse 9. Est-ce vrai ?",
+    "en": "He says 15 is above 9. Is that true?"
+   },
+   "math_text": "15 > 9",
+   "answer": {
+    "kind": "truefalse",
+    "value": true
+   },
+   "hint": {
+    "fr": "15 a une dizaine, 9 n’en a pas.",
+    "en": "15 has a ten, 9 has none."
+   },
+   "explain": {
+    "fr": "15 est plus grand que 9.",
+    "en": "15 is bigger than 9."
+   },
+   "tags": [
+    "fossils",
+    "true-false",
+    "compare"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.fossiles.012",
+   "quest": "dinosaures.fossiles",
+   "skill": "ARI-SEN-A07",
+   "type": "order",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Quatre étiquettes sont collées sur des fossiles.",
+    "en": "Four labels are stuck on fossils."
+   },
+   "prompt": {
+    "fr": "Range les nombres du plus petit au plus grand.",
+    "en": "Put the numbers in order, smallest to biggest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "15",
+      "en": "15"
+     },
+     "key": "15"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "4",
+      "en": "4"
+     },
+     "key": "4"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "23",
+      "en": "23"
+     },
+     "key": "23"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "8",
+      "en": "8"
+     },
+     "key": "8"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "d",
+     "a",
+     "c"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Cherche d’abord le plus petit nombre.",
+    "en": "First find the smallest number."
+   },
+   "explain": {
+    "fr": "4, 8, 15 puis 23.",
+    "en": "4, 8, 15 then 23."
+   },
+   "tags": [
+    "fossils",
+    "ordering"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.fossiles.013",
+   "quest": "dinosaures.fossiles",
+   "skill": "ARI-SEN-A07",
+   "type": "match",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa compare des nombres de fossiles.",
+    "en": "Lea compares numbers of fossils."
+   },
+   "prompt": {
+    "fr": "Relie chaque comparaison au bon mot.",
+    "en": "Match each comparison to the right words."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "12 et 9",
+       "en": "12 and 9"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "7 et 15",
+       "en": "7 and 15"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "14 et 14",
+       "en": "14 and 14"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "le premier est plus petit",
+       "en": "the first is smaller"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "les deux sont égaux",
+       "en": "both are equal"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "le premier est plus grand",
+       "en": "the first is bigger"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r3"
+     ],
+     [
+      "l2",
+      "r1"
+     ],
+     [
+      "l3",
+      "r2"
+     ]
+    ],
+    "misconception": "mis_match"
+   },
+   "hint": {
+    "fr": "Compare les deux nombres de chaque paire.",
+    "en": "Compare the two numbers in each pair."
+   },
+   "explain": {
+    "fr": "12 est plus grand que 9. 7 est plus petit que 15. 14 et 14 sont égaux.",
+    "en": "12 is bigger than 9. 7 is smaller than 15. 14 and 14 are equal."
+   },
+   "tags": [
+    "fossils",
+    "matching",
+    "compare"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.fossiles.014",
+   "quest": "dinosaures.fossiles",
+   "skill": "ARI-SEN-A07",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le tableau montre trois piles de fossiles.",
+    "en": "The chart shows three piles of fossils."
+   },
+   "prompt": {
+    "fr": "Combien de fossiles de plus la plus grande pile a-t-elle que la plus petite ?",
+    "en": "How many more fossils does the biggest pile have than the smallest?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Piles de fossiles",
+      "en": "Piles of fossils"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "pile A",
+        "en": "pile A"
+       },
+       "count": 9
+      },
+      {
+       "label": {
+        "fr": "pile B",
+        "en": "pile B"
+       },
+       "count": 4
+      },
+      {
+       "label": {
+        "fr": "pile C",
+        "en": "pile C"
+       },
+       "count": 6
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "9-4"
+   },
+   "common_errors": [
+    {
+     "value": 13,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On compare : on cherche l’écart.",
+      "en": "We compare, so we look for the gap."
+     }
+    },
+    {
+     "value": 4,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "4 est la plus petite pile. Cherche l’écart avec la plus grande.",
+      "en": "4 is the smallest pile. Find the gap with the biggest."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Trouve la ligne la plus longue et la plus courte.",
+    "en": "Find the longest row and the shortest row."
+   },
+   "explain": {
+    "fr": "La plus grande pile a 9 images et la plus petite en a 4. 9 - 4 = 5.",
+    "en": "The biggest pile has 9 pictures and the smallest has 4. 9 - 4 = 5."
+   },
+   "tags": [
+    "fossils",
+    "pictograph",
+    "difference"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.fossiles.015",
+   "quest": "dinosaures.fossiles",
+   "skill": "ARI-SEN-A07",
+   "type": "estimate",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le musée reçoit deux caisses de fossiles.",
+    "en": "The museum receives two crates of fossils."
+   },
+   "prompt": {
+    "fr": "Une caisse en a 29 et l’autre 31. Environ combien de fossiles en tout ?",
+    "en": "One crate has 29 and the other 31. About how many fossils in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 54,
+    "max": 66,
+    "exact_for_check": 60,
+    "calc": "29+31"
+   },
+   "common_errors": [
+    {
+     "value": 2,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Les deux caisses se joignent : on additionne.",
+      "en": "The two crates join, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "29 est proche de 30 et 31 aussi.",
+    "en": "29 is close to 30 and so is 31."
+   },
+   "explain": {
+    "fr": "30 + 30 = 60, donc environ 60 fossiles.",
+    "en": "30 + 30 = 60, so about 60 fossils."
+   },
+   "tags": [
+    "fossils",
+    "estimation",
+    "rounding"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.os.001",
+   "quest": "dinosaures.os",
+   "skill": "ARI-SEN-A05",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa trie 7 os d’un squelette dans deux boîtes.",
+    "en": "Lea sorts 7 bones of a skeleton into two boxes."
+   },
+   "prompt": {
+    "fr": "La boîte bleue a 4 os. Combien d’os dans la boîte rouge ?",
+    "en": "The blue box has 4 bones. How many bones in the red box?"
+   },
+   "math_text": "4 + ? = 7",
+   "answer": {
+    "kind": "numeric",
+    "value": 3,
+    "calc": "7-4"
+   },
+   "common_errors": [
+    {
+     "value": 11,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche l’autre partie : on enlève.",
+      "en": "We look for the other part, so we take away."
+     }
+    },
+    {
+     "value": 2,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Compte de 4 jusqu’à 7.",
+      "en": "Close! Count from 4 up to 7."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 4 jusqu’à 7.",
+    "en": "Count from 4 up to 7."
+   },
+   "explain": {
+    "fr": "4 + 3 = 7. Il y a 3 os dans la boîte rouge.",
+    "en": "4 + 3 = 7. There are 3 bones in the red box."
+   },
+   "tags": [
+    "bones",
+    "decompose",
+    "missing-part"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_3af166876a3e03d59bb0"
+    },
+    {
+     "role": "object",
+     "asset": "a_1de0ccae0a8079e61ed3"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.os.002",
+   "quest": "dinosaures.os",
+   "skill": "ARI-SEN-A05",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Noah a 10 os de patte à ranger.",
+    "en": "Noah has 10 leg bones to put away."
+   },
+   "prompt": {
+    "fr": "Il en met 6 sur la table. Combien d’os reste-t-il à ranger ?",
+    "en": "He puts 6 on the table. How many bones are left to put away?"
+   },
+   "math_text": "6 + ? = 10",
+   "answer": {
+    "kind": "numeric",
+    "value": 4,
+    "calc": "10-6"
+   },
+   "common_errors": [
+    {
+     "value": 16,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche l’autre partie de 10 : on enlève.",
+      "en": "We look for the other part of 10, so we take away."
+     }
+    },
+    {
+     "value": 5,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Compte de 6 jusqu’à 10.",
+      "en": "Close! Count from 6 up to 10."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Quel nombre va avec 6 pour faire 10 ?",
+    "en": "Which number goes with 6 to make 10?"
+   },
+   "explain": {
+    "fr": "6 + 4 = 10. Il reste 4 os.",
+    "en": "6 + 4 = 10. There are 4 bones left."
+   },
+   "tags": [
+    "bones",
+    "decompose",
+    "make-ten"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.os.003",
+   "quest": "dinosaures.os",
+   "skill": "ARI-SEN-A05",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa emballe des os dans des boîtes de 10.",
+    "en": "Lea wraps bones in boxes of 10."
+   },
+   "prompt": {
+    "fr": "Elle a 3 boîtes pleines et 4 os seuls. Combien d’os en tout ?",
+    "en": "She has 3 full boxes and 4 loose bones. How many bones in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 34,
+    "calc": "3*10+4"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "Une boîte contient 10 os, pas 1.",
+      "en": "A box holds 10 bones, not 1."
+     }
+    },
+    {
+     "value": 43,
+     "misconception": "mis_digit_swap",
+     "feedback": {
+      "fr": "Attention : tu as inversé les dizaines et les unités.",
+      "en": "Careful: you swapped the tens and the ones."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les boîtes par dizaines, puis ajoute les os seuls.",
+    "en": "Count the boxes by tens, then add the loose bones."
+   },
+   "explain": {
+    "fr": "3 dizaines font 30. Puis 30 + 4 = 34.",
+    "en": "3 tens make 30. Then 30 + 4 = 34."
+   },
+   "tags": [
+    "bones",
+    "tens-ones",
+    "compose"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.os.004",
+   "quest": "dinosaures.os",
+   "skill": "ARI-SEN-A05",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Noah décompose le nombre d’os d’une patte.",
+    "en": "Noah breaks down the number of bones in a leg."
+   },
+   "prompt": {
+    "fr": "Quelle addition donne 8 ?",
+    "en": "Which addition makes 8?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "5 + 2",
+      "en": "5 + 2"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "5 + 3",
+      "en": "5 + 3"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "4 + 3",
+      "en": "4 + 3"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "6 + 3",
+      "en": "6 + 3"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Calcule chaque addition.",
+    "en": "Work out each addition."
+   },
+   "explain": {
+    "fr": "5 + 3 = 8. Les autres donnent 7 ou 9.",
+    "en": "5 + 3 = 8. The others make 7 or 9."
+   },
+   "tags": [
+    "bones",
+    "decompose",
+    "add"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.os.005",
+   "quest": "dinosaures.os",
+   "skill": "ARI-SEN-A05",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa décompose le nombre de dents d’un T. rex.",
+    "en": "Lea breaks down the number of teeth of a T. rex."
+   },
+   "prompt": {
+    "fr": "Quelle décomposition de 15 est correcte ?",
+    "en": "Which breakdown of 15 is correct?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "10 + 4",
+      "en": "10 + 4"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "10 + 5",
+      "en": "10 + 5"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "5 + 5",
+      "en": "5 + 5"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "1 + 5",
+      "en": "1 + 5"
+     },
+     "misconception": "mis_place_value"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "15 est une dizaine et encore quelques unités.",
+    "en": "15 is a ten and a few more ones."
+   },
+   "explain": {
+    "fr": "15 = 10 + 5 : une dizaine et 5 unités.",
+    "en": "15 = 10 + 5: one ten and 5 ones."
+   },
+   "tags": [
+    "bones",
+    "decompose",
+    "tens-ones"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.os.006",
+   "quest": "dinosaures.os",
+   "skill": "ARI-SEN-A05",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah lit le numéro d’un os sur une étiquette.",
+    "en": "Noah reads the number of a bone on a label."
+   },
+   "prompt": {
+    "fr": "Dans 47, que vaut le chiffre 4 ?",
+    "en": "In 47, what is the value of the digit 4?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "4",
+      "en": "4"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "40",
+      "en": "40"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "400",
+      "en": "400"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "7",
+      "en": "7"
+     },
+     "misconception": "mis_digit_swap"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b",
+    "calc_choice": {
+     "b": "4*10"
+    }
+   },
+   "hint": {
+    "fr": "Le 4 est à la place des dizaines.",
+    "en": "The 4 is in the tens place."
+   },
+   "explain": {
+    "fr": "Le 4 est dans les dizaines : il vaut 40.",
+    "en": "The 4 is in the tens place: it is worth 40."
+   },
+   "tags": [
+    "bones",
+    "place-value"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.os.007",
+   "quest": "dinosaures.os",
+   "skill": "ARI-SEN-A05",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Un squelette a des os de patte et des os de queue.",
+    "en": "A skeleton has leg bones and tail bones."
+   },
+   "prompt": {
+    "fr": "Il y a 9 os de patte et 6 os de queue. Combien d’os en tout ?",
+    "en": "There are 9 leg bones and 6 tail bones. How many bones in all?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "3",
+      "en": "3"
+     },
+     "misconception": "mis_subtract_instead_of_add"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "14",
+      "en": "14"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "15",
+      "en": "15"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "96",
+      "en": "96"
+     },
+     "misconception": "mis_place_value"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "9+6"
+    }
+   },
+   "hint": {
+    "fr": "9 est tout près de 10.",
+    "en": "9 is very close to 10."
+   },
+   "explain": {
+    "fr": "9 + 6 = 10 + 5 = 15 os.",
+    "en": "9 + 6 = 10 + 5 = 15 bones."
+   },
+   "tags": [
+    "bones",
+    "word-problem",
+    "add"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.os.008",
+   "quest": "dinosaures.os",
+   "skill": "ARI-SEN-A05",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah a 45 os à ranger au musée.",
+    "en": "Noah has 45 bones to put away at the museum."
+   },
+   "prompt": {
+    "fr": "Il en met 20 dans une caisse. Combien d’os reste-t-il ?",
+    "en": "He puts 20 in a crate. How many bones are left?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 25,
+    "calc": "45-20"
+   },
+   "common_errors": [
+    {
+     "value": 65,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Il en met dans la caisse : il en reste moins.",
+      "en": "He puts some in the crate, so fewer are left."
+     }
+    },
+    {
+     "value": 24,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Enlève bien 2 dizaines.",
+      "en": "Close! Take away exactly 2 tens."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Enlève 2 dizaines.",
+    "en": "Take away 2 tens."
+   },
+   "explain": {
+    "fr": "45 - 20 = 25 os.",
+    "en": "45 - 20 = 25 bones."
+   },
+   "tags": [
+    "bones",
+    "word-problem",
+    "tens"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.os.009",
+   "quest": "dinosaures.os",
+   "skill": "ARI-SEN-A05",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 4,
+   "story": {
+    "fr": "Un grand squelette est monté dans la salle du musée.",
+    "en": "A big skeleton is mounted in the museum hall."
+   },
+   "prompt": {
+    "fr": "Il a 12 os de cou, 20 de dos et 8 de queue. Combien d’os en tout ?",
+    "en": "It has 12 neck bones, 20 back bones and 8 tail bones. How many bones in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 40,
+    "calc": "12+20+8"
+   },
+   "common_errors": [
+    {
+     "value": 32,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié les os de queue.",
+      "en": "You left out the tail bones."
+     }
+    },
+    {
+     "value": 39,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Refais l’addition.",
+      "en": "Close! Redo the addition."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne 12 et 8 d’abord.",
+    "en": "Add 12 and 8 first."
+   },
+   "explain": {
+    "fr": "12 + 8 = 20, puis 20 + 20 = 40 os.",
+    "en": "12 + 8 = 20, then 20 + 20 = 40 bones."
+   },
+   "tags": [
+    "bones",
+    "word-problem",
+    "add"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.os.010",
+   "quest": "dinosaures.os",
+   "skill": "ARI-SEN-A05",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa décompose un nombre d’os.",
+    "en": "Lea breaks down a number of bones."
+   },
+   "prompt": {
+    "fr": "Elle dit que 10 + 5 fait 15. A-t-elle raison ?",
+    "en": "She says 10 + 5 makes 15. Is she right?"
+   },
+   "math_text": "10 + 5 = 15",
+   "answer": {
+    "kind": "truefalse",
+    "value": true
+   },
+   "hint": {
+    "fr": "10 plus 5 : une dizaine et 5 unités.",
+    "en": "10 plus 5: one ten and 5 ones."
+   },
+   "explain": {
+    "fr": "10 + 5 = 15.",
+    "en": "10 + 5 = 15."
+   },
+   "tags": [
+    "bones",
+    "true-false",
+    "decompose"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.os.011",
+   "quest": "dinosaures.os",
+   "skill": "ARI-SEN-A05",
+   "type": "order",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Quatre étiquettes d’os ont des nombres presque pareils.",
+    "en": "Four bone labels have almost the same numbers."
+   },
+   "prompt": {
+    "fr": "Range les nombres du plus petit au plus grand.",
+    "en": "Put the numbers in order, smallest to biggest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "43",
+      "en": "43"
+     },
+     "key": "43"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "34",
+      "en": "34"
+     },
+     "key": "34"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "52",
+      "en": "52"
+     },
+     "key": "52"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "25",
+      "en": "25"
+     },
+     "key": "25"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "d",
+     "b",
+     "a",
+     "c"
+    ],
+    "by": "asc",
+    "misconception": "mis_digit_swap"
+   },
+   "hint": {
+    "fr": "Regarde les dizaines avant les unités.",
+    "en": "Look at the tens before the ones."
+   },
+   "explain": {
+    "fr": "25, 34, 43 puis 52.",
+    "en": "25, 34, 43 then 52."
+   },
+   "tags": [
+    "bones",
+    "ordering",
+    "tens"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.os.012",
+   "quest": "dinosaures.os",
+   "skill": "ARI-SEN-A05",
+   "type": "match",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah relie des nombres à leur décomposition.",
+    "en": "Noah links numbers to their breakdown."
+   },
+   "prompt": {
+    "fr": "Relie chaque nombre à sa décomposition.",
+    "en": "Match each number to its breakdown."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "12",
+       "en": "12"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "15",
+       "en": "15"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "20",
+       "en": "20"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "10 + 5",
+       "en": "10 + 5"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "10 + 10",
+       "en": "10 + 10"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "10 + 2",
+       "en": "10 + 2"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r3"
+     ],
+     [
+      "l2",
+      "r1"
+     ],
+     [
+      "l3",
+      "r2"
+     ]
+    ],
+    "misconception": "mis_place_value"
+   },
+   "hint": {
+    "fr": "Chaque nombre garde une dizaine.",
+    "en": "Each number keeps one ten."
+   },
+   "explain": {
+    "fr": "12 = 10 + 2, 15 = 10 + 5 et 20 = 10 + 10.",
+    "en": "12 = 10 + 2, 15 = 10 + 5 and 20 = 10 + 10."
+   },
+   "tags": [
+    "bones",
+    "matching",
+    "decompose"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.os.013",
+   "quest": "dinosaures.os",
+   "skill": "ARI-SEN-A05",
+   "type": "match",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa lit des nombres en dizaines et unités.",
+    "en": "Lea reads numbers in tens and ones."
+   },
+   "prompt": {
+    "fr": "Relie chaque nombre à ses dizaines et unités.",
+    "en": "Match each number to its tens and ones."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "34",
+       "en": "34"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "52",
+       "en": "52"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "71",
+       "en": "71"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "5 dizaines et 2 unités",
+       "en": "5 tens and 2 ones"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "7 dizaines et 1 unité",
+       "en": "7 tens and 1 one"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "3 dizaines et 4 unités",
+       "en": "3 tens and 4 ones"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r3"
+     ],
+     [
+      "l2",
+      "r1"
+     ],
+     [
+      "l3",
+      "r2"
+     ]
+    ],
+    "misconception": "mis_digit_swap"
+   },
+   "hint": {
+    "fr": "Le premier chiffre donne les dizaines.",
+    "en": "The first digit gives the tens."
+   },
+   "explain": {
+    "fr": "34 a 3 dizaines et 4 unités. 52 a 5 dizaines et 2 unités. 71 a 7 dizaines et 1 unité.",
+    "en": "34 has 3 tens and 4 ones. 52 has 5 tens and 2 ones. 71 has 7 tens and 1 one."
+   },
+   "tags": [
+    "bones",
+    "matching",
+    "place-value"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.os.014",
+   "quest": "dinosaures.os",
+   "skill": "ARI-SEN-A05",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Un os est suspendu au-dessus d’une règle de fouille.",
+    "en": "A bone hangs above a digging ruler."
+   },
+   "prompt": {
+    "fr": "Quel nombre la flèche montre-t-elle ?",
+    "en": "Which number does the arrow show?"
+   },
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 0,
+     "max": 30,
+     "step": 1,
+     "labels": [
+      0,
+      10,
+      20,
+      30
+     ],
+     "arrow": 23
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 23,
+    "calc": "23"
+   },
+   "common_errors": [
+    {
+     "value": 32,
+     "misconception": "mis_digit_swap",
+     "feedback": {
+      "fr": "Attention : tu as inversé les chiffres.",
+      "en": "Careful: you swapped the digits."
+     }
+    },
+    {
+     "value": 20,
+     "misconception": "mis_read_scale",
+     "feedback": {
+      "fr": "20 est le trait marqué le plus proche. Compte les petits traits.",
+      "en": "20 is the nearest labelled mark. Count the small marks."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les petits traits à partir de 20.",
+    "en": "Count the small marks from 20."
+   },
+   "explain": {
+    "fr": "La flèche est 3 traits après 20 : 23.",
+    "en": "The arrow is 3 marks after 20: 23."
+   },
+   "tags": [
+    "bones",
+    "number-line",
+    "tens-ones"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.os.015",
+   "quest": "dinosaures.os",
+   "skill": "ARI-SEN-A05",
+   "type": "estimate",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le musée compte les os de deux squelettes.",
+    "en": "The museum counts the bones of two skeletons."
+   },
+   "prompt": {
+    "fr": "L’un a 48 os et l’autre 31. Environ combien d’os en tout ?",
+    "en": "One has 48 bones and the other 31. About how many bones in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 74,
+    "max": 84,
+    "exact_for_check": 79,
+    "calc": "48+31"
+   },
+   "common_errors": [
+    {
+     "value": 17,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les deux squelettes : on additionne.",
+      "en": "We put both skeletons together, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis chaque nombre à la dizaine.",
+    "en": "Round each number to the nearest ten."
+   },
+   "explain": {
+    "fr": "48 devient 50 et 31 devient 30. 50 + 30 = 80, donc environ 80.",
+    "en": "48 becomes 50 and 31 becomes 30. 50 + 30 = 80, so about 80."
+   },
+   "tags": [
+    "bones",
+    "estimation",
+    "rounding"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.geants.001",
+   "quest": "dinosaures.geants",
+   "skill": "MES-A04a",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Le musée compare la longueur de trois dinosaures.",
+    "en": "The museum compares the length of three dinosaurs."
+   },
+   "prompt": {
+    "fr": "Quelle est la longueur du T. rex, en mètres ?",
+    "en": "How long is the T. rex, in metres?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Longueur (m)",
+      "en": "Length (m)"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "tricératops",
+        "en": "triceratops"
+       },
+       "value": 9
+      },
+      {
+       "label": {
+        "fr": "T. rex",
+        "en": "T. rex"
+       },
+       "value": 12
+      },
+      {
+       "label": {
+        "fr": "diplodocus",
+        "en": "diplodocus"
+       },
+       "value": 26
+      }
+     ],
+     "max": 30
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 12,
+    "calc": "12"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as lu la barre du tricératops. Cherche le T. rex.",
+      "en": "You read the triceratops bar. Look for the T. rex."
+     }
+    },
+    {
+     "value": 26,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as lu la barre du diplodocus. Cherche le T. rex.",
+      "en": "You read the diplodocus bar. Look for the T. rex."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Trouve la barre du T. rex.",
+    "en": "Find the T. rex bar."
+   },
+   "explain": {
+    "fr": "La barre du T. rex monte jusqu’à 12 m.",
+    "en": "The T. rex bar reaches 12 m."
+   },
+   "tags": [
+    "dinosaurs",
+    "length",
+    "bar-chart"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_267346baf27642f4260d"
+    },
+    {
+     "role": "object",
+     "asset": "a_6f5008e7922aee11a305"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.geants.002",
+   "quest": "dinosaures.geants",
+   "skill": "MES-A04a",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa compare les deux plus grands dinosaures du diagramme.",
+    "en": "Lea compares the two biggest dinosaurs in the chart."
+   },
+   "prompt": {
+    "fr": "De combien de mètres le diplodocus est-il plus long que le tricératops ?",
+    "en": "By how many metres is the diplodocus longer than the triceratops?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Longueur (m)",
+      "en": "Length (m)"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "tricératops",
+        "en": "triceratops"
+       },
+       "value": 9
+      },
+      {
+       "label": {
+        "fr": "T. rex",
+        "en": "T. rex"
+       },
+       "value": 12
+      },
+      {
+       "label": {
+        "fr": "diplodocus",
+        "en": "diplodocus"
+       },
+       "value": 26
+      }
+     ],
+     "max": 30
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 17,
+    "calc": "26-9"
+   },
+   "common_errors": [
+    {
+     "value": 35,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On compare : on cherche l’écart.",
+      "en": "We compare, so we look for the gap."
+     }
+    },
+    {
+     "value": 26,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "26 est la barre du diplodocus. Cherche l’écart.",
+      "en": "26 is the diplodocus bar. Find the gap."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Lis les deux barres, puis compare.",
+    "en": "Read the two bars, then compare."
+   },
+   "explain": {
+    "fr": "26 - 9 = 17 m de plus.",
+    "en": "26 - 9 = 17 m more."
+   },
+   "tags": [
+    "dinosaurs",
+    "length",
+    "difference"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.geants.003",
+   "quest": "dinosaures.geants",
+   "skill": "MES-A04a",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Trois dinosaures sont alignés sur le diagramme.",
+    "en": "Three dinosaurs are lined up on the chart."
+   },
+   "prompt": {
+    "fr": "Quel dinosaure est le plus court ?",
+    "en": "Which dinosaur is the shortest?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Longueur (m)",
+      "en": "Length (m)"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "tricératops",
+        "en": "triceratops"
+       },
+       "value": 9
+      },
+      {
+       "label": {
+        "fr": "T. rex",
+        "en": "T. rex"
+       },
+       "value": 12
+      },
+      {
+       "label": {
+        "fr": "diplodocus",
+        "en": "diplodocus"
+       },
+       "value": 26
+      }
+     ],
+     "max": 30
+    }
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Le tricératops",
+      "en": "The triceratops"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Le T. rex",
+      "en": "The T. rex"
+     },
+     "misconception": "mis_order_reversed"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Le diplodocus",
+      "en": "The diplodocus"
+     },
+     "misconception": "mis_order_reversed"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Cherche la barre la plus basse.",
+    "en": "Look for the lowest bar."
+   },
+   "explain": {
+    "fr": "La barre du tricératops est la plus basse : 9 m.",
+    "en": "The triceratops bar is the lowest: 9 m."
+   },
+   "tags": [
+    "dinosaurs",
+    "length",
+    "compare"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.geants.004",
+   "quest": "dinosaures.geants",
+   "skill": "MES-A04a",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Un bébé dinosaure mesure 15 m de moins que sa mère géante.",
+    "en": "A baby dinosaur is shorter than its giant mother."
+   },
+   "prompt": {
+    "fr": "La mère mesure 26 m. Combien de mètres mesure le bébé, s’il a 15 m de moins ?",
+    "en": "The mother is 26 m long. How long is the baby, if it is 15 m shorter?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 11,
+    "calc": "26-15"
+   },
+   "common_errors": [
+    {
+     "value": 41,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "« De moins » veut dire qu’on enlève.",
+      "en": "“Shorter” means we take away."
+     }
+    },
+    {
+     "value": 10,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Refais la soustraction.",
+      "en": "Close! Redo the subtraction."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Enlève 15 de 26.",
+    "en": "Take 15 away from 26."
+   },
+   "explain": {
+    "fr": "26 - 15 donne 11 m.",
+    "en": "26 - 15 gives 11 m."
+   },
+   "tags": [
+    "dinosaurs",
+    "length",
+    "subtract"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.geants.005",
+   "quest": "dinosaures.geants",
+   "skill": "MES-A04a",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un dinosaure a laissé des empreintes espacées de 3 m.",
+    "en": "A dinosaur left footprints 3 m apart."
+   },
+   "prompt": {
+    "fr": "Combien de mètres y a-t-il entre la 1re et la 4e empreinte ?",
+    "en": "How many metres are there between the 1st and the 4th footprint?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 9,
+    "calc": "3*3"
+   },
+   "common_errors": [
+    {
+     "value": 12,
+     "misconception": "mis_fence_post",
+     "feedback": {
+      "fr": "Entre 4 empreintes, il y a 3 espaces, pas 4.",
+      "en": "Between 4 footprints there are 3 gaps, not 4."
+     }
+    },
+    {
+     "value": 6,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Il y a un espace de plus que 2.",
+      "en": "There is one more gap than 2."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les espaces entre les empreintes, pas les empreintes.",
+    "en": "Count the gaps between footprints, not the footprints."
+   },
+   "explain": {
+    "fr": "Il y a 3 espaces de 3 m : 3 + 3 + 3 = 9 m.",
+    "en": "There are 3 gaps of 3 m: 3 + 3 + 3 = 9 m."
+   },
+   "tags": [
+    "dinosaurs",
+    "footprints",
+    "fence-post"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_c4a2eae74e0c5009d402"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.geants.006",
+   "quest": "dinosaures.geants",
+   "skill": "MES-A04a",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Noah mesure un squelette de dinosaure.",
+    "en": "Noah measures a dinosaur skeleton."
+   },
+   "prompt": {
+    "fr": "Quelle unité convient le mieux pour sa longueur ?",
+    "en": "Which unit suits its length best?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "g",
+      "en": "g"
+     },
+     "misconception": "mis_unit_confusion"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "m",
+      "en": "m"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "kg",
+      "en": "kg"
+     },
+     "misconception": "mis_unit_confusion"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "L",
+      "en": "L"
+     },
+     "random": true
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Un dinosaure géant est très long.",
+    "en": "A giant dinosaur is very long."
+   },
+   "explain": {
+    "fr": "Un squelette de dinosaure est long : on le mesure en mètres.",
+    "en": "A dinosaur skeleton is long, so we measure it in metres."
+   },
+   "tags": [
+    "dinosaurs",
+    "length",
+    "units"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.geants.007",
+   "quest": "dinosaures.geants",
+   "skill": "MES-A04a",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Un dinosaure mesure 10 m et un autre mesure 7 m.",
+    "en": "One dinosaur is 10 m long and another is 7 m long."
+   },
+   "prompt": {
+    "fr": "Comment est le premier par rapport au deuxième ?",
+    "en": "How is the first compared with the second?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Plus long",
+      "en": "Longer"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Plus court",
+      "en": "Shorter"
+     },
+     "misconception": "mis_order_reversed"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Aussi long",
+      "en": "Just as long"
+     },
+     "misconception": "mis_compare_by_length"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Compare 10 et 7.",
+    "en": "Compare 10 and 7."
+   },
+   "explain": {
+    "fr": "10 est plus grand que 7, donc le premier est plus long.",
+    "en": "10 is bigger than 7, so the first is longer."
+   },
+   "tags": [
+    "dinosaurs",
+    "length",
+    "compare"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.geants.008",
+   "quest": "dinosaures.geants",
+   "skill": "MES-A04a",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa estime la longueur d’un T. rex.",
+    "en": "Lea estimates the length of a T. rex."
+   },
+   "prompt": {
+    "fr": "Quelle mesure est la plus raisonnable ?",
+    "en": "Which measure is the most reasonable?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "12 cm",
+      "en": "12 cm"
+     },
+     "misconception": "mis_unit_confusion"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "12 m",
+      "en": "12 m"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "120 m",
+      "en": "120 m"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "2 m",
+      "en": "2 m"
+     },
+     "misconception": "mis_estimate_rounding"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Un T. rex est plus long qu’un autobus scolaire.",
+    "en": "A T. rex is longer than a school bus."
+   },
+   "explain": {
+    "fr": "Un T. rex mesure environ 12 m.",
+    "en": "A T. rex is about 12 m long."
+   },
+   "tags": [
+    "dinosaurs",
+    "length",
+    "estimation"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.geants.009",
+   "quest": "dinosaures.geants",
+   "skill": "MES-A04a",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le squelette d’un dinosaure est mesuré en deux parties.",
+    "en": "A dinosaur skeleton is measured in two parts."
+   },
+   "prompt": {
+    "fr": "La queue fait 7 m et le corps 11 m. Quelle longueur en tout ?",
+    "en": "The tail is 7 m and the body 11 m. What is the total length?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "4",
+      "en": "4"
+     },
+     "misconception": "mis_subtract_instead_of_add"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "17",
+      "en": "17"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "18",
+      "en": "18"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "77",
+      "en": "77"
+     },
+     "misconception": "mis_place_value"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "7+11"
+    }
+   },
+   "hint": {
+    "fr": "Additionne 7 et 11 en deux étapes.",
+    "en": "Add 7 and 11 in two steps."
+   },
+   "explain": {
+    "fr": "11 + 7, c’est 11 + 9 - 2, donc 18 m.",
+    "en": "11 + 7 is 11 + 9 - 2, so 18 m."
+   },
+   "tags": [
+    "dinosaurs",
+    "length",
+    "add"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.geants.010",
+   "quest": "dinosaures.geants",
+   "skill": "MES-A04a",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah marche vers le nid d’un dinosaure.",
+    "en": "Noah walks toward a dinosaur nest."
+   },
+   "prompt": {
+    "fr": "Le nid est à 20 m ; Noah marche 12 m. Combien de mètres reste-t-il ?",
+    "en": "The nest is 20 m away; Noah walks 12 m. How many metres are left?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 8,
+    "calc": "20-12"
+   },
+   "common_errors": [
+    {
+     "value": 32,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Il se rapproche : il reste moins de chemin.",
+      "en": "He gets closer, so less distance is left."
+     }
+    },
+    {
+     "value": 9,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte de 12 jusqu’à 20.",
+      "en": "Close! Count again from 12 up to 20."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 12 jusqu’à 20.",
+    "en": "Count from 12 up to 20."
+   },
+   "explain": {
+    "fr": "12 + 8 = 20. Il reste 8 m.",
+    "en": "12 + 8 = 20. There are 8 m left."
+   },
+   "tags": [
+    "dinosaurs",
+    "distance",
+    "subtract"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_3af166876a3e03d59bb0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.geants.011",
+   "quest": "dinosaures.geants",
+   "skill": "MES-A04a",
+   "type": "truefalse",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le diagramme montre un dinosaure de 12 m et un autre de 9 m.",
+    "en": "The chart shows a dinosaur of 12 m and another of 9 m."
+   },
+   "prompt": {
+    "fr": "Léa dit que le premier est plus long. A-t-elle raison ?",
+    "en": "Lea says the first is longer. Is she right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": true
+   },
+   "hint": {
+    "fr": "Compare 12 et 9.",
+    "en": "Compare 12 and 9."
+   },
+   "explain": {
+    "fr": "12 est plus grand que 9, donc le premier est plus long.",
+    "en": "12 is bigger than 9, so the first is longer."
+   },
+   "tags": [
+    "dinosaurs",
+    "true-false",
+    "compare"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.geants.012",
+   "quest": "dinosaures.geants",
+   "skill": "MES-A04a",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Quatre dinosaures sont mesurés au musée.",
+    "en": "Four dinosaurs are measured at the museum."
+   },
+   "prompt": {
+    "fr": "Range les longueurs de la plus courte à la plus longue.",
+    "en": "Put the lengths in order, shortest to longest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "12 m",
+      "en": "12 m"
+     },
+     "key": "12"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "26 m",
+      "en": "26 m"
+     },
+     "key": "26"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "9 m",
+      "en": "9 m"
+     },
+     "key": "9"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "20 m",
+      "en": "20 m"
+     },
+     "key": "20"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "c",
+     "a",
+     "d",
+     "b"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Cherche d’abord la plus petite longueur.",
+    "en": "First find the smallest length."
+   },
+   "explain": {
+    "fr": "9 m, 12 m, 20 m puis 26 m.",
+    "en": "9 m, 12 m, 20 m then 26 m."
+   },
+   "tags": [
+    "dinosaurs",
+    "length",
+    "ordering"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.geants.013",
+   "quest": "dinosaures.geants",
+   "skill": "MES-A04a",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Trois dinosaures ont vécu à des époques différentes.",
+    "en": "Three dinosaurs lived at different times."
+   },
+   "prompt": {
+    "fr": "Range-les du plus ancien au plus récent.",
+    "en": "Put them in order, from the oldest to the most recent."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Il y a 150 millions d’années",
+      "en": "150 million years ago"
+     },
+     "key": "150"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Il y a 68 millions d’années",
+      "en": "68 million years ago"
+     },
+     "key": "68"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Il y a 230 millions d’années",
+      "en": "230 million years ago"
+     },
+     "key": "230"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "c",
+     "a",
+     "b"
+    ],
+    "by": "desc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Plus le nombre d’années est grand, plus c’est ancien.",
+    "en": "The bigger the number of years, the older."
+   },
+   "explain": {
+    "fr": "230, puis 150, puis 68 millions d’années : du plus ancien au plus récent.",
+    "en": "230, then 150, then 68 million years. Oldest first."
+   },
+   "tags": [
+    "dinosaurs",
+    "timeline",
+    "ordering"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_3af166876a3e03d59bb0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.geants.014",
+   "quest": "dinosaures.geants",
+   "skill": "MES-A04a",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa relie des êtres vivants à leur longueur.",
+    "en": "Lea links living things to their length."
+   },
+   "prompt": {
+    "fr": "Relie chaque être vivant à sa longueur.",
+    "en": "Match each living thing to its length."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "une fourmi",
+       "en": "an ant"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "un chien",
+       "en": "a dog"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "un diplodocus",
+       "en": "a diplodocus"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "25 m",
+       "en": "25 m"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "1 cm",
+       "en": "1 cm"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "60 cm",
+       "en": "60 cm"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r2"
+     ],
+     [
+      "l2",
+      "r3"
+     ],
+     [
+      "l3",
+      "r1"
+     ]
+    ],
+    "misconception": "mis_unit_confusion"
+   },
+   "hint": {
+    "fr": "Une fourmi est minuscule. Un diplodocus est géant.",
+    "en": "An ant is tiny. A diplodocus is giant."
+   },
+   "explain": {
+    "fr": "Une fourmi fait 1 cm, un chien 60 cm et un diplodocus 25 m.",
+    "en": "An ant is 1 cm, a dog is 60 cm and a diplodocus is 25 m."
+   },
+   "tags": [
+    "dinosaurs",
+    "matching",
+    "units"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.geants.015",
+   "quest": "dinosaures.geants",
+   "skill": "MES-A04a",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Deux squelettes sont mis bout à bout dans la salle.",
+    "en": "Two skeletons are laid end to end in the hall."
+   },
+   "prompt": {
+    "fr": "L’un mesure 19 m et l’autre 21 m. Environ combien de mètres ensemble ?",
+    "en": "One is 19 m long and the other 21 m. About how many metres together?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 36,
+    "max": 44,
+    "exact_for_check": 40,
+    "calc": "19+21"
+   },
+   "common_errors": [
+    {
+     "value": 2,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On les met bout à bout : on additionne.",
+      "en": "We lay them end to end, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "19 est proche de 20 et 21 aussi.",
+    "en": "19 is close to 20 and so is 21."
+   },
+   "explain": {
+    "fr": "20 + 20 = 40, donc environ 40 m.",
+    "en": "20 + 20 = 40, so about 40 m."
+   },
+   "tags": [
+    "dinosaurs",
+    "estimation",
+    "rounding"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.oeufs.001",
+   "quest": "dinosaures.oeufs",
+   "skill": "ARI-OPE-A03b",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Une mère dinosaure a construit plusieurs nids.",
+    "en": "A mother dinosaur has built several nests."
+   },
+   "prompt": {
+    "fr": "Il y a 3 nids de 4 œufs. Combien d’œufs en tout ?",
+    "en": "There are 3 nests of 4 eggs. How many eggs in all?"
+   },
+   "math_text": "3 × 4 = ?",
+   "answer": {
+    "kind": "numeric",
+    "value": 12,
+    "calc": "3*4"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Trois nids égaux : on multiplie.",
+      "en": "Three equal nests: we multiply."
+     }
+    },
+    {
+     "value": 16,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as compté un nid de trop.",
+      "en": "You counted one nest too many."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte par 4 : 4, 8, ...",
+    "en": "Count by 4s: 4, 8, ..."
+   },
+   "explain": {
+    "fr": "4, 8, 12. Il y a 12 œufs.",
+    "en": "4, 8, 12. There are 12 eggs."
+   },
+   "tags": [
+    "eggs",
+    "multiplication",
+    "groups"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_3af166876a3e03d59bb0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.oeufs.002",
+   "quest": "dinosaures.oeufs",
+   "skill": "ARI-OPE-A03b",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa visite un site de fouilles avec beaucoup de nids.",
+    "en": "Lea visits a dig site with many nests."
+   },
+   "prompt": {
+    "fr": "Chacun des 5 nids contient 6 œufs. Combien d’œufs en tout ?",
+    "en": "Each of the 5 nests holds 6 eggs. How many eggs in all?"
+   },
+   "math_text": "5 × 6 = ?",
+   "answer": {
+    "kind": "numeric",
+    "value": 30,
+    "calc": "5*6"
+   },
+   "common_errors": [
+    {
+     "value": 11,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Cinq nids égaux : on multiplie.",
+      "en": "Five equal nests: we multiply."
+     }
+    },
+    {
+     "value": 36,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as compté un nid de trop.",
+      "en": "You counted one nest too many."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte par 6 : 6, 12, ...",
+    "en": "Count by 6s: 6, 12, ..."
+   },
+   "explain": {
+    "fr": "6, 12, 18, 24, 30. Il y a 30 œufs.",
+    "en": "6, 12, 18, 24, 30. There are 30 eggs."
+   },
+   "tags": [
+    "eggs",
+    "multiplication",
+    "skip-count"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.oeufs.003",
+   "quest": "dinosaures.oeufs",
+   "skill": "ARI-OPE-A03b",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah compte les œufs fossiles d’une grande vitrine.",
+    "en": "Noah counts the fossil eggs in a big case."
+   },
+   "prompt": {
+    "fr": "La vitrine montre 7 nids avec 4 œufs dans chacun. Quel est le total ?",
+    "en": "The case shows 7 nests with 4 eggs in each. What is the total?"
+   },
+   "math_text": "7 × 4 = ?",
+   "answer": {
+    "kind": "numeric",
+    "value": 28,
+    "calc": "7*4"
+   },
+   "common_errors": [
+    {
+     "value": 11,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Sept nids égaux : on multiplie.",
+      "en": "Seven equal nests: we multiply."
+     }
+    },
+    {
+     "value": 32,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as compté un nid de trop.",
+      "en": "You counted one nest too many."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à 5 × 4, puis ajoute 2 nids.",
+    "en": "Think 5 × 4, then add 2 nests."
+   },
+   "explain": {
+    "fr": "4 × 7 : 4 × 5 = 20, puis 4 × 2 = 8. Donc 28.",
+    "en": "4 × 7: 4 × 5 = 20, then 4 × 2 = 8. So 28."
+   },
+   "tags": [
+    "eggs",
+    "multiplication",
+    "decompose"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.oeufs.004",
+   "quest": "dinosaures.oeufs",
+   "skill": "ARI-OPE-A03b",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Une grande dinosaure pond ses œufs en six rangées.",
+    "en": "A big dinosaur lays her eggs in six rows."
+   },
+   "prompt": {
+    "fr": "Chaque rangée a 8 œufs. Combien d’œufs en tout ?",
+    "en": "Each row has 8 eggs. How many eggs in all?"
+   },
+   "math_text": "6 × 8 = ?",
+   "answer": {
+    "kind": "numeric",
+    "value": 48,
+    "calc": "6*8"
+   },
+   "common_errors": [
+    {
+     "value": 14,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Six rangées égales : on multiplie.",
+      "en": "Six equal rows: we multiply."
+     }
+    },
+    {
+     "value": 84,
+     "misconception": "mis_digit_swap",
+     "feedback": {
+      "fr": "Attention : tu as inversé les chiffres.",
+      "en": "Careful: you swapped the digits."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à 5 × 8 = 40, puis ajoute une rangée.",
+    "en": "Think 5 × 8 = 40, then add one more row."
+   },
+   "explain": {
+    "fr": "5 × 8 = 40, puis 40 + 8 = 48 œufs.",
+    "en": "5 × 8 = 40, then 40 + 8 = 48 eggs."
+   },
+   "tags": [
+    "eggs",
+    "multiplication",
+    "rows"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.oeufs.005",
+   "quest": "dinosaures.oeufs",
+   "skill": "ARI-OPE-A03b",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa écrit une addition répétée pour des œufs.",
+    "en": "Lea writes a repeated addition for eggs."
+   },
+   "prompt": {
+    "fr": "Quelle addition répétée correspond à 3 × 4 ?",
+    "en": "Which repeated addition matches 3 × 4?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "3 + 4",
+      "en": "3 + 4"
+     },
+     "misconception": "mis_add_instead_of_multiply"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "4 + 4",
+      "en": "4 + 4"
+     },
+     "misconception": "mis_partial_result"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "4 + 4 + 4",
+      "en": "4 + 4 + 4"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "3 + 3 + 3 + 3 + 3",
+      "en": "3 + 3 + 3 + 3 + 3"
+     },
+     "misconception": "mis_skip_count"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c"
+   },
+   "hint": {
+    "fr": "3 × 4, c’est 3 groupes de 4.",
+    "en": "3 × 4 means 3 groups of 4."
+   },
+   "explain": {
+    "fr": "3 groupes de 4 : 4 + 4 + 4 = 12.",
+    "en": "3 groups of 4: 4 + 4 + 4 = 12."
+   },
+   "tags": [
+    "eggs",
+    "repeated-addition"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.oeufs.006",
+   "quest": "dinosaures.oeufs",
+   "skill": "ARI-OPE-A03b",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah compte par bonds de 6 devant les nids.",
+    "en": "Noah counts by jumps of 6 in front of the nests."
+   },
+   "prompt": {
+    "fr": "Quel nombre apparaît quand on compte par 6 ?",
+    "en": "Which number shows up when counting by 6s?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "38",
+      "en": "38"
+     },
+     "misconception": "mis_skip_count"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "36",
+      "en": "36"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "32",
+      "en": "32"
+     },
+     "misconception": "mis_skip_count"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "40",
+      "en": "40"
+     },
+     "random": true
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b",
+    "calc_choice": {
+     "b": "6*6"
+    }
+   },
+   "hint": {
+    "fr": "6, 12, 18, 24, ...",
+    "en": "6, 12, 18, 24, ..."
+   },
+   "explain": {
+    "fr": "6, 12, 18, 24, 30, 36 : le sixième bond tombe sur 36.",
+    "en": "6, 12, 18, 24, 30, 36: the sixth jump lands on 36."
+   },
+   "tags": [
+    "eggs",
+    "skip-count"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.oeufs.007",
+   "quest": "dinosaures.oeufs",
+   "skill": "ARI-OPE-A03b",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un grand nid contient 9 œufs.",
+    "en": "A big nest holds 9 eggs."
+   },
+   "prompt": {
+    "fr": "Le site de fouilles a 3 grands nids comme celui-là. Combien d’œufs en tout ?",
+    "en": "The dig site has 3 big nests like that one. How many eggs in all?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "12",
+      "en": "12"
+     },
+     "misconception": "mis_add_instead_of_multiply"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "27",
+      "en": "27"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "36",
+      "en": "36"
+     },
+     "misconception": "mis_skip_count"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "72",
+      "en": "72"
+     },
+     "misconception": "mis_digit_swap"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b",
+    "calc_choice": {
+     "b": "9*3"
+    }
+   },
+   "hint": {
+    "fr": "Compte par bonds de 9, trois fois.",
+    "en": "Count by jumps of 9, three times."
+   },
+   "explain": {
+    "fr": "9, 18, 27. Il y a 27 œufs.",
+    "en": "9, 18, 27. There are 27 eggs."
+   },
+   "tags": [
+    "eggs",
+    "word-problem",
+    "multiplication"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.oeufs.008",
+   "quest": "dinosaures.oeufs",
+   "skill": "ARI-OPE-A03b",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Une dinosaure pond trois nids de 12 œufs.",
+    "en": "A dinosaur lays three nests of 12 eggs."
+   },
+   "prompt": {
+    "fr": "Cinq œufs sont cassés. Combien d’œufs sont intacts ?",
+    "en": "Five eggs are broken. How many eggs are intact?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 31,
+    "calc": "3*12-5"
+   },
+   "common_errors": [
+    {
+     "value": 36,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié d’enlever les œufs cassés.",
+      "en": "You forgot to take away the broken eggs."
+     }
+    },
+    {
+     "value": 41,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Les œufs cassés sont enlevés du total.",
+      "en": "The broken eggs are taken away from the total."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Cherche d’abord le total d’œufs.",
+    "en": "First find the total number of eggs."
+   },
+   "explain": {
+    "fr": "3 × 12 = 36, puis 36 - 5 = 31 œufs intacts.",
+    "en": "3 × 12 = 36, then 36 - 5 = 31 intact eggs."
+   },
+   "tags": [
+    "eggs",
+    "word-problem",
+    "two-steps"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.oeufs.009",
+   "quest": "dinosaures.oeufs",
+   "skill": "ARI-OPE-A03b",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un dinosaure pond le même nombre d’œufs chaque jour.",
+    "en": "A dinosaur lays the same number of eggs each day."
+   },
+   "prompt": {
+    "fr": "Il pond 6 œufs par jour pendant 7 jours. Combien d’œufs en tout ?",
+    "en": "It lays 6 eggs a day for 7 days. How many eggs in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 42,
+    "calc": "6*7"
+   },
+   "common_errors": [
+    {
+     "value": 13,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Sept jours égaux : on multiplie.",
+      "en": "Seven equal days: we multiply."
+     }
+    },
+    {
+     "value": 48,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as compté un jour de trop.",
+      "en": "You counted one day too many."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à 6 × 5 = 30, puis ajoute 2 jours.",
+    "en": "Think 6 × 5 = 30, then add 2 days."
+   },
+   "explain": {
+    "fr": "6 × 5 = 30 et 6 × 2 = 12. Donc 30 + 12 = 42.",
+    "en": "6 × 5 = 30 and 6 × 2 = 12. So 30 + 12 = 42."
+   },
+   "tags": [
+    "eggs",
+    "word-problem",
+    "multiplication"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.oeufs.010",
+   "quest": "dinosaures.oeufs",
+   "skill": "ARI-OPE-A03b",
+   "type": "truefalse",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa vérifie le calcul de son ami devant les nids.",
+    "en": "Lea checks her friend’s calculation in front of the nests."
+   },
+   "prompt": {
+    "fr": "Noah dit que 6 nids de 7 œufs font 48 œufs. A-t-il raison ?",
+    "en": "Noah says 6 nests of 7 eggs make 48 eggs. Is he right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_skip_count"
+   },
+   "hint": {
+    "fr": "Compte par 7 : 7, 14, ...",
+    "en": "Count by 7s: 7, 14, ..."
+   },
+   "explain": {
+    "fr": "6 × 7 = 42, pas 48.",
+    "en": "6 × 7 = 42, not 48."
+   },
+   "tags": [
+    "eggs",
+    "true-false",
+    "multiplication"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.oeufs.011",
+   "quest": "dinosaures.oeufs",
+   "skill": "ARI-OPE-A03b",
+   "type": "order",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Quatre sites de fouilles ont des nids différents.",
+    "en": "Four dig sites have different nests."
+   },
+   "prompt": {
+    "fr": "Range les sites du moins d’œufs au plus d’œufs.",
+    "en": "Put the sites in order, from the fewest eggs to the most."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "3 nids de 6 œufs",
+      "en": "3 nests of 6 eggs"
+     },
+     "key": "18"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "5 nids de 5 œufs",
+      "en": "5 nests of 5 eggs"
+     },
+     "key": "25"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "2 nids de 8 œufs",
+      "en": "2 nests of 8 eggs"
+     },
+     "key": "16"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "4 nids de 7 œufs",
+      "en": "4 nests of 7 eggs"
+     },
+     "key": "28"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "c",
+     "a",
+     "b",
+     "d"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_partial"
+   },
+   "hint": {
+    "fr": "Calcule le total de chaque site d’abord.",
+    "en": "Work out each site’s total first."
+   },
+   "explain": {
+    "fr": "16, 18, 25 puis 28 œufs.",
+    "en": "16, 18, 25 then 28 eggs."
+   },
+   "tags": [
+    "eggs",
+    "ordering",
+    "products"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.oeufs.012",
+   "quest": "dinosaures.oeufs",
+   "skill": "ARI-OPE-A03b",
+   "type": "match",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah associe chaque groupe d’œufs à son total.",
+    "en": "Noah matches each group of eggs to its total."
+   },
+   "prompt": {
+    "fr": "Relie chaque groupe d’œufs à son total.",
+    "en": "Match each group of eggs to its total."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "4 nids de 5",
+       "en": "4 nests of 5"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "3 nids de 7",
+       "en": "3 nests of 7"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "6 nids de 4",
+       "en": "6 nests of 4"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "24 œufs",
+       "en": "24 eggs"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "20 œufs",
+       "en": "20 eggs"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "21 œufs",
+       "en": "21 eggs"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r2"
+     ],
+     [
+      "l2",
+      "r3"
+     ],
+     [
+      "l3",
+      "r1"
+     ]
+    ],
+    "misconception": "mis_skip_count"
+   },
+   "hint": {
+    "fr": "Compte par bonds de 5, de 7, puis de 4.",
+    "en": "Count by jumps of 5, of 7, then of 4."
+   },
+   "explain": {
+    "fr": "4 × 5 = 20, 3 × 7 = 21 et 6 × 4 = 24.",
+    "en": "4 × 5 = 20, 3 × 7 = 21 and 6 × 4 = 24."
+   },
+   "tags": [
+    "eggs",
+    "matching",
+    "products"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.oeufs.013",
+   "quest": "dinosaures.oeufs",
+   "skill": "ARI-OPE-A03b",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Les œufs d’un nid sont rangés en rangées égales.",
+    "en": "The eggs of a nest are laid out in equal rows."
+   },
+   "prompt": {
+    "fr": "Combien d’œufs y a-t-il dans ce nid ?",
+    "en": "How many eggs are in this nest?"
+   },
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 5,
+     "rows": 3,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "œuf",
+        "en": "egg"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "œuf",
+        "en": "egg"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "œuf",
+        "en": "egg"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "œuf",
+        "en": "egg"
+       }
+      },
+      {
+       "x": 5,
+       "y": 1,
+       "label": {
+        "fr": "œuf",
+        "en": "egg"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "œuf",
+        "en": "egg"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "œuf",
+        "en": "egg"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "œuf",
+        "en": "egg"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "œuf",
+        "en": "egg"
+       }
+      },
+      {
+       "x": 5,
+       "y": 2,
+       "label": {
+        "fr": "œuf",
+        "en": "egg"
+       }
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "œuf",
+        "en": "egg"
+       }
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": {
+        "fr": "œuf",
+        "en": "egg"
+       }
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": {
+        "fr": "œuf",
+        "en": "egg"
+       }
+      },
+      {
+       "x": 4,
+       "y": 3,
+       "label": {
+        "fr": "œuf",
+        "en": "egg"
+       }
+      },
+      {
+       "x": 5,
+       "y": 3,
+       "label": {
+        "fr": "œuf",
+        "en": "egg"
+       }
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 15,
+    "calc": "3*5"
+   },
+   "common_errors": [
+    {
+     "value": 8,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Il y a des rangées égales : on multiplie.",
+      "en": "There are equal rows: we multiply."
+     }
+    },
+    {
+     "value": 14,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte une rangée entière.",
+      "en": "Close! Count a whole row again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les rangées, puis les œufs par rangée.",
+    "en": "Count the rows, then the eggs per row."
+   },
+   "explain": {
+    "fr": "3 rangées de 5 : 5 + 5 + 5 = 15 œufs.",
+    "en": "3 rows of 5: 5 + 5 + 5 = 15 eggs."
+   },
+   "tags": [
+    "eggs",
+    "array",
+    "multiplication"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2d028533521bbec9f2c6"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "dinosaures.oeufs.014",
+   "quest": "dinosaures.oeufs",
+   "skill": "ARI-OPE-A03b",
+   "type": "estimate",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un grand site de fouilles a huit nids.",
+    "en": "A big dig site has eight nests."
+   },
+   "prompt": {
+    "fr": "Chaque nid contient 11 œufs. Environ combien d’œufs en tout ?",
+    "en": "Each nest holds 11 eggs. About how many eggs in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 80,
+    "max": 96,
+    "exact_for_check": 88,
+    "calc": "8*11"
+   },
+   "common_errors": [
+    {
+     "value": 19,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Huit nids égaux : on multiplie.",
+      "en": "Eight equal nests: we multiply."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à 8 × 10, puis ajoute un peu.",
+    "en": "Think 8 × 10, then add a little."
+   },
+   "explain": {
+    "fr": "8 × 10 = 80 et 8 × 1 = 8. Donc environ 88, soit près de 90.",
+    "en": "8 × 10 = 80 and 8 × 1 = 8. So about 88, close to 90."
+   },
+   "tags": [
+    "eggs",
+    "estimation",
+    "multiplication"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  }
+ ]
+}
