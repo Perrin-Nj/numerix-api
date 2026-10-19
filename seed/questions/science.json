@@ -1,0 +1,4702 @@
+{
+ "world": "science",
+ "schema": 1,
+ "questions": [
+  {
+   "id": "science.mesurer.001",
+   "quest": "science.mesurer",
+   "skill": "MES-A03",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa mesure une bandelette de papier au laboratoire.",
+    "en": "Lea measures a paper strip in the lab."
+   },
+   "prompt": {
+    "fr": "La bandelette part du 0 et finit à la flèche. Combien de centimètres ?",
+    "en": "The strip starts at 0 and ends at the arrow. How many centimetres?"
+   },
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 0,
+     "max": 15,
+     "step": 1,
+     "labels": [
+      0,
+      5,
+      10,
+      15
+     ],
+     "arrow": 7
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 7,
+    "calc": "7"
+   },
+   "common_errors": [
+    {
+     "value": 6,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Compte les traits depuis le 0.",
+      "en": "Close! Count the marks from 0."
+     }
+    },
+    {
+     "value": 5,
+     "misconception": "mis_read_scale",
+     "feedback": {
+      "fr": "5 est le trait marqué le plus proche. Compte les petits traits.",
+      "en": "5 is the nearest labelled mark. Count the small marks."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les petits traits à partir de 5.",
+    "en": "Count the small marks from 5."
+   },
+   "explain": {
+    "fr": "La flèche est 2 traits après le 5 : 7 cm.",
+    "en": "The arrow is 2 marks after the 5: 7 cm."
+   },
+   "tags": [
+    "length",
+    "ruler",
+    "cm"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_06163ab3ddcb97ec1096"
+    },
+    {
+     "role": "object",
+     "asset": "a_874ba44c52745cef96ce"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.mesurer.002",
+   "quest": "science.mesurer",
+   "skill": "MES-A03",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah mesure une plume trouvée dans la cour.",
+    "en": "Noah measures a feather found in the yard."
+   },
+   "prompt": {
+    "fr": "La plume part du 0. Quelle est sa longueur, en centimètres ?",
+    "en": "The feather starts at 0. What is its length, in centimetres?"
+   },
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 0,
+     "max": 15,
+     "step": 1,
+     "labels": [
+      0,
+      5,
+      10,
+      15
+     ],
+     "arrow": 12
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 12,
+    "calc": "12"
+   },
+   "common_errors": [
+    {
+     "value": 10,
+     "misconception": "mis_read_scale",
+     "feedback": {
+      "fr": "10 est le trait marqué le plus proche. Compte les petits traits.",
+      "en": "10 is the nearest labelled mark. Count the small marks."
+     }
+    },
+    {
+     "value": 13,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte depuis le 10.",
+      "en": "Close! Count again from 10."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pars du trait 10 et avance petit trait par petit trait.",
+    "en": "Start at the 10 mark and move one small mark at a time."
+   },
+   "explain": {
+    "fr": "La flèche est 2 traits après le 10 : 12 cm.",
+    "en": "The arrow is 2 marks after the 10: 12 cm."
+   },
+   "tags": [
+    "length",
+    "ruler",
+    "cm"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_06163ab3ddcb97ec1096"
+    },
+    {
+     "role": "object",
+     "asset": "a_874ba44c52745cef96ce"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.mesurer.003",
+   "quest": "science.mesurer",
+   "skill": "MES-A03",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa range des tubes à essai au laboratoire.",
+    "en": "Lea sorts test tubes in the lab."
+   },
+   "prompt": {
+    "fr": "Le tube bleu fait 15 cm, le vert 9 cm. Le bleu est plus long de combien de cm ?",
+    "en": "The blue tube is 15 cm, the green one 9 cm. The blue one is longer by how many cm?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 6,
+    "calc": "15-9"
+   },
+   "common_errors": [
+    {
+     "value": 24,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On compare deux longueurs : on cherche l’écart.",
+      "en": "We compare two lengths, so we look for the gap."
+     }
+    },
+    {
+     "value": 7,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les centimètres entre 9 et 15.",
+      "en": "Close! Count the centimetres between 9 and 15 again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 9 jusqu’à 15.",
+    "en": "Count from 9 up to 15."
+   },
+   "explain": {
+    "fr": "De 9 à 15, il y a 6 cm. 15 - 9 = 6.",
+    "en": "From 9 to 15 is 6 cm. 15 - 9 = 6."
+   },
+   "tags": [
+    "length",
+    "compare",
+    "subtract"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_abc3c43a6d9573bc2d1f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.mesurer.004",
+   "quest": "science.mesurer",
+   "skill": "MES-A03",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah place trois baguettes de bois bout à bout.",
+    "en": "Noah lays three wooden sticks end to end."
+   },
+   "prompt": {
+    "fr": "Chaque baguette mesure 10 cm. Quelle est la longueur totale, en cm ?",
+    "en": "Each stick is 10 cm long. What is the total length, in cm?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 30,
+    "calc": "10+10+10"
+   },
+   "common_errors": [
+    {
+     "value": 20,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié une baguette. Il y en a trois.",
+      "en": "You left out a stick. There are three."
+     }
+    },
+    {
+     "value": 103,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "Additionne des dizaines : 10 + 10 + 10.",
+      "en": "Add tens: 10 + 10 + 10."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte par dizaines : 10, 20, ...",
+    "en": "Count by tens: 10, 20, ..."
+   },
+   "explain": {
+    "fr": "10, 20, 30. Les trois baguettes font 30 cm.",
+    "en": "10, 20, 30. The three sticks make 30 cm."
+   },
+   "tags": [
+    "length",
+    "add",
+    "tens"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.mesurer.005",
+   "quest": "science.mesurer",
+   "skill": "MES-A03",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa suit la pousse d’un haricot dans un pot.",
+    "en": "Lea follows a bean sprout in a pot."
+   },
+   "prompt": {
+    "fr": "Lundi, la pousse mesure 8 cm et grandit de 5 cm. Quelle est sa hauteur, en cm ?",
+    "en": "On Monday the sprout is 8 cm tall and grows 5 cm. What is its height, in cm?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 13,
+    "calc": "8+5"
+   },
+   "common_errors": [
+    {
+     "value": 3,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Elle grandit : on ajoute.",
+      "en": "It grows, so we add."
+     }
+    },
+    {
+     "value": 12,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les 5 cm ajoutés.",
+      "en": "Close! Count the 5 added cm again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Complète à 10 avec 2, puis ajoute le reste.",
+    "en": "Fill up to 10 with 2, then add the rest."
+   },
+   "explain": {
+    "fr": "8 + 2 = 10, puis 10 + 3 = 13.",
+    "en": "8 + 2 = 10, then 10 + 3 = 13."
+   },
+   "tags": [
+    "length",
+    "growth",
+    "add"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_7018091db72e5cdb38b0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.mesurer.006",
+   "quest": "science.mesurer",
+   "skill": "MES-A03",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah observe un ver de terre au laboratoire.",
+    "en": "Noah watches an earthworm in the lab."
+   },
+   "prompt": {
+    "fr": "Le ver mesure 14 cm et s’allonge de 9 cm. Quelle est sa longueur maintenant ?",
+    "en": "The worm is 14 cm long and stretches by 9 cm. How long is it now?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 23,
+    "calc": "14+9"
+   },
+   "common_errors": [
+    {
+     "value": 5,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Il s’allonge : on ajoute.",
+      "en": "It stretches, so we add."
+     }
+    },
+    {
+     "value": 13,
+     "misconception": "mis_forgot_carry",
+     "feedback": {
+      "fr": "N’oublie pas la retenue : 4 + 9 fait plus de 10.",
+      "en": "Do not forget to carry: 4 + 9 is more than 10."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Ajoute 6 pour faire 20, puis le reste.",
+    "en": "Add 6 to make 20, then the rest."
+   },
+   "explain": {
+    "fr": "14 + 6 = 20, puis 20 + 3 = 23.",
+    "en": "14 + 6 = 20, then 20 + 3 = 23."
+   },
+   "tags": [
+    "length",
+    "add",
+    "regroup"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.mesurer.007",
+   "quest": "science.mesurer",
+   "skill": "MES-A03",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa prépare la mesure d’un crayon.",
+    "en": "Lea prepares to measure a pencil."
+   },
+   "prompt": {
+    "fr": "Quelle unité convient le mieux pour sa longueur ?",
+    "en": "Which unit suits its length best?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "kg",
+      "en": "kg"
+     },
+     "misconception": "mis_unit_confusion"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "cm",
+      "en": "cm"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "L",
+      "en": "L"
+     },
+     "misconception": "mis_unit_confusion"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "m",
+      "en": "m"
+     },
+     "misconception": "mis_unit_confusion"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Un crayon est assez court.",
+    "en": "A pencil is quite short."
+   },
+   "explain": {
+    "fr": "Un crayon est court : on le mesure en centimètres.",
+    "en": "A pencil is short, so we measure it in centimetres."
+   },
+   "tags": [
+    "length",
+    "units"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_06163ab3ddcb97ec1096"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.mesurer.008",
+   "quest": "science.mesurer",
+   "skill": "MES-A03",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah estime la longueur d’un crayon neuf.",
+    "en": "Noah estimates the length of a new pencil."
+   },
+   "prompt": {
+    "fr": "Quelle mesure est la plus raisonnable ?",
+    "en": "Which measure is the most reasonable?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "18 m",
+      "en": "18 m"
+     },
+     "misconception": "mis_unit_confusion"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "18 cm",
+      "en": "18 cm"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "180 cm",
+      "en": "180 cm"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "2 cm",
+      "en": "2 cm"
+     },
+     "misconception": "mis_estimate_rounding"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Compare avec la largeur de ta main.",
+    "en": "Compare it with the width of your hand."
+   },
+   "explain": {
+    "fr": "Un crayon neuf mesure environ 18 cm.",
+    "en": "A new pencil is about 18 cm long."
+   },
+   "tags": [
+    "length",
+    "estimation",
+    "units"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.mesurer.009",
+   "quest": "science.mesurer",
+   "skill": "MES-A03",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa mesure deux lignes tracées sur une feuille.",
+    "en": "Lea measures two lines drawn on a sheet."
+   },
+   "prompt": {
+    "fr": "La première fait 9 cm, la deuxième 6 cm. Mises bout à bout, elles font combien de cm ?",
+    "en": "The first is 9 cm, the second is 6 cm. End to end, how many cm do they make?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "3",
+      "en": "3"
+     },
+     "misconception": "mis_subtract_instead_of_add"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "15",
+      "en": "15"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "14",
+      "en": "14"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "96",
+      "en": "96"
+     },
+     "misconception": "mis_place_value"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b",
+    "calc_choice": {
+     "b": "9+6"
+    }
+   },
+   "hint": {
+    "fr": "Bout à bout veut dire qu’on réunit.",
+    "en": "End to end means we put them together."
+   },
+   "explain": {
+    "fr": "9 + 6, c’est 9 + 1 + 5, donc 15 cm.",
+    "en": "9 + 6 is 9 + 1 + 5, so 15 cm."
+   },
+   "tags": [
+    "length",
+    "word-problem",
+    "add"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.mesurer.010",
+   "quest": "science.mesurer",
+   "skill": "MES-A03",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 4,
+   "story": {
+    "fr": "Noah coupe un ruban pour une expérience.",
+    "en": "Noah cuts a ribbon for an experiment."
+   },
+   "prompt": {
+    "fr": "Sur un ruban de 20 cm, il coupe 8 cm puis 5 cm. Combien de cm reste-t-il ?",
+    "en": "From a 20 cm ribbon, he cuts 8 cm then 5 cm. How many cm are left?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 7,
+    "calc": "20-8-5"
+   },
+   "common_errors": [
+    {
+     "value": 12,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu t’es arrêté après la première coupe.",
+      "en": "You stopped after the first cut."
+     }
+    },
+    {
+     "value": 33,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On coupe : le ruban devient plus court.",
+      "en": "He cuts, so the ribbon gets shorter."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Enlève 8, puis enlève 5 du reste.",
+    "en": "Take away 8, then take 5 from what is left."
+   },
+   "explain": {
+    "fr": "20 - 8 = 12, puis 12 - 5 = 7.",
+    "en": "20 - 8 = 12, then 12 - 5 = 7."
+   },
+   "tags": [
+    "length",
+    "word-problem",
+    "two-steps"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.mesurer.011",
+   "quest": "science.mesurer",
+   "skill": "MES-A03",
+   "type": "truefalse",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah regarde un trombone sur la table.",
+    "en": "Noah looks at a paperclip on the table."
+   },
+   "prompt": {
+    "fr": "Il dit que le trombone mesure environ 3 m. A-t-il raison ?",
+    "en": "He says the paperclip is about 3 m long. Is he right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_unit_confusion"
+   },
+   "hint": {
+    "fr": "Un mètre, c’est la hauteur d’une chaise d’enfant.",
+    "en": "A metre is about the height of a child’s chair."
+   },
+   "explain": {
+    "fr": "Un trombone mesure environ 3 cm, pas 3 m.",
+    "en": "A paperclip is about 3 cm long, not 3 m."
+   },
+   "tags": [
+    "length",
+    "true-false",
+    "units"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.mesurer.012",
+   "quest": "science.mesurer",
+   "skill": "MES-A03",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa aligne quatre objets du laboratoire.",
+    "en": "Lea lines up four lab objects."
+   },
+   "prompt": {
+    "fr": "Range les objets du plus court au plus long.",
+    "en": "Put the objects in order, shortest to longest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "La règle : 30 cm",
+      "en": "The ruler: 30 cm"
+     },
+     "key": "30"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "La gomme : 4 cm",
+      "en": "The eraser: 4 cm"
+     },
+     "key": "4"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Le crayon : 18 cm",
+      "en": "The pencil: 18 cm"
+     },
+     "key": "18"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "Le trombone : 3 cm",
+      "en": "The paperclip: 3 cm"
+     },
+     "key": "3"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "d",
+     "b",
+     "c",
+     "a"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Trouve d’abord le plus petit nombre.",
+    "en": "First find the smallest number."
+   },
+   "explain": {
+    "fr": "3 cm, 4 cm, 18 cm puis 30 cm.",
+    "en": "3 cm, 4 cm, 18 cm then 30 cm."
+   },
+   "tags": [
+    "length",
+    "ordering"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.mesurer.013",
+   "quest": "science.mesurer",
+   "skill": "MES-A03",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah devine la longueur de trois objets.",
+    "en": "Noah guesses the length of three objects."
+   },
+   "prompt": {
+    "fr": "Relie chaque objet à sa longueur.",
+    "en": "Match each object to its length."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "un trombone",
+       "en": "a paperclip"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "un crayon neuf",
+       "en": "a new pencil"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "une porte",
+       "en": "a door"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "2 m",
+       "en": "2 m"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "3 cm",
+       "en": "3 cm"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "18 cm",
+       "en": "18 cm"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r2"
+     ],
+     [
+      "l2",
+      "r3"
+     ],
+     [
+      "l3",
+      "r1"
+     ]
+    ],
+    "misconception": "mis_unit_confusion"
+   },
+   "hint": {
+    "fr": "Une porte est plus haute que toi.",
+    "en": "A door is taller than you."
+   },
+   "explain": {
+    "fr": "Un trombone fait 3 cm, un crayon 18 cm et une porte 2 m.",
+    "en": "A paperclip is 3 cm, a pencil 18 cm and a door 2 m."
+   },
+   "tags": [
+    "length",
+    "matching",
+    "estimation"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.mesurer.014",
+   "quest": "science.mesurer",
+   "skill": "MES-A03",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa pose deux crayons bout à bout.",
+    "en": "Lea lays two pencils end to end."
+   },
+   "prompt": {
+    "fr": "Chaque crayon mesure 19 cm. Environ combien de cm font-ils ensemble ?",
+    "en": "Each pencil is 19 cm long. About how many cm do they make together?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 35,
+    "max": 41,
+    "exact_for_check": 38,
+    "calc": "19+19"
+   },
+   "common_errors": [
+    {
+     "value": 19,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Il y a deux crayons : compte les deux.",
+      "en": "There are two pencils: count both."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis 19 à la dizaine la plus proche.",
+    "en": "Round 19 to the nearest ten."
+   },
+   "explain": {
+    "fr": "19 est proche de 20. 20 + 20 = 40, donc environ 40.",
+    "en": "19 is close to 20. 20 + 20 = 40, so about 40."
+   },
+   "tags": [
+    "length",
+    "estimation",
+    "rounding"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.hasard.001",
+   "quest": "science.hasard",
+   "skill": "PRO-05b",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa pioche une bille sans regarder dans un sac.",
+    "en": "Lea draws a marble from a bag without looking."
+   },
+   "prompt": {
+    "fr": "Le sac contient 5 billes rouges et 1 bille bleue. Quelle couleur a le plus de chances de sortir ?",
+    "en": "The bag holds 5 red marbles and 1 blue marble. Which colour is the most likely to come out?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Une bille rouge",
+      "en": "A red marble"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Une bille bleue",
+      "en": "A blue marble"
+     },
+     "random": true
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Autant de chances pour les deux",
+      "en": "Equal chances for both"
+     },
+     "misconception": "mis_chance_equal"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Compare le nombre de billes de chaque couleur.",
+    "en": "Compare the number of marbles of each colour."
+   },
+   "explain": {
+    "fr": "Il y a plus de billes rouges, donc rouge est le plus probable.",
+    "en": "There are more red marbles, so red is the most likely."
+   },
+   "tags": [
+    "chance",
+    "marbles",
+    "likely"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.hasard.002",
+   "quest": "science.hasard",
+   "skill": "PRO-05b",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah lance un dé à 6 faces numérotées de 1 à 6.",
+    "en": "Noah rolls a die with 6 faces numbered 1 to 6."
+   },
+   "prompt": {
+    "fr": "Quel événement est certain ?",
+    "en": "Which event is certain?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Obtenir un 6",
+      "en": "Getting a 6"
+     },
+     "misconception": "mis_chance_certain"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Obtenir un nombre pair",
+      "en": "Getting an even number"
+     },
+     "misconception": "mis_chance_certain"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Obtenir un nombre de 1 à 6",
+      "en": "Getting a number from 1 to 6"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "Obtenir un 7",
+      "en": "Getting a 7"
+     },
+     "random": true
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c"
+   },
+   "hint": {
+    "fr": "Un événement certain arrive à tous les coups.",
+    "en": "A certain event happens every single time."
+   },
+   "explain": {
+    "fr": "Le dé n’a que des faces de 1 à 6, donc c’est certain.",
+    "en": "The die only has faces from 1 to 6, so it is certain."
+   },
+   "tags": [
+    "chance",
+    "dice",
+    "certain"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.hasard.003",
+   "quest": "science.hasard",
+   "skill": "PRO-05b",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le sac de Léa contient des billes de trois couleurs.",
+    "en": "Lea’s bag holds marbles of three colours."
+   },
+   "prompt": {
+    "fr": "Elle pioche sans regarder. Quelle couleur a le moins de chances de sortir ?",
+    "en": "She draws without looking. Which colour is the least likely to come out?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Billes dans le sac",
+      "en": "Marbles in the bag"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "rouge",
+        "en": "red"
+       },
+       "count": 6
+      },
+      {
+       "label": {
+        "fr": "bleu",
+        "en": "blue"
+       },
+       "count": 3
+      },
+      {
+       "label": {
+        "fr": "vert",
+        "en": "green"
+       },
+       "count": 1
+      }
+     ]
+    }
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "La bille rouge",
+      "en": "The red marble"
+     },
+     "misconception": "mis_read_wrong_bar"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "La bille verte",
+      "en": "The green marble"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "La bille bleue",
+      "en": "The blue marble"
+     },
+     "misconception": "mis_read_wrong_bar"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Cherche la ligne qui a le moins d’images.",
+    "en": "Look for the row with the fewest pictures."
+   },
+   "explain": {
+    "fr": "Il y a 1 bille verte seulement : c’est la couleur la moins probable.",
+    "en": "There is only 1 green marble: it is the least likely colour."
+   },
+   "tags": [
+    "chance",
+    "pictograph",
+    "least-likely"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.hasard.004",
+   "quest": "science.hasard",
+   "skill": "PRO-05b",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa compare deux sacs de dix billes.",
+    "en": "Lea compares two bags of ten marbles."
+   },
+   "prompt": {
+    "fr": "Un sac a 3 billes rouges sur 10. Un autre sac en a 6 sur 10. Quel sac donne le plus de chances d’avoir une rouge ?",
+    "en": "One bag has 3 red marbles out of 10. Another bag has 6 out of 10. Which bag gives the best chance of a red one?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Le premier sac",
+      "en": "The first bag"
+     },
+     "misconception": "mis_fraction_denominator"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Le deuxième sac",
+      "en": "The second bag"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Autant de chances",
+      "en": "Equal chances"
+     },
+     "misconception": "mis_chance_equal"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Les deux sacs ont autant de billes en tout.",
+    "en": "Both bags have the same number of marbles in all."
+   },
+   "explain": {
+    "fr": "6 rouges sur 10 est mieux que 3 rouges sur 10.",
+    "en": "6 red out of 10 is better than 3 red out of 10."
+   },
+   "tags": [
+    "chance",
+    "compare",
+    "marbles"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.hasard.005",
+   "quest": "science.hasard",
+   "skill": "PRO-05b",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "La roulette du laboratoire a 8 parts égales.",
+    "en": "The lab spinner has 8 equal parts."
+   },
+   "prompt": {
+    "fr": "Il y a 5 parts jaunes et 3 parts vertes. Combien de parts jaunes de plus que de parts vertes ?",
+    "en": "There are 5 yellow parts and 3 green parts. How many more yellow parts than green parts?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 2,
+    "calc": "5-3"
+   },
+   "common_errors": [
+    {
+     "value": 8,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On compare les deux couleurs : on cherche l’écart.",
+      "en": "We compare the two colours, so we look for the gap."
+     }
+    },
+    {
+     "value": 3,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "3 est le nombre de parts vertes. Cherche l’écart.",
+      "en": "3 is the number of green parts. Find the gap."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compare 5 parts avec 3 parts.",
+    "en": "Compare 5 parts with 3 parts."
+   },
+   "explain": {
+    "fr": "5 - 3 = 2. Il y a 2 parts jaunes de plus.",
+    "en": "5 - 3 = 2. There are 2 more yellow parts."
+   },
+   "tags": [
+    "chance",
+    "spinner",
+    "compare"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.hasard.006",
+   "quest": "science.hasard",
+   "skill": "PRO-05b",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah prépare un sac de billes pour l’expérience.",
+    "en": "Noah prepares a bag of marbles for the experiment."
+   },
+   "prompt": {
+    "fr": "Il met 4 billes rouges, 3 bleues et 5 vertes dans le sac. Combien de billes y a-t-il en tout ?",
+    "en": "He puts 4 red, 3 blue and 5 green marbles in the bag. How many marbles are there in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 12,
+    "calc": "4+3+5"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié une couleur dans ton addition.",
+      "en": "You left a colour out of your addition."
+     }
+    },
+    {
+     "value": 11,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte chaque couleur.",
+      "en": "Close! Count each colour again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne 4 et 3, puis ajoute le reste.",
+    "en": "Add 4 and 3, then add what is left."
+   },
+   "explain": {
+    "fr": "4 + 3 = 7, puis 7 + 5 = 12.",
+    "en": "4 + 3 = 7, then 7 + 5 = 12."
+   },
+   "tags": [
+    "chance",
+    "marbles",
+    "add"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.hasard.007",
+   "quest": "science.hasard",
+   "skill": "PRO-05b",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un sac contient 9 billes. Quatre sont rouges.",
+    "en": "A bag holds 9 marbles. Four are red."
+   },
+   "prompt": {
+    "fr": "Combien de billes ne sont pas rouges ?",
+    "en": "How many marbles are not red?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "9-4"
+   },
+   "common_errors": [
+    {
+     "value": 13,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche celles qui ne sont pas rouges : on enlève.",
+      "en": "We want the ones that are not red, so we take away."
+     }
+    },
+    {
+     "value": 4,
+     "misconception": "mis_missing_term",
+     "feedback": {
+      "fr": "4 est le nombre de billes rouges. Cherche les autres.",
+      "en": "4 is the number of red marbles. Find the others."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Enlève les billes rouges du total.",
+    "en": "Take the red marbles away from the total."
+   },
+   "explain": {
+    "fr": "9 - 4 = 5 billes ne sont pas rouges.",
+    "en": "9 - 4 = 5 marbles are not red."
+   },
+   "tags": [
+    "chance",
+    "marbles",
+    "subtract"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.hasard.008",
+   "quest": "science.hasard",
+   "skill": "PRO-05b",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "La roulette de Léa a 10 parts égales.",
+    "en": "Lea’s spinner has 10 equal parts."
+   },
+   "prompt": {
+    "fr": "Trois parts sont vertes et 2 sont jaunes. Les autres sont rouges. Combien de parts rouges ?",
+    "en": "Three parts are green and 2 are yellow. The rest are red. How many red parts?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "10-3-2"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié d’enlever les parts jaunes.",
+      "en": "You forgot to take away the yellow parts."
+     }
+    },
+    {
+     "value": 15,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche le reste : on enlève.",
+      "en": "We look for what is left, so we take away."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Enlève les parts vertes, puis les jaunes.",
+    "en": "Take away the green parts, then the yellow ones."
+   },
+   "explain": {
+    "fr": "10 - 3 = 7, puis 7 - 2 = 5 parts rouges.",
+    "en": "10 - 3 = 7, then 7 - 2 = 5 red parts."
+   },
+   "tags": [
+    "chance",
+    "spinner",
+    "subtract"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.hasard.009",
+   "quest": "science.hasard",
+   "skill": "PRO-05b",
+   "type": "truefalse",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un sac contient 9 billes rouges et 1 bille bleue.",
+    "en": "A bag holds 9 red marbles and 1 blue marble."
+   },
+   "prompt": {
+    "fr": "Léa dit qu’elle est sûre de piocher une bille rouge. A-t-elle raison ?",
+    "en": "Lea says she is sure to draw a red marble. Is she right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_chance_certain"
+   },
+   "hint": {
+    "fr": "La bille bleue peut-elle sortir ?",
+    "en": "Can the blue marble come out?"
+   },
+   "explain": {
+    "fr": "Une bille bleue peut sortir, donc ce n’est pas certain. Rouge est seulement très probable.",
+    "en": "A blue marble can come out, so it is not certain. Red is only very likely."
+   },
+   "tags": [
+    "chance",
+    "true-false",
+    "certain"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.hasard.010",
+   "quest": "science.hasard",
+   "skill": "PRO-05b",
+   "type": "truefalse",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah lance un dé à 6 faces numérotées de 1 à 6.",
+    "en": "Noah rolls a die with 6 faces numbered 1 to 6."
+   },
+   "prompt": {
+    "fr": "Il dit qu’obtenir un 7 est impossible. A-t-il raison ?",
+    "en": "He says getting a 7 is impossible. Is he right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": true
+   },
+   "hint": {
+    "fr": "Cherche le 7 sur les faces du dé.",
+    "en": "Look for a 7 on the faces of the die."
+   },
+   "explain": {
+    "fr": "Aucune face ne porte un 7, donc c’est impossible.",
+    "en": "No face has a 7, so it is impossible."
+   },
+   "tags": [
+    "chance",
+    "true-false",
+    "impossible"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.hasard.011",
+   "quest": "science.hasard",
+   "skill": "PRO-05b",
+   "type": "order",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa a quatre sacs de dix billes chacun.",
+    "en": "Lea has four bags of ten marbles each."
+   },
+   "prompt": {
+    "fr": "Range les sacs du moins probable au plus probable de donner une bille rouge.",
+    "en": "Put the bags in order, from least likely to most likely to give a red marble."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Sac avec 1 rouge sur 10",
+      "en": "Bag with 1 red out of 10"
+     },
+     "key": "1"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Sac avec 9 rouges sur 10",
+      "en": "Bag with 9 red out of 10"
+     },
+     "key": "9"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Sac avec 3 rouges sur 10",
+      "en": "Bag with 3 red out of 10"
+     },
+     "key": "3"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "Sac avec 5 rouges sur 10",
+      "en": "Bag with 5 red out of 10"
+     },
+     "key": "5"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "a",
+     "c",
+     "d",
+     "b"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Plus il y a de billes rouges, plus c’est probable.",
+    "en": "The more red marbles, the more likely."
+   },
+   "explain": {
+    "fr": "Dans l’ordre : 1, 3, 5 puis 9 rouges sur 10.",
+    "en": "In order: 1, 3, 5 then 9 red out of 10."
+   },
+   "tags": [
+    "chance",
+    "ordering",
+    "likelihood"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.hasard.012",
+   "quest": "science.hasard",
+   "skill": "PRO-05b",
+   "type": "match",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah lance un dé à 6 faces numérotées de 1 à 6.",
+    "en": "Noah rolls a die with 6 faces numbered 1 to 6."
+   },
+   "prompt": {
+    "fr": "Relie chaque événement au bon mot.",
+    "en": "Match each event to the right word."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "Obtenir un 7",
+       "en": "Getting a 7"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "Obtenir un 6",
+       "en": "Getting a 6"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "Obtenir un nombre de 1 à 6",
+       "en": "Getting a number from 1 to 6"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "certain",
+       "en": "certain"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "impossible",
+       "en": "impossible"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "possible",
+       "en": "possible"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r2"
+     ],
+     [
+      "l2",
+      "r3"
+     ],
+     [
+      "l3",
+      "r1"
+     ]
+    ],
+    "misconception": "mis_chance_certain"
+   },
+   "hint": {
+    "fr": "Cherche si chaque nombre est sur le dé.",
+    "en": "Check whether each number is on the die."
+   },
+   "explain": {
+    "fr": "Le 7 est impossible, le 6 est possible et un nombre de 1 à 6 est certain.",
+    "en": "A 7 is impossible, a 6 is possible and a number from 1 to 6 is certain."
+   },
+   "tags": [
+    "chance",
+    "matching",
+    "vocabulary"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.hasard.013",
+   "quest": "science.hasard",
+   "skill": "PRO-05b",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Noah lance deux dés pour une expérience.",
+    "en": "Noah rolls two dice for an experiment."
+   },
+   "prompt": {
+    "fr": "Combien de points montrent les deux dés en tout ?",
+    "en": "How many dots do the two dice show in all?"
+   },
+   "visual": {
+    "kind": "dice",
+    "data": {
+     "dice": [
+      2,
+      5
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 7,
+    "calc": "2+5"
+   },
+   "common_errors": [
+    {
+     "value": 3,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les points des deux dés : on additionne.",
+      "en": "We put the dots of both dice together, so we add."
+     }
+    },
+    {
+     "value": 10,
+     "misconception": "mis_multiply_instead_of_add",
+     "feedback": {
+      "fr": "On additionne les points, on ne les multiplie pas.",
+      "en": "We add the dots, we do not multiply them."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les points de chaque dé, puis réunis-les.",
+    "en": "Count the dots on each die, then put them together."
+   },
+   "explain": {
+    "fr": "Le premier dé a 2 points et le deuxième en a 5. 2 + 5 = 7.",
+    "en": "The first die has 2 dots and the second has 5. 2 + 5 = 7."
+   },
+   "tags": [
+    "chance",
+    "dice",
+    "add"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.hasard.014",
+   "quest": "science.hasard",
+   "skill": "PRO-05b",
+   "type": "estimate",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Léa lance un dé 60 fois pour voir ce qui arrive.",
+    "en": "Lea rolls a die 60 times to see what happens."
+   },
+   "prompt": {
+    "fr": "Environ combien de fois verra-t-elle un 6 ?",
+    "en": "About how many times will she see a 6?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 9,
+    "max": 11,
+    "exact_for_check": 10,
+    "calc": "60/6"
+   },
+   "common_errors": [
+    {
+     "value": 60,
+     "misconception": "mis_chance_certain",
+     "feedback": {
+      "fr": "Un 6 ne sort pas à tous les coups.",
+      "en": "A 6 does not come up every time."
+     }
+    },
+    {
+     "value": 6,
+     "misconception": "mis_missing_term",
+     "feedback": {
+      "fr": "6 est le nombre de faces, pas le nombre de fois.",
+      "en": "6 is the number of faces, not the number of times."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Chaque face sort à peu près autant de fois que les autres.",
+    "en": "Each face comes up about as often as the others."
+   },
+   "explain": {
+    "fr": "Il y a 6 faces. 60 ÷ 6 = 10, donc environ 10 fois.",
+    "en": "There are 6 faces. 60 ÷ 6 = 10, so about 10 times."
+   },
+   "tags": [
+    "chance",
+    "estimation",
+    "dice"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.resultats.001",
+   "quest": "science.resultats",
+   "skill": "STA-03b",
+   "type": "visual",
+   "grade": 4,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa suit la pousse d’une plante pendant quatre jours.",
+    "en": "Lea follows a plant’s growth for four days."
+   },
+   "prompt": {
+    "fr": "Quelle est la hauteur de la plante au jour 3, en cm ?",
+    "en": "How tall is the plant on day 3, in cm?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Hauteur de la plante (cm)",
+      "en": "Plant height (cm)"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "jour 1",
+        "en": "day 1"
+       },
+       "value": 2
+      },
+      {
+       "label": {
+        "fr": "jour 2",
+        "en": "day 2"
+       },
+       "value": 4
+      },
+      {
+       "label": {
+        "fr": "jour 3",
+        "en": "day 3"
+       },
+       "value": 7
+      },
+      {
+       "label": {
+        "fr": "jour 4",
+        "en": "day 4"
+       },
+       "value": 9
+      }
+     ],
+     "max": 10
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 7,
+    "calc": "7"
+   },
+   "common_errors": [
+    {
+     "value": 4,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as lu la barre du jour 2. Cherche le jour 3.",
+      "en": "You read the day 2 bar. Look for day 3."
+     }
+    },
+    {
+     "value": 9,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as lu la barre du jour 4. Cherche le jour 3.",
+      "en": "You read the day 4 bar. Look for day 3."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Trouve la troisième barre.",
+    "en": "Find the third bar."
+   },
+   "explain": {
+    "fr": "La barre du jour 3 monte jusqu’à 7 cm.",
+    "en": "The day 3 bar reaches 7 cm."
+   },
+   "tags": [
+    "bar-chart",
+    "plant",
+    "read"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_06163ab3ddcb97ec1096"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.resultats.002",
+   "quest": "science.resultats",
+   "skill": "STA-03b",
+   "type": "visual",
+   "grade": 4,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le diagramme montre la plante de Léa.",
+    "en": "The chart shows Lea’s plant."
+   },
+   "prompt": {
+    "fr": "De combien de cm la plante a-t-elle grandi entre le jour 2 et le jour 4 ?",
+    "en": "By how many cm did the plant grow between day 2 and day 4?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Hauteur de la plante (cm)",
+      "en": "Plant height (cm)"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "jour 1",
+        "en": "day 1"
+       },
+       "value": 2
+      },
+      {
+       "label": {
+        "fr": "jour 2",
+        "en": "day 2"
+       },
+       "value": 4
+      },
+      {
+       "label": {
+        "fr": "jour 3",
+        "en": "day 3"
+       },
+       "value": 7
+      },
+      {
+       "label": {
+        "fr": "jour 4",
+        "en": "day 4"
+       },
+       "value": 9
+      }
+     ],
+     "max": 10
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "9-4"
+   },
+   "common_errors": [
+    {
+     "value": 13,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche la croissance : l’écart entre deux barres.",
+      "en": "We look for the growth: the gap between two bars."
+     }
+    },
+    {
+     "value": 9,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "9 est la barre du jour 4 seulement. Cherche l’écart.",
+      "en": "9 is just the day 4 bar. Find the gap."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Lis la barre du jour 2 et celle du jour 4.",
+    "en": "Read the day 2 bar and the day 4 bar."
+   },
+   "explain": {
+    "fr": "Jour 4 : 9 cm. Jour 2 : 4 cm. 9 - 4 = 5.",
+    "en": "Day 4: 9 cm. Day 2: 4 cm. 9 - 4 = 5."
+   },
+   "tags": [
+    "bar-chart",
+    "plant",
+    "difference"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.resultats.003",
+   "quest": "science.resultats",
+   "skill": "STA-03b",
+   "type": "visual",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa regarde de près le diagramme de sa plante.",
+    "en": "Lea takes a close look at her plant chart."
+   },
+   "prompt": {
+    "fr": "Entre quels jours la plante a-t-elle le plus grandi ?",
+    "en": "Between which days did the plant grow the most?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Hauteur de la plante (cm)",
+      "en": "Plant height (cm)"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "jour 1",
+        "en": "day 1"
+       },
+       "value": 2
+      },
+      {
+       "label": {
+        "fr": "jour 2",
+        "en": "day 2"
+       },
+       "value": 4
+      },
+      {
+       "label": {
+        "fr": "jour 3",
+        "en": "day 3"
+       },
+       "value": 7
+      },
+      {
+       "label": {
+        "fr": "jour 4",
+        "en": "day 4"
+       },
+       "value": 9
+      }
+     ],
+     "max": 10
+    }
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Du jour 1 au jour 2",
+      "en": "From day 1 to day 2"
+     },
+     "misconception": "mis_read_wrong_bar"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Du jour 2 au jour 3",
+      "en": "From day 2 to day 3"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Du jour 3 au jour 4",
+      "en": "From day 3 to day 4"
+     },
+     "misconception": "mis_read_wrong_bar"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "Du jour 1 au jour 4",
+      "en": "From day 1 to day 4"
+     },
+     "misconception": "mis_wrong_operation"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Calcule l’écart entre chaque paire de barres voisines.",
+    "en": "Work out the gap between each pair of neighbouring bars."
+   },
+   "explain": {
+    "fr": "Les écarts sont 2, 3 puis 2. Le plus grand est du jour 2 au jour 3.",
+    "en": "The gaps are 2, 3 then 2. The biggest is from day 2 to day 3."
+   },
+   "tags": [
+    "bar-chart",
+    "plant",
+    "growth"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.resultats.004",
+   "quest": "science.resultats",
+   "skill": "STA-03b",
+   "type": "visual",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah teste quatre aimants avec des trombones.",
+    "en": "Noah tests four magnets with paperclips."
+   },
+   "prompt": {
+    "fr": "Combien de trombones les aimants A et C attirent-ils ensemble ?",
+    "en": "How many paperclips do magnets A and C pick up together?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Trombones attirés",
+      "en": "Paperclips picked up"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "A",
+        "en": "A"
+       },
+       "value": 8
+      },
+      {
+       "label": {
+        "fr": "B",
+        "en": "B"
+       },
+       "value": 12
+      },
+      {
+       "label": {
+        "fr": "C",
+        "en": "C"
+       },
+       "value": 5
+      },
+      {
+       "label": {
+        "fr": "D",
+        "en": "D"
+       },
+       "value": 10
+      }
+     ],
+     "max": 14
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 13,
+    "calc": "8+5"
+   },
+   "common_errors": [
+    {
+     "value": 22,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as additionné les aimants B et D. Cherche A et C.",
+      "en": "You added magnets B and D. Look for A and C."
+     }
+    },
+    {
+     "value": 3,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les deux aimants : on additionne.",
+      "en": "We put both magnets together, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Lis la barre de A, puis celle de C.",
+    "en": "Read the A bar, then the C bar."
+   },
+   "explain": {
+    "fr": "A attire 8 trombones et C en attire 5. 8 + 5 = 13.",
+    "en": "A picks up 8 paperclips and C picks up 5. 8 + 5 = 13."
+   },
+   "tags": [
+    "bar-chart",
+    "magnets",
+    "add"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_6c4be8eaeec53b653af6"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.resultats.005",
+   "quest": "science.resultats",
+   "skill": "STA-03b",
+   "type": "visual",
+   "grade": 4,
+   "difficulty": 4,
+   "story": {
+    "fr": "Le diagramme montre l’eau chaude qui refroidit dans un bocal.",
+    "en": "The chart shows hot water cooling in a jar."
+   },
+   "prompt": {
+    "fr": "De combien de degrés l’eau a-t-elle refroidi en 15 minutes ?",
+    "en": "By how many degrees did the water cool in 15 minutes?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Température de l’eau (°C)",
+      "en": "Water temperature (°C)"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "0 min",
+        "en": "0 min"
+       },
+       "value": 80
+      },
+      {
+       "label": {
+        "fr": "5 min",
+        "en": "5 min"
+       },
+       "value": 60
+      },
+      {
+       "label": {
+        "fr": "10 min",
+        "en": "10 min"
+       },
+       "value": 46
+      },
+      {
+       "label": {
+        "fr": "15 min",
+        "en": "15 min"
+       },
+       "value": 36
+      }
+     ],
+     "max": 90
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 44,
+    "calc": "80-36"
+   },
+   "common_errors": [
+    {
+     "value": 36,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "36 est la température à la fin. Cherche l’écart.",
+      "en": "36 is the final temperature. Find the gap."
+     }
+    },
+    {
+     "value": 116,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "L’eau refroidit : on cherche l’écart.",
+      "en": "The water cools, so we look for the gap."
+     }
+    },
+    {
+     "value": 56,
+     "misconception": "mis_forgot_borrow",
+     "feedback": {
+      "fr": "Attention à l’emprunt dans 80 - 36.",
+      "en": "Watch the borrowing in 80 - 36."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compare la première et la dernière barre.",
+    "en": "Compare the first and the last bar."
+   },
+   "explain": {
+    "fr": "80 - 36 = 44. L’eau a perdu 44 degrés.",
+    "en": "80 - 36 = 44. The water lost 44 degrees."
+   },
+   "tags": [
+    "bar-chart",
+    "temperature",
+    "difference"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.resultats.006",
+   "quest": "science.resultats",
+   "skill": "STA-03b",
+   "type": "word",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa note trois essais avec un aimant.",
+    "en": "Lea records three tries with a magnet."
+   },
+   "prompt": {
+    "fr": "Il a attiré 12, 15, puis 9 trombones. Combien de trombones en tout ?",
+    "en": "It picked up 12, 15, then 9 paperclips. How many paperclips in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 36,
+    "calc": "12+15+9"
+   },
+   "common_errors": [
+    {
+     "value": 27,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié le troisième essai.",
+      "en": "You left out the third try."
+     }
+    },
+    {
+     "value": 37,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Refais l’addition étape par étape.",
+      "en": "Close! Redo the addition step by step."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne 12 et 15, puis ajoute le dernier.",
+    "en": "Add 12 and 15, then add the last one."
+   },
+   "explain": {
+    "fr": "12 + 15 = 27, puis 27 + 9 = 36.",
+    "en": "12 + 15 = 27, then 27 + 9 = 36."
+   },
+   "tags": [
+    "table",
+    "magnets",
+    "add"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.resultats.007",
+   "quest": "science.resultats",
+   "skill": "STA-03b",
+   "type": "word",
+   "grade": 4,
+   "difficulty": 4,
+   "story": {
+    "fr": "La plante A pousse de 3 cm chaque jour.",
+    "en": "Plant A grows 3 cm every day."
+   },
+   "prompt": {
+    "fr": "Elle mesurait 0 cm au départ. Quelle est sa hauteur après 6 jours, en cm ?",
+    "en": "She started at 0 cm. What is her height after 6 days, in cm?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 18,
+    "calc": "3*6"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Six jours de 3 cm : on multiplie.",
+      "en": "Six days of 3 cm: we multiply."
+     }
+    },
+    {
+     "value": 21,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as compté un bond de trop.",
+      "en": "You counted one jump too many."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte par bonds de 3, six fois.",
+    "en": "Count by jumps of 3, six times."
+   },
+   "explain": {
+    "fr": "3, 6, 9, 12, 15, 18. Après 6 jours : 18 cm.",
+    "en": "3, 6, 9, 12, 15, 18. After 6 days: 18 cm."
+   },
+   "tags": [
+    "table",
+    "plant",
+    "multiply"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.resultats.008",
+   "quest": "science.resultats",
+   "skill": "STA-03b",
+   "type": "choice",
+   "grade": 4,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah veut comparer la hauteur de quatre plantes.",
+    "en": "Noah wants to compare the height of four plants."
+   },
+   "prompt": {
+    "fr": "Quel graphique convient le mieux ?",
+    "en": "Which graph suits best?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Un diagramme à barres",
+      "en": "A bar chart"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Un calendrier",
+      "en": "A calendar"
+     },
+     "misconception": "mis_match"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Une règle",
+      "en": "A ruler"
+     },
+     "random": true
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "On veut comparer des quantités côte à côte.",
+    "en": "We want to compare amounts side by side."
+   },
+   "explain": {
+    "fr": "Les barres permettent de comparer les hauteurs d’un coup d’œil.",
+    "en": "Bars let us compare the heights at a glance."
+   },
+   "tags": [
+    "bar-chart",
+    "choose-graph"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.resultats.009",
+   "quest": "science.resultats",
+   "skill": "STA-03b",
+   "type": "choice",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le tableau donne la hauteur de trois plantes.",
+    "en": "The table gives the height of three plants."
+   },
+   "prompt": {
+    "fr": "C mesure 23 cm, B mesure 32 cm et D mesure 29 cm. Quelle plante est la plus haute ?",
+    "en": "C is 23 cm tall, B is 32 cm and D is 29 cm. Which plant is the tallest?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "La plante B",
+      "en": "Plant B"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "La plante C",
+      "en": "Plant C"
+     },
+     "misconception": "mis_digit_swap"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "La plante D",
+      "en": "Plant D"
+     },
+     "misconception": "mis_read_wrong_bar"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Compare d’abord les dizaines.",
+    "en": "Compare the tens first."
+   },
+   "explain": {
+    "fr": "32 a 3 dizaines. 29 et 23 en ont 2. B est la plus haute.",
+    "en": "32 has 3 tens. 29 and 23 have 2. B is the tallest."
+   },
+   "tags": [
+    "table",
+    "compare",
+    "tens"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.resultats.010",
+   "quest": "science.resultats",
+   "skill": "STA-03b",
+   "type": "word",
+   "grade": 4,
+   "difficulty": 4,
+   "story": {
+    "fr": "Un glaçon fond dans une assiette.",
+    "en": "An ice cube melts on a plate."
+   },
+   "prompt": {
+    "fr": "Au départ, il pèse 50 g. Après 10 min, il pèse 38 g, puis 29 g après 20 min. Combien de g a-t-il perdus en tout ?",
+    "en": "At the start it weighs 50 g. After 10 min it weighs 38 g, then 29 g after 20 min. How many g did it lose in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 21,
+    "calc": "50-29"
+   },
+   "common_errors": [
+    {
+     "value": 12,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu t’es arrêté après 10 minutes.",
+      "en": "You stopped after 10 minutes."
+     }
+    },
+    {
+     "value": 79,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Il fond : on cherche ce qui a été perdu.",
+      "en": "It melts, so we look for what was lost."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compare la masse du début et la masse de la fin.",
+    "en": "Compare the mass at the start and the mass at the end."
+   },
+   "explain": {
+    "fr": "50 - 29 = 21. Le glaçon a perdu 21 g.",
+    "en": "50 - 29 = 21. The ice cube lost 21 g."
+   },
+   "tags": [
+    "table",
+    "melting",
+    "difference"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.resultats.011",
+   "quest": "science.resultats",
+   "skill": "STA-03b",
+   "type": "truefalse",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le tableau de Léa donne 15, 22 et 18 trombones.",
+    "en": "Lea’s table gives 15, 22 and 18 paperclips."
+   },
+   "prompt": {
+    "fr": "Noah dit que la plus petite valeur est 22. A-t-il raison ?",
+    "en": "Noah says the smallest value is 22. Is he right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Compare les trois nombres.",
+    "en": "Compare the three numbers."
+   },
+   "explain": {
+    "fr": "La plus petite valeur est 15. 22 est la plus grande.",
+    "en": "The smallest value is 15. 22 is the biggest."
+   },
+   "tags": [
+    "table",
+    "true-false",
+    "compare"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.resultats.012",
+   "quest": "science.resultats",
+   "skill": "STA-03b",
+   "type": "order",
+   "grade": 4,
+   "difficulty": 2,
+   "story": {
+    "fr": "Quatre aimants ont attiré des trombones.",
+    "en": "Four magnets picked up paperclips."
+   },
+   "prompt": {
+    "fr": "Range les aimants du moins fort au plus fort.",
+    "en": "Put the magnets in order, from the weakest to the strongest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "A : 8 trombones",
+      "en": "A: 8 paperclips"
+     },
+     "key": "8"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "B : 12 trombones",
+      "en": "B: 12 paperclips"
+     },
+     "key": "12"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "C : 5 trombones",
+      "en": "C: 5 paperclips"
+     },
+     "key": "5"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "D : 10 trombones",
+      "en": "D: 10 paperclips"
+     },
+     "key": "10"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "c",
+     "a",
+     "d",
+     "b"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Le plus faible attire le moins de trombones.",
+    "en": "The weakest picks up the fewest paperclips."
+   },
+   "explain": {
+    "fr": "C attire 5, A en attire 8, D en attire 10 et B en attire 12.",
+    "en": "C picks up 5, A picks up 8, D picks up 10 and B picks up 12."
+   },
+   "tags": [
+    "table",
+    "magnets",
+    "ordering"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_6c4be8eaeec53b653af6"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.resultats.013",
+   "quest": "science.resultats",
+   "skill": "STA-03b",
+   "type": "match",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa lit un tableau de résultats.",
+    "en": "Lea reads a table of results."
+   },
+   "prompt": {
+    "fr": "Relie chaque mot à ce qu’on fait avec les nombres.",
+    "en": "Match each word to what we do with the numbers."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "le total",
+       "en": "the total"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "l’écart",
+       "en": "the gap"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "le double",
+       "en": "the double"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "on soustrait",
+       "en": "we subtract"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "on multiplie par 2",
+       "en": "we multiply by 2"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "on additionne",
+       "en": "we add"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r3"
+     ],
+     [
+      "l2",
+      "r1"
+     ],
+     [
+      "l3",
+      "r2"
+     ]
+    ],
+    "misconception": "mis_match"
+   },
+   "hint": {
+    "fr": "Le total réunit toutes les valeurs.",
+    "en": "The total puts all the values together."
+   },
+   "explain": {
+    "fr": "Le total s’additionne. L’écart se soustrait. Le double se multiplie par 2.",
+    "en": "The total is added. The gap is subtracted. The double is multiplied by 2."
+   },
+   "tags": [
+    "table",
+    "matching",
+    "vocabulary"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.resultats.014",
+   "quest": "science.resultats",
+   "skill": "STA-03b",
+   "type": "estimate",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le diagramme de Noah montre 48, 52 et 49 trombones.",
+    "en": "Noah’s chart shows 48, 52 and 49 paperclips."
+   },
+   "prompt": {
+    "fr": "Environ combien de trombones en tout ?",
+    "en": "About how many paperclips in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 135,
+    "max": 160,
+    "exact_for_check": 149,
+    "calc": "48+52+49"
+   },
+   "common_errors": [
+    {
+     "value": 100,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié un nombre dans ton calcul.",
+      "en": "You left a number out of your sum."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis chaque nombre à 50.",
+    "en": "Round each number to 50."
+   },
+   "explain": {
+    "fr": "Chaque nombre est proche de 50. 50 + 50 + 50 = 150, donc environ 150.",
+    "en": "Each number is close to 50. 50 + 50 + 50 = 150, so about 150."
+   },
+   "tags": [
+    "table",
+    "estimation",
+    "rounding"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.suites.001",
+   "quest": "science.suites",
+   "skill": "ARI-OPE-A14",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa note la hauteur d’une plante chaque jour.",
+    "en": "Lea writes down a plant’s height each day."
+   },
+   "prompt": {
+    "fr": "Voici une suite : 2, 4, 6, 8. Quel nombre vient ensuite ?",
+    "en": "Here is a sequence: 2, 4, 6, 8. Which number comes next?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 10,
+    "calc": "8+2"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "La plante grandit de 2 chaque fois, pas de 1.",
+      "en": "The plant grows by 2 each time, not by 1."
+     }
+    },
+    {
+     "value": 16,
+     "misconception": "mis_pattern_wrong_rule",
+     "feedback": {
+      "fr": "On ajoute 2 chaque fois, on ne double pas.",
+      "en": "We add 2 each time, we do not double."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Cherche de combien on avance à chaque pas.",
+    "en": "Find how much we move on at each step."
+   },
+   "explain": {
+    "fr": "On ajoute 2 chaque fois. 8 + 2 = 10.",
+    "en": "We add 2 each time. 8 + 2 = 10."
+   },
+   "tags": [
+    "sequence",
+    "add-2"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_06163ab3ddcb97ec1096"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.suites.002",
+   "quest": "science.suites",
+   "skill": "ARI-OPE-A14",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Noah compte les gouttes tombées dans un tube.",
+    "en": "Noah counts the drops that fell into a tube."
+   },
+   "prompt": {
+    "fr": "On compte 5, 10, 15, 20 gouttes. Combien de gouttes à l’étape suivante ?",
+    "en": "We count 5, 10, 15, 20 drops. How many drops at the next step?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 25,
+    "calc": "20+5"
+   },
+   "common_errors": [
+    {
+     "value": 24,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "On avance de 5 chaque fois, pas de 4.",
+      "en": "We move on by 5 each time, not by 4."
+     }
+    },
+    {
+     "value": 30,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as sauté un nombre de la suite.",
+      "en": "You skipped a number in the sequence."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte par bonds de 5.",
+    "en": "Count by jumps of 5."
+   },
+   "explain": {
+    "fr": "On ajoute 5 chaque fois. 20 + 5 = 25.",
+    "en": "We add 5 each time. 20 + 5 = 25."
+   },
+   "tags": [
+    "sequence",
+    "add-5"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.suites.003",
+   "quest": "science.suites",
+   "skill": "ARI-OPE-A14",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "L’eau d’un bocal refroidit peu à peu.",
+    "en": "The water in a jar slowly cools down."
+   },
+   "prompt": {
+    "fr": "Les degrés baissent : 40, 35, 30, 25. Quel est le nombre suivant ?",
+    "en": "The degrees go down: 40, 35, 30, 25. What is the next number?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 20,
+    "calc": "25-5"
+   },
+   "common_errors": [
+    {
+     "value": 30,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Les nombres descendent : on enlève 5.",
+      "en": "The numbers go down, so we take away 5."
+     }
+    },
+    {
+     "value": 24,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "On enlève 5 chaque fois, pas 1.",
+      "en": "We take away 5 each time, not 1."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "La suite descend. De combien chaque fois ?",
+    "en": "The sequence goes down. By how much each time?"
+   },
+   "explain": {
+    "fr": "On enlève 5 chaque fois. 25 - 5 = 20.",
+    "en": "We take away 5 each time. 25 - 5 = 20."
+   },
+   "tags": [
+    "sequence",
+    "subtract-5"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.suites.004",
+   "quest": "science.suites",
+   "skill": "ARI-OPE-A14",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa compte les graines mises dans des pots.",
+    "en": "Lea counts the seeds put in pots."
+   },
+   "prompt": {
+    "fr": "Les pots contiennent 3, 6, 9, 12 graines. Combien dans le pot suivant ?",
+    "en": "The pots hold 3, 6, 9, 12 seeds. How many in the next pot?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 15,
+    "calc": "12+3"
+   },
+   "common_errors": [
+    {
+     "value": 13,
+     "misconception": "mis_pattern_wrong_rule",
+     "feedback": {
+      "fr": "On ajoute 3 chaque fois, pas 1.",
+      "en": "We add 3 each time, not 1."
+     }
+    },
+    {
+     "value": 18,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as sauté un nombre de la suite.",
+      "en": "You skipped a number in the sequence."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte par bonds de 3.",
+    "en": "Count by jumps of 3."
+   },
+   "explain": {
+    "fr": "On ajoute 3 chaque fois. 12 + 3 = 15.",
+    "en": "We add 3 each time. 12 + 3 = 15."
+   },
+   "tags": [
+    "sequence",
+    "add-3"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.suites.005",
+   "quest": "science.suites",
+   "skill": "ARI-OPE-A14",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Une mesure manque dans le carnet de Noah.",
+    "en": "A measurement is missing in Noah’s notebook."
+   },
+   "prompt": {
+    "fr": "La suite est 12, ?, 16, 18. Quel nombre manque ?",
+    "en": "The sequence is 12, ?, 16, 18. Which number is missing?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 14,
+    "calc": "12+2"
+   },
+   "common_errors": [
+    {
+     "value": 13,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Les nombres montent de 2 chaque fois, pas de 1.",
+      "en": "The numbers go up by 2 each time, not by 1."
+     }
+    },
+    {
+     "value": 15,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Entre 12 et 16, il y a deux pas de 2.",
+      "en": "Between 12 and 16 there are two steps of 2."
+     }
+    },
+    {
+     "value": 28,
+     "misconception": "mis_pattern_wrong_rule",
+     "feedback": {
+      "fr": "Il faut ajouter 2, on n’additionne pas les termes.",
+      "en": "We add 2, we do not add the terms."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Regarde l’écart entre 16 et 18.",
+    "en": "Look at the gap between 16 and 18."
+   },
+   "explain": {
+    "fr": "On ajoute 2 chaque fois : 12, 14, 16, 18.",
+    "en": "We add 2 each time: 12, 14, 16, 18."
+   },
+   "tags": [
+    "sequence",
+    "missing-term"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.suites.006",
+   "quest": "science.suites",
+   "skill": "ARI-OPE-A14",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un thermomètre de laboratoire monte de 3 degrés par heure.",
+    "en": "A lab thermometer goes up 3 degrees each hour."
+   },
+   "prompt": {
+    "fr": "Un thermomètre indique 10, 13, 16, 19 degrés. Que lit-on ensuite ?",
+    "en": "A thermometer reads 10, 13, 16, 19 degrees. What do we read next?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 22,
+    "calc": "19+3"
+   },
+   "common_errors": [
+    {
+     "value": 21,
+     "misconception": "mis_pattern_wrong_rule",
+     "feedback": {
+      "fr": "On ajoute 3 chaque fois, pas 2.",
+      "en": "We add 3 each time, not 2."
+     }
+    },
+    {
+     "value": 20,
+     "misconception": "mis_pattern_last_step",
+     "feedback": {
+      "fr": "Ne répète pas le dernier écart de 1 : suis la règle.",
+      "en": "Do not repeat the step of 1: follow the rule."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Calcule l’écart entre 10 et 13.",
+    "en": "Work out the gap between 10 and 13."
+   },
+   "explain": {
+    "fr": "On ajoute 3 chaque fois. 19 + 3 = 22.",
+    "en": "We add 3 each time. 19 + 3 = 22."
+   },
+   "tags": [
+    "sequence",
+    "add-3",
+    "temperature"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_7018091db72e5cdb38b0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.suites.007",
+   "quest": "science.suites",
+   "skill": "ARI-OPE-A14",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa cherche la règle d’une suite de mesures.",
+    "en": "Lea looks for the rule of a measurement sequence."
+   },
+   "prompt": {
+    "fr": "Quelle règle suit la suite 4, 8, 12, 16 ?",
+    "en": "Which rule does the sequence 4, 8, 12, 16 follow?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "On ajoute 2",
+      "en": "Add 2"
+     },
+     "misconception": "mis_pattern_wrong_rule"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "On ajoute 4",
+      "en": "Add 4"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "On ajoute 8",
+      "en": "Add 8"
+     },
+     "misconception": "mis_pattern_wrong_rule"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "On enlève 4",
+      "en": "Take away 4"
+     },
+     "misconception": "mis_add_instead_of_subtract"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Regarde l’écart entre deux nombres voisins.",
+    "en": "Look at the gap between two neighbouring numbers."
+   },
+   "explain": {
+    "fr": "8 - 4 = 4 et 12 - 8 = 4. On ajoute 4 chaque fois.",
+    "en": "8 - 4 = 4 and 12 - 8 = 4. We add 4 each time."
+   },
+   "tags": [
+    "sequence",
+    "rule"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.suites.008",
+   "quest": "science.suites",
+   "skill": "ARI-OPE-A14",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah note des mesures qui baissent de 5 en 5.",
+    "en": "Noah notes measures that go down by 5."
+   },
+   "prompt": {
+    "fr": "Quelle suite descend de 5 en 5 ?",
+    "en": "Which sequence goes down by 5?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "30, 25, 20, 15",
+      "en": "30, 25, 20, 15"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "30, 35, 40, 45",
+      "en": "30, 35, 40, 45"
+     },
+     "misconception": "mis_add_instead_of_subtract"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "30, 20, 10, 0",
+      "en": "30, 20, 10, 0"
+     },
+     "misconception": "mis_pattern_wrong_rule"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "15, 20, 25, 30",
+      "en": "15, 20, 25, 30"
+     },
+     "misconception": "mis_order_reversed"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Une suite qui descend va vers des nombres plus petits.",
+    "en": "A sequence that goes down heads to smaller numbers."
+   },
+   "explain": {
+    "fr": "30, 25, 20, 15 : on enlève 5 chaque fois.",
+    "en": "30, 25, 20, 15: we take away 5 each time."
+   },
+   "tags": [
+    "sequence",
+    "subtract-5",
+    "rule"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.suites.009",
+   "quest": "science.suites",
+   "skill": "ARI-OPE-A14",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Une petite souris de laboratoire grandit.",
+    "en": "A small lab mouse is growing."
+   },
+   "prompt": {
+    "fr": "Sa masse est 7 g, 10 g, 13 g. Quelle masse suit, en g ?",
+    "en": "Its mass is 7 g, 10 g, 13 g. What mass comes next, in g?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "15",
+      "en": "15"
+     },
+     "misconception": "mis_pattern_wrong_rule"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "16",
+      "en": "16"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "19",
+      "en": "19"
+     },
+     "misconception": "mis_pattern_last_step"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "14",
+      "en": "14"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b",
+    "calc_choice": {
+     "b": "13+3"
+    }
+   },
+   "hint": {
+    "fr": "De combien monte la masse chaque fois ?",
+    "en": "By how much does the mass go up each time?"
+   },
+   "explain": {
+    "fr": "7, 10, 13 : on ajoute 3. 13 + 3 = 16 g.",
+    "en": "7, 10, 13: we add 3. 13 + 3 = 16 g."
+   },
+   "tags": [
+    "sequence",
+    "word-problem",
+    "mass"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.suites.010",
+   "quest": "science.suites",
+   "skill": "ARI-OPE-A14",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 4,
+   "story": {
+    "fr": "Un thermomètre monte de 2 degrés par heure.",
+    "en": "A thermometer goes up 2 degrees per hour."
+   },
+   "prompt": {
+    "fr": "Il indique 12 degrés à 9 h. Combien de degrés indique-t-il à 13 h ?",
+    "en": "It reads 12 degrees at 9:00. How many degrees does it read at 13:00?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 20,
+    "calc": "12+4*2"
+   },
+   "common_errors": [
+    {
+     "value": 16,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Il y a quatre heures entre 9 h et 13 h. Compte 4 sauts de 2.",
+      "en": "There are four hours between 9:00 and 13:00. Count 4 jumps of 2."
+     }
+    },
+    {
+     "value": 14,
+     "misconception": "mis_pattern_wrong_rule",
+     "feedback": {
+      "fr": "Il faut répéter l’ajout de 2 à chaque heure.",
+      "en": "We must add 2 again for each hour."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les heures de 9 h à 13 h.",
+    "en": "Count the hours from 9:00 to 13:00."
+   },
+   "explain": {
+    "fr": "Il y a 4 heures. 2 + 2 + 2 + 2 = 8. Puis 12 + 8 = 20.",
+    "en": "There are 4 hours. 2 + 2 + 2 + 2 = 8. Then 12 + 8 = 20."
+   },
+   "tags": [
+    "sequence",
+    "word-problem",
+    "temperature"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.suites.011",
+   "quest": "science.suites",
+   "skill": "ARI-OPE-A14",
+   "type": "truefalse",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa regarde la suite 2, 5, 8, 11.",
+    "en": "Lea looks at the sequence 2, 5, 8, 11."
+   },
+   "prompt": {
+    "fr": "Elle dit que la suite monte de 2 chaque fois. A-t-elle raison ?",
+    "en": "She says the sequence goes up by 2 each time. Is she right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_pattern_wrong_rule"
+   },
+   "hint": {
+    "fr": "Calcule 5 - 2, puis 8 - 5.",
+    "en": "Work out 5 - 2, then 8 - 5."
+   },
+   "explain": {
+    "fr": "Elle monte de 3 chaque fois, pas de 2.",
+    "en": "It goes up by 3 each time, not by 2."
+   },
+   "tags": [
+    "sequence",
+    "true-false",
+    "rule"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.suites.012",
+   "quest": "science.suites",
+   "skill": "ARI-OPE-A14",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Une plante est mesurée quatre fois.",
+    "en": "A plant is measured four times."
+   },
+   "prompt": {
+    "fr": "Range les mesures de la plus petite à la plus grande.",
+    "en": "Put the measures in order, smallest to biggest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "8 cm",
+      "en": "8 cm"
+     },
+     "key": "8"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "2 cm",
+      "en": "2 cm"
+     },
+     "key": "2"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "6 cm",
+      "en": "6 cm"
+     },
+     "key": "6"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "4 cm",
+      "en": "4 cm"
+     },
+     "key": "4"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "d",
+     "c",
+     "a"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Une plante grandit : les mesures montent.",
+    "en": "A plant grows, so the measures go up."
+   },
+   "explain": {
+    "fr": "2, 4, 6 puis 8 : la plante grandit.",
+    "en": "2, 4, 6 then 8: the plant grows."
+   },
+   "tags": [
+    "sequence",
+    "ordering",
+    "growth"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.suites.013",
+   "quest": "science.suites",
+   "skill": "ARI-OPE-A14",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah associe chaque suite à sa règle.",
+    "en": "Noah matches each sequence to its rule."
+   },
+   "prompt": {
+    "fr": "Relie chaque suite à sa règle.",
+    "en": "Match each sequence to its rule."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "2, 4, 6, 8",
+       "en": "2, 4, 6, 8"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "5, 10, 15, 20",
+       "en": "5, 10, 15, 20"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "10, 20, 30, 40",
+       "en": "10, 20, 30, 40"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "on ajoute 10",
+       "en": "add 10"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "on ajoute 2",
+       "en": "add 2"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "on ajoute 5",
+       "en": "add 5"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r2"
+     ],
+     [
+      "l2",
+      "r3"
+     ],
+     [
+      "l3",
+      "r1"
+     ]
+    ],
+    "misconception": "mis_pattern_wrong_rule"
+   },
+   "hint": {
+    "fr": "Regarde l’écart entre les deux premiers nombres.",
+    "en": "Look at the gap between the first two numbers."
+   },
+   "explain": {
+    "fr": "2, 4, 6, 8 : on ajoute 2. 5, 10, 15, 20 : on ajoute 5. 10, 20, 30, 40 : on ajoute 10.",
+    "en": "2, 4, 6, 8: add 2. 5, 10, 15, 20: add 5. 10, 20, 30, 40: add 10."
+   },
+   "tags": [
+    "sequence",
+    "matching",
+    "rule"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.suites.014",
+   "quest": "science.suites",
+   "skill": "ARI-OPE-A14",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le diagramme montre la plante de Léa jour après jour.",
+    "en": "The chart shows Lea’s plant day after day."
+   },
+   "prompt": {
+    "fr": "Si la suite continue, quelle sera la hauteur au jour 5, en cm ?",
+    "en": "If the pattern goes on, how tall is the plant on day 5 (cm)?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Hauteur de la plante (cm)",
+      "en": "Plant height (cm)"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "jour 1",
+        "en": "day 1"
+       },
+       "value": 2
+      },
+      {
+       "label": {
+        "fr": "jour 2",
+        "en": "day 2"
+       },
+       "value": 4
+      },
+      {
+       "label": {
+        "fr": "jour 3",
+        "en": "day 3"
+       },
+       "value": 6
+      },
+      {
+       "label": {
+        "fr": "jour 4",
+        "en": "day 4"
+       },
+       "value": 8
+      }
+     ],
+     "max": 12
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 10,
+    "calc": "8+2"
+   },
+   "common_errors": [
+    {
+     "value": 8,
+     "misconception": "mis_pattern_last_step",
+     "feedback": {
+      "fr": "Ne répète pas la dernière barre : la plante continue de grandir.",
+      "en": "Do not repeat the last bar: the plant keeps growing."
+     }
+    },
+    {
+     "value": 12,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as sauté un jour dans la suite.",
+      "en": "You skipped a day in the sequence."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Regarde de combien chaque barre dépasse la précédente.",
+    "en": "See by how much each bar is taller than the one before."
+   },
+   "explain": {
+    "fr": "Chaque jour, la plante grandit de 2 cm. 8 + 2 = 10.",
+    "en": "Each day the plant grows 2 cm. 8 + 2 = 10."
+   },
+   "tags": [
+    "sequence",
+    "bar-chart",
+    "growth"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.melanges.001",
+   "quest": "science.melanges",
+   "skill": "ARI-SEN-C03",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa verse un liquide bleu dans une grande éprouvette.",
+    "en": "Lea pours a blue liquid into a big test tube."
+   },
+   "prompt": {
+    "fr": "Le niveau est à la flèche. Combien de litres y a-t-il ?",
+    "en": "The level is at the arrow. How many litres are there?"
+   },
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 0,
+     "max": 3,
+     "step": 0.1,
+     "labels": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "arrow": 1.5
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 1.5,
+    "calc": "3/2"
+   },
+   "common_errors": [
+    {
+     "value": 15,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "Le nombre est entre 1 et 2 : il faut une virgule.",
+      "en": "The number is between 1 and 2, so it needs a decimal point."
+     }
+    },
+    {
+     "value": 2.5,
+     "misconception": "mis_read_scale",
+     "feedback": {
+      "fr": "La flèche est au milieu entre 1 et 2, pas entre 2 et 3.",
+      "en": "The arrow is halfway between 1 and 2, not between 2 and 3."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "La flèche est au milieu entre deux nombres entiers.",
+    "en": "The arrow is halfway between two whole numbers."
+   },
+   "explain": {
+    "fr": "La flèche est à mi-chemin entre 1 et 2 : 1,5 L.",
+    "en": "The arrow is halfway between 1 and 2: 1.5 L."
+   },
+   "tags": [
+    "decimals",
+    "beaker",
+    "number-line"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_abc3c43a6d9573bc2d1f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.melanges.002",
+   "quest": "science.melanges",
+   "skill": "ARI-SEN-C03",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah lit le niveau d’un mélange vert.",
+    "en": "Noah reads the level of a green mixture."
+   },
+   "prompt": {
+    "fr": "Lis la graduation. Combien de litres de mélange y a-t-il ?",
+    "en": "Read the scale. How many litres of mixture are there?"
+   },
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 2,
+     "max": 3,
+     "step": 0.1,
+     "labels": [
+      2,
+      2.5,
+      3
+     ],
+     "arrow": 2.3
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 2.3,
+    "calc": "23/10"
+   },
+   "common_errors": [
+    {
+     "value": 2.03,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "Trois petits traits après 2 font 3 dixièmes, pas 3 centièmes.",
+      "en": "Three small marks after 2 make 3 tenths, not 3 hundredths."
+     }
+    },
+    {
+     "value": 3.2,
+     "misconception": "mis_digit_swap",
+     "feedback": {
+      "fr": "Tu as inversé les chiffres.",
+      "en": "You swapped the digits."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les petits traits après le 2.",
+    "en": "Count the small marks after the 2."
+   },
+   "explain": {
+    "fr": "Il y a 3 petits traits après le 2 : 2,3 L.",
+    "en": "There are 3 small marks after the 2: 2.3 L."
+   },
+   "tags": [
+    "decimals",
+    "beaker",
+    "tenths"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_7018091db72e5cdb38b0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.melanges.003",
+   "quest": "science.melanges",
+   "skill": "ARI-SEN-C03",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa lit une petite éprouvette de laboratoire.",
+    "en": "Lea reads a small lab test tube."
+   },
+   "prompt": {
+    "fr": "Quel volume la flèche montre-t-elle, en litres ?",
+    "en": "What volume does the arrow show, in litres?"
+   },
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 0,
+     "max": 1,
+     "step": 0.1,
+     "labels": [
+      0,
+      0.5,
+      1
+     ],
+     "arrow": 0.7
+    }
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "0,07",
+      "en": "0.07"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "7",
+      "en": "7"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "0,7",
+      "en": "0.7"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "1,7",
+      "en": "1.7"
+     },
+     "misconception": "mis_read_scale"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "7/10"
+    }
+   },
+   "hint": {
+    "fr": "Compte les petits traits depuis le 0.",
+    "en": "Count the small marks from 0."
+   },
+   "explain": {
+    "fr": "7 petits traits de un dixième : 0,7 L.",
+    "en": "7 small marks of one tenth: 0.7 L."
+   },
+   "tags": [
+    "decimals",
+    "beaker",
+    "tenths"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.melanges.004",
+   "quest": "science.melanges",
+   "skill": "ARI-SEN-C03",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Quatre éprouvettes contiennent du liquide coloré.",
+    "en": "Four test tubes hold coloured liquid."
+   },
+   "prompt": {
+    "fr": "Laquelle contient le plus de liquide ?",
+    "en": "Which one holds the most liquid?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "0,6 L",
+      "en": "0.6 L"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "0,45 L",
+      "en": "0.45 L"
+     },
+     "misconception": "mis_decimal_longer_bigger"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "0,08 L",
+      "en": "0.08 L"
+     },
+     "misconception": "mis_decimal_longer_bigger"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "0,5 L",
+      "en": "0.5 L"
+     },
+     "random": true
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Compare les dixièmes d’abord.",
+    "en": "Compare the tenths first."
+   },
+   "explain": {
+    "fr": "0,6 a 6 dixièmes. 0,45 en a 4 et 0,5 en a 5. 0,6 est le plus grand.",
+    "en": "0.6 has 6 tenths. 0.45 has 4 and 0.5 has 5. 0.6 is the biggest."
+   },
+   "tags": [
+    "decimals",
+    "compare",
+    "tenths"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.melanges.005",
+   "quest": "science.melanges",
+   "skill": "ARI-SEN-C03",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Une éprouvette contient déjà du liquide.",
+    "en": "A test tube already holds some liquid."
+   },
+   "prompt": {
+    "fr": "Le niveau est à 1,5 L. Léa ajoute 0,5 L. Combien de litres y a-t-il maintenant ?",
+    "en": "The level is at 1.5 L. Lea adds 0.5 L. How many litres are there now?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 2,
+    "calc": "1.5+0.5"
+   },
+   "common_errors": [
+    {
+     "value": 1,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Elle ajoute du liquide : on additionne.",
+      "en": "She adds liquid, so we add."
+     }
+    },
+    {
+     "value": 20,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "Les deux nombres sont petits : vérifie la virgule.",
+      "en": "Both numbers are small: check the decimal point."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "5 dixièmes et 5 dixièmes font un entier.",
+    "en": "5 tenths and 5 tenths make a whole."
+   },
+   "explain": {
+    "fr": "0,5 + 0,5 = 1. Donc 1,5 + 0,5 = 2.",
+    "en": "0.5 + 0.5 = 1. So 1.5 + 0.5 = 2."
+   },
+   "tags": [
+    "decimals",
+    "add",
+    "beaker"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.melanges.006",
+   "quest": "science.melanges",
+   "skill": "ARI-SEN-C03",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah mélange deux liquides dans un bocal.",
+    "en": "Noah mixes two liquids in a jar."
+   },
+   "prompt": {
+    "fr": "Il verse 0,3 L de jus puis 0,4 L d’eau. Combien de litres dans le bocal ?",
+    "en": "He pours 0.3 L of juice then 0.4 L of water. How many litres are in the jar?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 0.7,
+    "calc": "0.3+0.4"
+   },
+   "common_errors": [
+    {
+     "value": 0.07,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "3 dixièmes + 4 dixièmes = 7 dixièmes, pas 7 centièmes.",
+      "en": "3 tenths + 4 tenths = 7 tenths, not 7 hundredths."
+     }
+    },
+    {
+     "value": 0.1,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Il verse les deux liquides ensemble : on additionne.",
+      "en": "He pours both liquids together, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne les dixièmes, comme des entiers.",
+    "en": "Add the tenths, like whole numbers."
+   },
+   "explain": {
+    "fr": "3 dixièmes + 4 dixièmes = 7 dixièmes : 0,7 L.",
+    "en": "3 tenths + 4 tenths = 7 tenths: 0.7 L."
+   },
+   "tags": [
+    "decimals",
+    "add",
+    "tenths"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.melanges.007",
+   "quest": "science.melanges",
+   "skill": "ARI-SEN-C03",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa a un flacon plein de solution.",
+    "en": "Lea has a full bottle of solution."
+   },
+   "prompt": {
+    "fr": "Il contient 2 L. Elle en verse 0,5 L. Combien de litres reste-t-il ?",
+    "en": "It holds 2 L. She pours out 0.5 L. How many litres are left?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 1.5,
+    "calc": "2-0.5"
+   },
+   "common_errors": [
+    {
+     "value": 2.5,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Elle verse du liquide : il en reste moins.",
+      "en": "She pours some out, so there is less left."
+     }
+    },
+    {
+     "value": 15,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "Il reste moins de 2 L : vérifie la virgule.",
+      "en": "Less than 2 L is left: check the decimal point."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Enlève d’abord 1 L, puis la moitié d’un litre.",
+    "en": "First take off 1 L, then half a litre."
+   },
+   "explain": {
+    "fr": "2 - 0,5 : 2 - 1 = 1, puis 1 + 0,5 = 1,5.",
+    "en": "2 - 0.5: 2 - 1 = 1, then 1 + 0.5 = 1.5."
+   },
+   "tags": [
+    "decimals",
+    "subtract",
+    "beaker"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.melanges.008",
+   "quest": "science.melanges",
+   "skill": "ARI-SEN-C03",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Trois éprouvettes sont alignées sur la paillasse.",
+    "en": "Three test tubes stand in a row on the bench."
+   },
+   "prompt": {
+    "fr": "Elles contiennent 0,2 L, 0,3 L et 0,4 L. Combien de litres en tout ?",
+    "en": "They hold 0.2 L, 0.3 L and 0.4 L. How many litres in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 0.9,
+    "calc": "0.2+0.3+0.4"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "Ce sont des dixièmes : la réponse est plus petite que 1.",
+      "en": "These are tenths: the answer is smaller than 1."
+     }
+    },
+    {
+     "value": 0.5,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié la troisième éprouvette.",
+      "en": "You left out the third tube."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne 2, 3 et 4 dixièmes.",
+    "en": "Add 2, 3 and 4 tenths."
+   },
+   "explain": {
+    "fr": "2 + 3 + 4 = 9 dixièmes, soit 0,9 L.",
+    "en": "2 + 3 + 4 = 9 tenths, so 0.9 L."
+   },
+   "tags": [
+    "decimals",
+    "word-problem",
+    "add"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.melanges.009",
+   "quest": "science.melanges",
+   "skill": "ARI-SEN-C03",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Léa compare deux éprouvettes de mélange.",
+    "en": "Lea compares two test tubes of mixture."
+   },
+   "prompt": {
+    "fr": "A contient 1,2 L et B contient 1,02 L. Laquelle contient le plus ?",
+    "en": "A holds 1.2 L and B holds 1.02 L. Which holds more?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "A",
+      "en": "A"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "B",
+      "en": "B"
+     },
+     "misconception": "mis_decimal_longer_bigger"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Les deux pareil",
+      "en": "Both the same"
+     },
+     "random": true
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Compare les dixièmes : 2 dixièmes ou 0 dixième ?",
+    "en": "Compare the tenths: 2 tenths or 0 tenths?"
+   },
+   "explain": {
+    "fr": "1,2 a 2 dixièmes et 1,02 n’en a aucun. 1,2 est plus grand.",
+    "en": "1.2 has 2 tenths and 1.02 has none. 1.2 is bigger."
+   },
+   "tags": [
+    "decimals",
+    "compare",
+    "word-problem"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.melanges.010",
+   "quest": "science.melanges",
+   "skill": "ARI-SEN-C03",
+   "type": "order",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Quatre éprouvettes sont alignées sur la table.",
+    "en": "Four test tubes are lined up on the table."
+   },
+   "prompt": {
+    "fr": "Range les volumes du plus petit au plus grand.",
+    "en": "Put the volumes in order, smallest to biggest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "0,5 L",
+      "en": "0.5 L"
+     },
+     "key": "0.5"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "0,25 L",
+      "en": "0.25 L"
+     },
+     "key": "0.25"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "0,7 L",
+      "en": "0.7 L"
+     },
+     "key": "0.7"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "0,08 L",
+      "en": "0.08 L"
+     },
+     "key": "0.08"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "d",
+     "b",
+     "a",
+     "c"
+    ],
+    "by": "asc",
+    "misconception": "mis_decimal_longer_bigger"
+   },
+   "hint": {
+    "fr": "0,08 est-il plus grand ou plus petit que 0,25 ?",
+    "en": "Is 0.08 bigger or smaller than 0.25?"
+   },
+   "explain": {
+    "fr": "Dans l’ordre : 0,08 puis 0,25 puis 0,5 puis 0,7.",
+    "en": "In order: 0.08 then 0.25 then 0.5 then 0.7."
+   },
+   "tags": [
+    "decimals",
+    "ordering"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.melanges.011",
+   "quest": "science.melanges",
+   "skill": "ARI-SEN-C03",
+   "type": "match",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa écrit les volumes de deux façons.",
+    "en": "Lea writes volumes in two ways."
+   },
+   "prompt": {
+    "fr": "Relie chaque volume à ses mots.",
+    "en": "Match each volume to its words."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "0,5 L",
+       "en": "0.5 L"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "0,25 L",
+       "en": "0.25 L"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "0,1 L",
+       "en": "0.1 L"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "un quart de litre",
+       "en": "a quarter of a litre"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "un dixième de litre",
+       "en": "a tenth of a litre"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "un demi-litre",
+       "en": "half a litre"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r3"
+     ],
+     [
+      "l2",
+      "r1"
+     ],
+     [
+      "l3",
+      "r2"
+     ]
+    ],
+    "misconception": "mis_match"
+   },
+   "hint": {
+    "fr": "0,5 est la moitié de 1.",
+    "en": "0.5 is half of 1."
+   },
+   "explain": {
+    "fr": "0,5 L est un demi-litre. 0,25 L est un quart. 0,1 L est un dixième.",
+    "en": "0.5 L is half a litre. 0.25 L is a quarter. 0.1 L is a tenth."
+   },
+   "tags": [
+    "decimals",
+    "matching",
+    "fractions"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.melanges.012",
+   "quest": "science.melanges",
+   "skill": "ARI-SEN-C03",
+   "type": "truefalse",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah compare deux volumes de mélange.",
+    "en": "Noah compares two volumes of mixture."
+   },
+   "prompt": {
+    "fr": "Il dit que 1,25 L est plus grand que 1,5 L. A-t-il raison ?",
+    "en": "He says 1.25 L is bigger than 1.5 L. Is he right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_decimal_longer_bigger"
+   },
+   "hint": {
+    "fr": "Compare les dixièmes : 2 ou 5 ?",
+    "en": "Compare the tenths: 2 or 5?"
+   },
+   "explain": {
+    "fr": "1,5 a 5 dixièmes et 1,25 en a 2. Donc 1,5 est plus grand.",
+    "en": "1.5 has 5 tenths and 1.25 has 2. So 1.5 is bigger."
+   },
+   "tags": [
+    "decimals",
+    "true-false",
+    "compare"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.melanges.013",
+   "quest": "science.melanges",
+   "skill": "ARI-SEN-C03",
+   "type": "estimate",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Léa verse trois liquides dans un grand bocal.",
+    "en": "Lea pours three liquids into a big jar."
+   },
+   "prompt": {
+    "fr": "Elle verse 0,9 L, 2,1 L et 1,1 L. Environ combien de litres en tout ?",
+    "en": "She pours 0.9 L, 2.1 L and 1.1 L. About how many litres in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 3.8,
+    "max": 4.6,
+    "exact_for_check": 4.1,
+    "calc": "0.9+2.1+1.1"
+   },
+   "common_errors": [
+    {
+     "value": 41,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "Vérifie la virgule : trois petits volumes ne font pas 41 L.",
+      "en": "Check the decimal point: three small volumes do not make 41 L."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis chaque volume au litre le plus proche.",
+    "en": "Round each volume to the nearest litre."
+   },
+   "explain": {
+    "fr": "1 + 2 + 1 = 4, donc environ 4 L.",
+    "en": "1 + 2 + 1 = 4, so about 4 L."
+   },
+   "tags": [
+    "decimals",
+    "estimation",
+    "rounding"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "science.melanges.014",
+   "quest": "science.melanges",
+   "skill": "ARI-SEN-C03",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah observe une grande éprouvette graduée.",
+    "en": "Noah looks at a tall graduated test tube."
+   },
+   "prompt": {
+    "fr": "Où est le niveau du liquide ? Réponds en litres.",
+    "en": "Where is the liquid level? Answer in litres."
+   },
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 1,
+     "max": 2,
+     "step": 0.1,
+     "labels": [
+      1,
+      1.5,
+      2
+     ],
+     "arrow": 1.9
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 1.9,
+    "calc": "19/10"
+   },
+   "common_errors": [
+    {
+     "value": 2,
+     "misconception": "mis_read_scale",
+     "feedback": {
+      "fr": "Le niveau est juste avant 2. Compte les petits traits.",
+      "en": "The level is just before 2. Count the small marks."
+     }
+    },
+    {
+     "value": 1.09,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "9 petits traits de un dixième font 0,9, pas 0,09.",
+      "en": "9 small marks of a tenth make 0.9, not 0.09."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les petits traits depuis le 1.",
+    "en": "Count the small marks from 1."
+   },
+   "explain": {
+    "fr": "9 petits traits après le 1 : 1,9 L.",
+    "en": "9 small marks after the 1: 1.9 L."
+   },
+   "tags": [
+    "decimals",
+    "beaker",
+    "number-line"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_abc3c43a6d9573bc2d1f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  }
+ ]
+}
