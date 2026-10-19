@@ -13,8 +13,10 @@ import (
 	"github.com/go-webauthn/webauthn/webauthn"
 
 	"github.com/Perrin-Nj/numerix-api/api"
+	"github.com/Perrin-Nj/numerix-api/internal/assetstore"
 	"github.com/Perrin-Nj/numerix-api/internal/auth"
 	"github.com/Perrin-Nj/numerix-api/internal/config"
+	"github.com/Perrin-Nj/numerix-api/internal/contentdb"
 	"github.com/Perrin-Nj/numerix-api/internal/mongosync"
 	"github.com/Perrin-Nj/numerix-api/internal/store"
 )
@@ -42,6 +44,11 @@ type Server struct {
 	Payments PaymentProvider
 	// Sync records outbox rows for the optional MongoDB copy (nil or disabled = no-op). See mongo_sync.go.
 	Sync *mongosync.Outbox
+	// Content is the curated question bank repository (cache included); main shares it with the admin API and
+	// sets Content.Out to the same outbox as Sync. See content_play.go.
+	Content *contentdb.Repo
+	// Assets is the image store behind world art, question media and the /assets endpoint.
+	Assets *assetstore.Store
 }
 
 // NewServer wires the dependencies (Spring: constructor injection; no container, main() calls this).
@@ -55,6 +62,8 @@ func NewServer(s *store.Store, cfg config.Config, log *slog.Logger) *Server {
 		PINLimit:   auth.NewAttemptLimiter(5, 15*time.Minute),
 		LoginLimit: auth.NewAttemptLimiter(5, 15*time.Minute),
 		WebAuthn:   newWebAuthn(cfg),
+		Content:    contentdb.New(s, nil),
+		Assets:     assetstore.New(s),
 	}
 }
 

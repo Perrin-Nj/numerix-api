@@ -388,6 +388,75 @@ func (e PlatformPublicUnpaidPolicy) Valid() bool {
 	}
 }
 
+// Defines values for QuestionKind.
+const (
+	Choice    QuestionKind = "choice"
+	Estimate  QuestionKind = "estimate"
+	Match     QuestionKind = "match"
+	Numeric   QuestionKind = "numeric"
+	Order     QuestionKind = "order"
+	Truefalse QuestionKind = "truefalse"
+	Visual    QuestionKind = "visual"
+	Word      QuestionKind = "word"
+)
+
+// Valid indicates whether the value is a known member of the QuestionKind enum.
+func (e QuestionKind) Valid() bool {
+	switch e {
+	case Choice:
+		return true
+	case Estimate:
+		return true
+	case Match:
+		return true
+	case Numeric:
+		return true
+	case Order:
+		return true
+	case Truefalse:
+		return true
+	case Visual:
+		return true
+	case Word:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for QuestionVisualKind.
+const (
+	Bars       QuestionVisualKind = "bars"
+	Clock      QuestionVisualKind = "clock"
+	Dice       QuestionVisualKind = "dice"
+	Fraction   QuestionVisualKind = "fraction"
+	Grid       QuestionVisualKind = "grid"
+	Numberline QuestionVisualKind = "numberline"
+	Pictograph QuestionVisualKind = "pictograph"
+)
+
+// Valid indicates whether the value is a known member of the QuestionVisualKind enum.
+func (e QuestionVisualKind) Valid() bool {
+	switch e {
+	case Bars:
+		return true
+	case Clock:
+		return true
+	case Dice:
+		return true
+	case Fraction:
+		return true
+	case Grid:
+		return true
+	case Numberline:
+		return true
+	case Pictograph:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for RegisterRequestLocale.
 const (
 	RegisterRequestLocaleEnCA RegisterRequestLocale = "en-CA"
@@ -573,34 +642,70 @@ func (e SubscriptionViewStatus) Valid() bool {
 
 // Defines values for WorldId.
 const (
+	Animaux      WorldId = "animaux"
+	Arts         WorldId = "arts"
 	Construction WorldId = "construction"
 	Cuisine      WorldId = "cuisine"
+	Dinosaures   WorldId = "dinosaures"
 	Echecs       WorldId = "echecs"
 	Espace       WorldId = "espace"
+	Hiver        WorldId = "hiver"
+	Jeux         WorldId = "jeux"
+	Marche       WorldId = "marche"
 	Medecine     WorldId = "medecine"
+	Meteo        WorldId = "meteo"
+	Musique      WorldId = "musique"
 	Nature       WorldId = "nature"
+	Ocean        WorldId = "ocean"
+	Pirates      WorldId = "pirates"
+	Robots       WorldId = "robots"
 	Science      WorldId = "science"
 	Sport        WorldId = "sport"
+	Transport    WorldId = "transport"
 )
 
 // Valid indicates whether the value is a known member of the WorldId enum.
 func (e WorldId) Valid() bool {
 	switch e {
+	case Animaux:
+		return true
+	case Arts:
+		return true
 	case Construction:
 		return true
 	case Cuisine:
+		return true
+	case Dinosaures:
 		return true
 	case Echecs:
 		return true
 	case Espace:
 		return true
+	case Hiver:
+		return true
+	case Jeux:
+		return true
+	case Marche:
+		return true
 	case Medecine:
 		return true
+	case Meteo:
+		return true
+	case Musique:
+		return true
 	case Nature:
+		return true
+	case Ocean:
+		return true
+	case Pirates:
+		return true
+	case Robots:
 		return true
 	case Science:
 		return true
 	case Sport:
+		return true
+	case Transport:
 		return true
 	default:
 		return false
@@ -831,12 +936,24 @@ type AnswerRequest struct {
 type AnswerResult struct {
 	// CorrectAnswer Example: 48
 	CorrectAnswer AnswerValue `json:"correct_answer"`
-	Denouement    Narration   `json:"denouement"`
+
+	// Denouement For a curated question the beat's `scene` is `ready` at once with the question's own story text and no model is
+	// called (CR-15); the narration stream then replays the same text. Generated questions keep the pending flow.
+	Denouement Narration `json:"denouement"`
+
+	// Explain Curated questions only (BE-69): how to solve it, in the request language. Shown after answering, never before.
+	Explain *string `json:"explain,omitempty"`
+
+	// Feedback Curated questions only: the kind message written for the matched common error, when there is one.
+	Feedback *string `json:"feedback,omitempty"`
 
 	// MethodVisual How to solve this question, as data for an animated picture (no pixels). Sent for right and wrong answers
 	// alike, in the language of the request. Absent when no picture exists for the skill. The server builds it
 	// once per (kind, params, language) and reuses it for every child.
 	MethodVisual *MethodVisual `json:"method_visual,omitempty"`
+
+	// Misconception Curated questions only (BE-69): the matched typical error code when `outcome` is erreur_typique. For analytics and parent reports, not for display.
+	Misconception *string `json:"misconception,omitempty"`
 
 	// Outcome Verdict of the deterministic engine. Selects the story beat. The client
 	// must never render it as success/failure chrome (no red X).
@@ -860,7 +977,16 @@ type AnswerValue1 = float32
 type AnswerValue2 = string
 
 // AnswerValue3 defines model for AnswerValue.3.
-type AnswerValue3 = []int
+type AnswerValue3 = bool
+
+// AnswerValue4 defines model for AnswerValue.4.
+type AnswerValue4 = []int
+
+// AnswerValue5 defines model for AnswerValue.5.
+type AnswerValue5 = []string
+
+// AnswerValue6 defines model for AnswerValue.6.
+type AnswerValue6 = [][]string
 
 // AuthSession defines model for AuthSession.
 type AuthSession struct {
@@ -882,8 +1008,18 @@ type Beat struct {
 	Id        openapi_types.UUID `json:"id"`
 	Index     int                `json:"index"`
 
-	// Question Built by the engine. Never contains the correct answer on its own.
-	Question  Question           `json:"question"`
+	// Question Built by the engine or taken from the curated bank. Never contains the correct answer on its own, nor the
+	// explanation, the `calc` expression, the common errors or any misconception code (BE-67).
+	// A client that only knows `math_text` and four `choices` keeps working: generated questions are unchanged and
+	// curated questions fill `math_text` with the statement. `kind` tells which input to show:
+	// `numeric` (keypad; the answer may be [quotient, remainder] for a division with remainder), `choice` (2 to 5 cards,
+	// answer = the value of the chosen card), `truefalse` (two buttons, answer = boolean), `order` (answer = item ids
+	// in order), `match` (answer = [left id, right id] pairs), `word` and `visual` (numeric or choice), `estimate`
+	// (a number inside a range, or choice). An unknown `kind` should be shown as a numeric entry.
+	Question Question `json:"question"`
+
+	// Scene For a curated question the beat's `scene` is `ready` at once with the question's own story text and no model is
+	// called (CR-15); the narration stream then replays the same text. Generated questions keep the pending flow.
 	Scene     Narration          `json:"scene"`
 	SessionId openapi_types.UUID `json:"session_id"`
 
@@ -1039,6 +1175,18 @@ type ConsentRequest struct {
 // ConsentRequestAccepted defines model for ConsentRequest.Accepted.
 type ConsentRequestAccepted bool
 
+// CreditItem defines model for CreditItem.
+type CreditItem struct {
+	Id         string  `json:"id"`
+	Licence    string  `json:"licence"`
+	LicenceUrl *string `json:"licence_url,omitempty"`
+	SourceUrl  *string `json:"source_url,omitempty"`
+	Text       string  `json:"text"`
+
+	// Url Thumbnail path
+	Url string `json:"url"`
+}
+
 // DailyQuest defines model for DailyQuest.
 type DailyQuest struct {
 	// Available False when no review is due
@@ -1078,7 +1226,7 @@ type Engagement struct {
 	// LastPlayedAt End of the last chapter, used for the play reminder
 	LastPlayedAt *time.Time `json:"last_played_at,omitempty"`
 
-	// MinutesToday Active play minutes today in the child time zone. The kid home needs it for the time-limit reminder; in local mode it is derived on the device.
+	// MinutesToday Active play minutes today in the child time zone. The kid home needs it for the time-limit reminder; computed by the server.
 	MinutesToday *int `json:"minutes_today,omitempty"`
 
 	// Streak Consecutive days with at least one finished chapter. A missed day resets it, with no punishment screen.
@@ -1109,10 +1257,14 @@ type FeedItem struct {
 		//
 		// Example: ARI-OPE-A07a
 		SkillId *SkillId `json:"skill_id,omitempty"`
-		World   WorldId  `json:"world"`
+
+		// World The twenty story worlds. The first eight are the original worlds; the other twelve came with the question bank
+		// (CR-11). A client must treat an id it does not know as a generic world (accent colour and name come from
+		// `GET /worlds`), so a new world never needs a release.
+		World WorldId `json:"world"`
 	} `json:"cta,omitempty"`
 
-	// GeneratedBy Example: mock
+	// GeneratedBy Example: pip
 	GeneratedBy *string      `json:"generated_by,omitempty"`
 	Id          string       `json:"id"`
 	Kind        FeedItemKind `json:"kind"`
@@ -1123,7 +1275,11 @@ type FeedItem struct {
 	Saved  bool      `json:"saved"`
 	Text   string    `json:"text"`
 	Title  string    `json:"title"`
-	World  WorldId   `json:"world"`
+
+	// World The twenty story worlds. The first eight are the original worlds; the other twelve came with the question bank
+	// (CR-11). A client must treat an id it does not know as a generic world (accent colour and name come from
+	// `GET /worlds`), so a new world never needs a release.
+	World WorldId `json:"world"`
 }
 
 // FeedItemAiGenerated Always true. The UI shows an "AI generated" label.
@@ -1177,7 +1333,11 @@ type Home struct {
 		//
 		// Example: ARI-OPE-A07a
 		SkillId *SkillId `json:"skill_id,omitempty"`
-		World   WorldId  `json:"world"`
+
+		// World The twenty story worlds. The first eight are the original worlds; the other twelve came with the question bank
+		// (CR-11). A client must treat an id it does not know as a generic world (accent colour and name come from
+		// `GET /worlds`), so a new world never needs a release.
+		World WorldId `json:"world"`
 	} `json:"suggested"`
 	Worlds []World `json:"worlds"`
 }
@@ -1187,7 +1347,11 @@ type Journey struct {
 	// CurrentSkillId The planner's suggestion for the big "play" button
 	CurrentSkillId *SkillId      `json:"current_skill_id,omitempty"`
 	Nodes          []JourneyNode `json:"nodes"`
-	World          WorldId       `json:"world"`
+
+	// World The twenty story worlds. The first eight are the original worlds; the other twelve came with the question bank
+	// (CR-11). A client must treat an id it does not know as a generic world (accent colour and name come from
+	// `GET /worlds`), so a new world never needs a release.
+	World WorldId `json:"world"`
 }
 
 // JourneyNode defines model for JourneyNode.
@@ -1196,7 +1360,10 @@ type JourneyNode struct {
 	Label string `json:"label"`
 
 	// Level How many times the child has revisited and kept it (0 = new). Shown as shine on the node, not as a score.
-	Level        *int       `json:"level,omitempty"`
+	Level *int `json:"level,omitempty"`
+
+	// Media Icon of the quest when one is approved (CR-18)
+	Media        *MediaRef  `json:"media,omitempty"`
 	NextReviewAt *time.Time `json:"next_review_at,omitempty"`
 
 	// Position Layout slot on the winding path
@@ -1205,6 +1372,9 @@ type JourneyNode struct {
 		Row int `json:"row"`
 	} `json:"position"`
 
+	// Quest The quest this node belongs to in the world (CR-18). Absent for skills played through a generator only.
+	Quest *JourneyQuest `json:"quest,omitempty"`
+
 	// SkillId PDA skill id from the curriculum graph
 	//
 	// Example: ARI-OPE-A07a
@@ -1212,10 +1382,60 @@ type JourneyNode struct {
 	State   NodeState `json:"state"`
 }
 
+// JourneyQuest defines model for JourneyQuest.
+type JourneyQuest struct {
+	// Goal What the child practises
+	Goal string `json:"goal"`
+
+	// Id Example: cuisine.fournee
+	Id string `json:"id"`
+
+	// Name Example: La fournée de biscuits
+	Name string `json:"name"`
+}
+
 // LoginRequest defines model for LoginRequest.
 type LoginRequest struct {
 	Email    openapi_types.Email `json:"email"`
 	Password string              `json:"password"`
+}
+
+// MediaCredit defines model for MediaCredit.
+type MediaCredit struct {
+	// Licence Example: PEXELS
+	Licence    string  `json:"licence"`
+	LicenceUrl *string `json:"licence_url,omitempty"`
+	SourceUrl  *string `json:"source_url,omitempty"`
+
+	// Text Example: Photo by Jane Doe on Pexels
+	Text string `json:"text"`
+}
+
+// MediaRef defines model for MediaRef.
+type MediaRef struct {
+	// Alt Describes what is visible
+	Alt string `json:"alt"`
+
+	// Color Dominant colour
+	Color string `json:"color"`
+
+	// Credit Present when the licence asks for attribution. Show it near the image or on the credits page.
+	Credit *MediaCredit `json:"credit,omitempty"`
+	Height int          `json:"height"`
+
+	// Id Example: a_3f9c0b7e21d4a85c6e10
+	Id string `json:"id"`
+
+	// Lqip Tiny blurred preview as a data: URI (webp)
+	Lqip   string `json:"lqip"`
+	Srcset []struct {
+		// Url Path under the asset base (default /assets), for example /assets/a_3f9c0b7e21d4a85c6e10-960.webp
+		Url string `json:"url"`
+		W   int    `json:"w"`
+	} `json:"srcset"`
+
+	// Width Width of the largest variant
+	Width int `json:"width"`
 }
 
 // MethodVisual Example: {"alt":"Des blocs montrent 36 plus 19. Dix unités deviennent une dizaine, le total est 55.","cache_key":"add_carry:36,19:fr","kind":"add_carry","params":{"a":36,"b":19},"steps":[{"caption":"On met les unités ensemble : 6 et 9 font 15."},{"caption":"Dix unités font une dizaine. On la déplace à gauche."},{"caption":"Il reste 5 unités et 5 dizaines : 55."}]}
@@ -1251,7 +1471,8 @@ type Misconception struct {
 	SkillIds    []SkillId `json:"skill_ids"`
 }
 
-// Narration defines model for Narration.
+// Narration For a curated question the beat's `scene` is `ready` at once with the question's own story text and no model is
+// called (CR-15); the narration stream then replays the same text. Generated questions keep the pending flow.
 type Narration struct {
 	IllustrationUrl *string         `json:"illustration_url,omitempty"`
 	Status          NarrationStatus `json:"status"`
@@ -1441,13 +1662,73 @@ type PushSubscription struct {
 	} `json:"keys"`
 }
 
-// Question Built by the engine. Never contains the correct answer on its own.
+// Question Built by the engine or taken from the curated bank. Never contains the correct answer on its own, nor the
+// explanation, the `calc` expression, the common errors or any misconception code (BE-67).
+// A client that only knows `math_text` and four `choices` keeps working: generated questions are unchanged and
+// curated questions fill `math_text` with the statement. `kind` tells which input to show:
+// `numeric` (keypad; the answer may be [quotient, remainder] for a division with remainder), `choice` (2 to 5 cards,
+// answer = the value of the chosen card), `truefalse` (two buttons, answer = boolean), `order` (answer = item ids
+// in order), `match` (answer = [left id, right id] pairs), `word` and `visual` (numeric or choice), `estimate`
+// (a number inside a range, or choice). An unknown `kind` should be shown as a numeric entry.
 type Question struct {
+	// Choices Generated questions always send 4. Curated `choice`/`estimate` questions send 3 to 5; other kinds send none (CR-13).
 	Choices []AnswerValue `json:"choices"`
 
-	// MathText Example: 340 ÷ 7 = ? (avec reste)
-	MathText string `json:"math_text"`
+	// HintAvailable True when POST .../hint will answer (BE-70)
+	HintAvailable *bool `json:"hint_available,omitempty"`
+
+	// Items Cards for `order` (`cards`, shown in a shuffled order) or the two columns of `match`.
+	Items *QuestionItems `json:"items,omitempty"`
+	Kind  *QuestionKind  `json:"kind,omitempty"`
+
+	// MathText Language neutral statement; for curated questions without one, the prompt text
+	//
+	// Example: 340 ÷ 7 = ? (avec reste)
+	MathText string           `json:"math_text"`
+	Media    *[]QuestionMedia `json:"media,omitempty"`
+
+	// Prompt What to answer
+	Prompt *string `json:"prompt,omitempty"`
+
+	// Story Short story line of the question (curated questions); also the scene text
+	Story *string `json:"story,omitempty"`
+
+	// Visual Data for a picture the child reads (see seed/README.md in numerix-api for each data shape). No pixels, no answer.
+	Visual *QuestionVisual `json:"visual,omitempty"`
 }
+
+// QuestionItem defines model for QuestionItem.
+type QuestionItem struct {
+	Id   string `json:"id"`
+	Text string `json:"text"`
+}
+
+// QuestionItems Cards for `order` (`cards`, shown in a shuffled order) or the two columns of `match`.
+type QuestionItems struct {
+	Cards *[]QuestionItem `json:"cards,omitempty"`
+	Left  *[]QuestionItem `json:"left,omitempty"`
+	Right *[]QuestionItem `json:"right,omitempty"`
+}
+
+// QuestionKind defines model for QuestionKind.
+type QuestionKind string
+
+// QuestionMedia defines model for QuestionMedia.
+type QuestionMedia struct {
+	Image MediaRef `json:"image"`
+
+	// Role scene, object, visual or choice:<id>
+	Role string `json:"role"`
+}
+
+// QuestionVisual Data for a picture the child reads (see seed/README.md in numerix-api for each data shape). No pixels, no answer.
+type QuestionVisual struct {
+	Data *map[string]interface{} `json:"data,omitempty"`
+	Kind QuestionVisualKind      `json:"kind"`
+}
+
+// QuestionVisualKind defines model for QuestionVisual.Kind.
+type QuestionVisualKind string
 
 // RegisterRequest defines model for RegisterRequest.
 type RegisterRequest struct {
@@ -1526,7 +1807,11 @@ type Session struct {
 	StartedAt  time.Time     `json:"started_at"`
 	Status     SessionStatus `json:"status"`
 	StoryTitle *string       `json:"story_title,omitempty"`
-	World      WorldId       `json:"world"`
+
+	// World The twenty story worlds. The first eight are the original worlds; the other twelve came with the question bank
+	// (CR-11). A client must treat an id it does not know as a generic world (accent colour and name come from
+	// `GET /worlds`), so a new world never needs a release.
+	World WorldId `json:"world"`
 }
 
 // SessionKind defines model for Session.Kind.
@@ -1568,7 +1853,7 @@ type Skill struct {
 	// Example: ARI-OPE-A07a
 	Id SkillId `json:"id"`
 
-	// Implemented A generator exists for this skill today
+	// Implemented The skill can be played today - a generator exists or at least 8 published bank questions exist in some quest
 	Implemented   bool       `json:"implemented"`
 	Label         string     `json:"label"`
 	Prerequisites []SkillId  `json:"prerequisites"`
@@ -1604,7 +1889,11 @@ type StartSessionRequest struct {
 
 	// SkillId Optional. Replay a specific node from the journey.
 	SkillId *SkillId `json:"skill_id,omitempty"`
-	World   WorldId  `json:"world"`
+
+	// World The twenty story worlds. The first eight are the original worlds; the other twelve came with the question bank
+	// (CR-11). A client must treat an id it does not know as a generic world (accent colour and name come from
+	// `GET /worlds`), so a new world never needs a release.
+	World WorldId `json:"world"`
 }
 
 // StartSessionRequestKind defines model for StartSessionRequest.Kind.
@@ -1619,7 +1908,11 @@ type StoryCard struct {
 	ImageUrl  string              `json:"image_url"`
 	SessionId *openapi_types.UUID `json:"session_id,omitempty"`
 	Title     string              `json:"title"`
-	World     WorldId             `json:"world"`
+
+	// World The twenty story worlds. The first eight are the original worlds; the other twelve came with the question bank
+	// (CR-11). A client must treat an id it does not know as a generic world (accent colour and name come from
+	// `GET /worlds`), so a new world never needs a release.
+	World WorldId `json:"world"`
 }
 
 // SubscriptionView Example: {"can_play":true,"days_left":14,"plan":"free","status":"trial","trial_ends_at":"2026-10-26T14:00:00Z"}
@@ -1661,21 +1954,37 @@ type WeeklyReport struct {
 // World defines model for World.
 type World struct {
 	AccentColor string `json:"accent_color"`
+	GradeMax    *int   `json:"grade_max,omitempty"`
+
+	// GradeMin First school year the world serves (CR-12)
+	GradeMin *int `json:"grade_min,omitempty"`
+
+	// Hero Hero image with its responsive sizes (CR-12). Absent when the world has no approved hero yet.
+	Hero *MediaRef `json:"hero,omitempty"`
 
 	// Hook One short teaser line shown on the home feed
 	Hook *string `json:"hook,omitempty"`
-	Id   WorldId `json:"id"`
 
-	// ImageUrl Empty until real art exists; the app then shows its placeholder art
+	// Id The twenty story worlds. The first eight are the original worlds; the other twelve came with the question bank
+	// (CR-11). A client must treat an id it does not know as a generic world (accent colour and name come from
+	// `GET /worlds`), so a new world never needs a release.
+	Id WorldId `json:"id"`
+
+	// ImageUrl Path of the hero image (largest variant). Empty when the world has no approved hero yet; the app then draws a gradient from accent_color
 	ImageUrl string `json:"image_url"`
 
 	// Name Example: Échecs
-	Name       string `json:"name"`
-	SkillCount int    `json:"skill_count"`
-	Tagline    string `json:"tagline"`
+	Name string `json:"name"`
+
+	// Scenes A few scene images of the world for the world page (CR-12). Empty until art is approved.
+	Scenes     *[]MediaRef `json:"scenes,omitempty"`
+	SkillCount int         `json:"skill_count"`
+	Tagline    string      `json:"tagline"`
 }
 
-// WorldId defines model for WorldId.
+// WorldId The twenty story worlds. The first eight are the original worlds; the other twelve came with the question bank
+// (CR-11). A client must treat an id it does not know as a generic world (accent colour and name come from
+// `GET /worlds`), so a new world never needs a release.
 type WorldId string
 
 // AcceptLanguage Example: fr-CA
@@ -1775,6 +2084,11 @@ type UpdateAccountParams struct {
 
 // UpdateAccountJSONBodyLocale defines parameters for UpdateAccount.
 type UpdateAccountJSONBodyLocale string
+
+// GetAssetParams defines parameters for GetAsset.
+type GetAssetParams struct {
+	IfNoneMatch *string `json:"If-None-Match,omitempty"`
+}
 
 // RecordConsentParams defines parameters for RecordConsent.
 type RecordConsentParams struct {
@@ -2071,6 +2385,12 @@ type AnswerBeatParams struct {
 	IdempotencyKey IdempotencyKey `json:"Idempotency-Key"`
 }
 
+// RequestHintParams defines parameters for RequestHint.
+type RequestHintParams struct {
+	// AcceptLanguage fr-CA or en-CA. The app forwards the NEXT_LOCALE cookie, else the browser header. Default fr-CA.
+	AcceptLanguage *AcceptLanguage `json:"Accept-Language,omitempty"`
+}
+
 // StreamNarrationParams defines parameters for StreamNarration.
 type StreamNarrationParams struct {
 	Phase StreamNarrationParamsPhase `form:"phase" json:"phase"`
@@ -2112,7 +2432,7 @@ type ListSkillsParams struct {
 	World *WorldId `form:"world,omitempty" json:"world,omitempty"`
 	Grade *int     `form:"grade,omitempty" json:"grade,omitempty"`
 
-	// Implemented Only skills that have a generator today (8 of 75)
+	// Implemented Only skills that can be played today (a generator exists or at least 8 published bank questions)
 	Implemented *bool `form:"implemented,omitempty" json:"implemented,omitempty"`
 
 	// AcceptLanguage fr-CA or en-CA. The app forwards the NEXT_LOCALE cookie, else the browser header. Default fr-CA.
@@ -2328,6 +2648,84 @@ func (t *AnswerValue) MergeAnswerValue3(v AnswerValue3) error {
 	return err
 }
 
+// AsAnswerValue4 returns the union data inside the AnswerValue as a AnswerValue4
+func (t AnswerValue) AsAnswerValue4() (AnswerValue4, error) {
+	var body AnswerValue4
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAnswerValue4 overwrites any union data inside the AnswerValue as the provided AnswerValue4
+func (t *AnswerValue) FromAnswerValue4(v AnswerValue4) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAnswerValue4 performs a merge with any union data inside the AnswerValue, using the provided AnswerValue4
+func (t *AnswerValue) MergeAnswerValue4(v AnswerValue4) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAnswerValue5 returns the union data inside the AnswerValue as a AnswerValue5
+func (t AnswerValue) AsAnswerValue5() (AnswerValue5, error) {
+	var body AnswerValue5
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAnswerValue5 overwrites any union data inside the AnswerValue as the provided AnswerValue5
+func (t *AnswerValue) FromAnswerValue5(v AnswerValue5) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAnswerValue5 performs a merge with any union data inside the AnswerValue, using the provided AnswerValue5
+func (t *AnswerValue) MergeAnswerValue5(v AnswerValue5) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAnswerValue6 returns the union data inside the AnswerValue as a AnswerValue6
+func (t AnswerValue) AsAnswerValue6() (AnswerValue6, error) {
+	var body AnswerValue6
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAnswerValue6 overwrites any union data inside the AnswerValue as the provided AnswerValue6
+func (t *AnswerValue) FromAnswerValue6(v AnswerValue6) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAnswerValue6 performs a merge with any union data inside the AnswerValue, using the provided AnswerValue6
+func (t *AnswerValue) MergeAnswerValue6(v AnswerValue6) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
 func (t AnswerValue) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
@@ -2361,6 +2759,9 @@ type ServerInterface interface {
 	// DeletePasskey Remove a passkey
 	// (DELETE /account/passkeys/{passkeyId})
 	DeletePasskey(w http.ResponseWriter, r *http.Request, passkeyId openapi_types.UUID)
+	// GetAsset One image (CR-17, BE-71)
+	// (GET /assets/{file})
+	GetAsset(w http.ResponseWriter, r *http.Request, file string, params GetAssetParams)
 	// RecordConsent Record the parent's consent to process a child's data
 	// (POST /auth/consent)
 	RecordConsent(w http.ResponseWriter, r *http.Request, params RecordConsentParams)
@@ -2466,6 +2867,9 @@ type ServerInterface interface {
 	// CreateChildToken Switch to a child (play mode)
 	// (POST /children/{childId}/token)
 	CreateChildToken(w http.ResponseWriter, r *http.Request, childId ChildId, params CreateChildTokenParams)
+	// ListCredits Attributions required by the images in use (CR-17)
+	// (GET /credits)
+	ListCredits(w http.ResponseWriter, r *http.Request)
 	// SendEvents Batch of privacy-safe UI events (no names, no free text)
 	// (POST /events)
 	SendEvents(w http.ResponseWriter, r *http.Request)
@@ -2502,6 +2906,9 @@ type ServerInterface interface {
 	// AnswerBeat Submit the child's answer
 	// (POST /sessions/{sessionId}/beats/{beatId}/answer)
 	AnswerBeat(w http.ResponseWriter, r *http.Request, sessionId SessionId, beatId BeatId, params AnswerBeatParams)
+	// RequestHint Ask for the hint of the open question (BE-70)
+	// (POST /sessions/{sessionId}/beats/{beatId}/hint)
+	RequestHint(w http.ResponseWriter, r *http.Request, sessionId SessionId, beatId BeatId, params RequestHintParams)
 	// StreamNarration Stream the scene or the consequence as it is written
 	// (GET /sessions/{sessionId}/beats/{beatId}/narration)
 	StreamNarration(w http.ResponseWriter, r *http.Request, sessionId SessionId, beatId BeatId, params StreamNarrationParams)
@@ -2526,13 +2933,13 @@ type ServerInterface interface {
 	// CancelSubscription Cancel at the end of the paid period (access continues until then)
 	// (POST /subscription/cancel)
 	CancelSubscription(w http.ResponseWriter, r *http.Request, params CancelSubscriptionParams)
-	// CheckoutSubscription Start a paid plan (BE-24). The real backend returns the processor's hosted page URL; the mock completes instantly.
+	// CheckoutSubscription Start a paid plan (BE-24). The real backend returns the processor's hosted page URL; development completes instantly.
 	// (POST /subscription/checkout)
 	CheckoutSubscription(w http.ResponseWriter, r *http.Request, params CheckoutSubscriptionParams)
 	// ListSubscriptionPlans Plans (CAD cents), bilingual features and payment methods
 	// (GET /subscription/plans)
 	ListSubscriptionPlans(w http.ResponseWriter, r *http.Request, params ListSubscriptionPlansParams)
-	// ListWorlds The eight story worlds
+	// ListWorlds The twenty story worlds
 	// (GET /worlds)
 	ListWorlds(w http.ResponseWriter, r *http.Request, params ListWorldsParams)
 }
@@ -2740,6 +3147,56 @@ func (siw *ServerInterfaceWrapper) DeletePasskey(w http.ResponseWriter, r *http.
 
 	handler := http.Handler(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		siw.Handler.DeletePasskey(w, r, passkeyId)
+	}))
+
+	for _, middleware := range siw.HandlerMiddlewares {
+		handler = middleware(handler)
+	}
+
+	handler.ServeHTTP(w, r)
+}
+
+// GetAsset operation middleware
+func (siw *ServerInterfaceWrapper) GetAsset(w http.ResponseWriter, r *http.Request) {
+
+	var err error
+	_ = err
+
+	// ------------- Path parameter "file" -------------
+	var file string
+
+	err = runtime.BindStyledParameterWithOptions("simple", "file", r.PathValue("file"), &file, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationPath, Explode: false, Required: true, Type: "string", Format: "", ValueIsUnescaped: true})
+	if err != nil {
+		siw.ErrorHandlerFunc(w, r, &InvalidParamFormatError{ParamName: "file", Err: err})
+		return
+	}
+
+	// Parameter object where we will unmarshal all parameters from the context
+	var params GetAssetParams
+
+	headers := r.Header
+
+	// ------------- Optional header parameter "If-None-Match" -------------
+	if valueList, found := headers[http.CanonicalHeaderKey("If-None-Match")]; found {
+		var IfNoneMatch string
+		n := len(valueList)
+		if n != 1 {
+			siw.ErrorHandlerFunc(w, r, &TooManyValuesForParamError{ParamName: "If-None-Match", Count: n})
+			return
+		}
+
+		err = runtime.BindStyledParameterWithOptions("simple", "If-None-Match", valueList[0], &IfNoneMatch, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""})
+		if err != nil {
+			siw.ErrorHandlerFunc(w, r, &InvalidParamFormatError{ParamName: "If-None-Match", Err: err})
+			return
+		}
+
+		params.IfNoneMatch = &IfNoneMatch
+
+	}
+
+	handler := http.Handler(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		siw.Handler.GetAsset(w, r, file, params)
 	}))
 
 	for _, middleware := range siw.HandlerMiddlewares {
@@ -4302,6 +4759,20 @@ func (siw *ServerInterfaceWrapper) CreateChildToken(w http.ResponseWriter, r *ht
 	handler.ServeHTTP(w, r)
 }
 
+// ListCredits operation middleware
+func (siw *ServerInterfaceWrapper) ListCredits(w http.ResponseWriter, r *http.Request) {
+
+	handler := http.Handler(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		siw.Handler.ListCredits(w, r)
+	}))
+
+	for _, middleware := range siw.HandlerMiddlewares {
+		handler = middleware(handler)
+	}
+
+	handler.ServeHTTP(w, r)
+}
+
 // SendEvents operation middleware
 func (siw *ServerInterfaceWrapper) SendEvents(w http.ResponseWriter, r *http.Request) {
 
@@ -4780,6 +5251,65 @@ func (siw *ServerInterfaceWrapper) AnswerBeat(w http.ResponseWriter, r *http.Req
 
 	handler := http.Handler(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		siw.Handler.AnswerBeat(w, r, sessionId, beatId, params)
+	}))
+
+	for _, middleware := range siw.HandlerMiddlewares {
+		handler = middleware(handler)
+	}
+
+	handler.ServeHTTP(w, r)
+}
+
+// RequestHint operation middleware
+func (siw *ServerInterfaceWrapper) RequestHint(w http.ResponseWriter, r *http.Request) {
+
+	var err error
+	_ = err
+
+	// ------------- Path parameter "sessionId" -------------
+	var sessionId SessionId
+
+	err = runtime.BindStyledParameterWithOptions("simple", "sessionId", r.PathValue("sessionId"), &sessionId, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationPath, Explode: false, Required: true, Type: "string", Format: "uuid", ValueIsUnescaped: true})
+	if err != nil {
+		siw.ErrorHandlerFunc(w, r, &InvalidParamFormatError{ParamName: "sessionId", Err: err})
+		return
+	}
+
+	// ------------- Path parameter "beatId" -------------
+	var beatId BeatId
+
+	err = runtime.BindStyledParameterWithOptions("simple", "beatId", r.PathValue("beatId"), &beatId, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationPath, Explode: false, Required: true, Type: "string", Format: "uuid", ValueIsUnescaped: true})
+	if err != nil {
+		siw.ErrorHandlerFunc(w, r, &InvalidParamFormatError{ParamName: "beatId", Err: err})
+		return
+	}
+
+	// Parameter object where we will unmarshal all parameters from the context
+	var params RequestHintParams
+
+	headers := r.Header
+
+	// ------------- Optional header parameter "Accept-Language" -------------
+	if valueList, found := headers[http.CanonicalHeaderKey("Accept-Language")]; found {
+		var AcceptLanguage AcceptLanguage
+		n := len(valueList)
+		if n != 1 {
+			siw.ErrorHandlerFunc(w, r, &TooManyValuesForParamError{ParamName: "Accept-Language", Count: n})
+			return
+		}
+
+		err = runtime.BindStyledParameterWithOptions("simple", "Accept-Language", valueList[0], &AcceptLanguage, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""})
+		if err != nil {
+			siw.ErrorHandlerFunc(w, r, &InvalidParamFormatError{ParamName: "Accept-Language", Err: err})
+			return
+		}
+
+		params.AcceptLanguage = &AcceptLanguage
+
+	}
+
+	handler := http.Handler(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		siw.Handler.RequestHint(w, r, sessionId, beatId, params)
 	}))
 
 	for _, middleware := range siw.HandlerMiddlewares {
@@ -5525,6 +6055,7 @@ func HandlerWithOptions(si ServerInterface, options StdHTTPServerOptions) http.H
 	m.HandleFunc(http.MethodGet+" "+options.BaseURL+"/sessions/{sessionId}", wrapper.GetSession)
 	m.HandleFunc(http.MethodPost+" "+options.BaseURL+"/sessions/{sessionId}/beats", wrapper.NextBeat)
 	m.HandleFunc(http.MethodPost+" "+options.BaseURL+"/sessions/{sessionId}/beats/{beatId}/answer", wrapper.AnswerBeat)
+	m.HandleFunc(http.MethodPost+" "+options.BaseURL+"/sessions/{sessionId}/beats/{beatId}/hint", wrapper.RequestHint)
 	m.HandleFunc(http.MethodGet+" "+options.BaseURL+"/sessions/{sessionId}/beats/{beatId}/narration", wrapper.StreamNarration)
 	m.HandleFunc(http.MethodPost+" "+options.BaseURL+"/sessions/{sessionId}/pause", wrapper.PauseSession)
 	m.HandleFunc(http.MethodPost+" "+options.BaseURL+"/sessions/{sessionId}/resume", wrapper.ResumeSession)
@@ -5566,6 +6097,8 @@ func HandlerWithOptions(si ServerInterface, options StdHTTPServerOptions) http.H
 	m.HandleFunc(http.MethodPost+" "+options.BaseURL+"/auth/passkeys/login/finish", wrapper.FinishPasskeyLogin)
 	m.HandleFunc(http.MethodGet+" "+options.BaseURL+"/account/passkeys", wrapper.ListPasskeys)
 	m.HandleFunc(http.MethodDelete+" "+options.BaseURL+"/account/passkeys/{passkeyId}", wrapper.DeletePasskey)
+	m.HandleFunc(http.MethodGet+" "+options.BaseURL+"/assets/{file}", wrapper.GetAsset)
+	m.HandleFunc(http.MethodGet+" "+options.BaseURL+"/credits", wrapper.ListCredits)
 	m.HandleFunc(http.MethodGet+" "+options.BaseURL+"/health", wrapper.Health)
 	m.HandleFunc(http.MethodGet+" "+options.BaseURL+"/ready", wrapper.Ready)
 	m.HandleFunc(http.MethodPost+" "+options.BaseURL+"/events", wrapper.SendEvents)
@@ -6240,6 +6773,118 @@ type DeletePasskey500ApplicationProblemPlusJSONResponse struct {
 }
 
 func (response DeletePasskey500ApplicationProblemPlusJSONResponse) VisitDeletePasskeyResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(500)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type GetAssetRequestObject struct {
+	File   string `json:"file"`
+	Params GetAssetParams
+}
+
+type GetAssetResponseObject interface {
+	VisitGetAssetResponse(w http.ResponseWriter) error
+}
+
+type GetAsset200ResponseHeaders struct {
+	CacheControl *string
+	ETag         *string
+}
+
+type GetAsset200ImagewebpResponse struct {
+	Body          io.Reader
+	Headers       GetAsset200ResponseHeaders
+	ContentLength int64
+}
+
+func (response GetAsset200ImagewebpResponse) VisitGetAssetResponse(w http.ResponseWriter) error {
+
+	w.Header().Set("Content-Type", "image/webp")
+	if response.ContentLength != 0 {
+		w.Header().Set("Content-Length", fmt.Sprint(response.ContentLength))
+	}
+	if response.Headers.CacheControl != nil {
+		w.Header().Set("Cache-Control", fmt.Sprint(*response.Headers.CacheControl))
+	}
+	if response.Headers.ETag != nil {
+		w.Header().Set("ETag", fmt.Sprint(*response.Headers.ETag))
+	}
+	w.WriteHeader(200)
+
+	if closer, ok := response.Body.(io.ReadCloser); ok {
+		defer closer.Close()
+	}
+	_, err := io.Copy(w, response.Body)
+	return err
+}
+
+type GetAsset304ResponseHeaders struct {
+	CacheControl *string
+	ETag         *string
+}
+
+type GetAsset304Response struct {
+	Headers GetAsset304ResponseHeaders
+}
+
+func (response GetAsset304Response) VisitGetAssetResponse(w http.ResponseWriter) error {
+	if response.Headers.CacheControl != nil {
+		w.Header().Set("Cache-Control", fmt.Sprint(*response.Headers.CacheControl))
+	}
+	if response.Headers.ETag != nil {
+		w.Header().Set("ETag", fmt.Sprint(*response.Headers.ETag))
+	}
+	w.WriteHeader(304)
+	return nil
+}
+
+type GetAsset404ApplicationProblemPlusJSONResponse struct {
+	NotFoundApplicationProblemPlusJSONResponse
+}
+
+func (response GetAsset404ApplicationProblemPlusJSONResponse) VisitGetAssetResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(404)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type GetAsset429ApplicationProblemPlusJSONResponse struct {
+	RateLimitedApplicationProblemPlusJSONResponse
+}
+
+func (response GetAsset429ApplicationProblemPlusJSONResponse) VisitGetAssetResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response.Body); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	if response.Headers.RetryAfter != nil {
+		w.Header().Set("Retry-After", fmt.Sprint(*response.Headers.RetryAfter))
+	}
+	w.WriteHeader(429)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type GetAsset500ApplicationProblemPlusJSONResponse struct {
+	ServerErrorApplicationProblemPlusJSONResponse
+}
+
+func (response GetAsset500ApplicationProblemPlusJSONResponse) VisitGetAssetResponse(w http.ResponseWriter) error {
 
 	var buf bytes.Buffer
 	if err := json.NewEncoder(&buf).Encode(response); err != nil {
@@ -9669,6 +10314,74 @@ func (response CreateChildToken500ApplicationProblemPlusJSONResponse) VisitCreat
 	return err
 }
 
+type ListCreditsRequestObject struct {
+}
+
+type ListCreditsResponseObject interface {
+	VisitListCreditsResponse(w http.ResponseWriter) error
+}
+
+type ListCredits200ResponseHeaders struct {
+	CacheControl *string
+}
+
+type ListCredits200JSONResponse struct {
+	Body struct {
+		Items []CreditItem `json:"items"`
+	}
+	Headers ListCredits200ResponseHeaders
+}
+
+func (response ListCredits200JSONResponse) VisitListCreditsResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response.Body); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/json")
+	if response.Headers.CacheControl != nil {
+		w.Header().Set("Cache-Control", fmt.Sprint(*response.Headers.CacheControl))
+	}
+	w.WriteHeader(200)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type ListCredits429ApplicationProblemPlusJSONResponse struct {
+	RateLimitedApplicationProblemPlusJSONResponse
+}
+
+func (response ListCredits429ApplicationProblemPlusJSONResponse) VisitListCreditsResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response.Body); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	if response.Headers.RetryAfter != nil {
+		w.Header().Set("Retry-After", fmt.Sprint(*response.Headers.RetryAfter))
+	}
+	w.WriteHeader(429)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type ListCredits500ApplicationProblemPlusJSONResponse struct {
+	ServerErrorApplicationProblemPlusJSONResponse
+}
+
+func (response ListCredits500ApplicationProblemPlusJSONResponse) VisitListCreditsResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(500)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
 type SendEventsRequestObject struct {
 	Body *SendEventsJSONRequestBody
 }
@@ -10718,6 +11431,129 @@ type AnswerBeat500ApplicationProblemPlusJSONResponse struct {
 }
 
 func (response AnswerBeat500ApplicationProblemPlusJSONResponse) VisitAnswerBeatResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(500)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type RequestHintRequestObject struct {
+	SessionId SessionId `json:"sessionId"`
+	BeatId    BeatId    `json:"beatId"`
+	Params    RequestHintParams
+}
+
+type RequestHintResponseObject interface {
+	VisitRequestHintResponse(w http.ResponseWriter) error
+}
+
+type RequestHint200JSONResponse struct {
+	Hint string `json:"hint"`
+}
+
+func (response RequestHint200JSONResponse) VisitRequestHintResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(200)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type RequestHint401ApplicationProblemPlusJSONResponse struct {
+	UnauthorizedApplicationProblemPlusJSONResponse
+}
+
+func (response RequestHint401ApplicationProblemPlusJSONResponse) VisitRequestHintResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(401)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type RequestHint403ApplicationProblemPlusJSONResponse struct {
+	ForbiddenApplicationProblemPlusJSONResponse
+}
+
+func (response RequestHint403ApplicationProblemPlusJSONResponse) VisitRequestHintResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(403)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type RequestHint404ApplicationProblemPlusJSONResponse struct {
+	NotFoundApplicationProblemPlusJSONResponse
+}
+
+func (response RequestHint404ApplicationProblemPlusJSONResponse) VisitRequestHintResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(404)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type RequestHint409ApplicationProblemPlusJSONResponse Problem
+
+func (response RequestHint409ApplicationProblemPlusJSONResponse) VisitRequestHintResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(409)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type RequestHint429ApplicationProblemPlusJSONResponse struct {
+	RateLimitedApplicationProblemPlusJSONResponse
+}
+
+func (response RequestHint429ApplicationProblemPlusJSONResponse) VisitRequestHintResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response.Body); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	if response.Headers.RetryAfter != nil {
+		w.Header().Set("Retry-After", fmt.Sprint(*response.Headers.RetryAfter))
+	}
+	w.WriteHeader(429)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type RequestHint500ApplicationProblemPlusJSONResponse struct {
+	ServerErrorApplicationProblemPlusJSONResponse
+}
+
+func (response RequestHint500ApplicationProblemPlusJSONResponse) VisitRequestHintResponse(w http.ResponseWriter) error {
 
 	var buf bytes.Buffer
 	if err := json.NewEncoder(&buf).Encode(response); err != nil {
@@ -11849,6 +12685,9 @@ type StrictServerInterface interface {
 	// DeletePasskey Remove a passkey
 	// (DELETE /account/passkeys/{passkeyId})
 	DeletePasskey(ctx context.Context, request DeletePasskeyRequestObject) (DeletePasskeyResponseObject, error)
+	// GetAsset One image (CR-17, BE-71)
+	// (GET /assets/{file})
+	GetAsset(ctx context.Context, request GetAssetRequestObject) (GetAssetResponseObject, error)
 	// RecordConsent Record the parent's consent to process a child's data
 	// (POST /auth/consent)
 	RecordConsent(ctx context.Context, request RecordConsentRequestObject) (RecordConsentResponseObject, error)
@@ -11954,6 +12793,9 @@ type StrictServerInterface interface {
 	// CreateChildToken Switch to a child (play mode)
 	// (POST /children/{childId}/token)
 	CreateChildToken(ctx context.Context, request CreateChildTokenRequestObject) (CreateChildTokenResponseObject, error)
+	// ListCredits Attributions required by the images in use (CR-17)
+	// (GET /credits)
+	ListCredits(ctx context.Context, request ListCreditsRequestObject) (ListCreditsResponseObject, error)
 	// SendEvents Batch of privacy-safe UI events (no names, no free text)
 	// (POST /events)
 	SendEvents(ctx context.Context, request SendEventsRequestObject) (SendEventsResponseObject, error)
@@ -11990,6 +12832,9 @@ type StrictServerInterface interface {
 	// AnswerBeat Submit the child's answer
 	// (POST /sessions/{sessionId}/beats/{beatId}/answer)
 	AnswerBeat(ctx context.Context, request AnswerBeatRequestObject) (AnswerBeatResponseObject, error)
+	// RequestHint Ask for the hint of the open question (BE-70)
+	// (POST /sessions/{sessionId}/beats/{beatId}/hint)
+	RequestHint(ctx context.Context, request RequestHintRequestObject) (RequestHintResponseObject, error)
 	// StreamNarration Stream the scene or the consequence as it is written
 	// (GET /sessions/{sessionId}/beats/{beatId}/narration)
 	StreamNarration(ctx context.Context, request StreamNarrationRequestObject) (StreamNarrationResponseObject, error)
@@ -12014,13 +12859,13 @@ type StrictServerInterface interface {
 	// CancelSubscription Cancel at the end of the paid period (access continues until then)
 	// (POST /subscription/cancel)
 	CancelSubscription(ctx context.Context, request CancelSubscriptionRequestObject) (CancelSubscriptionResponseObject, error)
-	// CheckoutSubscription Start a paid plan (BE-24). The real backend returns the processor's hosted page URL; the mock completes instantly.
+	// CheckoutSubscription Start a paid plan (BE-24). The real backend returns the processor's hosted page URL; development completes instantly.
 	// (POST /subscription/checkout)
 	CheckoutSubscription(ctx context.Context, request CheckoutSubscriptionRequestObject) (CheckoutSubscriptionResponseObject, error)
 	// ListSubscriptionPlans Plans (CAD cents), bilingual features and payment methods
 	// (GET /subscription/plans)
 	ListSubscriptionPlans(ctx context.Context, request ListSubscriptionPlansRequestObject) (ListSubscriptionPlansResponseObject, error)
-	// ListWorlds The eight story worlds
+	// ListWorlds The twenty story worlds
 	// (GET /worlds)
 	ListWorlds(ctx context.Context, request ListWorldsRequestObject) (ListWorldsResponseObject, error)
 }
@@ -12249,6 +13094,33 @@ func (sh *strictHandler) DeletePasskey(w http.ResponseWriter, r *http.Request, p
 		sh.options.ResponseErrorHandlerFunc(w, r, err)
 	} else if validResponse, ok := response.(DeletePasskeyResponseObject); ok {
 		if err := validResponse.VisitDeletePasskeyResponse(w); err != nil {
+			sh.options.ResponseErrorHandlerFunc(w, r, err)
+		}
+	} else if response != nil {
+		sh.options.ResponseErrorHandlerFunc(w, r, fmt.Errorf("unexpected response type: %T", response))
+	}
+}
+
+// GetAsset operation middleware
+func (sh *strictHandler) GetAsset(w http.ResponseWriter, r *http.Request, file string, params GetAssetParams) {
+	var request GetAssetRequestObject
+
+	request.File = file
+	request.Params = params
+
+	handler := func(ctx context.Context, w http.ResponseWriter, r *http.Request, request interface{}) (interface{}, error) {
+		return sh.ssi.GetAsset(ctx, request.(GetAssetRequestObject))
+	}
+	for _, middleware := range sh.middlewares {
+		handler = middleware(handler, "GetAsset")
+	}
+
+	response, err := handler(r.Context(), w, r, request)
+
+	if err != nil {
+		sh.options.ResponseErrorHandlerFunc(w, r, err)
+	} else if validResponse, ok := response.(GetAssetResponseObject); ok {
+		if err := validResponse.VisitGetAssetResponse(w); err != nil {
 			sh.options.ResponseErrorHandlerFunc(w, r, err)
 		}
 	} else if response != nil {
@@ -13278,6 +14150,30 @@ func (sh *strictHandler) CreateChildToken(w http.ResponseWriter, r *http.Request
 	}
 }
 
+// ListCredits operation middleware
+func (sh *strictHandler) ListCredits(w http.ResponseWriter, r *http.Request) {
+	var request ListCreditsRequestObject
+
+	handler := func(ctx context.Context, w http.ResponseWriter, r *http.Request, request interface{}) (interface{}, error) {
+		return sh.ssi.ListCredits(ctx, request.(ListCreditsRequestObject))
+	}
+	for _, middleware := range sh.middlewares {
+		handler = middleware(handler, "ListCredits")
+	}
+
+	response, err := handler(r.Context(), w, r, request)
+
+	if err != nil {
+		sh.options.ResponseErrorHandlerFunc(w, r, err)
+	} else if validResponse, ok := response.(ListCreditsResponseObject); ok {
+		if err := validResponse.VisitListCreditsResponse(w); err != nil {
+			sh.options.ResponseErrorHandlerFunc(w, r, err)
+		}
+	} else if response != nil {
+		sh.options.ResponseErrorHandlerFunc(w, r, fmt.Errorf("unexpected response type: %T", response))
+	}
+}
+
 // SendEvents operation middleware
 func (sh *strictHandler) SendEvents(w http.ResponseWriter, r *http.Request) {
 	var request SendEventsRequestObject
@@ -13606,6 +14502,34 @@ func (sh *strictHandler) AnswerBeat(w http.ResponseWriter, r *http.Request, sess
 		sh.options.ResponseErrorHandlerFunc(w, r, err)
 	} else if validResponse, ok := response.(AnswerBeatResponseObject); ok {
 		if err := validResponse.VisitAnswerBeatResponse(w); err != nil {
+			sh.options.ResponseErrorHandlerFunc(w, r, err)
+		}
+	} else if response != nil {
+		sh.options.ResponseErrorHandlerFunc(w, r, fmt.Errorf("unexpected response type: %T", response))
+	}
+}
+
+// RequestHint operation middleware
+func (sh *strictHandler) RequestHint(w http.ResponseWriter, r *http.Request, sessionId SessionId, beatId BeatId, params RequestHintParams) {
+	var request RequestHintRequestObject
+
+	request.SessionId = sessionId
+	request.BeatId = beatId
+	request.Params = params
+
+	handler := func(ctx context.Context, w http.ResponseWriter, r *http.Request, request interface{}) (interface{}, error) {
+		return sh.ssi.RequestHint(ctx, request.(RequestHintRequestObject))
+	}
+	for _, middleware := range sh.middlewares {
+		handler = middleware(handler, "RequestHint")
+	}
+
+	response, err := handler(r.Context(), w, r, request)
+
+	if err != nil {
+		sh.options.ResponseErrorHandlerFunc(w, r, err)
+	} else if validResponse, ok := response.(RequestHintResponseObject); ok {
+		if err := validResponse.VisitRequestHintResponse(w); err != nil {
 			sh.options.ResponseErrorHandlerFunc(w, r, err)
 		}
 	} else if response != nil {

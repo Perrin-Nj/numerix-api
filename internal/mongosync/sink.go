@@ -22,6 +22,13 @@ const (
 	KindBests  = "personal_bests"
 	KindFamily = "family_board"
 	KindStats  = "progress_stats"
+
+	// Content kinds (docs/MONGO_SYNC.md): the question bank, its audit trail and per question statistics.
+	KindQuestionBank  = "question_bank"
+	KindQuestionAudit = "question_audit"
+	KindQuestionStats = "question_stats"
+	KindContentWorld  = "content_worlds"
+	KindContentQuest  = "content_quests"
 )
 
 // MinChildren is the k-anonymity floor: a stats bucket with fewer children is never sent.

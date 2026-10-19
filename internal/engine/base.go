@@ -1,6 +1,7 @@
 package engine
 
 import (
+	"encoding/json"
 	"fmt"
 	"math"
 	"regexp"
@@ -59,6 +60,9 @@ type Problem struct {
 	Metadonnees      map[string]any `json:"metadonnees"`
 	Shape            string         `json:"shape"`            // exercise family, so consecutive beats differ
 	Visual           *VisualHint    `json:"visual,omitempty"` // picture hint, nil when no picture exists
+	// Curated holds the whole curated bank question (package content JSON) when this row was projected from the
+	// bank. The engine never reads it: the app grades and renders curated rows from it. nil for generated rows.
+	Curated json.RawMessage `json:"curated,omitempty"`
 }
 
 // Normalize repairs types after json.Unmarshal (JSON numbers arrive as float64, lists as []any).

@@ -32,8 +32,9 @@ const plDay = 24 * time.Hour
 // plMaxChildren is the family limit (contract: at most 8 profiles per parent).
 const plMaxChildren = 8
 
-// plWorldIDs are the eight worlds of the contract (WorldId enum).
-var plWorldIDs = []string{"nature", "espace", "cuisine", "sport", "construction", "medecine", "science", "echecs"}
+// plWorldIDs are the twenty worlds of the contract (WorldId enum). A new child starts with all of them enabled.
+var plWorldIDs = []string{"nature", "espace", "cuisine", "sport", "construction", "medecine", "science", "echecs",
+	"ocean", "dinosaures", "animaux", "musique", "transport", "pirates", "marche", "meteo", "robots", "arts", "hiver", "jeux"}
 
 // plPinRe is the PIN format: exactly four digits.
 var plPinRe = regexp.MustCompile(`^[0-9]{4}$`)

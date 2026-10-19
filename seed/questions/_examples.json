@@ -1,0 +1,382 @@
+{
+  "world": "_examples",
+  "schema": 1,
+  "questions": [
+    {
+      "id": "cuisine.fournee.901", "quest": "cuisine.fournee", "skill": "ARI-OPE-A02c", "type": "numeric", "grade": 2, "difficulty": 2,
+      "story": {"fr": "Léa sort deux plaques de biscuits du four.", "en": "Lea takes two trays of cookies out of the oven."},
+      "prompt": {"fr": "Il y a 8 biscuits sur la première plaque et 7 sur la deuxième. Combien de biscuits en tout ?", "en": "There are 8 cookies on the first tray and 7 on the second. How many cookies in all?"},
+      "math_text": "8 + 7 = ?",
+      "answer": {"kind": "numeric", "value": 15, "calc": "8+7"},
+      "common_errors": [
+        {"value": 14, "misconception": "mis_off_by_one", "feedback": {"fr": "Presque ! Compte les deux plaques encore une fois.", "en": "Close! Count both trays once more."}},
+        {"value": 1, "misconception": "mis_subtract_instead_of_add", "feedback": {"fr": "Ici, on réunit les biscuits : on additionne.", "en": "Here we put the cookies together, so we add."}}
+      ],
+      "hint": {"fr": "Pars de 8 et avance de 7 pas.", "en": "Start at 8 and hop 7 steps."},
+      "explain": {"fr": "8 + 7 = 8 + 2 + 5, donc 10 + 5.", "en": "8 + 7 = 8 + 2 + 5, so 10 + 5."},
+      "tags": ["cookies", "add-within-20", "make-ten"],
+      "media": [{"role": "scene", "criteria": {"world": "cuisine", "topic": "baking", "kind": "photo"}}],
+      "status": "published", "author": "numerix-p2", "version": 1
+    },
+    {
+      "id": "cuisine.fournee.902", "quest": "cuisine.fournee", "skill": "ARI-OPE-A02c", "type": "numeric", "grade": 2, "difficulty": 2,
+      "story": {"fr": "Noah range des biscuits dans deux boîtes.", "en": "Noah puts cookies into two boxes."},
+      "prompt": {"fr": "Une boîte contient 7 biscuits et l’autre en contient 6. Combien en tout ?", "en": "One box holds 7 cookies and the other holds 6. How many in all?"},
+      "math_text": "7 + 6 = ?",
+      "answer": {"kind": "numeric", "value": 13, "calc": "7+6"},
+      "common_errors": [
+        {"value": 12, "misconception": "mis_off_by_one", "feedback": {"fr": "Presque ! Recompte les biscuits de la deuxième boîte.", "en": "Close! Count the cookies in the second box again."}},
+        {"value": 1, "misconception": "mis_subtract_instead_of_add", "feedback": {"fr": "On met les deux boîtes ensemble : on additionne.", "en": "We put both boxes together, so we add."}}
+      ],
+      "hint": {"fr": "Complète d’abord pour faire 10.", "en": "First fill up to make 10."},
+      "explain": {"fr": "7 + 6 = 7 + 3 + 3, donc 10 + 3.", "en": "7 + 6 = 7 + 3 + 3, so 10 + 3."},
+      "tags": ["cookies", "add-within-20"],
+      "status": "published", "author": "numerix-p2", "version": 1
+    },
+    {
+      "id": "cuisine.fournee.903", "quest": "cuisine.fournee", "skill": "ARI-OPE-A02c", "type": "numeric", "grade": 2, "difficulty": 3,
+      "story": {"fr": "Le four est plein de biscuits dorés.", "en": "The oven is full of golden cookies."},
+      "prompt": {"fr": "Une plaque a 9 biscuits et une autre en a 8. Combien en tout ?", "en": "One tray has 9 cookies and another has 8. How many in all?"},
+      "math_text": "9 + 8 = ?",
+      "answer": {"kind": "numeric", "value": 17, "calc": "9+8"},
+      "common_errors": [
+        {"value": 16, "misconception": "mis_off_by_one", "feedback": {"fr": "Presque ! Il manque un biscuit.", "en": "Close! One cookie is missing."}},
+        {"value": 1, "misconception": "mis_subtract_instead_of_add", "feedback": {"fr": "On réunit les plaques : on additionne.", "en": "We put the trays together, so we add."}}
+      ],
+      "hint": {"fr": "9 est tout près de 10.", "en": "9 is very close to 10."},
+      "explain": {"fr": "9 + 8 = 10 + 7, donc 17.", "en": "9 + 8 = 10 + 7, so 17."},
+      "tags": ["cookies", "add-within-20", "near-ten"],
+      "status": "published", "author": "numerix-p2", "version": 1
+    },
+    {
+      "id": "cuisine.fournee.904", "quest": "cuisine.fournee", "skill": "ARI-OPE-A02c", "type": "choice", "grade": 2, "difficulty": 2,
+      "story": {"fr": "Léa ajoute des biscuits sur une plaque.", "en": "Lea adds cookies to a tray."},
+      "prompt": {"fr": "La plaque a 8 biscuits et Léa en ajoute 6. Combien y en a-t-il maintenant ?", "en": "The tray has 8 cookies and Lea adds 6. How many are there now?"},
+      "choices": [
+        {"id": "a", "text": {"fr": "13", "en": "13"}, "misconception": "mis_off_by_one"},
+        {"id": "b", "text": {"fr": "14", "en": "14"}},
+        {"id": "c", "text": {"fr": "2", "en": "2"}, "misconception": "mis_subtract_instead_of_add"},
+        {"id": "d", "text": {"fr": "15", "en": "15"}, "misconception": "mis_off_by_one"}
+      ],
+      "answer": {"kind": "choice", "correct": "b", "calc_choice": {"b": "8+6"}},
+      "hint": {"fr": "Compte 6 pas à partir de 8.", "en": "Count 6 steps up from 8."},
+      "explain": {"fr": "8 + 6 = 8 + 2 + 4, donc 14.", "en": "8 + 6 = 8 + 2 + 4, so 14."},
+      "tags": ["cookies", "add-within-20"],
+      "status": "published", "author": "numerix-p2", "version": 1
+    },
+    {
+      "id": "cuisine.fournee.905", "quest": "cuisine.fournee", "skill": "ARI-OPE-A02c", "type": "choice", "grade": 2, "difficulty": 3,
+      "story": {"fr": "Noah compte les biscuits des deux plaques.", "en": "Noah counts the cookies on two trays."},
+      "prompt": {"fr": "Une plaque a 7 biscuits et l’autre en a 9. Combien en tout ?", "en": "One tray has 7 cookies and the other has 9. How many in all?"},
+      "choices": [
+        {"id": "a", "text": {"fr": "15", "en": "15"}, "misconception": "mis_off_by_one"},
+        {"id": "b", "text": {"fr": "16", "en": "16"}},
+        {"id": "c", "text": {"fr": "2", "en": "2"}, "misconception": "mis_subtract_instead_of_add"},
+        {"id": "d", "text": {"fr": "17", "en": "17"}, "misconception": "mis_off_by_one"}
+      ],
+      "answer": {"kind": "choice", "correct": "b", "calc_choice": {"b": "7+9"}},
+      "hint": {"fr": "Pense à 7 + 3, puis ajoute le reste.", "en": "Think 7 + 3 first, then add what is left."},
+      "explain": {"fr": "7 + 9 = 7 + 3 + 6, donc 10 + 6.", "en": "7 + 9 = 7 + 3 + 6, so 10 + 6."},
+      "tags": ["cookies", "add-within-20"],
+      "status": "published", "author": "numerix-p2", "version": 1
+    },
+    {
+      "id": "cuisine.fournee.906", "quest": "cuisine.fournee", "skill": "ARI-OPE-A02c", "type": "choice", "grade": 2, "difficulty": 1,
+      "story": {"fr": "Léa range des biscuits en rangées.", "en": "Lea lines up cookies in rows."},
+      "prompt": {"fr": "Une plaque a 6 biscuits et une autre a 6 biscuits. Combien en tout ?", "en": "One tray has 6 cookies and another has 6 cookies. How many in all?"},
+      "choices": [
+        {"id": "a", "text": {"fr": "11", "en": "11"}, "misconception": "mis_off_by_one"},
+        {"id": "b", "text": {"fr": "12", "en": "12"}},
+        {"id": "c", "text": {"fr": "0", "en": "0"}, "misconception": "mis_subtract_instead_of_add"},
+        {"id": "d", "text": {"fr": "66", "en": "66"}, "misconception": "mis_place_value"}
+      ],
+      "answer": {"kind": "choice", "correct": "b", "calc_choice": {"b": "6+6"}},
+      "hint": {"fr": "Double 6 : deux groupes de 6.", "en": "Double 6: two groups of 6."},
+      "explain": {"fr": "6 + 6 = 6 + 4 + 2, donc 10 + 2.", "en": "6 + 6 = 6 + 4 + 2, so 10 + 2."},
+      "tags": ["cookies", "doubles"],
+      "status": "published", "author": "numerix-p2", "version": 1
+    },
+    {
+      "id": "cuisine.fournee.907", "quest": "cuisine.fournee", "skill": "ARI-OPE-A02c", "type": "truefalse", "grade": 2, "difficulty": 3,
+      "story": {"fr": "Léa vérifie le compte de son ami.", "en": "Lea checks her friend’s count."},
+      "prompt": {"fr": "Noah dit que 8 + 7 donne 16. A-t-il raison ?", "en": "Noah says that 8 + 7 makes 16. Is he right?"},
+      "math_text": "8 + 7 = 16",
+      "answer": {"kind": "truefalse", "value": false, "misconception": "mis_off_by_one"},
+      "hint": {"fr": "Refais le calcul en partant de 8.", "en": "Do the sum again, starting at 8."},
+      "explain": {"fr": "8 + 7 = 15, pas 16.", "en": "8 + 7 = 15, not 16."},
+      "tags": ["true-false", "add-within-20"],
+      "status": "published", "author": "numerix-p2", "version": 1
+    },
+    {
+      "id": "cuisine.fournee.908", "quest": "cuisine.fournee", "skill": "ARI-OPE-A02c", "type": "truefalse", "grade": 2, "difficulty": 2,
+      "story": {"fr": "Léa compte des biscuits avec son ami.", "en": "Lea counts cookies with her friend."},
+      "prompt": {"fr": "Léa dit que 9 + 4 donne 13. A-t-elle raison ?", "en": "Lea says that 9 + 4 makes 13. Is she right?"},
+      "math_text": "9 + 4 = 13",
+      "answer": {"kind": "truefalse", "value": true},
+      "hint": {"fr": "Pars de 9, ajoute 1, puis 3.", "en": "Start at 9, add 1, then add 3."},
+      "explain": {"fr": "9 + 4 = 9 + 1 + 3, donc 13.", "en": "9 + 4 = 9 + 1 + 3, so 13."},
+      "tags": ["true-false", "add-within-20"],
+      "status": "published", "author": "numerix-p2", "version": 1
+    },
+    {
+      "id": "cuisine.fournee.909", "quest": "cuisine.fournee", "skill": "ARI-OPE-A02c", "type": "truefalse", "grade": 2, "difficulty": 3,
+      "story": {"fr": "Noah vérifie sa liste de biscuits.", "en": "Noah checks his cookie list."},
+      "prompt": {"fr": "Noah dit que 6 + 7 donne 14. A-t-il raison ?", "en": "Noah says that 6 + 7 makes 14. Is he right?"},
+      "math_text": "6 + 7 = 14",
+      "answer": {"kind": "truefalse", "value": false, "misconception": "mis_off_by_one"},
+      "hint": {"fr": "Pense au double de 6, puis ajoute 1.", "en": "Think of double 6, then add 1."},
+      "explain": {"fr": "6 + 7 = 13, pas 14.", "en": "6 + 7 = 13, not 14."},
+      "tags": ["true-false", "doubles-plus-one"],
+      "status": "published", "author": "numerix-p2", "version": 1
+    },
+    {
+      "id": "jeux.cartes.901", "quest": "jeux.cartes", "skill": "ARI-SEN-A08", "type": "order", "grade": 1, "difficulty": 1,
+      "story": {"fr": "Noah pioche trois cartes pour la partie.", "en": "Noah draws three cards for the game."},
+      "prompt": {"fr": "Range les cartes du plus petit au plus grand nombre.", "en": "Put the cards in order, from the smallest to the biggest number."},
+      "items": [
+        {"id": "a", "text": {"fr": "12", "en": "12"}, "key": "12"},
+        {"id": "b", "text": {"fr": "5", "en": "5"}, "key": "5"},
+        {"id": "c", "text": {"fr": "9", "en": "9"}, "key": "9"}
+      ],
+      "answer": {"kind": "order", "sequence": ["b", "c", "a"], "by": "asc", "misconception": "mis_order_reversed"},
+      "hint": {"fr": "Cherche d’abord le plus petit nombre.", "en": "First find the smallest number."},
+      "explain": {"fr": "5 est plus petit que 9, et 9 est plus petit que 12.", "en": "5 is smaller than 9, and 9 is smaller than 12."},
+      "tags": ["ordering", "cards"],
+      "status": "published", "author": "numerix-p2", "version": 1
+    },
+    {
+      "id": "jeux.cartes.902", "quest": "jeux.cartes", "skill": "ARI-SEN-A08", "type": "order", "grade": 1, "difficulty": 2,
+      "story": {"fr": "Léa pioche trois autres cartes.", "en": "Lea draws three more cards."},
+      "prompt": {"fr": "Range les cartes du plus grand au plus petit nombre.", "en": "Put the cards in order, from the biggest to the smallest number."},
+      "items": [
+        {"id": "a", "text": {"fr": "3", "en": "3"}, "key": "3"},
+        {"id": "b", "text": {"fr": "14", "en": "14"}, "key": "14"},
+        {"id": "c", "text": {"fr": "8", "en": "8"}, "key": "8"}
+      ],
+      "answer": {"kind": "order", "sequence": ["b", "c", "a"], "by": "desc", "misconception": "mis_order_reversed"},
+      "hint": {"fr": "Cherche d’abord le plus grand nombre.", "en": "First find the biggest number."},
+      "explain": {"fr": "14 est plus grand que 8, et 8 est plus grand que 3.", "en": "14 is bigger than 8, and 8 is bigger than 3."},
+      "tags": ["ordering", "cards"],
+      "status": "published", "author": "numerix-p2", "version": 1
+    },
+    {
+      "id": "espace.decompte.901", "quest": "espace.decompte", "skill": "ARI-SEN-A08", "type": "order", "grade": 2, "difficulty": 3,
+      "story": {"fr": "La fiche de lancement montre trois nombres.", "en": "The launch sheet shows three numbers."},
+      "prompt": {"fr": "Range les nombres du plus petit au plus grand.", "en": "Put the numbers in order, from the smallest to the biggest."},
+      "items": [
+        {"id": "a", "text": {"fr": "83", "en": "83"}, "key": "83"},
+        {"id": "b", "text": {"fr": "29", "en": "29"}, "key": "29"},
+        {"id": "c", "text": {"fr": "38", "en": "38"}, "key": "38"}
+      ],
+      "answer": {"kind": "order", "sequence": ["b", "c", "a"], "by": "asc", "misconception": "mis_digit_swap"},
+      "hint": {"fr": "Regarde d’abord le chiffre des dizaines.", "en": "Look at the tens digit first."},
+      "explain": {"fr": "29 a 2 dizaines, 38 a 3 dizaines et 83 a 8 dizaines.", "en": "29 has 2 tens, 38 has 3 tens and 83 has 8 tens."},
+      "tags": ["ordering", "tens"],
+      "status": "published", "author": "numerix-p2", "version": 1
+    },
+    {
+      "id": "construction.formes.901", "quest": "construction.formes", "skill": "GEO-C02", "type": "match", "grade": 1, "difficulty": 2,
+      "story": {"fr": "Léa classe les formes du plan de la cabane.", "en": "Lea sorts the shapes on the treehouse plan."},
+      "prompt": {"fr": "Relie chaque description à la bonne figure.", "en": "Match each description to the right shape."},
+      "items": {
+        "left": [
+          {"id": "l1", "text": {"fr": "3 côtés", "en": "3 sides"}},
+          {"id": "l2", "text": {"fr": "4 côtés égaux", "en": "4 equal sides"}},
+          {"id": "l3", "text": {"fr": "aucun côté droit", "en": "no straight side"}}
+        ],
+        "right": [
+          {"id": "r1", "text": {"fr": "carré", "en": "square"}},
+          {"id": "r2", "text": {"fr": "cercle", "en": "circle"}},
+          {"id": "r3", "text": {"fr": "triangle", "en": "triangle"}}
+        ]
+      },
+      "answer": {"kind": "match", "pairs": [["l1", "r3"], ["l2", "r1"], ["l3", "r2"]], "misconception": "mis_shape_name"},
+      "hint": {"fr": "Compte les côtés de chaque figure.", "en": "Count the sides of each shape."},
+      "explain": {"fr": "Le triangle a 3 côtés. Le carré a 4 côtés égaux. Le cercle est tout rond.", "en": "The triangle has 3 sides. The square has 4 equal sides. The circle is round."},
+      "tags": ["shapes", "matching"],
+      "status": "published", "author": "numerix-p2", "version": 1
+    },
+    {
+      "id": "arts.formes.901", "quest": "arts.formes", "skill": "GEO-C02", "type": "match", "grade": 1, "difficulty": 2,
+      "story": {"fr": "Dans l’atelier, Noah découpe des formes en papier.", "en": "In the studio, Noah cuts shapes out of paper."},
+      "prompt": {"fr": "Relie chaque objet à la figure qui lui ressemble.", "en": "Match each object to the shape it looks like."},
+      "items": {
+        "left": [
+          {"id": "l1", "text": {"fr": "une fenêtre", "en": "a window"}},
+          {"id": "l2", "text": {"fr": "une roue", "en": "a wheel"}},
+          {"id": "l3", "text": {"fr": "une pointe de pizza", "en": "a pizza slice"}}
+        ],
+        "right": [
+          {"id": "r1", "text": {"fr": "rectangle", "en": "rectangle"}},
+          {"id": "r2", "text": {"fr": "cercle", "en": "circle"}},
+          {"id": "r3", "text": {"fr": "triangle", "en": "triangle"}}
+        ]
+      },
+      "answer": {"kind": "match", "pairs": [["l1", "r1"], ["l2", "r2"], ["l3", "r3"]], "misconception": "mis_shape_name"},
+      "hint": {"fr": "Pense à la forme de chaque objet.", "en": "Think about the shape of each object."},
+      "explain": {"fr": "Une fenêtre est un rectangle. Une roue est un cercle. Une pointe de pizza est un triangle.", "en": "A window is a rectangle. A wheel is a circle. A pizza slice is a triangle."},
+      "tags": ["shapes", "matching", "everyday-objects"],
+      "status": "published", "author": "numerix-p2", "version": 1
+    },
+    {
+      "id": "dinosaures.os.901", "quest": "dinosaures.os", "skill": "ARI-SEN-A05", "type": "match", "grade": 1, "difficulty": 3,
+      "story": {"fr": "Léa classe les os du squelette par groupes.", "en": "Lea sorts the skeleton bones into groups."},
+      "prompt": {"fr": "Relie chaque nombre à la bonne addition.", "en": "Match each number to the right addition."},
+      "items": {
+        "left": [
+          {"id": "l7", "text": {"fr": "7", "en": "7"}},
+          {"id": "l8", "text": {"fr": "8", "en": "8"}},
+          {"id": "l9", "text": {"fr": "9", "en": "9"}}
+        ],
+        "right": [
+          {"id": "r1", "text": {"fr": "6 + 3", "en": "6 + 3"}},
+          {"id": "r2", "text": {"fr": "4 + 3", "en": "4 + 3"}},
+          {"id": "r3", "text": {"fr": "5 + 3", "en": "5 + 3"}}
+        ]
+      },
+      "answer": {"kind": "match", "pairs": [["l7", "r2"], ["l8", "r3"], ["l9", "r1"]], "misconception": "mis_match"},
+      "hint": {"fr": "Calcule chaque addition avant de relier.", "en": "Work out each addition before you match."},
+      "explain": {"fr": "4 + 3 = 7, 5 + 3 = 8 et 6 + 3 = 9.", "en": "4 + 3 = 7, 5 + 3 = 8 and 6 + 3 = 9."},
+      "tags": ["decomposing", "matching"],
+      "status": "published", "author": "numerix-p2", "version": 1
+    },
+    {
+      "id": "cuisine.fournee.910", "quest": "cuisine.fournee", "skill": "ARI-OPE-A02c", "type": "word", "grade": 2, "difficulty": 3,
+      "story": {"fr": "Léa prépare un goûter pour ses amis.", "en": "Lea makes a snack for her friends."},
+      "prompt": {"fr": "Elle met 5 biscuits au chocolat et 9 biscuits à l’avoine dans un plat. Combien de biscuits y a-t-il ?", "en": "She puts 5 chocolate cookies and 9 oat cookies on a plate. How many cookies are there?"},
+      "answer": {"kind": "numeric", "value": 14, "calc": "5+9"},
+      "common_errors": [
+        {"value": 13, "misconception": "mis_off_by_one", "feedback": {"fr": "Presque ! Recompte les biscuits à l’avoine.", "en": "Close! Count the oat cookies again."}},
+        {"value": 4, "misconception": "mis_subtract_instead_of_add", "feedback": {"fr": "Tous les biscuits vont dans le même plat : on additionne.", "en": "All the cookies go on the same plate, so we add."}}
+      ],
+      "hint": {"fr": "Commence par 9, le plus grand.", "en": "Start with 9, the bigger one."},
+      "explain": {"fr": "9 + 5 = 9 + 1 + 4, donc 14.", "en": "9 + 5 = 9 + 1 + 4, so 14."},
+      "tags": ["word-problem", "add-within-20"],
+      "status": "published", "author": "numerix-p2", "version": 1
+    },
+    {
+      "id": "cuisine.fournee.911", "quest": "cuisine.fournee", "skill": "ARI-OPE-A02c", "type": "word", "grade": 2, "difficulty": 3,
+      "story": {"fr": "Noah compte les biscuits avant la fête.", "en": "Noah counts the cookies before the party."},
+      "prompt": {"fr": "Il a 12 biscuits et il en mange 5. Combien lui en reste-t-il ?", "en": "He has 12 cookies and eats 5. How many does he have left?"},
+      "choices": [
+        {"id": "a", "text": {"fr": "7", "en": "7"}},
+        {"id": "b", "text": {"fr": "8", "en": "8"}, "misconception": "mis_off_by_one"},
+        {"id": "c", "text": {"fr": "17", "en": "17"}, "misconception": "mis_add_instead_of_subtract"},
+        {"id": "d", "text": {"fr": "6", "en": "6"}, "misconception": "mis_off_by_one"}
+      ],
+      "answer": {"kind": "choice", "correct": "a", "calc_choice": {"a": "12-5"}},
+      "hint": {"fr": "Enlève d’abord 2 pour arriver à 10.", "en": "First take away 2 to reach 10."},
+      "explain": {"fr": "12 - 5 = 12 - 2 - 3, donc 10 - 3.", "en": "12 - 5 = 12 - 2 - 3, so 10 - 3."},
+      "tags": ["word-problem", "subtract-within-20"],
+      "status": "published", "author": "numerix-p2", "version": 1
+    },
+    {
+      "id": "cuisine.fournee.912", "quest": "cuisine.fournee", "skill": "ARI-OPE-A02c", "type": "word", "grade": 2, "difficulty": 4,
+      "story": {"fr": "La boulangerie ouvre ses portes.", "en": "The bakery opens its doors."},
+      "prompt": {"fr": "La boulangère vend 8 biscuits le matin et 8 l’après-midi. Combien en vend-elle ?", "en": "The baker sells 8 cookies in the morning and 8 in the afternoon. How many does she sell?"},
+      "answer": {"kind": "numeric", "value": 16, "calc": "8+8"},
+      "common_errors": [
+        {"value": 15, "misconception": "mis_off_by_one", "feedback": {"fr": "Presque ! Il manque un biscuit.", "en": "Close! One cookie is missing."}},
+        {"value": 0, "misconception": "mis_subtract_instead_of_add", "feedback": {"fr": "Les deux ventes s’ajoutent.", "en": "Both sales add up."}}
+      ],
+      "hint": {"fr": "Pense au double de 8.", "en": "Think of double 8."},
+      "explain": {"fr": "Le double de 8, c’est 16.", "en": "Double 8 is 16."},
+      "tags": ["word-problem", "doubles"],
+      "status": "published", "author": "numerix-p2", "version": 1
+    },
+    {
+      "id": "nature.observer.901", "quest": "nature.observer", "skill": "STA-03a", "type": "visual", "grade": 1, "difficulty": 2,
+      "story": {"fr": "Noah observe les oiseaux au lever du soleil.", "en": "Noah watches the birds at sunrise."},
+      "prompt": {"fr": "Regarde le tableau d’images. Combien de mésanges Noah a-t-il vues ?", "en": "Look at the picture chart. How many chickadees did Noah see?"},
+      "visual": {"kind": "pictograph", "data": {"title": {"fr": "Oiseaux vus", "en": "Birds seen"}, "each": 1, "rows": [
+        {"label": {"fr": "mésange", "en": "chickadee"}, "count": 4},
+        {"label": {"fr": "geai bleu", "en": "blue jay"}, "count": 2},
+        {"label": {"fr": "cardinal", "en": "cardinal"}, "count": 3}
+      ]}},
+      "answer": {"kind": "numeric", "value": 4, "calc": "4"},
+      "common_errors": [
+        {"value": 2, "misconception": "mis_read_wrong_bar", "feedback": {"fr": "Tu as lu la ligne du geai bleu. Cherche la mésange.", "en": "You read the blue jay row. Look for the chickadee."}},
+        {"value": 3, "misconception": "mis_read_wrong_bar", "feedback": {"fr": "Tu as lu la ligne du cardinal. Cherche la mésange.", "en": "You read the cardinal row. Look for the chickadee."}}
+      ],
+      "hint": {"fr": "Compte les images de la ligne des mésanges.", "en": "Count the pictures in the chickadee row."},
+      "explain": {"fr": "La ligne des mésanges a 4 images.", "en": "The chickadee row has 4 pictures."},
+      "tags": ["pictograph", "birds"],
+      "media": [{"role": "scene", "criteria": {"world": "nature", "topic": "birds", "kind": "photo"}}],
+      "status": "published", "author": "numerix-p2", "version": 1
+    },
+    {
+      "id": "transport.gare.901", "quest": "transport.gare", "skill": "MES-G01", "type": "visual", "grade": 1, "difficulty": 2,
+      "story": {"fr": "Le train de Léa part bientôt.", "en": "Lea’s train leaves soon."},
+      "prompt": {"fr": "Regarde l’horloge de la gare. Quelle heure est-il ?", "en": "Look at the station clock. What time is it?"},
+      "visual": {"kind": "clock", "data": {"hour": 3, "minute": 0}},
+      "choices": [
+        {"id": "a", "text": {"fr": "12 h", "en": "12 o’clock"}, "misconception": "mis_clock_hands"},
+        {"id": "b", "text": {"fr": "3 h", "en": "3 o’clock"}},
+        {"id": "c", "text": {"fr": "6 h", "en": "6 o’clock"}, "misconception": "mis_clock_hands"},
+        {"id": "d", "text": {"fr": "3 h 15", "en": "3:15"}, "random": true}
+      ],
+      "answer": {"kind": "choice", "correct": "b"},
+      "hint": {"fr": "La petite aiguille montre l’heure.", "en": "The short hand shows the hour."},
+      "explain": {"fr": "La petite aiguille est sur le 3. La grande est sur le 12.", "en": "The short hand is on the 3. The long hand is on the 12."},
+      "tags": ["clock", "time"],
+      "status": "published", "author": "numerix-p2", "version": 1
+    },
+    {
+      "id": "ocean.profondeur.901", "quest": "ocean.profondeur", "skill": "ARI-SEN-A10", "type": "visual", "grade": 1, "difficulty": 3,
+      "story": {"fr": "Le plongeur descend le long de la corde.", "en": "The diver goes down along the rope."},
+      "prompt": {"fr": "Quel nombre la flèche montre-t-elle sur la droite numérique ?", "en": "Which number does the arrow show on the number line?"},
+      "visual": {"kind": "numberline", "data": {"min": 0, "max": 20, "step": 1, "labels": [0, 5, 10, 15, 20], "arrow": 14}},
+      "answer": {"kind": "numeric", "value": 14, "calc": "14"},
+      "common_errors": [
+        {"value": 13, "misconception": "mis_off_by_one", "feedback": {"fr": "Presque ! Compte bien les petits traits.", "en": "Close! Count the small marks carefully."}},
+        {"value": 15, "misconception": "mis_read_scale", "feedback": {"fr": "15 est le trait marqué le plus proche. Compte depuis 10.", "en": "15 is the nearest labelled mark. Count up from 10."}}
+      ],
+      "hint": {"fr": "Compte les petits traits depuis 10.", "en": "Count the small marks from 10."},
+      "explain": {"fr": "La flèche est 4 traits après 10.", "en": "The arrow is 4 marks after 10."},
+      "tags": ["number-line", "depth"],
+      "status": "published", "author": "numerix-p2", "version": 1
+    },
+    {
+      "id": "espace.distances.901", "quest": "espace.distances", "skill": "ARI-OPE-A01a", "type": "estimate", "grade": 3, "difficulty": 3,
+      "story": {"fr": "La mission spatiale se fait en deux étapes.", "en": "The space mission has two stages."},
+      "prompt": {"fr": "Une étape fait 198 km et l’autre fait 203 km. Environ combien de km en tout ?", "en": "One stage is 198 km long and the other is 203 km. About how many km in all?"},
+      "answer": {"kind": "range", "min": 380, "max": 420, "exact_for_check": 401, "calc": "198+203"},
+      "common_errors": [
+        {"value": 301, "misconception": "mis_estimate_rounding", "feedback": {"fr": "Tu as arrondi à la mauvaise centaine.", "en": "You rounded to the wrong hundred."}}
+      ],
+      "hint": {"fr": "Arrondis chaque nombre à la centaine.", "en": "Round each number to the nearest hundred."},
+      "explain": {"fr": "200 + 200 = 400, donc environ 400.", "en": "200 + 200 = 400, so about 400."},
+      "tags": ["estimation", "rounding"],
+      "status": "published", "author": "numerix-p2", "version": 1
+    },
+    {
+      "id": "espace.distances.902", "quest": "espace.distances", "skill": "ARI-OPE-A01a", "type": "estimate", "grade": 3, "difficulty": 3,
+      "story": {"fr": "L’équipage prépare le prochain voyage.", "en": "The crew plans the next trip."},
+      "prompt": {"fr": "Quelle est la meilleure estimation de 497 + 304 ?", "en": "Which is the best estimate of 497 + 304?"},
+      "choices": [
+        {"id": "a", "text": {"fr": "700", "en": "700"}, "misconception": "mis_estimate_rounding"},
+        {"id": "b", "text": {"fr": "800", "en": "800"}},
+        {"id": "c", "text": {"fr": "1 200", "en": "1,200"}, "misconception": "mis_estimate_rounding"},
+        {"id": "d", "text": {"fr": "200", "en": "200"}, "misconception": "mis_subtract_instead_of_add"}
+      ],
+      "answer": {"kind": "choice", "correct": "b", "calc_choice": {"b": "500+300"}},
+      "hint": {"fr": "Arrondis chaque nombre à la centaine la plus proche.", "en": "Round each number to the nearest hundred."},
+      "explain": {"fr": "497 devient 500 et 304 devient 300, donc environ 800.", "en": "497 becomes 500 and 304 becomes 300, so about 800."},
+      "tags": ["estimation", "rounding"],
+      "status": "published", "author": "numerix-p2", "version": 1
+    },
+    {
+      "id": "marche.panier.901", "quest": "marche.panier", "skill": "ARI-OPE-A01a", "type": "estimate", "grade": 2, "difficulty": 2,
+      "story": {"fr": "Léa fait les courses avec son papa.", "en": "Lea shops with her dad."},
+      "prompt": {"fr": "Léa achète des fruits à 19 $ et du fromage à 31 $. Environ combien en tout ?", "en": "Lea buys fruit for $19 and cheese for $31. About how much in all?"},
+      "answer": {"kind": "range", "min": 45, "max": 55, "exact_for_check": 50, "calc": "19+31"},
+      "common_errors": [
+        {"value": 12, "misconception": "mis_subtract_instead_of_add", "feedback": {"fr": "On additionne les deux achats.", "en": "We add the two purchases."}}
+      ],
+      "hint": {"fr": "Arrondis 19 à 20 et 31 à 30.", "en": "Round 19 to 20 and 31 to 30."},
+      "explain": {"fr": "20 + 30 = 50, donc environ 50 $.", "en": "20 + 30 = 50, so about $50."},
+      "tags": ["estimation", "money"],
+      "status": "published", "author": "numerix-p2", "version": 1
+    }
+  ]
+}

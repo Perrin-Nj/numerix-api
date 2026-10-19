@@ -49,6 +49,8 @@ func ruleFor(opID string, method string) rule {
 		return rule{byPrincipal, 10, time.Minute}
 	case "NextBeat", "AnswerBeat", "StreamNarration":
 		return rule{bySession, 30, time.Minute}
+	case "GetAsset":
+		return rule{byIP, 1200, time.Minute} // a world page loads many images; they are cached for a year after the first load
 	case "GetFeed", "ReactToFeedItem", "AnswerFeedPuzzle":
 		return rule{byPrincipal, 60, time.Minute}
 	case "SubscribePush", "CheckoutSubscription":

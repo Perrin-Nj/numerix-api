@@ -298,7 +298,7 @@ func TestGiftHomeAndQuest(t *testing.T) {
 		t.Fatalf("feature off must be 404, got %d", code)
 	}
 	_, home := f.call(t, "GET", "/v1/children/11111111-1111-4111-8111-111111111111/home", f.childTok, "")
-	if home["gift_available"] != false || home["active_challenges"] != 7.0 || len(home["worlds"].([]any)) != 8 {
+	if home["gift_available"] != false || home["active_challenges"] != 7.0 || len(home["worlds"].([]any)) != 20 {
 		t.Fatalf("home with the gift off: %v", home)
 	}
 	if sg := home["suggested"].(map[string]any); sg["world"] != "echecs" || sg["skill_id"] != "ARI-OPE-A06a" {

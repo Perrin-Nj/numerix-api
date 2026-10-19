@@ -4,8 +4,8 @@ info:
   version: 0.1.0
   summary: Contract between the Next.js app and the Numerix backend.
   description: |
-    Source of truth for the frontend and the backend. TypeScript types and the
-    mock server are generated from this file; the FastAPI service is checked
+    Source of truth for the frontend and the backend. TypeScript types are
+    generated from this file; the Go API (`../numerix-api`) is the reference server and is checked
     against it.
 
     **The one rule (see docs/NUMERIX_CONTEXT.md):** the LLM never does math.
@@ -38,12 +38,11 @@ info:
     - `Idempotency-Key` is required on `startSession`, `nextBeat` and `answerBeat`.
     - Dates are ISO 8601 UTC. Ids are UUID v4 unless noted (feed items and notifications use opaque strings).
     - Cursor lists answer `{items, next_cursor}`; `next_cursor` is null at the end.
-    - Optional request header `x-card-threshold-pct` (0 to 100) is honoured by the mock only.
 servers:
   - url: http://localhost:8000/v1
     description: Local development
   - url: http://localhost:8081/v1
-    description: Numerix mock (node, same behaviour as WireMock)
+    description: Numerix Go API
 tags:
   - name: Auth
   - name: Children
@@ -337,7 +336,7 @@ paths:
       description: |
         Returns a child-scoped token. A PIN is required if the profile has one (403 `invalid_pin`). The backend
         should also refuse with 403 `consent_missing` while the parent has not consented; the profile picker
-        handles that answer (the mock still issues the token and refuses at session start).
+        handles that answer (refusal at session start is the second line of defence).
       requestBody:
         content:
           application/json:
@@ -458,7 +457,7 @@ paths:
       tags:
         - Catalog
       operationId: listWorlds
-      summary: The eight story worlds
+      summary: The twenty story worlds
       x-roles:
         - parent
         - child
@@ -508,7 +507,7 @@ paths:
             maximum: 4
         - name: implemented
           in: query
-          description: Only skills that have a generator today (8 of 75)
+          description: Only skills that can be played today (a generator exists or at least 8 published bank questions)
           schema:
             type: boolean
       responses:
@@ -780,6 +779,51 @@ paths:
                 $ref: '#/components/schemas/Problem'
         '422':
           $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /sessions/{sessionId}/beats/{beatId}/hint:
+    parameters:
+      - $ref: '#/components/parameters/SessionId'
+      - $ref: '#/components/parameters/BeatId'
+    post:
+      tags:
+        - Sessions
+      operationId: requestHint
+      summary: Ask for the hint of the open question (BE-70)
+      x-roles:
+        - child
+      description: |
+        Curated questions carry a written hint that guides without giving the answer. Only available while the beat
+        is unanswered (409 `beat_answered` afterwards) and when `Question.hint_available` is true (404 otherwise).
+        Asking never changes the verdict or the mastery estimate today; the client may show a softer mascot pose.
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+      responses:
+        '200':
+          description: The hint text
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - hint
+                properties:
+                  hint:
+                    type: string
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          description: This beat was already answered
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
         '429':
           $ref: '#/components/responses/RateLimited'
         '500':
@@ -1449,7 +1493,7 @@ paths:
       tags:
         - Parent
       operationId: checkoutSubscription
-      summary: Start a paid plan (BE-24). The real backend returns the processor's hosted page URL; the mock completes instantly.
+      summary: Start a paid plan (BE-24). The real backend returns the processor's hosted page URL; development completes instantly.
       description: |
         Idempotent: the client sends `Idempotency-Key`; a retry with the same key returns the same
         `checkout_url` (or the same activated subscription) and never creates a second checkout.
@@ -1488,14 +1532,14 @@ paths:
             format: uuid
       responses:
         '200':
-          description: Subscription after checkout (mock), or the current subscription plus `checkout_url` (processor)
+          description: Subscription after checkout (instant in development), or the current subscription plus `checkout_url` (processor)
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/CheckoutResult'
               examples:
                 instant:
-                  summary: Mock, completed at once
+                  summary: Completed at once (development)
                   value:
                     status: active
                     plan: family_monthly
@@ -2198,6 +2242,90 @@ paths:
           $ref: '#/components/responses/RateLimited'
         '500':
           $ref: '#/components/responses/ServerError'
+  /assets/{file}:
+    get:
+      tags:
+        - Catalog
+      operationId: getAsset
+      summary: One image (CR-17, BE-71)
+      security: []
+      description: |
+        `a_<20 hex>.webp` is the widest variant, `a_<20 hex>-<w>.webp` the variant of width `w` (a `MediaRef.srcset`
+        entry). The id is a hash of the image, so the answer never changes: `Cache-Control: public, max-age=31536000,
+        immutable`, a strong `ETag`, and 304 for `If-None-Match`. Unknown, unapproved or unsafe assets are 404.
+        In the web app this path is rewritten from `/assets/*` so the browser and the CDN see the immutable headers.
+      parameters:
+        - name: file
+          in: path
+          required: true
+          schema:
+            type: string
+            pattern: ^a_[0-9a-f]{20}(-[0-9]+)?\.webp$
+        - name: If-None-Match
+          in: header
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The image
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
+          content:
+            image/webp:
+              schema:
+                type: string
+                format: binary
+        '304':
+          description: Not modified
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /credits:
+    get:
+      tags:
+        - Catalog
+      operationId: listCredits
+      summary: Attributions required by the images in use (CR-17)
+      security: []
+      description: One entry per approved image whose licence asks for a credit. Printed on the credits page of the parent area.
+      responses:
+        '200':
+          description: Credits
+          headers:
+            Cache-Control:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - items
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/CreditItem'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
   /health:
     get:
       tags:
@@ -2534,6 +2662,10 @@ components:
             detail: Your family's subscription is paused.
     WorldId:
       type: string
+      description: |
+        The twenty story worlds. The first eight are the original worlds; the other twelve came with the question bank
+        (CR-11). A client must treat an id it does not know as a generic world (accent colour and name come from
+        `GET /worlds`), so a new world never needs a release.
       enum:
         - nature
         - espace
@@ -2543,6 +2675,18 @@ components:
         - medecine
         - science
         - echecs
+        - ocean
+        - dinosaures
+        - animaux
+        - musique
+        - transport
+        - pirates
+        - marche
+        - meteo
+        - robots
+        - arts
+        - hiver
+        - jeux
     SkillId:
       type: string
       description: PDA skill id from the curriculum graph
@@ -2552,12 +2696,119 @@ components:
         - type: integer
         - type: number
         - type: string
+        - type: boolean
         - type: array
           minItems: 2
           maxItems: 2
           items:
             type: integer
+        - type: array
+          items:
+            type: string
+        - type: array
+          items:
+            type: array
+            minItems: 2
+            maxItems: 2
+            items:
+              type: string
       example: 48
+    MediaRef:
+      type: object
+      required:
+        - id
+        - alt
+        - width
+        - height
+        - color
+        - lqip
+        - srcset
+      properties:
+        id:
+          type: string
+          example: a_3f9c0b7e21d4a85c6e10
+        alt:
+          type: string
+          description: Describes what is visible
+          in the request language. Never hints at an answer.: null
+        width:
+          type: integer
+          description: Width of the largest variant
+        height:
+          type: integer
+        color:
+          type: string
+          pattern: ^#[0-9a-fA-F]{6}$
+          description: Dominant colour
+          use it as the background while loading: null
+        lqip:
+          type: string
+          description: 'Tiny blurred preview as a data: URI (webp)'
+        srcset:
+          type: array
+          items:
+            type: object
+            required:
+              - w
+              - url
+            properties:
+              w:
+                type: integer
+              url:
+                type: string
+                description: Path under the asset base (default /assets), for example /assets/a_3f9c0b7e21d4a85c6e10-960.webp
+        credit:
+          description: Present when the licence asks for attribution. Show it near the image or on the credits page.
+          allOf:
+            - $ref: '#/components/schemas/MediaCredit'
+    MediaCredit:
+      type: object
+      required:
+        - text
+        - licence
+      properties:
+        text:
+          type: string
+          example: Photo by Jane Doe on Pexels
+        source_url:
+          type: string
+        licence:
+          type: string
+          example: PEXELS
+        licence_url:
+          type: string
+    QuestionMedia:
+      type: object
+      required:
+        - role
+        - image
+      properties:
+        role:
+          type: string
+          description: scene, object, visual or choice:<id>
+        image:
+          $ref: '#/components/schemas/MediaRef'
+    CreditItem:
+      type: object
+      required:
+        - id
+        - url
+        - text
+        - licence
+      properties:
+        id:
+          type: string
+        url:
+          type: string
+          description: Thumbnail path
+        text:
+          type: string
+        source_url:
+          type: string
+        licence:
+          type: string
+        licence_url:
+          type: string
     RegisterRequest:
       type: object
       required:
@@ -3170,7 +3421,7 @@ components:
           type: string
         image_url:
           type: string
-          description: Empty until real art exists; the app then shows its placeholder art
+          description: Path of the hero image (largest variant). Empty when the world has no approved hero yet; the app then draws a gradient from accent_color
         accent_color:
           type: string
           pattern: ^#[0-9a-fA-F]{6}$
@@ -3179,6 +3430,24 @@ components:
           description: One short teaser line shown on the home feed
         skill_count:
           type: integer
+        grade_min:
+          type: integer
+          minimum: 1
+          maximum: 6
+          description: First school year the world serves (CR-12)
+        grade_max:
+          type: integer
+          minimum: 1
+          maximum: 6
+        hero:
+          description: Hero image with its responsive sizes (CR-12). Absent when the world has no approved hero yet.
+          allOf:
+            - $ref: '#/components/schemas/MediaRef'
+        scenes:
+          type: array
+          description: A few scene images of the world for the world page (CR-12). Empty until art is approved.
+          items:
+            $ref: '#/components/schemas/MediaRef'
     Skill:
       type: object
       required:
@@ -3216,7 +3485,7 @@ components:
             $ref: '#/components/schemas/WorldId'
         implemented:
           type: boolean
-          description: A generator exists for this skill today
+          description: The skill can be played today - a generator exists or at least 8 published bank questions exist in some quest
     NodeState:
       type: string
       enum:
@@ -3262,6 +3531,31 @@ components:
           type: string
           format: date-time
           nullable: true
+        quest:
+          description: The quest this node belongs to in the world (CR-18). Absent for skills played through a generator only.
+          allOf:
+            - $ref: '#/components/schemas/JourneyQuest'
+        media:
+          description: Icon of the quest when one is approved (CR-18)
+          allOf:
+            - $ref: '#/components/schemas/MediaRef'
+    JourneyQuest:
+      type: object
+      required:
+        - id
+        - name
+        - goal
+      properties:
+        id:
+          type: string
+          example: cuisine.fournee
+        name:
+          type: string
+          example: La fournée de biscuits
+        goal:
+          type: string
+          description: What the child practises
+          in the request language: null
     Journey:
       type: object
       required:
@@ -3481,17 +3775,103 @@ components:
       required:
         - math_text
         - choices
-      description: Built by the engine. Never contains the correct answer on its own.
+      description: |
+        Built by the engine or taken from the curated bank. Never contains the correct answer on its own, nor the
+        explanation, the `calc` expression, the common errors or any misconception code (BE-67).
+        A client that only knows `math_text` and four `choices` keeps working: generated questions are unchanged and
+        curated questions fill `math_text` with the statement. `kind` tells which input to show:
+        `numeric` (keypad; the answer may be [quotient, remainder] for a division with remainder), `choice` (2 to 5 cards,
+        answer = the value of the chosen card), `truefalse` (two buttons, answer = boolean), `order` (answer = item ids
+        in order), `match` (answer = [left id, right id] pairs), `word` and `visual` (numeric or choice), `estimate`
+        (a number inside a range, or choice). An unknown `kind` should be shown as a numeric entry.
       properties:
+        kind:
+          $ref: '#/components/schemas/QuestionKind'
         math_text:
           type: string
           example: 340 ÷ 7 = ? (avec reste)
+          description: Language neutral statement; for curated questions without one, the prompt text
         choices:
           type: array
-          minItems: 4
-          maxItems: 4
+          minItems: 0
+          maxItems: 5
+          description: Generated questions always send 4. Curated `choice`/`estimate` questions send 3 to 5; other kinds send none (CR-13).
           items:
             $ref: '#/components/schemas/AnswerValue'
+        prompt:
+          type: string
+          description: What to answer
+          in the request language (curated questions): null
+        story:
+          type: string
+          description: Short story line of the question (curated questions); also the scene text
+        items:
+          $ref: '#/components/schemas/QuestionItems'
+        visual:
+          $ref: '#/components/schemas/QuestionVisual'
+        media:
+          type: array
+          items:
+            $ref: '#/components/schemas/QuestionMedia'
+        hint_available:
+          type: boolean
+          description: True when POST .../hint will answer (BE-70)
+    QuestionKind:
+      type: string
+      enum:
+        - numeric
+        - choice
+        - truefalse
+        - order
+        - match
+        - word
+        - visual
+        - estimate
+    QuestionItem:
+      type: object
+      required:
+        - id
+        - text
+      properties:
+        id:
+          type: string
+        text:
+          type: string
+    QuestionItems:
+      type: object
+      description: Cards for `order` (`cards`, shown in a shuffled order) or the two columns of `match`.
+      properties:
+        cards:
+          type: array
+          items:
+            $ref: '#/components/schemas/QuestionItem'
+        left:
+          type: array
+          items:
+            $ref: '#/components/schemas/QuestionItem'
+        right:
+          type: array
+          items:
+            $ref: '#/components/schemas/QuestionItem'
+    QuestionVisual:
+      type: object
+      required:
+        - kind
+      description: Data for a picture the child reads (see seed/README.md in numerix-api for each data shape). No pixels, no answer.
+      properties:
+        kind:
+          type: string
+          enum:
+            - bars
+            - pictograph
+            - clock
+            - numberline
+            - grid
+            - fraction
+            - dice
+        data:
+          type: object
+          additionalProperties: true
     NarrationStatus:
       type: string
       enum:
@@ -3503,6 +3883,9 @@ components:
       type: object
       required:
         - status
+      description: |
+        For a curated question the beat's `scene` is `ready` at once with the question's own story text and no model is
+        called (CR-15); the narration stream then replays the same text. Generated questions keep the pending flow.
       properties:
         status:
           $ref: '#/components/schemas/NarrationStatus'
@@ -3610,6 +3993,18 @@ components:
           $ref: '#/components/schemas/Outcome'
         correct_answer:
           $ref: '#/components/schemas/AnswerValue'
+        explain:
+          type: string
+          description: 'Curated questions only (BE-69): how to solve it, in the request language. Shown after answering, never before.'
+          nullable: true
+        misconception:
+          type: string
+          description: 'Curated questions only (BE-69): the matched typical error code when `outcome` is erreur_typique. For analytics and parent reports, not for display.'
+          nullable: true
+        feedback:
+          type: string
+          description: 'Curated questions only: the kind message written for the matched common error, when there is one.'
+          nullable: true
         denouement:
           $ref: '#/components/schemas/Narration'
         session:
@@ -3928,7 +4323,7 @@ components:
               type: integer
         minutes_today:
           type: integer
-          description: Active play minutes today in the child time zone. The kid home needs it for the time-limit reminder; in local mode it is derived on the device.
+          description: Active play minutes today in the child time zone. The kid home needs it for the time-limit reminder; computed by the server.
         last_played_at:
           type: string
           format: date-time
@@ -3993,7 +4388,7 @@ components:
             - true
         generated_by:
           type: string
-          example: mock
+          example: pip
         author:
           type: object
           description: The storyteller persona that "wrote" the item (an AI character, never a real person).

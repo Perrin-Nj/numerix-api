@@ -405,13 +405,15 @@ func (s *Server) GetHome(ctx context.Context, req api.GetHomeRequestObject) (api
 	skill := (*quest.SkillIds)[0]
 	h.Suggested.SkillId = &skill
 	h.Suggested.Label = map[bool]string{true: "Continue the adventure", false: "Continue l’aventure"}[en]
-	for _, w := range feedWorlds {
-		name, hook := w.FR, w.HookFR
-		if en {
-			name, hook = w.EN, w.HookEN
-		}
-		h.Worlds = append(h.Worlds, api.World{Id: w.ID, Name: name, Tagline: name, ImageUrl: "", AccentColor: w.Color, Hook: &hook, SkillCount: w.SkillCount})
+	homeLang := "fr"
+	if en {
+		homeLang = "en"
 	}
+	worlds, werr := s.worldViews(ctx, homeLang)
+	if werr != nil {
+		return nil, werr
+	}
+	h.Worlds = append(h.Worlds, worlds...)
 	gift := false
 	if s.Config.FeatureWelcomeGift {
 		var n int

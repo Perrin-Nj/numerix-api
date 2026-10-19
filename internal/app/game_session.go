@@ -63,9 +63,12 @@ func (s *Server) StartSession(ctx context.Context, req api.StartSessionRequestOb
 	}
 	g := s.game()
 	world := string(req.Body.World)
-	if len(g.graph.ByWorld(world)) == 0 {
+	if ok, werr := s.worldExists(ctx, world); werr != nil {
+		return nil, werr
+	} else if !ok {
 		return nil, httpapi.Validation(plField("world", "unknown world"))
 	}
+	s.syncBank(ctx) // fresh view of which skills have bank questions
 	lang := gameLang(req.Params.AcceptLanguage, c.Locale)
 	idem := plUID(req.Params.IdempotencyKey)
 	// a retry with the same Idempotency-Key returns the session created the first time
@@ -82,7 +85,7 @@ func (s *Server) StartSession(ctx context.Context, req api.StartSessionRequestOb
 	skill, reason := "", "choisie"
 	if req.Body.SkillId != nil {
 		sk, gerr := g.graph.Get(*req.Body.SkillId)
-		if gerr != nil || !sk.Implementation {
+		if gerr != nil || !g.graph.PlayableIn(world, sk.ID) {
 			return nil, httpapi.Validation(plField("skill_id", "unknown or not available yet"))
 		}
 		skill = sk.ID
@@ -224,6 +227,13 @@ func (s *Server) beatView(ctx context.Context, b beatRow, lang string) (api.Beat
 	q, err := loadQuestion(ctx, s.Store.R, b.QuestionID)
 	if err != nil {
 		return api.Beat{}, s.plInternalErr(ctx, "load question", err)
+	}
+	if len(q.Problem.Curated) > 0 { // a question from the bank: its own story, options and pictures
+		cq, cerr := s.curatedOf(&q.Problem)
+		if cerr != nil {
+			return api.Beat{}, s.plInternalErr(ctx, "decode curated question", cerr)
+		}
+		return s.curatedBeatView(ctx, b, cq, lang)
 	}
 	choices := make([]api.AnswerValue, len(q.Problem.Choix))
 	for i, c := range q.Problem.Choix {
@@ -396,7 +406,7 @@ func (s *Server) NextBeat(ctx context.Context, req api.NextBeatRequestObject) (a
 		}
 		var last string
 		_ = tx.QueryRowContext(ctx, `SELECT COALESCE(json_extract(json,'$.shape'),'') FROM beats WHERE session_id = ? ORDER BY idx DESC LIMIT 1`, r.ID).Scan(&last)
-		qid, shape, e := s.pickQuestion(ctx, tx, r.ChildID, r.Data.Skill, last)
+		qid, shape, e := s.pickQuestion(ctx, tx, r.ChildID, r.World, r.Data.Skill, gradeOf(c), last)
 		if e != nil {
 			return e
 		}
@@ -430,60 +440,27 @@ func paramsHash(skill, statement string) string {
 	return hex.EncodeToString(sum[:])
 }
 
-// pickQuestion is the question-bank selection, run inside ONE write transaction:
-//  1. take a bank question this child has not been served, whose shape differs from the previous beat;
-//  2. otherwise generate one (also unserved and of another shape) and insert it, ON CONFLICT DO NOTHING;
-//  3. last resort when the child has seen everything: re-serve the least recent one of another shape;
+// pickQuestion is the question selection, run inside ONE write transaction:
+//  0. the curated bank is primary: the best published question of this quest (world + skill) the child has not been
+//     served, by child grade, target difficulty and a different type than the previous beat (pickCurated);
+//  1. only when the child exhausted the bank (or the skill has none): the generator, via a cache of generated
+//     questions, a fresh draw, or as the last resort the oldest question re-served (pickGenerated);
 //
 // then record "served" in child_questions. SQLite has a single writer, so no SKIP LOCKED is needed
 // (Postgres would use FOR UPDATE SKIP LOCKED here).
-func (s *Server) pickQuestion(ctx context.Context, tx *sql.Tx, childID, skill, avoidShape string) (id, shape string, err error) {
-	g := s.game()
-	now := plTS(g.now())
-	// 1. bank first
-	err = tx.QueryRowContext(ctx, `SELECT q.id, q.shape FROM questions q
-		WHERE q.skill_id = ? AND (? = '' OR q.shape <> ?)
-		  AND NOT EXISTS (SELECT 1 FROM child_questions cq WHERE cq.child_id = ? AND cq.question_id = q.id)
-		ORDER BY q.served_count ASC, RANDOM() LIMIT 1`, skill, avoidShape, avoidShape, childID).Scan(&id, &shape)
-	if err != nil && !errors.Is(err, sql.ErrNoRows) {
+func (s *Server) pickQuestion(ctx context.Context, tx *sql.Tx, childID, world, skill string, grade int, avoidShape string) (id, shape string, err error) {
+	now := plTS(s.game().now())
+	id, shape, curated, err := s.pickCurated(ctx, tx, childID, world, skill, grade, avoidShape)
+	if err != nil {
 		return "", "", err
 	}
-	if errors.Is(err, sql.ErrNoRows) {
-		// 2. generate a fresh question
-		served := func(p *engine.Problem) bool { // accept only statements this child has not seen
-			var one int
-			e := tx.QueryRowContext(ctx, `SELECT 1 FROM questions q JOIN child_questions cq ON cq.question_id = q.id
-				WHERE q.params_hash = ? AND cq.child_id = ?`, paramsHash(skill, p.EnonceMath), childID).Scan(&one)
-			return errors.Is(e, sql.ErrNoRows)
+	if !curated {
+		var reserved bool
+		if id, shape, reserved, err = s.pickGenerated(ctx, tx, childID, world, skill, avoidShape, now); err != nil {
+			return "", "", err
 		}
-		p, gerr := g.graph.GenerateFresh(skill, engine.NewRNG(g.seed()), avoidShape, served)
-		if gerr == nil {
-			raw, merr := json.Marshal(p)
-			if merr != nil {
-				return "", "", merr
-			}
-			if _, err = tx.ExecContext(ctx, `INSERT INTO questions (id, params_hash, skill_id, json, shape) VALUES (?, ?, ?, ?, ?)
-				ON CONFLICT(params_hash) DO NOTHING`, newID(), paramsHash(skill, p.EnonceMath), skill, string(raw), p.Shape); err != nil {
-				return "", "", err
-			}
-			if err = tx.QueryRowContext(ctx, `SELECT id, shape FROM questions WHERE params_hash = ?`, paramsHash(skill, p.EnonceMath)).Scan(&id, &shape); err != nil {
-				return "", "", err
-			}
-		} else if errors.Is(gerr, engine.ErrNoFreshProblem) {
-			// 3. everything seen: re-serve the oldest one, preferring another shape
-			err = tx.QueryRowContext(ctx, `SELECT q.id, q.shape FROM questions q JOIN child_questions cq ON cq.question_id = q.id
-				WHERE q.skill_id = ? AND cq.child_id = ? ORDER BY (q.shape = ?), cq.served_at ASC LIMIT 1`, skill, childID, avoidShape).Scan(&id, &shape)
-			if err != nil {
-				return "", "", err
-			}
-			_, err = tx.ExecContext(ctx, `UPDATE child_questions SET served_at = ? WHERE child_id = ? AND question_id = ?`, now, childID, id)
-			if err != nil {
-				return "", "", err
-			}
-			_, err = tx.ExecContext(ctx, `UPDATE questions SET served_count = served_count + 1 WHERE id = ?`, id)
-			return id, shape, err
-		} else {
-			return "", "", gerr
+		if reserved { // a question the child already saw was served again; its record is updated
+			return id, shape, nil
 		}
 	}
 	// record "served": the primary key (child_id, question_id) is the safety net against double serving
@@ -494,4 +471,58 @@ func (s *Server) pickQuestion(ctx context.Context, tx *sql.Tx, childID, skill, a
 		return "", "", err
 	}
 	return id, shape, nil
+}
+
+// pickGenerated is the generator side of pickQuestion. reserved is true when it re-served an old question.
+func (s *Server) pickGenerated(ctx context.Context, tx *sql.Tx, childID, world, skill, avoidShape, now string) (id, shape string, reserved bool, err error) {
+	g := s.game()
+	// 1. a generated question stored earlier that this child has not seen, of another shape than the last beat
+	err = tx.QueryRowContext(ctx, `SELECT q.id, q.shape FROM questions q
+		WHERE q.skill_id = ? AND q.origin = 'generated' AND (? = '' OR q.shape <> ?)
+		  AND NOT EXISTS (SELECT 1 FROM child_questions cq WHERE cq.child_id = ? AND cq.question_id = q.id)
+		ORDER BY q.served_count ASC, RANDOM() LIMIT 1`, skill, avoidShape, avoidShape, childID).Scan(&id, &shape)
+	if err == nil {
+		return id, shape, false, nil
+	}
+	if !errors.Is(err, sql.ErrNoRows) {
+		return "", "", false, err
+	}
+	// 2. generate a fresh question (also unseen and of another shape) and store it
+	unseen := func(p *engine.Problem) bool { // accept only statements this child has not seen
+		var one int
+		e := tx.QueryRowContext(ctx, `SELECT 1 FROM questions q JOIN child_questions cq ON cq.question_id = q.id
+			WHERE q.params_hash = ? AND cq.child_id = ?`, paramsHash(skill, p.EnonceMath), childID).Scan(&one)
+		return errors.Is(e, sql.ErrNoRows)
+	}
+	p, gerr := g.graph.GenerateFresh(skill, engine.NewRNG(g.seed()), avoidShape, unseen)
+	switch {
+	case gerr == nil:
+		raw, merr := json.Marshal(p)
+		if merr != nil {
+			return "", "", false, merr
+		}
+		if _, err = tx.ExecContext(ctx, `INSERT INTO questions (id, params_hash, skill_id, json, shape) VALUES (?, ?, ?, ?, ?)
+			ON CONFLICT(params_hash) DO NOTHING`, newID(), paramsHash(skill, p.EnonceMath), skill, string(raw), p.Shape); err != nil {
+			return "", "", false, err
+		}
+		err = tx.QueryRowContext(ctx, `SELECT id, shape FROM questions WHERE params_hash = ?`, paramsHash(skill, p.EnonceMath)).Scan(&id, &shape)
+		return id, shape, false, err
+	case errors.Is(gerr, engine.ErrNoFreshProblem), errors.Is(gerr, engine.ErrNotImplemented):
+		// 3. everything seen, or no generator for this skill: re-serve the oldest question of this world, preferring another shape
+		err = tx.QueryRowContext(ctx, `SELECT q.id, q.shape FROM questions q JOIN child_questions cq ON cq.question_id = q.id
+			WHERE q.skill_id = ? AND cq.child_id = ? AND (q.origin = 'generated' OR q.bank_id IN (SELECT id FROM bank_questions WHERE world_id = ?))
+			ORDER BY (q.shape = ?), cq.served_at ASC LIMIT 1`, skill, childID, world, avoidShape).Scan(&id, &shape)
+		if errors.Is(err, sql.ErrNoRows) {
+			return "", "", false, plConflict("no_question_available", "No question is available for this chapter yet.")
+		}
+		if err != nil {
+			return "", "", false, err
+		}
+		if _, err = tx.ExecContext(ctx, `UPDATE child_questions SET served_at = ? WHERE child_id = ? AND question_id = ?`, now, childID, id); err != nil {
+			return "", "", false, err
+		}
+		_, err = tx.ExecContext(ctx, `UPDATE questions SET served_count = served_count + 1 WHERE id = ?`, id)
+		return id, shape, true, err
+	}
+	return "", "", false, gerr
 }

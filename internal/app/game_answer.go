@@ -7,8 +7,10 @@ import (
 	"errors"
 
 	"github.com/Perrin-Nj/numerix-api/api"
+	"github.com/Perrin-Nj/numerix-api/internal/content"
 	"github.com/Perrin-Nj/numerix-api/internal/engine"
 	"github.com/Perrin-Nj/numerix-api/internal/httpapi"
+	"github.com/Perrin-Nj/numerix-api/internal/mongosync"
 	"github.com/Perrin-Nj/numerix-api/internal/narrator"
 	"github.com/Perrin-Nj/numerix-api/internal/visual"
 )
@@ -23,6 +25,8 @@ type storedAnswer struct {
 	Skill      string       `json:"skill_id"`
 	Mastered   bool         `json:"mastered,omitempty"` // this answer made the skill cross the mastery threshold
 	Rewards    []api.Reward `json:"rewards"`
+	// GivenRaw is the answer exactly as sent, kept for curated questions (their answers can be lists of ids).
+	GivenRaw json.RawMessage `json:"given_raw,omitempty"`
 }
 
 // AnswerBeat answers POST /sessions/{sessionId}/beats/{beatId}/answer: grade, update mastery, close the chapter
@@ -49,6 +53,9 @@ func (s *Server) AnswerBeat(ctx context.Context, req api.AnswerBeatRequestObject
 
 	var stored storedAnswer
 	var problem engine.Problem
+	var cur *content.Question // the curated question, nil for a generated one
+	var curRes content.Result
+	rawGiven, _ := req.Body.Answer.MarshalJSON() // the answer as JSON; an empty union gives null and is graded as a random error
 	var finished, replay bool
 	err = s.Store.WithWriteTx(ctx, func(tx *sql.Tx) error {
 		// 1. the beat must belong to this session
@@ -63,6 +70,11 @@ func (s *Server) AnswerBeat(ctx context.Context, req api.AnswerBeatRequestObject
 			return e
 		}
 		problem = q.Problem
+		if len(problem.Curated) > 0 {
+			if cur, e = s.curatedOf(&problem); e != nil {
+				return e
+			}
+		}
 		// 2. already answered? same key replays the first result, another key is a conflict
 		var prevKey sql.NullString
 		var raw string
@@ -72,7 +84,13 @@ func (s *Server) AnswerBeat(ctx context.Context, req api.AnswerBeatRequestObject
 				return plConflict("beat_answered", "This question was already answered.")
 			}
 			replay = true
-			return json.Unmarshal([]byte(raw), &stored)
+			if e := json.Unmarshal([]byte(raw), &stored); e != nil {
+				return e
+			}
+			if cur != nil {
+				curRes = cur.Check(stored.GivenRaw) // deterministic, so a replay shows the same explanation
+			}
+			return nil
 		case !errors.Is(e, sql.ErrNoRows):
 			return e
 		}
@@ -89,7 +107,16 @@ func (s *Server) AnswerBeat(ctx context.Context, req api.AnswerBeatRequestObject
 		}
 		// 4. grade (deterministic, no LLM) and update mastery
 		now := g.now()
-		res := problem.Evaluate(given)
+		var res engine.Result
+		if cur != nil {
+			curRes = cur.Check(rawGiven)
+			res = engine.Result{Type: engine.Outcome(curRes.Outcome), ReponseDonnee: given, CompetenceID: cur.Skill, CodeErreur: curRes.Misconception}
+			if curRes.Misconception != "" {
+				res.DescriptionErreur = s.misconceptionDesc(ctx, tx, curRes.Misconception)
+			}
+		} else {
+			res = problem.Evaluate(given)
+		}
 		prof, e := s.profileFrom(ctx, tx, r.ChildID)
 		if e != nil {
 			return e
@@ -105,6 +132,9 @@ func (s *Server) AnswerBeat(ctx context.Context, req api.AnswerBeatRequestObject
 		after := prof.Observe(skill, res, float64(ms), target, now)
 		stored = storedAnswer{Given: given, Outcome: string(res.Type), Code: res.CodeErreur, ResponseMs: ms, Skill: skill,
 			Mastered: before < engine.MasteryThreshold && after >= engine.MasteryThreshold, Rewards: []api.Reward{}}
+		if cur != nil {
+			stored.GivenRaw = rawGiven
+		}
 		// 5. last beat? close the chapter and decide the rewards
 		var answered int
 		if e := tx.QueryRowContext(ctx, `SELECT COUNT(*) FROM answers WHERE session_id = ?`, r.ID).Scan(&answered); e != nil {
@@ -144,6 +174,11 @@ func (s *Server) AnswerBeat(ctx context.Context, req api.AnswerBeatRequestObject
 			stored.Rewards = append(stored.Rewards, api.Reward{Type: api.SkillMastered, SkillId: &sk})
 		}
 		// 6. persist the answer and the profile
+		if cur != nil { // per question statistics for the content team (Mongo, k-anonymous)
+			if e := s.Sync.Enqueue(ctx, tx, mongosync.KindQuestionStats, cur.ID, ""); e != nil {
+				return e
+			}
+		}
 		aj, e := json.Marshal(stored)
 		if e != nil {
 			return e
@@ -178,6 +213,19 @@ func (s *Server) AnswerBeat(ctx context.Context, req api.AnswerBeatRequestObject
 		Denouement:    api.Narration{Status: api.Pending},
 		Session:       sess,
 		Rewards:       &stored.Rewards,
+	}
+	if cur != nil {
+		out.CorrectAnswer = answerFromJSON(cur.CorrectAnswer(lang))
+		if ex := cur.Explain.Get(lang); ex != "" {
+			out.Explain = &ex
+		}
+		if curRes.Misconception != "" {
+			code := curRes.Misconception
+			out.Misconception = &code
+		}
+		if fb := curRes.Feedback.Get(lang); fb != "" {
+			out.Feedback = &fb
+		}
 	}
 	if mv := s.methodVisual(ctx, problem.Visual, lang); mv != nil {
 		out.MethodVisual = mv

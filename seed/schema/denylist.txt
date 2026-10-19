@@ -1,0 +1,50 @@
+# Words refused in kid-facing question text (brands, rude words, adult themes). One per line, any case,
+# accents ignored, matched as whole words. Add a word here when a reviewer finds one; the validator (rule 8)
+# then blocks it everywhere. Avoid ordinary words that a maths story needs (apple, orange, amazon ...).
+lego
+nintendo
+pokemon
+minecraft
+roblox
+fortnite
+youtube
+tiktok
+instagram
+snapchat
+facebook
+google
+samsung
+disney
+marvel
+barbie
+mcdonald
+coca cola
+coca-cola
+pepsi
+nike
+adidas
+starbucks
+tim hortons
+netflix
+walmart
+oreo
+nutella
+haribo
+stupide
+idiot
+imbecile
+debile
+stupid
+dumb
+loser
+shut up
+kill
+tuer
+alcool
+alcohol
+biere
+beer
+wine
+cigarette
+cigarettes
+weapon

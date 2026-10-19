@@ -49,6 +49,7 @@ type Config struct {
 	MongoURI           string        // MONGODB_URI: Atlas SRV string; empty = Mongo sync off
 	MongoDB            string        // MONGODB_DB: database name (default numerix)
 	MongoPseudoSecret  string        // MONGO_PSEUDO_SECRET: HMAC key for pseudonymous ids (min 32 chars when MONGODB_URI is set)
+	AssetBaseURL       string        // ASSET_BASE_URL: path prefix of image URLs sent to clients (default /assets, rewritten by the web app to /v1/assets)
 }
 
 // IsProduction tells whether strict production rules apply.
@@ -99,6 +100,7 @@ func Load(getenv func(string) string) (Config, error) {
 		MongoURI:           get("MONGODB_URI", ""),
 		MongoDB:            get("MONGODB_DB", "numerix"),
 		MongoPseudoSecret:  get("MONGO_PSEUDO_SECRET", ""),
+		AssetBaseURL:       strings.TrimRight(get("ASSET_BASE_URL", "/assets"), "/"),
 	}
 	// Comma separated list -> slice, dropping blanks.
 	for _, o := range strings.Split(get("ALLOWED_ORIGINS", ""), ",") {

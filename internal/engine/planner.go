@@ -32,7 +32,7 @@ func Choose(gr *Graph, prof *Profile, world string, grade int, g *RNG, now time.
 
 	// revision ignores the world: same skill, new story
 	for _, due := range prof.ToReview(now) {
-		if impl[due.SkillID] {
+		if impl[due.SkillID] && gr.PlayableIn(world, due.SkillID) {
 			return Selection{due.SkillID, "revision"}, nil
 		}
 	}

@@ -12,6 +12,7 @@ import (
 	"strings"
 
 	"github.com/Perrin-Nj/numerix-api/api"
+	"github.com/Perrin-Nj/numerix-api/internal/content"
 	"github.com/Perrin-Nj/numerix-api/internal/httpapi"
 	"github.com/Perrin-Nj/numerix-api/internal/narrator"
 )
@@ -85,6 +86,29 @@ func (s *Server) StreamNarration(ctx context.Context, req api.StreamNarrationReq
 	if err != nil {
 		return nil, s.plInternalErr(ctx, "load question", err)
 	}
+	after := 0
+	if req.Params.LastEventID != nil {
+		after, _ = strconv.Atoi(*req.Params.LastEventID) // a bad value restarts from the beginning
+	}
+	if len(q.Problem.Curated) > 0 { // a bank question: its own words, no model is ever called
+		cq, cerr := s.curatedOf(&q.Problem)
+		if cerr != nil {
+			return nil, s.plInternalErr(ctx, "decode curated question", cerr)
+		}
+		text := cq.Story.Get(lang)
+		if phase == narrator.PhaseDenouement {
+			if answerJSON == "" {
+				return nil, plConflict("beat_not_answered", "Answer the question first.")
+			}
+			var st storedAnswer
+			if err := json.Unmarshal([]byte(answerJSON), &st); err != nil {
+				return nil, s.plInternalErr(ctx, "decode answer", err)
+			}
+			cr := cq.Check(st.GivenRaw)
+			text = content.DenouementText(cr.Outcome, lang, cr.Feedback, r.Data.Seed+uint32(idx))
+		}
+		return sseResponse{body: sseBlocks(phase, narrator.Result{Text: text, Status: narrator.StatusReady, Source: "curated"}, after)}, nil
+	}
 	nreq := narrator.Request{World: r.World, Lang: lang, Phase: phase, Seed: r.Data.Seed, Index: idx, MathText: localMath(&q.Problem, lang)}
 	if phase == narrator.PhaseScene {
 		nreq.Payload = q.Problem.ForLLMScene()
@@ -103,10 +127,6 @@ func (s *Server) StreamNarration(ctx context.Context, req api.StreamNarrationReq
 	nreq.CacheKey = strings.Join([]string{qid, r.World, lang, phase, nreq.Outcome, narrator.PromptVersion}, "|")
 	res := s.game().narr.Narrate(ctx, nreq, q.Problem.AnswerTokens())
 
-	after := 0
-	if req.Params.LastEventID != nil {
-		after, _ = strconv.Atoi(*req.Params.LastEventID) // a bad value restarts from the beginning
-	}
 	return sseResponse{body: sseBlocks(phase, res, after)}, nil
 }
 

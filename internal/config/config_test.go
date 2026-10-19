@@ -54,4 +54,7 @@ func TestLoadValues(t *testing.T) {
 	if len(cfg.AllowedOrigins) != 2 {
 		t.Fatalf("origins: %v", cfg.AllowedOrigins)
 	}
+	if cfg.AssetBaseURL != "/assets" {
+		t.Fatalf("asset base url: %q", cfg.AssetBaseURL)
+	}
 }

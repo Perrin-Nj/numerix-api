@@ -16,6 +16,12 @@ var collections = map[string]string{
 	KindBests:  "personal_bests",
 	KindFamily: "family_board",
 	KindStats:  "progress_stats",
+
+	KindQuestionBank:  "question_bank",
+	KindQuestionAudit: "question_audit",
+	KindQuestionStats: "question_stats",
+	KindContentWorld:  "content_worlds",
+	KindContentQuest:  "content_quests",
 }
 
 // Mongo is the real Sink (Spring: a MongoRepository). Documents are replaced by their unique "key" field,

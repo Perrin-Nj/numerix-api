@@ -108,6 +108,11 @@ func (Unimplemented) GetAccount(ctx context.Context, request api.GetAccountReque
 	return nil, httpapi.ErrNotImplemented
 }
 
+// GetAsset is not built yet: answers 501.
+func (Unimplemented) GetAsset(ctx context.Context, request api.GetAssetRequestObject) (api.GetAssetResponseObject, error) {
+	return nil, httpapi.ErrNotImplemented
+}
+
 // GetChild is not built yet: answers 501.
 func (Unimplemented) GetChild(ctx context.Context, request api.GetChildRequestObject) (api.GetChildResponseObject, error) {
 	return nil, httpapi.ErrNotImplemented
@@ -203,6 +208,11 @@ func (Unimplemented) ListChildren(ctx context.Context, request api.ListChildrenR
 	return nil, httpapi.ErrNotImplemented
 }
 
+// ListCredits is not built yet: answers 501.
+func (Unimplemented) ListCredits(ctx context.Context, request api.ListCreditsRequestObject) (api.ListCreditsResponseObject, error) {
+	return nil, httpapi.ErrNotImplemented
+}
+
 // ListDevices is not built yet: answers 501.
 func (Unimplemented) ListDevices(ctx context.Context, request api.ListDevicesRequestObject) (api.ListDevicesResponseObject, error) {
 	return nil, httpapi.ErrNotImplemented
@@ -285,6 +295,11 @@ func (Unimplemented) RefreshToken(ctx context.Context, request api.RefreshTokenR
 
 // RegisterParent is not built yet: answers 501.
 func (Unimplemented) RegisterParent(ctx context.Context, request api.RegisterParentRequestObject) (api.RegisterParentResponseObject, error) {
+	return nil, httpapi.ErrNotImplemented
+}
+
+// RequestHint is not built yet: answers 501.
+func (Unimplemented) RequestHint(ctx context.Context, request api.RequestHintRequestObject) (api.RequestHintResponseObject, error) {
 	return nil, httpapi.ErrNotImplemented
 }
 
