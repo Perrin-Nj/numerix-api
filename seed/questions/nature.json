@@ -1,0 +1,4738 @@
+{
+ "world": "nature",
+ "schema": 1,
+ "questions": [
+  {
+   "id": "nature.feuilles.001",
+   "quest": "nature.feuilles",
+   "skill": "ARI-SEN-A02c",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa ramasse des feuilles rouges au parc et les met en tas de 10.",
+    "en": "Lea picks up red leaves at the park and makes piles of 10."
+   },
+   "prompt": {
+    "fr": "Elle a 3 tas de 10 feuilles et 4 feuilles seules. Combien de feuilles a-t-elle ?",
+    "en": "She has 3 piles of 10 leaves and 4 single leaves. How many leaves does she have?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 34,
+    "calc": "3*10+4"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "Un tas vaut 10 feuilles, pas une seule.",
+      "en": "A pile is worth 10 leaves, not just one."
+     }
+    },
+    {
+     "value": 43,
+     "misconception": "mis_digit_swap",
+     "feedback": {
+      "fr": "Les tas sont les dizaines : ils vont devant.",
+      "en": "The piles are the tens: they go first."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les tas de 10 d'abord, puis ajoute les feuilles seules.",
+    "en": "Count the piles of 10 first, then add the single leaves."
+   },
+   "explain": {
+    "fr": "3 tas de 10 font 30. Avec 4 feuilles seules : 30 + 4 = 34.",
+    "en": "3 piles of 10 make 30. With 4 single leaves: 30 + 4 = 34."
+   },
+   "tags": [
+    "groups-of-10",
+    "autumn",
+    "counting"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4e21187d552c19823597"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.feuilles.002",
+   "quest": "nature.feuilles",
+   "skill": "ARI-SEN-A02c",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Noah range des pommes de pin en tas de 5 sur la mousse.",
+    "en": "Noah sorts pine cones into piles of 5 on the moss."
+   },
+   "prompt": {
+    "fr": "Il fait 4 tas. Combien de pommes de pin y a-t-il ?",
+    "en": "He makes 4 piles. How many pine cones are there?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 20,
+    "calc": "4*5"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "4 tas de 5, c'est 5 + 5 + 5 + 5.",
+      "en": "4 piles of 5 means 5 + 5 + 5 + 5."
+     }
+    },
+    {
+     "value": 25,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as compté un tas de trop en sautant de 5 en 5.",
+      "en": "You counted one pile too many when skip counting by 5."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte par bonds de 5 : 5, 10, ...",
+    "en": "Skip count by 5: 5, 10, ..."
+   },
+   "explain": {
+    "fr": "5, 10, 15, 20. Quatre tas de 5 font 20.",
+    "en": "5, 10, 15, 20. Four piles of 5 make 20."
+   },
+   "tags": [
+    "groups-of-5",
+    "pine-cones",
+    "skip-counting"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e6ab1f9c345d3c73c5aa"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.feuilles.003",
+   "quest": "nature.feuilles",
+   "skill": "ARI-SEN-A02c",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Zoé trouve des glands qui vont par deux sous le chêne.",
+    "en": "Zoe finds acorns that come in pairs under the oak."
+   },
+   "prompt": {
+    "fr": "Elle voit 7 paires de glands. Combien de glands y a-t-il ?",
+    "en": "She sees 7 pairs of acorns. How many acorns are there?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 14,
+    "calc": "7*2"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Une paire, c'est 2 glands : compte 2 par paire.",
+      "en": "A pair is 2 acorns: count 2 for each pair."
+     }
+    },
+    {
+     "value": 12,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as sauté une paire en comptant de 2 en 2.",
+      "en": "You skipped a pair when counting by 2."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 2 en 2, une fois par paire.",
+    "en": "Count by 2, once for each pair."
+   },
+   "explain": {
+    "fr": "2, 4, 6, 8, 10, 12, 14. Sept paires font 14 glands.",
+    "en": "2, 4, 6, 8, 10, 12, 14. Seven pairs make 14 acorns."
+   },
+   "tags": [
+    "groups-of-2",
+    "acorns",
+    "skip-counting"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4e21187d552c19823597"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.feuilles.004",
+   "quest": "nature.feuilles",
+   "skill": "ARI-SEN-A02c",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Mathis a deux paniers de feuilles. Le rouge a 4 tas de 10. Le jaune a 3 tas de 10.",
+    "en": "Mathis has two baskets of leaves. The red one has 4 piles of 10. The yellow one has 3 piles of 10."
+   },
+   "prompt": {
+    "fr": "Combien de feuilles y a-t-il en tout ?",
+    "en": "How many leaves are there in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 70,
+    "calc": "4*10+3*10"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "Tu as additionné les tas, mais chaque tas vaut 10.",
+      "en": "You added the piles, but each pile is worth 10."
+     }
+    },
+    {
+     "value": 43,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Les 3 tas jaunes valent 30 feuilles, pas 3.",
+      "en": "The 3 yellow piles are worth 30 leaves, not 3."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les tas des deux paniers, puis pense en dizaines.",
+    "en": "Count the piles in both baskets, then think in tens."
+   },
+   "explain": {
+    "fr": "4 tas et 3 tas font 7 tas. 7 tas de 10 font 70 feuilles.",
+    "en": "4 piles and 3 piles make 7 piles. 7 piles of 10 make 70 leaves."
+   },
+   "tags": [
+    "groups-of-10",
+    "tens",
+    "collage"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4e21187d552c19823597"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.feuilles.005",
+   "quest": "nature.feuilles",
+   "skill": "ARI-SEN-A02c",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 4,
+   "story": {
+    "fr": "Noah a fait 4 tas de 10 feuilles pour décorer la classe.",
+    "en": "Noah made 4 piles of 10 leaves to decorate the classroom."
+   },
+   "prompt": {
+    "fr": "Il en ramasse encore 8 en rentrant. Combien de feuilles a-t-il maintenant ?",
+    "en": "He picks up 8 more on the way back. How many leaves does he have now?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 48,
+    "calc": "4*10+8"
+   },
+   "common_errors": [
+    {
+     "value": 12,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "Les tas valent 10 chacun, pas 1.",
+      "en": "Each pile is worth 10, not 1."
+     }
+    },
+    {
+     "value": 40,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "N'oublie pas les feuilles ramassées en rentrant.",
+      "en": "Don't forget the leaves picked up on the way back."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense d'abord aux feuilles dans les tas, puis ajoute les autres.",
+    "en": "First think of the leaves in the piles, then add the others."
+   },
+   "explain": {
+    "fr": "4 tas de 10 font 40. Avec 8 feuilles de plus : 40 + 8 = 48.",
+    "en": "4 piles of 10 make 40. With 8 more leaves: 40 + 8 = 48."
+   },
+   "tags": [
+    "tens-and-ones",
+    "word-problem",
+    "leaves"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4e21187d552c19823597"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.feuilles.006",
+   "quest": "nature.feuilles",
+   "skill": "ARI-SEN-A02c",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Alice fait 3 tas de 10 feuilles. Il lui reste 6 feuilles seules.",
+    "en": "Alice makes 3 piles of 10 leaves. She has 6 single leaves left."
+   },
+   "prompt": {
+    "fr": "Quel nombre montre toutes ses feuilles ?",
+    "en": "Which number shows all her leaves?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "36",
+      "en": "36"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "63",
+      "en": "63"
+     },
+     "misconception": "mis_digit_swap"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "9",
+      "en": "9"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "306",
+      "en": "306"
+     },
+     "misconception": "mis_place_value"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a",
+    "calc_choice": {
+     "a": "3*10+6"
+    }
+   },
+   "hint": {
+    "fr": "Les tas de 10 sont les dizaines. Elles s'écrivent en premier.",
+    "en": "The piles of 10 are the tens. They are written first."
+   },
+   "explain": {
+    "fr": "3 dizaines et 6 unités s'écrivent 36.",
+    "en": "3 tens and 6 ones are written 36."
+   },
+   "tags": [
+    "place-value",
+    "tens-and-ones"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4e21187d552c19823597"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.feuilles.007",
+   "quest": "nature.feuilles",
+   "skill": "ARI-SEN-A02c",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Emma compte 45 feuilles dans son seau.",
+    "en": "Emma counts 45 leaves in her bucket."
+   },
+   "prompt": {
+    "fr": "Quels groupes montrent bien 45 feuilles ?",
+    "en": "Which groups show 45 leaves?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "4 tas de 10 et 5 feuilles seules",
+      "en": "4 piles of 10 and 5 single leaves"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "5 tas de 10 et 4 feuilles seules",
+      "en": "5 piles of 10 and 4 single leaves"
+     },
+     "misconception": "mis_digit_swap"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "9 tas de 10",
+      "en": "9 piles of 10"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "4 tas de 5",
+      "en": "4 piles of 5"
+     },
+     "misconception": "mis_place_value"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Pense à 45 comme des dizaines et des unités.",
+    "en": "Think of 45 as tens and ones."
+   },
+   "explain": {
+    "fr": "45 a 4 dizaines et 5 unités. Cela fait 4 tas de 10 et 5 feuilles seules.",
+    "en": "45 has 4 tens and 5 ones. That makes 4 piles of 10 and 5 single leaves."
+   },
+   "tags": [
+    "place-value",
+    "groups"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4e21187d552c19823597"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.feuilles.008",
+   "quest": "nature.feuilles",
+   "skill": "ARI-SEN-A02c",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Mia veut compter 20 pommes de pin en tas égaux.",
+    "en": "Mia wants to count 20 pine cones in equal piles."
+   },
+   "prompt": {
+    "fr": "Quel groupement fait exactement 20 pommes de pin ?",
+    "en": "Which grouping makes exactly 20 pine cones?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "4 tas de 5",
+      "en": "4 piles of 5"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "5 tas de 5",
+      "en": "5 piles of 5"
+     },
+     "misconception": "mis_skip_count"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "2 tas de 5",
+      "en": "2 piles of 5"
+     },
+     "misconception": "mis_skip_count"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "4 tas de 4",
+      "en": "4 piles of 4"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Compte de 5 en 5 pour chaque choix.",
+    "en": "Count by 5s for each choice."
+   },
+   "explain": {
+    "fr": "5, 10, 15, 20. Il faut 4 tas de 5.",
+    "en": "5, 10, 15, 20. You need 4 piles of 5."
+   },
+   "tags": [
+    "groups-of-5",
+    "skip-counting"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e6ab1f9c345d3c73c5aa"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.feuilles.009",
+   "quest": "nature.feuilles",
+   "skill": "ARI-SEN-A02c",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Liam fait des tas de 5 feuilles pour les compter plus facilement.",
+    "en": "Liam makes piles of 5 leaves to count them more easily."
+   },
+   "prompt": {
+    "fr": "Liam dit que 3 tas de 5 feuilles font 8 feuilles. A-t-il raison ?",
+    "en": "Liam says that 3 piles of 5 leaves make 8 leaves. Is he right?"
+   },
+   "math_text": "3 x 5 = 8",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_add_instead_of_multiply"
+   },
+   "hint": {
+    "fr": "Compte 5, puis 10, puis encore un tas.",
+    "en": "Count 5, then 10, then one more pile."
+   },
+   "explain": {
+    "fr": "3 tas de 5, c'est 5, 10, 15. Il y a 15 feuilles, pas 8.",
+    "en": "3 piles of 5 is 5, 10, 15. There are 15 leaves, not 8."
+   },
+   "tags": [
+    "true-false",
+    "groups-of-5"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4e21187d552c19823597"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.feuilles.010",
+   "quest": "nature.feuilles",
+   "skill": "ARI-SEN-A02c",
+   "type": "order",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Chloé a quatre petits sacs de feuilles et elle veut les ranger.",
+    "en": "Chloe has four small bags of leaves and wants to sort them."
+   },
+   "prompt": {
+    "fr": "Range les sacs, du moins rempli au plus rempli.",
+    "en": "Put the bags in order, from the least full to the most full."
+   },
+   "items": [
+    {
+     "id": "i1",
+     "text": {
+      "fr": "2 dizaines",
+      "en": "2 tens"
+     },
+     "key": "20"
+    },
+    {
+     "id": "i2",
+     "text": {
+      "fr": "1 dizaine et 3 feuilles",
+      "en": "1 ten and 3 leaves"
+     },
+     "key": "13"
+    },
+    {
+     "id": "i3",
+     "text": {
+      "fr": "9 feuilles",
+      "en": "9 leaves"
+     },
+     "key": "9"
+    },
+    {
+     "id": "i4",
+     "text": {
+      "fr": "1 dizaine et 8 feuilles",
+      "en": "1 ten and 8 leaves"
+     },
+     "key": "18"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "i3",
+     "i2",
+     "i4",
+     "i1"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Change chaque sac en nombre, puis compare.",
+    "en": "Turn each bag into a number, then compare."
+   },
+   "explain": {
+    "fr": "Les sacs valent 9, 13, 18 et 20 feuilles. On les range dans cet ordre.",
+    "en": "The bags hold 9, 13, 18 and 20 leaves. We put them in that order."
+   },
+   "tags": [
+    "ordering",
+    "tens-and-ones"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4e21187d552c19823597"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.feuilles.011",
+   "quest": "nature.feuilles",
+   "skill": "ARI-SEN-A02c",
+   "type": "match",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah fait des groupes avec les feuilles de sa collection.",
+    "en": "Noah makes groups with the leaves of his collection."
+   },
+   "prompt": {
+    "fr": "Relie chaque groupe au bon nombre de feuilles.",
+    "en": "Match each group to the right number of leaves."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "3 tas de 10",
+       "en": "3 piles of 10"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "5 tas de 2",
+       "en": "5 piles of 2"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "4 tas de 5",
+       "en": "4 piles of 5"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "2 tas de 10 et 3 feuilles",
+       "en": "2 piles of 10 and 3 leaves"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "10",
+       "en": "10"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "20",
+       "en": "20"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "23",
+       "en": "23"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "30",
+       "en": "30"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ],
+     [
+      "l4",
+      "r4"
+     ]
+    ],
+    "misconception": "mis_match"
+   },
+   "hint": {
+    "fr": "Calcule le total de chaque groupe un à la fois.",
+    "en": "Work out the total of each group one at a time."
+   },
+   "explain": {
+    "fr": "3 x 10 = 30. 5 x 2 = 10. 4 x 5 = 20. 2 x 10 + 3 = 23.",
+    "en": "3 x 10 = 30. 5 x 2 = 10. 4 x 5 = 20. 2 x 10 + 3 = 23."
+   },
+   "tags": [
+    "matching",
+    "groups"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4e21187d552c19823597"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.feuilles.012",
+   "quest": "nature.feuilles",
+   "skill": "ARI-SEN-A02c",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Jade a trié ses feuilles par couleur. Chaque image représente 5 feuilles.",
+    "en": "Jade sorted her leaves by colour. Each picture stands for 5 leaves."
+   },
+   "prompt": {
+    "fr": "Combien de feuilles rouges y a-t-il ?",
+    "en": "How many red leaves are there?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Feuilles par couleur",
+      "en": "Leaves by colour"
+     },
+     "each": 5,
+     "rows": [
+      {
+       "label": {
+        "fr": "rouge",
+        "en": "red"
+       },
+       "count": 4
+      },
+      {
+       "label": {
+        "fr": "orange",
+        "en": "orange"
+       },
+       "count": 3
+      },
+      {
+       "label": {
+        "fr": "jaune",
+        "en": "yellow"
+       },
+       "count": 2
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 20,
+    "calc": "4*5"
+   },
+   "common_errors": [
+    {
+     "value": 4,
+     "misconception": "mis_read_scale",
+     "feedback": {
+      "fr": "Une image vaut 5 feuilles, pas 1.",
+      "en": "One picture is worth 5 leaves, not 1."
+     }
+    },
+    {
+     "value": 15,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as lu la ligne orange. Cherche la rouge.",
+      "en": "You read the orange row. Look for the red one."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les images de la ligne rouge, puis pense en bonds de 5.",
+    "en": "Count the pictures in the red row, then think in jumps of 5."
+   },
+   "explain": {
+    "fr": "La ligne rouge a 4 images. 4 x 5 = 20 feuilles.",
+    "en": "The red row has 4 pictures. 4 x 5 = 20 leaves."
+   },
+   "tags": [
+    "pictograph",
+    "groups-of-5"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4e21187d552c19823597"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.feuilles.013",
+   "quest": "nature.feuilles",
+   "skill": "ARI-SEN-A02c",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Camille voit 9 tas de feuilles sous un érable. Chaque tas a à peu près 10 feuilles.",
+    "en": "Camille sees 9 piles of leaves under a maple. Each pile has about 10 leaves."
+   },
+   "prompt": {
+    "fr": "Environ combien de feuilles y a-t-il en tout ?",
+    "en": "About how many leaves are there in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 85,
+    "max": 95,
+    "exact_for_check": 90,
+    "calc": "9*10"
+   },
+   "common_errors": [
+    {
+     "value": 19,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Chaque tas vaut environ 10 feuilles : pense en dizaines.",
+      "en": "Each pile is worth about 10 leaves: think in tens."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte 9 dizaines.",
+    "en": "Count 9 tens."
+   },
+   "explain": {
+    "fr": "9 tas de 10 font environ 90 feuilles.",
+    "en": "9 piles of 10 make about 90 leaves."
+   },
+   "tags": [
+    "estimation",
+    "tens"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4e21187d552c19823597"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.feuilles.014",
+   "quest": "nature.feuilles",
+   "skill": "ARI-SEN-A02c",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Félix a fait un gros tas de 56 feuilles. Il veut les mettre en tas de 10.",
+    "en": "Felix has a big pile of 56 leaves. He wants to make piles of 10."
+   },
+   "prompt": {
+    "fr": "Combien de tas de 10 complets peut-il faire ?",
+    "en": "How many full piles of 10 can he make?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "5"
+   },
+   "common_errors": [
+    {
+     "value": 6,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "6 est le nombre de feuilles qui restent seules.",
+      "en": "6 is the number of leaves left on their own."
+     }
+    },
+    {
+     "value": 56,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "56 est le nombre total de feuilles.",
+      "en": "56 is the total number of leaves."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Regarde le chiffre des dizaines de 56.",
+    "en": "Look at the tens digit of 56."
+   },
+   "explain": {
+    "fr": "56 a 5 dizaines et 6 unités. Il fait 5 tas et il reste 6 feuilles.",
+    "en": "56 has 5 tens and 6 ones. He makes 5 piles and 6 leaves are left."
+   },
+   "tags": [
+    "place-value",
+    "tens"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4e21187d552c19823597"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.sentier.001",
+   "quest": "nature.sentier",
+   "skill": "ARI-OPE-A13b",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Des bornes sont plantées le long du sentier. Elles portent les nombres 2, 4, 6, 8.",
+    "en": "Markers stand along the trail. They show the numbers 2, 4, 6, 8."
+   },
+   "prompt": {
+    "fr": "Quel nombre est écrit sur la borne suivante ?",
+    "en": "Which number is on the next marker?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 10,
+    "calc": "8+2"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_pattern_wrong_rule",
+     "feedback": {
+      "fr": "La suite saute de 2 en 2, pas de 1 en 1.",
+      "en": "The pattern jumps by 2, not by 1."
+     }
+    },
+    {
+     "value": 12,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as sauté une borne. Va une borne à la fois.",
+      "en": "You skipped a marker. Go one marker at a time."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Regarde de combien on avance d'une borne à l'autre.",
+    "en": "Look at how much it grows from one marker to the next."
+   },
+   "explain": {
+    "fr": "On ajoute 2 chaque fois. Après 8, on trouve 8 + 2 = 10.",
+    "en": "We add 2 each time. After 8, we get 8 + 2 = 10."
+   },
+   "tags": [
+    "pattern",
+    "skip-counting",
+    "trail"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1a862dfd08ab3deff4ab"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.sentier.002",
+   "quest": "nature.sentier",
+   "skill": "ARI-OPE-A13b",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa compte des pommes de pin dans des paniers : 5, 10, 15.",
+    "en": "Lea counts pine cones in baskets: 5, 10, 15."
+   },
+   "prompt": {
+    "fr": "Combien de pommes de pin dans le panier suivant ?",
+    "en": "How many pine cones are in the next basket?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 20,
+    "calc": "15+5"
+   },
+   "common_errors": [
+    {
+     "value": 16,
+     "misconception": "mis_pattern_wrong_rule",
+     "feedback": {
+      "fr": "La suite avance de 5, pas de 1.",
+      "en": "The pattern grows by 5, not by 1."
+     }
+    },
+    {
+     "value": 25,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as sauté un panier.",
+      "en": "You skipped a basket."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Cherche de combien le nombre grandit chaque fois.",
+    "en": "Find how much the number grows each time."
+   },
+   "explain": {
+    "fr": "On ajoute 5 chaque fois : 15 + 5 = 20.",
+    "en": "We add 5 each time: 15 + 5 = 20."
+   },
+   "tags": [
+    "pattern",
+    "pine-cones",
+    "add-5"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e6ab1f9c345d3c73c5aa"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.sentier.003",
+   "quest": "nature.sentier",
+   "skill": "ARI-OPE-A13b",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah avance sur le sentier. Les bornes portent 3, 6, 9, 12.",
+    "en": "Noah walks along the trail. The markers show 3, 6, 9, 12."
+   },
+   "prompt": {
+    "fr": "Quel nombre vient sur la prochaine borne ?",
+    "en": "Which number comes on the next marker?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 15,
+    "calc": "12+3"
+   },
+   "common_errors": [
+    {
+     "value": 13,
+     "misconception": "mis_pattern_wrong_rule",
+     "feedback": {
+      "fr": "On ajoute 3 chaque fois, pas 1.",
+      "en": "We add 3 each time, not 1."
+     }
+    },
+    {
+     "value": 18,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as sauté une borne.",
+      "en": "You skipped a marker."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Cherche l'écart entre deux bornes qui se suivent.",
+    "en": "Find the gap between two markers that follow each other."
+   },
+   "explain": {
+    "fr": "L'écart est toujours 3. Après 12, on a 12 + 3 = 15.",
+    "en": "The gap is always 3. After 12, we get 12 + 3 = 15."
+   },
+   "tags": [
+    "pattern",
+    "add-3",
+    "trail"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1a862dfd08ab3deff4ab"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.sentier.004",
+   "quest": "nature.sentier",
+   "skill": "ARI-OPE-A13b",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Au retour, les bornes descendent : 50, 45, 40, 35.",
+    "en": "On the way back, the markers go down: 50, 45, 40, 35."
+   },
+   "prompt": {
+    "fr": "Quel nombre suit sur la borne d'après ?",
+    "en": "Which number follows on the marker after?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 30,
+    "calc": "35-5"
+   },
+   "common_errors": [
+    {
+     "value": 36,
+     "misconception": "mis_pattern_wrong_rule",
+     "feedback": {
+      "fr": "La suite descend de 5 chaque fois.",
+      "en": "The pattern goes down by 5 each time."
+     }
+    },
+    {
+     "value": 25,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as sauté une borne.",
+      "en": "You skipped a marker."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "La suite descend. De combien chaque fois ?",
+    "en": "The pattern goes down. By how much each time?"
+   },
+   "explain": {
+    "fr": "On enlève 5 chaque fois : 35 - 5 = 30.",
+    "en": "We take away 5 each time: 35 - 5 = 30."
+   },
+   "tags": [
+    "pattern",
+    "decreasing",
+    "subtract-5"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1a862dfd08ab3deff4ab"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.sentier.005",
+   "quest": "nature.sentier",
+   "skill": "ARI-OPE-A13b",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 4,
+   "story": {
+    "fr": "Un guide dessine des flèches sur les arbres : 20, 17, 14.",
+    "en": "A guide draws arrows on the trees: 20, 17, 14."
+   },
+   "prompt": {
+    "fr": "Quel nombre viendra sur le prochain arbre ?",
+    "en": "Which number will be on the next tree?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 11,
+    "calc": "14-3"
+   },
+   "common_errors": [
+    {
+     "value": 12,
+     "misconception": "mis_pattern_wrong_rule",
+     "feedback": {
+      "fr": "On enlève 3 chaque fois, pas 2.",
+      "en": "We take away 3 each time, not 2."
+     }
+    },
+    {
+     "value": 13,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Tu as enlevé un de moins que prévu.",
+      "en": "You took away one less than needed."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compare 20 et 17, puis 17 et 14.",
+    "en": "Compare 20 and 17, then 17 and 14."
+   },
+   "explain": {
+    "fr": "On enlève 3 chaque fois : 14 - 3 = 11.",
+    "en": "We take away 3 each time: 14 - 3 = 11."
+   },
+   "tags": [
+    "pattern",
+    "decreasing",
+    "subtract-3"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1a862dfd08ab3deff4ab"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.sentier.006",
+   "quest": "nature.sentier",
+   "skill": "ARI-OPE-A13b",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Aya lit les bornes du sentier : 10, 20, 30.",
+    "en": "Aya reads the trail markers: 10, 20, 30."
+   },
+   "prompt": {
+    "fr": "Quel nombre complète la suite ?",
+    "en": "Which number completes the pattern?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "40",
+      "en": "40"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "31",
+      "en": "31"
+     },
+     "misconception": "mis_pattern_wrong_rule"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "50",
+      "en": "50"
+     },
+     "misconception": "mis_skip_count"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "35",
+      "en": "35"
+     },
+     "misconception": "mis_pattern_wrong_rule"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a",
+    "calc_choice": {
+     "a": "30+10"
+    }
+   },
+   "hint": {
+    "fr": "Compte par dizaines.",
+    "en": "Count by tens."
+   },
+   "explain": {
+    "fr": "On ajoute 10 chaque fois : 30 + 10 = 40.",
+    "en": "We add 10 each time: 30 + 10 = 40."
+   },
+   "tags": [
+    "pattern",
+    "tens"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1a862dfd08ab3deff4ab"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.sentier.007",
+   "quest": "nature.sentier",
+   "skill": "ARI-OPE-A13b",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Sous un grand pin, Kenji note 4, 8, 12 et 16.",
+    "en": "Under a tall pine, Kenji writes 4, 8, 12 and 16."
+   },
+   "prompt": {
+    "fr": "Quelle règle fait cette suite ?",
+    "en": "Which rule makes this pattern?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "On ajoute 4 chaque fois.",
+      "en": "We add 4 each time."
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "On ajoute 2 chaque fois.",
+      "en": "We add 2 each time."
+     },
+     "misconception": "mis_pattern_wrong_rule"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "On ajoute 1 chaque fois.",
+      "en": "We add 1 each time."
+     },
+     "misconception": "mis_pattern_wrong_rule"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "On enlève 4 chaque fois.",
+      "en": "We take away 4 each time."
+     },
+     "misconception": "mis_pattern_wrong_rule"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Regarde si les nombres montent ou descendent, puis de combien.",
+    "en": "Look at whether the numbers go up or down, then by how much."
+   },
+   "explain": {
+    "fr": "8 - 4 = 4, 12 - 8 = 4 et 16 - 12 = 4. On ajoute 4.",
+    "en": "8 - 4 = 4, 12 - 8 = 4 and 16 - 12 = 4. We add 4."
+   },
+   "tags": [
+    "pattern",
+    "rule"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1a862dfd08ab3deff4ab"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.sentier.008",
+   "quest": "nature.sentier",
+   "skill": "ARI-OPE-A13b",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Les bornes du premier tronçon portent 1, 3, 5, 7.",
+    "en": "The markers on the first stretch show 1, 3, 5, 7."
+   },
+   "prompt": {
+    "fr": "Léa pense que la borne suivante porte le nombre 8. A-t-elle raison ?",
+    "en": "Lea thinks the next marker shows the number 8. Is she right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_pattern_wrong_rule"
+   },
+   "hint": {
+    "fr": "Regarde de combien la suite avance chaque fois.",
+    "en": "Look at how much the pattern grows each time."
+   },
+   "explain": {
+    "fr": "On ajoute 2 chaque fois : après 7 vient 9, pas 8.",
+    "en": "We add 2 each time: after 7 comes 9, not 8."
+   },
+   "tags": [
+    "true-false",
+    "pattern",
+    "odd-numbers"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1a862dfd08ab3deff4ab"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.sentier.009",
+   "quest": "nature.sentier",
+   "skill": "ARI-OPE-A13b",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Des bornes numérotées de 3 en 3 sont tombées sur le sentier.",
+    "en": "Markers numbered by 3s have fallen on the trail."
+   },
+   "prompt": {
+    "fr": "Remets les bornes dans l'ordre, de la plus petite à la plus grande.",
+    "en": "Put the markers back in order, from the smallest to the biggest."
+   },
+   "items": [
+    {
+     "id": "i1",
+     "text": {
+      "fr": "12",
+      "en": "12"
+     },
+     "key": "12"
+    },
+    {
+     "id": "i2",
+     "text": {
+      "fr": "3",
+      "en": "3"
+     },
+     "key": "3"
+    },
+    {
+     "id": "i3",
+     "text": {
+      "fr": "9",
+      "en": "9"
+     },
+     "key": "9"
+    },
+    {
+     "id": "i4",
+     "text": {
+      "fr": "6",
+      "en": "6"
+     },
+     "key": "6"
+    },
+    {
+     "id": "i5",
+     "text": {
+      "fr": "15",
+      "en": "15"
+     },
+     "key": "15"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "i2",
+     "i4",
+     "i3",
+     "i1",
+     "i5"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Trouve d'abord la borne qui commence la suite.",
+    "en": "First find the marker that starts the pattern."
+   },
+   "explain": {
+    "fr": "L'ordre est 3, 6, 9, 12, 15. On ajoute 3 chaque fois.",
+    "en": "The order is 3, 6, 9, 12, 15. We add 3 each time."
+   },
+   "tags": [
+    "ordering",
+    "pattern",
+    "add-3"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1a862dfd08ab3deff4ab"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.sentier.010",
+   "quest": "nature.sentier",
+   "skill": "ARI-OPE-A13b",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le guide du sentier a écrit plusieurs suites et leurs règles.",
+    "en": "The trail guide wrote several patterns and their rules."
+   },
+   "prompt": {
+    "fr": "Relie chaque suite à sa règle.",
+    "en": "Match each pattern to its rule."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "2, 4, 6, 8",
+       "en": "2, 4, 6, 8"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "5, 10, 15, 20",
+       "en": "5, 10, 15, 20"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "10, 20, 30, 40",
+       "en": "10, 20, 30, 40"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "20, 18, 16, 14",
+       "en": "20, 18, 16, 14"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "On ajoute 5.",
+       "en": "Add 5."
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "On ajoute 10.",
+       "en": "Add 10."
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "On enlève 2.",
+       "en": "Take away 2."
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "On ajoute 2.",
+       "en": "Add 2."
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ],
+     [
+      "l4",
+      "r4"
+     ]
+    ],
+    "misconception": "mis_pattern_wrong_rule"
+   },
+   "hint": {
+    "fr": "Regarde si la suite monte ou descend, puis de combien.",
+    "en": "See if the pattern goes up or down, then by how much."
+   },
+   "explain": {
+    "fr": "Les trois premières suites montent de 2, de 5 et de 10. La dernière descend de 2.",
+    "en": "The first three patterns go up by 2, by 5 and by 10. The last one goes down by 2."
+   },
+   "tags": [
+    "matching",
+    "pattern",
+    "rules"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1a862dfd08ab3deff4ab"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.sentier.011",
+   "quest": "nature.sentier",
+   "skill": "ARI-OPE-A13b",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Sur la droite numérique du sentier, Léa saute de 2 en 2. La flèche montre où elle est.",
+    "en": "On the trail number line, Lea jumps by 2s. The arrow shows where she is."
+   },
+   "prompt": {
+    "fr": "Où sera-t-elle après 2 sauts de plus ?",
+    "en": "Where will she be after 2 more jumps?"
+   },
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 0,
+     "max": 20,
+     "step": 2,
+     "arrow": 12
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 16,
+    "calc": "12+2+2"
+   },
+   "common_errors": [
+    {
+     "value": 14,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Il faut faire 2 sauts, pas 1.",
+      "en": "You need 2 jumps, not 1."
+     }
+    },
+    {
+     "value": 13,
+     "misconception": "mis_pattern_wrong_rule",
+     "feedback": {
+      "fr": "Chaque saut vaut 2, pas 1.",
+      "en": "Each jump is worth 2, not 1."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Fais un saut de 2, puis un autre saut de 2.",
+    "en": "Make a jump of 2, then another jump of 2."
+   },
+   "explain": {
+    "fr": "De 12, un saut mène à 14 et un autre à 16.",
+    "en": "From 12, one jump leads to 14 and another to 16."
+   },
+   "tags": [
+    "numberline",
+    "pattern",
+    "add-2"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1a862dfd08ab3deff4ab"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.sentier.012",
+   "quest": "nature.sentier",
+   "skill": "ARI-OPE-A13b",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un écureuil cache des glands chaque jour. Il en cache 1, puis 3, puis 5, puis 7.",
+    "en": "A squirrel hides acorns each day. It hides 1, then 3, then 5, then 7."
+   },
+   "prompt": {
+    "fr": "Si ça continue, combien de glands cachera-t-il le jour suivant ?",
+    "en": "If it goes on, how many acorns will it hide the next day?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 9,
+    "calc": "7+2"
+   },
+   "common_errors": [
+    {
+     "value": 8,
+     "misconception": "mis_even_odd",
+     "feedback": {
+      "fr": "Les nombres de la suite sont tous impairs.",
+      "en": "The numbers in the pattern are all odd."
+     }
+    },
+    {
+     "value": 7,
+     "misconception": "mis_pattern_last_step",
+     "feedback": {
+      "fr": "Le nombre change à chaque jour : il monte de 2.",
+      "en": "The number changes every day: it grows by 2."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Regarde de combien le nombre grandit d'un jour à l'autre.",
+    "en": "Look at how much the number grows from one day to the next."
+   },
+   "explain": {
+    "fr": "On ajoute 2 chaque jour : 7 + 2 = 9 glands.",
+    "en": "We add 2 each day: 7 + 2 = 9 acorns."
+   },
+   "tags": [
+    "word-problem",
+    "pattern",
+    "odd-numbers"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1a862dfd08ab3deff4ab"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.sentier.013",
+   "quest": "nature.sentier",
+   "skill": "ARI-OPE-A13b",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Les bornes du grand sentier portent 10, 20, 30, et ainsi de suite. Il y en a 8.",
+    "en": "The markers on the long trail show 10, 20, 30, and so on. There are 8."
+   },
+   "prompt": {
+    "fr": "À peu près quel nombre est écrit sur la dernière borne ?",
+    "en": "About which number is written on the last marker?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 75,
+    "max": 85,
+    "exact_for_check": 80,
+    "calc": "8*10"
+   },
+   "common_errors": [
+    {
+     "value": 8,
+     "misconception": "mis_pattern_wrong_rule",
+     "feedback": {
+      "fr": "Les bornes montent de 10 en 10.",
+      "en": "The markers go up by 10 each time."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte par dizaines jusqu'à la huitième borne.",
+    "en": "Count by tens up to the eighth marker."
+   },
+   "explain": {
+    "fr": "La huitième borne porte 80, car 8 x 10 = 80.",
+    "en": "The eighth marker shows 80, since 8 x 10 = 80."
+   },
+   "tags": [
+    "estimation",
+    "pattern",
+    "tens"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1a862dfd08ab3deff4ab"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.campement.001",
+   "quest": "nature.campement",
+   "skill": "ARI-OPE-A02a",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa prépare un feu de camp avec l'aide de son grand frère.",
+    "en": "Lea prepares a campfire with her big brother's help."
+   },
+   "prompt": {
+    "fr": "Elle a 6 bûches et son frère en apporte 5. Combien de bûches y a-t-il ?",
+    "en": "She has 6 logs and her brother brings 5. How many logs are there?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 11,
+    "calc": "6+5"
+   },
+   "common_errors": [
+    {
+     "value": 10,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Recompte les 5 bûches de son frère.",
+      "en": "Count her brother's 5 logs again."
+     }
+    },
+    {
+     "value": 1,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les bûches : on additionne.",
+      "en": "We put the logs together, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pars de 6 et avance de 5.",
+    "en": "Start at 6 and count up 5."
+   },
+   "explain": {
+    "fr": "6 + 5 = 5 + 5 + 1 = 11.",
+    "en": "6 + 5 = 5 + 5 + 1 = 11."
+   },
+   "tags": [
+    "add-within-20",
+    "camp",
+    "logs"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_927afb8fd96dd1847c41"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.campement.002",
+   "quest": "nature.campement",
+   "skill": "ARI-OPE-A02a",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Noah prépare le dessert du soir au campement.",
+    "en": "Noah gets the evening dessert ready at the campsite."
+   },
+   "prompt": {
+    "fr": "Il a 7 guimauves dans un sac et 3 dans un autre. Combien de guimauves en tout ?",
+    "en": "He has 7 marshmallows in one bag and 3 in another. How many marshmallows in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 10,
+    "calc": "7+3"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte le deuxième sac.",
+      "en": "Close! Count the second bag again."
+     }
+    },
+    {
+     "value": 4,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les deux sacs : on additionne.",
+      "en": "We put both bags together, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "7 et 3 font un compte rond.",
+    "en": "7 and 3 make a round count."
+   },
+   "explain": {
+    "fr": "7 + 3 = 10.",
+    "en": "7 + 3 = 10."
+   },
+   "tags": [
+    "add-within-20",
+    "make-ten",
+    "camp"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_927afb8fd96dd1847c41"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.campement.003",
+   "quest": "nature.campement",
+   "skill": "ARI-OPE-A02a",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Mia compte les lampes de poche du camp.",
+    "en": "Mia counts the camp's flashlights."
+   },
+   "prompt": {
+    "fr": "Il y a 8 lampes rouges et 9 lampes jaunes. Combien de lampes en tout ?",
+    "en": "There are 8 red flashlights and 9 yellow ones. How many flashlights in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 17,
+    "calc": "8+9"
+   },
+   "common_errors": [
+    {
+     "value": 16,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les jaunes.",
+      "en": "Close! Count the yellow ones again."
+     }
+    },
+    {
+     "value": 1,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit toutes les lampes : on additionne.",
+      "en": "We put all the flashlights together, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pars de 9 et ajoute 8 en passant par 10.",
+    "en": "Start at 9 and add 8 by going through 10."
+   },
+   "explain": {
+    "fr": "9 + 8 = 9 + 1 + 7 = 10 + 7 = 17.",
+    "en": "9 + 8 = 9 + 1 + 7 = 10 + 7 = 17."
+   },
+   "tags": [
+    "add-within-20",
+    "make-ten",
+    "flashlights"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_927afb8fd96dd1847c41"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.campement.004",
+   "quest": "nature.campement",
+   "skill": "ARI-OPE-A02a",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Omar installe la grande tente avec des piquets de deux couleurs.",
+    "en": "Omar sets up the big tent with tent pegs of two colours."
+   },
+   "prompt": {
+    "fr": "Il a 6 piquets bleus et 8 piquets rouges. Combien de piquets en tout ?",
+    "en": "He has 6 blue pegs and 8 red pegs. How many pegs in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 14,
+    "calc": "6+8"
+   },
+   "common_errors": [
+    {
+     "value": 13,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les piquets rouges.",
+      "en": "Close! Count the red pegs again."
+     }
+    },
+    {
+     "value": 2,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les piquets : on additionne.",
+      "en": "We put the pegs together, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pars de 8 et avance de 6.",
+    "en": "Start at 8 and count up 6."
+   },
+   "explain": {
+    "fr": "8 + 6 = 8 + 2 + 4 = 10 + 4 = 14.",
+    "en": "8 + 6 = 8 + 2 + 4 = 10 + 4 = 14."
+   },
+   "tags": [
+    "add-within-20",
+    "tent",
+    "make-ten"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_927afb8fd96dd1847c41"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.campement.005",
+   "quest": "nature.campement",
+   "skill": "ARI-OPE-A02a",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Douze enfants sont déjà arrivés au campement du lac.",
+    "en": "Twelve children have already arrived at the lake campsite."
+   },
+   "prompt": {
+    "fr": "Sept autres enfants arrivent en autobus. Combien d'enfants sont au campement ?",
+    "en": "Seven more children arrive by bus. How many children are at the campsite?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 19,
+    "calc": "12+7"
+   },
+   "common_errors": [
+    {
+     "value": 18,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les nouveaux arrivés.",
+      "en": "Close! Count the new arrivals again."
+     }
+    },
+    {
+     "value": 5,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Les enfants se joignent au groupe : on additionne.",
+      "en": "The children join the group, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Ajoute d'abord les unités : 2 et 7.",
+    "en": "Add the ones first: 2 and 7."
+   },
+   "explain": {
+    "fr": "12 + 7 = 10 + 2 + 7 = 10 + 9 = 19.",
+    "en": "12 + 7 = 10 + 2 + 7 = 10 + 9 = 19."
+   },
+   "tags": [
+    "word-problem",
+    "add-within-20",
+    "children"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_927afb8fd96dd1847c41"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.campement.006",
+   "quest": "nature.campement",
+   "skill": "ARI-OPE-A02a",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Pour faire un grand feu, il faut 15 bâtons. Zoé en a déjà ramassé 9.",
+    "en": "To make a big fire, 15 sticks are needed. Zoe has already picked up 9."
+   },
+   "prompt": {
+    "fr": "Combien de bâtons doit-elle encore ramasser ?",
+    "en": "How many more sticks does she still need to pick up?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 6,
+    "calc": "15-9"
+   },
+   "common_errors": [
+    {
+     "value": 24,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche ce qui manque : on soustrait.",
+      "en": "We want what is missing, so we subtract."
+     }
+    },
+    {
+     "value": 7,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Compte en avançant de 9 jusqu'à 15.",
+      "en": "Close! Count up from 9 to 15."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte en avançant à partir de 9 jusqu'à 15.",
+    "en": "Count up from 9 to 15."
+   },
+   "explain": {
+    "fr": "De 9 à 15, il y a 6 pas, car 9 + 6 = 15.",
+    "en": "From 9 to 15 there are 6 steps, since 9 + 6 = 15."
+   },
+   "tags": [
+    "word-problem",
+    "missing-addend",
+    "sticks"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_927afb8fd96dd1847c41"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.campement.007",
+   "quest": "nature.campement",
+   "skill": "ARI-OPE-A02a",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Au campement, Ravi veut montrer 12 bûches avec deux piles.",
+    "en": "At the campsite, Ravi wants to show 12 logs with two piles."
+   },
+   "prompt": {
+    "fr": "Quelle addition donne 12 ?",
+    "en": "Which addition makes 12?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "7 + 5",
+      "en": "7 + 5"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "7 + 4",
+      "en": "7 + 4"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "8 + 5",
+      "en": "8 + 5"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "9 + 2",
+      "en": "9 + 2"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Calcule chaque addition avant de choisir.",
+    "en": "Work out each addition before you choose."
+   },
+   "explain": {
+    "fr": "7 + 5 = 12. Les autres donnent 11 ou 13.",
+    "en": "7 + 5 = 12. The others make 11 or 13."
+   },
+   "tags": [
+    "add-within-20",
+    "equations"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_927afb8fd96dd1847c41"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.campement.008",
+   "quest": "nature.campement",
+   "skill": "ARI-OPE-A02a",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Sofia compte les lampes de poche. Il y en a 8 dans la tente et 9 dehors.",
+    "en": "Sofia counts flashlights. There are 8 in the tent and 9 outside."
+   },
+   "prompt": {
+    "fr": "Combien de lampes y a-t-il en tout ?",
+    "en": "How many flashlights are there in all?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "17",
+      "en": "17"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "16",
+      "en": "16"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "18",
+      "en": "18"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "1",
+      "en": "1"
+     },
+     "misconception": "mis_subtract_instead_of_add"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a",
+    "calc_choice": {
+     "a": "8+9"
+    }
+   },
+   "hint": {
+    "fr": "Pars de 9 et avance de 8.",
+    "en": "Start at 9 and count up 8."
+   },
+   "explain": {
+    "fr": "8 + 9 = 17.",
+    "en": "8 + 9 = 17."
+   },
+   "tags": [
+    "add-within-20",
+    "flashlights"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_927afb8fd96dd1847c41"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.campement.009",
+   "quest": "nature.campement",
+   "skill": "ARI-OPE-A02a",
+   "type": "truefalse",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Théo compte les sacs de couchage. Il y en a 6 dans la grande tente et 7 dans la petite.",
+    "en": "Theo counts the sleeping bags. There are 6 in the big tent and 7 in the small one."
+   },
+   "prompt": {
+    "fr": "Théo dit qu'il y en a 12 en tout. A-t-il raison ?",
+    "en": "Theo says there are 12 in all. Is he right?"
+   },
+   "math_text": "6 + 7 = 12",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_off_by_one"
+   },
+   "hint": {
+    "fr": "Pars de 7 et avance de 6.",
+    "en": "Start at 7 and count up 6."
+   },
+   "explain": {
+    "fr": "6 + 7 = 13. Il y a 13 sacs de couchage, pas 12.",
+    "en": "6 + 7 = 13. There are 13 sleeping bags, not 12."
+   },
+   "tags": [
+    "true-false",
+    "add-within-20",
+    "sleeping-bags"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_927afb8fd96dd1847c41"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.campement.010",
+   "quest": "nature.campement",
+   "skill": "ARI-OPE-A02a",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Quatre groupes de campeurs comptent leurs gourdes d'eau.",
+    "en": "Four groups of campers count their water bottles."
+   },
+   "prompt": {
+    "fr": "Range les additions, de la plus petite somme à la plus grande.",
+    "en": "Put the additions in order, from the smallest sum to the biggest."
+   },
+   "items": [
+    {
+     "id": "i1",
+     "text": {
+      "fr": "9 + 8",
+      "en": "9 + 8"
+     },
+     "key": "17"
+    },
+    {
+     "id": "i2",
+     "text": {
+      "fr": "6 + 6",
+      "en": "6 + 6"
+     },
+     "key": "12"
+    },
+    {
+     "id": "i3",
+     "text": {
+      "fr": "10 + 9",
+      "en": "10 + 9"
+     },
+     "key": "19"
+    },
+    {
+     "id": "i4",
+     "text": {
+      "fr": "7 + 4",
+      "en": "7 + 4"
+     },
+     "key": "11"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "i4",
+     "i2",
+     "i1",
+     "i3"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Calcule la somme de chaque addition d'abord.",
+    "en": "Work out each sum first."
+   },
+   "explain": {
+    "fr": "Les sommes sont 11, 12, 17 et 19. On les range dans cet ordre.",
+    "en": "The sums are 11, 12, 17 and 19. We put them in that order."
+   },
+   "tags": [
+    "ordering",
+    "add-within-20"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_927afb8fd96dd1847c41"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.campement.011",
+   "quest": "nature.campement",
+   "skill": "ARI-OPE-A02a",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Eliott range les provisions du camp et note les totaux.",
+    "en": "Eliott sorts the camp supplies and writes down the totals."
+   },
+   "prompt": {
+    "fr": "Relie chaque addition à son total.",
+    "en": "Match each addition to its total."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "8 + 7",
+       "en": "8 + 7"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "9 + 9",
+       "en": "9 + 9"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "6 + 5",
+       "en": "6 + 5"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "10 + 6",
+       "en": "10 + 6"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "18",
+       "en": "18"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "11",
+       "en": "11"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "16",
+       "en": "16"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "15",
+       "en": "15"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ],
+     [
+      "l4",
+      "r4"
+     ]
+    ],
+    "misconception": "mis_match"
+   },
+   "hint": {
+    "fr": "Calcule chaque addition, puis cherche son total.",
+    "en": "Work out each addition, then look for its total."
+   },
+   "explain": {
+    "fr": "8 + 7 = 15, 9 + 9 = 18, 6 + 5 = 11 et 10 + 6 = 16.",
+    "en": "8 + 7 = 15, 9 + 9 = 18, 6 + 5 = 11 and 10 + 6 = 16."
+   },
+   "tags": [
+    "matching",
+    "add-within-20"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_927afb8fd96dd1847c41"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.campement.012",
+   "quest": "nature.campement",
+   "skill": "ARI-OPE-A02a",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Au camp, Nora lance trois dés. Elle prend autant de bâtons que le total des points.",
+    "en": "At camp, Nora rolls three dice. She takes as many sticks as the total of the dots."
+   },
+   "prompt": {
+    "fr": "Combien de bâtons prend-elle ?",
+    "en": "How many sticks does she take?"
+   },
+   "visual": {
+    "kind": "dice",
+    "data": {
+     "dice": [
+      5,
+      6,
+      4
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 15,
+    "calc": "5+6+4"
+   },
+   "common_errors": [
+    {
+     "value": 14,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les points d'un dé.",
+      "en": "Close! Count the dots on one die again."
+     }
+    },
+    {
+     "value": 11,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Il y a trois dés : n'oublie pas le dernier.",
+      "en": "There are three dice: don't forget the last one."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne deux dés, puis ajoute le troisième.",
+    "en": "Add two dice, then add the third."
+   },
+   "explain": {
+    "fr": "5 + 6 = 11, puis 11 + 4 = 15.",
+    "en": "5 + 6 = 11, then 11 + 4 = 15."
+   },
+   "tags": [
+    "dice",
+    "add-three-numbers"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_927afb8fd96dd1847c41"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.campement.013",
+   "quest": "nature.campement",
+   "skill": "ARI-OPE-A02a",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Pour la randonnée, Léo a 9 gourdes bleues et 10 gourdes vertes.",
+    "en": "For the hike, Leo has 9 blue bottles and 10 green bottles."
+   },
+   "prompt": {
+    "fr": "Environ combien de gourdes a-t-il en tout ?",
+    "en": "About how many bottles does he have in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 18,
+    "max": 20,
+    "exact_for_check": 19,
+    "calc": "9+10"
+   },
+   "common_errors": [
+    {
+     "value": 10,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Il faut compter les deux sortes de gourdes.",
+      "en": "You need to count both kinds of bottles."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à 10 + 10, puis ajuste.",
+    "en": "Think of 10 + 10, then adjust."
+   },
+   "explain": {
+    "fr": "9 + 10 = 19, c'est presque 20.",
+    "en": "9 + 10 = 19, which is close to 20."
+   },
+   "tags": [
+    "estimation",
+    "add-within-20",
+    "bottles"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_927afb8fd96dd1847c41"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.observer.001",
+   "quest": "nature.observer",
+   "skill": "STA-03a",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Noah note les oiseaux vus du matin. Une image représente un oiseau.",
+    "en": "Noah notes the birds seen this morning. One picture stands for one bird."
+   },
+   "prompt": {
+    "fr": "Combien de cardinaux a-t-il vus ?",
+    "en": "How many cardinals did he see?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Oiseaux vus",
+      "en": "Birds seen"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "mésange",
+        "en": "chickadee"
+       },
+       "count": 6
+      },
+      {
+       "label": {
+        "fr": "geai bleu",
+        "en": "blue jay"
+       },
+       "count": 3
+      },
+      {
+       "label": {
+        "fr": "cardinal",
+        "en": "cardinal"
+       },
+       "count": 4
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 4,
+    "calc": "4"
+   },
+   "common_errors": [
+    {
+     "value": 6,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as lu la ligne des mésanges.",
+      "en": "You read the chickadee row."
+     }
+    },
+    {
+     "value": 3,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as lu la ligne des geais bleus.",
+      "en": "You read the blue jay row."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Trouve la ligne du cardinal et compte ses images.",
+    "en": "Find the cardinal row and count its pictures."
+   },
+   "explain": {
+    "fr": "La ligne du cardinal a 4 images.",
+    "en": "The cardinal row has 4 pictures."
+   },
+   "tags": [
+    "pictograph",
+    "birds"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_7dfcdcdebd599787719d"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.observer.002",
+   "quest": "nature.observer",
+   "skill": "STA-03a",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa regarde la mangeoire du jardin. Une image représente un oiseau.",
+    "en": "Lea watches the garden feeder. One picture stands for one bird."
+   },
+   "prompt": {
+    "fr": "Combien d'oiseaux y a-t-il en tout ?",
+    "en": "How many birds are there in all?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Oiseaux à la mangeoire",
+      "en": "Birds at the feeder"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "moineau",
+        "en": "sparrow"
+       },
+       "count": 5
+      },
+      {
+       "label": {
+        "fr": "merle",
+        "en": "robin"
+       },
+       "count": 2
+      },
+      {
+       "label": {
+        "fr": "corneille",
+        "en": "crow"
+       },
+       "count": 4
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 11,
+    "calc": "5+2+4"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié une ligne.",
+      "en": "You left out a row."
+     }
+    },
+    {
+     "value": 10,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les trois lignes.",
+      "en": "Close! Count the three rows again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les images de chaque ligne, puis réunis-les.",
+    "en": "Count the pictures in each row, then put them together."
+   },
+   "explain": {
+    "fr": "5 + 2 + 4 = 11 oiseaux.",
+    "en": "5 + 2 + 4 = 11 birds."
+   },
+   "tags": [
+    "pictograph",
+    "add-three-numbers"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_7dfcdcdebd599787719d"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.observer.003",
+   "quest": "nature.observer",
+   "skill": "STA-03a",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Au bord du lac, Samuel compte les oiseaux. Chaque image représente 2 oiseaux.",
+    "en": "By the lake, Samuel counts the birds. Each picture stands for 2 birds."
+   },
+   "prompt": {
+    "fr": "Combien d'oiseaux y a-t-il en tout ?",
+    "en": "How many birds are there in all?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Oiseaux au lac",
+      "en": "Birds at the lake"
+     },
+     "each": 2,
+     "rows": [
+      {
+       "label": {
+        "fr": "mésange",
+        "en": "chickadee"
+       },
+       "count": 4
+      },
+      {
+       "label": {
+        "fr": "geai bleu",
+        "en": "blue jay"
+       },
+       "count": 3
+      },
+      {
+       "label": {
+        "fr": "cardinal",
+        "en": "cardinal"
+       },
+       "count": 5
+      }
+     ]
+    }
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "24",
+      "en": "24"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "12",
+      "en": "12"
+     },
+     "misconception": "mis_read_scale"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "22",
+      "en": "22"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "10",
+      "en": "10"
+     },
+     "misconception": "mis_partial_result"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a",
+    "calc_choice": {
+     "a": "(4+3+5)*2"
+    }
+   },
+   "hint": {
+    "fr": "Compte toutes les images, puis compte de 2 en 2.",
+    "en": "Count all the pictures, then count by 2s."
+   },
+   "explain": {
+    "fr": "4 + 3 + 5 = 12 images. 12 images de 2 oiseaux font 24 oiseaux.",
+    "en": "4 + 3 + 5 = 12 pictures. 12 pictures of 2 birds make 24 birds."
+   },
+   "tags": [
+    "pictograph",
+    "scale-of-2",
+    "total"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_7dfcdcdebd599787719d"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.observer.004",
+   "quest": "nature.observer",
+   "skill": "STA-03a",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Au bord du lac, Samuel compte les oiseaux. Chaque image représente 2 oiseaux.",
+    "en": "By the lake, Samuel counts the birds. Each picture stands for 2 birds."
+   },
+   "prompt": {
+    "fr": "Combien de mésanges a-t-il vues ?",
+    "en": "How many chickadees did he see?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Oiseaux au lac",
+      "en": "Birds at the lake"
+     },
+     "each": 2,
+     "rows": [
+      {
+       "label": {
+        "fr": "mésange",
+        "en": "chickadee"
+       },
+       "count": 4
+      },
+      {
+       "label": {
+        "fr": "geai bleu",
+        "en": "blue jay"
+       },
+       "count": 3
+      },
+      {
+       "label": {
+        "fr": "cardinal",
+        "en": "cardinal"
+       },
+       "count": 5
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 8,
+    "calc": "4*2"
+   },
+   "common_errors": [
+    {
+     "value": 4,
+     "misconception": "mis_read_scale",
+     "feedback": {
+      "fr": "Une image vaut 2 oiseaux, pas 1.",
+      "en": "One picture is worth 2 birds, not 1."
+     }
+    },
+    {
+     "value": 6,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as lu la ligne des geais bleus.",
+      "en": "You read the blue jay row."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les images, puis compte de 2 en 2.",
+    "en": "Count the pictures, then count by 2s."
+   },
+   "explain": {
+    "fr": "4 images de 2 oiseaux : 2, 4, 6, 8. Il y a 8 mésanges.",
+    "en": "4 pictures of 2 birds: 2, 4, 6, 8. There are 8 chickadees."
+   },
+   "tags": [
+    "pictograph",
+    "scale-of-2",
+    "birds"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_7dfcdcdebd599787719d"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.observer.005",
+   "quest": "nature.observer",
+   "skill": "STA-03a",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 4,
+   "story": {
+    "fr": "Au bord du lac, Samuel compte les oiseaux. Chaque image représente 2 oiseaux.",
+    "en": "By the lake, Samuel counts the birds. Each picture stands for 2 birds."
+   },
+   "prompt": {
+    "fr": "Combien de cardinaux de plus que de geais bleus a-t-il vus ?",
+    "en": "How many more cardinals than blue jays did he see?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Oiseaux au lac",
+      "en": "Birds at the lake"
+     },
+     "each": 2,
+     "rows": [
+      {
+       "label": {
+        "fr": "mésange",
+        "en": "chickadee"
+       },
+       "count": 4
+      },
+      {
+       "label": {
+        "fr": "geai bleu",
+        "en": "blue jay"
+       },
+       "count": 3
+      },
+      {
+       "label": {
+        "fr": "cardinal",
+        "en": "cardinal"
+       },
+       "count": 5
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 4,
+    "calc": "(5-3)*2"
+   },
+   "common_errors": [
+    {
+     "value": 2,
+     "misconception": "mis_read_scale",
+     "feedback": {
+      "fr": "Tu as compté des images, mais chacune vaut 2 oiseaux.",
+      "en": "You counted pictures, but each is worth 2 birds."
+     }
+    },
+    {
+     "value": 16,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On compare : on soustrait.",
+      "en": "We compare, so we subtract."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Trouve combien d'images de plus, puis pense à ce que vaut une image.",
+    "en": "Find how many more pictures, then think what one picture is worth."
+   },
+   "explain": {
+    "fr": "Il y a 2 images de plus. 2 images de 2 oiseaux font 4 oiseaux.",
+    "en": "There are 2 more pictures. 2 pictures of 2 birds make 4 birds."
+   },
+   "tags": [
+    "pictograph",
+    "compare",
+    "scale-of-2"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_7dfcdcdebd599787719d"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.observer.006",
+   "quest": "nature.observer",
+   "skill": "STA-03a",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah a vu 4 mésanges le matin.",
+    "en": "Noah saw 4 chickadees in the morning."
+   },
+   "prompt": {
+    "fr": "Il en voit 3 de plus après le déjeuner. Combien de mésanges a-t-il vues en tout ?",
+    "en": "He sees 3 more after lunch. How many chickadees has he seen in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 7,
+    "calc": "4+3"
+   },
+   "common_errors": [
+    {
+     "value": 1,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les mésanges : on additionne.",
+      "en": "We put the chickadees together, so we add."
+     }
+    },
+    {
+     "value": 6,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les 3 de plus.",
+      "en": "Close! Count the 3 extra ones again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pars de 4 et avance de 3.",
+    "en": "Start at 4 and count up 3."
+   },
+   "explain": {
+    "fr": "4 + 3 = 7 mésanges.",
+    "en": "4 + 3 = 7 chickadees."
+   },
+   "tags": [
+    "word-problem",
+    "birds",
+    "add-within-10"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_7dfcdcdebd599787719d"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.observer.007",
+   "quest": "nature.observer",
+   "skill": "STA-03a",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Il y a 9 oiseaux sur une grosse branche, dont un hibou.",
+    "en": "There are 9 birds on a big branch, including an owl."
+   },
+   "prompt": {
+    "fr": "Quatre oiseaux s'envolent. Combien d'oiseaux restent sur la branche ?",
+    "en": "Four birds fly away. How many birds stay on the branch?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "9-4"
+   },
+   "common_errors": [
+    {
+     "value": 13,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Des oiseaux partent : on soustrait.",
+      "en": "Birds leave, so we subtract."
+     }
+    },
+    {
+     "value": 4,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Ce nombre est celui des oiseaux partis, pas des restants.",
+      "en": "That is the number of birds that left, not the ones that stayed."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Recule de 4 à partir de 9.",
+    "en": "Count back 4 from 9."
+   },
+   "explain": {
+    "fr": "9 - 4 = 5 oiseaux.",
+    "en": "9 - 4 = 5 birds."
+   },
+   "tags": [
+    "word-problem",
+    "subtract",
+    "owl"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_7dfcdcdebd599787719d"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.observer.008",
+   "quest": "nature.observer",
+   "skill": "STA-03a",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Dans un pictogramme du parc, une image représente 2 oiseaux. La ligne du geai a 3 images.",
+    "en": "In a park pictograph, one picture stands for 2 birds. The blue jay row has 3 pictures."
+   },
+   "prompt": {
+    "fr": "Combien de geais bleus ont été vus ?",
+    "en": "How many blue jays were seen?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "6",
+      "en": "6"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "3",
+      "en": "3"
+     },
+     "misconception": "mis_read_scale"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "5",
+      "en": "5"
+     },
+     "misconception": "mis_add_instead_of_multiply"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "8",
+      "en": "8"
+     },
+     "misconception": "mis_skip_count"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a",
+    "calc_choice": {
+     "a": "3*2"
+    }
+   },
+   "hint": {
+    "fr": "Chaque image compte pour 2 oiseaux.",
+    "en": "Each picture counts for 2 birds."
+   },
+   "explain": {
+    "fr": "3 images de 2 oiseaux : 2, 4, 6.",
+    "en": "3 pictures of 2 birds: 2, 4, 6."
+   },
+   "tags": [
+    "pictograph",
+    "scale-of-2"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_7dfcdcdebd599787719d"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.observer.009",
+   "quest": "nature.observer",
+   "skill": "STA-03a",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah a vu 5 merles et 3 corneilles pendant sa promenade.",
+    "en": "Noah saw 5 robins and 3 crows on his walk."
+   },
+   "prompt": {
+    "fr": "Il dit qu'il a vu plus de merles que de corneilles. A-t-il raison ?",
+    "en": "He says he saw more robins than crows. Is he right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": true
+   },
+   "hint": {
+    "fr": "Compare 5 et 3.",
+    "en": "Compare 5 and 3."
+   },
+   "explain": {
+    "fr": "5 est plus grand que 3, donc il a vu plus de merles.",
+    "en": "5 is bigger than 3, so he saw more robins."
+   },
+   "tags": [
+    "true-false",
+    "compare",
+    "birds"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_7dfcdcdebd599787719d"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.observer.010",
+   "quest": "nature.observer",
+   "skill": "STA-03a",
+   "type": "order",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa a compté quatre sortes d'oiseaux au parc.",
+    "en": "Lea counted four kinds of birds at the park."
+   },
+   "prompt": {
+    "fr": "Range-les du moins vu au plus vu.",
+    "en": "Put them in order, from least seen to most seen."
+   },
+   "items": [
+    {
+     "id": "i1",
+     "text": {
+      "fr": "mésange : 6",
+      "en": "chickadee: 6"
+     },
+     "key": "6"
+    },
+    {
+     "id": "i2",
+     "text": {
+      "fr": "geai bleu : 3",
+      "en": "blue jay: 3"
+     },
+     "key": "3"
+    },
+    {
+     "id": "i3",
+     "text": {
+      "fr": "cardinal : 4",
+      "en": "cardinal: 4"
+     },
+     "key": "4"
+    },
+    {
+     "id": "i4",
+     "text": {
+      "fr": "moineau : 5",
+      "en": "sparrow: 5"
+     },
+     "key": "5"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "i2",
+     "i3",
+     "i4",
+     "i1"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Trouve d'abord le plus petit nombre.",
+    "en": "First find the smallest number."
+   },
+   "explain": {
+    "fr": "L'ordre est 3, 4, 5, 6 : geai bleu, cardinal, moineau, mésange.",
+    "en": "The order is 3, 4, 5, 6: blue jay, cardinal, sparrow, chickadee."
+   },
+   "tags": [
+    "ordering",
+    "birds",
+    "data"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_7dfcdcdebd599787719d"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.observer.011",
+   "quest": "nature.observer",
+   "skill": "STA-03a",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Dans ce pictogramme, une image représente 2 oiseaux.",
+    "en": "In this pictograph, one picture stands for 2 birds."
+   },
+   "prompt": {
+    "fr": "Relie chaque ligne d'images au bon nombre d'oiseaux.",
+    "en": "Match each row of pictures to the right number of birds."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "3 images",
+       "en": "3 pictures"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "5 images",
+       "en": "5 pictures"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "1 image",
+       "en": "1 picture"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "4 images",
+       "en": "4 pictures"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "10 oiseaux",
+       "en": "10 birds"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "2 oiseaux",
+       "en": "2 birds"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "8 oiseaux",
+       "en": "8 birds"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "6 oiseaux",
+       "en": "6 birds"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ],
+     [
+      "l4",
+      "r4"
+     ]
+    ],
+    "misconception": "mis_read_scale"
+   },
+   "hint": {
+    "fr": "Compte de 2 en 2 pour chaque ligne.",
+    "en": "Count by 2s for each row."
+   },
+   "explain": {
+    "fr": "3 images font 6. 5 images font 10. 1 image fait 2. 4 images font 8.",
+    "en": "3 pictures make 6. 5 pictures make 10. 1 picture makes 2. 4 pictures make 8."
+   },
+   "tags": [
+    "matching",
+    "pictograph",
+    "scale-of-2"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_7dfcdcdebd599787719d"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.observer.012",
+   "quest": "nature.observer",
+   "skill": "STA-03a",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Dans le pictogramme du grand marais, une image représente 10 oiseaux. La ligne des canards a 9 images.",
+    "en": "In the big marsh pictograph, one picture stands for 10 birds. The duck row has 9 pictures."
+   },
+   "prompt": {
+    "fr": "Environ combien de canards y a-t-il ?",
+    "en": "About how many ducks are there?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 85,
+    "max": 95,
+    "exact_for_check": 90,
+    "calc": "9*10"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_read_scale",
+     "feedback": {
+      "fr": "Une image vaut 10 oiseaux, pas 1.",
+      "en": "One picture is worth 10 birds, not 1."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 10 en 10 jusqu'à 9 images.",
+    "en": "Count by 10s up to 9 pictures."
+   },
+   "explain": {
+    "fr": "9 images de 10 oiseaux font environ 90 canards.",
+    "en": "9 pictures of 10 birds make about 90 ducks."
+   },
+   "tags": [
+    "estimation",
+    "pictograph",
+    "scale-of-10"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_7dfcdcdebd599787719d"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.rivieres.001",
+   "quest": "nature.rivieres",
+   "skill": "MES-A05a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa trouve une longue branche qui flotte dans le ruisseau. Elle mesure 1 mètre.",
+    "en": "Lea finds a long branch floating in the stream. It measures 1 metre."
+   },
+   "prompt": {
+    "fr": "Combien de centimètres la branche mesure-t-elle ?",
+    "en": "How many centimetres long is the branch?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 100,
+    "calc": "1*100"
+   },
+   "common_errors": [
+    {
+     "value": 10,
+     "misconception": "mis_unit_confusion",
+     "feedback": {
+      "fr": "10 cm font 1 dm. Un mètre est bien plus long.",
+      "en": "10 cm make 1 dm. A metre is much longer."
+     }
+    },
+    {
+     "value": 1000,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "1 mètre fait 100 cm, pas 1000.",
+      "en": "1 metre is 100 cm, not 1000."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à une règle de 1 mètre : elle a plusieurs de ces petites graduations.",
+    "en": "Think of a 1 metre stick: it has many of those small marks."
+   },
+   "explain": {
+    "fr": "1 m = 100 cm. Un mètre contient cent centimètres.",
+    "en": "1 m = 100 cm. A metre holds a hundred centimetres."
+   },
+   "tags": [
+    "metre",
+    "centimetre",
+    "conversion"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_52196f49a5f1cdfffed1"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.rivieres.002",
+   "quest": "nature.rivieres",
+   "skill": "MES-A05a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Noah ramasse un galet plat qui mesure 1 décimètre de long.",
+    "en": "Noah picks up a flat pebble that is 1 decimetre long."
+   },
+   "prompt": {
+    "fr": "Quelle est la longueur du galet, en cm ?",
+    "en": "How long is the pebble, in cm?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 10,
+    "calc": "1*10"
+   },
+   "common_errors": [
+    {
+     "value": 1,
+     "misconception": "mis_unit_confusion",
+     "feedback": {
+      "fr": "Un décimètre est plus long qu'un centimètre.",
+      "en": "A decimetre is longer than a centimetre."
+     }
+    },
+    {
+     "value": 100,
+     "misconception": "mis_unit_confusion",
+     "feedback": {
+      "fr": "100 cm font 1 m, pas 1 dm.",
+      "en": "100 cm make 1 m, not 1 dm."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Un décimètre vaut une dizaine de centimètres.",
+    "en": "Think of a decimetre as a small group of centimetre marks."
+   },
+   "explain": {
+    "fr": "1 dm = 10 cm. Un décimètre contient dix centimètres.",
+    "en": "1 dm = 10 cm. A decimetre holds ten centimetres."
+   },
+   "tags": [
+    "decimetre",
+    "centimetre",
+    "conversion"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_52196f49a5f1cdfffed1"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.rivieres.003",
+   "quest": "nature.rivieres",
+   "skill": "MES-A05a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Une planche de 1 mètre sert de pont sur un petit ruisseau.",
+    "en": "A 1 metre plank is used as a bridge over a small stream."
+   },
+   "prompt": {
+    "fr": "Quelle est la longueur de la planche, en dm ?",
+    "en": "How long is the plank, in dm?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 10,
+    "calc": "1*10"
+   },
+   "common_errors": [
+    {
+     "value": 100,
+     "misconception": "mis_unit_confusion",
+     "feedback": {
+      "fr": "100 est le nombre de centimètres.",
+      "en": "100 is the number of centimetres."
+     }
+    },
+    {
+     "value": 1,
+     "misconception": "mis_unit_confusion",
+     "feedback": {
+      "fr": "Un mètre est plus long qu'un décimètre.",
+      "en": "A metre is longer than a decimetre."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Combien de décimètres faut-il pour faire un mètre ?",
+    "en": "How many decimetres does it take to make a metre?"
+   },
+   "explain": {
+    "fr": "1 m = 10 dm. Un mètre contient dix décimètres.",
+    "en": "1 m = 10 dm. A metre holds ten decimetres."
+   },
+   "tags": [
+    "metre",
+    "decimetre",
+    "conversion"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_52196f49a5f1cdfffed1"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.rivieres.004",
+   "quest": "nature.rivieres",
+   "skill": "MES-A05a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le ruisseau de la forêt a 3 mètres de large.",
+    "en": "The forest stream is 3 metres wide."
+   },
+   "prompt": {
+    "fr": "Combien de centimètres de large a-t-il ?",
+    "en": "How many centimetres wide is it?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 300,
+    "calc": "3*100"
+   },
+   "common_errors": [
+    {
+     "value": 30,
+     "misconception": "mis_unit_confusion",
+     "feedback": {
+      "fr": "30 serait la mesure en décimètres.",
+      "en": "30 would be the measure in decimetres."
+     }
+    },
+    {
+     "value": 3,
+     "misconception": "mis_unit_ignored",
+     "feedback": {
+      "fr": "Il faut convertir les mètres en centimètres.",
+      "en": "You need to change metres into centimetres."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "1 mètre vaut 100 cm.",
+    "en": "1 metre is worth 100 cm."
+   },
+   "explain": {
+    "fr": "3 x 100 = 300. Le ruisseau a 300 cm de large.",
+    "en": "3 x 100 = 300. The stream is 300 cm wide."
+   },
+   "tags": [
+    "metre",
+    "centimetre",
+    "conversion"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_52196f49a5f1cdfffed1"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.rivieres.005",
+   "quest": "nature.rivieres",
+   "skill": "MES-A05a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Mia mesure un tronc d'arbre tombé près de la rivière : il mesure 5 décimètres.",
+    "en": "Mia measures a fallen tree trunk near the river: it is 5 decimetres long."
+   },
+   "prompt": {
+    "fr": "Quelle est la longueur du tronc, en cm ?",
+    "en": "How long is the trunk, in cm?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 50,
+    "calc": "5*10"
+   },
+   "common_errors": [
+    {
+     "value": 5,
+     "misconception": "mis_unit_ignored",
+     "feedback": {
+      "fr": "Il faut convertir les décimètres en centimètres.",
+      "en": "You need to change decimetres into centimetres."
+     }
+    },
+    {
+     "value": 500,
+     "misconception": "mis_unit_confusion",
+     "feedback": {
+      "fr": "500 serait la mesure de 5 mètres en centimètres.",
+      "en": "500 would be 5 metres in centimetres."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "1 décimètre vaut 10 centimètres.",
+    "en": "1 decimetre is worth 10 centimetres."
+   },
+   "explain": {
+    "fr": "5 x 10 = 50. Le tronc fait 50 cm.",
+    "en": "5 x 10 = 50. The trunk is 50 cm long."
+   },
+   "tags": [
+    "decimetre",
+    "centimetre",
+    "conversion"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_52196f49a5f1cdfffed1"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.rivieres.006",
+   "quest": "nature.rivieres",
+   "skill": "MES-A05a",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un petit bateau d'écorce descend le ruisseau sur 2 mètres, puis sur 30 centimètres de plus.",
+    "en": "A small bark boat floats 2 metres down the stream, then 30 centimetres more."
+   },
+   "prompt": {
+    "fr": "Quelle distance a-t-il parcourue en tout, en centimètres ?",
+    "en": "How far did it travel in all, in centimetres?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 230,
+    "calc": "2*100+30"
+   },
+   "common_errors": [
+    {
+     "value": 32,
+     "misconception": "mis_unit_ignored",
+     "feedback": {
+      "fr": "Il faut d'abord changer les mètres en centimètres.",
+      "en": "First change the metres into centimetres."
+     }
+    },
+    {
+     "value": 2030,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "2 m font 200 cm, pas 2000.",
+      "en": "2 m is 200 cm, not 2000."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Change 2 mètres en centimètres avant d'additionner.",
+    "en": "Change 2 metres into centimetres before adding."
+   },
+   "explain": {
+    "fr": "2 m = 200 cm. Puis 200 + 30 = 230 cm.",
+    "en": "2 m = 200 cm. Then 200 + 30 = 230 cm."
+   },
+   "tags": [
+    "word-problem",
+    "conversion",
+    "add"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_52196f49a5f1cdfffed1"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.rivieres.007",
+   "quest": "nature.rivieres",
+   "skill": "MES-A05a",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Le ruisseau a 150 cm de large. Zoé a une planche de 2 mètres pour faire un pont.",
+    "en": "The stream is 150 cm wide. Zoe has a 2 metre plank to make a bridge."
+   },
+   "prompt": {
+    "fr": "De combien de centimètres la planche est-elle plus longue que le ruisseau est large ?",
+    "en": "By how many centimetres is the plank longer than the stream is wide?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 50,
+    "calc": "2*100-150"
+   },
+   "common_errors": [
+    {
+     "value": 148,
+     "misconception": "mis_unit_ignored",
+     "feedback": {
+      "fr": "Il faut utiliser la même unité pour les deux mesures.",
+      "en": "You need the same unit for both measures."
+     }
+    },
+    {
+     "value": 350,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On compare : on soustrait.",
+      "en": "We compare, so we subtract."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Change la planche en centimètres, puis soustrais.",
+    "en": "Change the plank into centimetres, then subtract."
+   },
+   "explain": {
+    "fr": "2 m = 200 cm. Puis 200 - 150 = 50 cm.",
+    "en": "2 m = 200 cm. Then 200 - 150 = 50 cm."
+   },
+   "tags": [
+    "word-problem",
+    "conversion",
+    "compare"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_52196f49a5f1cdfffed1"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.rivieres.008",
+   "quest": "nature.rivieres",
+   "skill": "MES-A05a",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Samuel veut savoir la largeur d'un ruisseau en forêt.",
+    "en": "Samuel wants to know how wide a forest stream is."
+   },
+   "prompt": {
+    "fr": "Quelle unité convient le mieux pour mesurer sa largeur ?",
+    "en": "Which unit is best to measure its width?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "le mètre",
+      "en": "the metre"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "le centimètre",
+      "en": "the centimetre"
+     },
+     "misconception": "mis_unit_confusion"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "le kilomètre",
+      "en": "the kilometre"
+     },
+     "misconception": "mis_unit_confusion"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "le millimètre",
+      "en": "the millimetre"
+     },
+     "misconception": "mis_unit_confusion"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Un ruisseau est plus large qu'un crayon, mais pas aussi long qu'une route.",
+    "en": "A stream is wider than a pencil, but not as long as a road."
+   },
+   "explain": {
+    "fr": "On mesure la largeur d'un ruisseau en mètres.",
+    "en": "We measure the width of a stream in metres."
+   },
+   "tags": [
+    "units",
+    "choose-the-unit",
+    "stream"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_52196f49a5f1cdfffed1"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.rivieres.009",
+   "quest": "nature.rivieres",
+   "skill": "MES-A05a",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Aya a une corde de 4 mètres pour traverser le ruisseau.",
+    "en": "Aya has a 4 metre rope to cross the stream."
+   },
+   "prompt": {
+    "fr": "Quelle mesure est la même que 4 m ?",
+    "en": "Which measure is the same as 4 m?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "400 cm",
+      "en": "400 cm"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "40 cm",
+      "en": "40 cm"
+     },
+     "misconception": "mis_unit_confusion"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "4 cm",
+      "en": "4 cm"
+     },
+     "misconception": "mis_unit_ignored"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "4000 cm",
+      "en": "4000 cm"
+     },
+     "misconception": "mis_place_value"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Un mètre vaut 100 cm.",
+    "en": "One metre is worth 100 cm."
+   },
+   "explain": {
+    "fr": "4 x 100 = 400. Donc 4 m = 400 cm.",
+    "en": "4 x 100 = 400. So 4 m = 400 cm."
+   },
+   "tags": [
+    "metre",
+    "centimetre",
+    "conversion"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_52196f49a5f1cdfffed1"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.rivieres.010",
+   "quest": "nature.rivieres",
+   "skill": "MES-A05a",
+   "type": "truefalse",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Louis a trouvé une branche de 6 décimètres le long de la rivière.",
+    "en": "Louis found a 6 decimetre branch along the river."
+   },
+   "prompt": {
+    "fr": "Louis dit qu'elle mesure 6 centimètres. A-t-il raison ?",
+    "en": "Louis says it is 6 centimetres long. Is he right?"
+   },
+   "math_text": "6 dm = 6 cm",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_unit_confusion"
+   },
+   "hint": {
+    "fr": "Un décimètre est plus long qu'un centimètre.",
+    "en": "A decimetre is longer than a centimetre."
+   },
+   "explain": {
+    "fr": "6 dm = 60 cm, pas 6 cm.",
+    "en": "6 dm = 60 cm, not 6 cm."
+   },
+   "tags": [
+    "true-false",
+    "decimetre",
+    "centimetre"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_52196f49a5f1cdfffed1"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.rivieres.011",
+   "quest": "nature.rivieres",
+   "skill": "MES-A05a",
+   "type": "order",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Des petites branches flottent dans la rivière. Elles ont des longueurs mesurées avec des unités différentes.",
+    "en": "Small branches float in the river. Their lengths are measured in different units."
+   },
+   "prompt": {
+    "fr": "Range les branches, de la plus courte à la plus longue.",
+    "en": "Put the branches in order, from the shortest to the longest."
+   },
+   "items": [
+    {
+     "id": "i1",
+     "text": {
+      "fr": "2 dm",
+      "en": "2 dm"
+     },
+     "key": "20"
+    },
+    {
+     "id": "i2",
+     "text": {
+      "fr": "15 cm",
+      "en": "15 cm"
+     },
+     "key": "15"
+    },
+    {
+     "id": "i3",
+     "text": {
+      "fr": "1 m",
+      "en": "1 m"
+     },
+     "key": "100"
+    },
+    {
+     "id": "i4",
+     "text": {
+      "fr": "3 dm",
+      "en": "3 dm"
+     },
+     "key": "30"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "i2",
+     "i1",
+     "i4",
+     "i3"
+    ],
+    "by": "asc",
+    "misconception": "mis_unit_ignored"
+   },
+   "hint": {
+    "fr": "Change toutes les mesures en centimètres.",
+    "en": "Change all the measures into centimetres."
+   },
+   "explain": {
+    "fr": "En cm : 15, 20, 30 et 100. L'ordre est 15 cm, 2 dm, 3 dm, 1 m.",
+    "en": "In cm: 15, 20, 30 and 100. The order is 15 cm, 2 dm, 3 dm, 1 m."
+   },
+   "tags": [
+    "ordering",
+    "units",
+    "conversion"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_52196f49a5f1cdfffed1"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.rivieres.012",
+   "quest": "nature.rivieres",
+   "skill": "MES-A05a",
+   "type": "match",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Chloé relie des mesures du ruisseau pour son carnet de nature.",
+    "en": "Chloe matches stream measures for her nature notebook."
+   },
+   "prompt": {
+    "fr": "Relie chaque mesure à sa mesure égale.",
+    "en": "Match each measure to the equal one."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "1 m",
+       "en": "1 m"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "1 dm",
+       "en": "1 dm"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "2 m",
+       "en": "2 m"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "5 dm",
+       "en": "5 dm"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "10 cm",
+       "en": "10 cm"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "20 dm",
+       "en": "20 dm"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "50 cm",
+       "en": "50 cm"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "100 cm",
+       "en": "100 cm"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ],
+     [
+      "l4",
+      "r4"
+     ]
+    ],
+    "misconception": "mis_unit_confusion"
+   },
+   "hint": {
+    "fr": "Utilise : 1 m = 10 dm et 1 dm = 10 cm.",
+    "en": "Use: 1 m = 10 dm and 1 dm = 10 cm."
+   },
+   "explain": {
+    "fr": "1 m = 100 cm, 1 dm = 10 cm, 2 m = 20 dm et 5 dm = 50 cm.",
+    "en": "1 m = 100 cm, 1 dm = 10 cm, 2 m = 20 dm and 5 dm = 50 cm."
+   },
+   "tags": [
+    "matching",
+    "units",
+    "conversion"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_52196f49a5f1cdfffed1"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.rivieres.013",
+   "quest": "nature.rivieres",
+   "skill": "MES-A05a",
+   "type": "estimate",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa traverse le ruisseau en 7 pas. Chaque pas mesure à peu près 40 centimètres.",
+    "en": "Lea crosses the stream in 7 steps. Each step is about 40 centimetres long."
+   },
+   "prompt": {
+    "fr": "Environ combien de centimètres le ruisseau mesure-t-il de large ?",
+    "en": "About how many centimetres wide is the stream?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 260,
+    "max": 300,
+    "exact_for_check": 280,
+    "calc": "7*40"
+   },
+   "common_errors": [
+    {
+     "value": 47,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "7 pas de 40 cm : multiplie.",
+      "en": "7 steps of 40 cm: multiply."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à 7 pas de 40 cm.",
+    "en": "Think of 7 steps of 40 cm."
+   },
+   "explain": {
+    "fr": "7 x 40 = 280. Le ruisseau mesure environ 280 cm.",
+    "en": "7 x 40 = 280. The stream is about 280 cm wide."
+   },
+   "tags": [
+    "estimation",
+    "centimetre",
+    "multiplication"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_52196f49a5f1cdfffed1"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "nature.rivieres.014",
+   "quest": "nature.rivieres",
+   "skill": "MES-A05a",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Rosalie a mesuré trois branches trouvées au bord de la rivière.",
+    "en": "Rosalie measured three branches found at the river's edge."
+   },
+   "prompt": {
+    "fr": "De combien de décimètres la plus longue branche dépasse-t-elle la plus courte ?",
+    "en": "By how many decimetres is the longest branch longer than the shortest?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Longueur des branches (cm)",
+      "en": "Branch lengths (cm)"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "A",
+        "en": "A"
+       },
+       "value": 120
+      },
+      {
+       "label": {
+        "fr": "B",
+        "en": "B"
+       },
+       "value": 90
+      },
+      {
+       "label": {
+        "fr": "C",
+        "en": "C"
+       },
+       "value": 150
+      }
+     ],
+     "max": 160
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 6,
+    "calc": "(150-90)/10"
+   },
+   "common_errors": [
+    {
+     "value": 60,
+     "misconception": "mis_unit_confusion",
+     "feedback": {
+      "fr": "60 est la différence en centimètres, pas en décimètres.",
+      "en": "60 is the difference in centimetres, not decimetres."
+     }
+    },
+    {
+     "value": 3,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Compare la plus longue et la plus courte.",
+      "en": "Compare the longest and the shortest."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Trouve la différence en centimètres, puis change en décimètres.",
+    "en": "Find the difference in centimetres, then change it into decimetres."
+   },
+   "explain": {
+    "fr": "150 - 90 = 60 cm, et 60 cm = 6 dm.",
+    "en": "150 - 90 = 60 cm, and 60 cm = 6 dm."
+   },
+   "tags": [
+    "bar-chart",
+    "conversion",
+    "compare"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_52196f49a5f1cdfffed1"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  }
+ ]
+}
