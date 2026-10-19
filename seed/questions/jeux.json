@@ -1,0 +1,3678 @@
+{
+ "world": "jeux",
+ "schema": 1,
+ "questions": [
+  {
+   "id": "jeux.des.001",
+   "quest": "jeux.des",
+   "skill": "PRO-08a",
+   "type": "numeric",
+   "grade": 4,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa lance deux dés. Le premier montre 5 et le second montre 3.",
+    "en": "Lea rolls two dice. The first shows 5 and the second shows 3."
+   },
+   "prompt": {
+    "fr": "Quelle est la somme des deux dés ?",
+    "en": "What is the sum of the two dice?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 8,
+    "calc": "5+3"
+   },
+   "common_errors": [
+    {
+     "value": 2,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Une somme, c'est une addition.",
+      "en": "A sum is an addition."
+     }
+    },
+    {
+     "value": 15,
+     "misconception": "mis_multiply_instead_of_add",
+     "feedback": {
+      "fr": "On additionne les points, on ne les multiplie pas.",
+      "en": "We add the dots, we do not multiply them."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne les points des deux dés.",
+    "en": "Add the dots on the two dice."
+   },
+   "explain": {
+    "fr": "5 + 3 = 8. La somme est 8.",
+    "en": "5 + 3 = 8. The sum is 8."
+   },
+   "tags": [
+    "dice",
+    "sum",
+    "add"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a07f59d4e90b1e0cb2bf"
+    },
+    {
+     "role": "object",
+     "asset": "a_454d51562973cf3af447"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.des.002",
+   "quest": "jeux.des",
+   "skill": "PRO-08a",
+   "type": "numeric",
+   "grade": 4,
+   "difficulty": 2,
+   "story": {
+    "fr": "Un dé a 6 faces et un autre dé a 4 faces. On les lance ensemble.",
+    "en": "One die has 6 faces and another die has 4 faces. We roll them together."
+   },
+   "prompt": {
+    "fr": "Combien de résultats possibles y a-t-il ?",
+    "en": "How many possible results are there?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 24,
+    "calc": "6*4"
+   },
+   "common_errors": [
+    {
+     "value": 10,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Chaque face du premier dé va avec 4 faces du second : multiplie.",
+      "en": "Each face of the first die goes with 4 faces of the second: multiply."
+     }
+    },
+    {
+     "value": 20,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Vérifie le nombre de faces de chaque dé.",
+      "en": "Close! Check the number of faces on each die."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pour chaque face du premier dé, compte les faces du second.",
+    "en": "For each face of the first die, count the faces of the second."
+   },
+   "explain": {
+    "fr": "6 faces x 4 faces = 24 résultats possibles.",
+    "en": "6 faces x 4 faces = 24 possible results."
+   },
+   "tags": [
+    "dice",
+    "outcomes",
+    "multiplication"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a07f59d4e90b1e0cb2bf"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.des.003",
+   "quest": "jeux.des",
+   "skill": "PRO-08a",
+   "type": "numeric",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah lance deux dés ordinaires, un rouge et un bleu. Un double veut dire deux faces pareilles.",
+    "en": "Noah rolls two ordinary dice, a red one and a blue one. A double means two matching faces."
+   },
+   "prompt": {
+    "fr": "Combien de résultats sont des doubles ?",
+    "en": "How many results are doubles?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 6,
+    "calc": "6"
+   },
+   "common_errors": [
+    {
+     "value": 12,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "Un double compte une seule fois : 1-1, 2-2, et ainsi de suite.",
+      "en": "A double counts once: 1-1, 2-2, and so on."
+     }
+    },
+    {
+     "value": 36,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "36, c'est tous les résultats. Compte seulement les doubles.",
+      "en": "That is all the results. Count only the doubles."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Écris les doubles : 1-1, 2-2...",
+    "en": "Write the doubles: 1-1, 2-2..."
+   },
+   "explain": {
+    "fr": "Il y a un double par face du dé : 1-1, 2-2, 3-3, 4-4, 5-5 et 6-6.",
+    "en": "There is one double for each face of the die: 1-1, 2-2, 3-3, 4-4, 5-5 and 6-6."
+   },
+   "tags": [
+    "dice",
+    "doubles",
+    "outcomes"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a07f59d4e90b1e0cb2bf"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.des.004",
+   "quest": "jeux.des",
+   "skill": "PRO-08a",
+   "type": "choice",
+   "grade": 4,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa lance deux dés ordinaires, un rouge et un bleu.",
+    "en": "Lea rolls two ordinary dice, a red one and a blue one."
+   },
+   "prompt": {
+    "fr": "Combien de résultats possibles y a-t-il ?",
+    "en": "How many possible results are there?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "12",
+      "en": "12"
+     },
+     "misconception": "mis_add_instead_of_multiply"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "36",
+      "en": "36"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "30",
+      "en": "30"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "6",
+      "en": "6"
+     },
+     "misconception": "mis_partial_result"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b",
+    "calc_choice": {
+     "b": "6*6"
+    }
+   },
+   "hint": {
+    "fr": "Chaque face du dé rouge va avec toutes les faces du dé bleu.",
+    "en": "Each face of the red die goes with every face of the blue die."
+   },
+   "explain": {
+    "fr": "6 x 6 = 36. Il y a 36 résultats possibles.",
+    "en": "6 x 6 = 36. There are 36 possible results."
+   },
+   "tags": [
+    "dice",
+    "outcomes",
+    "multiplication"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a07f59d4e90b1e0cb2bf"
+    },
+    {
+     "role": "object",
+     "asset": "a_454d51562973cf3af447"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.des.005",
+   "quest": "jeux.des",
+   "skill": "PRO-08a",
+   "type": "choice",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Emma lance un dé rouge et un dé bleu. Elle veut une somme de 7.",
+    "en": "Emma rolls a red die and a blue die. She wants a sum of 7."
+   },
+   "prompt": {
+    "fr": "De combien de façons peut-elle obtenir cette somme ?",
+    "en": "In how many ways can she get this sum?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "3",
+      "en": "3"
+     },
+     "misconception": "mis_partial_result"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "7",
+      "en": "7"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "12",
+      "en": "12"
+     },
+     "misconception": "mis_add_instead_of_multiply"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "6",
+      "en": "6"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d"
+   },
+   "hint": {
+    "fr": "Écris les paires qui font cette somme, sans oublier de les inverser.",
+    "en": "Write the pairs that make this sum, and remember to swap them."
+   },
+   "explain": {
+    "fr": "1-6, 2-5, 3-4, 4-3, 5-2 et 6-1 : 6 façons. Rouge et bleu comptent à part.",
+    "en": "1-6, 2-5, 3-4, 4-3, 5-2 and 6-1: 6 ways. Red and blue count separately."
+   },
+   "tags": [
+    "dice",
+    "sum",
+    "outcomes"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a07f59d4e90b1e0cb2bf"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.des.006",
+   "quest": "jeux.des",
+   "skill": "PRO-08a",
+   "type": "choice",
+   "grade": 4,
+   "difficulty": 4,
+   "story": {
+    "fr": "Léa lance un dé rouge et un dé bleu. Elle cherche la plus petite ou la plus grande somme.",
+    "en": "Lea rolls a red die and a blue die. She wants the smallest or the biggest sum."
+   },
+   "prompt": {
+    "fr": "Combien de résultats donnent l'une de ces sommes ?",
+    "en": "How many results give one of these sums?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "1",
+      "en": "1"
+     },
+     "misconception": "mis_partial_result"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "2",
+      "en": "2"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "11",
+      "en": "11"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "4",
+      "en": "4"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b",
+    "calc_choice": {
+     "b": "1+1"
+    }
+   },
+   "hint": {
+    "fr": "La plus petite somme vient de 1-1. Quelle paire donne la plus grande ?",
+    "en": "The smallest sum comes from 1-1. Which pair gives the biggest?"
+   },
+   "explain": {
+    "fr": "1-1 donne 2 et 6-6 donne 12. Cela fait 1 + 1 = 2 résultats.",
+    "en": "1-1 gives 2 and 6-6 gives 12. That makes 1 + 1 = 2 results."
+   },
+   "tags": [
+    "dice",
+    "sum",
+    "outcomes"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a07f59d4e90b1e0cb2bf"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.des.007",
+   "quest": "jeux.des",
+   "skill": "PRO-08a",
+   "type": "word",
+   "grade": 4,
+   "difficulty": 4,
+   "story": {
+    "fr": "Un jeu a 3 jetons rouges et 2 jetons bleus. On pige un jeton, puis on lance un dé ordinaire.",
+    "en": "A game has 3 red tokens and 2 blue tokens. We draw a token, then roll an ordinary die."
+   },
+   "prompt": {
+    "fr": "Combien de résultats possibles y a-t-il ?",
+    "en": "How many possible results are there?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 30,
+    "calc": "5*6"
+   },
+   "common_errors": [
+    {
+     "value": 11,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Chaque jeton va avec les 6 faces du dé : multiplie.",
+      "en": "Each token goes with all 6 faces of the die: multiply."
+     }
+    },
+    {
+     "value": 36,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Il y a 5 jetons, pas 6. Compte les jetons rouges et bleus.",
+      "en": "There are 5 tokens, not 6. Count the red and blue ones."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les jetons en tout, puis multiplie par les faces.",
+    "en": "Count all the tokens, then multiply by the faces."
+   },
+   "explain": {
+    "fr": "3 + 2 = 5 jetons. 5 x 6 = 30 résultats.",
+    "en": "3 + 2 = 5 tokens. 5 x 6 = 30 results."
+   },
+   "tags": [
+    "word-problem",
+    "dice",
+    "outcomes"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a07f59d4e90b1e0cb2bf"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.des.008",
+   "quest": "jeux.des",
+   "skill": "PRO-08a",
+   "type": "word",
+   "grade": 4,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa obtient 6 et 4 avec ses dés. Noah obtient 2 et 3.",
+    "en": "Lea gets 6 and 4 with her dice. Noah gets 2 and 3."
+   },
+   "prompt": {
+    "fr": "De combien de points la somme de Léa dépasse-t-elle celle de Noah ?",
+    "en": "By how many points does Lea's sum beat Noah's?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "(6+4)-(2+3)"
+   },
+   "common_errors": [
+    {
+     "value": 15,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On compare les sommes : on soustrait.",
+      "en": "We compare the sums, so we subtract."
+     }
+    },
+    {
+     "value": 10,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "10 est la somme de Léa. Compare-la à celle de Noah.",
+      "en": "10 is Lea's sum. Compare it with Noah's."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Trouve la somme de chaque joueur, puis compare.",
+    "en": "Find each player's sum, then compare."
+   },
+   "explain": {
+    "fr": "Léa : 6 + 4 = 10. Noah : 2 + 3 = 5. 10 - 5 = 5.",
+    "en": "Lea: 6 + 4 = 10. Noah: 2 + 3 = 5. 10 - 5 = 5."
+   },
+   "tags": [
+    "word-problem",
+    "dice",
+    "compare"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_62da8cb575839f5a39f9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.des.009",
+   "quest": "jeux.des",
+   "skill": "PRO-08a",
+   "type": "truefalse",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah lance un dé rouge et un dé bleu.",
+    "en": "Noah rolls a red die and a blue die."
+   },
+   "prompt": {
+    "fr": "Vrai ou faux : rouge 2 et bleu 5, c'est un autre résultat que rouge 5 et bleu 2.",
+    "en": "True or false: red 2 and blue 5 is a different result from red 5 and blue 2."
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": true
+   },
+   "hint": {
+    "fr": "Les deux dés n'ont pas la même couleur.",
+    "en": "The two dice are not the same colour."
+   },
+   "explain": {
+    "fr": "Avec deux couleurs, on voit quel dé montre quoi. Ce sont deux résultats différents.",
+    "en": "With two colours, we can see which die shows what. They are two different results."
+   },
+   "tags": [
+    "dice",
+    "outcomes",
+    "true-false"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a07f59d4e90b1e0cb2bf"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.des.010",
+   "quest": "jeux.des",
+   "skill": "PRO-08a",
+   "type": "order",
+   "grade": 4,
+   "difficulty": 4,
+   "story": {
+    "fr": "Léa regarde de combien de façons chaque somme peut sortir avec deux dés.",
+    "en": "Lea looks at how many ways each sum can come up with two dice."
+   },
+   "prompt": {
+    "fr": "Range les sommes de la moins fréquente à la plus fréquente.",
+    "en": "Put the sums in order, from least common to most common."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "somme de 7",
+      "en": "sum of 7"
+     },
+     "key": "6"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "somme de 3",
+      "en": "sum of 3"
+     },
+     "key": "2"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "somme de 2",
+      "en": "sum of 2"
+     },
+     "key": "1"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "somme de 5",
+      "en": "sum of 5"
+     },
+     "key": "4"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "c",
+     "b",
+     "d",
+     "a"
+    ],
+    "by": "asc",
+    "misconception": "mis_chance_equal"
+   },
+   "hint": {
+    "fr": "Il n'y a qu'une façon d'obtenir 2.",
+    "en": "There is only one way to get 2."
+   },
+   "explain": {
+    "fr": "2 : 1 façon, 3 : 2 façons, 5 : 4 façons, 7 : 6 façons.",
+    "en": "2: 1 way, 3: 2 ways, 5: 4 ways, 7: 6 ways."
+   },
+   "tags": [
+    "dice",
+    "sum",
+    "ordering"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a07f59d4e90b1e0cb2bf"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.des.011",
+   "quest": "jeux.des",
+   "skill": "PRO-08a",
+   "type": "match",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah a compté les paires de deux dés pour chaque somme.",
+    "en": "Noah counted the pairs of two dice for each sum."
+   },
+   "prompt": {
+    "fr": "Relie chaque somme au nombre de façons de l'obtenir.",
+    "en": "Match each sum to the number of ways to get it."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "somme de 4",
+       "en": "sum of 4"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "somme de 6",
+       "en": "sum of 6"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "somme de 7",
+       "en": "sum of 7"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "somme de 11",
+       "en": "sum of 11"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "5 façons",
+       "en": "5 ways"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "6 façons",
+       "en": "6 ways"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "2 façons",
+       "en": "2 ways"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "3 façons",
+       "en": "3 ways"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ],
+     [
+      "l4",
+      "r4"
+     ]
+    ],
+    "misconception": "mis_chance_equal"
+   },
+   "hint": {
+    "fr": "Écris toutes les paires de chaque somme.",
+    "en": "Write all the pairs for each sum."
+   },
+   "explain": {
+    "fr": "Pour 4 : 1-3, 2-2, 3-1. Pour 11 : 5-6, 6-5. Pour 6 : 5 paires. Pour 7 : 6 paires.",
+    "en": "For 4: 1-3, 2-2, 3-1. For 11: 5-6, 6-5. For 6: 5 pairs. For 7: 6 pairs."
+   },
+   "tags": [
+    "dice",
+    "sum",
+    "matching"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a07f59d4e90b1e0cb2bf"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.des.012",
+   "quest": "jeux.des",
+   "skill": "PRO-08a",
+   "type": "visual",
+   "grade": 4,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa a lancé deux dés. Regarde-les.",
+    "en": "Lea rolled two dice. Look at them."
+   },
+   "prompt": {
+    "fr": "Quelle est la somme des deux dés ?",
+    "en": "What is the sum of the two dice?"
+   },
+   "visual": {
+    "kind": "dice",
+    "data": {
+     "dice": [
+      4,
+      3
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 7,
+    "calc": "4+3"
+   },
+   "common_errors": [
+    {
+     "value": 1,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Une somme, c'est une addition.",
+      "en": "A sum is an addition."
+     }
+    },
+    {
+     "value": 12,
+     "misconception": "mis_multiply_instead_of_add",
+     "feedback": {
+      "fr": "On additionne les points, on ne les multiplie pas.",
+      "en": "We add the dots, we do not multiply them."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les points de chaque dé, puis additionne.",
+    "en": "Count the dots on each die, then add."
+   },
+   "explain": {
+    "fr": "Un dé montre 4 et l'autre montre 3. 4 + 3 = 7.",
+    "en": "One die shows 4 and the other shows 3. 4 + 3 = 7."
+   },
+   "tags": [
+    "dice",
+    "visual",
+    "sum"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_454d51562973cf3af447"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.des.013",
+   "quest": "jeux.des",
+   "skill": "PRO-08a",
+   "type": "estimate",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "On lance deux dés 120 fois. Un double sort environ 1 fois sur 6.",
+    "en": "We roll two dice 120 times. A double comes up about 1 time in 6."
+   },
+   "prompt": {
+    "fr": "Environ combien de doubles va-t-on voir ?",
+    "en": "About how many doubles will we see?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 18,
+    "max": 22,
+    "exact_for_check": 20,
+    "calc": "120/6"
+   },
+   "common_errors": [
+    {
+     "value": 114,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche 1 sur 6 : on divise 120 par 6.",
+      "en": "We want 1 in 6: divide 120 by 6."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Partage 120 lancers en groupes de 6.",
+    "en": "Share 120 rolls into groups of 6."
+   },
+   "explain": {
+    "fr": "120 / 6 = 20. On verra environ 20 doubles.",
+    "en": "120 / 6 = 20. We will see about 20 doubles."
+   },
+   "tags": [
+    "estimation",
+    "dice",
+    "chance"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a07f59d4e90b1e0cb2bf"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.cartes.001",
+   "quest": "jeux.cartes",
+   "skill": "ARI-SEN-A08",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Noah pioche la carte 8 dans son jeu.",
+    "en": "Noah draws card 8 from his deck."
+   },
+   "prompt": {
+    "fr": "Quel nombre vient juste avant 8 ?",
+    "en": "Which number comes just before 8?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 7,
+    "calc": "8-1"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_direction",
+     "feedback": {
+      "fr": "9 vient après 8. Cherche avant.",
+      "en": "9 comes after 8. Look before."
+     }
+    },
+    {
+     "value": 6,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recule d'un seul pas.",
+      "en": "Close! Go back just one step."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Recule d'un pas sur la droite des nombres.",
+    "en": "Go back one step on the number line."
+   },
+   "explain": {
+    "fr": "Juste avant 8, il y a 7.",
+    "en": "Just before 8 comes 7."
+   },
+   "tags": [
+    "cards",
+    "before-after",
+    "number-sense"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_46b98728a4e1d6791f3c"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.cartes.002",
+   "quest": "jeux.cartes",
+   "skill": "ARI-SEN-A08",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa a les cartes 12 et 14.",
+    "en": "Lea has cards 12 and 14."
+   },
+   "prompt": {
+    "fr": "Quel nombre est entre les deux ?",
+    "en": "Which number is between the two?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 13,
+    "calc": "12+1"
+   },
+   "common_errors": [
+    {
+     "value": 11,
+     "misconception": "mis_direction",
+     "feedback": {
+      "fr": "11 est avant 12. Cherche entre 12 et 14.",
+      "en": "11 is before 12. Look between 12 and 14."
+     }
+    },
+    {
+     "value": 15,
+     "misconception": "mis_direction",
+     "feedback": {
+      "fr": "15 est après 14. Cherche entre 12 et 14.",
+      "en": "15 is after 14. Look between 12 and 14."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte un pas après 12.",
+    "en": "Count one step after 12."
+   },
+   "explain": {
+    "fr": "12, 13, 14. Le nombre du milieu est 13.",
+    "en": "12, 13, 14. The middle number is 13."
+   },
+   "tags": [
+    "cards",
+    "between",
+    "number-sense"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_46b98728a4e1d6791f3c"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.cartes.003",
+   "quest": "jeux.cartes",
+   "skill": "ARI-SEN-A08",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah a trois cartes : 5, 8 et 14.",
+    "en": "Noah has three cards: 5, 8 and 14."
+   },
+   "prompt": {
+    "fr": "De combien la plus grande carte dépasse-t-elle la plus petite ?",
+    "en": "By how much is the biggest card above the smallest?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 9,
+    "calc": "14-5"
+   },
+   "common_errors": [
+    {
+     "value": 19,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On compare : on soustrait.",
+      "en": "We compare, so we subtract."
+     }
+    },
+    {
+     "value": 4,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Compare la plus grande et la plus petite, pas la carte du milieu.",
+      "en": "Compare the biggest and the smallest, not the middle card."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Trouve la plus grande et la plus petite carte.",
+    "en": "Find the biggest and the smallest card."
+   },
+   "explain": {
+    "fr": "14 - 5 = 9. La plus grande carte est 9 de plus.",
+    "en": "14 - 5 = 9. The biggest card is 9 more."
+   },
+   "tags": [
+    "cards",
+    "compare",
+    "subtract"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_454d51562973cf3af447"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.cartes.004",
+   "quest": "jeux.cartes",
+   "skill": "ARI-SEN-A08",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Quatre cartes sont sur la table.",
+    "en": "Four cards are on the table."
+   },
+   "prompt": {
+    "fr": "Quelle carte a le plus grand nombre ?",
+    "en": "Which card has the biggest number?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "7",
+      "en": "7"
+     },
+     "misconception": "mis_order_reversed"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "12",
+      "en": "12"
+     },
+     "misconception": "mis_order_partial"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "5",
+      "en": "5"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "15",
+      "en": "15"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d"
+   },
+   "hint": {
+    "fr": "Compare d'abord les dizaines.",
+    "en": "Compare the tens first."
+   },
+   "explain": {
+    "fr": "15 a une dizaine. Les autres n'en ont pas, sauf 12 qui est plus petit que 15.",
+    "en": "15 has a ten. The others have none, except 12 which is smaller than 15."
+   },
+   "tags": [
+    "cards",
+    "compare",
+    "ordering"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_46b98728a4e1d6791f3c"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.cartes.005",
+   "quest": "jeux.cartes",
+   "skill": "ARI-SEN-A08",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Les cartes de Léa se suivent : 11, 12, ?, 14.",
+    "en": "Lea's cards follow each other: 11, 12, ?, 14."
+   },
+   "prompt": {
+    "fr": "Quelle carte manque ?",
+    "en": "Which card is missing?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "15",
+      "en": "15"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "10",
+      "en": "10"
+     },
+     "misconception": "mis_skip_count"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "13",
+      "en": "13"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "12",
+      "en": "12"
+     },
+     "misconception": "mis_order_partial"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "12+1"
+    }
+   },
+   "hint": {
+    "fr": "Compte un à un entre 12 et 14.",
+    "en": "Count one by one between 12 and 14."
+   },
+   "explain": {
+    "fr": "11, 12, 13, 14 : la carte 13 manque.",
+    "en": "11, 12, 13, 14: card 13 is missing."
+   },
+   "tags": [
+    "cards",
+    "sequence",
+    "missing-number"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_46b98728a4e1d6791f3c"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.cartes.006",
+   "quest": "jeux.cartes",
+   "skill": "ARI-SEN-A08",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa a 8 cartes. Noah en a 5 de plus que Léa.",
+    "en": "Lea has 8 cards. Noah has 5 more than Lea."
+   },
+   "prompt": {
+    "fr": "Combien de cartes Noah a-t-il ?",
+    "en": "How many cards does Noah have?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 13,
+    "calc": "8+5"
+   },
+   "common_errors": [
+    {
+     "value": 3,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "De plus veut dire qu'on ajoute.",
+      "en": "More than means we add."
+     }
+    },
+    {
+     "value": 12,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte.",
+      "en": "Close! Count again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pars de 8 et avance de 5.",
+    "en": "Start at 8 and go up 5."
+   },
+   "explain": {
+    "fr": "8 + 5 = 8 + 2 + 3 = 13 cartes.",
+    "en": "8 + 5 = 8 + 2 + 3 = 13 cards."
+   },
+   "tags": [
+    "word-problem",
+    "cards",
+    "add-within-20"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_46b98728a4e1d6791f3c"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.cartes.007",
+   "quest": "jeux.cartes",
+   "skill": "ARI-SEN-A08",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un jeu a 20 cartes. Léa en donne 7 à Noah et 7 à Emma.",
+    "en": "A deck has 20 cards. Lea gives 7 to Noah and 7 to Emma."
+   },
+   "prompt": {
+    "fr": "Combien de cartes reste-t-il à Léa ?",
+    "en": "How many cards does Lea have left?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 6,
+    "calc": "20-7-7"
+   },
+   "common_errors": [
+    {
+     "value": 13,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as enlevé seulement une main. Enlève aussi l'autre.",
+      "en": "You took away only one hand. Take away the other too."
+     }
+    },
+    {
+     "value": 34,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Léa donne des cartes : on soustrait.",
+      "en": "Lea gives cards away, so we subtract."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Enlève 7, puis enlève encore 7.",
+    "en": "Take away 7, then take away 7 again."
+   },
+   "explain": {
+    "fr": "20 - 7 = 13, puis 13 - 7 = 6.",
+    "en": "20 - 7 = 13, then 13 - 7 = 6."
+   },
+   "tags": [
+    "word-problem",
+    "cards",
+    "two-step"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_46b98728a4e1d6791f3c"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.cartes.008",
+   "quest": "jeux.cartes",
+   "skill": "ARI-SEN-A08",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah compare deux cartes.",
+    "en": "Noah compares two cards."
+   },
+   "prompt": {
+    "fr": "Vrai ou faux : la carte 6 est plus grande que la carte 13.",
+    "en": "True or false: card 6 is bigger than card 13."
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Sur la droite des nombres, 13 est plus loin.",
+    "en": "On the number line, 13 is further along."
+   },
+   "explain": {
+    "fr": "6 est plus petit que 13. La carte 13 est la plus grande.",
+    "en": "6 is smaller than 13. Card 13 is the biggest."
+   },
+   "tags": [
+    "cards",
+    "compare",
+    "true-false"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_46b98728a4e1d6791f3c"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.cartes.009",
+   "quest": "jeux.cartes",
+   "skill": "ARI-SEN-A08",
+   "type": "order",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa pioche quatre cartes et veut les ranger.",
+    "en": "Lea draws four cards and wants to put them in order."
+   },
+   "prompt": {
+    "fr": "Range les cartes du plus petit au plus grand nombre.",
+    "en": "Put the cards in order, from the smallest to the biggest number."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "14",
+      "en": "14"
+     },
+     "key": "14"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "3",
+      "en": "3"
+     },
+     "key": "3"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "18",
+      "en": "18"
+     },
+     "key": "18"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "9",
+      "en": "9"
+     },
+     "key": "9"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "d",
+     "a",
+     "c"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Quelle carte n'a qu'un chiffre et est la plus petite ?",
+    "en": "Which one-digit card is the smallest?"
+   },
+   "explain": {
+    "fr": "3, 9, 14, 18 : du plus petit au plus grand.",
+    "en": "3, 9, 14, 18: from the smallest to the biggest."
+   },
+   "tags": [
+    "cards",
+    "ordering"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_46b98728a4e1d6791f3c"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.cartes.010",
+   "quest": "jeux.cartes",
+   "skill": "ARI-SEN-A08",
+   "type": "match",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah joue au jeu des voisins de nombres.",
+    "en": "Noah plays the number neighbours game."
+   },
+   "prompt": {
+    "fr": "Relie chaque indice à la bonne carte.",
+    "en": "Match each clue to the right card."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "juste après 7",
+       "en": "just after 7"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "juste avant 15",
+       "en": "just before 15"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "entre 11 et 13",
+       "en": "between 11 and 13"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "10 de plus que 5",
+       "en": "10 more than 5"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "14",
+       "en": "14"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "12",
+       "en": "12"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "15",
+       "en": "15"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "8",
+       "en": "8"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ],
+     [
+      "l4",
+      "r4"
+     ]
+    ],
+    "misconception": "mis_direction"
+   },
+   "hint": {
+    "fr": "Avant veut dire en reculant. Après veut dire en avançant.",
+    "en": "Before means going back. After means going forward."
+   },
+   "explain": {
+    "fr": "Après 7 vient 8. Avant 15 vient 14. Entre 11 et 13 vient 12. Et 5 + 10 = 15.",
+    "en": "After 7 comes 8. Before 15 comes 14. Between 11 and 13 comes 12. And 5 + 10 = 15."
+   },
+   "tags": [
+    "cards",
+    "number-sense",
+    "matching"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_46b98728a4e1d6791f3c"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.cartes.011",
+   "quest": "jeux.cartes",
+   "skill": "ARI-SEN-A08",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa place sa carte sur la droite des nombres.",
+    "en": "Lea places her card on the number line."
+   },
+   "prompt": {
+    "fr": "Quel nombre la flèche montre-t-elle ?",
+    "en": "Which number does the arrow show?"
+   },
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 0,
+     "max": 20,
+     "step": 1,
+     "labels": [
+      0,
+      5,
+      10,
+      15,
+      20
+     ],
+     "arrow": 13
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 13,
+    "calc": "13"
+   },
+   "common_errors": [
+    {
+     "value": 12,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Compte les traits après 10.",
+      "en": "Close! Count the marks after 10."
+     }
+    },
+    {
+     "value": 14,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Tu es allé un trait trop loin.",
+      "en": "Close! You went one mark too far."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pars de 10 et compte les traits.",
+    "en": "Start at 10 and count the marks."
+   },
+   "explain": {
+    "fr": "La flèche est 3 traits après 10 : 11, 12, 13.",
+    "en": "The arrow is 3 marks after 10: 11, 12, 13."
+   },
+   "tags": [
+    "numberline",
+    "cards"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_46b98728a4e1d6791f3c"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.cartes.012",
+   "quest": "jeux.cartes",
+   "skill": "ARI-SEN-A08",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Trois amis ont pigé des cartes. Voici le tableau d'images.",
+    "en": "Three friends drew cards. Here is the picture chart."
+   },
+   "prompt": {
+    "fr": "Combien de cartes de plus Emma que Noah a-t-elle pigées ?",
+    "en": "How many more cards did Emma draw than Noah?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Cartes pigées",
+      "en": "Cards drawn"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "Léa",
+        "en": "Lea"
+       },
+       "count": 7
+      },
+      {
+       "label": {
+        "fr": "Noah",
+        "en": "Noah"
+       },
+       "count": 4
+      },
+      {
+       "label": {
+        "fr": "Emma",
+        "en": "Emma"
+       },
+       "count": 9
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "9-4"
+   },
+   "common_errors": [
+    {
+     "value": 13,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On compare : on soustrait.",
+      "en": "We compare, so we subtract."
+     }
+    },
+    {
+     "value": 3,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as comparé Léa et Noah. Compare Emma et Noah.",
+      "en": "You compared Lea and Noah. Compare Emma and Noah."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les images d'Emma et celles de Noah.",
+    "en": "Count Emma's pictures and Noah's pictures."
+   },
+   "explain": {
+    "fr": "Emma a 9 cartes et Noah en a 4. 9 - 4 = 5.",
+    "en": "Emma has 9 cards and Noah has 4. 9 - 4 = 5."
+   },
+   "tags": [
+    "pictograph",
+    "cards",
+    "compare"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_46b98728a4e1d6791f3c"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.cartes.013",
+   "quest": "jeux.cartes",
+   "skill": "ARI-SEN-A08",
+   "type": "estimate",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Dans une boîte, il y a 29 cartes rouges et 31 cartes bleues.",
+    "en": "In a box there are 29 red cards and 31 blue cards."
+   },
+   "prompt": {
+    "fr": "Environ combien de cartes y a-t-il en tout ?",
+    "en": "About how many cards are there in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 54,
+    "max": 66,
+    "exact_for_check": 60,
+    "calc": "29+31"
+   },
+   "common_errors": [
+    {
+     "value": 50,
+     "misconception": "mis_estimate_rounding",
+     "feedback": {
+      "fr": "Tu as arrondi trop bas.",
+      "en": "You rounded too low."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis chaque nombre à la dizaine.",
+    "en": "Round each number to the nearest ten."
+   },
+   "explain": {
+    "fr": "29 est proche de 30 et 31 aussi. 30 + 30 = 60.",
+    "en": "29 is close to 30 and so is 31. 30 + 30 = 60."
+   },
+   "tags": [
+    "estimation",
+    "cards",
+    "rounding"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_46b98728a4e1d6791f3c"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.points.001",
+   "quest": "jeux.points",
+   "skill": "ARI-OPE-A02c",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa marque 6 points au premier tour et 7 points au second.",
+    "en": "Lea scores 6 points in the first round and 7 in the second."
+   },
+   "prompt": {
+    "fr": "Combien de points a-t-elle en tout ?",
+    "en": "How many points does she have in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 13,
+    "calc": "6+7"
+   },
+   "common_errors": [
+    {
+     "value": 1,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Les points s'ajoutent : on additionne.",
+      "en": "Points add up, so we add."
+     }
+    },
+    {
+     "value": 12,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Refais l'addition.",
+      "en": "Close! Do the sum again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pars de 7 et avance de 6.",
+    "en": "Start at 7 and go up 6."
+   },
+   "explain": {
+    "fr": "Donc 6 + 7 = 6 + 4 + 3 = 13 points.",
+    "en": "So 6 + 7 = 6 + 4 + 3 = 13 points."
+   },
+   "tags": [
+    "points",
+    "add-within-20",
+    "board-game"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_62da8cb575839f5a39f9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.points.002",
+   "quest": "jeux.points",
+   "skill": "ARI-OPE-A02c",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah marque 9 points au premier tour et 8 points au second.",
+    "en": "Noah scores 9 points in the first round and 8 in the second."
+   },
+   "prompt": {
+    "fr": "Combien de points a-t-il en tout ?",
+    "en": "How many points does he have in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 17,
+    "calc": "9+8"
+   },
+   "common_errors": [
+    {
+     "value": 1,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Les points s'ajoutent : on additionne.",
+      "en": "Points add up, so we add."
+     }
+    },
+    {
+     "value": 16,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Refais l'addition.",
+      "en": "Close! Do the sum again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à 9 + 1 = 10, puis ajoute le reste.",
+    "en": "Think 9 + 1 = 10, then add the rest."
+   },
+   "explain": {
+    "fr": "Donc 9 + 8 = 9 + 1 + 7 = 17 points.",
+    "en": "So 9 + 8 = 9 + 1 + 7 = 17 points."
+   },
+   "tags": [
+    "points",
+    "add-within-20",
+    "make-ten"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_62da8cb575839f5a39f9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.points.003",
+   "quest": "jeux.points",
+   "skill": "ARI-OPE-A02c",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Emma gagne 5 points, puis 9 points.",
+    "en": "Emma wins 5 points, then 9 points."
+   },
+   "prompt": {
+    "fr": "Combien de points a-t-elle en tout ?",
+    "en": "How many points does she have in all?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "4",
+      "en": "4"
+     },
+     "misconception": "mis_subtract_instead_of_add"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "13",
+      "en": "13"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "14",
+      "en": "14"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "15",
+      "en": "15"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "5+9"
+    }
+   },
+   "hint": {
+    "fr": "Pars de 9 et avance de 5.",
+    "en": "Start at 9 and go up 5."
+   },
+   "explain": {
+    "fr": "Donc 5 + 9 = 9 + 1 + 4 = 14 points.",
+    "en": "So 5 + 9 = 9 + 1 + 4 = 14 points."
+   },
+   "tags": [
+    "points",
+    "add-within-20"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_62da8cb575839f5a39f9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.points.004",
+   "quest": "jeux.points",
+   "skill": "ARI-OPE-A02c",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Pour gagner la partie, il faut 20 points. Léa en a déjà 12.",
+    "en": "To win the game you need 20 points. Lea already has 12."
+   },
+   "prompt": {
+    "fr": "Combien de points lui manque-t-il ?",
+    "en": "How many points does she still need?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "32",
+      "en": "32"
+     },
+     "misconception": "mis_add_instead_of_subtract"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "7",
+      "en": "7"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "9",
+      "en": "9"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "8",
+      "en": "8"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d",
+    "calc_choice": {
+     "d": "20-12"
+    }
+   },
+   "hint": {
+    "fr": "Compte de 12 jusqu'à 20.",
+    "en": "Count from 12 up to 20."
+   },
+   "explain": {
+    "fr": "12 + 8 = 20, donc il lui manque 8 points.",
+    "en": "12 + 8 = 20, so she needs 8 more points."
+   },
+   "tags": [
+    "points",
+    "missing-addend",
+    "subtract"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_62da8cb575839f5a39f9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.points.005",
+   "quest": "jeux.points",
+   "skill": "ARI-OPE-A02c",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah a 15 points. Son dernier tour lui a donné 8 points.",
+    "en": "Noah has 15 points. His last round gave him 8 points."
+   },
+   "prompt": {
+    "fr": "Combien de points avait-il avant ce tour ?",
+    "en": "How many points did he have before that round?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "23",
+      "en": "23"
+     },
+     "misconception": "mis_add_instead_of_subtract"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "8",
+      "en": "8"
+     },
+     "misconception": "mis_missing_term"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "6",
+      "en": "6"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "7",
+      "en": "7"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d",
+    "calc_choice": {
+     "d": "15-8"
+    }
+   },
+   "hint": {
+    "fr": "Enlève les points du dernier tour.",
+    "en": "Take away the points from the last round."
+   },
+   "explain": {
+    "fr": "15 - 8 = 7. Il avait 7 points avant, car 7 + 8 = 15.",
+    "en": "15 - 8 = 7. He had 7 points before, because 7 + 8 = 15."
+   },
+   "tags": [
+    "points",
+    "missing-addend",
+    "subtract"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_d404d3557ed20c2ab5b9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.points.006",
+   "quest": "jeux.points",
+   "skill": "ARI-OPE-A02c",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa marque 7 points, puis 5 points, puis 8 points.",
+    "en": "Lea scores 7 points, then 5 points, then 8 points."
+   },
+   "prompt": {
+    "fr": "Combien de points a-t-elle en tout ?",
+    "en": "How many points does she have in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 20,
+    "calc": "7+5+8"
+   },
+   "common_errors": [
+    {
+     "value": 12,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié le dernier tour.",
+      "en": "You forgot the last round."
+     }
+    },
+    {
+     "value": 19,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Refais l'addition.",
+      "en": "Close! Do the sum again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne 7 et 5, puis ajoute le reste.",
+    "en": "Add 7 and 5, then add the rest."
+   },
+   "explain": {
+    "fr": "7 + 5 = 12, puis 12 + 8 = 20 points.",
+    "en": "7 + 5 = 12, then 12 + 8 = 20 points."
+   },
+   "tags": [
+    "word-problem",
+    "points",
+    "add-three"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_62da8cb575839f5a39f9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.points.007",
+   "quest": "jeux.points",
+   "skill": "ARI-OPE-A02c",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa a 45 points. Une carte lui fait perdre 18 points. Puis elle gagne 12 points.",
+    "en": "Lea has 45 points. A card makes her lose 18 points. Then she wins 12 points."
+   },
+   "prompt": {
+    "fr": "Combien de points a-t-elle maintenant ?",
+    "en": "How many points does she have now?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 39,
+    "calc": "45-18+12"
+   },
+   "common_errors": [
+    {
+     "value": 51,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Elle perd 18 puis gagne 12 : l'ordre des signes compte.",
+      "en": "She loses 18 then wins 12: the signs matter."
+     }
+    },
+    {
+     "value": 15,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Gagner des points, c'est additionner, pas soustraire.",
+      "en": "Winning points means adding, not subtracting."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Enlève 18 d'abord, puis ajoute 12.",
+    "en": "Take away 18 first, then add 12."
+   },
+   "explain": {
+    "fr": "45 - 18 = 27, puis 27 + 12 = 39 points.",
+    "en": "45 - 18 = 27, then 27 + 12 = 39 points."
+   },
+   "tags": [
+    "word-problem",
+    "points",
+    "two-step"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_62da8cb575839f5a39f9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.points.008",
+   "quest": "jeux.points",
+   "skill": "ARI-OPE-A02c",
+   "type": "truefalse",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Noah vérifie son calcul de points.",
+    "en": "Noah checks his points sum."
+   },
+   "prompt": {
+    "fr": "Vrai ou faux : 7 + 8 = 15.",
+    "en": "True or false: 7 + 8 = 15."
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": true
+   },
+   "hint": {
+    "fr": "Pense à 7 + 3 = 10, puis ajoute le reste.",
+    "en": "Think 7 + 3 = 10, then add the rest."
+   },
+   "explain": {
+    "fr": "7 + 3 = 10 et 10 + 5 = 15. Le calcul est juste.",
+    "en": "7 + 3 = 10 and 10 + 5 = 15. The sum is right."
+   },
+   "tags": [
+    "points",
+    "true-false",
+    "add-within-20"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_62da8cb575839f5a39f9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.points.009",
+   "quest": "jeux.points",
+   "skill": "ARI-OPE-A02c",
+   "type": "truefalse",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Emma vérifie son calcul de points.",
+    "en": "Emma checks her points sum."
+   },
+   "prompt": {
+    "fr": "Vrai ou faux : 9 + 6 = 14.",
+    "en": "True or false: 9 + 6 = 14."
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_off_by_one"
+   },
+   "hint": {
+    "fr": "Pense à 9 + 1 = 10, puis ajoute le reste.",
+    "en": "Think 9 + 1 = 10, then add the rest."
+   },
+   "explain": {
+    "fr": "9 + 1 = 10 et 10 + 5 = 15. Donc 9 + 6 = 15, pas 14.",
+    "en": "9 + 1 = 10 and 10 + 5 = 15. So 9 + 6 = 15, not 14."
+   },
+   "tags": [
+    "points",
+    "true-false",
+    "add-within-20"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_62da8cb575839f5a39f9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.points.010",
+   "quest": "jeux.points",
+   "skill": "ARI-OPE-A02c",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Quatre joueurs additionnent leurs points.",
+    "en": "Four players add up their points."
+   },
+   "prompt": {
+    "fr": "Range les additions de la plus petite somme à la plus grande.",
+    "en": "Put the sums in order, from the smallest total to the biggest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "6 + 7",
+      "en": "6 + 7"
+     },
+     "key": "13"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "9 + 9",
+      "en": "9 + 9"
+     },
+     "key": "18"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "5 + 5",
+      "en": "5 + 5"
+     },
+     "key": "10"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "8 + 7",
+      "en": "8 + 7"
+     },
+     "key": "15"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "c",
+     "a",
+     "d",
+     "b"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Calcule d'abord chaque somme.",
+    "en": "Work out each sum first."
+   },
+   "explain": {
+    "fr": "5 + 5 = 10, 6 + 7 = 13, 8 + 7 = 15 et 9 + 9 = 18.",
+    "en": "5 + 5 = 10, 6 + 7 = 13, 8 + 7 = 15 and 9 + 9 = 18."
+   },
+   "tags": [
+    "points",
+    "ordering",
+    "add-within-20"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_62da8cb575839f5a39f9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.points.011",
+   "quest": "jeux.points",
+   "skill": "ARI-OPE-A02c",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa relie les points des tours à leurs totaux.",
+    "en": "Lea links round points to their totals."
+   },
+   "prompt": {
+    "fr": "Relie chaque addition à son total.",
+    "en": "Match each sum to its total."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "7 + 6",
+       "en": "7 + 6"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "9 + 8",
+       "en": "9 + 8"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "5 + 9",
+       "en": "5 + 9"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "17",
+       "en": "17"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "14",
+       "en": "14"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "13",
+       "en": "13"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ]
+    ],
+    "misconception": "mis_off_by_one"
+   },
+   "hint": {
+    "fr": "Utilise 10 pour t'aider.",
+    "en": "Use 10 to help you."
+   },
+   "explain": {
+    "fr": "7 + 6 = 13, 9 + 8 = 17 et 5 + 9 = 14.",
+    "en": "7 + 6 = 13, 9 + 8 = 17 and 5 + 9 = 14."
+   },
+   "tags": [
+    "points",
+    "matching",
+    "add-within-20"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_62da8cb575839f5a39f9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.points.012",
+   "quest": "jeux.points",
+   "skill": "ARI-OPE-A02c",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah utilise les doubles pour calculer plus facilement.",
+    "en": "Noah uses doubles to go faster."
+   },
+   "prompt": {
+    "fr": "Relie chaque addition à son total.",
+    "en": "Match each sum to its total."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "7 + 7",
+       "en": "7 + 7"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "7 + 8",
+       "en": "7 + 8"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "8 + 8",
+       "en": "8 + 8"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "8 + 9",
+       "en": "8 + 9"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "15",
+       "en": "15"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "16",
+       "en": "16"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "17",
+       "en": "17"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "14",
+       "en": "14"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ],
+     [
+      "l4",
+      "r4"
+     ]
+    ],
+    "misconception": "mis_off_by_one"
+   },
+   "hint": {
+    "fr": "Un double de plus ou de moins un.",
+    "en": "A double plus or minus one."
+   },
+   "explain": {
+    "fr": "7 + 7 = 14 donc 7 + 8 = 15. 8 + 8 = 16 donc 8 + 9 = 17.",
+    "en": "7 + 7 = 14 so 7 + 8 = 15. 8 + 8 = 16 so 8 + 9 = 17."
+   },
+   "tags": [
+    "points",
+    "doubles",
+    "matching"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_62da8cb575839f5a39f9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.points.013",
+   "quest": "jeux.points",
+   "skill": "ARI-OPE-A02c",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Trois joueurs ont noté leurs points sur un diagramme.",
+    "en": "Three players noted their points on a chart."
+   },
+   "prompt": {
+    "fr": "Combien de points Léa et Noah ont-ils ensemble ?",
+    "en": "How many points do Lea and Noah have together?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Points des joueurs",
+      "en": "Players' points"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "Léa",
+        "en": "Lea"
+       },
+       "value": 14
+      },
+      {
+       "label": {
+        "fr": "Noah",
+        "en": "Noah"
+       },
+       "value": 9
+      },
+      {
+       "label": {
+        "fr": "Emma",
+        "en": "Emma"
+       },
+       "value": 12
+      }
+     ],
+     "max": 15
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 23,
+    "calc": "14+9"
+   },
+   "common_errors": [
+    {
+     "value": 5,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Ensemble veut dire qu'on additionne.",
+      "en": "Together means we add."
+     }
+    },
+    {
+     "value": 35,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as ajouté les trois barres. Choisis Léa et Noah.",
+      "en": "You added all three bars. Pick Lea and Noah."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Lis la barre de Léa et celle de Noah.",
+    "en": "Read Lea's bar and Noah's bar."
+   },
+   "explain": {
+    "fr": "Léa a 14 points et Noah en a 9. 14 + 9 = 23.",
+    "en": "Lea has 14 points and Noah has 9. 14 + 9 = 23."
+   },
+   "tags": [
+    "bar-chart",
+    "points",
+    "add"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_62da8cb575839f5a39f9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.points.014",
+   "quest": "jeux.points",
+   "skill": "ARI-OPE-A02c",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa a 48 points et Noah a 37 points.",
+    "en": "Lea has 48 points and Noah has 37 points."
+   },
+   "prompt": {
+    "fr": "Environ combien de points ont-ils ensemble ?",
+    "en": "About how many points do they have together?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 79,
+    "max": 91,
+    "exact_for_check": 85,
+    "calc": "48+37"
+   },
+   "common_errors": [
+    {
+     "value": 70,
+     "misconception": "mis_estimate_rounding",
+     "feedback": {
+      "fr": "Tu as arrondi trop bas.",
+      "en": "You rounded too low."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis chaque nombre à la dizaine.",
+    "en": "Round each number to the nearest ten."
+   },
+   "explain": {
+    "fr": "48 est proche de 50 et 37 est proche de 40. 50 + 40 = 90. Le vrai total est plus petit.",
+    "en": "48 is close to 50 and 37 is close to 40. 50 + 40 = 90. The exact total is a bit smaller."
+   },
+   "tags": [
+    "estimation",
+    "points",
+    "rounding"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_62da8cb575839f5a39f9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.chance.001",
+   "quest": "jeux.chance",
+   "skill": "PRO-05a",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Un sac contient 5 billes rouges et 3 billes bleues.",
+    "en": "A bag holds 5 red marbles and 3 blue marbles."
+   },
+   "prompt": {
+    "fr": "Combien de billes y a-t-il dans le sac ?",
+    "en": "How many marbles are in the bag?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 8,
+    "calc": "5+3"
+   },
+   "common_errors": [
+    {
+     "value": 2,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Toutes les billes sont dans le même sac : on additionne.",
+      "en": "All the marbles are in the same bag, so we add."
+     }
+    },
+    {
+     "value": 9,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les billes.",
+      "en": "Close! Count the marbles again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les billes rouges, puis ajoute les bleues.",
+    "en": "Count the red marbles, then add the blue ones."
+   },
+   "explain": {
+    "fr": "5 + 3 = 8. Il y a 8 billes.",
+    "en": "5 + 3 = 8. There are 8 marbles."
+   },
+   "tags": [
+    "marbles",
+    "add-within-20",
+    "chance"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_50559c1e5b392c27f25f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.chance.002",
+   "quest": "jeux.chance",
+   "skill": "PRO-05a",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Un sac a 9 billes. Il y en a 4 qui sont rouges. Les autres sont vertes.",
+    "en": "A bag has 9 marbles. 4 of them are red. The others are green."
+   },
+   "prompt": {
+    "fr": "Combien de billes vertes y a-t-il ?",
+    "en": "How many green marbles are there?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "9-4"
+   },
+   "common_errors": [
+    {
+     "value": 13,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche les autres billes : on soustrait.",
+      "en": "We want the other marbles, so we subtract."
+     }
+    },
+    {
+     "value": 4,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "4, c'est le nombre de billes rouges. Cherche les vertes.",
+      "en": "That is the number of red marbles. Look for the green ones."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Enlève les billes rouges du total.",
+    "en": "Take the red marbles away from the total."
+   },
+   "explain": {
+    "fr": "9 - 4 = 5. Il y a 5 billes vertes.",
+    "en": "9 - 4 = 5. There are 5 green marbles."
+   },
+   "tags": [
+    "marbles",
+    "subtract",
+    "chance"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_50559c1e5b392c27f25f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.chance.003",
+   "quest": "jeux.chance",
+   "skill": "PRO-05a",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Le sac de Noah ne contient que des billes rouges. Il pige une bille.",
+    "en": "Noah's bag holds only red marbles. He draws a marble."
+   },
+   "prompt": {
+    "fr": "La bille sera rouge. Que peut-on dire ?",
+    "en": "The marble will be red. What can we say?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Possible",
+      "en": "Possible"
+     },
+     "misconception": "mis_chance_equal"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Impossible",
+      "en": "Impossible"
+     },
+     "random": true
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Certain",
+      "en": "Certain"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c"
+   },
+   "hint": {
+    "fr": "Y a-t-il une autre couleur dans le sac ?",
+    "en": "Is there any other colour in the bag?"
+   },
+   "explain": {
+    "fr": "Toutes les billes sont rouges. Piger une bille rouge est certain.",
+    "en": "All the marbles are red. Drawing a red marble is certain."
+   },
+   "tags": [
+    "chance",
+    "certain",
+    "marbles"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_50559c1e5b392c27f25f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.chance.004",
+   "quest": "jeux.chance",
+   "skill": "PRO-05a",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Le sac de Noah ne contient que des billes rouges. Il pige une bille.",
+    "en": "Noah's bag holds only red marbles. He draws a marble."
+   },
+   "prompt": {
+    "fr": "Noah pige une bille bleue. Que peut-on dire ?",
+    "en": "Noah draws a blue marble. What can we say?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Certain",
+      "en": "Certain"
+     },
+     "misconception": "mis_chance_certain"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Possible",
+      "en": "Possible"
+     },
+     "misconception": "mis_chance_equal"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Impossible",
+      "en": "Impossible"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c"
+   },
+   "hint": {
+    "fr": "Y a-t-il des billes bleues dans le sac ?",
+    "en": "Are there any blue marbles in the bag?"
+   },
+   "explain": {
+    "fr": "Il n'y a aucune bille bleue. Piger une bille bleue est impossible.",
+    "en": "There are no blue marbles. Drawing a blue marble is impossible."
+   },
+   "tags": [
+    "chance",
+    "impossible",
+    "marbles"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_50559c1e5b392c27f25f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.chance.005",
+   "quest": "jeux.chance",
+   "skill": "PRO-05a",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Un sac a 5 billes rouges et 4 billes bleues. Léa ajoute 3 billes bleues.",
+    "en": "A bag has 5 red marbles and 4 blue marbles. Lea adds 3 blue marbles."
+   },
+   "prompt": {
+    "fr": "Combien de billes bleues y a-t-il maintenant ?",
+    "en": "How many blue marbles are there now?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 7,
+    "calc": "4+3"
+   },
+   "common_errors": [
+    {
+     "value": 12,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "Compte seulement les billes bleues.",
+      "en": "Count only the blue marbles."
+     }
+    },
+    {
+     "value": 1,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Léa en ajoute : on additionne.",
+      "en": "Lea adds some, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Ignore les billes rouges.",
+    "en": "Ignore the red marbles."
+   },
+   "explain": {
+    "fr": "4 + 3 = 7. Il y a 7 billes bleues.",
+    "en": "4 + 3 = 7. There are 7 blue marbles."
+   },
+   "tags": [
+    "word-problem",
+    "marbles",
+    "add-within-20"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_50559c1e5b392c27f25f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.chance.006",
+   "quest": "jeux.chance",
+   "skill": "PRO-05a",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Il y a 12 jetons dans la boîte. Cinq sont verts et 4 sont jaunes. Les autres sont rouges.",
+    "en": "There are 12 tokens in the box. Five are green and 4 are yellow. The others are red."
+   },
+   "prompt": {
+    "fr": "Combien de jetons rouges y a-t-il ?",
+    "en": "How many red tokens are there?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3,
+    "calc": "12-5-4"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as enlevé seulement les verts. Enlève aussi les jaunes.",
+      "en": "You took away only the green ones. Take away the yellow ones too."
+     }
+    },
+    {
+     "value": 21,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche les autres jetons : on soustrait.",
+      "en": "We want the other tokens, so we subtract."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Enlève les verts, puis les jaunes.",
+    "en": "Take away the green ones, then the yellow ones."
+   },
+   "explain": {
+    "fr": "12 - 5 = 7, puis 7 - 4 = 3. Il y a 3 jetons rouges.",
+    "en": "12 - 5 = 7, then 7 - 4 = 3. There are 3 red tokens."
+   },
+   "tags": [
+    "word-problem",
+    "tokens",
+    "two-step"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_d404d3557ed20c2ab5b9"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.chance.007",
+   "quest": "jeux.chance",
+   "skill": "PRO-05a",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Un sac ne contient que des billes bleues.",
+    "en": "A bag holds only blue marbles."
+   },
+   "prompt": {
+    "fr": "Vrai ou faux : il est impossible de piger une bille rouge.",
+    "en": "True or false: it is impossible to draw a red marble."
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": true
+   },
+   "hint": {
+    "fr": "Y a-t-il une bille rouge dans le sac ?",
+    "en": "Is there a red marble in the bag?"
+   },
+   "explain": {
+    "fr": "Il n'y a aucune bille rouge, donc c'est impossible.",
+    "en": "There is no red marble, so it is impossible."
+   },
+   "tags": [
+    "chance",
+    "impossible",
+    "true-false"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_50559c1e5b392c27f25f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.chance.008",
+   "quest": "jeux.chance",
+   "skill": "PRO-05a",
+   "type": "order",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa pense à trois sacs de billes.",
+    "en": "Lea thinks about three bags of marbles."
+   },
+   "prompt": {
+    "fr": "Range les sacs de l'événement impossible au certain.",
+    "en": "Put the bags in order, from the impossible event to the certain one."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Sac de billes rouges, piger une rouge",
+      "en": "Bag of red marbles, draw a red one"
+     },
+     "key": "3"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Sac de billes bleues, piger une rouge",
+      "en": "Bag of blue marbles, draw a red one"
+     },
+     "key": "1"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Sac mélangé, piger une rouge",
+      "en": "Mixed bag, draw a red one"
+     },
+     "key": "2"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "c",
+     "a"
+    ],
+    "by": "asc",
+    "misconception": "mis_chance_certain"
+   },
+   "hint": {
+    "fr": "Impossible est tout au début, certain est à la fin.",
+    "en": "Impossible is at the start, certain is at the end."
+   },
+   "explain": {
+    "fr": "Impossible : aucune bille rouge. Possible : un mélange. Certain : que des billes rouges.",
+    "en": "Impossible: no red marble. Possible: a mix. Certain: only red marbles."
+   },
+   "tags": [
+    "chance",
+    "ordering",
+    "marbles"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_50559c1e5b392c27f25f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.chance.009",
+   "quest": "jeux.chance",
+   "skill": "PRO-05a",
+   "type": "order",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Quatre sacs contiennent des billes rouges et des billes bleues.",
+    "en": "Four bags hold red marbles and blue marbles."
+   },
+   "prompt": {
+    "fr": "Range les sacs du moins au plus de chance de piger une rouge.",
+    "en": "Put the bags in order, from least to most chance of drawing red."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "3 rouges et 2 bleues",
+      "en": "3 red and 2 blue"
+     },
+     "key": "3"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "1 rouge et 4 bleues",
+      "en": "1 red and 4 blue"
+     },
+     "key": "1"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "5 rouges et 0 bleue",
+      "en": "5 red and 0 blue"
+     },
+     "key": "5"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "2 rouges et 3 bleues",
+      "en": "2 red and 3 blue"
+     },
+     "key": "2"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "d",
+     "a",
+     "c"
+    ],
+    "by": "asc",
+    "misconception": "mis_chance_equal"
+   },
+   "hint": {
+    "fr": "Chaque sac a 5 billes. Compte les rouges.",
+    "en": "Each bag has 5 marbles. Count the red ones."
+   },
+   "explain": {
+    "fr": "Plus il y a de rouges, plus la chance est grande. Ordre : 1, 2, 3, puis 5 rouges.",
+    "en": "The more red marbles, the bigger the chance. Order: 1, 2, 3, then 5 red."
+   },
+   "tags": [
+    "chance",
+    "ordering",
+    "marbles"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_50559c1e5b392c27f25f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.chance.010",
+   "quest": "jeux.chance",
+   "skill": "PRO-05a",
+   "type": "match",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa et Noah jouent avec un dé et une pièce.",
+    "en": "Lea and Noah play with a die and a coin."
+   },
+   "prompt": {
+    "fr": "Relie chaque événement au bon mot.",
+    "en": "Match each event to the right word."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "Obtenir 7 avec un dé ordinaire",
+       "en": "Get 7 with an ordinary die"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "Obtenir pile ou face avec une pièce",
+       "en": "Get heads or tails with a coin"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "Obtenir 3 avec un dé ordinaire",
+       "en": "Get 3 with an ordinary die"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "certain",
+       "en": "certain"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "possible",
+       "en": "possible"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "impossible",
+       "en": "impossible"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ]
+    ],
+    "misconception": "mis_chance_certain"
+   },
+   "hint": {
+    "fr": "Un dé a des faces de 1 à 6.",
+    "en": "A die has faces from 1 to 6."
+   },
+   "explain": {
+    "fr": "Un dé n'a pas de face 7 : impossible. Une pièce tombe sur pile ou face : certain. Un 3 peut sortir : possible.",
+    "en": "A die has no face 7: impossible. A coin lands heads or tails: certain. A 3 can come up: possible."
+   },
+   "tags": [
+    "chance",
+    "matching",
+    "dice"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a07f59d4e90b1e0cb2bf"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.chance.011",
+   "quest": "jeux.chance",
+   "skill": "PRO-05a",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Noah a lancé deux dés. Regarde-les.",
+    "en": "Noah rolled two dice. Look at them."
+   },
+   "prompt": {
+    "fr": "Combien de points y a-t-il en tout ?",
+    "en": "How many dots are there in all?"
+   },
+   "visual": {
+    "kind": "dice",
+    "data": {
+     "dice": [
+      4,
+      2
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 6,
+    "calc": "4+2"
+   },
+   "common_errors": [
+    {
+     "value": 2,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as lu un seul dé. Compte les deux.",
+      "en": "You read just one die. Count both."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_multiply_instead_of_add",
+     "feedback": {
+      "fr": "On additionne les points, on ne les multiplie pas.",
+      "en": "We add the dots, we do not multiply them."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les points de chaque dé, puis additionne.",
+    "en": "Count the dots on each die, then add."
+   },
+   "explain": {
+    "fr": "Un dé montre 4 et l'autre montre 2. 4 + 2 = 6.",
+    "en": "One die shows 4 and the other shows 2. 4 + 2 = 6."
+   },
+   "tags": [
+    "dice",
+    "visual",
+    "add-within-20"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_454d51562973cf3af447"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "jeux.chance.012",
+   "quest": "jeux.chance",
+   "skill": "PRO-05a",
+   "type": "estimate",
+   "grade": 1,
+   "difficulty": 4,
+   "story": {
+    "fr": "On lance une pièce 100 fois. Elle tombe sur pile environ une fois sur deux.",
+    "en": "We flip a coin 100 times. It lands on heads about every other flip."
+   },
+   "prompt": {
+    "fr": "Environ combien de fois verra-t-on pile ?",
+    "en": "About how many times will we see heads?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 45,
+    "max": 55,
+    "exact_for_check": 50,
+    "calc": "100/2"
+   },
+   "common_errors": [
+    {
+     "value": 200,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "Une fois sur deux, c'est la moitié, pas le double.",
+      "en": "Every other one is half, not double."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Prends la moitié de 100.",
+    "en": "Take half of 100."
+   },
+   "explain": {
+    "fr": "La moitié de 100 est 50. On verra pile environ 50 fois.",
+    "en": "Half of 100 is 50. We will see heads about 50 times."
+   },
+   "tags": [
+    "estimation",
+    "chance",
+    "coin"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a07f59d4e90b1e0cb2bf"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  }
+ ]
+}
