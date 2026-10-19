@@ -1,0 +1,5094 @@
+{
+ "world": "sport",
+ "schema": 1,
+ "questions": [
+  {
+   "id": "sport.points.001",
+   "quest": "sport.points",
+   "skill": "ARI-OPE-A04a",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Les Étoiles jouent contre les Aigles au soccer.",
+    "en": "The Stars play the Eagles at soccer."
+   },
+   "prompt": {
+    "fr": "Les Étoiles marquent 4 buts et les Aigles 3 buts. Combien de buts en tout ?",
+    "en": "The Stars score 4 goals and the Eagles 3 goals. How many goals in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 7,
+    "calc": "4+3"
+   },
+   "common_errors": [
+    {
+     "value": 1,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les buts des deux équipes : on additionne.",
+      "en": "We put both teams' goals together, so we add."
+     }
+    },
+    {
+     "value": 6,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les buts des Aigles.",
+      "en": "Close! Count the Eagles' goals again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pars de 4 et avance de 3.",
+    "en": "Start at 4 and count up 3."
+   },
+   "explain": {
+    "fr": "4 + 3 = 7 buts.",
+    "en": "4 + 3 = 7 goals."
+   },
+   "tags": [
+    "add-within-10",
+    "scores",
+    "soccer"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_18c54a41f800e66f3802"
+    },
+    {
+     "role": "object",
+     "asset": "a_bf8597110e987c13b8a3"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.points.002",
+   "quest": "sport.points",
+   "skill": "ARI-OPE-A04a",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Au match de hockey, les Loups marquent 6 buts. Les Ours en marquent 4.",
+    "en": "At the hockey game, the Wolves score 6 goals. The Bears score 4."
+   },
+   "prompt": {
+    "fr": "Combien de buts ont été marqués en tout ?",
+    "en": "How many goals were scored in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 10,
+    "calc": "6+4"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les buts des Ours.",
+      "en": "Close! Count the Bears' goals again."
+     }
+    },
+    {
+     "value": 2,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les buts : on additionne.",
+      "en": "We put the goals together, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "6 et 4 font un compte rond.",
+    "en": "6 and 4 make a round count."
+   },
+   "explain": {
+    "fr": "6 + 4 = 10 buts.",
+    "en": "6 + 4 = 10 goals."
+   },
+   "tags": [
+    "add-within-10",
+    "make-ten",
+    "scores"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_83a21f6f53b4e428d679"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.points.003",
+   "quest": "sport.points",
+   "skill": "ARI-OPE-A04a",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Au volleyball, l'équipe rouge a 8 points. L'équipe bleue a 6 points.",
+    "en": "At volleyball, the red team has 8 points. The blue team has 6 points."
+   },
+   "prompt": {
+    "fr": "Combien de points les deux équipes ont-elles ensemble ?",
+    "en": "How many points do the two teams have together?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 14,
+    "calc": "8+6"
+   },
+   "common_errors": [
+    {
+     "value": 13,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les points de l'équipe bleue.",
+      "en": "Close! Count the blue team's points again."
+     }
+    },
+    {
+     "value": 2,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On additionne les points des deux équipes.",
+      "en": "We add the points of both teams."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pars de 8, complète jusqu'à 10, puis ajoute le reste.",
+    "en": "Start at 8, make 10, then add the rest."
+   },
+   "explain": {
+    "fr": "8 + 2 = 10, puis 10 + 4 = 14 points.",
+    "en": "8 + 2 = 10, then 10 + 4 = 14 points."
+   },
+   "tags": [
+    "add-within-20",
+    "scores",
+    "volleyball"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_684b85d6e0db2180ea0f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.points.004",
+   "quest": "sport.points",
+   "skill": "ARI-OPE-A04a",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Au tournoi, le Tigre marque 12 points et le Lion marque 7 points.",
+    "en": "At the tournament, the Tiger scores 12 points and the Lion scores 7 points."
+   },
+   "prompt": {
+    "fr": "Combien de points ont-ils marqués ensemble ?",
+    "en": "How many points did they score together?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 19,
+    "calc": "12+7"
+   },
+   "common_errors": [
+    {
+     "value": 18,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Refais les unités : 2 + 7.",
+      "en": "Close! Redo the ones: 2 + 7."
+     }
+    },
+    {
+     "value": 5,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les points : on additionne.",
+      "en": "We put the points together, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne d'abord les unités, puis ajoute 10.",
+    "en": "Add the ones first, then add 10."
+   },
+   "explain": {
+    "fr": "2 + 7 = 9, puis 10 + 9 = 19 points.",
+    "en": "2 + 7 = 9, then 10 + 9 = 19 points."
+   },
+   "tags": [
+    "add-within-100",
+    "scores"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a760c39d8f58fc657ccf"
+    },
+    {
+     "role": "object",
+     "asset": "a_cdca1c9b81130ab7b1f8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.points.005",
+   "quest": "sport.points",
+   "skill": "ARI-OPE-A04a",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Au basketball, l'équipe verte a 15 points. La jaune a 14 points.",
+    "en": "At basketball, green has 15 points. Yellow has 14 points."
+   },
+   "prompt": {
+    "fr": "Combien de points ont-elles en tout ?",
+    "en": "How many points do they have in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 29,
+    "calc": "15+14"
+   },
+   "common_errors": [
+    {
+     "value": 1,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On additionne les points des deux équipes.",
+      "en": "We add the points of both teams."
+     }
+    },
+    {
+     "value": 28,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Refais l'addition des unités : 5 + 4.",
+      "en": "Close! Redo the ones: 5 + 4."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne les dizaines, puis les unités.",
+    "en": "Add the tens, then the ones."
+   },
+   "explain": {
+    "fr": "10 + 10 = 20 et 5 + 4 = 9. Donc 29 points.",
+    "en": "10 + 10 = 20 and 5 + 4 = 9. So 29 points."
+   },
+   "tags": [
+    "add-within-100",
+    "scores",
+    "basketball"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a760c39d8f58fc657ccf"
+    },
+    {
+     "role": "object",
+     "asset": "a_cdca1c9b81130ab7b1f8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.points.006",
+   "quest": "sport.points",
+   "skill": "ARI-OPE-A04a",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa joue au basketball. Elle marque 9 points en première moitié.",
+    "en": "Lea plays basketball. She scores 9 points in the first half."
+   },
+   "prompt": {
+    "fr": "Elle marque 8 points en seconde moitié. Combien de points a-t-elle en tout ?",
+    "en": "She scores 8 points in the second half. How many points does she have in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 17,
+    "calc": "9+8"
+   },
+   "common_errors": [
+    {
+     "value": 16,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte la seconde moitié.",
+      "en": "Close! Count the second half again."
+     }
+    },
+    {
+     "value": 1,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les deux moitiés : on additionne.",
+      "en": "We put both halves together, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pars de 9, ajoute 1 pour faire 10, puis le reste.",
+    "en": "Start at 9, add 1 to make 10, then the rest."
+   },
+   "explain": {
+    "fr": "9 + 8 = 10 + 7 = 17. Léa a 17 points.",
+    "en": "9 + 8 = 10 + 7 = 17. Lea has 17 points."
+   },
+   "tags": [
+    "word-problem",
+    "scores",
+    "basketball"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a760c39d8f58fc657ccf"
+    },
+    {
+     "role": "object",
+     "asset": "a_cdca1c9b81130ab7b1f8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.points.007",
+   "quest": "sport.points",
+   "skill": "ARI-OPE-A04a",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 4,
+   "story": {
+    "fr": "Les Lions ont 13 points. Les Loups ont 6 points de plus que les Lions.",
+    "en": "The Lions have 13 points. The Wolves have 6 more points than the Lions."
+   },
+   "prompt": {
+    "fr": "Combien de points les deux équipes ont-elles ensemble ?",
+    "en": "How many points do the two teams have together?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 32,
+    "calc": "13+13+6"
+   },
+   "common_errors": [
+    {
+     "value": 19,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as trouvé les points des Loups, pas le total des deux.",
+      "en": "You found the Wolves' points, not the total for both."
+     }
+    },
+    {
+     "value": 26,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "Les Loups ont 6 points de plus : ajoute 6 pour eux aussi.",
+      "en": "The Wolves have 6 more points: add 6 for them too."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Trouve d'abord les points des Loups.",
+    "en": "First find the Wolves' points."
+   },
+   "explain": {
+    "fr": "Les Loups ont 13 + 6 = 19 points. Ensemble : 13 + 19 = 32 points.",
+    "en": "The Wolves have 13 + 6 = 19 points. Together: 13 + 19 = 32 points."
+   },
+   "tags": [
+    "word-problem",
+    "two-step",
+    "scores"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a760c39d8f58fc657ccf"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.points.008",
+   "quest": "sport.points",
+   "skill": "ARI-OPE-A04a",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah compte 3 buts pour son équipe et 5 buts pour l'autre.",
+    "en": "Noah counts 3 goals for his team and 5 goals for the other."
+   },
+   "prompt": {
+    "fr": "Combien de buts y a-t-il en tout ?",
+    "en": "How many goals are there in all?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "8",
+      "en": "8"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "7",
+      "en": "7"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "2",
+      "en": "2"
+     },
+     "misconception": "mis_subtract_instead_of_add"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "9",
+      "en": "9"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a",
+    "calc_choice": {
+     "a": "3+5"
+    }
+   },
+   "hint": {
+    "fr": "Pars de 5 et avance de 3.",
+    "en": "Start at 5 and count up 3."
+   },
+   "explain": {
+    "fr": "3 + 5 = 8 buts.",
+    "en": "3 + 5 = 8 goals."
+   },
+   "tags": [
+    "add-within-10",
+    "scores"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_18c54a41f800e66f3802"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.points.009",
+   "quest": "sport.points",
+   "skill": "ARI-OPE-A04a",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Zoé veut écrire le total des points des deux équipes. Il est de quinze.",
+    "en": "Zoe wants to write the total points of two teams. It is fifteen."
+   },
+   "prompt": {
+    "fr": "Quelle addition donne ce total ?",
+    "en": "Which addition gives that total?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "9 + 6",
+      "en": "9 + 6"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "9 + 5",
+      "en": "9 + 5"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "8 + 8",
+      "en": "8 + 8"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "10 + 4",
+      "en": "10 + 4"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Fais chaque addition en passant par 10.",
+    "en": "Do each addition by going through 10."
+   },
+   "explain": {
+    "fr": "9 + 6 = 10 + 5 = 15. Les autres donnent 14 ou 16.",
+    "en": "9 + 6 = 10 + 5 = 15. The others make 14 or 16."
+   },
+   "tags": [
+    "add-within-20",
+    "equations"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_684b85d6e0db2180ea0f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.points.010",
+   "quest": "sport.points",
+   "skill": "ARI-OPE-A04a",
+   "type": "truefalse",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Les Loups ont 11 points et les Ours en ont 8.",
+    "en": "The Wolves have 11 points and the Bears have 8."
+   },
+   "prompt": {
+    "fr": "Théo dit que cela fait 18 points ensemble. A-t-il raison ?",
+    "en": "Theo says that makes 18 points together. Is he right?"
+   },
+   "math_text": "11 + 8 = 18",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_off_by_one"
+   },
+   "hint": {
+    "fr": "Ajoute 8 à 11 en passant par 20.",
+    "en": "Add 8 to 11 by going through 20."
+   },
+   "explain": {
+    "fr": "11 + 8 = 19 points. Théo a compté un point de moins.",
+    "en": "11 + 8 = 19 points. Theo counted one point too few."
+   },
+   "tags": [
+    "true-false",
+    "add-within-100",
+    "scores"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a760c39d8f58fc657ccf"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.points.011",
+   "quest": "sport.points",
+   "skill": "ARI-OPE-A04a",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Quatre équipes ont additionné les points de leurs deux manches.",
+    "en": "Four teams added up the points from their two rounds."
+   },
+   "prompt": {
+    "fr": "Range les additions, de la plus petite somme à la plus grande.",
+    "en": "Put the sums in order, from the smallest to the biggest."
+   },
+   "items": [
+    {
+     "id": "i1",
+     "text": {
+      "fr": "7 + 6",
+      "en": "7 + 6"
+     },
+     "key": "13"
+    },
+    {
+     "id": "i2",
+     "text": {
+      "fr": "9 + 9",
+      "en": "9 + 9"
+     },
+     "key": "18"
+    },
+    {
+     "id": "i3",
+     "text": {
+      "fr": "5 + 4",
+      "en": "5 + 4"
+     },
+     "key": "9"
+    },
+    {
+     "id": "i4",
+     "text": {
+      "fr": "8 + 6",
+      "en": "8 + 6"
+     },
+     "key": "14"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "i3",
+     "i1",
+     "i4",
+     "i2"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Calcule d'abord chaque somme.",
+    "en": "Work out each sum first."
+   },
+   "explain": {
+    "fr": "Les sommes sont 9, 13, 14 et 18.",
+    "en": "The sums are 9, 13, 14 and 18."
+   },
+   "tags": [
+    "ordering",
+    "add-within-20",
+    "scores"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a760c39d8f58fc657ccf"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.points.012",
+   "quest": "sport.points",
+   "skill": "ARI-OPE-A04a",
+   "type": "match",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Mia écrit les totaux des buts de quatre matchs.",
+    "en": "Mia writes the goal totals of four games."
+   },
+   "prompt": {
+    "fr": "Relie chaque addition à son total.",
+    "en": "Match each addition to its total."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "3 + 4",
+       "en": "3 + 4"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "5 + 5",
+       "en": "5 + 5"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "6 + 3",
+       "en": "6 + 3"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "4 + 8",
+       "en": "4 + 8"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "10",
+       "en": "10"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "9",
+       "en": "9"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "12",
+       "en": "12"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "7",
+       "en": "7"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ],
+     [
+      "l4",
+      "r4"
+     ]
+    ],
+    "misconception": "mis_match"
+   },
+   "hint": {
+    "fr": "Fais chaque addition une à la fois.",
+    "en": "Do each addition one at a time."
+   },
+   "explain": {
+    "fr": "3 + 4 = 7. 5 + 5 = 10. 6 + 3 = 9. 4 + 8 = 12.",
+    "en": "3 + 4 = 7. 5 + 5 = 10. 6 + 3 = 9. 4 + 8 = 12."
+   },
+   "tags": [
+    "matching",
+    "add-within-20"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_18c54a41f800e66f3802"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.points.013",
+   "quest": "sport.points",
+   "skill": "ARI-OPE-A04a",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le diagramme montre les points de l'équipe de Léa à chaque quart du match.",
+    "en": "The chart shows the points Lea's team scored in each quarter of the game."
+   },
+   "prompt": {
+    "fr": "Combien de points l'équipe a-t-elle marqués aux deux premiers quarts ?",
+    "en": "How many points did the team score in the first two quarters?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Points par quart",
+      "en": "Points per quarter"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "1er",
+        "en": "1st"
+       },
+       "value": 12
+      },
+      {
+       "label": {
+        "fr": "2e",
+        "en": "2nd"
+       },
+       "value": 15
+      },
+      {
+       "label": {
+        "fr": "3e",
+        "en": "3rd"
+       },
+       "value": 10
+      }
+     ],
+     "max": 20
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 27,
+    "calc": "12+15"
+   },
+   "common_errors": [
+    {
+     "value": 37,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as aussi compté le troisième quart.",
+      "en": "You also counted the third quarter."
+     }
+    },
+    {
+     "value": 3,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les quarts : on additionne.",
+      "en": "We put the quarters together, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Lis la hauteur des deux premières barres.",
+    "en": "Read the height of the first two bars."
+   },
+   "explain": {
+    "fr": "12 + 15 = 27. L'équipe a marqué 27 points.",
+    "en": "12 + 15 = 27. The team scored 27 points."
+   },
+   "tags": [
+    "bar-chart",
+    "add-within-100",
+    "basketball"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a760c39d8f58fc657ccf"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.points.014",
+   "quest": "sport.points",
+   "skill": "ARI-OPE-A04a",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Les Aigles ont 19 points et les Faucons en ont 21.",
+    "en": "The Eagles have 19 points and the Falcons have 21."
+   },
+   "prompt": {
+    "fr": "Environ combien de points ont-ils ensemble ?",
+    "en": "About how many points do they have together?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 38,
+    "max": 42,
+    "exact_for_check": 40,
+    "calc": "19+21"
+   },
+   "common_errors": [
+    {
+     "value": 2,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les points : on additionne.",
+      "en": "We put the points together, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis chaque nombre à la dizaine.",
+    "en": "Round each number to the nearest ten."
+   },
+   "explain": {
+    "fr": "19 est près de 20 et 21 est près de 20. Ensemble : environ 40 points.",
+    "en": "19 is close to 20 and 21 is close to 20. Together: about 40 points."
+   },
+   "tags": [
+    "estimation",
+    "rounding",
+    "scores"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a760c39d8f58fc657ccf"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.classement.001",
+   "quest": "sport.classement",
+   "skill": "STA-04a",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Le diagramme à bandes montre les victoires de trois équipes de hockey.",
+    "en": "The bar chart shows the wins of three hockey teams."
+   },
+   "prompt": {
+    "fr": "Combien de victoires les Tigres ont-ils ?",
+    "en": "How many wins do the Tigers have?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Victoires",
+      "en": "Wins"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "Lions",
+        "en": "Lions"
+       },
+       "value": 7
+      },
+      {
+       "label": {
+        "fr": "Tigres",
+        "en": "Tigers"
+       },
+       "value": 5
+      },
+      {
+       "label": {
+        "fr": "Loups",
+        "en": "Wolves"
+       },
+       "value": 9
+      }
+     ],
+     "max": 10
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "5"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as lu la barre des Lions.",
+      "en": "You read the Lions bar."
+     }
+    },
+    {
+     "value": 9,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as lu la barre des Loups.",
+      "en": "You read the Wolves bar."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Trouve la barre des Tigres et regarde sa hauteur.",
+    "en": "Find the Tigers bar and look at its height."
+   },
+   "explain": {
+    "fr": "La barre des Tigres monte jusqu'à 5.",
+    "en": "The Tigers bar goes up to 5."
+   },
+   "tags": [
+    "bar-chart",
+    "read-chart",
+    "hockey"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_83a21f6f53b4e428d679"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.classement.002",
+   "quest": "sport.classement",
+   "skill": "STA-04a",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le diagramme montre les victoires de trois équipes de hockey.",
+    "en": "The chart shows the wins of three hockey teams."
+   },
+   "prompt": {
+    "fr": "Combien de victoires de plus les Loups ont-ils que les Tigres ?",
+    "en": "How many more wins do the Wolves have than the Tigers?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Victoires",
+      "en": "Wins"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "Lions",
+        "en": "Lions"
+       },
+       "value": 7
+      },
+      {
+       "label": {
+        "fr": "Tigres",
+        "en": "Tigers"
+       },
+       "value": 5
+      },
+      {
+       "label": {
+        "fr": "Loups",
+        "en": "Wolves"
+       },
+       "value": 9
+      }
+     ],
+     "max": 10
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 4,
+    "calc": "9-5"
+   },
+   "common_errors": [
+    {
+     "value": 14,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On compare : on soustrait.",
+      "en": "We compare, so we subtract."
+     }
+    },
+    {
+     "value": 2,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as comparé les Lions et les Tigres.",
+      "en": "You compared the Lions and the Tigers."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Lis la barre des Loups, puis celle des Tigres.",
+    "en": "Read the Wolves bar, then the Tigers bar."
+   },
+   "explain": {
+    "fr": "9 - 5 = 4 victoires de plus.",
+    "en": "9 - 5 = 4 more wins."
+   },
+   "tags": [
+    "bar-chart",
+    "compare",
+    "subtract"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_83a21f6f53b4e428d679"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.classement.003",
+   "quest": "sport.classement",
+   "skill": "STA-04a",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le diagramme montre les victoires de trois équipes de hockey.",
+    "en": "The chart shows the wins of three hockey teams."
+   },
+   "prompt": {
+    "fr": "Combien de victoires les trois équipes ont-elles en tout ?",
+    "en": "How many wins do the three teams have in all?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Victoires",
+      "en": "Wins"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "Lions",
+        "en": "Lions"
+       },
+       "value": 7
+      },
+      {
+       "label": {
+        "fr": "Tigres",
+        "en": "Tigers"
+       },
+       "value": 5
+      },
+      {
+       "label": {
+        "fr": "Loups",
+        "en": "Wolves"
+       },
+       "value": 9
+      }
+     ],
+     "max": 10
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 21,
+    "calc": "7+5+9"
+   },
+   "common_errors": [
+    {
+     "value": 12,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié une barre.",
+      "en": "You left out a bar."
+     }
+    },
+    {
+     "value": 20,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Relis chaque barre.",
+      "en": "Close! Read each bar again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne deux barres, puis la troisième.",
+    "en": "Add two bars, then the third."
+   },
+   "explain": {
+    "fr": "7 + 5 = 12, puis 12 + 9 = 21 victoires.",
+    "en": "7 + 5 = 12, then 12 + 9 = 21 wins."
+   },
+   "tags": [
+    "bar-chart",
+    "add-three-numbers"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_83a21f6f53b4e428d679"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.classement.004",
+   "quest": "sport.classement",
+   "skill": "STA-04a",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Dans ce diagramme, chaque ligne de la grille vaut 2 victoires.",
+    "en": "In this chart, each grid line is worth 2 wins."
+   },
+   "prompt": {
+    "fr": "Combien de victoires les Aigles ont-ils ?",
+    "en": "How many wins do the Eagles have?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Victoires (une ligne = 2)",
+      "en": "Wins (one line = 2)"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "Aigles",
+        "en": "Eagles"
+       },
+       "value": 8
+      },
+      {
+       "label": {
+        "fr": "Faucons",
+        "en": "Falcons"
+       },
+       "value": 6
+      }
+     ],
+     "max": 12
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 8,
+    "calc": "8"
+   },
+   "common_errors": [
+    {
+     "value": 4,
+     "misconception": "mis_read_scale",
+     "feedback": {
+      "fr": "Tu as compté les lignes, mais chacune vaut 2.",
+      "en": "You counted the lines, but each is worth 2."
+     }
+    },
+    {
+     "value": 6,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as lu la barre des Faucons.",
+      "en": "You read the Falcons bar."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les lignes, puis compte de 2 en 2.",
+    "en": "Count the lines, then count by 2s."
+   },
+   "explain": {
+    "fr": "La barre touche 4 lignes de 2 : 2, 4, 6, 8.",
+    "en": "The bar reaches 4 lines of 2: 2, 4, 6, 8."
+   },
+   "tags": [
+    "bar-chart",
+    "scale-of-2"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_83a21f6f53b4e428d679"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.classement.005",
+   "quest": "sport.classement",
+   "skill": "STA-04a",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Pour faire un diagramme, Noah colorie un carré par groupe de 2 victoires.",
+    "en": "To make a chart, Noah colours one square for every 2 wins."
+   },
+   "prompt": {
+    "fr": "L'équipe a 10 victoires. Combien de carrés colorie-t-il ?",
+    "en": "The team has 10 wins. How many squares does he colour?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "10/2"
+   },
+   "common_errors": [
+    {
+     "value": 20,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "Un carré vaut 2 victoires : on divise.",
+      "en": "One square is worth 2 wins: we divide."
+     }
+    },
+    {
+     "value": 12,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche combien de groupes de 2 : on divise.",
+      "en": "We look for how many groups of 2: we divide."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 2 en 2 jusqu'à 10.",
+    "en": "Count by 2s up to 10."
+   },
+   "explain": {
+    "fr": "2, 4, 6, 8, 10. Il faut 5 carrés.",
+    "en": "2, 4, 6, 8, 10. He needs 5 squares."
+   },
+   "tags": [
+    "bar-chart",
+    "build-chart",
+    "scale-of-2"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_83a21f6f53b4e428d679"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.classement.006",
+   "quest": "sport.classement",
+   "skill": "STA-04a",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Sur le diagramme de Zoé, un carré vaut 5 victoires. La barre des Lions a 3 carrés.",
+    "en": "On Zoe's chart, one square is worth 5 wins. The Lions bar has 3 squares."
+   },
+   "prompt": {
+    "fr": "Combien de victoires les Lions ont-ils ?",
+    "en": "How many wins do the Lions have?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 15,
+    "calc": "3*5"
+   },
+   "common_errors": [
+    {
+     "value": 3,
+     "misconception": "mis_read_scale",
+     "feedback": {
+      "fr": "Un carré vaut 5 victoires, pas 1.",
+      "en": "One square is worth 5 wins, not 1."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "3 carrés de 5 : multiplie.",
+      "en": "3 squares of 5: multiply."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 5 en 5, trois fois.",
+    "en": "Count by 5s, three times."
+   },
+   "explain": {
+    "fr": "5, 10, 15. Les Lions ont 15 victoires.",
+    "en": "5, 10, 15. The Lions have 15 wins."
+   },
+   "tags": [
+    "bar-chart",
+    "scale-of-5"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_83a21f6f53b4e428d679"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.classement.007",
+   "quest": "sport.classement",
+   "skill": "STA-04a",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "L'équipe de Samuel gagne 3 matchs le samedi et 4 matchs le dimanche.",
+    "en": "Samuel's team wins 3 games on Saturday and 4 games on Sunday."
+   },
+   "prompt": {
+    "fr": "Combien de victoires dessine-t-il sur sa barre en tout ?",
+    "en": "How many wins does he draw on his bar in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 7,
+    "calc": "3+4"
+   },
+   "common_errors": [
+    {
+     "value": 1,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les deux jours : on additionne.",
+      "en": "We put both days together, so we add."
+     }
+    },
+    {
+     "value": 6,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte le dimanche.",
+      "en": "Close! Count Sunday again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pars de 4 et avance de 3.",
+    "en": "Start at 4 and count up 3."
+   },
+   "explain": {
+    "fr": "3 + 4 = 7 victoires.",
+    "en": "3 + 4 = 7 wins."
+   },
+   "tags": [
+    "word-problem",
+    "build-chart"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_18c54a41f800e66f3802"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.classement.008",
+   "quest": "sport.classement",
+   "skill": "STA-04a",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Les Tigres ont joué 12 matchs. Ils en ont gagné 7.",
+    "en": "The Tigers played 12 games. They won 7."
+   },
+   "prompt": {
+    "fr": "Combien de matchs n'ont-ils pas gagnés ?",
+    "en": "How many games did they not win?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "12-7"
+   },
+   "common_errors": [
+    {
+     "value": 19,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche ce qui reste : on soustrait.",
+      "en": "We look for what is left, so we subtract."
+     }
+    },
+    {
+     "value": 6,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Compte de 7 à 12.",
+      "en": "Close! Count from 7 up to 12."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Avance de 7 jusqu'à 12.",
+    "en": "Count up from 7 to 12."
+   },
+   "explain": {
+    "fr": "7 + 5 = 12, donc 12 - 7 = 5 matchs.",
+    "en": "7 + 5 = 12, so 12 - 7 = 5 games."
+   },
+   "tags": [
+    "word-problem",
+    "subtract"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_83a21f6f53b4e428d679"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.classement.009",
+   "quest": "sport.classement",
+   "skill": "STA-04a",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa construit un diagramme à bandes des victoires de quatre équipes.",
+    "en": "Lea builds a bar chart of the wins of four teams."
+   },
+   "prompt": {
+    "fr": "Qu'écrit-on sous chaque barre ?",
+    "en": "What do we write under each bar?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "le nom de l'équipe",
+      "en": "the name of the team"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "le nombre de ballons",
+      "en": "the number of balls"
+     },
+     "misconception": "mis_read_scale"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "la date du match",
+      "en": "the date of the game"
+     },
+     "misconception": "mis_read_wrong_bar"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Chaque barre représente une équipe.",
+    "en": "Each bar stands for one team."
+   },
+   "explain": {
+    "fr": "Sous chaque barre, on écrit l'équipe qu'elle représente.",
+    "en": "Under each bar, we write the team it stands for."
+   },
+   "tags": [
+    "bar-chart",
+    "labels"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_83a21f6f53b4e428d679"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.classement.010",
+   "quest": "sport.classement",
+   "skill": "STA-04a",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Sur un diagramme, la barre des Lions est plus haute que celle des Loups.",
+    "en": "On a chart, the Lions bar is taller than the Wolves bar."
+   },
+   "prompt": {
+    "fr": "Que peut-on dire ?",
+    "en": "What can we say?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Les Lions ont plus de victoires.",
+      "en": "The Lions have more wins."
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Les Lions ont moins de victoires.",
+      "en": "The Lions have fewer wins."
+     },
+     "misconception": "mis_read_scale"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Les deux équipes ont autant de victoires.",
+      "en": "Both teams have the same number of wins."
+     },
+     "misconception": "mis_read_wrong_bar"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Une barre haute veut dire un grand nombre.",
+    "en": "A tall bar means a big number."
+   },
+   "explain": {
+    "fr": "Plus la barre est haute, plus il y a de victoires.",
+    "en": "The taller the bar, the more wins there are."
+   },
+   "tags": [
+    "bar-chart",
+    "compare"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_83a21f6f53b4e428d679"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.classement.011",
+   "quest": "sport.classement",
+   "skill": "STA-04a",
+   "type": "truefalse",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah lit un diagramme à bandes des victoires.",
+    "en": "Noah reads a bar chart of wins."
+   },
+   "prompt": {
+    "fr": "Il dit qu'une barre plus courte veut dire plus de victoires. A-t-il raison ?",
+    "en": "He says a shorter bar means more wins. Is he right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_read_scale"
+   },
+   "hint": {
+    "fr": "Compare une barre haute et une barre courte.",
+    "en": "Compare a tall bar and a short bar."
+   },
+   "explain": {
+    "fr": "Une barre plus courte veut dire moins de victoires.",
+    "en": "A shorter bar means fewer wins."
+   },
+   "tags": [
+    "true-false",
+    "bar-chart"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_83a21f6f53b4e428d679"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.classement.012",
+   "quest": "sport.classement",
+   "skill": "STA-04a",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa veut ranger ses barres de victoires avant de les dessiner.",
+    "en": "Lea wants to sort her win bars before drawing them."
+   },
+   "prompt": {
+    "fr": "Range les équipes, de la barre la plus courte à la plus haute.",
+    "en": "Put the teams in order, from the shortest bar to the tallest."
+   },
+   "items": [
+    {
+     "id": "i1",
+     "text": {
+      "fr": "Lions : 7",
+      "en": "Lions: 7"
+     },
+     "key": "7"
+    },
+    {
+     "id": "i2",
+     "text": {
+      "fr": "Tigres : 5",
+      "en": "Tigers: 5"
+     },
+     "key": "5"
+    },
+    {
+     "id": "i3",
+     "text": {
+      "fr": "Loups : 9",
+      "en": "Wolves: 9"
+     },
+     "key": "9"
+    },
+    {
+     "id": "i4",
+     "text": {
+      "fr": "Aigles : 6",
+      "en": "Eagles: 6"
+     },
+     "key": "6"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "i2",
+     "i4",
+     "i1",
+     "i3"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Trouve d'abord le plus petit nombre de victoires.",
+    "en": "First find the smallest number of wins."
+   },
+   "explain": {
+    "fr": "L'ordre est 5, 6, 7 et 9 victoires.",
+    "en": "The order is 5, 6, 7 and 9 wins."
+   },
+   "tags": [
+    "ordering",
+    "build-chart"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_83a21f6f53b4e428d679"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.classement.013",
+   "quest": "sport.classement",
+   "skill": "STA-04a",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Dans un diagramme, un carré vaut 2 victoires.",
+    "en": "In a chart, one square is worth 2 wins."
+   },
+   "prompt": {
+    "fr": "Relie chaque nombre de carrés au nombre de victoires.",
+    "en": "Match each number of squares to the number of wins."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "3 carrés",
+       "en": "3 squares"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "5 carrés",
+       "en": "5 squares"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "4 carrés",
+       "en": "4 squares"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "1 carré",
+       "en": "1 square"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "10 victoires",
+       "en": "10 wins"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "8 victoires",
+       "en": "8 wins"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "2 victoires",
+       "en": "2 wins"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "6 victoires",
+       "en": "6 wins"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ],
+     [
+      "l4",
+      "r4"
+     ]
+    ],
+    "misconception": "mis_read_scale"
+   },
+   "hint": {
+    "fr": "Compte de 2 en 2.",
+    "en": "Count by 2s."
+   },
+   "explain": {
+    "fr": "3 carrés valent 6. 5 carrés valent 10. 4 carrés valent 8. 1 carré vaut 2.",
+    "en": "3 squares are worth 6. 5 squares are worth 10. 4 squares are worth 8. 1 square is worth 2."
+   },
+   "tags": [
+    "matching",
+    "scale-of-2"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_83a21f6f53b4e428d679"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.classement.014",
+   "quest": "sport.classement",
+   "skill": "STA-04a",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le club a gagné 9 matchs en octobre et 11 matchs en novembre.",
+    "en": "The club won 9 games in October and 11 games in November."
+   },
+   "prompt": {
+    "fr": "Environ combien de matchs a-t-il gagnés en tout ?",
+    "en": "About how many games did it win in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 18,
+    "max": 22,
+    "exact_for_check": 20,
+    "calc": "9+11"
+   },
+   "common_errors": [
+    {
+     "value": 2,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les deux mois : on additionne.",
+      "en": "We put both months together, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à 10 + 10.",
+    "en": "Think of 10 + 10."
+   },
+   "explain": {
+    "fr": "9 est près de 10 et 11 est près de 10. Le total est environ 20.",
+    "en": "9 is close to 10 and 11 is close to 10. The total is about 20."
+   },
+   "tags": [
+    "estimation",
+    "build-chart"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_83a21f6f53b4e428d679"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.relais.001",
+   "quest": "sport.relais",
+   "skill": "ARI-OPE-A06c",
+   "type": "numeric",
+   "grade": 4,
+   "difficulty": 1,
+   "story": {
+    "fr": "Sur la piste, 4 coureurs font chacun 6 tours pour le relais.",
+    "en": "On the track, 4 runners each do 6 laps for the relay."
+   },
+   "prompt": {
+    "fr": "Combien de tours ont-ils faits en tout ?",
+    "en": "How many laps did they do in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 24,
+    "calc": "4*6"
+   },
+   "common_errors": [
+    {
+     "value": 10,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "4 coureurs, 6 tours chacun : multiplie.",
+      "en": "4 runners, 6 laps each: multiply."
+     }
+    },
+    {
+     "value": 20,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Il manque un coureur en comptant de 6 en 6.",
+      "en": "One runner is missing counting by 6s."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 6 en 6, quatre fois.",
+    "en": "Count by 6s, four times."
+   },
+   "explain": {
+    "fr": "6, 12, 18, 24. Donc 4 x 6 = 24 tours.",
+    "en": "6, 12, 18, 24. So 4 x 6 = 24 laps."
+   },
+   "tags": [
+    "multiplication",
+    "relay",
+    "times-6"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_57d8de906136df605ab0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.relais.002",
+   "quest": "sport.relais",
+   "skill": "ARI-OPE-A06c",
+   "type": "numeric",
+   "grade": 4,
+   "difficulty": 2,
+   "story": {
+    "fr": "Sur la piste, 8 cônes marquent chaque tour. Un coureur fait 7 tours.",
+    "en": "On the track, 8 cones mark each lap. A runner does 7 laps."
+   },
+   "prompt": {
+    "fr": "Combien de cônes un coureur dépasse-t-il en tout ?",
+    "en": "How many cones does a runner pass in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 56,
+    "calc": "7*8"
+   },
+   "common_errors": [
+    {
+     "value": 15,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "7 tours de 8 cônes : multiplie.",
+      "en": "7 laps of 8 cones: multiply."
+     }
+    },
+    {
+     "value": 54,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Vérifie 7 x 8.",
+      "en": "Close! Check 7 x 8."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à 7 x 8 = 7 x 4 + 7 x 4.",
+    "en": "Think of 7 x 8 = 7 x 4 + 7 x 4."
+   },
+   "explain": {
+    "fr": "7 x 4 = 28 et 28 + 28 = 56 cônes.",
+    "en": "7 x 4 = 28 and 28 + 28 = 56 cones."
+   },
+   "tags": [
+    "multiplication",
+    "times-7",
+    "times-8"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_57d8de906136df605ab0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.relais.003",
+   "quest": "sport.relais",
+   "skill": "ARI-OPE-A06c",
+   "type": "numeric",
+   "grade": 4,
+   "difficulty": 2,
+   "story": {
+    "fr": "Neuf élèves courent. Chacun fait 6 tours pendant l'entraînement.",
+    "en": "Nine students run. Each does 6 laps during practice."
+   },
+   "prompt": {
+    "fr": "Combien de tours font-ils ensemble ?",
+    "en": "How many laps do they do together?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 54,
+    "calc": "9*6"
+   },
+   "common_errors": [
+    {
+     "value": 15,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "9 élèves, 6 tours chacun : multiplie.",
+      "en": "9 students, 6 laps each: multiply."
+     }
+    },
+    {
+     "value": 45,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Tu as calculé 9 x 5.",
+      "en": "Close! You worked out 9 x 5."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Fais 10 x 6, puis enlève 6.",
+    "en": "Do 10 x 6, then take away 6."
+   },
+   "explain": {
+    "fr": "10 x 6 = 60 et 60 - 6 = 54 tours.",
+    "en": "10 x 6 = 60 and 60 - 6 = 54 laps."
+   },
+   "tags": [
+    "multiplication",
+    "times-9",
+    "times-6"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_57d8de906136df605ab0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.relais.004",
+   "quest": "sport.relais",
+   "skill": "ARI-OPE-A06c",
+   "type": "numeric",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Huit coureurs font 8 tours chacun pendant le grand relais.",
+    "en": "Eight runners each do 8 laps in the big relay."
+   },
+   "prompt": {
+    "fr": "Combien de tours font-ils en tout ?",
+    "en": "How many laps do they do in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 64,
+    "calc": "8*8"
+   },
+   "common_errors": [
+    {
+     "value": 16,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "8 coureurs, 8 tours chacun : multiplie.",
+      "en": "8 runners, 8 laps each: multiply."
+     }
+    },
+    {
+     "value": 56,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Tu as calculé 8 x 7.",
+      "en": "Close! You worked out 8 x 7."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense au double de 8 x 4.",
+    "en": "Think of double 8 x 4."
+   },
+   "explain": {
+    "fr": "8 x 4 = 32 et 32 + 32 = 64 tours.",
+    "en": "8 x 4 = 32 and 32 + 32 = 64 laps."
+   },
+   "tags": [
+    "multiplication",
+    "times-8",
+    "squares"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_57d8de906136df605ab0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.relais.005",
+   "quest": "sport.relais",
+   "skill": "ARI-OPE-A06c",
+   "type": "numeric",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Sept équipes de relais ont chacune 9 coureurs.",
+    "en": "Seven relay teams each have 9 runners."
+   },
+   "prompt": {
+    "fr": "Combien de coureurs y a-t-il en tout ?",
+    "en": "How many runners are there in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 63,
+    "calc": "7*9"
+   },
+   "common_errors": [
+    {
+     "value": 16,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "7 équipes de 9 : multiplie.",
+      "en": "7 teams of 9: multiply."
+     }
+    },
+    {
+     "value": 56,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Tu as calculé 7 x 8.",
+      "en": "Close! You worked out 7 x 8."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Fais 7 x 10, puis enlève 7.",
+    "en": "Do 7 x 10, then take away 7."
+   },
+   "explain": {
+    "fr": "7 x 10 = 70 et 70 - 7 = 63 coureurs.",
+    "en": "7 x 10 = 70 and 70 - 7 = 63 runners."
+   },
+   "tags": [
+    "multiplication",
+    "times-7",
+    "times-9"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_57d8de906136df605ab0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.relais.006",
+   "quest": "sport.relais",
+   "skill": "ARI-OPE-A06c",
+   "type": "word",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un tour de piste mesure 400 m. Léa en fait 5 tours.",
+    "en": "One lap of the track is 400 m. Lea does 5 laps."
+   },
+   "prompt": {
+    "fr": "Quelle distance Léa a-t-elle courue, en mètres ?",
+    "en": "How far did Lea run, in metres?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 2000,
+    "calc": "5*400"
+   },
+   "common_errors": [
+    {
+     "value": 405,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "5 tours de 400 m : multiplie.",
+      "en": "5 laps of 400 m: multiply."
+     }
+    },
+    {
+     "value": 200,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "5 x 4 = 20, mais ce sont des centaines.",
+      "en": "5 x 4 = 20, but these are hundreds."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Calcule 5 x 4, puis pense en centaines.",
+    "en": "Work out 5 x 4, then think in hundreds."
+   },
+   "explain": {
+    "fr": "5 x 4 = 20 centaines, donc 2 000 m.",
+    "en": "5 x 4 = 20 hundreds, so 2,000 m."
+   },
+   "tags": [
+    "word-problem",
+    "multiplication",
+    "distance"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_57d8de906136df605ab0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.relais.007",
+   "quest": "sport.relais",
+   "skill": "ARI-OPE-A06c",
+   "type": "word",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Dans un relais, 4 coureurs font 7 tours chacun.",
+    "en": "In a relay, 4 runners each do 7 laps."
+   },
+   "prompt": {
+    "fr": "Combien de tours l'équipe fait-elle en tout ?",
+    "en": "How many laps does the team do in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 28,
+    "calc": "4*7"
+   },
+   "common_errors": [
+    {
+     "value": 11,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "4 coureurs, 7 tours chacun : multiplie.",
+      "en": "4 runners, 7 laps each: multiply."
+     }
+    },
+    {
+     "value": 24,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Il manque un coureur.",
+      "en": "One runner is missing."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 7 en 7, quatre fois.",
+    "en": "Count by 7s, four times."
+   },
+   "explain": {
+    "fr": "7, 14, 21, 28. L'équipe fait 28 tours.",
+    "en": "7, 14, 21, 28. The team does 28 laps."
+   },
+   "tags": [
+    "word-problem",
+    "multiplication",
+    "relay"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_57d8de906136df605ab0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.relais.008",
+   "quest": "sport.relais",
+   "skill": "ARI-OPE-A06c",
+   "type": "word",
+   "grade": 4,
+   "difficulty": 4,
+   "story": {
+    "fr": "Il y a 7 équipes. Chaque équipe a 6 coureurs et chaque coureur fait 2 tours.",
+    "en": "There are 7 teams. Each team has 6 runners and each runner does 2 laps."
+   },
+   "prompt": {
+    "fr": "Combien de tours font-ils en tout ?",
+    "en": "How many laps do they do in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 84,
+    "calc": "6*7*2"
+   },
+   "common_errors": [
+    {
+     "value": 42,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié que chaque coureur fait 2 tours.",
+      "en": "You forgot that each runner does 2 laps."
+     }
+    },
+    {
+     "value": 15,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Il faut multiplier, pas additionner.",
+      "en": "You must multiply, not add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Cherche d'abord le nombre de coureurs.",
+    "en": "First find the number of runners."
+   },
+   "explain": {
+    "fr": "7 x 6 = 42 coureurs. Puis 42 x 2 = 84 tours.",
+    "en": "7 x 6 = 42 runners. Then 42 x 2 = 84 laps."
+   },
+   "tags": [
+    "word-problem",
+    "multiplication",
+    "two-step"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_57d8de906136df605ab0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.relais.009",
+   "quest": "sport.relais",
+   "skill": "ARI-OPE-A06c",
+   "type": "choice",
+   "grade": 4,
+   "difficulty": 2,
+   "story": {
+    "fr": "Six coureurs font chacun 7 tours.",
+    "en": "Six runners each do 7 laps."
+   },
+   "prompt": {
+    "fr": "Combien de tours font-ils en tout ?",
+    "en": "How many laps do they do in all?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "42",
+      "en": "42"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "36",
+      "en": "36"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "48",
+      "en": "48"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "13",
+      "en": "13"
+     },
+     "misconception": "mis_add_instead_of_multiply"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a",
+    "calc_choice": {
+     "a": "6*7"
+    }
+   },
+   "hint": {
+    "fr": "Pense à 6 x 5 puis ajoute 6 x 2.",
+    "en": "Think of 6 x 7 as 6 x 5 plus 6 x 2."
+   },
+   "explain": {
+    "fr": "6 x 5 = 30 et 6 x 2 = 12. Donc 42 tours.",
+    "en": "6 x 5 = 30 and 6 x 2 = 12. So 42 laps."
+   },
+   "tags": [
+    "multiplication",
+    "times-6",
+    "times-7"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_57d8de906136df605ab0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.relais.010",
+   "quest": "sport.relais",
+   "skill": "ARI-OPE-A06c",
+   "type": "choice",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un entraîneur compte 8 équipes de 9 coureurs.",
+    "en": "A coach counts 8 teams of 9 runners."
+   },
+   "prompt": {
+    "fr": "Combien de coureurs y a-t-il ?",
+    "en": "How many runners are there?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "72",
+      "en": "72"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "63",
+      "en": "63"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "81",
+      "en": "81"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "17",
+      "en": "17"
+     },
+     "misconception": "mis_add_instead_of_multiply"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a",
+    "calc_choice": {
+     "a": "8*9"
+    }
+   },
+   "hint": {
+    "fr": "Fais 8 x 10, puis enlève 8.",
+    "en": "Do 8 x 10, then take away 8."
+   },
+   "explain": {
+    "fr": "80 - 8 = 72 coureurs.",
+    "en": "80 - 8 = 72 runners."
+   },
+   "tags": [
+    "multiplication",
+    "times-8",
+    "times-9"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_57d8de906136df605ab0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.relais.011",
+   "quest": "sport.relais",
+   "skill": "ARI-OPE-A06c",
+   "type": "truefalse",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa calcule combien de tours font 9 coureurs qui en font 7 chacun.",
+    "en": "Lea works out how many laps 9 runners make if each does 7."
+   },
+   "prompt": {
+    "fr": "Elle dit que cela fait 56 tours. A-t-elle raison ?",
+    "en": "She says that makes 56 laps. Is she right?"
+   },
+   "math_text": "9 x 7 = 56",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_off_by_one"
+   },
+   "hint": {
+    "fr": "Fais 10 x 7, puis enlève 7.",
+    "en": "Do 10 x 7, then take away 7."
+   },
+   "explain": {
+    "fr": "9 x 7 = 63 tours. Léa a calculé 8 x 7.",
+    "en": "9 x 7 = 63 laps. Lea worked out 8 x 7."
+   },
+   "tags": [
+    "true-false",
+    "multiplication",
+    "times-9"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_57d8de906136df605ab0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.relais.012",
+   "quest": "sport.relais",
+   "skill": "ARI-OPE-A06c",
+   "type": "order",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Quatre équipes de relais ont des nombres de tours différents.",
+    "en": "Four relay teams have different numbers of laps."
+   },
+   "prompt": {
+    "fr": "Range les calculs, du plus petit résultat au plus grand.",
+    "en": "Put the sums in order, from the smallest result to the biggest."
+   },
+   "items": [
+    {
+     "id": "i1",
+     "text": {
+      "fr": "6 x 7",
+      "en": "6 x 7"
+     },
+     "key": "42"
+    },
+    {
+     "id": "i2",
+     "text": {
+      "fr": "5 x 9",
+      "en": "5 x 9"
+     },
+     "key": "45"
+    },
+    {
+     "id": "i3",
+     "text": {
+      "fr": "8 x 6",
+      "en": "8 x 6"
+     },
+     "key": "48"
+    },
+    {
+     "id": "i4",
+     "text": {
+      "fr": "7 x 5",
+      "en": "7 x 5"
+     },
+     "key": "35"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "i4",
+     "i1",
+     "i2",
+     "i3"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Calcule chaque produit d'abord.",
+    "en": "Work out each product first."
+   },
+   "explain": {
+    "fr": "Les produits sont 35, 42, 45 et 48.",
+    "en": "The products are 35, 42, 45 and 48."
+   },
+   "tags": [
+    "ordering",
+    "multiplication"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_57d8de906136df605ab0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.relais.013",
+   "quest": "sport.relais",
+   "skill": "ARI-OPE-A06c",
+   "type": "match",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Omar relie des tours de piste avec leur total.",
+    "en": "Omar matches laps of the track with their total."
+   },
+   "prompt": {
+    "fr": "Relie chaque multiplication à son produit.",
+    "en": "Match each multiplication to its product."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "6 x 6",
+       "en": "6 x 6"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "7 x 8",
+       "en": "7 x 8"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "9 x 9",
+       "en": "9 x 9"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "4 x 12",
+       "en": "4 x 12"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "56",
+       "en": "56"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "81",
+       "en": "81"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "48",
+       "en": "48"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "36",
+       "en": "36"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ],
+     [
+      "l4",
+      "r4"
+     ]
+    ],
+    "misconception": "mis_match"
+   },
+   "hint": {
+    "fr": "Calcule chaque produit un à la fois.",
+    "en": "Work out each product one at a time."
+   },
+   "explain": {
+    "fr": "Voici les produits. 6 x 6 = 36. 7 x 8 = 56. 9 x 9 = 81. 4 x 12 = 48.",
+    "en": "Here are the products. 6 x 6 = 36. 7 x 8 = 56. 9 x 9 = 81. 4 x 12 = 48."
+   },
+   "tags": [
+    "matching",
+    "multiplication"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_57d8de906136df605ab0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.relais.014",
+   "quest": "sport.relais",
+   "skill": "ARI-OPE-A06c",
+   "type": "visual",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Chaque ligne de la grille est un coureur. Chaque point est un tour de piste.",
+    "en": "Each line of the grid is a runner. Each dot is a lap of the track."
+   },
+   "prompt": {
+    "fr": "Combien de tours ont-ils faits en tout ?",
+    "en": "How many laps did they do in all?"
+   },
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 7,
+     "rows": 5,
+     "cells": [
+      {
+       "x": 0,
+       "y": 0,
+       "label": "T"
+      },
+      {
+       "x": 1,
+       "y": 0,
+       "label": "T"
+      },
+      {
+       "x": 2,
+       "y": 0,
+       "label": "T"
+      },
+      {
+       "x": 3,
+       "y": 0,
+       "label": "T"
+      },
+      {
+       "x": 4,
+       "y": 0,
+       "label": "T"
+      },
+      {
+       "x": 5,
+       "y": 0,
+       "label": "T"
+      },
+      {
+       "x": 6,
+       "y": 0,
+       "label": "T"
+      },
+      {
+       "x": 0,
+       "y": 1,
+       "label": "T"
+      },
+      {
+       "x": 1,
+       "y": 1,
+       "label": "T"
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": "T"
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": "T"
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": "T"
+      },
+      {
+       "x": 5,
+       "y": 1,
+       "label": "T"
+      },
+      {
+       "x": 6,
+       "y": 1,
+       "label": "T"
+      },
+      {
+       "x": 0,
+       "y": 2,
+       "label": "T"
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": "T"
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": "T"
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": "T"
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": "T"
+      },
+      {
+       "x": 5,
+       "y": 2,
+       "label": "T"
+      },
+      {
+       "x": 6,
+       "y": 2,
+       "label": "T"
+      },
+      {
+       "x": 0,
+       "y": 3,
+       "label": "T"
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": "T"
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": "T"
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": "T"
+      },
+      {
+       "x": 4,
+       "y": 3,
+       "label": "T"
+      },
+      {
+       "x": 5,
+       "y": 3,
+       "label": "T"
+      },
+      {
+       "x": 6,
+       "y": 3,
+       "label": "T"
+      },
+      {
+       "x": 0,
+       "y": 4,
+       "label": "T"
+      },
+      {
+       "x": 1,
+       "y": 4,
+       "label": "T"
+      },
+      {
+       "x": 2,
+       "y": 4,
+       "label": "T"
+      },
+      {
+       "x": 3,
+       "y": 4,
+       "label": "T"
+      },
+      {
+       "x": 4,
+       "y": 4,
+       "label": "T"
+      },
+      {
+       "x": 5,
+       "y": 4,
+       "label": "T"
+      },
+      {
+       "x": 6,
+       "y": 4,
+       "label": "T"
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 35,
+    "calc": "5*7"
+   },
+   "common_errors": [
+    {
+     "value": 12,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "5 coureurs, 7 tours chacun : multiplie.",
+      "en": "5 runners, 7 laps each: multiply."
+     }
+    },
+    {
+     "value": 7,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "7 est le nombre de tours d'un seul coureur.",
+      "en": "7 is the number of laps for just one runner."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les tours d'une ligne, puis les lignes.",
+    "en": "Count the laps in one line, then the lines."
+   },
+   "explain": {
+    "fr": "5 lignes de 7 points : 7, 14, 21, 28, 35 tours.",
+    "en": "5 lines of 7 dots: 7, 14, 21, 28, 35 laps."
+   },
+   "tags": [
+    "grid",
+    "arrays",
+    "multiplication"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_57d8de906136df605ab0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.relais.015",
+   "quest": "sport.relais",
+   "skill": "ARI-OPE-A06c",
+   "type": "estimate",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Neuf coureurs font environ 11 tours chacun pendant la journée.",
+    "en": "Nine runners each do about 11 laps during the day."
+   },
+   "prompt": {
+    "fr": "Environ combien de tours font-ils en tout ?",
+    "en": "About how many laps do they do in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 95,
+    "max": 105,
+    "exact_for_check": 99,
+    "calc": "9*11"
+   },
+   "common_errors": [
+    {
+     "value": 20,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "9 coureurs, 11 tours chacun : multiplie.",
+      "en": "9 runners, 11 laps each: multiply."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à 9 x 10, puis ajoute 9.",
+    "en": "Think of 9 x 10, then add 9."
+   },
+   "explain": {
+    "fr": "9 x 10 = 90 et 9 de plus : environ 100 tours.",
+    "en": "9 x 10 = 90 and 9 more: about 100 laps."
+   },
+   "tags": [
+    "estimation",
+    "multiplication"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_57d8de906136df605ab0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.chrono.001",
+   "quest": "sport.chrono",
+   "skill": "MES-G02",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "L'entraînement de natation commence quand l'horloge de la piscine montre cette heure.",
+    "en": "Swim practice starts when the pool clock shows this time."
+   },
+   "prompt": {
+    "fr": "Quelle heure l'horloge montre-t-elle ?",
+    "en": "What time does the clock show?"
+   },
+   "visual": {
+    "kind": "clock",
+    "data": {
+     "hour": 5,
+     "minute": 0
+    }
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "5 h",
+      "en": "5 h"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "12 h 25",
+      "en": "12 h 25"
+     },
+     "misconception": "mis_clock_hands"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "6 h",
+      "en": "6 h"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "5 h 30",
+      "en": "5 h 30"
+     },
+     "misconception": "mis_time_base"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "La petite aiguille donne l'heure.",
+    "en": "The small hand gives the hour."
+   },
+   "explain": {
+    "fr": "La petite aiguille est sur le 5 et la grande sur le 12. Il est 5 h.",
+    "en": "The small hand is on 5 and the big hand is on 12. It is 5 o'clock."
+   },
+   "tags": [
+    "clock",
+    "oclock",
+    "swimming"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1684008ff9958b7b5269"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.chrono.002",
+   "quest": "sport.chrono",
+   "skill": "MES-G02",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "L'équipe de soccer se réunit à l'heure que montre l'horloge du gymnase.",
+    "en": "The soccer team meets at the time the gym clock shows."
+   },
+   "prompt": {
+    "fr": "Quelle heure l'horloge montre-t-elle ?",
+    "en": "What time does the clock show?"
+   },
+   "visual": {
+    "kind": "clock",
+    "data": {
+     "hour": 4,
+     "minute": 30
+    }
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "4 h 30",
+      "en": "4 h 30"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "5 h 30",
+      "en": "5 h 30"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "4 h 06",
+      "en": "4 h 06"
+     },
+     "misconception": "mis_clock_hands"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "6 h 20",
+      "en": "6 h 20"
+     },
+     "misconception": "mis_clock_hands"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "La grande aiguille sur le 6 veut dire 30 minutes.",
+    "en": "The big hand on 6 means 30 minutes."
+   },
+   "explain": {
+    "fr": "La petite aiguille a passé le 4 et la grande est sur le 6. Il est 4 h 30.",
+    "en": "The small hand has passed 4 and the big hand is on 6. It is half past 4."
+   },
+   "tags": [
+    "clock",
+    "half-past"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_18c54a41f800e66f3802"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.chrono.003",
+   "quest": "sport.chrono",
+   "skill": "MES-G02",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "La séance de course commence à l'heure montrée par l'horloge. Elle dure 45 minutes.",
+    "en": "The running session starts at the time shown on the clock. It lasts 45 minutes."
+   },
+   "prompt": {
+    "fr": "À quelle heure finit-elle ? Réponds avec l'heure seulement.",
+    "en": "At what time does it end? Answer with the hour only."
+   },
+   "visual": {
+    "kind": "clock",
+    "data": {
+     "hour": 5,
+     "minute": 15
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 6,
+    "calc": "6"
+   },
+   "common_errors": [
+    {
+     "value": 5,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Après 45 minutes depuis 5 h 15, on a passé 6 h 00.",
+      "en": "After 45 minutes from 5:15 we have reached 6:00."
+     }
+    },
+    {
+     "value": 7,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Il ne faut pas 2 heures.",
+      "en": "It does not take 2 hours."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Ajoute 45 minutes à l'heure montrée.",
+    "en": "Add 45 minutes to the time shown."
+   },
+   "explain": {
+    "fr": "5 h 15 + 45 minutes = 6 h 00. Elle finit à 6 h.",
+    "en": "5:15 + 45 minutes = 6:00. It ends at 6 o'clock."
+   },
+   "tags": [
+    "clock",
+    "elapsed-time"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_57d8de906136df605ab0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.chrono.004",
+   "quest": "sport.chrono",
+   "skill": "MES-G02",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "À l'entraînement, Léa fait 15 minutes d'échauffement et 10 minutes d'étirements.",
+    "en": "At practice, Lea does 15 minutes of warm-up and 10 minutes of stretching."
+   },
+   "prompt": {
+    "fr": "Combien de minutes cela fait-il en tout ?",
+    "en": "How many minutes is that in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 25,
+    "calc": "15+10"
+   },
+   "common_errors": [
+    {
+     "value": 5,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les deux parties : on additionne.",
+      "en": "We put both parts together, so we add."
+     }
+    },
+    {
+     "value": 24,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Refais l'addition.",
+      "en": "Close! Redo the addition."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne 10 à 15.",
+    "en": "Add 10 to 15."
+   },
+   "explain": {
+    "fr": "15 + 10 = 25. Cela fait 25 minutes.",
+    "en": "15 + 10 = 25. That is 25 minutes."
+   },
+   "tags": [
+    "minutes",
+    "add",
+    "training"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_57d8de906136df605ab0"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.chrono.005",
+   "quest": "sport.chrono",
+   "skill": "MES-G02",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Une séance d'entraînement dure 1 heure et 30 minutes.",
+    "en": "A training session lasts 1 hour and 30 minutes."
+   },
+   "prompt": {
+    "fr": "Combien de minutes la séance dure-t-elle ?",
+    "en": "How many minutes does the session last?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 90,
+    "calc": "60+30"
+   },
+   "common_errors": [
+    {
+     "value": 130,
+     "misconception": "mis_time_base",
+     "feedback": {
+      "fr": "Une heure vaut 60 minutes, pas 100.",
+      "en": "An hour is 60 minutes, not 100."
+     }
+    },
+    {
+     "value": 60,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "N'oublie pas les 30 minutes de plus.",
+      "en": "Don't forget the extra 30 minutes."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Change d'abord l'heure en minutes.",
+    "en": "First change the hour into minutes."
+   },
+   "explain": {
+    "fr": "1 h = 60 minutes. Puis 60 + 30 = 90 minutes.",
+    "en": "1 h = 60 minutes. Then 60 + 30 = 90 minutes."
+   },
+   "tags": [
+    "time",
+    "hours-minutes",
+    "conversion"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1684008ff9958b7b5269"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.chrono.006",
+   "quest": "sport.chrono",
+   "skill": "MES-G02",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le match de soccer dure 2 heures avec la pause.",
+    "en": "The soccer game lasts 2 hours with the break."
+   },
+   "prompt": {
+    "fr": "Combien de minutes cela fait-il ?",
+    "en": "How many minutes is that?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 120,
+    "calc": "2*60"
+   },
+   "common_errors": [
+    {
+     "value": 200,
+     "misconception": "mis_time_base",
+     "feedback": {
+      "fr": "Une heure vaut 60 minutes, pas 100.",
+      "en": "An hour is 60 minutes, not 100."
+     }
+    },
+    {
+     "value": 20,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "2 heures, c'est bien plus que 20 minutes.",
+      "en": "2 hours is far more than 20 minutes."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Une heure vaut 60 minutes. Il y en a deux.",
+    "en": "An hour is 60 minutes. There are two."
+   },
+   "explain": {
+    "fr": "2 x 60 = 120. Cela fait 120 minutes.",
+    "en": "2 x 60 = 120. That is 120 minutes."
+   },
+   "tags": [
+    "time",
+    "hours-minutes",
+    "conversion"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_18c54a41f800e66f3802"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.chrono.007",
+   "quest": "sport.chrono",
+   "skill": "MES-G02",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "L'entraînement a trois parties : 20 minutes de course, 15 minutes de ballon et 25 minutes d'étirements.",
+    "en": "Practice has three parts: 20 minutes of running, 15 minutes of ball work and 25 minutes of stretching."
+   },
+   "prompt": {
+    "fr": "Combien de minutes dure l'entraînement en tout ?",
+    "en": "How many minutes does practice last in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 60,
+    "calc": "20+15+25"
+   },
+   "common_errors": [
+    {
+     "value": 45,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié une partie.",
+      "en": "You left out a part."
+     }
+    },
+    {
+     "value": 59,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Refais l'addition des trois parties.",
+      "en": "Close! Redo the addition of the three parts."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne 20 et 25 d'abord.",
+    "en": "Add 20 and 25 first."
+   },
+   "explain": {
+    "fr": "20 + 25 = 45, puis 45 + 15 = 60 minutes. C'est une heure.",
+    "en": "20 + 25 = 45, then 45 + 15 = 60 minutes. That is one hour."
+   },
+   "tags": [
+    "word-problem",
+    "minutes",
+    "add-three-numbers"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1684008ff9958b7b5269"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.chrono.008",
+   "quest": "sport.chrono",
+   "skill": "MES-G02",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le cours de natation commence à 4 h. Il dure 2 heures.",
+    "en": "The swim class starts at 4 o'clock. It lasts 2 hours."
+   },
+   "prompt": {
+    "fr": "À quelle heure finit-il ? Réponds avec l'heure seulement.",
+    "en": "At what time does it end? Answer with the hour only."
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 6,
+    "calc": "4+2"
+   },
+   "common_errors": [
+    {
+     "value": 2,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "2 est la durée, pas l'heure de fin.",
+      "en": "2 is the length, not the end time."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "Avance de 2 heures à partir de 4 h.",
+      "en": "Move forward 2 hours from 4 o'clock."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Avance de 2 heures à partir de 4 h.",
+    "en": "Move forward 2 hours from 4 o'clock."
+   },
+   "explain": {
+    "fr": "De 4 h, on avance de 2 heures : 5 h puis 6 h.",
+    "en": "From 4 o'clock go forward 2 hours: 5 then 6."
+   },
+   "tags": [
+    "word-problem",
+    "elapsed-time",
+    "swimming"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1684008ff9958b7b5269"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.chrono.009",
+   "quest": "sport.chrono",
+   "skill": "MES-G02",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Le match de tennis commence à 3 h 30. Il dure 45 minutes.",
+    "en": "The tennis match starts at 3:30. It lasts 45 minutes."
+   },
+   "prompt": {
+    "fr": "À quelle heure finit-il ?",
+    "en": "At what time does it end?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "4 h 15",
+      "en": "4 h 15"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "3 h 75",
+      "en": "3 h 75"
+     },
+     "misconception": "mis_time_base"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "4 h 05",
+      "en": "4 h 05"
+     },
+     "misconception": "mis_time_base"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "4 h 30",
+      "en": "4 h 30"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Va de 3 h 30 jusqu'à 4 h, puis ajoute le reste.",
+    "en": "Go from 3:30 to 4:00, then add the rest."
+   },
+   "explain": {
+    "fr": "De 3 h 30 à 4 h, il y a 30 minutes. Il reste 15 minutes : 4 h 15.",
+    "en": "From 3:30 to 4:00 is 30 minutes. 15 minutes remain: 4:15."
+   },
+   "tags": [
+    "time",
+    "elapsed-time",
+    "tennis"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_6540d314539ec2e2fcf1"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.chrono.010",
+   "quest": "sport.chrono",
+   "skill": "MES-G02",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Quatre séances ont des durées différentes.",
+    "en": "Four sessions have different lengths."
+   },
+   "prompt": {
+    "fr": "Quelle séance est la plus longue ?",
+    "en": "Which session is the longest?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "1 heure",
+      "en": "1 hour"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "50 minutes",
+      "en": "50 minutes"
+     },
+     "misconception": "mis_unit_confusion"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "45 minutes",
+      "en": "45 minutes"
+     },
+     "misconception": "mis_unit_confusion"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "30 minutes",
+      "en": "30 minutes"
+     },
+     "misconception": "mis_unit_confusion"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Change chaque durée en minutes pour comparer.",
+    "en": "Change each length into minutes to compare."
+   },
+   "explain": {
+    "fr": "1 h = 60 minutes, plus que 50, 45 et 30 minutes.",
+    "en": "1 h = 60 minutes, more than 50, 45 and 30 minutes."
+   },
+   "tags": [
+    "time",
+    "compare",
+    "units"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1684008ff9958b7b5269"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.chrono.011",
+   "quest": "sport.chrono",
+   "skill": "MES-G02",
+   "type": "truefalse",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Une séance de basketball dure 1 h 40.",
+    "en": "A basketball session lasts 1 h 40."
+   },
+   "prompt": {
+    "fr": "Mia dit que cela fait 140 minutes. A-t-elle raison ?",
+    "en": "Mia says that is 140 minutes. Is she right?"
+   },
+   "math_text": "1 h 40 = 140 min",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_time_base"
+   },
+   "hint": {
+    "fr": "Change 1 heure en minutes avec 60.",
+    "en": "Change 1 hour into minutes using 60."
+   },
+   "explain": {
+    "fr": "1 h 40 = 60 + 40 = 100 minutes, pas 140.",
+    "en": "1 h 40 = 60 + 40 = 100 minutes, not 140."
+   },
+   "tags": [
+    "true-false",
+    "time",
+    "conversion"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_a760c39d8f58fc657ccf"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.chrono.012",
+   "quest": "sport.chrono",
+   "skill": "MES-G02",
+   "type": "order",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Quatre exercices de l'entraînement ont des durées différentes.",
+    "en": "Four practice drills have different lengths."
+   },
+   "prompt": {
+    "fr": "Range les durées, de la plus courte à la plus longue.",
+    "en": "Put the lengths in order, from the shortest to the longest."
+   },
+   "items": [
+    {
+     "id": "i1",
+     "text": {
+      "fr": "30 minutes",
+      "en": "30 minutes"
+     },
+     "key": "30"
+    },
+    {
+     "id": "i2",
+     "text": {
+      "fr": "1 h",
+      "en": "1 h"
+     },
+     "key": "60"
+    },
+    {
+     "id": "i3",
+     "text": {
+      "fr": "45 minutes",
+      "en": "45 minutes"
+     },
+     "key": "45"
+    },
+    {
+     "id": "i4",
+     "text": {
+      "fr": "1 h 15",
+      "en": "1 h 15"
+     },
+     "key": "75"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "i1",
+     "i3",
+     "i2",
+     "i4"
+    ],
+    "by": "asc",
+    "misconception": "mis_time_base"
+   },
+   "hint": {
+    "fr": "Change tout en minutes.",
+    "en": "Change everything into minutes."
+   },
+   "explain": {
+    "fr": "En minutes : 30, 45, 60 et 75.",
+    "en": "In minutes: 30, 45, 60 and 75."
+   },
+   "tags": [
+    "ordering",
+    "time",
+    "conversion"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1684008ff9958b7b5269"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.chrono.013",
+   "quest": "sport.chrono",
+   "skill": "MES-G02",
+   "type": "match",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Sur le tableau de l'entraîneur, des durées sont à relier.",
+    "en": "On the coach's board, some lengths of time need matching."
+   },
+   "prompt": {
+    "fr": "Relie chaque durée au nombre de minutes.",
+    "en": "Match each length of time to its number of minutes."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "1 h 30",
+       "en": "1 h 30"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "2 h",
+       "en": "2 h"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "une demi-heure",
+       "en": "half an hour"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "1 h 15",
+       "en": "1 h 15"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "120 minutes",
+       "en": "120 minutes"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "30 minutes",
+       "en": "30 minutes"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "75 minutes",
+       "en": "75 minutes"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "90 minutes",
+       "en": "90 minutes"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ],
+     [
+      "l4",
+      "r4"
+     ]
+    ],
+    "misconception": "mis_time_base"
+   },
+   "hint": {
+    "fr": "Une heure vaut 60 minutes.",
+    "en": "One hour is 60 minutes."
+   },
+   "explain": {
+    "fr": "1 h 30 = 90. 2 h = 120. Une demi-heure = 30. 1 h 15 = 75.",
+    "en": "1 h 30 = 90. 2 h = 120. Half an hour = 30. 1 h 15 = 75."
+   },
+   "tags": [
+    "matching",
+    "time",
+    "conversion"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1684008ff9958b7b5269"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.chrono.014",
+   "quest": "sport.chrono",
+   "skill": "MES-G02",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Une séance de natation dure 58 minutes.",
+    "en": "A swimming session lasts 58 minutes."
+   },
+   "prompt": {
+    "fr": "C'est presque combien de temps ?",
+    "en": "About how long is that?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "presque 1 heure",
+      "en": "almost 1 hour"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "presque 2 heures",
+      "en": "almost 2 hours"
+     },
+     "misconception": "mis_time_base"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "presque 30 minutes",
+      "en": "almost 30 minutes"
+     },
+     "misconception": "mis_estimate_rounding"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "presque 5 minutes",
+      "en": "almost 5 minutes"
+     },
+     "misconception": "mis_place_value"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Combien de minutes dans une heure ?",
+    "en": "How many minutes are in one hour?"
+   },
+   "explain": {
+    "fr": "58 est tout près de 60 minutes. C'est presque 1 heure.",
+    "en": "58 is very close to 60 minutes. That is almost 1 hour."
+   },
+   "tags": [
+    "estimation",
+    "time",
+    "nearest-hour"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1684008ff9958b7b5269"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.tournoi.001",
+   "quest": "sport.tournoi",
+   "skill": "PRO-05a",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Pour le tirage au sort, un sac contient seulement des balles rouges.",
+    "en": "For the draw, a bag holds only red balls."
+   },
+   "prompt": {
+    "fr": "Tirer une balle rouge est :",
+    "en": "Drawing a red ball is:"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "certain",
+      "en": "certain"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "possible",
+      "en": "possible"
+     },
+     "misconception": "mis_chance_equal"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "impossible",
+      "en": "impossible"
+     },
+     "misconception": "mis_chance_equal"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Que contient le sac ?",
+    "en": "What is in the bag?"
+   },
+   "explain": {
+    "fr": "Il n'y a que des balles rouges. On tirera sûrement une rouge : c'est certain.",
+    "en": "There are only red balls. We will surely draw a red one: it is certain."
+   },
+   "tags": [
+    "probability",
+    "certain"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_684b85d6e0db2180ea0f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.tournoi.002",
+   "quest": "sport.tournoi",
+   "skill": "PRO-05a",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Dans le sac de Noah, il y a seulement des balles rouges.",
+    "en": "In Noah's bag there are only red balls."
+   },
+   "prompt": {
+    "fr": "Tirer une balle verte est :",
+    "en": "Drawing a green ball is:"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "impossible",
+      "en": "impossible"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "possible",
+      "en": "possible"
+     },
+     "misconception": "mis_chance_equal"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "certain",
+      "en": "certain"
+     },
+     "misconception": "mis_chance_equal"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Y a-t-il une balle verte dans le sac ?",
+    "en": "Is there a green ball in the bag?"
+   },
+   "explain": {
+    "fr": "Il n'y a pas de balle verte. On ne peut pas en tirer : c'est impossible.",
+    "en": "There is no green ball. We cannot draw one: it is impossible."
+   },
+   "tags": [
+    "probability",
+    "impossible"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_684b85d6e0db2180ea0f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.tournoi.003",
+   "quest": "sport.tournoi",
+   "skill": "PRO-05a",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le sac de Léa contient 3 balles rouges et 2 balles vertes.",
+    "en": "Lea's bag holds 3 red balls and 2 green balls."
+   },
+   "prompt": {
+    "fr": "Tirer une balle rouge est :",
+    "en": "Drawing a red ball is:"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "possible",
+      "en": "possible"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "certain",
+      "en": "certain"
+     },
+     "misconception": "mis_chance_certain"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "impossible",
+      "en": "impossible"
+     },
+     "misconception": "mis_chance_equal"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Y a-t-il aussi des balles d'une autre couleur ?",
+    "en": "Are there balls of another colour too?"
+   },
+   "explain": {
+    "fr": "On peut tirer une rouge, mais aussi une verte. C'est possible, pas certain.",
+    "en": "We can draw a red one, but also a green one. It is possible, not certain."
+   },
+   "tags": [
+    "probability",
+    "possible"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_684b85d6e0db2180ea0f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.tournoi.004",
+   "quest": "sport.tournoi",
+   "skill": "PRO-05a",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Zoé lance un dé ordinaire avec les nombres de 1 à 6.",
+    "en": "Zoe rolls an ordinary die with the numbers 1 to 6."
+   },
+   "prompt": {
+    "fr": "Obtenir un 7 est :",
+    "en": "Rolling a 7 is:"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "impossible",
+      "en": "impossible"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "possible",
+      "en": "possible"
+     },
+     "misconception": "mis_chance_certain"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "certain",
+      "en": "certain"
+     },
+     "misconception": "mis_chance_certain"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Quel est le plus grand nombre sur un dé ?",
+    "en": "What is the biggest number on a die?"
+   },
+   "explain": {
+    "fr": "Le dé s'arrête à 6. Obtenir un 7 est impossible.",
+    "en": "The die stops at 6. Rolling a 7 is impossible."
+   },
+   "tags": [
+    "probability",
+    "dice",
+    "impossible"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_684b85d6e0db2180ea0f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.tournoi.005",
+   "quest": "sport.tournoi",
+   "skill": "PRO-05a",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le sac de Mia contient des jetons numérotés de 1 à 6.",
+    "en": "Mia's bag holds tokens numbered 1 to 6."
+   },
+   "prompt": {
+    "fr": "Tirer un nombre plus petit que 10 est :",
+    "en": "Drawing a number smaller than 10 is:"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "certain",
+      "en": "certain"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "possible",
+      "en": "possible"
+     },
+     "misconception": "mis_chance_equal"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "impossible",
+      "en": "impossible"
+     },
+     "misconception": "mis_chance_equal"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Compare le plus grand jeton à 10.",
+    "en": "Compare the biggest token with 10."
+   },
+   "explain": {
+    "fr": "Tous les jetons sont plus petits que 10. C'est certain.",
+    "en": "All the tokens are smaller than 10. It is certain."
+   },
+   "tags": [
+    "probability",
+    "certain"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_684b85d6e0db2180ea0f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.tournoi.006",
+   "quest": "sport.tournoi",
+   "skill": "PRO-05a",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Dans le sac, il y a 4 balles bleues et rien d'autre.",
+    "en": "The bag holds 4 blue balls and nothing else."
+   },
+   "prompt": {
+    "fr": "Tirer une balle jaune est possible. Est-ce vrai ?",
+    "en": "Drawing a yellow ball is possible. Is that true?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_chance_equal"
+   },
+   "hint": {
+    "fr": "Y a-t-il une balle jaune dans le sac ?",
+    "en": "Is there a yellow ball in the bag?"
+   },
+   "explain": {
+    "fr": "Il n'y a pas de balle jaune. C'est impossible.",
+    "en": "There is no yellow ball. It is impossible."
+   },
+   "tags": [
+    "true-false",
+    "probability"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_684b85d6e0db2180ea0f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.tournoi.007",
+   "quest": "sport.tournoi",
+   "skill": "PRO-05a",
+   "type": "truefalse",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le sac de Théo contient 9 balles rouges et 1 balle verte.",
+    "en": "Theo's bag holds 9 red balls and 1 green ball."
+   },
+   "prompt": {
+    "fr": "Théo dit que tirer une balle rouge est certain. A-t-il raison ?",
+    "en": "Theo says drawing a red ball is certain. Is he right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_chance_certain"
+   },
+   "hint": {
+    "fr": "Y a-t-il une façon de tirer la verte ?",
+    "en": "Is there a way to draw the green one?"
+   },
+   "explain": {
+    "fr": "On peut tirer la balle verte. Tirer une rouge est très probable, mais pas certain.",
+    "en": "We might draw the green ball. A red one is very likely, but not certain."
+   },
+   "tags": [
+    "true-false",
+    "probability",
+    "possible"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_684b85d6e0db2180ea0f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.tournoi.008",
+   "quest": "sport.tournoi",
+   "skill": "PRO-05a",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Trois sacs sont proposés pour le tournoi.",
+    "en": "Three bags are suggested for the tournament."
+   },
+   "prompt": {
+    "fr": "On tire une balle rouge. Range les sacs, de l'impossible au certain.",
+    "en": "We draw a red ball. Put the bags in order, from impossible to certain."
+   },
+   "items": [
+    {
+     "id": "i1",
+     "text": {
+      "fr": "Sac de rouges et de vertes",
+      "en": "Bag of red and green"
+     },
+     "key": "1"
+    },
+    {
+     "id": "i2",
+     "text": {
+      "fr": "Sac de rouges seulement",
+      "en": "Bag of red only"
+     },
+     "key": "2"
+    },
+    {
+     "id": "i3",
+     "text": {
+      "fr": "Sac de vertes seulement",
+      "en": "Bag of green only"
+     },
+     "key": "0"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "i3",
+     "i1",
+     "i2"
+    ],
+    "by": "asc",
+    "misconception": "mis_chance_equal"
+   },
+   "hint": {
+    "fr": "Pense à ce qui est dans chaque sac.",
+    "en": "Think about what is in each bag."
+   },
+   "explain": {
+    "fr": "Pas de rouge : impossible. Rouges et vertes : possible. Que des rouges : certain.",
+    "en": "No red: impossible. Red and green: possible. Only red: certain."
+   },
+   "tags": [
+    "ordering",
+    "probability"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_684b85d6e0db2180ea0f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.tournoi.009",
+   "quest": "sport.tournoi",
+   "skill": "PRO-05a",
+   "type": "match",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa relie des situations de tirage avec les bons mots.",
+    "en": "Lea matches draw situations with the right words."
+   },
+   "prompt": {
+    "fr": "Relie chaque situation au bon mot.",
+    "en": "Match each situation to the right word."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "Sac tout bleu : tirer bleu",
+       "en": "All-blue bag: draw blue"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "Sac tout bleu : tirer rouge",
+       "en": "All-blue bag: draw red"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "Sac bleu et rouge : tirer bleu",
+       "en": "Blue and red bag: draw blue"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "impossible",
+       "en": "impossible"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "possible",
+       "en": "possible"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "certain",
+       "en": "certain"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ]
+    ],
+    "misconception": "mis_chance_equal"
+   },
+   "hint": {
+    "fr": "Regarde ce que contient chaque sac.",
+    "en": "Look at what each bag holds."
+   },
+   "explain": {
+    "fr": "Un sac tout bleu donne bleu pour sûr, jamais rouge. Un sac mixte donne l'un ou l'autre.",
+    "en": "An all-blue bag gives blue for sure, never red. A mixed bag gives either one."
+   },
+   "tags": [
+    "matching",
+    "probability"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_684b85d6e0db2180ea0f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.tournoi.010",
+   "quest": "sport.tournoi",
+   "skill": "PRO-05a",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Un sac contient 10 balles : 6 rouges et le reste bleues.",
+    "en": "A bag holds 10 balls: 6 red and the rest blue."
+   },
+   "prompt": {
+    "fr": "Combien de balles bleues y a-t-il ?",
+    "en": "How many blue balls are there?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 4,
+    "calc": "10-6"
+   },
+   "common_errors": [
+    {
+     "value": 16,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche le reste : on soustrait.",
+      "en": "We look for the rest, so we subtract."
+     }
+    },
+    {
+     "value": 6,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "6 est le nombre de balles rouges.",
+      "en": "6 is the number of red balls."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Enlève les rouges du total.",
+    "en": "Take the red ones away from the total."
+   },
+   "explain": {
+    "fr": "10 - 6 = 4 balles bleues.",
+    "en": "10 - 6 = 4 blue balls."
+   },
+   "tags": [
+    "counting",
+    "probability",
+    "subtract"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_684b85d6e0db2180ea0f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.tournoi.011",
+   "quest": "sport.tournoi",
+   "skill": "PRO-05a",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un sac de tournoi contient 8 jetons rouges et 2 jetons bleus.",
+    "en": "A tournament bag holds 8 red tokens and 2 blue tokens."
+   },
+   "prompt": {
+    "fr": "Combien de jetons y a-t-il dans le sac ?",
+    "en": "How many tokens are in the bag?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 10,
+    "calc": "8+2"
+   },
+   "common_errors": [
+    {
+     "value": 6,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les jetons : on additionne.",
+      "en": "We put the tokens together, so we add."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Il faut compter aussi les jetons bleus.",
+      "en": "You must count the blue tokens too."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne les deux couleurs.",
+    "en": "Add the two colours."
+   },
+   "explain": {
+    "fr": "8 + 2 = 10 jetons.",
+    "en": "8 + 2 = 10 tokens."
+   },
+   "tags": [
+    "word-problem",
+    "probability"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_684b85d6e0db2180ea0f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.tournoi.012",
+   "quest": "sport.tournoi",
+   "skill": "PRO-05a",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Voici toutes les faces d'un dé ordinaire.",
+    "en": "Here are all the faces of an ordinary die."
+   },
+   "prompt": {
+    "fr": "Obtenir un 6 en lançant ce dé est :",
+    "en": "Rolling a 6 with this die is:"
+   },
+   "visual": {
+    "kind": "dice",
+    "data": {
+     "dice": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ]
+    }
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "possible",
+      "en": "possible"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "impossible",
+      "en": "impossible"
+     },
+     "misconception": "mis_chance_equal"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "certain",
+      "en": "certain"
+     },
+     "misconception": "mis_chance_certain"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Regarde si le 6 est sur le dé et s'il y a d'autres nombres.",
+    "en": "See if 6 is on the die and whether there are other numbers."
+   },
+   "explain": {
+    "fr": "Le 6 est sur le dé, mais les autres nombres aussi. C'est possible, pas certain.",
+    "en": "6 is on the die, but so are other numbers. It is possible, not certain."
+   },
+   "tags": [
+    "probability",
+    "dice",
+    "possible"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_684b85d6e0db2180ea0f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "sport.tournoi.013",
+   "quest": "sport.tournoi",
+   "skill": "PRO-05a",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le sac contient 9 balles d'une couleur et 1 balle d'une autre.",
+    "en": "The bag holds 9 balls of one colour and 1 ball of another."
+   },
+   "prompt": {
+    "fr": "Quelle couleur a-t-on le plus de chances de tirer ?",
+    "en": "Which colour are we most likely to draw?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "la couleur la plus nombreuse",
+      "en": "the most common colour"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "la couleur la moins nombreuse",
+      "en": "the least common colour"
+     },
+     "misconception": "mis_chance_equal"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Les deux ont autant de chances.",
+      "en": "Both are equally likely."
+     },
+     "misconception": "mis_chance_equal"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Compare le nombre de balles de chaque couleur.",
+    "en": "Compare the number of balls of each colour."
+   },
+   "explain": {
+    "fr": "Il y a beaucoup plus de balles rouges. On a plus de chances de tirer une rouge.",
+    "en": "There are many more red balls. We are more likely to draw a red one."
+   },
+   "tags": [
+    "estimation",
+    "probability",
+    "likely"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_684b85d6e0db2180ea0f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  }
+ ]
+}
