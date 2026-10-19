@@ -49,7 +49,10 @@ func cborNeg(n int) []byte      { return cborHead(1, -1-n) } // n is negative an
 
 // coseKey encodes the public key as a COSE_Key for ES256: {1:2, 3:-7, -1:1, -2:x, -3:y}.
 func (k *fakeKey) coseKey() []byte {
-	pub := k.priv.PublicKey
+	point, err := k.priv.PublicKey.Bytes() // uncompressed point: 0x04, then X and Y of 32 bytes each
+	if err != nil {
+		panic(err) // a test helper: a P-256 key always encodes
+	}
 	out := cborHead(5, 5)
 	out = append(out, 0x01, 0x02)     // kty: EC2
 	out = append(out, 0x03)           // alg
@@ -57,9 +60,9 @@ func (k *fakeKey) coseKey() []byte {
 	out = append(out, cborNeg(-1)...) // crv
 	out = append(out, 0x01)           // P-256
 	out = append(out, cborNeg(-2)...) // x
-	out = append(out, cborBytes(pub.X.FillBytes(make([]byte, 32)))...)
+	out = append(out, cborBytes(point[1:33])...)
 	out = append(out, cborNeg(-3)...) // y
-	out = append(out, cborBytes(pub.Y.FillBytes(make([]byte, 32)))...)
+	out = append(out, cborBytes(point[33:65])...)
 	return out
 }
 

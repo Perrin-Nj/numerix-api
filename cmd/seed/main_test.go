@@ -50,7 +50,7 @@ func TestDryRunThenApplyThenNothingToDo(t *testing.T) {
 
 	code, out, errOut := runSeed(t, nil, append(base, "--dry-run")...)
 	if code != 0 || !strings.Contains(out, "dry run (nothing written)") || !has(out, "quests added=89") {
-		t.Fatalf("dry run: code=%d", code)
+		t.Fatalf("dry run: code=%d out=%q err=%q", code, out, errOut)
 	}
 	if _, err := os.Stat(dbPath); err == nil {
 		t.Fatal("a dry run on a missing database created it")
