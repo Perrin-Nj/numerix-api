@@ -1,0 +1,3949 @@
+{
+ "world": "transport",
+ "schema": 1,
+ "questions": [
+  {
+   "id": "transport.gare.001",
+   "quest": "transport.gare",
+   "skill": "MES-G01",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa attend le train à la gare.",
+    "en": "Lea waits for the train at the station."
+   },
+   "prompt": {
+    "fr": "Il est 3 h. Quelle heure sera-t-il dans 2 heures ?",
+    "en": "It is 3 o’clock. What time will it be in 2 hours?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "3+2"
+   },
+   "common_errors": [
+    {
+     "value": 1,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Plus tard, l’heure avance : on additionne.",
+      "en": "Later, the time moves forward, so we add."
+     }
+    },
+    {
+     "value": 4,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Avance de 2 heures sur l’horloge.",
+      "en": "Close! Move 2 hours forward on the clock."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Avance de 2 heures depuis 3 h.",
+    "en": "Move forward 2 hours from 3 o’clock."
+   },
+   "explain": {
+    "fr": "3 h, puis 4 h, puis 5 h : il sera 5 h.",
+    "en": "3 o’clock, then 4, then 5: it will be 5 o’clock."
+   },
+   "tags": [
+    "time",
+    "hours",
+    "addition"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_de27167597b6d931b81b"
+    },
+    {
+     "role": "object",
+     "asset": "a_1aa6929e1baa440db535"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.gare.002",
+   "quest": "transport.gare",
+   "skill": "MES-G01",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le train de Noah part à 9 h.",
+    "en": "Noah’s train leaves at 9 o’clock."
+   },
+   "prompt": {
+    "fr": "Il arrive 3 heures plus tard. À quelle heure arrive-t-il ?",
+    "en": "It arrives 3 hours later. At what time does it arrive?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 12,
+    "calc": "9+3"
+   },
+   "common_errors": [
+    {
+     "value": 6,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Plus tard veut dire qu’on avance : on additionne.",
+      "en": "Later means moving forward, so we add."
+     }
+    },
+    {
+     "value": 11,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Compte 3 heures après 9 h.",
+      "en": "Close! Count 3 hours after 9 o’clock."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Avance heure par heure sur l’horloge.",
+    "en": "Move forward hour by hour on the clock."
+   },
+   "explain": {
+    "fr": "9 h + 3 heures = 12 h.",
+    "en": "9 o’clock + 3 hours = 12 o’clock."
+   },
+   "tags": [
+    "time",
+    "hours",
+    "addition"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_de27167597b6d931b81b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.gare.003",
+   "quest": "transport.gare",
+   "skill": "MES-G01",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa regarde la grosse horloge de la gare.",
+    "en": "Lea looks at the big station clock."
+   },
+   "prompt": {
+    "fr": "Quelle aiguille indique les heures ?",
+    "en": "Which hand shows the hours?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "la grande aiguille",
+      "en": "la grande aiguille"
+     },
+     "misconception": "mis_clock_hands"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "la petite aiguille",
+      "en": "la petite aiguille"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "les deux",
+      "en": "les deux"
+     },
+     "random": true
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "L’aiguille des heures est la plus courte.",
+    "en": "The hour hand is the shortest one."
+   },
+   "explain": {
+    "fr": "La petite aiguille montre l’heure. La grande montre les minutes.",
+    "en": "The short hand shows the hour. The long hand shows the minutes."
+   },
+   "tags": [
+    "clock",
+    "hands"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.gare.004",
+   "quest": "transport.gare",
+   "skill": "MES-G01",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le train de Noah part à 11 h.",
+    "en": "Noah’s train leaves at 11 o’clock."
+   },
+   "prompt": {
+    "fr": "Quelle heure vient juste après 11 h ?",
+    "en": "What time comes right after 11 o’clock?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "10 h",
+      "en": "10 h"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "12 h",
+      "en": "12 h"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "1 h",
+      "en": "1 h"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "11 h 30",
+      "en": "11 h 30"
+     },
+     "random": true
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Sur l’horloge, 12 vient après 11.",
+    "en": "On the clock, 12 comes after 11."
+   },
+   "explain": {
+    "fr": "Après 11 h vient 12 h.",
+    "en": "After 11 o’clock comes 12 o’clock."
+   },
+   "tags": [
+    "clock",
+    "hours"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_1aa6929e1baa440db535"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.gare.005",
+   "quest": "transport.gare",
+   "skill": "MES-G01",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "L’affiche de la gare dit : le train part à 5 h et demie.",
+    "en": "The station sign says: the train leaves at half past 5."
+   },
+   "prompt": {
+    "fr": "Comment écrit-on cette heure avec des chiffres ?",
+    "en": "How do we write this time with numbers?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "5 h 50",
+      "en": "5 h 50"
+     },
+     "misconception": "mis_time_base"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "5 h 30",
+      "en": "5 h 30"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "5 h 15",
+      "en": "5 h 15"
+     },
+     "misconception": "mis_fraction_denominator"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "6 h 30",
+      "en": "6 h 30"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Une demi-heure, c’est la moitié de 60 minutes.",
+    "en": "A half hour is half of 60 minutes."
+   },
+   "explain": {
+    "fr": "Et demie veut dire 30 minutes : 5 h 30.",
+    "en": "Half past means 30 minutes: 5:30."
+   },
+   "tags": [
+    "clock",
+    "half-hour"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.gare.006",
+   "quest": "transport.gare",
+   "skill": "MES-G01",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le tram passe toutes les demi-heures.",
+    "en": "The tram comes every half hour."
+   },
+   "prompt": {
+    "fr": "Combien de minutes y a-t-il dans une demi-heure ?",
+    "en": "How many minutes are in a half hour?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "50",
+      "en": "50"
+     },
+     "misconception": "mis_time_base"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "30",
+      "en": "30"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "15",
+      "en": "15"
+     },
+     "misconception": "mis_fraction_denominator"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "12",
+      "en": "12"
+     },
+     "random": true
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b",
+    "calc_choice": {
+     "b": "60/2"
+    }
+   },
+   "hint": {
+    "fr": "Une heure compte 60 minutes.",
+    "en": "One hour has 60 minutes."
+   },
+   "explain": {
+    "fr": "60 ÷ 2 = 30 minutes. C’est la réponse.",
+    "en": "60 ÷ 2 = 30 minutes. That is the answer."
+   },
+   "tags": [
+    "time",
+    "minutes",
+    "half-hour"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_98b1c9c7b9a29204c3f8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.gare.007",
+   "quest": "transport.gare",
+   "skill": "MES-G01",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "L’école de Léa finit à 3 h.",
+    "en": "Lea’s school ends at 3 o’clock."
+   },
+   "prompt": {
+    "fr": "Elle arrive à la gare 1 heure plus tard. À quelle heure arrive-t-elle ?",
+    "en": "She reaches the station 1 hour later. At what time does she arrive?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 4,
+    "calc": "3+1"
+   },
+   "common_errors": [
+    {
+     "value": 2,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Plus tard veut dire qu’on avance.",
+      "en": "Later means moving forward."
+     }
+    },
+    {
+     "value": 5,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Avance d’une seule heure.",
+      "en": "Close! Move forward just one hour."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Avance l’aiguille des heures d’un pas.",
+    "en": "Move the hour hand forward one step."
+   },
+   "explain": {
+    "fr": "3 h + 1 heure = 4 h.",
+    "en": "3 o’clock + 1 hour = 4 o’clock."
+   },
+   "tags": [
+    "word-problem",
+    "time",
+    "hours"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.gare.008",
+   "quest": "transport.gare",
+   "skill": "MES-G01",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 4,
+   "story": {
+    "fr": "Le tram passe à 8 h 30.",
+    "en": "The tram comes at 8:30."
+   },
+   "prompt": {
+    "fr": "Le suivant passe 30 minutes plus tard. À quelle heure passe-t-il ?",
+    "en": "The next one comes 30 minutes later. At what time does it come?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "8 h 60",
+      "en": "8:60"
+     },
+     "misconception": "mis_time_base"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "9 h",
+      "en": "9:00"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "9 h 30",
+      "en": "9:30"
+     },
+     "misconception": "mis_partial_result"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "8 h",
+      "en": "8:00"
+     },
+     "misconception": "mis_subtract_instead_of_add"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "30 minutes de plus font une demi-heure de plus.",
+    "en": "30 more minutes is another half hour."
+   },
+   "explain": {
+    "fr": "8 h 30 plus une demi-heure : 9 h.",
+    "en": "Half past 8 plus half an hour: 9 o’clock."
+   },
+   "tags": [
+    "word-problem",
+    "time",
+    "half-hour"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_98b1c9c7b9a29204c3f8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.gare.009",
+   "quest": "transport.gare",
+   "skill": "MES-G01",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Noah apprend à lire l’heure.",
+    "en": "Noah is learning to read the time."
+   },
+   "prompt": {
+    "fr": "Noah dit : quand la grande aiguille est sur le 12, c’est une heure juste. A-t-il raison ?",
+    "en": "Noah says: with the long hand on 12, it is an exact hour. Is he right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": true
+   },
+   "hint": {
+    "fr": "Pense à 4 h : la grande aiguille est en haut.",
+    "en": "Think of 4 o’clock: the long hand points up."
+   },
+   "explain": {
+    "fr": "La grande aiguille sur le 12 montre 0 minute : c’est une heure juste.",
+    "en": "The long hand on the 12 shows 0 minutes: it is an exact hour."
+   },
+   "tags": [
+    "true-false",
+    "clock"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.gare.010",
+   "quest": "transport.gare",
+   "skill": "MES-G01",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa lit une horloge de gare.",
+    "en": "Lea reads a station clock."
+   },
+   "prompt": {
+    "fr": "Léa dit que la grande aiguille sur le 6 veut dire 6 h. A-t-elle raison ?",
+    "en": "Lea says that the long hand on the 6 means 6 o’clock. Is she right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_clock_hands"
+   },
+   "hint": {
+    "fr": "La grande aiguille compte les minutes.",
+    "en": "The long hand counts minutes."
+   },
+   "explain": {
+    "fr": "La grande aiguille sur le 6 veut dire 30 minutes : c’est « et demie ».",
+    "en": "The long hand on the 6 means 30 minutes: it is “half past”."
+   },
+   "tags": [
+    "true-false",
+    "clock",
+    "half-hour"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.gare.011",
+   "quest": "transport.gare",
+   "skill": "MES-G01",
+   "type": "order",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le tableau de la gare affiche quatre départs.",
+    "en": "The station board shows four departures."
+   },
+   "prompt": {
+    "fr": "Range ces départs du plus tôt au plus tard.",
+    "en": "Put these departures in order, from earliest to latest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "9 h",
+      "en": "9:00"
+     },
+     "key": "9"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "4 h 30",
+      "en": "4:30"
+     },
+     "key": "4.5"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "12 h",
+      "en": "12:00"
+     },
+     "key": "12"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "7 h",
+      "en": "7:00"
+     },
+     "key": "7"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "d",
+     "a",
+     "c"
+    ],
+    "by": "asc",
+    "misconception": "mis_order"
+   },
+   "hint": {
+    "fr": "Commence par la plus petite heure.",
+    "en": "Start with the smallest hour."
+   },
+   "explain": {
+    "fr": "4 h 30, puis 7 h, puis 9 h, puis 12 h.",
+    "en": "4:30, then 7:00, then 9:00, then 12:00."
+   },
+   "tags": [
+    "ordering",
+    "time"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_de27167597b6d931b81b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.gare.012",
+   "quest": "transport.gare",
+   "skill": "MES-G01",
+   "type": "match",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa lit les heures sur le tableau de la gare.",
+    "en": "Lea reads the times on the station board."
+   },
+   "prompt": {
+    "fr": "Relie chaque heure écrite en mots à ses chiffres.",
+    "en": "Match each time in words to its numbers."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "trois heures",
+       "en": "three o’clock"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "six heures et demie",
+       "en": "half past six"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "midi",
+       "en": "noon"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "12 h",
+       "en": "12 h"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "3 h",
+       "en": "3 h"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "6 h 30",
+       "en": "6 h 30"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r2"
+     ],
+     [
+      "l2",
+      "r3"
+     ],
+     [
+      "l3",
+      "r1"
+     ]
+    ],
+    "misconception": "mis_clock_hands"
+   },
+   "hint": {
+    "fr": "Et demie veut dire 30 minutes.",
+    "en": "Half past means 30 minutes."
+   },
+   "explain": {
+    "fr": "Trois heures : 3 h. Six heures et demie : 6 h 30. Midi : 12 h.",
+    "en": "Three o’clock: 3:00. Half past six: 6:30. Noon: 12:00."
+   },
+   "tags": [
+    "matching",
+    "time"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.gare.013",
+   "quest": "transport.gare",
+   "skill": "MES-G01",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa regarde l’horloge de la gare.",
+    "en": "Lea looks at the station clock."
+   },
+   "prompt": {
+    "fr": "Quelle heure est-il ?",
+    "en": "What time is it?"
+   },
+   "visual": {
+    "kind": "clock",
+    "data": {
+     "hour": 7,
+     "minute": 0
+    }
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "12 h",
+      "en": "12 h"
+     },
+     "misconception": "mis_clock_hands"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "7 h",
+      "en": "7 h"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "6 h",
+      "en": "6 h"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "7 h 30",
+      "en": "7 h 30"
+     },
+     "random": true
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "La petite aiguille montre l’heure.",
+    "en": "The short hand shows the hour."
+   },
+   "explain": {
+    "fr": "Petite aiguille sur le 7, grande sur le 12 : 7 h.",
+    "en": "The short hand is on 7 and the long hand on 12: 7 o’clock."
+   },
+   "tags": [
+    "clock",
+    "hours"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_de27167597b6d931b81b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.gare.014",
+   "quest": "transport.gare",
+   "skill": "MES-G01",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah regarde l’horloge près du quai.",
+    "en": "Noah looks at the clock near the platform."
+   },
+   "prompt": {
+    "fr": "Quelle heure marque l’horloge ?",
+    "en": "What time does the clock show?"
+   },
+   "visual": {
+    "kind": "clock",
+    "data": {
+     "hour": 10,
+     "minute": 30
+    }
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "6 h 50",
+      "en": "6 h 50"
+     },
+     "misconception": "mis_clock_hands"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "11 h 30",
+      "en": "11 h 30"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "10 h 30",
+      "en": "10 h 30"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "10 h",
+      "en": "10 h"
+     },
+     "random": true
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c"
+   },
+   "hint": {
+    "fr": "La grande aiguille sur le 6 veut dire 30 minutes.",
+    "en": "The long hand on the 6 means 30 minutes."
+   },
+   "explain": {
+    "fr": "Petite aiguille entre 10 et 11, grande sur le 6 : 10 h 30.",
+    "en": "Short hand between 10 and 11, long hand on 6: 10:30."
+   },
+   "tags": [
+    "clock",
+    "half-hour"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.gare.015",
+   "quest": "transport.gare",
+   "skill": "MES-G01",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 4,
+   "story": {
+    "fr": "Zoé consulte l’horloge avant de monter.",
+    "en": "Zoe checks the clock before boarding."
+   },
+   "prompt": {
+    "fr": "Quelle heure est-il ?",
+    "en": "What time is it?"
+   },
+   "visual": {
+    "kind": "clock",
+    "data": {
+     "hour": 8,
+     "minute": 15
+    }
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "3 h 40",
+      "en": "3 h 40"
+     },
+     "misconception": "mis_clock_hands"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "8 h 3",
+      "en": "8 h 3"
+     },
+     "misconception": "mis_read_scale"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "9 h 15",
+      "en": "9 h 15"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "8 h 15",
+      "en": "8 h 15"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d"
+   },
+   "hint": {
+    "fr": "La grande aiguille sur le 3 veut dire 15 minutes.",
+    "en": "The long hand on the 3 means 15 minutes."
+   },
+   "explain": {
+    "fr": "Petite aiguille après le 8, grande sur le 3 : 8 h 15.",
+    "en": "Short hand just past 8, long hand on 3: 8:15."
+   },
+   "tags": [
+    "clock",
+    "quarter-hour"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.gare.016",
+   "quest": "transport.gare",
+   "skill": "MES-G01",
+   "type": "estimate",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un train part à 8 h 05 et arrive à 8 h 55.",
+    "en": "A train leaves at 8:05 and arrives at 8:55."
+   },
+   "prompt": {
+    "fr": "Environ combien de temps dure le trajet ?",
+    "en": "About how long is the trip?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "5 heures",
+      "en": "5 heures"
+     },
+     "misconception": "mis_estimate_rounding"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "1 heure",
+      "en": "1 heure"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "30 minutes",
+      "en": "30 minutes"
+     },
+     "misconception": "mis_estimate_exact"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "2 heures",
+      "en": "2 heures"
+     },
+     "random": true
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Va de 8 h 05 à 9 h 05.",
+    "en": "Go from 8:05 to 9:05."
+   },
+   "explain": {
+    "fr": "Il y a 50 minutes entre les deux : environ 1 heure.",
+    "en": "There are 50 minutes between them: about 1 hour."
+   },
+   "tags": [
+    "estimation",
+    "time"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_de27167597b6d931b81b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.autobus.001",
+   "quest": "transport.autobus",
+   "skill": "ARI-OPE-A04c",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "L’autobus scolaire fait son circuit.",
+    "en": "The school bus runs its route."
+   },
+   "prompt": {
+    "fr": "Le circuit fait 275 km. L’autobus a déjà roulé 120 km. Combien de km reste-t-il ?",
+    "en": "The route is 275 km long. The bus has already driven 120 km. How many km are left?"
+   },
+   "math_text": "275 - 120 = ?",
+   "answer": {
+    "kind": "numeric",
+    "value": 155,
+    "calc": "275-120"
+   },
+   "common_errors": [
+    {
+     "value": 395,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Il reste du chemin à faire : on soustrait.",
+      "en": "There is road left to go, so we subtract."
+     }
+    },
+    {
+     "value": 165,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Vérifie les dizaines : 7 - 2 = 5.",
+      "en": "Close! Check the tens: 7 - 2 = 5."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Soustrais les centaines, puis les dizaines, puis les unités.",
+    "en": "Subtract hundreds, then tens, then ones."
+   },
+   "explain": {
+    "fr": "275 - 120 = 155 km. C’est la réponse.",
+    "en": "275 - 120 = 155 km. That is the answer."
+   },
+   "tags": [
+    "subtraction",
+    "3-digit",
+    "bus"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_ec39ac5bd76d5d96906a"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.autobus.002",
+   "quest": "transport.autobus",
+   "skill": "ARI-OPE-A04c",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le garage note les km du compteur de l’autobus.",
+    "en": "The garage writes down the bus odometer km."
+   },
+   "prompt": {
+    "fr": "Le compteur marque 619 km. Hier, il marquait 432 km. Combien de km aujourd’hui ?",
+    "en": "The odometer shows 619 km. Yesterday it showed 432 km. How many km today?"
+   },
+   "math_text": "619 - 432 = ?",
+   "answer": {
+    "kind": "numeric",
+    "value": 187,
+    "calc": "619-432"
+   },
+   "common_errors": [
+    {
+     "value": 227,
+     "misconception": "mis_forgot_borrow",
+     "feedback": {
+      "fr": "Pour 1 - 3, il faut emprunter à la centaine.",
+      "en": "For 1 - 3, you must borrow from the hundreds."
+     }
+    },
+    {
+     "value": 1051,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche la différence : on soustrait.",
+      "en": "We want the difference, so we subtract."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Les dizaines : 1 - 3 est impossible, emprunte.",
+    "en": "Tens: 1 - 3 is impossible, so borrow."
+   },
+   "explain": {
+    "fr": "619 - 432 : 9 - 2 = 7, 11 - 3 = 8, 5 - 4 = 1. Donc 187 km.",
+    "en": "619 - 432: 9 - 2 = 7, 11 - 3 = 8, 5 - 4 = 1. So 187 km."
+   },
+   "tags": [
+    "subtraction",
+    "3-digit",
+    "borrow"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_d34d9d19e0d9f2751f46"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.autobus.003",
+   "quest": "transport.autobus",
+   "skill": "ARI-OPE-A04c",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Le train de banlieue a 800 sièges.",
+    "en": "The commuter train has 800 seats."
+   },
+   "prompt": {
+    "fr": "Il y a 356 sièges occupés. Combien de sièges sont libres ?",
+    "en": "There are 356 seats taken. How many seats are free?"
+   },
+   "math_text": "800 - 356 = ?",
+   "answer": {
+    "kind": "numeric",
+    "value": 444,
+    "calc": "800-356"
+   },
+   "common_errors": [
+    {
+     "value": 556,
+     "misconception": "mis_forgot_borrow",
+     "feedback": {
+      "fr": "Il faut emprunter à travers les zéros.",
+      "en": "You must borrow across the zeros."
+     }
+    },
+    {
+     "value": 1156,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Libres veut dire qu’on enlève les occupés.",
+      "en": "Free means we take away the taken seats."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "800, c’est aussi 79 dizaines et 10 unités.",
+    "en": "800 is also 79 tens and 10 ones."
+   },
+   "explain": {
+    "fr": "800 - 356 = 444 sièges libres.",
+    "en": "800 - 356 = 444 free seats."
+   },
+   "tags": [
+    "subtraction",
+    "3-digit",
+    "borrow",
+    "zeros"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_de27167597b6d931b81b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.autobus.004",
+   "quest": "transport.autobus",
+   "skill": "ARI-OPE-A04c",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "L’autobus doit faire 350 km et il a fait 120 km.",
+    "en": "The bus must go 350 km and has gone 120 km."
+   },
+   "prompt": {
+    "fr": "Quel calcul donne la distance qui reste ?",
+    "en": "Which sum gives the distance that is left?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "350 + 120",
+      "en": "350 + 120"
+     },
+     "misconception": "mis_add_instead_of_subtract"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "350 - 120",
+      "en": "350 - 120"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "120 - 350",
+      "en": "120 - 350"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "350 × 120",
+      "en": "350 × 120"
+     },
+     "misconception": "mis_wrong_operation"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Pour savoir ce qui reste, on enlève.",
+    "en": "To find what is left, we take away."
+   },
+   "explain": {
+    "fr": "Il reste 350 - 120 = 230 km.",
+    "en": "What is left is 350 - 120 = 230 km."
+   },
+   "tags": [
+    "subtraction",
+    "operation-choice"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_d34d9d19e0d9f2751f46"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.autobus.005",
+   "quest": "transport.autobus",
+   "skill": "ARI-OPE-A04c",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le garage compte les passagers de la semaine.",
+    "en": "The garage counts the passengers of the week."
+   },
+   "prompt": {
+    "fr": "Combien font 540 - 215 ?",
+    "en": "What is 540 - 215?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "335",
+      "en": "335"
+     },
+     "misconception": "mis_forgot_borrow"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "755",
+      "en": "755"
+     },
+     "misconception": "mis_add_instead_of_subtract"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "325",
+      "en": "325"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "330",
+      "en": "330"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "540-215"
+    }
+   },
+   "hint": {
+    "fr": "Les unités : 0 - 5 est impossible, emprunte.",
+    "en": "Ones: 0 - 5 is impossible, so borrow."
+   },
+   "explain": {
+    "fr": "540 - 215 : 10 - 5 = 5, 3 - 1 = 2, 5 - 2 = 3. Donc 325.",
+    "en": "540 - 215: 10 - 5 = 5, 3 - 1 = 2, 5 - 2 = 3. So 325."
+   },
+   "tags": [
+    "subtraction",
+    "3-digit",
+    "borrow"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.autobus.006",
+   "quest": "transport.autobus",
+   "skill": "ARI-OPE-A04c",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "La gare vend des billets pour la fin de semaine.",
+    "en": "The station sells tickets for the weekend."
+   },
+   "prompt": {
+    "fr": "Combien font 702 - 468 ?",
+    "en": "What is 702 - 468?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "366",
+      "en": "366"
+     },
+     "misconception": "mis_forgot_borrow"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "1170",
+      "en": "1170"
+     },
+     "misconception": "mis_add_instead_of_subtract"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "244",
+      "en": "244"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "234",
+      "en": "234"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d",
+    "calc_choice": {
+     "d": "702-468"
+    }
+   },
+   "hint": {
+    "fr": "Emprunte à la centaine : 702 devient 6 centaines, 10 dizaines, 12 unités.",
+    "en": "Borrow from the hundreds: 702 becomes 6 hundreds, 10 tens, 12 ones."
+   },
+   "explain": {
+    "fr": "702 - 468 = 234. C’est la réponse.",
+    "en": "702 - 468 = 234. That is the answer."
+   },
+   "tags": [
+    "subtraction",
+    "3-digit",
+    "borrow",
+    "zeros"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.autobus.007",
+   "quest": "transport.autobus",
+   "skill": "ARI-OPE-A04c",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "L’autobus scolaire a un long trajet à faire.",
+    "en": "The school bus has a long trip to make."
+   },
+   "prompt": {
+    "fr": "Il doit rouler 640 km. Il a déjà fait 275 km. Combien de km restent-ils ?",
+    "en": "It must drive 640 km. It has already done 275 km. How many km are left?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 365,
+    "calc": "640-275"
+   },
+   "common_errors": [
+    {
+     "value": 435,
+     "misconception": "mis_forgot_borrow",
+     "feedback": {
+      "fr": "Pour 0 - 5, il faut emprunter.",
+      "en": "For 0 - 5, you must borrow."
+     }
+    },
+    {
+     "value": 915,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Ce qui reste, c’est une soustraction.",
+      "en": "What is left is a subtraction."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Soustrais 275 de 640.",
+    "en": "Take 275 away from 640."
+   },
+   "explain": {
+    "fr": "640 - 275 = 365 km. C’est la réponse.",
+    "en": "640 - 275 = 365 km. That is the answer."
+   },
+   "tags": [
+    "word-problem",
+    "subtraction",
+    "km"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_ec39ac5bd76d5d96906a"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.autobus.008",
+   "quest": "transport.autobus",
+   "skill": "ARI-OPE-A04c",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Un train part avec 520 voyageurs.",
+    "en": "A train leaves with 520 passengers."
+   },
+   "prompt": {
+    "fr": "À la première gare, 138 descendent. À la deuxième, 205 descendent. Combien de voyageurs restent ?",
+    "en": "At the first station, 138 get off. At the second, 205 get off. How many passengers are left?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 177,
+    "calc": "520-138-205"
+   },
+   "common_errors": [
+    {
+     "value": 382,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as enlevé seulement ceux de la première gare.",
+      "en": "You took away only the first station’s passengers."
+     }
+    },
+    {
+     "value": 863,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Les voyageurs qui descendent sont enlevés.",
+      "en": "Passengers who get off are taken away."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Enlève 138, puis enlève 205.",
+    "en": "Take away 138, then take away 205."
+   },
+   "explain": {
+    "fr": "520 - 138 = 382, puis 382 - 205 = 177.",
+    "en": "520 - 138 = 382, then 382 - 205 = 177."
+   },
+   "tags": [
+    "word-problem",
+    "subtraction",
+    "two-steps"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_de27167597b6d931b81b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.autobus.009",
+   "quest": "transport.autobus",
+   "skill": "ARI-OPE-A04c",
+   "type": "truefalse",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah vérifie un calcul du chauffeur.",
+    "en": "Noah checks a sum by the driver."
+   },
+   "prompt": {
+    "fr": "Noah dit que 503 - 247 donne 266. A-t-il raison ?",
+    "en": "Noah says that 503 - 247 makes 266. Is he right?"
+   },
+   "math_text": "503 - 247 = 266",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_place_value"
+   },
+   "hint": {
+    "fr": "Additionne 247 et ton résultat pour vérifier.",
+    "en": "Add 247 to your answer to check."
+   },
+   "explain": {
+    "fr": "503 - 247 = 256, pas 266. On vérifie : 256 + 247 = 503.",
+    "en": "503 - 247 = 256, not 266. Check: 256 + 247 = 503."
+   },
+   "tags": [
+    "true-false",
+    "subtraction",
+    "borrow"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.autobus.010",
+   "quest": "transport.autobus",
+   "skill": "ARI-OPE-A04c",
+   "type": "order",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa compare les distances qui restent à parcourir.",
+    "en": "Lea compares the distances left to travel."
+   },
+   "prompt": {
+    "fr": "Range ces calculs du plus petit au plus grand résultat.",
+    "en": "Put these sums in order, from the smallest result to the biggest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "500 - 150",
+      "en": "500 - 150"
+     },
+     "key": "350"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "620 - 480",
+      "en": "620 - 480"
+     },
+     "key": "140"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "300 - 40",
+      "en": "300 - 40"
+     },
+     "key": "260"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "900 - 600",
+      "en": "900 - 600"
+     },
+     "key": "300"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "c",
+     "d",
+     "a"
+    ],
+    "by": "asc",
+    "misconception": "mis_order"
+   },
+   "hint": {
+    "fr": "Calcule chaque différence d’abord.",
+    "en": "Work out each difference first."
+   },
+   "explain": {
+    "fr": "620 - 480 = 140, 300 - 40 = 260, 900 - 600 = 300, 500 - 150 = 350. C’est la réponse.",
+    "en": "620 - 480 = 140, 300 - 40 = 260, 900 - 600 = 300, 500 - 150 = 350. That is the answer."
+   },
+   "tags": [
+    "ordering",
+    "subtraction"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.autobus.011",
+   "quest": "transport.autobus",
+   "skill": "ARI-OPE-A04c",
+   "type": "match",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le chauffeur note les passagers qui restent.",
+    "en": "The driver notes the passengers who remain."
+   },
+   "prompt": {
+    "fr": "Relie chaque soustraction à son résultat.",
+    "en": "Match each subtraction to its result."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "700 - 125",
+       "en": "700 - 125"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "540 - 260",
+       "en": "540 - 260"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "813 - 407",
+       "en": "813 - 407"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "280",
+       "en": "280"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "406",
+       "en": "406"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "575",
+       "en": "575"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r3"
+     ],
+     [
+      "l2",
+      "r1"
+     ],
+     [
+      "l3",
+      "r2"
+     ]
+    ],
+    "misconception": "mis_forgot_borrow"
+   },
+   "hint": {
+    "fr": "Fais les calculs un à la fois.",
+    "en": "Do the sums one at a time."
+   },
+   "explain": {
+    "fr": "700 - 125 = 575, 540 - 260 = 280 et 813 - 407 = 406.",
+    "en": "700 - 125 = 575, 540 - 260 = 280 and 813 - 407 = 406."
+   },
+   "tags": [
+    "matching",
+    "subtraction",
+    "3-digit"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.autobus.012",
+   "quest": "transport.autobus",
+   "skill": "ARI-OPE-A04c",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "La société de transport compte ses passagers.",
+    "en": "The transit company counts its passengers."
+   },
+   "prompt": {
+    "fr": "Combien de passagers de plus le matin que le soir ?",
+    "en": "How many more passengers in the morning than in the evening?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Passagers du tram",
+      "en": "Tram passengers"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "matin",
+        "en": "morning"
+       },
+       "value": 345
+      },
+      {
+       "label": {
+        "fr": "soir",
+        "en": "evening"
+       },
+       "value": 218
+      }
+     ],
+     "max": 400
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 127,
+    "calc": "345-218"
+   },
+   "common_errors": [
+    {
+     "value": 133,
+     "misconception": "mis_forgot_borrow",
+     "feedback": {
+      "fr": "Pour 5 - 8, il faut emprunter.",
+      "en": "For 5 - 8, you must borrow."
+     }
+    },
+    {
+     "value": 563,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On compare : on soustrait.",
+      "en": "We compare, so we subtract."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Lis les deux barres, puis soustrais.",
+    "en": "Read both bars, then subtract."
+   },
+   "explain": {
+    "fr": "345 - 218 = 127 passagers de plus.",
+    "en": "345 - 218 = 127 more passengers."
+   },
+   "tags": [
+    "bar-chart",
+    "subtraction"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_98b1c9c7b9a29204c3f8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.autobus.013",
+   "quest": "transport.autobus",
+   "skill": "ARI-OPE-A04c",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Chaque image du tableau vaut 50 passagers.",
+    "en": "Each picture in the chart is worth 50 passengers."
+   },
+   "prompt": {
+    "fr": "Combien de passagers de plus sur la ligne bleue que sur la ligne verte ?",
+    "en": "How many more passengers on the blue line than on the green line?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Passagers par ligne",
+      "en": "Passengers per line"
+     },
+     "each": 50,
+     "rows": [
+      {
+       "label": {
+        "fr": "ligne bleue",
+        "en": "blue line"
+       },
+       "count": 9
+      },
+      {
+       "label": {
+        "fr": "ligne verte",
+        "en": "green line"
+       },
+       "count": 5
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 200,
+    "calc": "450-250"
+   },
+   "common_errors": [
+    {
+     "value": 4,
+     "misconception": "mis_read_scale",
+     "feedback": {
+      "fr": "Chaque image vaut 50 passagers, pas 1.",
+      "en": "Each picture is worth 50 passengers, not 1."
+     }
+    },
+    {
+     "value": 700,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On compare : on soustrait.",
+      "en": "We compare, so we subtract."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Trouve le total de chaque ligne, puis soustrais.",
+    "en": "Find the total of each line, then subtract."
+   },
+   "explain": {
+    "fr": "9 × 50 = 450 et 5 × 50 = 250. 450 - 250 = 200.",
+    "en": "9 × 50 = 450 and 5 × 50 = 250. 450 - 250 = 200."
+   },
+   "tags": [
+    "pictograph",
+    "subtraction",
+    "skip-counting"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.autobus.014",
+   "quest": "transport.autobus",
+   "skill": "ARI-OPE-A04c",
+   "type": "estimate",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un grand train a 803 places.",
+    "en": "A big train has 803 seats."
+   },
+   "prompt": {
+    "fr": "Il y a 297 places prises. Environ combien de places sont libres ?",
+    "en": "There are 297 seats taken. About how many seats are free?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 480,
+    "max": 530,
+    "exact_for_check": 506,
+    "calc": "803-297"
+   },
+   "common_errors": [
+    {
+     "value": 1100,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Libres veut dire qu’on enlève les places prises.",
+      "en": "Free means we take away the seats taken."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis 803 à 800 et 297 à 300.",
+    "en": "Round 803 to 800 and 297 to 300."
+   },
+   "explain": {
+    "fr": "800 - 300 = 500. Le résultat exact est 506.",
+    "en": "800 - 300 = 500. The exact result is 506."
+   },
+   "tags": [
+    "estimation",
+    "subtraction",
+    "rounding"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_de27167597b6d931b81b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.pistes.001",
+   "quest": "transport.pistes",
+   "skill": "MES-A06",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa roule sur une piste cyclable rectangulaire.",
+    "en": "Lea rides on a rectangular bike track."
+   },
+   "prompt": {
+    "fr": "La piste mesure 12 m de long et 8 m de large. Quel est son périmètre en mètres ?",
+    "en": "The track is 12 m long and 8 m wide. What is its perimeter in metres?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 40,
+    "calc": "2*(12+8)"
+   },
+   "common_errors": [
+    {
+     "value": 20,
+     "misconception": "mis_perimeter_missing_side",
+     "feedback": {
+      "fr": "Il faut faire tout le tour : 4 côtés.",
+      "en": "You must go all the way round: 4 sides."
+     }
+    },
+    {
+     "value": 96,
+     "misconception": "mis_perimeter_area",
+     "feedback": {
+      "fr": "12 × 8 est l’aire, pas le périmètre.",
+      "en": "12 × 8 is the area, not the perimeter."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne les 4 côtés du rectangle.",
+    "en": "Add the 4 sides of the rectangle."
+   },
+   "explain": {
+    "fr": "12 + 8 + 12 + 8 = 40 m. C’est la réponse.",
+    "en": "12 + 8 + 12 + 8 = 40 m. That is the answer."
+   },
+   "tags": [
+    "perimeter",
+    "rectangle",
+    "bike"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1001b8de4c7647181979"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.pistes.002",
+   "quest": "transport.pistes",
+   "skill": "MES-A06",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah court sur une piste carrée.",
+    "en": "Noah runs on a square track."
+   },
+   "prompt": {
+    "fr": "Chaque côté mesure 15 m. Quel est le périmètre de la piste ?",
+    "en": "Each side is 15 m long. What is the perimeter of the track?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 60,
+    "calc": "4*15"
+   },
+   "common_errors": [
+    {
+     "value": 30,
+     "misconception": "mis_perimeter_missing_side",
+     "feedback": {
+      "fr": "Un carré a 4 côtés égaux, pas 2.",
+      "en": "A square has 4 equal sides, not 2."
+     }
+    },
+    {
+     "value": 225,
+     "misconception": "mis_perimeter_area",
+     "feedback": {
+      "fr": "15 × 15 est l’aire, pas le périmètre.",
+      "en": "15 × 15 is the area, not the perimeter."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Un carré a 4 côtés égaux.",
+    "en": "A square has 4 equal sides."
+   },
+   "explain": {
+    "fr": "4 × 15 = 60 m. C’est la réponse.",
+    "en": "4 × 15 = 60 m. That is the answer."
+   },
+   "tags": [
+    "perimeter",
+    "square"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.pistes.003",
+   "quest": "transport.pistes",
+   "skill": "MES-A06",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Une piste de skateboard a la forme d’un triangle.",
+    "en": "A skateboard track is shaped like a triangle."
+   },
+   "prompt": {
+    "fr": "Ses côtés mesurent 120 m, 150 m et 90 m. Quel est son périmètre ?",
+    "en": "Its sides are 120 m, 150 m and 90 m. What is its perimeter?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 360,
+    "calc": "120+150+90"
+   },
+   "common_errors": [
+    {
+     "value": 270,
+     "misconception": "mis_perimeter_missing_side",
+     "feedback": {
+      "fr": "Tu as oublié un côté. Il y en a 3.",
+      "en": "You left out a side. There are 3."
+     }
+    },
+    {
+     "value": 330,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte l’addition.",
+      "en": "Close! Check the addition again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne les trois côtés.",
+    "en": "Add the three sides."
+   },
+   "explain": {
+    "fr": "120 + 150 + 90 = 360 m. C’est la réponse.",
+    "en": "120 + 150 + 90 = 360 m. That is the answer."
+   },
+   "tags": [
+    "perimeter",
+    "triangle"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.pistes.004",
+   "quest": "transport.pistes",
+   "skill": "MES-A06",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "La piste de vélo de l’école est carrée, avec des côtés de 20 m.",
+    "en": "The school bike track is square, with sides of 20 m."
+   },
+   "prompt": {
+    "fr": "Quelle opération donne le périmètre ?",
+    "en": "Which operation gives the perimeter?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "20 × 20",
+      "en": "20 × 20"
+     },
+     "misconception": "mis_perimeter_area"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "20 + 4",
+      "en": "20 + 4"
+     },
+     "misconception": "mis_add_instead_of_multiply"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "20 × 2",
+      "en": "20 × 2"
+     },
+     "misconception": "mis_perimeter_missing_side"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "20 × 4",
+      "en": "20 × 4"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d"
+   },
+   "hint": {
+    "fr": "Il y a 4 côtés de 20 m.",
+    "en": "There are 4 sides of 20 m."
+   },
+   "explain": {
+    "fr": "4 côtés de 20 m : 20 × 4 = 80 m.",
+    "en": "4 sides of 20 m: 20 × 4 = 80 m."
+   },
+   "tags": [
+    "perimeter",
+    "operation-choice"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.pistes.005",
+   "quest": "transport.pistes",
+   "skill": "MES-A06",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah fait le tour de la piste en marchant.",
+    "en": "Noah walks all the way round the track."
+   },
+   "prompt": {
+    "fr": "Comment appelle-t-on la longueur du tour de la piste ?",
+    "en": "What do we call the length of the way round the track?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "l’aire",
+      "en": "l’aire"
+     },
+     "misconception": "mis_perimeter_area"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "le périmètre",
+      "en": "le périmètre"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "la hauteur",
+      "en": "la hauteur"
+     },
+     "random": true
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Le tour d’une figure porte un nom spécial.",
+    "en": "The way round a shape has a special name."
+   },
+   "explain": {
+    "fr": "La longueur du tour d’une figure s’appelle le périmètre.",
+    "en": "The length around a shape is called the perimeter."
+   },
+   "tags": [
+    "perimeter",
+    "vocabulary"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1001b8de4c7647181979"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.pistes.006",
+   "quest": "transport.pistes",
+   "skill": "MES-A06",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Une piste rectangulaire mesure 30 m sur 20 m.",
+    "en": "A rectangular track measures 30 m by 20 m."
+   },
+   "prompt": {
+    "fr": "Quel est le périmètre de cette piste ?",
+    "en": "What is the perimeter of this track?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "50",
+      "en": "50"
+     },
+     "misconception": "mis_perimeter_missing_side"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "600",
+      "en": "600"
+     },
+     "misconception": "mis_perimeter_area"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "80",
+      "en": "80"
+     },
+     "misconception": "mis_perimeter_missing_side"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "100",
+      "en": "100"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d",
+    "calc_choice": {
+     "d": "2*(30+20)"
+    }
+   },
+   "hint": {
+    "fr": "Un rectangle a 2 côtés longs et 2 côtés courts.",
+    "en": "A rectangle has 2 long sides and 2 short sides."
+   },
+   "explain": {
+    "fr": "30 + 20 + 30 + 20 = 100 m. C’est la réponse.",
+    "en": "30 + 20 + 30 + 20 = 100 m. That is the answer."
+   },
+   "tags": [
+    "perimeter",
+    "rectangle"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.pistes.007",
+   "quest": "transport.pistes",
+   "skill": "MES-A06",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Au parc, la piste cyclable est un carré de 50 m de côté.",
+    "en": "At the park, the bike track is a square with 50 m sides."
+   },
+   "prompt": {
+    "fr": "Léa fait 2 tours complets. Combien de mètres roule-t-elle ?",
+    "en": "Lea rides 2 full laps. How many metres does she ride?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 400,
+    "calc": "4*50*2"
+   },
+   "common_errors": [
+    {
+     "value": 200,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "200 m, c’est un seul tour. Léa en fait 2.",
+      "en": "200 m is one lap. Lea rides 2."
+     }
+    },
+    {
+     "value": 100,
+     "misconception": "mis_perimeter_missing_side",
+     "feedback": {
+      "fr": "Un carré a 4 côtés, pas 2.",
+      "en": "A square has 4 sides, not 2."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Trouve d’abord la longueur d’un tour.",
+    "en": "First find the length of one lap."
+   },
+   "explain": {
+    "fr": "Un tour : 4 × 50 = 200 m. Deux tours : 200 × 2 = 400 m.",
+    "en": "One lap: 4 × 50 = 200 m. Two laps: 200 × 2 = 400 m."
+   },
+   "tags": [
+    "word-problem",
+    "perimeter",
+    "two-steps"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1001b8de4c7647181979"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.pistes.008",
+   "quest": "transport.pistes",
+   "skill": "MES-A06",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 5,
+   "story": {
+    "fr": "On installe une clôture autour d’une piste rectangulaire.",
+    "en": "A fence goes round a rectangular track."
+   },
+   "prompt": {
+    "fr": "La piste mesure 45 m sur 30 m. Un portail de 5 m n’a pas de clôture. Combien de mètres de clôture ?",
+    "en": "The track measures 45 m by 30 m. A 5 m gate has no fence. How many metres of fence?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 145,
+    "calc": "2*(45+30)-5"
+   },
+   "common_errors": [
+    {
+     "value": 150,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "150 m, c’est le tour complet. Enlève le portail.",
+      "en": "150 m is the whole way round. Take away the gate."
+     }
+    },
+    {
+     "value": 75,
+     "misconception": "mis_perimeter_missing_side",
+     "feedback": {
+      "fr": "Il faut faire le tour complet : 4 côtés.",
+      "en": "You must go all the way round: 4 sides."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Trouve d’abord le périmètre.",
+    "en": "First find the perimeter."
+   },
+   "explain": {
+    "fr": "Le tour : 45 + 30 + 45 + 30 = 150 m. Puis 150 - 5 = 145 m.",
+    "en": "The way round: 45 + 30 + 45 + 30 = 150 m. Then 150 - 5 = 145 m."
+   },
+   "tags": [
+    "word-problem",
+    "perimeter",
+    "two-steps"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.pistes.009",
+   "quest": "transport.pistes",
+   "skill": "MES-A06",
+   "type": "truefalse",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah calcule le tour d’une piste.",
+    "en": "Noah works out the way round a track."
+   },
+   "prompt": {
+    "fr": "Noah dit que le périmètre d’une piste de 10 m sur 6 m est 16 m. A-t-il raison ?",
+    "en": "Noah says that the perimeter of a 10 m by 6 m track is 16 m. Is he right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_perimeter_missing_side"
+   },
+   "hint": {
+    "fr": "Combien de côtés a un rectangle ?",
+    "en": "How many sides does a rectangle have?"
+   },
+   "explain": {
+    "fr": "10 + 6 + 10 + 6 = 32 m. 16 m, c’est seulement deux côtés.",
+    "en": "10 + 6 + 10 + 6 = 32 m. 16 m is only two sides."
+   },
+   "tags": [
+    "true-false",
+    "perimeter"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.pistes.010",
+   "quest": "transport.pistes",
+   "skill": "MES-A06",
+   "type": "order",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa compare quatre pistes.",
+    "en": "Lea compares four tracks."
+   },
+   "prompt": {
+    "fr": "Range les pistes de la plus courte à la plus longue, selon le tour.",
+    "en": "Put the tracks in order, from the shortest to the longest way round."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "carré, côté 9 m",
+      "en": "square, side 9 m"
+     },
+     "key": "36"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "rectangle 10 m sur 5 m",
+      "en": "rectangle 10 m by 5 m"
+     },
+     "key": "30"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "triangle, côtés 8 m",
+      "en": "triangle, sides 8 m"
+     },
+     "key": "24"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "rectangle 12 m sur 7 m",
+      "en": "rectangle 12 m by 7 m"
+     },
+     "key": "38"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "c",
+     "b",
+     "a",
+     "d"
+    ],
+    "by": "asc",
+    "misconception": "mis_perimeter_area"
+   },
+   "hint": {
+    "fr": "Calcule le périmètre de chaque piste.",
+    "en": "Work out the perimeter of each track."
+   },
+   "explain": {
+    "fr": "Triangle 24 m, rectangle 30 m, carré 36 m, grand rectangle 38 m.",
+    "en": "Triangle 24 m, rectangle 30 m, square 36 m, big rectangle 38 m."
+   },
+   "tags": [
+    "ordering",
+    "perimeter"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.pistes.011",
+   "quest": "transport.pistes",
+   "skill": "MES-A06",
+   "type": "match",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah mesure le tour de trois pistes.",
+    "en": "Noah measures the way round three tracks."
+   },
+   "prompt": {
+    "fr": "Relie chaque piste à son périmètre.",
+    "en": "Match each track to its perimeter."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "carré de 5 m de côté",
+       "en": "square with 5 m sides"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "rectangle de 8 m sur 3 m",
+       "en": "rectangle 8 m by 3 m"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "triangle de côtés 4, 5 et 6 m",
+       "en": "triangle with sides 4, 5 and 6 m"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "22 m",
+       "en": "22 m"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "15 m",
+       "en": "15 m"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "20 m",
+       "en": "20 m"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r3"
+     ],
+     [
+      "l2",
+      "r1"
+     ],
+     [
+      "l3",
+      "r2"
+     ]
+    ],
+    "misconception": "mis_perimeter_missing_side"
+   },
+   "hint": {
+    "fr": "Additionne tous les côtés de chaque figure.",
+    "en": "Add all the sides of each shape."
+   },
+   "explain": {
+    "fr": "Carré : 4 × 5 = 20. Rectangle : 8 + 3 + 8 + 3 = 22. Triangle : 4 + 5 + 6 = 15.",
+    "en": "Square: 4 × 5 = 20. Rectangle: 8 + 3 + 8 + 3 = 22. Triangle: 4 + 5 + 6 = 15."
+   },
+   "tags": [
+    "matching",
+    "perimeter"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.pistes.012",
+   "quest": "transport.pistes",
+   "skill": "MES-A06",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Chaque carreau du quadrillage mesure 10 m de côté.",
+    "en": "Each square of the grid is 10 m on a side."
+   },
+   "prompt": {
+    "fr": "La piste fait le tour du rectangle. Quel est son périmètre en mètres ?",
+    "en": "The track goes round the rectangle. What is its perimeter in metres?"
+   },
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 6,
+     "rows": 4,
+     "cells": [
+      {
+       "x": 0,
+       "y": 0,
+       "label": {
+        "fr": "départ",
+        "en": "start"
+       }
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 200,
+    "calc": "2*(6+4)*10"
+   },
+   "common_errors": [
+    {
+     "value": 100,
+     "misconception": "mis_perimeter_missing_side",
+     "feedback": {
+      "fr": "Il faut faire le tour complet.",
+      "en": "You must go all the way round."
+     }
+    },
+    {
+     "value": 240,
+     "misconception": "mis_perimeter_area",
+     "feedback": {
+      "fr": "6 × 4 compte les carreaux : c’est l’aire.",
+      "en": "6 × 4 counts the squares: that is the area."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les carreaux sur chaque côté.",
+    "en": "Count the squares on each side."
+   },
+   "explain": {
+    "fr": "6 + 4 + 6 + 4 = 20 carreaux de 10 m : 200 m.",
+    "en": "6 + 4 + 6 + 4 = 20 squares of 10 m: 200 m."
+   },
+   "tags": [
+    "grid",
+    "perimeter"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1001b8de4c7647181979"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.pistes.013",
+   "quest": "transport.pistes",
+   "skill": "MES-A06",
+   "type": "estimate",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "La piste du parc a la forme d’un rectangle.",
+    "en": "The park track is shaped like a rectangle."
+   },
+   "prompt": {
+    "fr": "Elle mesure 98 m sur 52 m. Environ quel est son périmètre ?",
+    "en": "It measures 98 m by 52 m. About what is its perimeter?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 290,
+    "max": 310,
+    "exact_for_check": 300,
+    "calc": "2*(98+52)"
+   },
+   "common_errors": [
+    {
+     "value": 150,
+     "misconception": "mis_perimeter_missing_side",
+     "feedback": {
+      "fr": "Il faut faire le tour complet : 4 côtés.",
+      "en": "You must go all the way round: 4 sides."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis 98 à 100 et 52 à 50.",
+    "en": "Round 98 to 100 and 52 to 50."
+   },
+   "explain": {
+    "fr": "2 × (100 + 50) = 300. Le résultat exact est 300 m.",
+    "en": "2 × (100 + 50) = 300. The exact result is 300 m."
+   },
+   "tags": [
+    "estimation",
+    "perimeter",
+    "rounding"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.voyage.001",
+   "quest": "transport.voyage",
+   "skill": "ARI-OPE-A03a",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa voyage en train puis en autobus.",
+    "en": "Lea travels by train, then by bus."
+   },
+   "prompt": {
+    "fr": "Elle fait 25 km en train et 10 km en autobus. Combien de km en tout ?",
+    "en": "She travels 25 km by train and 10 km by bus. How many km in all?"
+   },
+   "math_text": "25 + 10 = ?",
+   "answer": {
+    "kind": "numeric",
+    "value": 35,
+    "calc": "25+10"
+   },
+   "common_errors": [
+    {
+     "value": 26,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "10 s’ajoute aux dizaines, pas aux unités.",
+      "en": "10 is added to the tens, not the ones."
+     }
+    },
+    {
+     "value": 15,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Les trajets s’ajoutent : on additionne.",
+      "en": "The trips add up, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Ajoute une dizaine à 25.",
+    "en": "Add one ten to 25."
+   },
+   "explain": {
+    "fr": "25 + 10 = 35 km. C’est la réponse.",
+    "en": "25 + 10 = 35 km. That is the answer."
+   },
+   "tags": [
+    "mental-math",
+    "addition",
+    "km"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_de27167597b6d931b81b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.voyage.002",
+   "quest": "transport.voyage",
+   "skill": "ARI-OPE-A03a",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah prend l’avion, puis la voiture.",
+    "en": "Noah takes a plane, then a car."
+   },
+   "prompt": {
+    "fr": "Il fait 47 km en avion puis 26 km en voiture. Combien de km en tout ?",
+    "en": "He goes 47 km by plane then 26 km by car. How many km in all?"
+   },
+   "math_text": "47 + 26 = ?",
+   "answer": {
+    "kind": "numeric",
+    "value": 73,
+    "calc": "47+26"
+   },
+   "common_errors": [
+    {
+     "value": 63,
+     "misconception": "mis_forgot_carry",
+     "feedback": {
+      "fr": "7 + 6 = 13 : écris 3 et retiens 1.",
+      "en": "7 + 6 = 13: write 3 and carry 1."
+     }
+    },
+    {
+     "value": 21,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Les trajets s’ajoutent : on additionne.",
+      "en": "The trips add up, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Fais 47 + 20, puis ajoute 6.",
+    "en": "Do 47 + 20, then add 6."
+   },
+   "explain": {
+    "fr": "47 + 20 = 67, puis 67 + 6 = 73 km.",
+    "en": "47 + 20 = 67, then 67 + 6 = 73 km."
+   },
+   "tags": [
+    "mental-math",
+    "addition",
+    "km"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_380e46db2262f31817c8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.voyage.003",
+   "quest": "transport.voyage",
+   "skill": "ARI-OPE-A03a",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "La famille de Zoé fait un voyage de 90 km.",
+    "en": "Zoe’s family takes a 90 km trip."
+   },
+   "prompt": {
+    "fr": "Elle a déjà fait 34 km. Combien de km reste-t-il ?",
+    "en": "She has already gone 34 km. How many km are left?"
+   },
+   "math_text": "90 - 34 = ?",
+   "answer": {
+    "kind": "numeric",
+    "value": 56,
+    "calc": "90-34"
+   },
+   "common_errors": [
+    {
+     "value": 66,
+     "misconception": "mis_forgot_borrow",
+     "feedback": {
+      "fr": "Pour 0 - 4, il faut emprunter.",
+      "en": "For 0 - 4, you must borrow."
+     }
+    },
+    {
+     "value": 124,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Ce qui reste, c’est une soustraction.",
+      "en": "What is left is a subtraction."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Enlève 30, puis enlève 4.",
+    "en": "Take away 30, then take away 4."
+   },
+   "explain": {
+    "fr": "90 - 30 = 60, puis 60 - 4 = 56 km.",
+    "en": "90 - 30 = 60, then 60 - 4 = 56 km."
+   },
+   "tags": [
+    "mental-math",
+    "subtraction",
+    "km"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.voyage.004",
+   "quest": "transport.voyage",
+   "skill": "ARI-OPE-A03a",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa roule à vélo, puis prend le bateau.",
+    "en": "Lea rides her bike, then takes a boat."
+   },
+   "prompt": {
+    "fr": "Combien font 45 + 9 ?",
+    "en": "What is 45 + 9?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "44",
+      "en": "44"
+     },
+     "misconception": "mis_subtract_instead_of_add"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "55",
+      "en": "55"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "54",
+      "en": "54"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "36",
+      "en": "36"
+     },
+     "misconception": "mis_subtract_instead_of_add"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "45+9"
+    }
+   },
+   "hint": {
+    "fr": "Ajoute 10, puis enlève 1.",
+    "en": "Add 10, then take away 1."
+   },
+   "explain": {
+    "fr": "45 + 10 = 55, puis 55 - 1 = 54.",
+    "en": "45 + 10 = 55, then 55 - 1 = 54."
+   },
+   "tags": [
+    "mental-math",
+    "compensation"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_69e191e31955b334eeb5"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.voyage.005",
+   "quest": "transport.voyage",
+   "skill": "ARI-OPE-A03a",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah regarde la distance qu’il lui reste à faire.",
+    "en": "Noah looks at the distance he still has to go."
+   },
+   "prompt": {
+    "fr": "Combien font 83 - 28 ?",
+    "en": "What is 83 - 28?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "65",
+      "en": "65"
+     },
+     "misconception": "mis_forgot_borrow"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "111",
+      "en": "111"
+     },
+     "misconception": "mis_add_instead_of_subtract"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "56",
+      "en": "56"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "55",
+      "en": "55"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d",
+    "calc_choice": {
+     "d": "83-28"
+    }
+   },
+   "hint": {
+    "fr": "Enlève 30, puis ajoute 2.",
+    "en": "Take away 30, then add 2."
+   },
+   "explain": {
+    "fr": "83 - 30 = 53, puis 53 + 2 = 55.",
+    "en": "83 - 30 = 53, then 53 + 2 = 55."
+   },
+   "tags": [
+    "mental-math",
+    "compensation"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_dda8d8e9ccaca71973f4"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.voyage.006",
+   "quest": "transport.voyage",
+   "skill": "ARI-OPE-A03a",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 4,
+   "story": {
+    "fr": "Le bateau doit faire 80 km et il a fait 36 km.",
+    "en": "The boat must go 80 km and has gone 36 km."
+   },
+   "prompt": {
+    "fr": "Combien de km reste-t-il ?",
+    "en": "How many km are left?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "116",
+      "en": "116"
+     },
+     "misconception": "mis_add_instead_of_subtract"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "56",
+      "en": "56"
+     },
+     "misconception": "mis_forgot_borrow"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "46",
+      "en": "46"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "44",
+      "en": "44"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d",
+    "calc_choice": {
+     "d": "80-36"
+    }
+   },
+   "hint": {
+    "fr": "Va de 36 à 40, puis de 40 à 80.",
+    "en": "Go from 36 to 40, then from 40 to 80."
+   },
+   "explain": {
+    "fr": "36 + 4 = 40 et 40 + 40 = 80. Donc 4 + 40 = 44 km.",
+    "en": "36 + 4 = 40 and 40 + 40 = 80. So 4 + 40 = 44 km."
+   },
+   "tags": [
+    "mental-math",
+    "missing-addend",
+    "km"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_69e191e31955b334eeb5"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.voyage.007",
+   "quest": "transport.voyage",
+   "skill": "ARI-OPE-A03a",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Un train part avec 38 voyageurs.",
+    "en": "A train leaves with 38 passengers."
+   },
+   "prompt": {
+    "fr": "À la première gare, 27 voyageurs montent. Combien de voyageurs y a-t-il maintenant ?",
+    "en": "At the first station, 27 passengers get on. How many passengers are there now?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 65,
+    "calc": "38+27"
+   },
+   "common_errors": [
+    {
+     "value": 55,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Vérifie 8 + 7 = 15 et retiens 1.",
+      "en": "Close! Check 8 + 7 = 15 and carry 1."
+     }
+    },
+    {
+     "value": 11,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Ils montent : on additionne.",
+      "en": "They get on, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Fais 38 + 20, puis ajoute 7.",
+    "en": "Do 38 + 20, then add 7."
+   },
+   "explain": {
+    "fr": "38 + 20 = 58, puis 58 + 7 = 65 voyageurs.",
+    "en": "38 + 20 = 58, then 58 + 7 = 65 passengers."
+   },
+   "tags": [
+    "word-problem",
+    "addition"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_de27167597b6d931b81b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.voyage.008",
+   "quest": "transport.voyage",
+   "skill": "ARI-OPE-A03a",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 4,
+   "story": {
+    "fr": "Léa a 100 $ pour son voyage.",
+    "en": "Lea has $100 for her trip."
+   },
+   "prompt": {
+    "fr": "Elle paie un billet de train de 46 $ et un repas de 18 $. Combien d’argent lui reste-t-il ?",
+    "en": "She pays $46 for a train ticket and $18 for a meal. How much money is left?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 36,
+    "calc": "100-46-18"
+   },
+   "common_errors": [
+    {
+     "value": 54,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as payé seulement le billet. Enlève aussi le repas.",
+      "en": "You paid only the ticket. Take away the meal too."
+     }
+    },
+    {
+     "value": 164,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Elle dépense de l’argent : on soustrait.",
+      "en": "She spends money, so we subtract."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Enlève 46, puis enlève 18.",
+    "en": "Take away 46, then take away 18."
+   },
+   "explain": {
+    "fr": "100 - 46 = 54, puis 54 - 18 = 36 $.",
+    "en": "100 - 46 = 54, then 54 - 18 = 36 dollars."
+   },
+   "tags": [
+    "word-problem",
+    "subtraction",
+    "money",
+    "two-steps"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.voyage.009",
+   "quest": "transport.voyage",
+   "skill": "ARI-OPE-A03a",
+   "type": "truefalse",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa calcule de tête en voyage.",
+    "en": "Lea does maths in her head on the trip."
+   },
+   "prompt": {
+    "fr": "Léa dit que 70 - 28 donne 58. A-t-elle raison ?",
+    "en": "Lea says that 70 - 28 makes 58. Is she right?"
+   },
+   "math_text": "70 - 28 = 58",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_forgot_borrow"
+   },
+   "hint": {
+    "fr": "Vérifie : 58 + 28 donne-t-il 70 ?",
+    "en": "Check: does 58 + 28 make 70?"
+   },
+   "explain": {
+    "fr": "70 - 28 = 42, car 42 + 28 = 70.",
+    "en": "70 - 28 = 42, because 42 + 28 = 70."
+   },
+   "tags": [
+    "true-false",
+    "subtraction",
+    "mental-math"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.voyage.010",
+   "quest": "transport.voyage",
+   "skill": "ARI-OPE-A03a",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah compare quatre petits voyages.",
+    "en": "Noah compares four short trips."
+   },
+   "prompt": {
+    "fr": "Range ces voyages du plus court au plus long, selon le total.",
+    "en": "Put these trips in order, from the shortest total to the longest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "30 km + 25 km",
+      "en": "30 km + 25 km"
+     },
+     "key": "55"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "40 km + 40 km",
+      "en": "40 km + 40 km"
+     },
+     "key": "80"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "19 km + 20 km",
+      "en": "19 km + 20 km"
+     },
+     "key": "39"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "50 km + 15 km",
+      "en": "50 km + 15 km"
+     },
+     "key": "65"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "c",
+     "a",
+     "d",
+     "b"
+    ],
+    "by": "asc",
+    "misconception": "mis_order"
+   },
+   "hint": {
+    "fr": "Calcule le total de chaque voyage.",
+    "en": "Work out the total of each trip."
+   },
+   "explain": {
+    "fr": "39, 55, 65 puis 80 km.",
+    "en": "39, 55, 65 then 80 km."
+   },
+   "tags": [
+    "ordering",
+    "addition",
+    "km"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.voyage.011",
+   "quest": "transport.voyage",
+   "skill": "ARI-OPE-A03a",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 4,
+   "story": {
+    "fr": "Léa compare les distances qui restent.",
+    "en": "Lea compares the distances left."
+   },
+   "prompt": {
+    "fr": "Range ces calculs du plus grand au plus petit résultat.",
+    "en": "Put these sums in order, from the biggest result to the smallest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "90 - 17",
+      "en": "90 - 17"
+     },
+     "key": "73"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "64 - 29",
+      "en": "64 - 29"
+     },
+     "key": "35"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "100 - 48",
+      "en": "100 - 48"
+     },
+     "key": "52"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "81 - 36",
+      "en": "81 - 36"
+     },
+     "key": "45"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "a",
+     "c",
+     "d",
+     "b"
+    ],
+    "by": "desc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Calcule chaque différence de tête.",
+    "en": "Work out each difference in your head."
+   },
+   "explain": {
+    "fr": "90 - 17 = 73, 100 - 48 = 52, 81 - 36 = 45, 64 - 29 = 35. C’est la réponse.",
+    "en": "90 - 17 = 73, 100 - 48 = 52, 81 - 36 = 45, 64 - 29 = 35. That is the answer."
+   },
+   "tags": [
+    "ordering",
+    "subtraction"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.voyage.012",
+   "quest": "transport.voyage",
+   "skill": "ARI-OPE-A03a",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Zoé additionne les trajets de la journée.",
+    "en": "Zoe adds up the day’s trips."
+   },
+   "prompt": {
+    "fr": "Relie chaque voyage à son total de km.",
+    "en": "Match each trip to its total km."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "train 40 km + vélo 12 km",
+       "en": "train 40 km + bike 12 km"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "bateau 25 km + avion 50 km",
+       "en": "boat 25 km + plane 50 km"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "autobus 33 km + marche 6 km",
+       "en": "bus 33 km + walk 6 km"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "39 km",
+       "en": "39 km"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "75 km",
+       "en": "75 km"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "52 km",
+       "en": "52 km"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r3"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r1"
+     ]
+    ],
+    "misconception": "mis_off_by_one"
+   },
+   "hint": {
+    "fr": "Additionne les dizaines, puis les unités.",
+    "en": "Add the tens, then the ones."
+   },
+   "explain": {
+    "fr": "40 + 12 = 52, 25 + 50 = 75 et 33 + 6 = 39.",
+    "en": "40 + 12 = 52, 25 + 50 = 75 and 33 + 6 = 39."
+   },
+   "tags": [
+    "matching",
+    "addition",
+    "km"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.voyage.013",
+   "quest": "transport.voyage",
+   "skill": "ARI-OPE-A03a",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah calcule les km qui restent.",
+    "en": "Noah works out the km left."
+   },
+   "prompt": {
+    "fr": "Relie chaque soustraction à sa réponse.",
+    "en": "Match each subtraction to its answer."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "100 - 25",
+       "en": "100 - 25"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "70 - 38",
+       "en": "70 - 38"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "91 - 47",
+       "en": "91 - 47"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "44",
+       "en": "44"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "75",
+       "en": "75"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "32",
+       "en": "32"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r2"
+     ],
+     [
+      "l2",
+      "r3"
+     ],
+     [
+      "l3",
+      "r1"
+     ]
+    ],
+    "misconception": "mis_forgot_borrow"
+   },
+   "hint": {
+    "fr": "Utilise des pas de 10 pour t’aider.",
+    "en": "Use steps of 10 to help you."
+   },
+   "explain": {
+    "fr": "100 - 25 = 75, 70 - 38 = 32 et 91 - 47 = 44.",
+    "en": "100 - 25 = 75, 70 - 38 = 32 and 91 - 47 = 44."
+   },
+   "tags": [
+    "matching",
+    "subtraction",
+    "mental-math"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.voyage.014",
+   "quest": "transport.voyage",
+   "skill": "ARI-OPE-A03a",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah note les km faits chaque jour du voyage.",
+    "en": "Noah notes the km done each day of the trip."
+   },
+   "prompt": {
+    "fr": "Combien de km en tout les jours 1 et 2 ?",
+    "en": "How many km in all on days 1 and 2?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Km par jour",
+      "en": "Km per day"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "jour 1",
+        "en": "day 1"
+       },
+       "value": 45
+      },
+      {
+       "label": {
+        "fr": "jour 2",
+        "en": "day 2"
+       },
+       "value": 38
+      },
+      {
+       "label": {
+        "fr": "jour 3",
+        "en": "day 3"
+       },
+       "value": 52
+      }
+     ],
+     "max": 60
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 83,
+    "calc": "45+38"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On cherche le total : on additionne.",
+      "en": "We want the total, so we add."
+     }
+    },
+    {
+     "value": 135,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as additionné les trois jours.",
+      "en": "You added all three days."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Lis les barres des jours 1 et 2.",
+    "en": "Read the bars for days 1 and 2."
+   },
+   "explain": {
+    "fr": "45 + 38 = 83 km. C’est la réponse.",
+    "en": "45 + 38 = 83 km. That is the answer."
+   },
+   "tags": [
+    "bar-chart",
+    "addition",
+    "km"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_ec39ac5bd76d5d96906a"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "transport.voyage.015",
+   "quest": "transport.voyage",
+   "skill": "ARI-OPE-A03a",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le voyage se fait en deux étapes.",
+    "en": "The trip has two stages."
+   },
+   "prompt": {
+    "fr": "La première étape fait 48 km et la deuxième 31 km. Environ combien de km en tout ?",
+    "en": "The first stage is 48 km and the second is 31 km. About how many km in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 75,
+    "max": 83,
+    "exact_for_check": 79,
+    "calc": "48+31"
+   },
+   "common_errors": [
+    {
+     "value": 17,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Les étapes s’ajoutent : on additionne.",
+      "en": "The stages add up, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis 48 à 50 et 31 à 30.",
+    "en": "Round 48 to 50 and 31 to 30."
+   },
+   "explain": {
+    "fr": "50 + 30 = 80. Le total exact est 79 km.",
+    "en": "50 + 30 = 80. The exact total is 79 km."
+   },
+   "tags": [
+    "estimation",
+    "rounding",
+    "km"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_380e46db2262f31817c8"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  }
+ ]
+}
