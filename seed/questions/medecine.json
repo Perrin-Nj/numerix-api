@@ -1,0 +1,4707 @@
+{
+ "world": "medecine",
+ "schema": 1,
+ "questions": [
+  {
+   "id": "medecine.doses.001",
+   "quest": "medecine.doses",
+   "skill": "ARI-OPE-A05",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa aide à la clinique des animaux.",
+    "en": "Lea helps at the animal clinic."
+   },
+   "prompt": {
+    "fr": "Un chiot doit prendre 20 gouttes. Il en a pris 12 : combien en reste-t-il ?",
+    "en": "A puppy must take 20 drops. He took 12: how many are left?"
+   },
+   "math_text": "12 + ? = 20",
+   "answer": {
+    "kind": "numeric",
+    "value": 8,
+    "calc": "20-12"
+   },
+   "common_errors": [
+    {
+     "value": 32,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche ce qui manque pour arriver à 20 : on ne réunit pas.",
+      "en": "We look for what is missing to reach 20, so we do not put them together."
+     }
+    },
+    {
+     "value": 7,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les pas entre 12 et 20.",
+      "en": "Close! Count the steps between 12 and 20 again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte à partir de 12 jusqu’à 20.",
+    "en": "Count up from 12 to 20."
+   },
+   "explain": {
+    "fr": "12 + 8 = 20, donc il reste 8 gouttes.",
+    "en": "12 + 8 = 20, so 8 drops are left."
+   },
+   "tags": [
+    "doses",
+    "missing-term",
+    "drops"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_b8cfe25fe19da1d4904d"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.doses.002",
+   "quest": "medecine.doses",
+   "skill": "ARI-OPE-A05",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah prépare la boîte de vitamines du chat.",
+    "en": "Noah prepares the cat’s vitamin box."
+   },
+   "prompt": {
+    "fr": "La boîte doit contenir 15 pastilles et en contient 9. Combien faut-il en ajouter ?",
+    "en": "The box must hold 15 tablets and holds 9. How many must be added?"
+   },
+   "math_text": "9 + ? = 15",
+   "answer": {
+    "kind": "numeric",
+    "value": 6,
+    "calc": "15-9"
+   },
+   "common_errors": [
+    {
+     "value": 24,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche ce qui manque : on ne réunit pas 15 et 9.",
+      "en": "We look for what is missing, so we do not add 15 and 9."
+     }
+    },
+    {
+     "value": 5,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte à partir de 9.",
+      "en": "Close! Count again from 9."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Avance de 9 jusqu’à 15 en comptant tes pas.",
+    "en": "Hop from 9 up to 15 and count your hops."
+   },
+   "explain": {
+    "fr": "9 + 6 = 15. Il manque donc 6 pastilles.",
+    "en": "9 + 6 = 15. So 6 tablets are missing."
+   },
+   "tags": [
+    "doses",
+    "missing-term",
+    "tablets"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_b8cfe25fe19da1d4904d"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.doses.003",
+   "quest": "medecine.doses",
+   "skill": "ARI-OPE-A05",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un chat se fait soigner pendant la journée.",
+    "en": "A cat is being cared for during the day."
+   },
+   "prompt": {
+    "fr": "Il doit recevoir 30 gouttes en tout. Il en a eu 14 le matin : combien de gouttes le soir ?",
+    "en": "He must get 30 drops in all. He got 14 in the morning: how many drops in the evening?"
+   },
+   "math_text": "14 + ? = 30",
+   "answer": {
+    "kind": "numeric",
+    "value": 16,
+    "calc": "30-14"
+   },
+   "common_errors": [
+    {
+     "value": 44,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Il faut trouver le reste, pas le total plus grand.",
+      "en": "We need what is left, not a bigger total."
+     }
+    },
+    {
+     "value": 24,
+     "misconception": "mis_forgot_borrow",
+     "feedback": {
+      "fr": "Attention à l’emprunt : 30 - 14 demande de défaire une dizaine.",
+      "en": "Watch the borrowing: 30 - 14 means breaking a ten."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Passe par 20 : de 14 à 20, puis de 20 à 30.",
+    "en": "Go through 20: from 14 to 20, then from 20 to 30."
+   },
+   "explain": {
+    "fr": "De 14 à 20, il y a 6. De 20 à 30, il y a 10. 6 + 10 = 16.",
+    "en": "From 14 to 20 is 6. From 20 to 30 is 10. 6 + 10 = 16."
+   },
+   "tags": [
+    "doses",
+    "missing-term",
+    "regroup"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.doses.004",
+   "quest": "medecine.doses",
+   "skill": "ARI-OPE-A05",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa remplit la fiche du chiot.",
+    "en": "Lea fills in the puppy’s card."
+   },
+   "prompt": {
+    "fr": "Le chiot doit recevoir 40 gouttes et en a eu 25. Combien de gouttes manquent-elles ?",
+    "en": "The puppy must get 40 drops and had 25. How many drops are missing?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "65",
+      "en": "65"
+     },
+     "misconception": "mis_add_instead_of_subtract"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "15",
+      "en": "15"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "25",
+      "en": "25"
+     },
+     "misconception": "mis_missing_term"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "14",
+      "en": "14"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b",
+    "calc_choice": {
+     "b": "40-25"
+    }
+   },
+   "hint": {
+    "fr": "Cherche ce qu’il faut ajouter à 25 pour avoir 40.",
+    "en": "Find what to add to 25 to get 40."
+   },
+   "explain": {
+    "fr": "25 + 15 = 40. Il manque 15 gouttes.",
+    "en": "25 + 15 = 40. So 15 drops are missing."
+   },
+   "tags": [
+    "doses",
+    "missing-term"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_b8cfe25fe19da1d4904d"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.doses.005",
+   "quest": "medecine.doses",
+   "skill": "ARI-OPE-A05",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah vérifie une dose complète.",
+    "en": "Noah checks a full dose."
+   },
+   "prompt": {
+    "fr": "La dose complète est de 50 gouttes et elle en a reçu 28. Combien lui en faut-il encore ?",
+    "en": "The full dose is 50 drops and she has had 28. How many more does she need?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "78",
+      "en": "78"
+     },
+     "misconception": "mis_add_instead_of_subtract"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "38",
+      "en": "38"
+     },
+     "misconception": "mis_forgot_borrow"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "22",
+      "en": "22"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "21",
+      "en": "21"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "50-28"
+    }
+   },
+   "hint": {
+    "fr": "Va de 28 à 30, puis de 30 à 50.",
+    "en": "Go from 28 to 30, then from 30 to 50."
+   },
+   "explain": {
+    "fr": "De 28 à 30, il y a 2. De 30 à 50, il y a 20. 2 + 20 = 22.",
+    "en": "From 28 to 30 is 2. From 30 to 50 is 20. 2 + 20 = 22."
+   },
+   "tags": [
+    "doses",
+    "missing-term",
+    "regroup"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.doses.006",
+   "quest": "medecine.doses",
+   "skill": "ARI-OPE-A05",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "La vétérinaire prépare deux verres de sirop.",
+    "en": "The vet prepares two glasses of syrup."
+   },
+   "prompt": {
+    "fr": "Elle a 45 gouttes et en met 18 dans le premier verre. Combien dans le deuxième ?",
+    "en": "She has 45 drops and puts 18 in the first glass. How many go in the second?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 27,
+    "calc": "45-18"
+   },
+   "common_errors": [
+    {
+     "value": 63,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Les gouttes sont partagées entre deux verres : on enlève.",
+      "en": "The drops are shared between two glasses, so we take away."
+     }
+    },
+    {
+     "value": 33,
+     "misconception": "mis_forgot_borrow",
+     "feedback": {
+      "fr": "Attention à l’emprunt avec les unités : 5 - 8 ne se fait pas.",
+      "en": "Watch the borrowing: 5 - 8 does not work."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Enlève 18 de 45 en deux étapes.",
+    "en": "Take 18 away from 45 in two steps."
+   },
+   "explain": {
+    "fr": "45 - 18 = 45 - 20 + 2 = 25 + 2 = 27.",
+    "en": "45 - 18 = 45 - 20 + 2 = 25 + 2 = 27."
+   },
+   "tags": [
+    "doses",
+    "word-problem",
+    "subtract"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.doses.007",
+   "quest": "medecine.doses",
+   "skill": "ARI-OPE-A05",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 4,
+   "story": {
+    "fr": "Léa soigne un lapin enrhumé pendant trois jours.",
+    "en": "Lea cares for a rabbit with a cold for three days."
+   },
+   "prompt": {
+    "fr": "Sur 70 gouttes, Léa en donne 30, puis 25. Combien de gouttes reste-t-il ?",
+    "en": "Out of 70 drops, Lea gives 30, then 25. How many drops are left?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 15,
+    "calc": "70-30-25"
+   },
+   "common_errors": [
+    {
+     "value": 40,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu t’es arrêté à la première étape. Retire aussi les 25.",
+      "en": "You stopped at the first step. Take away the 25 too."
+     }
+    },
+    {
+     "value": 125,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Les gouttes données sont enlevées du total.",
+      "en": "The drops given are taken away from the total."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Enlève 30, puis enlève 25 du reste.",
+    "en": "Take away 30, then take 25 from what is left."
+   },
+   "explain": {
+    "fr": "70 - 30 = 40, puis 40 - 25 = 15.",
+    "en": "70 - 30 = 40, then 40 - 25 = 15."
+   },
+   "tags": [
+    "doses",
+    "word-problem",
+    "two-steps"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.doses.008",
+   "quest": "medecine.doses",
+   "skill": "ARI-OPE-A05",
+   "type": "truefalse",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le chat a reçu 24 gouttes sur 30.",
+    "en": "The cat has had 24 drops out of 30."
+   },
+   "prompt": {
+    "fr": "Noah dit qu’il en manque 6. A-t-il raison ?",
+    "en": "Noah says 6 are missing. Is he right?"
+   },
+   "math_text": "24 + 6 = 30",
+   "answer": {
+    "kind": "truefalse",
+    "value": true
+   },
+   "hint": {
+    "fr": "Ajoute 6 à 24 et regarde si tu atteins 30.",
+    "en": "Add 6 to 24 and see if you reach 30."
+   },
+   "explain": {
+    "fr": "24 + 6 = 30, donc Noah a raison.",
+    "en": "24 + 6 = 30, so Noah is right."
+   },
+   "tags": [
+    "doses",
+    "true-false"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.doses.009",
+   "quest": "medecine.doses",
+   "skill": "ARI-OPE-A05",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Trois chiots ont pris des gouttes d’un flacon de 30.",
+    "en": "Three puppies took drops from a bottle of 30."
+   },
+   "prompt": {
+    "fr": "Combien en reste-t-il à chaque fois ? Range les restes du plus petit au plus grand.",
+    "en": "How many are left each time? Put the amounts left in order, smallest to biggest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Après 12 gouttes",
+      "en": "After 12 drops"
+     },
+     "key": "18"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Après 25 gouttes",
+      "en": "After 25 drops"
+     },
+     "key": "5"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Après 8 gouttes",
+      "en": "After 8 drops"
+     },
+     "key": "22"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "a",
+     "c"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Plus on en donne, moins il en reste.",
+    "en": "The more we give, the fewer are left."
+   },
+   "explain": {
+    "fr": "Il reste 5, 18 et 22 gouttes. Le plus petit reste est après 25 gouttes.",
+    "en": "5, 18 and 22 drops are left. The smallest amount left is after 25 drops."
+   },
+   "tags": [
+    "doses",
+    "ordering"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.doses.010",
+   "quest": "medecine.doses",
+   "skill": "ARI-OPE-A05",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa complète des fiches de dose.",
+    "en": "Lea completes dose cards."
+   },
+   "prompt": {
+    "fr": "Relie chaque addition à ce qui manque pour faire 20.",
+    "en": "Match each addition to what is missing to make 20."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "8 + ? = 20",
+       "en": "8 + ? = 20"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "5 + ? = 20",
+       "en": "5 + ? = 20"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "14 + ? = 20",
+       "en": "14 + ? = 20"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "6",
+       "en": "6"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "12",
+       "en": "12"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "15",
+       "en": "15"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r2"
+     ],
+     [
+      "l2",
+      "r3"
+     ],
+     [
+      "l3",
+      "r1"
+     ]
+    ],
+    "misconception": "mis_match"
+   },
+   "hint": {
+    "fr": "Fais d’abord 14 + ? : 20 est tout près.",
+    "en": "Start with 14 + ? since 20 is close."
+   },
+   "explain": {
+    "fr": "8 + 12 = 20, 5 + 15 = 20 et 14 + 6 = 20.",
+    "en": "8 + 12 = 20, 5 + 15 = 20 and 14 + 6 = 20."
+   },
+   "tags": [
+    "doses",
+    "matching"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.doses.011",
+   "quest": "medecine.doses",
+   "skill": "ARI-OPE-A05",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "La flèche montre les gouttes déjà données.",
+    "en": "The arrow shows the drops already given."
+   },
+   "prompt": {
+    "fr": "Il en faut 40 en tout. Combien de gouttes manquent-elles ?",
+    "en": "40 are needed in all. How many drops are missing?"
+   },
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 20,
+     "max": 40,
+     "step": 1,
+     "labels": [
+      20,
+      25,
+      30,
+      35,
+      40
+     ],
+     "arrow": 36
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 4,
+    "calc": "40-36"
+   },
+   "common_errors": [
+    {
+     "value": 36,
+     "misconception": "mis_missing_term",
+     "feedback": {
+      "fr": "36 est déjà donné. Cherche ce qui manque jusqu’à 40.",
+      "en": "36 is already given. Find what is missing up to 40."
+     }
+    },
+    {
+     "value": 76,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche l’écart jusqu’à 40.",
+      "en": "We look for the gap up to 40."
+     }
+    },
+    {
+     "value": 5,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Compte bien les petits traits.",
+      "en": "Close! Count the small marks carefully."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Lis d’abord le nombre montré par la flèche.",
+    "en": "First read the number the arrow shows."
+   },
+   "explain": {
+    "fr": "La flèche est sur 36. De 36 à 40, il y a 4 traits.",
+    "en": "The arrow is on 36. From 36 to 40 is 4 marks."
+   },
+   "tags": [
+    "doses",
+    "number-line"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.doses.012",
+   "quest": "medecine.doses",
+   "skill": "ARI-OPE-A05",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa a préparé deux flacons de gouttes.",
+    "en": "Lea prepared two bottles of drops."
+   },
+   "prompt": {
+    "fr": "Le premier a 48 gouttes et le deuxième en a 31. Environ combien de gouttes en tout ?",
+    "en": "The first has 48 drops and the second has 31. About how many drops in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 74,
+    "max": 86,
+    "exact_for_check": 79,
+    "calc": "48+31"
+   },
+   "common_errors": [
+    {
+     "value": 17,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les deux flacons : on additionne.",
+      "en": "We put both bottles together, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis chaque nombre à la dizaine.",
+    "en": "Round each number to the nearest ten."
+   },
+   "explain": {
+    "fr": "48 devient 50 et 31 devient 30. 50 + 30 = 80, donc environ 80.",
+    "en": "48 becomes 50 and 31 becomes 30. 50 + 30 = 80, so about 80."
+   },
+   "tags": [
+    "doses",
+    "estimation",
+    "rounding"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.poids.001",
+   "quest": "medecine.poids",
+   "skill": "MES-F03",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa pèse le chiot sur la balance de la clinique.",
+    "en": "Lea weighs the puppy on the clinic scale."
+   },
+   "prompt": {
+    "fr": "Le chiot pèse 3 kg. Combien de grammes cela fait-il ? (1 kg = 1000 g)",
+    "en": "The puppy weighs 3 kg. How many grams is that? (1 kg = 1000 g)"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3000,
+    "calc": "3*1000"
+   },
+   "common_errors": [
+    {
+     "value": 300,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "Un kilogramme vaut 1000 g, pas 100 g.",
+      "en": "One kilogram is 1000 g, not 100 g."
+     }
+    },
+    {
+     "value": 3,
+     "misconception": "mis_unit_ignored",
+     "feedback": {
+      "fr": "Il faut convertir les kilogrammes en grammes.",
+      "en": "You need to change kilograms into grams."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Chaque kilogramme vaut 1000 g. Compte 3 fois.",
+    "en": "Each kilogram is worth 1000 g. Count 3 times."
+   },
+   "explain": {
+    "fr": "1000 + 1000 + 1000 = 3000. Le chiot pèse 3000 g.",
+    "en": "1000 + 1000 + 1000 = 3000. The puppy weighs 3000 g."
+   },
+   "tags": [
+    "mass",
+    "kg-to-g",
+    "conversion"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_b8cfe25fe19da1d4904d"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.poids.002",
+   "quest": "medecine.poids",
+   "skill": "MES-F03",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah pèse un lapin tout doux.",
+    "en": "Noah weighs a soft rabbit."
+   },
+   "prompt": {
+    "fr": "Le lapin pèse 2000 g. Combien de kilogrammes cela fait-il ?",
+    "en": "The rabbit weighs 2000 g. How many kilograms is that?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 2,
+    "calc": "2000/1000"
+   },
+   "common_errors": [
+    {
+     "value": 200,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "1000 g font 1 kg : cherche combien de milliers.",
+      "en": "1000 g make 1 kg: look for how many thousands."
+     }
+    },
+    {
+     "value": 2000,
+     "misconception": "mis_unit_ignored",
+     "feedback": {
+      "fr": "Il faut changer d’unité : 2000 g ne s’écrit pas 2000 kg.",
+      "en": "You need to change the unit: 2000 g is not 2000 kg."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Combien de fois 1000 g tiennent dans cette masse ?",
+    "en": "How many times does 1000 g fit in this mass?"
+   },
+   "explain": {
+    "fr": "2000 g, c’est 1000 g + 1000 g, donc 2 kg.",
+    "en": "2000 g is 1000 g + 1000 g, so 2 kg."
+   },
+   "tags": [
+    "mass",
+    "g-to-kg",
+    "conversion"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.poids.003",
+   "quest": "medecine.poids",
+   "skill": "MES-F03",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un hamster et un cochon d’Inde sont pesés à la clinique.",
+    "en": "A hamster and a guinea pig are weighed at the clinic."
+   },
+   "prompt": {
+    "fr": "Le hamster pèse 150 g et le cochon d’Inde 900 g. Quelle masse en tout, en grammes ?",
+    "en": "The hamster weighs 150 g and the guinea pig 900 g. What is the total mass in grams?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 1050,
+    "calc": "150+900"
+   },
+   "common_errors": [
+    {
+     "value": 750,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les deux animaux : on additionne.",
+      "en": "We put both animals together, so we add."
+     }
+    },
+    {
+     "value": 1005,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "Attention à la valeur de position des chiffres.",
+      "en": "Watch the place value of the digits."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne les centaines, puis les dizaines.",
+    "en": "Add the hundreds, then the tens."
+   },
+   "explain": {
+    "fr": "150 + 900 = 1050. Les deux ensemble pèsent 1050 g.",
+    "en": "150 + 900 = 1050. Together they weigh 1050 g."
+   },
+   "tags": [
+    "mass",
+    "add-grams"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_b8cfe25fe19da1d4904d"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.poids.004",
+   "quest": "medecine.poids",
+   "skill": "MES-F03",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Léa note la masse d’un chiot dans son carnet.",
+    "en": "Lea writes a puppy’s mass in her notebook."
+   },
+   "prompt": {
+    "fr": "Le chiot pèse 2 kg et 500 g. Combien de grammes cela fait-il en tout ?",
+    "en": "The puppy weighs 2 kg and 500 g. How many grams is that in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 2500,
+    "calc": "2*1000+500"
+   },
+   "common_errors": [
+    {
+     "value": 502,
+     "misconception": "mis_unit_ignored",
+     "feedback": {
+      "fr": "Les kilogrammes et les grammes ne s’additionnent pas sans conversion.",
+      "en": "Kilograms and grams cannot be added without converting."
+     }
+    },
+    {
+     "value": 2005,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "Attention : 500 g, pas 5 g.",
+      "en": "Watch out: 500 g, not 5 g."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Change d’abord les kilogrammes en grammes.",
+    "en": "First change the kilograms into grams."
+   },
+   "explain": {
+    "fr": "2 kg = 2000 g. Puis 2000 + 500 = 2500.",
+    "en": "2 kg = 2000 g. Then 2000 + 500 = 2500."
+   },
+   "tags": [
+    "mass",
+    "mixed-units",
+    "conversion"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.poids.005",
+   "quest": "medecine.poids",
+   "skill": "MES-F03",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa pèse une petite souris blanche.",
+    "en": "Lea weighs a small white mouse."
+   },
+   "prompt": {
+    "fr": "Quelle unité est la mieux adaptée pour cette masse ?",
+    "en": "Which unit suits this mass best?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "kg",
+      "en": "kg"
+     },
+     "misconception": "mis_unit_confusion"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "g",
+      "en": "g"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "m",
+      "en": "m"
+     },
+     "misconception": "mis_unit_confusion"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "L",
+      "en": "L"
+     },
+     "random": true
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Une souris est très légère.",
+    "en": "A mouse is very light."
+   },
+   "explain": {
+    "fr": "Une souris est légère : on la pèse en grammes.",
+    "en": "A mouse is light, so we weigh it in grams."
+   },
+   "tags": [
+    "mass",
+    "units"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_b8cfe25fe19da1d4904d"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.poids.006",
+   "quest": "medecine.poids",
+   "skill": "MES-F03",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Quatre animaux attendent sur la balance.",
+    "en": "Four animals wait on the scale."
+   },
+   "prompt": {
+    "fr": "Quel animal est le plus lourd ?",
+    "en": "Which animal is the heaviest?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Le chat : 850 g",
+      "en": "The cat: 850 g"
+     },
+     "misconception": "mis_unit_ignored"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Le lapin : 2 kg",
+      "en": "The rabbit: 2 kg"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Le furet : 1500 g",
+      "en": "The ferret: 1500 g"
+     },
+     "misconception": "mis_unit_ignored"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "Le hamster : 900 g",
+      "en": "The hamster: 900 g"
+     },
+     "misconception": "mis_unit_ignored"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Mets toutes les masses dans la même unité.",
+    "en": "Put all the masses in the same unit."
+   },
+   "explain": {
+    "fr": "2 kg = 2000 g. C’est plus que 1500 g, 900 g et 850 g.",
+    "en": "2 kg = 2000 g. That is more than 1500 g, 900 g and 850 g."
+   },
+   "tags": [
+    "mass",
+    "compare",
+    "units"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.poids.007",
+   "quest": "medecine.poids",
+   "skill": "MES-F03",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "La clinique reçoit un sac de nourriture pour chats.",
+    "en": "The clinic receives a bag of cat food."
+   },
+   "prompt": {
+    "fr": "Le sac pèse 6 kg. On le partage en parts égales pour 3 chats. Combien de kg par chat ?",
+    "en": "The bag weighs 6 kg. It is shared equally among 3 cats. How many kg per cat?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "9",
+      "en": "9"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "18",
+      "en": "18"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "2",
+      "en": "2"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "3",
+      "en": "3"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "6/3"
+    }
+   },
+   "hint": {
+    "fr": "Partager en parts égales, c’est diviser.",
+    "en": "Sharing equally means dividing."
+   },
+   "explain": {
+    "fr": "6 kg partagés entre 3 chats : 6 ÷ 3 = 2 kg chacun.",
+    "en": "6 kg shared among 3 cats: 6 ÷ 3 = 2 kg each."
+   },
+   "tags": [
+    "mass",
+    "sharing",
+    "division"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.poids.008",
+   "quest": "medecine.poids",
+   "skill": "MES-F03",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Noah ouvre une boîte de croquettes pour chiens.",
+    "en": "Noah opens a box of dog food."
+   },
+   "prompt": {
+    "fr": "La boîte pèse 2 kg. Il en verse 750 g dans un bol. Combien de grammes restent dans la boîte ?",
+    "en": "The box weighs 2 kg. He pours 750 g into a bowl. How many grams are left in the box?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 1250,
+    "calc": "2*1000-750"
+   },
+   "common_errors": [
+    {
+     "value": 748,
+     "misconception": "mis_unit_ignored",
+     "feedback": {
+      "fr": "Convertis les kilogrammes en grammes avant de soustraire.",
+      "en": "Convert the kilograms into grams before subtracting."
+     }
+    },
+    {
+     "value": 2750,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On verse : la boîte devient plus légère.",
+      "en": "He pours some out, so the box gets lighter."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Écris 2 kg en grammes, puis enlève.",
+    "en": "Write 2 kg in grams, then take away."
+   },
+   "explain": {
+    "fr": "2 kg = 2000 g. Puis 2000 - 750 = 1250.",
+    "en": "2 kg = 2000 g. Then 2000 - 750 = 1250."
+   },
+   "tags": [
+    "mass",
+    "word-problem",
+    "subtract"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.poids.009",
+   "quest": "medecine.poids",
+   "skill": "MES-F03",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Une chatte a eu trois chatons.",
+    "en": "A cat has had three kittens."
+   },
+   "prompt": {
+    "fr": "Chaque chaton pèse 500 g. Combien de grammes pèsent les trois chatons ensemble ?",
+    "en": "Each kitten weighs 500 g. How many grams do the three kittens weigh together?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 1500,
+    "calc": "3*500"
+   },
+   "common_errors": [
+    {
+     "value": 503,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Trois chatons de même masse : on multiplie.",
+      "en": "Three kittens of the same mass: we multiply."
+     }
+    },
+    {
+     "value": 150,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "Attention à la valeur de position.",
+      "en": "Watch the place value."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne 500 g trois fois.",
+    "en": "Add 500 g three times."
+   },
+   "explain": {
+    "fr": "500 + 500 + 500 = 1500. Ils pèsent 1500 g.",
+    "en": "500 + 500 + 500 = 1500. They weigh 1500 g."
+   },
+   "tags": [
+    "mass",
+    "word-problem",
+    "multiply"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.poids.010",
+   "quest": "medecine.poids",
+   "skill": "MES-F03",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa pèse trois chiots un après l’autre.",
+    "en": "Lea weighs three puppies one after the other."
+   },
+   "prompt": {
+    "fr": "Ils pèsent 2 kg, 3 kg et 4 kg. Quelle est leur masse totale, en kg ?",
+    "en": "They weigh 2 kg, 3 kg and 4 kg. What is their total mass, in kg?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 9,
+    "calc": "2+3+4"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié un chiot en route.",
+      "en": "You left out one puppy."
+     }
+    },
+    {
+     "value": 24,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Ici on additionne les masses.",
+      "en": "Here we add the masses."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne les trois masses une à la fois.",
+    "en": "Add the three masses one at a time."
+   },
+   "explain": {
+    "fr": "2 + 3 = 5, puis 5 + 4 = 9 kg.",
+    "en": "2 + 3 = 5, then 5 + 4 = 9 kg."
+   },
+   "tags": [
+    "mass",
+    "word-problem",
+    "add"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.poids.011",
+   "quest": "medecine.poids",
+   "skill": "MES-F03",
+   "type": "truefalse",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah regarde la fiche d’un chat.",
+    "en": "Noah looks at a cat’s card."
+   },
+   "prompt": {
+    "fr": "Il dit qu’un chat de 4 kg pèse 400 g. A-t-il raison ?",
+    "en": "He says a 4 kg cat weighs 400 g. Is he right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_unit_confusion"
+   },
+   "hint": {
+    "fr": "Combien de grammes dans un kilogramme ?",
+    "en": "How many grams are in one kilogram?"
+   },
+   "explain": {
+    "fr": "4 kg = 4000 g, pas 400 g.",
+    "en": "4 kg = 4000 g, not 400 g."
+   },
+   "tags": [
+    "mass",
+    "true-false",
+    "conversion"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.poids.012",
+   "quest": "medecine.poids",
+   "skill": "MES-F03",
+   "type": "order",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Quatre animaux sont inscrits sur la fiche du jour.",
+    "en": "Four animals are on today’s card."
+   },
+   "prompt": {
+    "fr": "Range les masses du plus léger au plus lourd.",
+    "en": "Put the masses in order, lightest to heaviest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "1 kg",
+      "en": "1 kg"
+     },
+     "key": "1000"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "800 g",
+      "en": "800 g"
+     },
+     "key": "800"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "1 kg 200 g",
+      "en": "1 kg 200 g"
+     },
+     "key": "1200"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "900 g",
+      "en": "900 g"
+     },
+     "key": "900"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "d",
+     "a",
+     "c"
+    ],
+    "by": "asc",
+    "misconception": "mis_unit_ignored"
+   },
+   "hint": {
+    "fr": "Change tout en grammes avant de comparer.",
+    "en": "Change everything into grams before comparing."
+   },
+   "explain": {
+    "fr": "800 g, 900 g, 1000 g (1 kg), puis 1200 g (1 kg 200 g).",
+    "en": "800 g, 900 g, 1000 g (1 kg), then 1200 g (1 kg 200 g)."
+   },
+   "tags": [
+    "mass",
+    "ordering"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.poids.013",
+   "quest": "medecine.poids",
+   "skill": "MES-F03",
+   "type": "match",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa associe des animaux à leur masse habituelle.",
+    "en": "Lea matches animals with their usual mass."
+   },
+   "prompt": {
+    "fr": "Relie chaque animal à la masse qui lui convient.",
+    "en": "Match each animal to the mass that fits."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "une souris",
+       "en": "a mouse"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "un chat",
+       "en": "a cat"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "un chien moyen",
+       "en": "a medium dog"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "4 kg",
+       "en": "4 kg"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "20 kg",
+       "en": "20 kg"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "30 g",
+       "en": "30 g"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r3"
+     ],
+     [
+      "l2",
+      "r1"
+     ],
+     [
+      "l3",
+      "r2"
+     ]
+    ],
+    "misconception": "mis_unit_confusion"
+   },
+   "hint": {
+    "fr": "Commence par le plus léger des trois.",
+    "en": "Start with the lightest of the three."
+   },
+   "explain": {
+    "fr": "Une souris pèse 30 g, un chat 4 kg et un chien moyen 20 kg.",
+    "en": "A mouse weighs 30 g, a cat 4 kg and a medium dog 20 kg."
+   },
+   "tags": [
+    "mass",
+    "matching",
+    "units"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_b8cfe25fe19da1d4904d"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.poids.014",
+   "quest": "medecine.poids",
+   "skill": "MES-F03",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le diagramme montre la masse de trois animaux, en kg.",
+    "en": "The chart shows the mass of three animals, in kg."
+   },
+   "prompt": {
+    "fr": "Combien de kg de plus le chat pèse-t-il que le lapin ?",
+    "en": "How many more kg does the cat weigh than the rabbit?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Masse en kg",
+      "en": "Mass in kg"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "chiot",
+        "en": "puppy"
+       },
+       "value": 3
+      },
+      {
+       "label": {
+        "fr": "chat",
+        "en": "cat"
+       },
+       "value": 4
+      },
+      {
+       "label": {
+        "fr": "lapin",
+        "en": "rabbit"
+       },
+       "value": 2
+      }
+     ],
+     "max": 5
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 2,
+    "calc": "4-2"
+   },
+   "common_errors": [
+    {
+     "value": 6,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On compare : on cherche l’écart.",
+      "en": "We compare, so we look for the gap."
+     }
+    },
+    {
+     "value": 4,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "4 est la masse du chat. Cherche l’écart avec le lapin.",
+      "en": "4 is the cat’s mass. Find the gap with the rabbit."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Lis la barre du chat et celle du lapin.",
+    "en": "Read the cat’s bar and the rabbit’s bar."
+   },
+   "explain": {
+    "fr": "Le chat pèse 4 kg et le lapin 2 kg. 4 - 2 = 2.",
+    "en": "The cat weighs 4 kg and the rabbit 2 kg. 4 - 2 = 2."
+   },
+   "tags": [
+    "mass",
+    "bar-chart",
+    "compare"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.poids.015",
+   "quest": "medecine.poids",
+   "skill": "MES-F03",
+   "type": "estimate",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa porte trois sacs de nourriture pour la clinique.",
+    "en": "Lea carries three bags of food for the clinic."
+   },
+   "prompt": {
+    "fr": "Chaque sac pèse 19 kg. Environ combien de kg portent-ils en tout ?",
+    "en": "Each bag weighs 19 kg. About how many kg is that in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 52,
+    "max": 62,
+    "exact_for_check": 57,
+    "calc": "3*19"
+   },
+   "common_errors": [
+    {
+     "value": 22,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Trois sacs égaux : on multiplie.",
+      "en": "Three equal bags: we multiply."
+     }
+    },
+    {
+     "value": 570,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "Vérifie l’ordre de grandeur de ta réponse.",
+      "en": "Check the size of your answer."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis 19 à la dizaine la plus proche.",
+    "en": "Round 19 to the nearest ten."
+   },
+   "explain": {
+    "fr": "19 est proche de 20. 3 × 20 = 60, donc environ 60 kg.",
+    "en": "19 is close to 20. 3 × 20 = 60, so about 60 kg."
+   },
+   "tags": [
+    "mass",
+    "estimation",
+    "multiply"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.horaire.001",
+   "quest": "medecine.horaire",
+   "skill": "MES-G01",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Noah regarde l’horloge de la salle d’attente.",
+    "en": "Noah looks at the waiting room clock."
+   },
+   "prompt": {
+    "fr": "Quelle heure est-il ?",
+    "en": "What time is it?"
+   },
+   "visual": {
+    "kind": "clock",
+    "data": {
+     "hour": 4,
+     "minute": 0
+    }
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "4 h",
+      "en": "4:00"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "12 h",
+      "en": "12:00"
+     },
+     "misconception": "mis_clock_hands"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "8 h",
+      "en": "8:00"
+     },
+     "misconception": "mis_clock_hands"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "4 h 15",
+      "en": "4:15"
+     },
+     "random": true
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "La petite aiguille montre l’heure.",
+    "en": "The short hand shows the hour."
+   },
+   "explain": {
+    "fr": "La petite aiguille est sur le 4. La grande est sur le 12 : il est 4 h.",
+    "en": "The short hand is on the 4. The long hand is on the 12: it is 4:00."
+   },
+   "tags": [
+    "clock",
+    "time",
+    "read-clock"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_ac1857d889a14047cef5"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.horaire.002",
+   "quest": "medecine.horaire",
+   "skill": "MES-G01",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa attend son rendez-vous chez la vétérinaire.",
+    "en": "Lea waits for her appointment at the vet."
+   },
+   "prompt": {
+    "fr": "Regarde l’horloge. Quelle heure est-il ?",
+    "en": "Look at the clock. What time is it?"
+   },
+   "visual": {
+    "kind": "clock",
+    "data": {
+     "hour": 2,
+     "minute": 30
+    }
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "2 h 30",
+      "en": "2:30"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "6 h 10",
+      "en": "6:10"
+     },
+     "misconception": "mis_clock_hands"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "3 h 30",
+      "en": "3:30"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "2 h 15",
+      "en": "2:15"
+     },
+     "random": true
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "La grande aiguille est tout en bas.",
+    "en": "The long hand points straight down."
+   },
+   "explain": {
+    "fr": "La grande aiguille est sur le 6 : c’est la demie. La petite est après le 2 : 2 h 30.",
+    "en": "The long hand is on the 6: half past. The short hand is just after 2: 2:30."
+   },
+   "tags": [
+    "clock",
+    "time",
+    "half-hour"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_ac1857d889a14047cef5"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.horaire.003",
+   "quest": "medecine.horaire",
+   "skill": "MES-G01",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "La clinique affiche l’heure du prochain rendez-vous.",
+    "en": "The clinic shows the time of the next appointment."
+   },
+   "prompt": {
+    "fr": "Quelle heure l’horloge montre-t-elle ?",
+    "en": "What time does the clock show?"
+   },
+   "visual": {
+    "kind": "clock",
+    "data": {
+     "hour": 5,
+     "minute": 15
+    }
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "3 h 25",
+      "en": "3:25"
+     },
+     "misconception": "mis_clock_hands"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "5 h 15",
+      "en": "5:15"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "5 h 3",
+      "en": "5:03"
+     },
+     "misconception": "mis_clock_hands"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "6 h 15",
+      "en": "6:15"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "La grande aiguille est sur le 3. Compte par 5.",
+    "en": "The long hand is on the 3. Count by 5s."
+   },
+   "explain": {
+    "fr": "Sur le 3, on compte 15 minutes : il est 5 h 15.",
+    "en": "On the 3, we count 15 minutes: it is 5:15."
+   },
+   "tags": [
+    "clock",
+    "time",
+    "quarter-hour"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_ac1857d889a14047cef5"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.horaire.004",
+   "quest": "medecine.horaire",
+   "skill": "MES-G01",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Le rendez-vous de Noah est à 2 h.",
+    "en": "Noah’s appointment is at 2 o’clock."
+   },
+   "prompt": {
+    "fr": "Il dure 1 heure : à quelle heure finit-il ? Écris seulement l’heure.",
+    "en": "It lasts 1 hour: at what time does it end? Write only the hour."
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3,
+    "calc": "2+1"
+   },
+   "common_errors": [
+    {
+     "value": 1,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "La visite continue : on avance sur l’horloge.",
+      "en": "The visit goes on, so we move forward on the clock."
+     }
+    },
+    {
+     "value": 4,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Avance d’une seule heure.",
+      "en": "Close! Move forward just one hour."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Avance d’une heure sur l’horloge.",
+    "en": "Move forward one hour on the clock."
+   },
+   "explain": {
+    "fr": "2 h + 1 h = 3 h. La visite finit à 3 h.",
+    "en": "2:00 + 1 hour = 3:00. The visit ends at 3:00."
+   },
+   "tags": [
+    "time",
+    "duration",
+    "hours"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.horaire.005",
+   "quest": "medecine.horaire",
+   "skill": "MES-G01",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa écoute les consignes du docteur.",
+    "en": "Lea listens to the doctor’s instructions."
+   },
+   "prompt": {
+    "fr": "Combien de minutes y a-t-il dans une demi-heure ?",
+    "en": "How many minutes are there in half an hour?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 30,
+    "calc": "60/2"
+   },
+   "common_errors": [
+    {
+     "value": 50,
+     "misconception": "mis_time_base",
+     "feedback": {
+      "fr": "Une heure vaut 60 minutes, pas 100.",
+      "en": "An hour is 60 minutes, not 100."
+     }
+    },
+    {
+     "value": 60,
+     "misconception": "mis_unit_confusion",
+     "feedback": {
+      "fr": "60 minutes, c’est une heure entière.",
+      "en": "60 minutes is a whole hour."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Une heure vaut 60 minutes. Prends-en la moitié.",
+    "en": "An hour is 60 minutes. Take half of it."
+   },
+   "explain": {
+    "fr": "60 ÷ 2 = 30. Une demi-heure dure 30 minutes.",
+    "en": "60 ÷ 2 = 30. Half an hour is 30 minutes."
+   },
+   "tags": [
+    "time",
+    "minutes",
+    "half-hour"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.horaire.006",
+   "quest": "medecine.horaire",
+   "skill": "MES-G01",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le rendez-vous est à 3 h. Léa arrive en avance.",
+    "en": "The appointment is at 3 o’clock. Lea arrives early."
+   },
+   "prompt": {
+    "fr": "Elle arrive 15 minutes avant 3 h. Combien de minutes après 2 h arrive-t-elle ?",
+    "en": "She arrives 15 minutes before 3:00. How many minutes after 2:00 does she arrive?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 45,
+    "calc": "60-15"
+   },
+   "common_errors": [
+    {
+     "value": 75,
+     "misconception": "mis_time_base",
+     "feedback": {
+      "fr": "Une heure vaut 60 minutes : on recule de 15.",
+      "en": "An hour is 60 minutes: we go back 15."
+     }
+    },
+    {
+     "value": 15,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "15 est le temps d’avance. Cherche les minutes après 2 h.",
+      "en": "15 is the time early. Find the minutes after 2:00."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "De 2 h à 3 h, il y a 60 minutes. Enlève l’avance.",
+    "en": "From 2:00 to 3:00 is 60 minutes. Take off the early part."
+   },
+   "explain": {
+    "fr": "60 - 15 = 45. Elle arrive à 2 h 45.",
+    "en": "60 - 15 = 45. She arrives at 2:45."
+   },
+   "tags": [
+    "time",
+    "minutes",
+    "base-60"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.horaire.007",
+   "quest": "medecine.horaire",
+   "skill": "MES-G01",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah décrit l’horloge de la clinique.",
+    "en": "Noah describes the clinic clock."
+   },
+   "prompt": {
+    "fr": "La petite aiguille est sur le 9 et la grande sur le 12. Quelle heure est-il ?",
+    "en": "The short hand is on the 9 and the long hand on the 12. What time is it?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "12 h",
+      "en": "12:00"
+     },
+     "misconception": "mis_clock_hands"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "9 h",
+      "en": "9:00"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "9 h 12",
+      "en": "9:12"
+     },
+     "misconception": "mis_clock_hands"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "10 h",
+      "en": "10:00"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Quelle aiguille montre l’heure ?",
+    "en": "Which hand shows the hour?"
+   },
+   "explain": {
+    "fr": "La petite aiguille donne l’heure : 9. La grande sur le 12 veut dire pile : 9 h.",
+    "en": "The short hand gives the hour: 9. The long hand on 12 means o’clock: 9:00."
+   },
+   "tags": [
+    "clock",
+    "time",
+    "hands"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.horaire.008",
+   "quest": "medecine.horaire",
+   "skill": "MES-G01",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "La clinique des animaux ouvre le matin.",
+    "en": "The animal clinic opens in the morning."
+   },
+   "prompt": {
+    "fr": "Elle ouvre à 9 h et ferme à 12 h. Combien d’heures est-elle ouverte ?",
+    "en": "It opens at 9:00 and closes at 12:00. For how many hours is it open?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "21",
+      "en": "21"
+     },
+     "misconception": "mis_add_instead_of_subtract"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "3",
+      "en": "3"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "4",
+      "en": "4"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "2",
+      "en": "2"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b",
+    "calc_choice": {
+     "b": "12-9"
+    }
+   },
+   "hint": {
+    "fr": "Compte les heures de 9 h jusqu’à 12 h.",
+    "en": "Count the hours from 9:00 up to 12:00."
+   },
+   "explain": {
+    "fr": "De 9 h à 12 h : 10 h, 11 h, 12 h. Cela fait 3 heures.",
+    "en": "From 9:00 to 12:00: 10, 11, 12. That is 3 hours."
+   },
+   "tags": [
+    "time",
+    "duration",
+    "word-problem"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.horaire.009",
+   "quest": "medecine.horaire",
+   "skill": "MES-G01",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 4,
+   "story": {
+    "fr": "Le docteur reçoit un patient après l’autre.",
+    "en": "The doctor sees one patient after another."
+   },
+   "prompt": {
+    "fr": "Noah a rendez-vous à 3 h 30. Le suivant a lieu 1 heure plus tard : à quelle heure ?",
+    "en": "Noah’s appointment is at 3:30. The next one is 1 hour later: at what time?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "5 h 30",
+      "en": "5:30"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "4 h",
+      "en": "4:00"
+     },
+     "misconception": "mis_partial_result"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "2 h 30",
+      "en": "2:30"
+     },
+     "misconception": "mis_subtract_instead_of_add"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "4 h 30",
+      "en": "4:30"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d"
+   },
+   "hint": {
+    "fr": "Ajoute l’heure, et garde les 30 minutes.",
+    "en": "Add the hour and keep the 30 minutes."
+   },
+   "explain": {
+    "fr": "3 h 30 + 1 h = 4 h 30.",
+    "en": "3:30 + 1 hour = 4:30."
+   },
+   "tags": [
+    "time",
+    "add-hours",
+    "word-problem"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.horaire.010",
+   "quest": "medecine.horaire",
+   "skill": "MES-G01",
+   "type": "truefalse",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa apprend à lire l’horloge.",
+    "en": "Lea is learning to read the clock."
+   },
+   "prompt": {
+    "fr": "Elle dit qu’à 6 h pile, la petite aiguille est sur le 12. A-t-elle raison ?",
+    "en": "She says that at 6:00 sharp the short hand is on the 12. Is she right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_clock_hands"
+   },
+   "hint": {
+    "fr": "À 6 h pile, la petite aiguille montre l’heure.",
+    "en": "At 6:00 sharp, the short hand shows the hour."
+   },
+   "explain": {
+    "fr": "À 6 h pile, la petite aiguille est sur le 6. La grande est sur le 12.",
+    "en": "At 6:00 sharp, the short hand is on the 6. The long hand is on the 12."
+   },
+   "tags": [
+    "clock",
+    "true-false",
+    "hands"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.horaire.011",
+   "quest": "medecine.horaire",
+   "skill": "MES-G01",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Quatre rendez-vous sont notés pour la matinée.",
+    "en": "Four appointments are written down for the morning."
+   },
+   "prompt": {
+    "fr": "Range les rendez-vous du plus tôt au plus tard.",
+    "en": "Put the appointments in order, earliest to latest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "9 h",
+      "en": "9:00"
+     },
+     "key": "900"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "7 h 45",
+      "en": "7:45"
+     },
+     "key": "745"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "10 h 15",
+      "en": "10:15"
+     },
+     "key": "1015"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "8 h 30",
+      "en": "8:30"
+     },
+     "key": "830"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "d",
+     "a",
+     "c"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_partial"
+   },
+   "hint": {
+    "fr": "Regarde d’abord l’heure, puis les minutes.",
+    "en": "Look at the hour first, then the minutes."
+   },
+   "explain": {
+    "fr": "7 h 45, 8 h 30, 9 h puis 10 h 15.",
+    "en": "7:45, 8:30, 9:00 then 10:15."
+   },
+   "tags": [
+    "time",
+    "ordering"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.horaire.012",
+   "quest": "medecine.horaire",
+   "skill": "MES-G01",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa lit l’heure de deux façons.",
+    "en": "Lea reads the time in two ways."
+   },
+   "prompt": {
+    "fr": "Relie chaque heure à ses mots.",
+    "en": "Match each time to its words."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "3 h 30",
+       "en": "3:30"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "6 h 15",
+       "en": "6:15"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "9 h 45",
+       "en": "9:45"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "six heures et quart",
+       "en": "quarter past six"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "dix heures moins le quart",
+       "en": "quarter to ten"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "trois heures et demie",
+       "en": "half past three"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r3"
+     ],
+     [
+      "l2",
+      "r1"
+     ],
+     [
+      "l3",
+      "r2"
+     ]
+    ],
+    "misconception": "mis_match"
+   },
+   "hint": {
+    "fr": "Pense à une demi-heure, un quart, un quart avant.",
+    "en": "Think of half past, quarter past, quarter to."
+   },
+   "explain": {
+    "fr": "3 h 30 est trois heures et demie. 6 h 15 est six heures et quart. 9 h 45 est dix heures moins le quart.",
+    "en": "3:30 is half past three. 6:15 is quarter past six. 9:45 is quarter to ten."
+   },
+   "tags": [
+    "time",
+    "matching",
+    "words"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.horaire.013",
+   "quest": "medecine.horaire",
+   "skill": "MES-G01",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa attend l’heure de son rendez-vous.",
+    "en": "Lea waits for the time of her appointment."
+   },
+   "prompt": {
+    "fr": "Combien de minutes après l’heure la grande aiguille montre-t-elle ?",
+    "en": "How many minutes past the hour does the long hand show?"
+   },
+   "visual": {
+    "kind": "clock",
+    "data": {
+     "hour": 7,
+     "minute": 30
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 30,
+    "calc": "6*5"
+   },
+   "common_errors": [
+    {
+     "value": 6,
+     "misconception": "mis_clock_hands",
+     "feedback": {
+      "fr": "6 est le nombre sous l’aiguille. Compte de 5 en 5.",
+      "en": "6 is the number under the hand. Count by 5s."
+     }
+    },
+    {
+     "value": 7,
+     "misconception": "mis_clock_hands",
+     "feedback": {
+      "fr": "7 est l’heure, montrée par la petite aiguille.",
+      "en": "7 is the hour, shown by the short hand."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "La grande aiguille montre les minutes. Compte par 5.",
+    "en": "The long hand shows the minutes. Count by 5s."
+   },
+   "explain": {
+    "fr": "La grande aiguille est sur le 6. 6 fois 5 minutes, ça fait 30 minutes.",
+    "en": "The long hand is on the 6. 6 times 5 minutes is 30 minutes."
+   },
+   "tags": [
+    "clock",
+    "minutes",
+    "skip-count"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_ac1857d889a14047cef5"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.horaire.014",
+   "quest": "medecine.horaire",
+   "skill": "MES-G01",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah commence sa visite juste après 2 h.",
+    "en": "Noah starts his visit just after 2 o’clock."
+   },
+   "prompt": {
+    "fr": "Elle va de 2 h 02 à 3 h 01. Environ combien de minutes dure-t-elle ?",
+    "en": "It goes from 2:02 to 3:01. About how many minutes does it last?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 54,
+    "max": 64,
+    "exact_for_check": 59,
+    "calc": "61-2"
+   },
+   "common_errors": [
+    {
+     "value": 99,
+     "misconception": "mis_time_base",
+     "feedback": {
+      "fr": "Une heure compte 60 minutes, pas 100.",
+      "en": "An hour has 60 minutes, not 100."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Cherche les heures rondes les plus proches.",
+    "en": "Find the nearest round hours."
+   },
+   "explain": {
+    "fr": "De 2 h à 3 h, c’est environ une heure, soit environ 60 minutes.",
+    "en": "From 2:00 to 3:00 is about one hour, about 60 minutes."
+   },
+   "tags": [
+    "time",
+    "estimation",
+    "duration"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.dossier.001",
+   "quest": "medecine.dossier",
+   "skill": "STA-03a",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa note les visites de la semaine à la clinique.",
+    "en": "Lea notes the week’s visits at the clinic."
+   },
+   "prompt": {
+    "fr": "Regarde les images. Combien de visites mardi ?",
+    "en": "Look at the pictures. How many visits on Tuesday?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Visites par jour",
+      "en": "Visits per day"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "lundi",
+        "en": "Monday"
+       },
+       "count": 4
+      },
+      {
+       "label": {
+        "fr": "mardi",
+        "en": "Tuesday"
+       },
+       "count": 6
+      },
+      {
+       "label": {
+        "fr": "mercredi",
+        "en": "Wednesday"
+       },
+       "count": 5
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 6,
+    "calc": "6"
+   },
+   "common_errors": [
+    {
+     "value": 4,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as lu la ligne du lundi. Cherche mardi.",
+      "en": "You read the Monday row. Look for Tuesday."
+     }
+    },
+    {
+     "value": 5,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as lu la ligne du mercredi. Cherche mardi.",
+      "en": "You read the Wednesday row. Look for Tuesday."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les images sur la ligne du mardi.",
+    "en": "Count the pictures in the Tuesday row."
+   },
+   "explain": {
+    "fr": "La ligne du mardi a 6 images : 6 visites.",
+    "en": "The Tuesday row has 6 pictures: 6 visits."
+   },
+   "tags": [
+    "pictograph",
+    "visits"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_9ad2d33dcc8c509dde96"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.dossier.002",
+   "quest": "medecine.dossier",
+   "skill": "STA-03a",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le diagramme montre les animaux venus cette semaine.",
+    "en": "The chart shows the animals that came this week."
+   },
+   "prompt": {
+    "fr": "Combien de chats de plus que d’oiseaux sont venus ?",
+    "en": "How many more cats than birds came?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Animaux venus",
+      "en": "Animals that came"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "lapins",
+        "en": "rabbits"
+       },
+       "value": 8
+      },
+      {
+       "label": {
+        "fr": "chats",
+        "en": "cats"
+       },
+       "value": 12
+      },
+      {
+       "label": {
+        "fr": "chiens",
+        "en": "dogs"
+       },
+       "value": 10
+      },
+      {
+       "label": {
+        "fr": "oiseaux",
+        "en": "birds"
+       },
+       "value": 6
+      }
+     ],
+     "max": 14
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 6,
+    "calc": "12-6"
+   },
+   "common_errors": [
+    {
+     "value": 18,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On compare deux barres : on cherche l’écart.",
+      "en": "We compare two bars, so we look for the gap."
+     }
+    },
+    {
+     "value": 12,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "12 est la barre des chats. Cherche l’écart avec les oiseaux.",
+      "en": "12 is the cats’ bar. Find the gap with the birds."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Lis la barre des chats et celle des oiseaux.",
+    "en": "Read the cats’ bar and the birds’ bar."
+   },
+   "explain": {
+    "fr": "12 chats et 6 oiseaux : 12 - 6 = 6.",
+    "en": "12 cats and 6 birds: 12 - 6 = 6."
+   },
+   "tags": [
+    "bar-chart",
+    "compare"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.dossier.003",
+   "quest": "medecine.dossier",
+   "skill": "STA-03a",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le diagramme montre les visites de la semaine.",
+    "en": "The chart shows the week’s visits."
+   },
+   "prompt": {
+    "fr": "Quel jour y a-t-il eu le plus de visites ?",
+    "en": "On which day were there the most visits?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Visites par jour",
+      "en": "Visits per day"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "lundi",
+        "en": "Monday"
+       },
+       "value": 8
+      },
+      {
+       "label": {
+        "fr": "mardi",
+        "en": "Tuesday"
+       },
+       "value": 12
+      },
+      {
+       "label": {
+        "fr": "mercredi",
+        "en": "Wednesday"
+       },
+       "value": 9
+      },
+      {
+       "label": {
+        "fr": "jeudi",
+        "en": "Thursday"
+       },
+       "value": 7
+      }
+     ],
+     "max": 14
+    }
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Le lundi",
+      "en": "On Monday"
+     },
+     "misconception": "mis_read_wrong_bar"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Le mardi",
+      "en": "On Tuesday"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Le mercredi",
+      "en": "On Wednesday"
+     },
+     "misconception": "mis_read_wrong_bar"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "Le jeudi",
+      "en": "On Thursday"
+     },
+     "misconception": "mis_read_wrong_bar"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Cherche la barre la plus haute.",
+    "en": "Look for the tallest bar."
+   },
+   "explain": {
+    "fr": "La barre du mardi est la plus haute, avec 12 visites.",
+    "en": "Tuesday’s bar is the tallest, with 12 visits."
+   },
+   "tags": [
+    "bar-chart",
+    "most"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.dossier.004",
+   "quest": "medecine.dossier",
+   "skill": "STA-03a",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le diagramme montre les visites de trois jours.",
+    "en": "The chart shows the visits for three days."
+   },
+   "prompt": {
+    "fr": "Combien de visites en tout pendant ces trois jours ?",
+    "en": "How many visits in all over these three days?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Visites par jour",
+      "en": "Visits per day"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "lundi",
+        "en": "Monday"
+       },
+       "value": 8
+      },
+      {
+       "label": {
+        "fr": "mardi",
+        "en": "Tuesday"
+       },
+       "value": 12
+      },
+      {
+       "label": {
+        "fr": "mercredi",
+        "en": "Wednesday"
+       },
+       "value": 9
+      }
+     ],
+     "max": 14
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 29,
+    "calc": "8+12+9"
+   },
+   "common_errors": [
+    {
+     "value": 20,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié une barre. Il y en a trois.",
+      "en": "You left out a bar. There are three."
+     }
+    },
+    {
+     "value": 28,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Refais l’addition étape par étape.",
+      "en": "Close! Redo the addition step by step."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne les deux premières barres, puis la dernière.",
+    "en": "Add the first two bars, then the last one."
+   },
+   "explain": {
+    "fr": "8 + 12 = 20, puis 20 + 9 = 29.",
+    "en": "8 + 12 = 20, then 20 + 9 = 29."
+   },
+   "tags": [
+    "bar-chart",
+    "add"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.dossier.005",
+   "quest": "medecine.dossier",
+   "skill": "STA-03a",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le dossier montre le nombre de visites par animal.",
+    "en": "The record shows the number of visits per animal."
+   },
+   "prompt": {
+    "fr": "Regarde les images. Combien d’animaux sont venus en tout ?",
+    "en": "Look at the pictures. How many animals came in all?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Animaux venus",
+      "en": "Animals that came"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "chiens",
+        "en": "dogs"
+       },
+       "count": 7
+      },
+      {
+       "label": {
+        "fr": "chats",
+        "en": "cats"
+       },
+       "count": 5
+      },
+      {
+       "label": {
+        "fr": "lapins",
+        "en": "rabbits"
+       },
+       "count": 4
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 16,
+    "calc": "7+5+4"
+   },
+   "common_errors": [
+    {
+     "value": 12,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié une ligne. Il y en a trois.",
+      "en": "You left out a row. There are three."
+     }
+    },
+    {
+     "value": 15,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les images.",
+      "en": "Close! Count the pictures again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les images de chaque ligne, puis additionne.",
+    "en": "Count the pictures in each row, then add."
+   },
+   "explain": {
+    "fr": "7 + 5 = 12, puis 12 + 4 = 16.",
+    "en": "7 + 5 = 12, then 12 + 4 = 16."
+   },
+   "tags": [
+    "pictograph",
+    "add"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.dossier.006",
+   "quest": "medecine.dossier",
+   "skill": "STA-03a",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "La fiche de la clinique note les visites de trois jours.",
+    "en": "The clinic card notes the visits of three days."
+   },
+   "prompt": {
+    "fr": "Il y a eu 5 visites lundi, 7 mardi et 3 mercredi. Combien de visites en tout ?",
+    "en": "There were 5 visits on Monday, 7 on Tuesday and 3 on Wednesday. How many visits in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 15,
+    "calc": "5+7+3"
+   },
+   "common_errors": [
+    {
+     "value": 12,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié un jour dans ton addition.",
+      "en": "You left a day out of your addition."
+     }
+    },
+    {
+     "value": 14,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Refais l’addition.",
+      "en": "Close! Do the addition again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne 5 et 7, puis ajoute le reste.",
+    "en": "Add 5 and 7, then add what is left."
+   },
+   "explain": {
+    "fr": "5 + 7 = 12, puis 12 + 3 = 15.",
+    "en": "5 + 7 = 12, then 12 + 3 = 15."
+   },
+   "tags": [
+    "table",
+    "visits",
+    "add"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.dossier.007",
+   "quest": "medecine.dossier",
+   "skill": "STA-03a",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah apprend à lire un diagramme à barres.",
+    "en": "Noah is learning to read a bar chart."
+   },
+   "prompt": {
+    "fr": "Que montre la barre la plus haute ?",
+    "en": "What does the tallest bar show?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Le plus petit nombre",
+      "en": "The smallest number"
+     },
+     "misconception": "mis_order_reversed"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Le plus grand nombre",
+      "en": "The biggest number"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Le total de tout",
+      "en": "The total of all"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "Le premier jour",
+      "en": "The first day"
+     },
+     "random": true
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Plus la barre est haute, plus le nombre est ...",
+    "en": "The taller the bar, the more ..."
+   },
+   "explain": {
+    "fr": "Une barre haute montre un grand nombre.",
+    "en": "A tall bar shows a big number."
+   },
+   "tags": [
+    "bar-chart",
+    "concept"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.dossier.008",
+   "quest": "medecine.dossier",
+   "skill": "STA-03a",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "La fiche donne les visites : chiens 9, chats 14, lapins 6.",
+    "en": "The card gives the visits: dogs 9, cats 14, rabbits 6."
+   },
+   "prompt": {
+    "fr": "Combien de visites de chiens et de lapins ensemble ?",
+    "en": "How many visits of dogs and rabbits together?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "23",
+      "en": "23"
+     },
+     "misconception": "mis_read_wrong_bar"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "15",
+      "en": "15"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "20",
+      "en": "20"
+     },
+     "misconception": "mis_read_wrong_bar"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "14",
+      "en": "14"
+     },
+     "misconception": "mis_read_wrong_bar"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b",
+    "calc_choice": {
+     "b": "9+6"
+    }
+   },
+   "hint": {
+    "fr": "Choisis seulement les deux bonnes lignes.",
+    "en": "Pick just the two right rows."
+   },
+   "explain": {
+    "fr": "Chiens 9 et lapins 6 : 9 + 6 = 15.",
+    "en": "Dogs 9 and rabbits 6: 9 + 6 = 15."
+   },
+   "tags": [
+    "table",
+    "word-problem"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.dossier.009",
+   "quest": "medecine.dossier",
+   "skill": "STA-03a",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 4,
+   "story": {
+    "fr": "Lundi, la clinique a vu 18 patients.",
+    "en": "On Monday, the clinic saw 18 patients."
+   },
+   "prompt": {
+    "fr": "Mardi, elle en a vu 7 de moins. Combien de patients mardi ?",
+    "en": "On Tuesday, it saw 7 fewer. How many patients on Tuesday?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 11,
+    "calc": "18-7"
+   },
+   "common_errors": [
+    {
+     "value": 25,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "« De moins » veut dire qu’on enlève.",
+      "en": "“Fewer” means we take away."
+     }
+    },
+    {
+     "value": 10,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte à partir de 18.",
+      "en": "Close! Count again from 18."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Recule de 7 à partir de 18.",
+    "en": "Count back 7 from 18."
+   },
+   "explain": {
+    "fr": "18 - 7 = 11 patients le mardi.",
+    "en": "18 - 7 = 11 patients on Tuesday."
+   },
+   "tags": [
+    "table",
+    "word-problem",
+    "subtract"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.dossier.010",
+   "quest": "medecine.dossier",
+   "skill": "STA-03a",
+   "type": "truefalse",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Il y a eu 9 visites mercredi et 12 visites jeudi.",
+    "en": "There were 9 visits on Wednesday and 12 visits on Thursday."
+   },
+   "prompt": {
+    "fr": "Noah dit que jeudi a eu plus de visites. A-t-il raison ?",
+    "en": "Noah says Thursday had more visits. Is he right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": true
+   },
+   "hint": {
+    "fr": "Compare 9 et 12.",
+    "en": "Compare 9 and 12."
+   },
+   "explain": {
+    "fr": "12 est plus grand que 9, donc jeudi a eu plus de visites.",
+    "en": "12 is bigger than 9, so Thursday had more visits."
+   },
+   "tags": [
+    "table",
+    "true-false",
+    "compare"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.dossier.011",
+   "quest": "medecine.dossier",
+   "skill": "STA-03a",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "La fiche montre les visites de quatre jours.",
+    "en": "The card shows the visits of four days."
+   },
+   "prompt": {
+    "fr": "Range les jours du moins de visites au plus de visites.",
+    "en": "Put the days in order, from fewest visits to most visits."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Lundi : 12 visites",
+      "en": "Monday: 12 visits"
+     },
+     "key": "12"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Mardi : 7 visites",
+      "en": "Tuesday: 7 visits"
+     },
+     "key": "7"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Mercredi : 15 visites",
+      "en": "Wednesday: 15 visits"
+     },
+     "key": "15"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "Jeudi : 9 visites",
+      "en": "Thursday: 9 visits"
+     },
+     "key": "9"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "d",
+     "a",
+     "c"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Trouve d’abord le plus petit nombre.",
+    "en": "First find the smallest number."
+   },
+   "explain": {
+    "fr": "7, 9, 12 puis 15 : mardi, jeudi, lundi, mercredi.",
+    "en": "7, 9, 12 then 15: Tuesday, Thursday, Monday, Wednesday."
+   },
+   "tags": [
+    "ordering",
+    "table"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.dossier.012",
+   "quest": "medecine.dossier",
+   "skill": "STA-03a",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa explique les parties d’un diagramme.",
+    "en": "Lea explains the parts of a chart."
+   },
+   "prompt": {
+    "fr": "Relie chaque mot à ce qu’il montre.",
+    "en": "Match each word to what it shows."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "le titre",
+       "en": "the title"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "une barre",
+       "en": "a bar"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "une étiquette",
+       "en": "a label"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "le nom sous la barre",
+       "en": "the name under the bar"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "ce dont parle le diagramme",
+       "en": "what the chart is about"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "la valeur d’une catégorie",
+       "en": "the value of a category"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r2"
+     ],
+     [
+      "l2",
+      "r3"
+     ],
+     [
+      "l3",
+      "r1"
+     ]
+    ],
+    "misconception": "mis_match"
+   },
+   "hint": {
+    "fr": "Le titre est tout en haut du diagramme.",
+    "en": "The title is at the top of the chart."
+   },
+   "explain": {
+    "fr": "Le titre dit le sujet. La barre montre un nombre. L’étiquette donne le nom.",
+    "en": "The title tells the topic. The bar shows a number. The label gives the name."
+   },
+   "tags": [
+    "bar-chart",
+    "matching",
+    "vocabulary"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.dossier.013",
+   "quest": "medecine.dossier",
+   "skill": "STA-03a",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Trois jours de visites : 19, 21 et 18.",
+    "en": "Three days of visits: 19, 21 and 18."
+   },
+   "prompt": {
+    "fr": "Environ combien de visites en tout ?",
+    "en": "About how many visits in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 53,
+    "max": 63,
+    "exact_for_check": 58,
+    "calc": "19+21+18"
+   },
+   "common_errors": [
+    {
+     "value": 40,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié un jour dans ton calcul.",
+      "en": "You left out a day in your sum."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis chaque nombre à 20.",
+    "en": "Round each number to 20."
+   },
+   "explain": {
+    "fr": "Chaque jour fait environ 20 visites. 20 + 20 + 20 = 60, donc environ 60.",
+    "en": "Each day is about 20 visits. 20 + 20 + 20 = 60, so about 60."
+   },
+   "tags": [
+    "estimation",
+    "table",
+    "rounding"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.pansements.001",
+   "quest": "medecine.pansements",
+   "skill": "ARI-OPE-A03b",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa range des boîtes de pansements dans la trousse.",
+    "en": "Lea puts boxes of bandages in the kit."
+   },
+   "prompt": {
+    "fr": "Il y a 3 boîtes. Chaque boîte contient 5 pansements. Combien de pansements en tout ?",
+    "en": "There are 3 boxes. Each box holds 5 bandages. How many bandages in all?"
+   },
+   "math_text": "3 × 5 = ?",
+   "answer": {
+    "kind": "numeric",
+    "value": 15,
+    "calc": "3*5"
+   },
+   "common_errors": [
+    {
+     "value": 8,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Trois groupes égaux : on multiplie.",
+      "en": "Three equal groups: we multiply."
+     }
+    },
+    {
+     "value": 14,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Compte par bonds de 5.",
+      "en": "Close! Count by jumps of 5."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte par bonds de 5, trois fois.",
+    "en": "Count by jumps of 5, three times."
+   },
+   "explain": {
+    "fr": "5, 10, 15. Trois boîtes de 5 font 15 pansements.",
+    "en": "5, 10, 15. Three boxes of 5 make 15 bandages."
+   },
+   "tags": [
+    "bandages",
+    "multiplication",
+    "groups"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e22e56f2116e3fd7f5a4"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.pansements.002",
+   "quest": "medecine.pansements",
+   "skill": "ARI-OPE-A03b",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah prépare des boîtes pour la clinique.",
+    "en": "Noah prepares boxes for the clinic."
+   },
+   "prompt": {
+    "fr": "Il remplit 4 boîtes de 6 pansements. Combien de pansements a-t-il préparés ?",
+    "en": "He fills 4 boxes with 6 bandages each. How many bandages did he prepare?"
+   },
+   "math_text": "4 × 6 = ?",
+   "answer": {
+    "kind": "numeric",
+    "value": 24,
+    "calc": "4*6"
+   },
+   "common_errors": [
+    {
+     "value": 10,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Quatre groupes de 6 : on multiplie.",
+      "en": "Four groups of 6: we multiply."
+     }
+    },
+    {
+     "value": 18,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as perdu un bond en comptant par 6.",
+      "en": "You lost a jump counting by 6."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte par 6 : 6, 12, ...",
+    "en": "Count by 6: 6, 12, ..."
+   },
+   "explain": {
+    "fr": "6, 12, 18, 24. Il y a 24 pansements.",
+    "en": "6, 12, 18, 24. There are 24 bandages."
+   },
+   "tags": [
+    "bandages",
+    "multiplication",
+    "skip-count"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_e22e56f2116e3fd7f5a4"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.pansements.003",
+   "quest": "medecine.pansements",
+   "skill": "ARI-OPE-A03b",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "La trousse de la clinique est bien remplie.",
+    "en": "The clinic kit is well stocked."
+   },
+   "prompt": {
+    "fr": "Léa a 8 sachets, avec 4 pansements dans chacun. Combien en tout ?",
+    "en": "Lea has 8 packets, with 4 bandages in each. How many in all?"
+   },
+   "math_text": "8 × 4 = ?",
+   "answer": {
+    "kind": "numeric",
+    "value": 32,
+    "calc": "8*4"
+   },
+   "common_errors": [
+    {
+     "value": 12,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Huit groupes de 4 : on multiplie.",
+      "en": "Eight groups of 4: we multiply."
+     }
+    },
+    {
+     "value": 36,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as compté un bond de trop.",
+      "en": "You counted one jump too many."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Le double de 4 donne 8, puis double encore.",
+    "en": "Double 4 to get 8, then double again."
+   },
+   "explain": {
+    "fr": "8 × 4 : 4 × 2 = 8, 8 × 2 = 16, 16 × 2 = 32.",
+    "en": "8 × 4: 4 × 2 = 8, 8 × 2 = 16, 16 × 2 = 32."
+   },
+   "tags": [
+    "bandages",
+    "multiplication",
+    "doubling"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.pansements.004",
+   "quest": "medecine.pansements",
+   "skill": "ARI-OPE-A03b",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa compte les pansements du grand placard.",
+    "en": "Lea counts the bandages in the big cupboard."
+   },
+   "prompt": {
+    "fr": "Le placard compte 6 étagères, chacune garnie de 9 pansements. Quel est le total ?",
+    "en": "The cupboard has 6 shelves, each stocked with 9 bandages. What is the total?"
+   },
+   "math_text": "6 × 9 = ?",
+   "answer": {
+    "kind": "numeric",
+    "value": 54,
+    "calc": "6*9"
+   },
+   "common_errors": [
+    {
+     "value": 15,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Six groupes de 9 : on multiplie.",
+      "en": "Six groups of 9: we multiply."
+     }
+    },
+    {
+     "value": 45,
+     "misconception": "mis_digit_swap",
+     "feedback": {
+      "fr": "Attention : tu as inversé les chiffres.",
+      "en": "Careful: you swapped the digits."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à 6 × 10, puis enlève 6.",
+    "en": "Think 6 × 10, then take away 6."
+   },
+   "explain": {
+    "fr": "6 × 10 = 60, puis 60 - 6 = 54.",
+    "en": "6 × 10 = 60, then 60 - 6 = 54."
+   },
+   "tags": [
+    "bandages",
+    "multiplication",
+    "nines"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.pansements.005",
+   "quest": "medecine.pansements",
+   "skill": "ARI-OPE-A03b",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Noah regarde deux boîtes identiques.",
+    "en": "Noah looks at two identical boxes."
+   },
+   "prompt": {
+    "fr": "Chaque boîte contient 10 pansements. Combien de pansements dans 2 boîtes ?",
+    "en": "Each box holds 10 bandages. How many bandages in 2 boxes?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "12",
+      "en": "12"
+     },
+     "misconception": "mis_add_instead_of_multiply"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "210",
+      "en": "210"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "20",
+      "en": "20"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "10",
+      "en": "10"
+     },
+     "misconception": "mis_missing_term"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "2*10"
+    }
+   },
+   "hint": {
+    "fr": "Deux groupes de 10, c’est un double.",
+    "en": "Two groups of 10 is a double."
+   },
+   "explain": {
+    "fr": "10 + 10 = 20. Deux boîtes de 10 font 20 pansements.",
+    "en": "10 + 10 = 20. Two boxes of 10 make 20 bandages."
+   },
+   "tags": [
+    "bandages",
+    "multiplication",
+    "tens"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.pansements.006",
+   "quest": "medecine.pansements",
+   "skill": "ARI-OPE-A03b",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa cherche la bonne opération pour la fiche de stock.",
+    "en": "Lea looks for the right operation for the stock card."
+   },
+   "prompt": {
+    "fr": "Il y a 5 boîtes de 4 pansements. Quelle opération donne le total ?",
+    "en": "There are 5 boxes of 4 bandages. Which operation gives the total?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "5 + 4",
+      "en": "5 + 4"
+     },
+     "misconception": "mis_add_instead_of_multiply"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "5 × 4",
+      "en": "5 × 4"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "5 - 4",
+      "en": "5 - 4"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "4 ÷ 5",
+      "en": "4 ÷ 5"
+     },
+     "misconception": "mis_wrong_operation"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Groupes égaux : quelle opération répète une addition ?",
+    "en": "Equal groups: which operation repeats an addition?"
+   },
+   "explain": {
+    "fr": "5 groupes de 4 : 4 + 4 + 4 + 4 + 4, donc 5 × 4.",
+    "en": "5 groups of 4: 4 + 4 + 4 + 4 + 4, so 5 × 4."
+   },
+   "tags": [
+    "bandages",
+    "multiplication",
+    "choose-operation"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.pansements.007",
+   "quest": "medecine.pansements",
+   "skill": "ARI-OPE-A03b",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Chaque trousse de secours contient 9 pansements.",
+    "en": "Each first aid kit holds 9 bandages."
+   },
+   "prompt": {
+    "fr": "Léa prépare 3 trousses. Combien de pansements lui faut-il ?",
+    "en": "Lea prepares 3 kits. How many bandages does she need?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "12",
+      "en": "12"
+     },
+     "misconception": "mis_add_instead_of_multiply"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "27",
+      "en": "27"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "6",
+      "en": "6"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "36",
+      "en": "36"
+     },
+     "misconception": "mis_skip_count"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b",
+    "calc_choice": {
+     "b": "9*3"
+    }
+   },
+   "hint": {
+    "fr": "Compte par bonds de 9, trois fois.",
+    "en": "Count by jumps of 9, three times."
+   },
+   "explain": {
+    "fr": "9, 18, 27. Il lui faut 27 pansements.",
+    "en": "9, 18, 27. She needs 27 bandages."
+   },
+   "tags": [
+    "bandages",
+    "word-problem",
+    "multiplication"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.pansements.008",
+   "quest": "medecine.pansements",
+   "skill": "ARI-OPE-A03b",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Noah compte les pansements du cabinet.",
+    "en": "Noah counts the bandages at the office."
+   },
+   "prompt": {
+    "fr": "Une boîte contient 12 pansements. Noah a 4 boîtes et en utilise 10. Combien en reste-t-il ?",
+    "en": "A box holds 12 bandages. Noah has 4 boxes and uses 10. How many are left?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 38,
+    "calc": "4*12-10"
+   },
+   "common_errors": [
+    {
+     "value": 48,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié d’enlever les pansements utilisés.",
+      "en": "You forgot to take away the bandages used."
+     }
+    },
+    {
+     "value": 58,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Les pansements utilisés sont enlevés.",
+      "en": "The bandages used are taken away."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Cherche d’abord le total, puis enlève.",
+    "en": "Find the total first, then take away."
+   },
+   "explain": {
+    "fr": "4 × 12 = 48. Puis 48 - 10 = 38.",
+    "en": "4 × 12 = 48. Then 48 - 10 = 38."
+   },
+   "tags": [
+    "bandages",
+    "word-problem",
+    "two-steps"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.pansements.009",
+   "quest": "medecine.pansements",
+   "skill": "ARI-OPE-A03b",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "La table du cabinet est bien rangée.",
+    "en": "The table at the office is tidy."
+   },
+   "prompt": {
+    "fr": "Il y a 5 rangées de 8 pansements sur la table. Combien de pansements en tout ?",
+    "en": "There are 5 rows of 8 bandages on the table. How many bandages in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 40,
+    "calc": "5*8"
+   },
+   "common_errors": [
+    {
+     "value": 13,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Cinq rangées égales : on multiplie.",
+      "en": "Five equal rows: we multiply."
+     }
+    },
+    {
+     "value": 35,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as perdu un bond en comptant par 8.",
+      "en": "You lost a jump counting by 8."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à 5 × 10, puis enlève 2 fois 5.",
+    "en": "Think 5 × 10, then take away 2 times 5."
+   },
+   "explain": {
+    "fr": "5 × 8 = 40. 5 × 10 = 50, moins 10, donne 40.",
+    "en": "5 × 8 = 40. 5 × 10 = 50 minus 10 gives 40."
+   },
+   "tags": [
+    "bandages",
+    "word-problem",
+    "rows"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.pansements.010",
+   "quest": "medecine.pansements",
+   "skill": "ARI-OPE-A03b",
+   "type": "truefalse",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa vérifie le compte de son ami.",
+    "en": "Lea checks her friend’s count."
+   },
+   "prompt": {
+    "fr": "Noah dit que 4 boîtes de 7 pansements font 24 pansements. A-t-il raison ?",
+    "en": "Noah says 4 boxes of 7 bandages make 24 bandages. Is he right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_skip_count"
+   },
+   "hint": {
+    "fr": "Compte par 7 : 7, 14, ...",
+    "en": "Count by 7: 7, 14, ..."
+   },
+   "explain": {
+    "fr": "4 × 7 = 28, pas 24.",
+    "en": "4 × 7 = 28, not 24."
+   },
+   "tags": [
+    "bandages",
+    "true-false",
+    "multiplication"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.pansements.011",
+   "quest": "medecine.pansements",
+   "skill": "ARI-OPE-A03b",
+   "type": "order",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa compare quatre piles de pansements.",
+    "en": "Lea compares four piles of bandages."
+   },
+   "prompt": {
+    "fr": "Range les piles du plus petit au plus grand nombre de pansements.",
+    "en": "Put the piles in order, from the fewest to the most bandages."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "3 boîtes de 6",
+      "en": "3 boxes of 6"
+     },
+     "key": "18"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "2 boîtes de 7",
+      "en": "2 boxes of 7"
+     },
+     "key": "14"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "4 boîtes de 5",
+      "en": "4 boxes of 5"
+     },
+     "key": "20"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "3 boîtes de 5",
+      "en": "3 boxes of 5"
+     },
+     "key": "15"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "d",
+     "a",
+     "c"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_partial"
+   },
+   "hint": {
+    "fr": "Calcule le total de chaque pile d’abord.",
+    "en": "Work out the total of each pile first."
+   },
+   "explain": {
+    "fr": "14, 15, 18 puis 20 pansements.",
+    "en": "14, 15, 18 then 20 bandages."
+   },
+   "tags": [
+    "bandages",
+    "ordering",
+    "products"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.pansements.012",
+   "quest": "medecine.pansements",
+   "skill": "ARI-OPE-A03b",
+   "type": "match",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah associe chaque rangement à son total.",
+    "en": "Noah matches each arrangement with its total."
+   },
+   "prompt": {
+    "fr": "Relie chaque rangement au bon total.",
+    "en": "Match each arrangement to the right total."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "3 boîtes de 4",
+       "en": "3 boxes of 4"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "5 boîtes de 2",
+       "en": "5 boxes of 2"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "2 boîtes de 9",
+       "en": "2 boxes of 9"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "10 pansements",
+       "en": "10 bandages"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "18 pansements",
+       "en": "18 bandages"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "12 pansements",
+       "en": "12 bandages"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r3"
+     ],
+     [
+      "l2",
+      "r1"
+     ],
+     [
+      "l3",
+      "r2"
+     ]
+    ],
+    "misconception": "mis_match"
+   },
+   "hint": {
+    "fr": "Commence par 2 boîtes de 9 : c’est un double.",
+    "en": "Start with 2 boxes of 9: it is a double."
+   },
+   "explain": {
+    "fr": "3 × 4 = 12, 5 × 2 = 10 et 2 × 9 = 18.",
+    "en": "3 × 4 = 12, 5 × 2 = 10 and 2 × 9 = 18."
+   },
+   "tags": [
+    "bandages",
+    "matching",
+    "products"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.pansements.013",
+   "quest": "medecine.pansements",
+   "skill": "ARI-OPE-A03b",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Les pansements sont rangés en rangées égales sur le plateau.",
+    "en": "The bandages are laid out in equal rows on the tray."
+   },
+   "prompt": {
+    "fr": "Combien de pansements y a-t-il sur le plateau ?",
+    "en": "How many bandages are on the tray?"
+   },
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 6,
+     "rows": 3,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "pansement",
+        "en": "bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "pansement",
+        "en": "bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "pansement",
+        "en": "bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "pansement",
+        "en": "bandage"
+       }
+      },
+      {
+       "x": 5,
+       "y": 1,
+       "label": {
+        "fr": "pansement",
+        "en": "bandage"
+       }
+      },
+      {
+       "x": 6,
+       "y": 1,
+       "label": {
+        "fr": "pansement",
+        "en": "bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "pansement",
+        "en": "bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "pansement",
+        "en": "bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "pansement",
+        "en": "bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "pansement",
+        "en": "bandage"
+       }
+      },
+      {
+       "x": 5,
+       "y": 2,
+       "label": {
+        "fr": "pansement",
+        "en": "bandage"
+       }
+      },
+      {
+       "x": 6,
+       "y": 2,
+       "label": {
+        "fr": "pansement",
+        "en": "bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "pansement",
+        "en": "bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": {
+        "fr": "pansement",
+        "en": "bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": {
+        "fr": "pansement",
+        "en": "bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 3,
+       "label": {
+        "fr": "pansement",
+        "en": "bandage"
+       }
+      },
+      {
+       "x": 5,
+       "y": 3,
+       "label": {
+        "fr": "pansement",
+        "en": "bandage"
+       }
+      },
+      {
+       "x": 6,
+       "y": 3,
+       "label": {
+        "fr": "pansement",
+        "en": "bandage"
+       }
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 18,
+    "calc": "3*6"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Il y a des rangées égales : on multiplie.",
+      "en": "There are equal rows: we multiply."
+     }
+    },
+    {
+     "value": 17,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte une rangée entière.",
+      "en": "Close! Count a whole row again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les rangées, puis les pansements par rangée.",
+    "en": "Count the rows, then the bandages per row."
+   },
+   "explain": {
+    "fr": "3 rangées de 6 : 6 + 6 + 6 = 18.",
+    "en": "3 rows of 6: 6 + 6 + 6 = 18."
+   },
+   "tags": [
+    "bandages",
+    "array",
+    "multiplication"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "medecine.pansements.014",
+   "quest": "medecine.pansements",
+   "skill": "ARI-OPE-A03b",
+   "type": "estimate",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "La clinique commande des boîtes de pansements.",
+    "en": "The clinic orders boxes of bandages."
+   },
+   "prompt": {
+    "fr": "Elle reçoit 6 boîtes de 19 pansements. Environ combien de pansements en tout ?",
+    "en": "It receives 6 boxes of 19 bandages. About how many bandages in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 104,
+    "max": 124,
+    "exact_for_check": 114,
+    "calc": "6*19"
+   },
+   "common_errors": [
+    {
+     "value": 25,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Six boîtes égales : on multiplie.",
+      "en": "Six equal boxes: we multiply."
+     }
+    },
+    {
+     "value": 1140,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "Vérifie l’ordre de grandeur de ta réponse.",
+      "en": "Check the size of your answer."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis 19 à 20, puis multiplie.",
+    "en": "Round 19 to 20, then multiply."
+   },
+   "explain": {
+    "fr": "19 est proche de 20. 6 × 20 = 120, donc environ 120.",
+    "en": "19 is close to 20. 6 × 20 = 120, so about 120."
+   },
+   "tags": [
+    "bandages",
+    "estimation",
+    "rounding"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  }
+ ]
+}
