@@ -46,7 +46,7 @@ func TestValidateOnlyNeverTouchesTheDatabase(t *testing.T) {
 func TestDryRunThenApplyThenNothingToDo(t *testing.T) {
 	dir := t.TempDir()
 	dbPath := filepath.Join(dir, "seed.db")
-	base := []string{"--db", dbPath, "--seed-dir", seedDir, "--only", "worlds,quests,questions", "--actor", "tester"}
+	base := []string{"--db", dbPath, "--seed-dir", seedDir, "--only", "assets,worlds,quests,questions", "--actor", "tester"}
 
 	code, out, errOut := runSeed(t, nil, append(base, "--dry-run")...)
 	if code != 0 || !strings.Contains(out, "dry run (nothing written)") || !has(out, "quests added=89") {
@@ -86,7 +86,7 @@ func TestDryRunThenApplyThenNothingToDo(t *testing.T) {
 
 func TestRollbackUndoesARun(t *testing.T) {
 	dbPath := filepath.Join(t.TempDir(), "seed.db")
-	base := []string{"--db", dbPath, "--seed-dir", seedDir, "--only", "worlds,quests,questions"}
+	base := []string{"--db", dbPath, "--seed-dir", seedDir, "--only", "assets,worlds,quests,questions"}
 	code, out, errOut := runSeed(t, nil, base...)
 	if code != 0 {
 		t.Fatalf("apply: %q %q", out, errOut)

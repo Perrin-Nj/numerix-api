@@ -36,11 +36,19 @@ func newFixture(t *testing.T) *fixture {
 	if err != nil {
 		t.Fatal(err)
 	}
-	f, err := Read(seedDir, ReadOptions{SkipAssets: true})
+	f := readExamples(t)
+	return &fixture{ctx: ctx, db: db, repo: contentdb.New(db, mongosync.NewOutbox(true)), assets: assetstore.New(db), g: g, f: f}
+}
+
+// readExamples loads worlds, quests and ONLY the sample questions (these tests were written for them; the full bank
+// is validated against the real assets by TestSeedFilesValidate).
+func readExamples(t *testing.T) *Files {
+	t.Helper()
+	f, err := Read(seedDir, ReadOptions{SkipAssets: true, Only: []string{ExamplesFile}})
 	if err != nil {
 		t.Fatal(err)
 	}
-	return &fixture{ctx: ctx, db: db, repo: contentdb.New(db, mongosync.NewOutbox(true)), assets: assetstore.New(db), g: g, f: f}
+	return f
 }
 
 func (x *fixture) count(t *testing.T, query string, args ...any) int {
@@ -230,10 +238,7 @@ func TestSeedWorldsMatchTheMigration(t *testing.T) {
 }
 
 func TestSeedShape(t *testing.T) {
-	f, err := Read(seedDir, ReadOptions{SkipAssets: true})
-	if err != nil {
-		t.Fatal(err)
-	}
+	f := readExamples(t)
 	if len(f.Worlds) != 20 || len(f.Quests) != 89 {
 		t.Fatalf("worlds=%d quests=%d, want 20 and 89", len(f.Worlds), len(f.Quests))
 	}
@@ -268,8 +273,13 @@ func TestExcludeSkipsTheExamples(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if len(f.Questions()) != 0 {
-		t.Fatalf("examples not excluded: %d", len(f.Questions()))
+	for _, qf := range f.QuestionFiles {
+		if qf.Name == ExamplesFile {
+			t.Fatalf("examples not excluded: %d questions in %s", len(qf.Questions), qf.Name)
+		}
+	}
+	if len(f.Questions()) == 0 {
+		t.Fatal("excluding the examples must keep the real question files")
 	}
 }
 

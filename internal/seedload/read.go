@@ -57,7 +57,8 @@ func (f *Files) Questions() []*content.Question {
 // ReadOptions changes what Read loads.
 type ReadOptions struct {
 	Exclude    []string // question file stems to skip ("_examples")
-	SkipAssets bool     // do not read seed/assets (tests of questions only)
+	Only       []string // when set, read only these question file stems (tests use ["_examples"])
+	SkipAssets bool     // do not read seed/assets (tests of questions only); world heroes and quest icons are cleared, they cannot resolve
 }
 
 // readJSON decodes a file strictly.
@@ -125,7 +126,7 @@ func Read(dir string, opt ReadOptions) (*Files, error) {
 	sort.Strings(files)
 	for _, path := range files {
 		stem := strings.TrimSuffix(filepath.Base(path), ".json")
-		if slices.Contains(opt.Exclude, stem) {
+		if slices.Contains(opt.Exclude, stem) || (len(opt.Only) > 0 && !slices.Contains(opt.Only, stem)) {
 			continue
 		}
 		var doc struct {
@@ -176,6 +177,14 @@ func Read(dir string, opt ReadOptions) (*Files, error) {
 		}
 	}
 	f.Hash = hex.EncodeToString(sum.Sum(nil))
+	if opt.SkipAssets { // no asset rows will exist, so no reference to one can be valid
+		for i := range f.Worlds {
+			f.Worlds[i].HeroAsset = ""
+		}
+		for i := range f.Quests {
+			f.Quests[i].IconAsset = ""
+		}
+	}
 	return f, nil
 }
 

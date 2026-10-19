@@ -27,18 +27,11 @@ const testSeedDir = "../../seed"
 // seedBank loads worlds, quests and the sample questions into the fixture database. mutate may reshape the files first.
 func seedBank(t *testing.T, f feedFixture, mutate func(*seedload.Files)) {
 	t.Helper()
-	files, err := seedload.Read(testSeedDir, seedload.ReadOptions{SkipAssets: true})
+	// these tests exercise the sample questions only; the full bank needs the real assets (the seed command loads both)
+	files, err := seedload.Read(testSeedDir, seedload.ReadOptions{SkipAssets: true, Only: []string{seedload.ExamplesFile}})
 	if err != nil {
 		t.Fatal(err)
 	}
-	// these tests exercise the sample questions only; the full bank needs the real assets (the seed command loads both)
-	var examples []seedload.QuestionFile
-	for _, qf := range files.QuestionFiles {
-		if qf.Name == seedload.ExamplesFile {
-			examples = append(examples, qf)
-		}
-	}
-	files.QuestionFiles = examples
 	if mutate != nil {
 		mutate(files)
 	}
@@ -318,7 +311,7 @@ func TestHintIsNotFoundForGeneratedQuestions(t *testing.T) {
 func TestBeatNeverLeaksForAnyQuestionType(t *testing.T) {
 	f := newFeedFixture(t, true)
 	seedBank(t, f, nil)
-	files, err := seedload.Read(testSeedDir, seedload.ReadOptions{SkipAssets: true})
+	files, err := seedload.Read(testSeedDir, seedload.ReadOptions{SkipAssets: true, Only: []string{seedload.ExamplesFile}})
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -430,7 +423,7 @@ func TestSkillBecomesPlayableAtEightPublishedQuestions(t *testing.T) {
 		t.Fatalf("7 questions are not enough, got %d", code)
 	}
 	// the 8th is published through the repository: the graph notices (cache generation) without a restart
-	files, _ := seedload.Read(testSeedDir, seedload.ReadOptions{SkipAssets: true})
+	files, _ := seedload.Read(testSeedDir, seedload.ReadOptions{SkipAssets: true, Only: []string{seedload.ExamplesFile}})
 	onlyClones("jeux.cartes.901", 8)(files)
 	if _, err := seedload.Apply(context.Background(), f.s.Content, f.s.Assets, f.s.game().graph, files, seedload.Options{Actor: "test"}); err != nil {
 		t.Fatal(err)
@@ -621,5 +614,28 @@ func TestQuestWithTooFewQuestionsForTheGradeIsLockedNotOffered(t *testing.T) {
 	sid := f.startIn(t, "jeux", "ARI-SEN-A08")
 	if _, raw := f.nextBeat(t, sid); raw == "" {
 		t.Fatal("the opened quest must serve a beat")
+	}
+}
+
+// Every seeded world carries its hero picture in the API (seed/worlds.json hero_asset), with the media variants.
+func TestSeededWorldsAllReturnAHero(t *testing.T) {
+	f := newFeedFixture(t, true)
+	files, err := seedload.Read(testSeedDir, seedload.ReadOptions{Only: []string{seedload.ExamplesFile}}) // with the real assets
+	if err != nil {
+		t.Fatal(err)
+	}
+	if _, err := seedload.Apply(context.Background(), f.s.Content, f.s.Assets, f.s.game().graph, files, seedload.Options{Actor: "test"}); err != nil {
+		t.Fatalf("seed: %v", err)
+	}
+	code, w, raw := f.gcall(t, "GET", "/v1/worlds", f.childTok, "", nil)
+	if code != 200 {
+		t.Fatalf("worlds: %d %s", code, raw)
+	}
+	for _, it := range w["items"].([]any) {
+		m := it.(map[string]any)
+		hero, _ := m["hero"].(map[string]any)
+		if hero == nil || hero["srcset"] == nil || m["image_url"] == nil || m["image_url"] == "" {
+			t.Errorf("world %v has no hero: %v", m["id"], m)
+		}
 	}
 }

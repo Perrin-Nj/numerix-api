@@ -15,7 +15,7 @@ func TestSeedFilesValidate(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	f, err := Read(seedDir, ReadOptions{SkipAssets: true})
+	f, err := Read(seedDir, ReadOptions{}) // with the real assets, so every picture reference is checked
 	if err != nil {
 		t.Fatal(err)
 	}

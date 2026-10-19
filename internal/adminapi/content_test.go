@@ -54,7 +54,7 @@ func setupContent(t *testing.T, dr drafter.Provider) env {
 	if err != nil {
 		t.Fatal(err)
 	}
-	files, err := seedload.Read("../../seed", seedload.ReadOptions{SkipAssets: true, Exclude: []string{seedload.ExamplesFile}})
+	files, err := seedload.Read("../../seed", seedload.ReadOptions{SkipAssets: true, Only: []string{seedload.ExamplesFile}})
 	if err != nil {
 		t.Fatal(err)
 	}
