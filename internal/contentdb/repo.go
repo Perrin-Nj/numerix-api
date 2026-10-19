@@ -303,7 +303,8 @@ func actionFor(from, to string) string {
 	return "edit"
 }
 
-// Transition moves a question to another status. validate (may be nil) runs on a publish and a failure refuses it.
+// Transition moves a question to another status. validate (may be nil) runs when the target is review or published
+// and any blocking issue refuses the move.
 // An AI draft can only be published by a reviewer other than its author, who is then recorded as reviewed_by.
 func (r *Repo) Transition(ctx context.Context, tx *sql.Tx, id, to, actor, comment string, validate func(*content.Question) []content.Issue) (SaveResult, error) {
 	row, err := r.Get(ctx, tx, id)
@@ -320,16 +321,16 @@ func (r *Repo) Transition(ctx context.Context, tx *sql.Tx, id, to, actor, commen
 	}
 	q := row.Q
 	q.Status = to
+	if to == content.StatusPublished && q.AIDrafted && (actor == "" || actor == q.Author) {
+		return SaveResult{}, ErrNeedsReviewer
+	}
 	if to == content.StatusPublished {
-		if q.AIDrafted && (actor == "" || actor == q.Author) {
-			return SaveResult{}, ErrNeedsReviewer
+		q.ReviewedBy = actor // set before validating: the rule "an AI draft needs a reviewer" reads it
+	}
+	if (to == content.StatusPublished || to == content.StatusReview) && validate != nil { // only a valid question enters the review queue
+		if issues := validate(&q); content.HasErrors(issues) {
+			return SaveResult{}, &InvalidError{Issues: issues}
 		}
-		if validate != nil {
-			if issues := validate(&q); content.HasErrors(issues) {
-				return SaveResult{}, &InvalidError{Issues: issues}
-			}
-		}
-		q.ReviewedBy = actor
 	}
 	return r.Save(ctx, tx, SaveInput{Q: q, Actor: actor, Action: actionFor(from, to), Detail: comment})
 }

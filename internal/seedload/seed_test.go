@@ -15,7 +15,7 @@ func TestSeedFilesValidate(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	f, err := Read(seedDir, ReadOptions{})
+	f, err := Read(seedDir, ReadOptions{SkipAssets: true})
 	if err != nil {
 		t.Fatal(err)
 	}

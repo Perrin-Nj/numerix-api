@@ -14,3 +14,12 @@ scp bin/api-linux "$TARGET:/tmp/numerix-api"
 ssh "$TARGET" 'sudo install -o numerix -g numerix -m 755 /tmp/numerix-api /opt/numerix/api && sudo systemctl restart numerix-api && sleep 2 && systemctl is-active numerix-api && curl -fsS http://127.0.0.1:8081/v1/health'
 echo
 echo "deployed. public check: curl https://<your-domain>/v1/health"
+
+# Optional content step: SEED_CONTENT=1 bash deploy/oracle/deploy.sh user@host
+# Builds cmd/seed, ships the seed files, runs a dry run, then applies (a backup is made first; see docs/DB_PROD_DEPLOY.md).
+if [ "${SEED_CONTENT:-0}" = "1" ]; then
+  GOOS=linux GOARCH="$ARCH" CGO_ENABLED=0 go build -trimpath -ldflags "-s -w" -o bin/seed-linux ./cmd/seed
+  tar czf /tmp/numerix-seed.tgz seed scripts/db-prod-deploy.sh
+  scp bin/seed-linux /tmp/numerix-seed.tgz "$TARGET:/tmp/"
+  ssh "$TARGET" 'set -e; cd /opt/numerix && sudo tar xzf /tmp/numerix-seed.tgz && sudo install -m 755 /tmp/seed-linux bin/seed && sudo -u numerix env DB_PATH=/var/lib/numerix/numerix.db APP_ENV=production bash scripts/db-prod-deploy.sh && sudo -u numerix env DB_PATH=/var/lib/numerix/numerix.db APP_ENV=production bash scripts/db-prod-deploy.sh --apply'
+fi

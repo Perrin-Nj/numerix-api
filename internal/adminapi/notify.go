@@ -215,7 +215,8 @@ func (a *API) health(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 	out["counts"] = counts
-	if a.sync != nil { // Mongo copy counters (pending, last success, last error); token-protected on purpose
+	out["ai"] = a.drafter != nil // the admin app enables the "draft with AI" button from this flag
+	if a.sync != nil {           // Mongo copy counters (pending, last success, last error); token-protected on purpose
 		out["mongo_sync"] = a.sync()
 	}
 	writeJSON(w, http.StatusOK, out)

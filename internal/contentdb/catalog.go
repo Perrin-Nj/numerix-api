@@ -25,15 +25,15 @@ const (
 // WorldRow is a stored world with its hero asset.
 type WorldRow struct {
 	content.World
-	HeroAssetID string
-	Hash        string
+	HeroAssetID string `json:"hero_asset_id"`
+	Hash        string `json:"content_hash"`
 }
 
 // QuestRow is a stored quest with its icon asset.
 type QuestRow struct {
 	content.Quest
-	IconAssetID string
-	Hash        string
+	IconAssetID string `json:"icon_asset_id"`
+	Hash        string `json:"content_hash"`
 }
 
 // resolveAsset turns an asset id or alias into a stored id ("" stays "", an unknown value is an error).

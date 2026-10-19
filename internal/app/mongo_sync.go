@@ -64,6 +64,9 @@ func (r *syncResolver) Resolve(ctx context.Context, ev mongosync.Event) (mongosy
 	case mongosync.KindStats:
 		return r.stats(ctx, ev)
 	}
+	if op, ok, err := r.s.Content.ResolveEvent(ctx, ev); ok { // the content kinds: question_bank, question_audit, question_stats, content_worlds, content_quests
+		return op, err
+	}
 	return mongosync.Op{}, mongosync.ErrSkip
 }
 

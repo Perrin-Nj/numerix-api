@@ -62,3 +62,18 @@ Real Mongo (skipped without the variable; use a throw-away cluster or a local `m
 ```
 MONGODB_URI_TEST='mongodb://localhost:27017' go test ./internal/mongosync -run Integration -v
 ```
+
+## Content collections (question bank)
+
+Same outbox, worker and unique `key` index. Content is not personal data, so no pseudonym; every change of a bank question, world or quest queues its row in the SAME transaction (`internal/contentdb`). The resolver reads the current state, so replays are safe, and a missing object becomes a delete.
+
+| Collection | `key` | Document |
+|---|---|---|
+| `question_bank` | question id | `world, quest, skill, type, grade, difficulty, status, version, content_hash, author, source, ai_drafted, reviewed_by, updated_at, published_at, question{full object}`. Queued on create, edit, publish, unpublish, retire, restore, seed, rollback, import. |
+| `question_audit` | `question_audit.id` | `at, actor, action, question_id, from_version, to_version, content_hash, detail` |
+| `question_stats` | question id | `world, quest, skill, attempts, children, correct_rate, typical_error_rate, top_misconceptions[{code,count}], median_response_ms, updated_at`. Queued after each answer to a curated question. Written only when at least 5 distinct children contributed (below that the document is deleted); codes seen fewer than 5 times are left out; no child id. |
+| `content_worlds` | world id | names, tagline, hook, colour, grades, strand, hero, status |
+| `content_quests` | quest id | world, skill, names, goal, grades, target_count, icon, status |
+
+A seed run of N changed questions queues about 2N rows, collapsed by key before sending. `cmd/seed` does not run the worker: rows wait in the outbox until the API drains them; with Mongo off no rows are written (`cmd/seed` queues rows when `MONGODB_URI` is set in its environment). To rebuild a collection, re-save the objects (admin import with a changed hash) or restore from SQLite with a one-off script.
+Tests: `TestWorldsQuestsCoverageAndMongoDocs` and `TestStatsFloorAndShape` in `internal/adminapi`, outbox keys in `internal/seedload`.

@@ -19,6 +19,7 @@ import (
 	"github.com/Perrin-Nj/numerix-api/internal/adminapi"
 	"github.com/Perrin-Nj/numerix-api/internal/app"
 	"github.com/Perrin-Nj/numerix-api/internal/config"
+	"github.com/Perrin-Nj/numerix-api/internal/drafter"
 	"github.com/Perrin-Nj/numerix-api/internal/httpapi"
 	"github.com/Perrin-Nj/numerix-api/internal/mongosync"
 	"github.com/Perrin-Nj/numerix-api/internal/store"
@@ -86,10 +87,12 @@ func run() error {
 		}()
 		log.Info("mongo sync is on", "db", cfg.MongoDB)
 	}
+	server.Content.Out = server.Sync // content changes queue Mongo events in the same transactions (nil when Mongo is off)
 	// Root router: /admin/v1/* goes to the admin API (its own auth + CORS), everything else to the public API.
 	root := http.NewServeMux()
 	root.Handle("/admin/v1/", adminapi.New(adminapi.Deps{
 		Store: db, Log: log, Token: cfg.AdminAPIToken, Production: cfg.IsProduction(), Origins: os.Getenv("ADMIN_ORIGIN"), Sync: syncStats,
+		Content: server.Content, Assets: server.Assets, Drafter: drafter.FromEnv(os.Getenv, log),
 	}))
 	if cfg.PprofEnabled { // dev-only profiler: go tool pprof http://localhost:PORT/debug/pprof/profile
 		root.HandleFunc("/debug/pprof/", pprof.Index)

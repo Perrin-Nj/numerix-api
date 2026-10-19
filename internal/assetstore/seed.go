@@ -152,11 +152,17 @@ func (d *Doc) Normalise() error {
 	if d.ReviewStatus == "" {
 		d.ReviewStatus = "pending"
 	}
-	for field, v := range map[string]string{"kind": d.Kind, "dominant_color": d.DominantColor, "lqip": d.LQIP, "alt_fr": d.AltFR, "alt_en": d.AltEN,
-		"source_name": d.SourceName, "source_url": d.SourceURL, "creator": d.Creator, "licence_url": d.LicenceURL, "attribution_text": d.AttributionText} {
+	for field, v := range map[string]string{"kind": d.Kind, "dominant_color": d.DominantColor, "lqip": d.LQIP,
+		"source_name": d.SourceName, "source_url": d.SourceURL, "licence_url": d.LicenceURL, "attribution_text": d.AttributionText} {
 		if strings.TrimSpace(v) == "" {
 			return fmt.Errorf("asset %s: %s is required", d.ID, field)
 		}
+	}
+	if d.ReviewStatus == "approved" && (strings.TrimSpace(d.AltFR) == "" || strings.TrimSpace(d.AltEN) == "") {
+		return fmt.Errorf("asset %s: an approved asset needs alt_fr and alt_en", d.ID)
+	}
+	if bool(d.AttributionRequired) && strings.TrimSpace(d.Creator) == "" {
+		return fmt.Errorf("asset %s: attribution is required, so creator is too", d.ID)
 	}
 	if d.Width <= 0 || d.Height <= 0 {
 		return fmt.Errorf("asset %s: width and height are required", d.ID)
@@ -184,30 +190,50 @@ type VocabEntry struct {
 	Facet, Value, LabelFR, LabelEN, Parent string
 }
 
-// LoadSeed reads assets.json and vocab.json from dir. A missing file is not an error (the P3 output may not exist yet).
+// notAssetFiles are JSON files of the asset tooling that are not lists of assets (candidates, rejections, credits).
+var notAssetFiles = map[string]bool{"picks.json": true, "rejected.json": true, "credits.json": true, "manifest.json": true, "vocab.json": true}
+
+// LoadSeed reads every asset list in dir (one file per world, sprites.json, or assets.json: each a JSON array of
+// assets, or {"assets": [...]}) and vocab.json. A missing directory is not an error (the art may not exist yet);
+// a JSON file that is not an asset list is skipped.
 func LoadSeed(dir string) (Seed, error) {
 	s := Seed{Dir: dir}
-	raw, err := os.ReadFile(filepath.Join(dir, "assets.json"))
-	switch {
-	case errors.Is(err, os.ErrNotExist):
-	case err != nil:
-		return s, fmt.Errorf("read assets.json: %w", err)
-	default:
+	files, err := filepath.Glob(filepath.Join(dir, "*.json"))
+	if err != nil {
+		return s, err
+	}
+	sort.Strings(files)
+	seen := map[string]bool{}
+	for _, path := range files {
+		base := filepath.Base(path)
+		if notAssetFiles[base] {
+			continue
+		}
+		raw, err := os.ReadFile(path)
+		if err != nil {
+			return s, fmt.Errorf("read %s: %w", base, err)
+		}
+		var list []Doc
 		var wrapped struct {
 			Assets []Doc `json:"assets"`
 		}
 		if json.Unmarshal(raw, &wrapped) == nil && wrapped.Assets != nil {
-			s.Assets = wrapped.Assets
-		} else if err := json.Unmarshal(raw, &s.Assets); err != nil {
-			return s, fmt.Errorf("parse assets.json: %w", err)
+			list = wrapped.Assets
+		} else if err := json.Unmarshal(raw, &list); err != nil {
+			continue // an object that is not an asset list
 		}
-		for i := range s.Assets {
-			if err := s.Assets[i].Normalise(); err != nil {
-				return s, err
+		for i := range list {
+			if err := list[i].Normalise(); err != nil {
+				return s, fmt.Errorf("%s: %w", base, err)
 			}
+			if seen[list[i].ID] { // the same image listed twice (for example a shared sprite): the first entry wins
+				continue
+			}
+			seen[list[i].ID] = true
+			s.Assets = append(s.Assets, list[i])
 		}
 	}
-	raw, err = os.ReadFile(filepath.Join(dir, "vocab.json"))
+	raw, err := os.ReadFile(filepath.Join(dir, "vocab.json"))
 	switch {
 	case errors.Is(err, os.ErrNotExist):
 	case err != nil:
@@ -402,11 +428,14 @@ func (s *Store) VocabSet(ctx context.Context, q Querier) (map[[2]string]bool, er
 	return out, rows.Err()
 }
 
-// ReadFiles loads the bytes of a doc's variants from <dir>/out. A missing listed file is an error.
+// ReadFiles loads the bytes of a doc's variants from <dir>/files (or <dir>/out). A missing listed file is an error.
 func (sd Seed) ReadFiles(d Doc) (map[int][]byte, error) {
 	out := map[int][]byte{}
 	for _, v := range d.Variants {
-		b, err := os.ReadFile(filepath.Join(sd.Dir, "out", v.File))
+		b, err := os.ReadFile(filepath.Join(sd.Dir, "files", v.File)) // tools/assets writes to files/
+		if errors.Is(err, os.ErrNotExist) {
+			b, err = os.ReadFile(filepath.Join(sd.Dir, "out", v.File)) // the name used in the plan
+		}
 		if err != nil {
 			return nil, fmt.Errorf("asset %s: read %s: %w", d.ID, v.File, err)
 		}

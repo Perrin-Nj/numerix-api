@@ -20,6 +20,9 @@ import (
 	"strings"
 	"time"
 
+	"github.com/Perrin-Nj/numerix-api/internal/assetstore"
+	"github.com/Perrin-Nj/numerix-api/internal/contentdb"
+	"github.com/Perrin-Nj/numerix-api/internal/drafter"
 	"github.com/Perrin-Nj/numerix-api/internal/httpapi"
 	"github.com/Perrin-Nj/numerix-api/internal/mongosync"
 	"github.com/Perrin-Nj/numerix-api/internal/store"
@@ -35,6 +38,9 @@ type Deps struct {
 	Origins    string                 // ADMIN_ORIGIN: comma separated browser origins allowed by CORS; nothing else gets CORS headers
 	Now        func() time.Time       // clock, replaced in tests; nil = time.Now
 	Sync       func() mongosync.Stats // Mongo sync counters for /admin/v1/health; nil = not reported
+	Content    *contentdb.Repo        // the question bank repository, shared with the game so its cache is invalidated; nil = a private one
+	Assets     *assetstore.Store      // image store; nil = a private one
+	Drafter    drafter.Provider       // AI draft provider; nil = POST /questions/ai-draft answers 503 not_configured
 }
 
 // API holds the dependencies shared by every handler method.
@@ -46,6 +52,11 @@ type API struct {
 	origins []string
 	now     func() time.Time
 	sync    func() mongosync.Stats
+
+	content *contentdb.Repo
+	assets  *assetstore.Store
+	drafter drafter.Provider
+	drafts  draftLimiter // AI draft rate limit per admin
 }
 
 // tsLayout matches SQLite's strftime('%Y-%m-%dT%H:%M:%fZ') so text comparisons and sorting stay valid.
@@ -53,7 +64,13 @@ const tsLayout = "2006-01-02T15:04:05.000Z"
 
 // New builds the handler to mount at /admin/v1/ (Spring: building the controller bean + filter chain).
 func New(d Deps) http.Handler {
-	a := &API{db: d.Store, log: d.Log, now: d.Now, sync: d.Sync}
+	a := &API{db: d.Store, log: d.Log, now: d.Now, sync: d.Sync, content: d.Content, assets: d.Assets, drafter: d.Drafter}
+	if a.content == nil {
+		a.content = contentdb.New(d.Store, nil)
+	}
+	if a.assets == nil {
+		a.assets = assetstore.New(d.Store)
+	}
 	if a.now == nil {
 		a.now = time.Now
 	}
@@ -93,6 +110,7 @@ func New(d Deps) http.Handler {
 	mux.HandleFunc("GET /admin/v1/notifications", a.listBroadcasts)
 	mux.HandleFunc("POST /admin/v1/notifications/broadcast", a.broadcast)
 	mux.HandleFunc("GET /admin/v1/audit", a.listAudit)
+	a.contentRoutes(mux)
 	// anything else under /admin/v1/ answers a JSON 404 (after auth)
 	mux.HandleFunc("/admin/v1/", func(w http.ResponseWriter, r *http.Request) { httpapi.WriteError(w, r, httpapi.ErrNotFound) })
 

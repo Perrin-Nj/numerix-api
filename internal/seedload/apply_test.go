@@ -36,7 +36,7 @@ func newFixture(t *testing.T) *fixture {
 	if err != nil {
 		t.Fatal(err)
 	}
-	f, err := Read(seedDir, ReadOptions{})
+	f, err := Read(seedDir, ReadOptions{SkipAssets: true})
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -230,7 +230,7 @@ func TestSeedWorldsMatchTheMigration(t *testing.T) {
 }
 
 func TestSeedShape(t *testing.T) {
-	f, err := Read(seedDir, ReadOptions{})
+	f, err := Read(seedDir, ReadOptions{SkipAssets: true})
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -264,11 +264,37 @@ func TestSeedShape(t *testing.T) {
 }
 
 func TestExcludeSkipsTheExamples(t *testing.T) {
-	f, err := Read(seedDir, ReadOptions{Exclude: []string{ExamplesFile}})
+	f, err := Read(seedDir, ReadOptions{Exclude: []string{ExamplesFile}, SkipAssets: true})
 	if err != nil {
 		t.Fatal(err)
 	}
 	if len(f.Questions()) != 0 {
 		t.Fatalf("examples not excluded: %d", len(f.Questions()))
+	}
+}
+
+// TestRealAssetFilesLoadAndApply loads whatever art tools/assets produced so far (skipped when there is none)
+// and checks it passes the same normalisation the production seed uses, files included.
+func TestRealAssetFilesLoadAndApply(t *testing.T) {
+	probe, err := Read(seedDir, ReadOptions{})
+	if err != nil {
+		t.Fatalf("the asset files do not load: %v", err)
+	}
+	if len(probe.Assets.Assets) == 0 {
+		t.Skip("no seed/assets yet")
+	}
+	x := newFixture(t)
+	x.f = probe
+	x.f.QuestionFiles = nil // questions are covered by the other tests
+	rep := x.apply(t, Options{Actor: "test", Only: []string{"assets"}})
+	if rep.Assets.Added != len(probe.Assets.Assets) {
+		t.Fatalf("assets added %d of %d", rep.Assets.Added, len(probe.Assets.Assets))
+	}
+	again := x.apply(t, Options{Actor: "test", Only: []string{"assets"}})
+	if again.Assets.Added != 0 || again.Assets.Changed != 0 {
+		t.Fatalf("second asset run changed something: %+v", again.Assets)
+	}
+	if n := x.count(t, `SELECT COUNT(*) FROM asset_variants`); n == 0 {
+		t.Fatal("no variant bytes stored")
 	}
 }

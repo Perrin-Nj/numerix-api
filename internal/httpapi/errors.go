@@ -58,15 +58,19 @@ func Validation(fields ...FieldError) *APIError {
 
 // titles holds the short, kind titles per code in French and English (contract section 4).
 var titles = map[string][2]string{ // [fr, en]
-	"unauthorized":        {"Ta session est terminée", "Your session has ended"},
-	"forbidden":           {"Accès refusé", "Access denied"},
-	"not_found":           {"Introuvable", "Not found"},
-	"validation_failed":   {"Vérifie les informations", "Please check the information"},
-	"rate_limited":        {"Doucement", "Slow down a little"},
-	"internal_error":      {"Quelque chose s’est mal passé", "Something went wrong"},
-	"not_implemented":     {"Pas encore disponible", "Not available yet"},
-	"overloaded":          {"Beaucoup de monde en ce moment", "We are very busy right now"},
-	"service_unavailable": {"Service indisponible", "Service unavailable"},
+	"unauthorized":           {"Ta session est terminée", "Your session has ended"},
+	"forbidden":              {"Accès refusé", "Access denied"},
+	"not_found":              {"Introuvable", "Not found"},
+	"validation_failed":      {"Vérifie les informations", "Please check the information"},
+	"rate_limited":           {"Doucement", "Slow down a little"},
+	"internal_error":         {"Quelque chose s’est mal passé", "Something went wrong"},
+	"not_implemented":        {"Pas encore disponible", "Not available yet"},
+	"overloaded":             {"Beaucoup de monde en ce moment", "We are very busy right now"},
+	"service_unavailable":    {"Service indisponible", "Service unavailable"},
+	"not_configured":         {"Pas configuré", "Not configured"},
+	"version_conflict":       {"Version dépassée", "Version out of date"},
+	"transition_not_allowed": {"Changement d’état impossible", "State change not allowed"},
+	"needs_reviewer":         {"Un autre relecteur est requis", "Another reviewer is needed"},
 }
 
 // titleFor picks the title for a code; unknown codes get a generic title for their status class.

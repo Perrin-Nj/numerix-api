@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://numerix.app/schema/question.json",
+  "title": "Numerix seed question (informative for editors: Go package internal/content is the authority)",
+  "type": "object",
+  "required": ["id", "quest", "skill", "type", "grade", "difficulty", "story", "prompt", "answer", "hint", "explain", "status", "author"],
+  "additionalProperties": false,
+  "$defs": {
+    "l": {"type": "object", "required": ["fr", "en"], "additionalProperties": false, "properties": {"fr": {"type": "string", "minLength": 1}, "en": {"type": "string", "minLength": 1}}}
+  },
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z0-9]+(\\.[a-z0-9-]+)*\\.\\d{3}$"},
+    "quest": {"type": "string"},
+    "skill": {"type": "string"},
+    "type": {"enum": ["numeric", "choice", "truefalse", "order", "match", "word", "visual", "estimate"]},
+    "grade": {"type": "integer", "minimum": 1, "maximum": 6},
+    "difficulty": {"type": "integer", "minimum": 1, "maximum": 5},
+    "story": {"$ref": "#/$defs/l"},
+    "prompt": {"$ref": "#/$defs/l"},
+    "hint": {"$ref": "#/$defs/l"},
+    "explain": {"$ref": "#/$defs/l"},
+    "math_text": {"type": "string"},
+    "visual": {"type": "object", "required": ["kind"], "properties": {"kind": {"enum": ["bars", "pictograph", "clock", "numberline", "grid", "fraction", "dice"]}, "data": {"type": "object"}}},
+    "choices": {"type": "array", "minItems": 3, "maxItems": 5, "items": {"type": "object", "required": ["id", "text"], "properties": {"id": {"type": "string"}, "text": {"$ref": "#/$defs/l"}, "misconception": {"type": "string"}, "random": {"type": "boolean"}}}},
+    "items": {"oneOf": [{"type": "array"}, {"type": "object", "required": ["left", "right"]}]},
+    "answer": {"type": "object", "required": ["kind"], "properties": {"kind": {"enum": ["numeric", "choice", "truefalse", "order", "match", "range"]}}},
+    "common_errors": {"type": "array", "items": {"type": "object", "required": ["value", "misconception", "feedback"]}},
+    "tags": {"type": "array", "items": {"type": "string"}},
+    "media": {"type": "array", "maxItems": 3},
+    "status": {"enum": ["draft", "review", "published"]},
+    "author": {"type": "string"},
+    "version": {"type": "integer"},
+    "source": {"type": "string"},
+    "ai_drafted": {"type": "boolean"},
+    "reviewed_by": {"type": "string"},
+    "allow_operand_equals_answer": {"type": "boolean"}
+  }
+}

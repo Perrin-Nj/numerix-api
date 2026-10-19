@@ -555,3 +555,54 @@ func JSONTags(t map[string][]string) string {
 	b, _ := json.Marshal(t) // a map of string slices always marshals
 	return string(b)
 }
+
+// Scored is an asset with the score it earned for some criteria.
+type Scored struct {
+	Asset Asset
+	Score int
+}
+
+// Search lists approved, safe assets that match at least one content dimension of the criteria, best score first
+// (ties by id), at most limit. The admin media picker shows this list; Resolve picks one of its best entries.
+func (s *Store) Search(ctx context.Context, q Querier, c content.Criteria, band string, limit int) ([]Scored, error) {
+	rows, err := q.QueryContext(ctx, `SELECT `+assetCols+` FROM assets WHERE review_status = 'approved' AND people_free = 1 AND brand_free = 1
+		AND (? = '' OR kind = ?) AND (? = '' OR grade_band IN ('all', ?))`, c.Kind, c.Kind, band, band)
+	if err != nil {
+		return nil, fmt.Errorf("search assets: %w", err)
+	}
+	var cands []Asset
+	for rows.Next() {
+		a, err := scanAsset(rows)
+		if err != nil {
+			_ = rows.Close()
+			return nil, err
+		}
+		cands = append(cands, a)
+	}
+	if err := rows.Close(); err != nil {
+		return nil, err
+	}
+	ptrs := make([]*Asset, len(cands))
+	for i := range cands {
+		ptrs[i] = &cands[i]
+	}
+	if err := s.fill(ctx, q, ptrs); err != nil {
+		return nil, err
+	}
+	var out []Scored
+	for _, a := range cands {
+		if sc, hits := scoreOf(a, c, band); hits > 0 {
+			out = append(out, Scored{a, sc})
+		}
+	}
+	slices.SortFunc(out, func(x, y Scored) int {
+		if x.Score != y.Score {
+			return y.Score - x.Score
+		}
+		return strings.Compare(x.Asset.ID, y.Asset.ID)
+	})
+	if limit > 0 && len(out) > limit {
+		out = out[:limit]
+	}
+	return out, nil
+}

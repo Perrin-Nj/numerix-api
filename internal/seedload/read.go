@@ -56,7 +56,8 @@ func (f *Files) Questions() []*content.Question {
 
 // ReadOptions changes what Read loads.
 type ReadOptions struct {
-	Exclude []string // question file stems to skip ("_examples")
+	Exclude    []string // question file stems to skip ("_examples")
+	SkipAssets bool     // do not read seed/assets (tests of questions only)
 }
 
 // readJSON decodes a file strictly.
@@ -151,8 +152,10 @@ func Read(dir string, opt ReadOptions) (*Files, error) {
 		f.QuestionFiles = append(f.QuestionFiles, QuestionFile{Name: stem, World: doc.World, Questions: doc.Questions})
 	}
 
-	if f.Assets, err = assetstore.LoadSeed(filepath.Join(dir, "assets")); err != nil {
-		return nil, err
+	if !opt.SkipAssets {
+		if f.Assets, err = assetstore.LoadSeed(filepath.Join(dir, "assets")); err != nil {
+			return nil, err
+		}
 	}
 	for _, name := range []string{"assets/assets.json", "assets/vocab.json"} {
 		if raw, err := os.ReadFile(filepath.Join(dir, name)); err == nil {
