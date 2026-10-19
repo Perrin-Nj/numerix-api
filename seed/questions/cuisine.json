@@ -1,0 +1,5187 @@
+{
+ "world": "cuisine",
+ "schema": 1,
+ "questions": [
+  {
+   "id": "cuisine.fournee.001",
+   "quest": "cuisine.fournee",
+   "skill": "ARI-OPE-A02c",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa sort deux plaques de biscuits du four.",
+    "en": "Lea takes two trays of cookies out of the oven."
+   },
+   "prompt": {
+    "fr": "Il y a 6 biscuits sur une plaque et 7 sur l'autre. Combien de biscuits en tout ?",
+    "en": "There are 6 cookies on one tray and 7 on the other. How many cookies in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 13,
+    "calc": "6+7"
+   },
+   "common_errors": [
+    {
+     "value": 12,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les 7 biscuits.",
+      "en": "Close! Count the 7 cookies again."
+     }
+    },
+    {
+     "value": 1,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les deux plaques : on additionne.",
+      "en": "We put the two trays together, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pars de 7 et avance de 6.",
+    "en": "Start at 7 and count up 6."
+   },
+   "explain": {
+    "fr": "6 + 7 = 6 + 4 + 3 = 10 + 3 = 13.",
+    "en": "6 + 7 = 6 + 4 + 3 = 10 + 3 = 13."
+   },
+   "tags": [
+    "add-within-20",
+    "make-ten",
+    "cookies"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_993be93a875309e87925"
+    },
+    {
+     "role": "object",
+     "asset": "a_d3c5f5e2864d3178bf20"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.fournee.002",
+   "quest": "cuisine.fournee",
+   "skill": "ARI-OPE-A02c",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Noah range des biscuits dans une boîte.",
+    "en": "Noah packs cookies into a box."
+   },
+   "prompt": {
+    "fr": "Il met 9 biscuits au sucre et 5 biscuits à l'avoine. Combien de biscuits y a-t-il ?",
+    "en": "He puts in 9 sugar cookies and 5 oat cookies. How many cookies are there?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 14,
+    "calc": "9+5"
+   },
+   "common_errors": [
+    {
+     "value": 13,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les biscuits à l'avoine.",
+      "en": "Close! Count the oat cookies again."
+     }
+    },
+    {
+     "value": 4,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Tous les biscuits vont dans la même boîte : on additionne.",
+      "en": "All the cookies go in the same box, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Complète 9 jusqu'à 10 avec 1 des 5.",
+    "en": "Make 9 into 10 with 1 of the 5."
+   },
+   "explain": {
+    "fr": "9 + 5 = 10 + 4 = 14.",
+    "en": "9 + 5 = 10 + 4 = 14."
+   },
+   "tags": [
+    "add-within-20",
+    "make-ten",
+    "cookies"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_993be93a875309e87925"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.fournee.003",
+   "quest": "cuisine.fournee",
+   "skill": "ARI-OPE-A02c",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Au café de la rue, on cuit deux plaques de biscuits pareilles.",
+    "en": "At the street café, two matching trays of cookies are baked."
+   },
+   "prompt": {
+    "fr": "Chaque plaque a 8 biscuits. Combien de biscuits y a-t-il sur les deux plaques ?",
+    "en": "Each tray has 8 cookies. How many cookies are there on both trays?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 16,
+    "calc": "8+8"
+   },
+   "common_errors": [
+    {
+     "value": 15,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! 8 + 8 est un double.",
+      "en": "Close! 8 + 8 is a double."
+     }
+    },
+    {
+     "value": 17,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Un peu trop ! Refais le double de 8.",
+      "en": "A bit too much! Redo the double of 8."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense au double de 8.",
+    "en": "Think of double 8."
+   },
+   "explain": {
+    "fr": "8 + 8 = 16, car 8 + 2 = 10 et 10 + 6 = 16.",
+    "en": "8 + 8 = 16, since 8 + 2 = 10 and 10 + 6 = 16."
+   },
+   "tags": [
+    "add-within-20",
+    "doubles",
+    "cookies"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_993be93a875309e87925"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.fournee.004",
+   "quest": "cuisine.fournee",
+   "skill": "ARI-OPE-A02c",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Emma décore des biscuits pour la fête de l'école.",
+    "en": "Emma decorates cookies for the school party."
+   },
+   "prompt": {
+    "fr": "Elle en décore 9 le matin et 8 l'après-midi. Combien de biscuits décorés en tout ?",
+    "en": "She decorates 9 in the morning and 8 in the afternoon. How many decorated cookies in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 17,
+    "calc": "9+8"
+   },
+   "common_errors": [
+    {
+     "value": 16,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte l'après-midi.",
+      "en": "Close! Count the afternoon again."
+     }
+    },
+    {
+     "value": 1,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit le matin et l'après-midi : on additionne.",
+      "en": "We put morning and afternoon together, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pars de 9. Ajoute 1 pour faire 10, puis le reste de 8.",
+    "en": "Start at 9. Add 1 to make 10, then the rest of the 8."
+   },
+   "explain": {
+    "fr": "9 + 8 = 10 + 7 = 17.",
+    "en": "9 + 8 = 10 + 7 = 17."
+   },
+   "tags": [
+    "add-within-20",
+    "make-ten",
+    "cookies"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_993be93a875309e87925"
+    },
+    {
+     "role": "object",
+     "asset": "a_d3c5f5e2864d3178bf20"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.fournee.005",
+   "quest": "cuisine.fournee",
+   "skill": "ARI-OPE-A02c",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Zoé sort sa dernière fournée du four.",
+    "en": "Zoe takes her last batch out of the oven."
+   },
+   "prompt": {
+    "fr": "Il y a 6 biscuits au chocolat et 9 biscuits au miel. Combien de biscuits en tout ?",
+    "en": "There are 6 chocolate cookies and 9 honey cookies. How many cookies in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 15,
+    "calc": "6+9"
+   },
+   "common_errors": [
+    {
+     "value": 14,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les biscuits au miel.",
+      "en": "Close! Count the honey cookies again."
+     }
+    },
+    {
+     "value": 3,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les deux sortes : on additionne.",
+      "en": "We put the two kinds together, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pars de 9 et ajoute 1 pour faire 10.",
+    "en": "Start at 9 and add 1 to make 10."
+   },
+   "explain": {
+    "fr": "9 + 6 = 10 + 5 = 15.",
+    "en": "9 + 6 = 10 + 5 = 15."
+   },
+   "tags": [
+    "add-within-20",
+    "make-ten",
+    "cookies"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_993be93a875309e87925"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.fournee.006",
+   "quest": "cuisine.fournee",
+   "skill": "ARI-OPE-A02c",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Camille a 7 biscuits sur une assiette. Il lui en faut 15 pour ses invités.",
+    "en": "Camille has 7 cookies on a plate. She needs 15 for her guests."
+   },
+   "prompt": {
+    "fr": "Combien de biscuits doit-elle encore ajouter ?",
+    "en": "How many more cookies must she add?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 8,
+    "calc": "15-7"
+   },
+   "common_errors": [
+    {
+     "value": 22,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche ce qui manque : on soustrait.",
+      "en": "We look for what is missing, so we subtract."
+     }
+    },
+    {
+     "value": 7,
+     "misconception": "mis_missing_term",
+     "feedback": {
+      "fr": "7 est ce qu'elle a déjà. Cherche ce qui manque.",
+      "en": "7 is what she already has. Find what is missing."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Avance de 7 jusqu'à 15.",
+    "en": "Count up from 7 to 15."
+   },
+   "explain": {
+    "fr": "7 + 3 = 10, puis 10 + 5 = 15. Elle ajoute 3 + 5 = 8 biscuits.",
+    "en": "7 + 3 = 10, then 10 + 5 = 15. She adds 3 + 5 = 8 cookies."
+   },
+   "tags": [
+    "missing-addend",
+    "add-within-20",
+    "cookies"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_993be93a875309e87925"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.fournee.007",
+   "quest": "cuisine.fournee",
+   "skill": "ARI-OPE-A02c",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Trois plaques sortent du four. Elles ont 8, 5 et 4 biscuits.",
+    "en": "Three trays come out of the oven. They hold 8, 5 and 4 cookies."
+   },
+   "prompt": {
+    "fr": "Combien de biscuits y a-t-il en tout ?",
+    "en": "How many cookies are there in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 17,
+    "calc": "8+5+4"
+   },
+   "common_errors": [
+    {
+     "value": 13,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié une plaque.",
+      "en": "You left out a tray."
+     }
+    },
+    {
+     "value": 16,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Refais les trois plaques une à une.",
+      "en": "Close! Redo the three trays one by one."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne deux plaques, puis la troisième.",
+    "en": "Add two trays, then the third."
+   },
+   "explain": {
+    "fr": "8 + 5 = 13, puis 13 + 4 = 17.",
+    "en": "8 + 5 = 13, then 13 + 4 = 17."
+   },
+   "tags": [
+    "word-problem",
+    "three-addends",
+    "cookies"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_993be93a875309e87925"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.fournee.008",
+   "quest": "cuisine.fournee",
+   "skill": "ARI-OPE-A02c",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa a 17 biscuits. Elle en donne 8 à ses voisins.",
+    "en": "Lea has 17 cookies. She gives 8 to her neighbours."
+   },
+   "prompt": {
+    "fr": "Combien de biscuits lui reste-t-il ?",
+    "en": "How many cookies does she have left?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 9,
+    "calc": "17-8"
+   },
+   "common_errors": [
+    {
+     "value": 25,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Elle en donne : on enlève.",
+      "en": "She gives some away, so we take away."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "8 est le nombre donné, pas le nombre qui reste.",
+      "en": "8 is the number given away, not the number left."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Recule de 8 à partir de 17, en passant par 10.",
+    "en": "Count back 8 from 17, going through 10."
+   },
+   "explain": {
+    "fr": "17 - 7 = 10, puis 10 - 1 = 9. Il lui reste 9 biscuits.",
+    "en": "17 - 7 = 10, then 10 - 1 = 9. She has 9 cookies left."
+   },
+   "tags": [
+    "word-problem",
+    "subtract",
+    "cookies"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_993be93a875309e87925"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.fournee.009",
+   "quest": "cuisine.fournee",
+   "skill": "ARI-OPE-A02c",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Samuel veut compter ses biscuits avec une addition.",
+    "en": "Samuel wants to count his cookies with an addition."
+   },
+   "prompt": {
+    "fr": "Quelle addition donne 14 ?",
+    "en": "Which addition makes 14?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "9 + 5",
+      "en": "9 + 5"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "9 + 4",
+      "en": "9 + 4"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "8 + 7",
+      "en": "8 + 7"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "6 + 9",
+      "en": "6 + 9"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Calcule chaque addition pour trouver celle qui donne 14.",
+    "en": "Work out each addition to find the one that makes 14."
+   },
+   "explain": {
+    "fr": "9 + 5 = 14. Les autres font 13 ou 15.",
+    "en": "9 + 5 = 14. The others make 13 or 15."
+   },
+   "tags": [
+    "add-within-20",
+    "equations"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_993be93a875309e87925"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.fournee.010",
+   "quest": "cuisine.fournee",
+   "skill": "ARI-OPE-A02c",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Aya sait que 6 + 6 = 12. Elle veut calculer 6 + 7.",
+    "en": "Aya knows that 6 + 6 = 12. She wants to work out 6 + 7."
+   },
+   "prompt": {
+    "fr": "Combien font 6 + 7 ?",
+    "en": "How much is 6 + 7?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "13",
+      "en": "13"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "12",
+      "en": "12"
+     },
+     "misconception": "mis_partial_result"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "14",
+      "en": "14"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "1",
+      "en": "1"
+     },
+     "misconception": "mis_subtract_instead_of_add"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a",
+    "calc_choice": {
+     "a": "6+7"
+    }
+   },
+   "hint": {
+    "fr": "6 + 7 est un de plus que 6 + 6.",
+    "en": "6 + 7 is one more than 6 + 6."
+   },
+   "explain": {
+    "fr": "6 + 7 = 12 + 1 = 13.",
+    "en": "6 + 7 = 12 + 1 = 13."
+   },
+   "tags": [
+    "add-within-20",
+    "near-doubles"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_993be93a875309e87925"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.fournee.011",
+   "quest": "cuisine.fournee",
+   "skill": "ARI-OPE-A02c",
+   "type": "truefalse",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Louis compte les biscuits de deux plaques : 8 et 9.",
+    "en": "Louis counts the cookies on two trays: 8 and 9."
+   },
+   "prompt": {
+    "fr": "Il dit qu'il y a 16 biscuits. A-t-il raison ?",
+    "en": "He says there are 16 cookies. Is he right?"
+   },
+   "math_text": "8 + 9 = 16",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_off_by_one"
+   },
+   "hint": {
+    "fr": "Refais 8 + 9 en partant de 9.",
+    "en": "Redo 8 + 9 starting from 9."
+   },
+   "explain": {
+    "fr": "8 + 9 = 17. Louis a compté un biscuit de moins.",
+    "en": "8 + 9 = 17. Louis counted one cookie too few."
+   },
+   "tags": [
+    "true-false",
+    "add-within-20"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_993be93a875309e87925"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.fournee.012",
+   "quest": "cuisine.fournee",
+   "skill": "ARI-OPE-A02c",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Quatre plaques de biscuits ont été préparées avec des quantités différentes.",
+    "en": "Four trays of cookies were prepared with different amounts."
+   },
+   "prompt": {
+    "fr": "Range les additions, de la plus petite somme à la plus grande.",
+    "en": "Put the additions in order, from the smallest sum to the biggest."
+   },
+   "items": [
+    {
+     "id": "i1",
+     "text": {
+      "fr": "9 + 9",
+      "en": "9 + 9"
+     },
+     "key": "18"
+    },
+    {
+     "id": "i2",
+     "text": {
+      "fr": "7 + 6",
+      "en": "7 + 6"
+     },
+     "key": "13"
+    },
+    {
+     "id": "i3",
+     "text": {
+      "fr": "8 + 4",
+      "en": "8 + 4"
+     },
+     "key": "12"
+    },
+    {
+     "id": "i4",
+     "text": {
+      "fr": "10 + 7",
+      "en": "10 + 7"
+     },
+     "key": "17"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "i3",
+     "i2",
+     "i4",
+     "i1"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Calcule chaque somme avant de les ranger.",
+    "en": "Work out each sum before ordering them."
+   },
+   "explain": {
+    "fr": "Les sommes sont 12, 13, 17 et 18.",
+    "en": "The sums are 12, 13, 17 and 18."
+   },
+   "tags": [
+    "ordering",
+    "add-within-20"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_993be93a875309e87925"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.fournee.013",
+   "quest": "cuisine.fournee",
+   "skill": "ARI-OPE-A02c",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Mia relie des additions de biscuits avec leurs totaux.",
+    "en": "Mia matches cookie additions with their totals."
+   },
+   "prompt": {
+    "fr": "Relie chaque addition à son total.",
+    "en": "Match each addition to its total."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "9 + 8",
+       "en": "9 + 8"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "7 + 5",
+       "en": "7 + 5"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "6 + 9",
+       "en": "6 + 9"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "4 + 9",
+       "en": "4 + 9"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "12",
+       "en": "12"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "15",
+       "en": "15"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "13",
+       "en": "13"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "17",
+       "en": "17"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ],
+     [
+      "l4",
+      "r4"
+     ]
+    ],
+    "misconception": "mis_match"
+   },
+   "hint": {
+    "fr": "Fais chaque addition en passant par 10.",
+    "en": "Do each addition by going through 10."
+   },
+   "explain": {
+    "fr": "9 + 8 = 17. 7 + 5 = 12. 6 + 9 = 15. 4 + 9 = 13.",
+    "en": "9 + 8 = 17. 7 + 5 = 12. 6 + 9 = 15. 4 + 9 = 13."
+   },
+   "tags": [
+    "matching",
+    "add-within-20"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_993be93a875309e87925"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.fournee.014",
+   "quest": "cuisine.fournee",
+   "skill": "ARI-OPE-A02c",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le pictogramme montre les biscuits de trois plaques. Une image représente 1 biscuit.",
+    "en": "The pictograph shows the cookies on three trays. One picture stands for 1 cookie."
+   },
+   "prompt": {
+    "fr": "Combien de biscuits y a-t-il sur les plaques A et B ensemble ?",
+    "en": "How many cookies are on trays A and B together?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Biscuits par plaque",
+      "en": "Cookies per tray"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "plaque A",
+        "en": "tray A"
+       },
+       "count": 5
+      },
+      {
+       "label": {
+        "fr": "plaque B",
+        "en": "tray B"
+       },
+       "count": 7
+      },
+      {
+       "label": {
+        "fr": "plaque C",
+        "en": "tray C"
+       },
+       "count": 4
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 12,
+    "calc": "5+7"
+   },
+   "common_errors": [
+    {
+     "value": 16,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as aussi compté la plaque C.",
+      "en": "You also counted tray C."
+     }
+    },
+    {
+     "value": 2,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les plaques A et B : on additionne.",
+      "en": "We put trays A and B together, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les images de A, puis celles de B.",
+    "en": "Count the pictures in A, then in B."
+   },
+   "explain": {
+    "fr": "5 + 7 = 5 + 5 + 2 = 12 biscuits.",
+    "en": "5 + 7 = 5 + 5 + 2 = 12 cookies."
+   },
+   "tags": [
+    "pictograph",
+    "add-within-20",
+    "cookies"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_993be93a875309e87925"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.fournee.015",
+   "quest": "cuisine.fournee",
+   "skill": "ARI-OPE-A02c",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 4,
+   "story": {
+    "fr": "Léa a cuit 18 biscuits au chocolat et 19 biscuits à l'avoine.",
+    "en": "Lea baked 18 chocolate cookies and 19 oat cookies."
+   },
+   "prompt": {
+    "fr": "Environ combien de biscuits a-t-elle cuits en tout ?",
+    "en": "About how many cookies did she bake in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 35,
+    "max": 40,
+    "exact_for_check": 37,
+    "calc": "18+19"
+   },
+   "common_errors": [
+    {
+     "value": 1,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les deux sortes : on additionne.",
+      "en": "We put both kinds together, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis chaque nombre à la dizaine.",
+    "en": "Round each number to the nearest ten."
+   },
+   "explain": {
+    "fr": "18 est près de 20 et 19 est près de 20. Le total est environ 40.",
+    "en": "18 is close to 20 and 19 is close to 20. The total is about 40."
+   },
+   "tags": [
+    "estimation",
+    "rounding",
+    "cookies"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_993be93a875309e87925"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.recette.001",
+   "quest": "cuisine.recette",
+   "skill": "ARI-SEN-B02",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa coupe une pizza en parts égales. La partie colorée est celle qu'elle a mangée.",
+    "en": "Lea cuts a pizza into equal parts. The coloured part is what she ate."
+   },
+   "prompt": {
+    "fr": "Quelle fraction de la pizza a-t-elle mangée ?",
+    "en": "What fraction of the pizza did she eat?"
+   },
+   "visual": {
+    "kind": "fraction",
+    "data": {
+     "parts": 2,
+     "filled": 1
+    }
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "1/2",
+      "en": "1/2"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "1/3",
+      "en": "1/3"
+     },
+     "misconception": "mis_fraction_denominator"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "2/1",
+      "en": "2/1"
+     },
+     "misconception": "mis_digit_swap"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "1/4",
+      "en": "1/4"
+     },
+     "misconception": "mis_fraction_denominator"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Compte les parts en tout, puis les parts colorées.",
+    "en": "Count all the parts, then the coloured parts."
+   },
+   "explain": {
+    "fr": "La pizza a 2 parts égales et 1 est colorée : un demi.",
+    "en": "The pizza has 2 equal parts and 1 is coloured: one half."
+   },
+   "tags": [
+    "fractions",
+    "halves",
+    "pizza"
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.recette.002",
+   "quest": "cuisine.recette",
+   "skill": "ARI-SEN-B02",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah partage sa pizza en parts égales. Les parts colorées sont celles qu'il a mangées.",
+    "en": "Noah cuts his pizza into equal parts. The coloured parts are the ones he ate."
+   },
+   "prompt": {
+    "fr": "Quelle fraction de la pizza a-t-il mangée ?",
+    "en": "What fraction of the pizza did he eat?"
+   },
+   "visual": {
+    "kind": "fraction",
+    "data": {
+     "parts": 4,
+     "filled": 3
+    }
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "3/4",
+      "en": "3/4"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "4/3",
+      "en": "4/3"
+     },
+     "misconception": "mis_digit_swap"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "1/4",
+      "en": "1/4"
+     },
+     "misconception": "mis_partial_result"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "3/7",
+      "en": "3/7"
+     },
+     "misconception": "mis_fraction_denominator"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Le bas du nombre dit combien de parts égales en tout.",
+    "en": "The bottom number says how many equal parts in all."
+   },
+   "explain": {
+    "fr": "La pizza a 4 parts égales et 3 sont colorées : trois quarts.",
+    "en": "The pizza has 4 equal parts and 3 are coloured: three quarters."
+   },
+   "tags": [
+    "fractions",
+    "quarters",
+    "pizza"
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.recette.003",
+   "quest": "cuisine.recette",
+   "skill": "ARI-SEN-B02",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Une pizza est coupée en 8 parts égales. Les parts colorées sont déjà mangées.",
+    "en": "A pizza is cut into 8 equal parts. The coloured parts are already eaten."
+   },
+   "prompt": {
+    "fr": "Combien de parts reste-t-il à manger ?",
+    "en": "How many parts are left to eat?"
+   },
+   "visual": {
+    "kind": "fraction",
+    "data": {
+     "parts": 8,
+     "filled": 3
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "8-3"
+   },
+   "common_errors": [
+    {
+     "value": 3,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "3 est le nombre de parts mangées, pas de parts qui restent.",
+      "en": "3 is the number of parts eaten, not the parts left."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "8 est le nombre de parts en tout.",
+      "en": "8 is the total number of parts."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les parts qui ne sont pas colorées.",
+    "en": "Count the parts that are not coloured."
+   },
+   "explain": {
+    "fr": "Il y a 8 parts en tout et 3 sont mangées. Il reste 8 - 3 = 5 parts.",
+    "en": "There are 8 parts in all and 3 are eaten. 8 - 3 = 5 parts are left."
+   },
+   "tags": [
+    "fractions",
+    "eighths",
+    "pizza"
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.recette.004",
+   "quest": "cuisine.recette",
+   "skill": "ARI-SEN-B02",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Une pizza est coupée en 8 parts égales. Noah en mange la moitié.",
+    "en": "A pizza is cut into 8 equal parts. Noah eats half of them."
+   },
+   "prompt": {
+    "fr": "Combien de parts Noah mange-t-il ?",
+    "en": "How many parts does Noah eat?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 4,
+    "calc": "8/2"
+   },
+   "common_errors": [
+    {
+     "value": 2,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "La moitié, c'est partager en 2 : 8 divisé par 2.",
+      "en": "Half means sharing in 2: 8 divided by 2."
+     }
+    },
+    {
+     "value": 16,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "La moitié rend plus petit : on divise.",
+      "en": "Half makes it smaller: we divide."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Partage 8 parts en 2 groupes égaux.",
+    "en": "Share 8 parts into 2 equal groups."
+   },
+   "explain": {
+    "fr": "La moitié de 8 est 4, car 4 + 4 = 8.",
+    "en": "Half of 8 is 4, since 4 + 4 = 8."
+   },
+   "tags": [
+    "fractions",
+    "half-of-a-set",
+    "pizza"
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.recette.005",
+   "quest": "cuisine.recette",
+   "skill": "ARI-SEN-B02",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Mia coupe une pizza en quarts. Un quart de la pizza fait 2 parts.",
+    "en": "Mia cuts a pizza into quarters. One quarter of the pizza is 2 slices."
+   },
+   "prompt": {
+    "fr": "Combien de parts y a-t-il dans la pizza entière ?",
+    "en": "How many slices are in the whole pizza?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 8,
+    "calc": "2*4"
+   },
+   "common_errors": [
+    {
+     "value": 6,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Il y a 4 quarts de 2 parts : multiplie.",
+      "en": "There are 4 quarters of 2 slices: multiply."
+     }
+    },
+    {
+     "value": 2,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "2 parts, c'est un seul quart.",
+      "en": "2 slices is just one quarter."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Une pizza entière a 4 quarts.",
+    "en": "A whole pizza has 4 quarters."
+   },
+   "explain": {
+    "fr": "4 quarts de 2 parts font 4 x 2 = 8 parts.",
+    "en": "4 quarters of 2 slices make 4 x 2 = 8 slices."
+   },
+   "tags": [
+    "fractions",
+    "quarters",
+    "whole"
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.recette.006",
+   "quest": "cuisine.recette",
+   "skill": "ARI-SEN-B02",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Une pizza de 12 parts doit être partagée en tiers. Chaque tiers est un groupe égal.",
+    "en": "A 12-slice pizza is shared in thirds. Each third is an equal group."
+   },
+   "prompt": {
+    "fr": "Combien de parts y a-t-il dans un tiers ?",
+    "en": "How many slices are in one third?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 4,
+    "calc": "12/3"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "On partage en 3 groupes : on divise, on ne soustrait pas.",
+      "en": "We share in 3 groups: we divide, we do not subtract."
+     }
+    },
+    {
+     "value": 36,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "Un tiers est plus petit que le tout : on divise.",
+      "en": "A third is smaller than the whole: we divide."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Partage 12 parts en 3 groupes égaux.",
+    "en": "Share 12 slices into 3 equal groups."
+   },
+   "explain": {
+    "fr": "12 divisé par 3 donne 4. Un tiers de 12 parts, c'est 4 parts.",
+    "en": "12 divided by 3 is 4. One third of 12 slices is 4 slices."
+   },
+   "tags": [
+    "fractions",
+    "thirds",
+    "pizza"
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.recette.007",
+   "quest": "cuisine.recette",
+   "skill": "ARI-SEN-B02",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Mia coupe une pizza en 6 parts égales. Elle donne 2 parts à Noah et 1 part à Léa.",
+    "en": "Mia cuts a pizza into 6 equal slices. She gives 2 slices to Noah and 1 slice to Lea."
+   },
+   "prompt": {
+    "fr": "Combien de parts reste-t-il ?",
+    "en": "How many slices are left?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3,
+    "calc": "6-2-1"
+   },
+   "common_errors": [
+    {
+     "value": 4,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Il faut aussi enlever la part de Léa.",
+      "en": "You must also take away Lea's slice."
+     }
+    },
+    {
+     "value": 9,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Elle donne des parts : on enlève.",
+      "en": "She gives slices away, so we take away."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pars de 6 et enlève les deux dons.",
+    "en": "Start at 6 and take away both gifts."
+   },
+   "explain": {
+    "fr": "6 - 2 = 4, puis 4 - 1 = 3. Il reste 3 parts.",
+    "en": "6 - 2 = 4, then 4 - 1 = 3. 3 slices are left."
+   },
+   "tags": [
+    "word-problem",
+    "sixths",
+    "pizza"
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.recette.008",
+   "quest": "cuisine.recette",
+   "skill": "ARI-SEN-B02",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Une pizza est coupée en 8 parts égales. On mange la moitié, puis Zoé mange encore 1 part.",
+    "en": "A pizza is cut into 8 equal slices. Half is eaten, then Zoe eats 1 more slice."
+   },
+   "prompt": {
+    "fr": "Combien de parts reste-t-il ?",
+    "en": "How many slices are left?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3,
+    "calc": "8/2-1"
+   },
+   "common_errors": [
+    {
+     "value": 4,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Il faut aussi enlever la part de Zoé.",
+      "en": "You must also take away Zoe's slice."
+     }
+    },
+    {
+     "value": 7,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "La moitié de 8 se calcule en divisant par 2.",
+      "en": "Half of 8 is found by dividing by 2."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Trouve d'abord la moitié des parts.",
+    "en": "First find half of the slices."
+   },
+   "explain": {
+    "fr": "La moitié de 8 est 4. Puis 4 - 1 = 3 parts restent.",
+    "en": "Half of 8 is 4. Then 4 - 1 = 3 slices are left."
+   },
+   "tags": [
+    "word-problem",
+    "fractions",
+    "two-step"
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.recette.009",
+   "quest": "cuisine.recette",
+   "skill": "ARI-SEN-B02",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Chloé veut partager sa pizza en quarts.",
+    "en": "Chloe wants to share her pizza in quarters."
+   },
+   "prompt": {
+    "fr": "Quelle pizza est bien coupée en quarts ?",
+    "en": "Which pizza is cut into quarters correctly?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "4 parts égales",
+      "en": "4 equal parts"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "4 parts de grandeurs différentes",
+      "en": "4 parts of different sizes"
+     },
+     "misconception": "mis_fraction_parts_unequal"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "2 parts égales",
+      "en": "2 equal parts"
+     },
+     "misconception": "mis_fraction_denominator"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "3 parts égales",
+      "en": "3 equal parts"
+     },
+     "misconception": "mis_fraction_denominator"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Un quart veut dire une part sur quatre parts égales.",
+    "en": "A quarter means one part out of four equal parts."
+   },
+   "explain": {
+    "fr": "Pour avoir des quarts, il faut 4 parts égales.",
+    "en": "To have quarters, you need 4 equal parts."
+   },
+   "tags": [
+    "fractions",
+    "equal-parts",
+    "quarters"
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.recette.010",
+   "quest": "cuisine.recette",
+   "skill": "ARI-SEN-B02",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Quatre amis mangent des parts différentes de la même sorte de pizza.",
+    "en": "Four friends eat different parts of the same kind of pizza."
+   },
+   "prompt": {
+    "fr": "Quelle part est la plus grande ?",
+    "en": "Which part is the biggest?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "1/2",
+      "en": "1/2"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "1/8",
+      "en": "1/8"
+     },
+     "misconception": "mis_fraction_denominator"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "1/4",
+      "en": "1/4"
+     },
+     "misconception": "mis_fraction_denominator"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "1/3",
+      "en": "1/3"
+     },
+     "misconception": "mis_fraction_denominator"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Plus on coupe en parts, plus chaque part est petite.",
+    "en": "The more parts we cut, the smaller each part is."
+   },
+   "explain": {
+    "fr": "Avec 2 parts, chaque part est la plus grosse. 1/2 est donc la plus grande.",
+    "en": "With 2 parts, each part is the biggest. So 1/2 is the largest."
+   },
+   "tags": [
+    "fractions",
+    "compare",
+    "unit-fractions"
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.recette.011",
+   "quest": "cuisine.recette",
+   "skill": "ARI-SEN-B02",
+   "type": "truefalse",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Omar dit que 1/8 d'une pizza est plus grand que 1/4 de la même pizza.",
+    "en": "Omar says 1/8 of a pizza is bigger than 1/4 of the same pizza."
+   },
+   "prompt": {
+    "fr": "A-t-il raison ?",
+    "en": "Is he right?"
+   },
+   "math_text": "1/8 > 1/4",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_fraction_denominator"
+   },
+   "hint": {
+    "fr": "Imagine la pizza coupée en 8 parts, puis en 4 parts.",
+    "en": "Picture the pizza cut in 8 slices, then in 4 slices."
+   },
+   "explain": {
+    "fr": "Les parts sont plus petites quand on coupe en 8 qu'en 4. 1/8 est donc plus petit que 1/4.",
+    "en": "Slices are smaller when cut in 8 than in 4. So 1/8 is smaller than 1/4."
+   },
+   "tags": [
+    "true-false",
+    "fractions",
+    "compare"
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.recette.012",
+   "quest": "cuisine.recette",
+   "skill": "ARI-SEN-B02",
+   "type": "order",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Quatre enfants mangent chacun une part d'une pizza de même grandeur.",
+    "en": "Four children each eat a slice of an equal-sized pizza."
+   },
+   "prompt": {
+    "fr": "Range les parts, de la plus petite à la plus grande.",
+    "en": "Put the parts in order, from the smallest to the biggest."
+   },
+   "items": [
+    {
+     "id": "i1",
+     "text": {
+      "fr": "1/2",
+      "en": "1/2"
+     },
+     "key": "1/2"
+    },
+    {
+     "id": "i2",
+     "text": {
+      "fr": "1/8",
+      "en": "1/8"
+     },
+     "key": "1/8"
+    },
+    {
+     "id": "i3",
+     "text": {
+      "fr": "1/4",
+      "en": "1/4"
+     },
+     "key": "1/4"
+    },
+    {
+     "id": "i4",
+     "text": {
+      "fr": "1/3",
+      "en": "1/3"
+     },
+     "key": "1/3"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "i2",
+     "i3",
+     "i4",
+     "i1"
+    ],
+    "by": "asc",
+    "misconception": "mis_fraction_denominator"
+   },
+   "hint": {
+    "fr": "Plus le bas du nombre est grand, plus la part est petite.",
+    "en": "The bigger the bottom number, the smaller the part."
+   },
+   "explain": {
+    "fr": "L'ordre est 1/8, 1/4, 1/3, 1/2.",
+    "en": "The order is 1/8, 1/4, 1/3, 1/2."
+   },
+   "tags": [
+    "ordering",
+    "fractions",
+    "unit-fractions"
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.recette.013",
+   "quest": "cuisine.recette",
+   "skill": "ARI-SEN-B02",
+   "type": "match",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Sur la recette, des fractions sont écrites avec des mots.",
+    "en": "On the recipe, fractions are written with words."
+   },
+   "prompt": {
+    "fr": "Relie chaque fraction au bon mot.",
+    "en": "Match each fraction to the right word."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "1/2",
+       "en": "1/2"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "1/4",
+       "en": "1/4"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "1/3",
+       "en": "1/3"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "1/8",
+       "en": "1/8"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "un quart",
+       "en": "one quarter"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "un tiers",
+       "en": "one third"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "un huitième",
+       "en": "one eighth"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "la moitié",
+       "en": "one half"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ],
+     [
+      "l4",
+      "r4"
+     ]
+    ],
+    "misconception": "mis_match"
+   },
+   "hint": {
+    "fr": "Le bas du nombre dit en combien de parts égales on coupe.",
+    "en": "The bottom number says how many equal parts we cut."
+   },
+   "explain": {
+    "fr": "2 parts : un demi. 4 parts : un quart. 3 parts : un tiers. 8 parts : un huitième.",
+    "en": "2 parts: a half. 4 parts: a quarter. 3 parts: a third. 8 parts: an eighth."
+   },
+   "tags": [
+    "matching",
+    "fractions",
+    "vocabulary"
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.recette.014",
+   "quest": "cuisine.recette",
+   "skill": "ARI-SEN-B02",
+   "type": "estimate",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Une pizza est coupée en 8 parts égales. Rosalie en mange 5.",
+    "en": "A pizza is cut into 8 equal slices. Rosalie eats 5."
+   },
+   "prompt": {
+    "fr": "Environ quelle fraction de la pizza Rosalie a-t-elle mangée ?",
+    "en": "About what fraction of the pizza did Rosalie eat?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "un peu plus de la moitié",
+      "en": "a little more than half"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "un peu moins de la moitié",
+      "en": "a little less than half"
+     },
+     "misconception": "mis_fraction_denominator"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "un quart",
+      "en": "a quarter"
+     },
+     "misconception": "mis_fraction_denominator"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "presque toute la pizza",
+      "en": "almost the whole pizza"
+     },
+     "random": true
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "La moitié de 8 parts, c'est 4 parts.",
+    "en": "Half of 8 slices is 4 slices."
+   },
+   "explain": {
+    "fr": "5 parts, c'est plus que 4 parts. Rosalie a mangé un peu plus de la moitié.",
+    "en": "5 slices is more than 4 slices. Rosalie ate a bit more than half."
+   },
+   "tags": [
+    "estimation",
+    "fractions",
+    "compare-to-half"
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.mesures.001",
+   "quest": "cuisine.mesures",
+   "skill": "MES-E03",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa verse un litre de lait dans un pichet pour des crêpes.",
+    "en": "Lea pours one litre of milk into a jug for pancakes."
+   },
+   "prompt": {
+    "fr": "Combien de millilitres y a-t-il dans 1 litre ?",
+    "en": "How many millilitres are in 1 litre?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 1000,
+    "calc": "1*1000"
+   },
+   "common_errors": [
+    {
+     "value": 100,
+     "misconception": "mis_unit_confusion",
+     "feedback": {
+      "fr": "100 est trop petit : un litre est plus grand.",
+      "en": "100 is too small: a litre is bigger."
+     }
+    },
+    {
+     "value": 10,
+     "misconception": "mis_unit_confusion",
+     "feedback": {
+      "fr": "10 est beaucoup trop petit.",
+      "en": "10 is far too small."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Un litre se partage en de très nombreuses petites mesures.",
+    "en": "A litre is shared into a great many small measures."
+   },
+   "explain": {
+    "fr": "1 L = 1 000 mL. Un litre contient mille millilitres.",
+    "en": "1 L = 1,000 mL. A litre holds a thousand millilitres."
+   },
+   "tags": [
+    "capacity",
+    "litre",
+    "millilitre"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_6e99d1a3b31abdc9e82a"
+    },
+    {
+     "role": "object",
+     "asset": "a_7ee5292b46edaa06d94b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.mesures.002",
+   "quest": "cuisine.mesures",
+   "skill": "MES-E03",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Pour une grande recette de crêpes, Noah achète 2 litres de lait.",
+    "en": "For a big pancake recipe, Noah buys 2 litres of milk."
+   },
+   "prompt": {
+    "fr": "Combien de millilitres de lait a-t-il ?",
+    "en": "How many millilitres of milk does he have?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 2000,
+    "calc": "2*1000"
+   },
+   "common_errors": [
+    {
+     "value": 200,
+     "misconception": "mis_unit_confusion",
+     "feedback": {
+      "fr": "1 L fait 1 000 mL, pas 100 mL.",
+      "en": "1 L is 1,000 mL, not 100 mL."
+     }
+    },
+    {
+     "value": 20,
+     "misconception": "mis_unit_confusion",
+     "feedback": {
+      "fr": "20 est beaucoup trop petit.",
+      "en": "20 is far too small."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Un litre vaut 1 000 mL. Il y en a deux.",
+    "en": "One litre is 1,000 mL. There are two."
+   },
+   "explain": {
+    "fr": "2 x 1 000 = 2 000. Noah a 2 000 mL de lait.",
+    "en": "2 x 1,000 = 2,000. Noah has 2,000 mL of milk."
+   },
+   "tags": [
+    "capacity",
+    "litre",
+    "millilitre"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_6e99d1a3b31abdc9e82a"
+    },
+    {
+     "role": "object",
+     "asset": "a_7ee5292b46edaa06d94b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.mesures.003",
+   "quest": "cuisine.mesures",
+   "skill": "MES-E03",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Une soupe demande 3000 mL d'eau. Zoé veut l'écrire en litres.",
+    "en": "A soup needs 3000 mL of water. Zoe wants to write it in litres."
+   },
+   "prompt": {
+    "fr": "Combien de litres d'eau faut-il ?",
+    "en": "How many litres of water are needed?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3,
+    "calc": "3000/1000"
+   },
+   "common_errors": [
+    {
+     "value": 30,
+     "misconception": "mis_unit_confusion",
+     "feedback": {
+      "fr": "Il faut diviser par 1 000, pas par 100.",
+      "en": "You must divide by 1,000, not by 100."
+     }
+    },
+    {
+     "value": 300,
+     "misconception": "mis_unit_confusion",
+     "feedback": {
+      "fr": "Il faut diviser par 1 000, pas par 10.",
+      "en": "You must divide by 1,000, not by 10."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Combien de fois 1 000 mL dans cette quantité ?",
+    "en": "How many 1,000 mL are in this amount?"
+   },
+   "explain": {
+    "fr": "1 000 mL font 1 L. Trois fois 1 000 mL font 3 L.",
+    "en": "1,000 mL make 1 L. Three times 1,000 mL make 3 L."
+   },
+   "tags": [
+    "capacity",
+    "litre",
+    "conversion"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_6e99d1a3b31abdc9e82a"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.mesures.004",
+   "quest": "cuisine.mesures",
+   "skill": "MES-E03",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Aya prépare un sirop avec 2 litres d'eau et 500 mL de sucre liquide.",
+    "en": "Aya makes syrup with 2 litres of water and 500 mL of liquid sugar."
+   },
+   "prompt": {
+    "fr": "Combien de millilitres de liquide cela fait-il en tout ?",
+    "en": "How many millilitres of liquid is that in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 2500,
+    "calc": "2*1000+500"
+   },
+   "common_errors": [
+    {
+     "value": 502,
+     "misconception": "mis_unit_ignored",
+     "feedback": {
+      "fr": "Il faut changer les litres en millilitres avant d'additionner.",
+      "en": "You must change litres into millilitres before adding."
+     }
+    },
+    {
+     "value": 700,
+     "misconception": "mis_unit_confusion",
+     "feedback": {
+      "fr": "2 L valent 2 000 mL, pas 200 mL.",
+      "en": "2 L is 2,000 mL, not 200 mL."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Change 2 litres en millilitres d'abord.",
+    "en": "First change 2 litres into millilitres."
+   },
+   "explain": {
+    "fr": "2 L = 2 000 mL. Puis 2 000 + 500 = 2 500 mL.",
+    "en": "2 L = 2,000 mL. Then 2,000 + 500 = 2,500 mL."
+   },
+   "tags": [
+    "capacity",
+    "conversion",
+    "add"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_6e99d1a3b31abdc9e82a"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.mesures.005",
+   "quest": "cuisine.mesures",
+   "skill": "MES-E03",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "La recette de pâte à crêpes demande 250 mL de lait et 250 mL d'eau.",
+    "en": "The pancake batter recipe asks for 250 mL of milk and 250 mL of water."
+   },
+   "prompt": {
+    "fr": "Combien de millilitres de liquide faut-il en tout ?",
+    "en": "How many millilitres of liquid are needed in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 500,
+    "calc": "250+250"
+   },
+   "common_errors": [
+    {
+     "value": 50,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "250 + 250 fait plus que 50.",
+      "en": "250 + 250 is more than 50."
+     }
+    },
+    {
+     "value": 0,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit le lait et l'eau : on additionne.",
+      "en": "We put the milk and water together, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à deux fois 250.",
+    "en": "Think of two times 250."
+   },
+   "explain": {
+    "fr": "250 + 250 = 500 mL. C'est la moitié d'un litre.",
+    "en": "250 + 250 = 500 mL. That is half a litre."
+   },
+   "tags": [
+    "word-problem",
+    "capacity",
+    "add"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_6e99d1a3b31abdc9e82a"
+    },
+    {
+     "role": "object",
+     "asset": "a_7ee5292b46edaa06d94b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.mesures.006",
+   "quest": "cuisine.mesures",
+   "skill": "MES-E03",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un pichet contient 1 L de jus. Rosalie verse 3 verres de 200 mL.",
+    "en": "A jug holds 1 L of juice. Rosalie pours 3 glasses of 200 mL."
+   },
+   "prompt": {
+    "fr": "Combien de mL de jus reste-t-il dans le pichet ?",
+    "en": "How many mL of juice are left in the jug?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 400,
+    "calc": "1000-3*200"
+   },
+   "common_errors": [
+    {
+     "value": 800,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Elle verse 3 verres, pas un seul.",
+      "en": "She pours 3 glasses, not just one."
+     }
+    },
+    {
+     "value": 1600,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Elle verse du jus : on enlève.",
+      "en": "She pours out juice, so we take away."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Cherche d'abord combien de jus elle a versé.",
+    "en": "First find how much juice she poured."
+   },
+   "explain": {
+    "fr": "3 x 200 = 600 mL versés. Puis 1 000 - 600 = 400 mL.",
+    "en": "3 x 200 = 600 mL poured. Then 1,000 - 600 = 400 mL."
+   },
+   "tags": [
+    "word-problem",
+    "capacity",
+    "subtract"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_7ee5292b46edaa06d94b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.mesures.007",
+   "quest": "cuisine.mesures",
+   "skill": "MES-E03",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Une marmite contient 2 L de bouillon. On en utilise 750 mL pour la soupe.",
+    "en": "A pot holds 2 L of broth. 750 mL are used for the soup."
+   },
+   "prompt": {
+    "fr": "Combien de mL de bouillon reste-t-il ?",
+    "en": "How many mL of broth are left?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 1250,
+    "calc": "2*1000-750"
+   },
+   "common_errors": [
+    {
+     "value": 2750,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On utilise du bouillon : on enlève.",
+      "en": "Some broth is used, so we take away."
+     }
+    },
+    {
+     "value": 748,
+     "misconception": "mis_unit_ignored",
+     "feedback": {
+      "fr": "Il faut changer les litres en mL avant de soustraire.",
+      "en": "You must change litres into mL before subtracting."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Change 2 L en millilitres d'abord.",
+    "en": "First change 2 L into millilitres."
+   },
+   "explain": {
+    "fr": "2 L = 2 000 mL. Puis 2 000 - 750 = 1 250 mL.",
+    "en": "2 L = 2,000 mL. Then 2,000 - 750 = 1,250 mL."
+   },
+   "tags": [
+    "word-problem",
+    "capacity",
+    "conversion"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_da382dc06c6d6138d139"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.mesures.008",
+   "quest": "cuisine.mesures",
+   "skill": "MES-E03",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Pour sa recette, Léa mesure une cuillère de vanille.",
+    "en": "For her recipe, Lea measures a spoon of vanilla."
+   },
+   "prompt": {
+    "fr": "Quelle unité convient le mieux pour mesurer si peu de liquide ?",
+    "en": "Which unit suits such a small amount of liquid best?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "le millilitre",
+      "en": "the millilitre"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "le litre",
+      "en": "the litre"
+     },
+     "misconception": "mis_unit_confusion"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "le kilomètre",
+      "en": "the kilometre"
+     },
+     "random": true
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Une cuillère contient très peu de liquide.",
+    "en": "A spoon holds very little liquid."
+   },
+   "explain": {
+    "fr": "Pour une petite quantité, on utilise les millilitres.",
+    "en": "For a small amount, we use millilitres."
+   },
+   "tags": [
+    "capacity",
+    "choose-the-unit"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_7ee5292b46edaa06d94b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.mesures.009",
+   "quest": "cuisine.mesures",
+   "skill": "MES-E03",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Quatre bouteilles ont des contenus différents.",
+    "en": "Four bottles hold different amounts."
+   },
+   "prompt": {
+    "fr": "Laquelle contient le plus de liquide ?",
+    "en": "Which one holds the most liquid?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "1 L",
+      "en": "1 L"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "900 mL",
+      "en": "900 mL"
+     },
+     "misconception": "mis_unit_confusion"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "800 mL",
+      "en": "800 mL"
+     },
+     "misconception": "mis_unit_confusion"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "750 mL",
+      "en": "750 mL"
+     },
+     "misconception": "mis_unit_confusion"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Écris chaque contenu en millilitres pour comparer.",
+    "en": "Write each amount in millilitres to compare."
+   },
+   "explain": {
+    "fr": "1 L = 1 000 mL, plus que 900, 800 et 750 mL.",
+    "en": "1 L = 1,000 mL, more than 900, 800 and 750 mL."
+   },
+   "tags": [
+    "capacity",
+    "compare",
+    "conversion"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_7ee5292b46edaa06d94b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.mesures.010",
+   "quest": "cuisine.mesures",
+   "skill": "MES-E03",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le chef de la classe de cuisine mesure 4 litres de lait.",
+    "en": "The cooking class chef measures 4 litres of milk."
+   },
+   "prompt": {
+    "fr": "Quelle mesure est égale à 4 L ?",
+    "en": "Which measure is equal to 4 L?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "4 000 mL",
+      "en": "4,000 mL"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "400 mL",
+      "en": "400 mL"
+     },
+     "misconception": "mis_unit_confusion"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "40 mL",
+      "en": "40 mL"
+     },
+     "misconception": "mis_unit_confusion"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "4 mL",
+      "en": "4 mL"
+     },
+     "misconception": "mis_unit_ignored"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Un litre vaut 1 000 mL.",
+    "en": "One litre is worth 1,000 mL."
+   },
+   "explain": {
+    "fr": "4 x 1 000 = 4 000. Donc 4 L = 4 000 mL.",
+    "en": "4 x 1,000 = 4,000. So 4 L = 4,000 mL."
+   },
+   "tags": [
+    "capacity",
+    "conversion"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_6e99d1a3b31abdc9e82a"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.mesures.011",
+   "quest": "cuisine.mesures",
+   "skill": "MES-E03",
+   "type": "truefalse",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Omar a lu sur une bouteille : 1 L.",
+    "en": "Omar read on a bottle: 1 L."
+   },
+   "prompt": {
+    "fr": "Il dit qu'il y a 100 mL dans 1 L. A-t-il raison ?",
+    "en": "He says there are 100 mL in 1 L. Is he right?"
+   },
+   "math_text": "1 L = 100 mL",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_unit_confusion"
+   },
+   "hint": {
+    "fr": "Pense à combien de petits verres de 100 mL il faut pour un litre.",
+    "en": "Think of how many small 100 mL glasses make a litre."
+   },
+   "explain": {
+    "fr": "Il faut 10 verres de 100 mL pour 1 L. Donc 1 L = 1 000 mL.",
+    "en": "It takes 10 glasses of 100 mL to make 1 L. So 1 L = 1,000 mL."
+   },
+   "tags": [
+    "true-false",
+    "capacity",
+    "conversion"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_7ee5292b46edaa06d94b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.mesures.012",
+   "quest": "cuisine.mesures",
+   "skill": "MES-E03",
+   "type": "order",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Quatre contenants de la cuisine ont des contenances différentes.",
+    "en": "Four kitchen containers have different capacities."
+   },
+   "prompt": {
+    "fr": "Range-les, du plus petit au plus grand.",
+    "en": "Put them in order, from the smallest to the biggest."
+   },
+   "items": [
+    {
+     "id": "i1",
+     "text": {
+      "fr": "500 mL",
+      "en": "500 mL"
+     },
+     "key": "500"
+    },
+    {
+     "id": "i2",
+     "text": {
+      "fr": "1 L",
+      "en": "1 L"
+     },
+     "key": "1000"
+    },
+    {
+     "id": "i3",
+     "text": {
+      "fr": "250 mL",
+      "en": "250 mL"
+     },
+     "key": "250"
+    },
+    {
+     "id": "i4",
+     "text": {
+      "fr": "2 L",
+      "en": "2 L"
+     },
+     "key": "2000"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "i3",
+     "i1",
+     "i2",
+     "i4"
+    ],
+    "by": "asc",
+    "misconception": "mis_unit_confusion"
+   },
+   "hint": {
+    "fr": "Change tout en millilitres.",
+    "en": "Change everything into millilitres."
+   },
+   "explain": {
+    "fr": "En mL : 250, 500, 1 000 et 2 000.",
+    "en": "In mL: 250, 500, 1,000 and 2,000."
+   },
+   "tags": [
+    "ordering",
+    "capacity",
+    "conversion"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_7ee5292b46edaa06d94b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.mesures.013",
+   "quest": "cuisine.mesures",
+   "skill": "MES-E03",
+   "type": "match",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Sur une étiquette de recette, Jade relie des mesures de lait.",
+    "en": "On a recipe label, Jade matches measures of milk."
+   },
+   "prompt": {
+    "fr": "Relie chaque mesure à son équivalent.",
+    "en": "Match each measure to its equivalent."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "1 L",
+       "en": "1 L"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "500 mL",
+       "en": "500 mL"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "2 L",
+       "en": "2 L"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "250 mL",
+       "en": "250 mL"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "la moitié d'un litre",
+       "en": "half a litre"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "2 000 mL",
+       "en": "2 000 mL"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "le quart d'un litre",
+       "en": "a quarter of a litre"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "1 000 mL",
+       "en": "1 000 mL"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ],
+     [
+      "l4",
+      "r4"
+     ]
+    ],
+    "misconception": "mis_unit_confusion"
+   },
+   "hint": {
+    "fr": "Un litre vaut 1 000 mL. Coupe-le en moitiés et en quarts.",
+    "en": "A litre is 1,000 mL. Cut it into halves and quarters."
+   },
+   "explain": {
+    "fr": "500 mL est la moitié de 1 000. 250 mL est le quart de 1 000.",
+    "en": "500 mL is half of 1,000. 250 mL is a quarter of 1,000."
+   },
+   "tags": [
+    "matching",
+    "capacity"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_7ee5292b46edaa06d94b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.mesures.014",
+   "quest": "cuisine.mesures",
+   "skill": "MES-E03",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le diagramme montre le jus dans trois bouteilles, en millilitres.",
+    "en": "The chart shows the juice in three bottles, in millilitres."
+   },
+   "prompt": {
+    "fr": "Combien de millilitres de jus y a-t-il en tout ?",
+    "en": "How many millilitres of juice are there in all?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Jus (mL)",
+      "en": "Juice (mL)"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "A",
+        "en": "A"
+       },
+       "value": 750
+      },
+      {
+       "label": {
+        "fr": "B",
+        "en": "B"
+       },
+       "value": 1000
+      },
+      {
+       "label": {
+        "fr": "C",
+        "en": "C"
+       },
+       "value": 500
+      }
+     ],
+     "max": 1000
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 2250,
+    "calc": "750+1000+500"
+   },
+   "common_errors": [
+    {
+     "value": 1750,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié une bouteille.",
+      "en": "You left out a bottle."
+     }
+    },
+    {
+     "value": 225,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "Les barres sont en millilitres : le total est plus grand.",
+      "en": "The bars are in millilitres: the total is bigger."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne les trois barres.",
+    "en": "Add the three bars."
+   },
+   "explain": {
+    "fr": "750 + 1 000 = 1 750, puis 1 750 + 500 = 2 250 mL.",
+    "en": "750 + 1,000 = 1,750, then 1,750 + 500 = 2,250 mL."
+   },
+   "tags": [
+    "bar-chart",
+    "capacity",
+    "add"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_7ee5292b46edaa06d94b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.mesures.015",
+   "quest": "cuisine.mesures",
+   "skill": "MES-E03",
+   "type": "estimate",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Une tasse de lait contient à peu près 250 mL. Léa remplit 6 tasses.",
+    "en": "A cup of milk holds about 250 mL. Lea fills 6 cups."
+   },
+   "prompt": {
+    "fr": "Environ combien de millilitres de lait a-t-elle versés ?",
+    "en": "About how many millilitres of milk did she pour?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 1400,
+    "max": 1600,
+    "exact_for_check": 1500,
+    "calc": "6*250"
+   },
+   "common_errors": [
+    {
+     "value": 256,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "6 tasses de 250 : multiplie.",
+      "en": "6 cups of 250: multiply."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à 4 tasses pour un litre.",
+    "en": "Think of 4 cups for a litre."
+   },
+   "explain": {
+    "fr": "4 tasses font 1 000 mL et 2 tasses font 500 mL. Le total est environ 1 500 mL.",
+    "en": "4 cups make 1,000 mL and 2 cups make 500 mL. The total is about 1,500 mL."
+   },
+   "tags": [
+    "estimation",
+    "capacity",
+    "multiplication"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_6e99d1a3b31abdc9e82a"
+    },
+    {
+     "role": "object",
+     "asset": "a_7ee5292b46edaa06d94b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.partage.001",
+   "quest": "cuisine.partage",
+   "skill": "ARI-SOP-A03a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Quatre amis ramassent 12 fraises au marché. Ils les partagent également.",
+    "en": "Four friends pick 12 strawberries at the market. They share them equally."
+   },
+   "prompt": {
+    "fr": "Combien de fraises chaque ami reçoit-il ?",
+    "en": "How many strawberries does each friend get?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3,
+    "calc": "12/4"
+   },
+   "common_errors": [
+    {
+     "value": 8,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On partage en parts égales : on divise.",
+      "en": "We share in equal parts, so we divide."
+     }
+    },
+    {
+     "value": 48,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "Partager, c'est diviser, pas multiplier.",
+      "en": "Sharing means dividing, not multiplying."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Combien de fois 4 dans 12 ?",
+    "en": "How many times 4 in 12?"
+   },
+   "explain": {
+    "fr": "12 divisé par 4 donne 3, car 3 x 4 = 12.",
+    "en": "12 divided by 4 is 3, since 3 x 4 = 12."
+   },
+   "tags": [
+    "division",
+    "sharing",
+    "strawberries"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_c090dd6ffc45eee09041"
+    },
+    {
+     "role": "object",
+     "asset": "a_446d640c24e146d03e83"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.partage.002",
+   "quest": "cuisine.partage",
+   "skill": "ARI-SOP-A03a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Un boulanger a 20 biscuits. Il les met par groupes de 5 dans des sacs.",
+    "en": "A baker has 20 cookies. He puts them in groups of 5 in bags."
+   },
+   "prompt": {
+    "fr": "Combien de sacs remplit-il ?",
+    "en": "How many bags does he fill?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 4,
+    "calc": "20/5"
+   },
+   "common_errors": [
+    {
+     "value": 15,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On forme des groupes égaux : on divise.",
+      "en": "We form equal groups, so we divide."
+     }
+    },
+    {
+     "value": 25,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "Former des groupes de 5 dans 20, c'est diviser.",
+      "en": "Making groups of 5 out of 20 is dividing."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 5 en 5 jusqu'à 20.",
+    "en": "Count by 5s up to 20."
+   },
+   "explain": {
+    "fr": "5, 10, 15, 20 : 4 groupes. Donc 20 divisé par 5 donne 4.",
+    "en": "5, 10, 15, 20: 4 groups. So 20 divided by 5 is 4."
+   },
+   "tags": [
+    "division",
+    "grouping",
+    "cookies"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_f960ee90963465552540"
+    },
+    {
+     "role": "object",
+     "asset": "a_d3c5f5e2864d3178bf20"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.partage.003",
+   "quest": "cuisine.partage",
+   "skill": "ARI-SOP-A03a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Au marché, un étal vend des carottes en bottes de 7. Une cliente prend 5 bottes.",
+    "en": "At the market, a stall sells carrots in bunches of 7. A customer takes 5 bunches."
+   },
+   "prompt": {
+    "fr": "Combien de carottes a-t-elle ?",
+    "en": "How many carrots does she have?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 35,
+    "calc": "5*7"
+   },
+   "common_errors": [
+    {
+     "value": 12,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "5 bottes de 7 : multiplie.",
+      "en": "5 bunches of 7: multiply."
+     }
+    },
+    {
+     "value": 28,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Il manque une botte en comptant de 7 en 7.",
+      "en": "One bunch is missing counting by 7s."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 7 en 7, cinq fois.",
+    "en": "Count by 7s, five times."
+   },
+   "explain": {
+    "fr": "7, 14, 21, 28, 35. Cinq bottes de 7 font 35 carottes.",
+    "en": "7, 14, 21, 28, 35. Five bunches of 7 make 35 carrots."
+   },
+   "tags": [
+    "multiplication",
+    "grouping",
+    "carrots"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_da382dc06c6d6138d139"
+    },
+    {
+     "role": "object",
+     "asset": "a_add5179377b74ccfb6dc"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.partage.004",
+   "quest": "cuisine.partage",
+   "skill": "ARI-SOP-A03a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un restaurant prépare 4 plateaux. Chaque plateau a 8 petits pains.",
+    "en": "A restaurant prepares 4 trays. Each tray has 8 small buns."
+   },
+   "prompt": {
+    "fr": "Combien de petits pains y a-t-il en tout ?",
+    "en": "How many small buns are there in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 32,
+    "calc": "4*8"
+   },
+   "common_errors": [
+    {
+     "value": 12,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "4 plateaux de 8 : multiplie.",
+      "en": "4 trays of 8: multiply."
+     }
+    },
+    {
+     "value": 24,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Il manque un plateau.",
+      "en": "One tray is missing."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 8 en 8 quatre fois.",
+    "en": "Count by 8s four times."
+   },
+   "explain": {
+    "fr": "8, 16, 24, 32. Quatre plateaux de 8 font 32 petits pains.",
+    "en": "8, 16, 24, 32. Four trays of 8 make 32 buns."
+   },
+   "tags": [
+    "multiplication",
+    "grouping",
+    "buns"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_37c884f0ae91a7393bea"
+    },
+    {
+     "role": "object",
+     "asset": "a_648d935809d028ce4b58"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.partage.005",
+   "quest": "cuisine.partage",
+   "skill": "ARI-SOP-A03a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Camille a fait 48 muffins. Elle les range dans des boîtes de 6.",
+    "en": "Camille made 48 muffins. She puts them in boxes of 6."
+   },
+   "prompt": {
+    "fr": "Combien de boîtes remplit-elle ?",
+    "en": "How many boxes does she fill?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 8,
+    "calc": "48/6"
+   },
+   "common_errors": [
+    {
+     "value": 42,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On forme des groupes égaux : on divise.",
+      "en": "We form equal groups, so we divide."
+     }
+    },
+    {
+     "value": 54,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "Ranger par groupes de 6, c'est diviser.",
+      "en": "Packing in groups of 6 is dividing."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à la table de multiplication de 6.",
+    "en": "Think of the 6 times table."
+   },
+   "explain": {
+    "fr": "6 x 8 = 48. Donc 48 divisé par 6 donne 8 boîtes.",
+    "en": "6 x 8 = 48. So 48 divided by 6 gives 8 boxes."
+   },
+   "tags": [
+    "division",
+    "grouping",
+    "muffins"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_f960ee90963465552540"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.partage.006",
+   "quest": "cuisine.partage",
+   "skill": "ARI-SOP-A03a",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa a 24 cerises. Elle les partage également entre elle et deux amis.",
+    "en": "Lea has 24 cherries. She shares them equally between herself and two friends."
+   },
+   "prompt": {
+    "fr": "Combien de cerises chaque enfant reçoit-il ?",
+    "en": "How many cherries does each child get?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 8,
+    "calc": "24/3"
+   },
+   "common_errors": [
+    {
+     "value": 12,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Il y a 3 enfants : Léa et ses deux amis.",
+      "en": "There are 3 children: Lea and her two friends."
+     }
+    },
+    {
+     "value": 21,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On partage en parts égales : on divise.",
+      "en": "We share in equal parts, so we divide."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte d'abord combien d'enfants se partagent les cerises.",
+    "en": "First count how many children share the cherries."
+   },
+   "explain": {
+    "fr": "Il y a 3 enfants. 24 divisé par 3 donne 8 cerises chacun.",
+    "en": "There are 3 children. 24 divided by 3 gives 8 cherries each."
+   },
+   "tags": [
+    "word-problem",
+    "division",
+    "sharing"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_3ebbdc0c13ab42cdf9b5"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.partage.007",
+   "quest": "cuisine.partage",
+   "skill": "ARI-SOP-A03a",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Au marché, les baies sont vendues en paniers de 5. Zoé achète 7 paniers.",
+    "en": "At the market, berries are sold in baskets of 5. Zoe buys 7 baskets."
+   },
+   "prompt": {
+    "fr": "Combien de baies Zoé a-t-elle achetées ?",
+    "en": "How many berries did Zoe buy?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 35,
+    "calc": "7*5"
+   },
+   "common_errors": [
+    {
+     "value": 12,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "7 paniers de 5 : multiplie.",
+      "en": "7 baskets of 5: multiply."
+     }
+    },
+    {
+     "value": 30,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Il manque un panier en comptant de 5 en 5.",
+      "en": "One basket is missing counting by 5s."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 5 en 5, sept fois.",
+    "en": "Count by 5s, seven times."
+   },
+   "explain": {
+    "fr": "7 x 5 = 35. Zoé a acheté 35 baies.",
+    "en": "7 x 5 = 35. Zoe bought 35 berries."
+   },
+   "tags": [
+    "word-problem",
+    "multiplication",
+    "berries"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_c090dd6ffc45eee09041"
+    },
+    {
+     "role": "object",
+     "asset": "a_446d640c24e146d03e83"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.partage.008",
+   "quest": "cuisine.partage",
+   "skill": "ARI-SOP-A03a",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Il y a 20 biscuits à répartir également sur 4 assiettes.",
+    "en": "There are 20 cookies to spread equally on 4 plates."
+   },
+   "prompt": {
+    "fr": "Quelle opération donne le nombre de biscuits par assiette ?",
+    "en": "Which operation gives the number of cookies per plate?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "20 ÷ 4",
+      "en": "20 ÷ 4"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "20 x 4",
+      "en": "20 x 4"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "20 - 4",
+      "en": "20 - 4"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "20 + 4",
+      "en": "20 + 4"
+     },
+     "misconception": "mis_wrong_operation"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Répartir également, c'est partager.",
+    "en": "Spreading equally means sharing."
+   },
+   "explain": {
+    "fr": "Partager 20 biscuits sur 4 assiettes, c'est 20 ÷ 4.",
+    "en": "Sharing 20 cookies on 4 plates is 20 ÷ 4."
+   },
+   "tags": [
+    "division",
+    "choose-the-operation"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_993be93a875309e87925"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.partage.009",
+   "quest": "cuisine.partage",
+   "skill": "ARI-SOP-A03a",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un marchand a 28 oranges. Il les met dans des sacs de 4.",
+    "en": "A vendor has 28 oranges. He puts them in bags of 4."
+   },
+   "prompt": {
+    "fr": "Combien de sacs peut-il remplir ?",
+    "en": "How many bags can he fill?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "7",
+      "en": "7"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "24",
+      "en": "24"
+     },
+     "misconception": "mis_subtract_instead_of_add"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "32",
+      "en": "32"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "112",
+      "en": "112"
+     },
+     "misconception": "mis_wrong_operation"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a",
+    "calc_choice": {
+     "a": "28/4"
+    }
+   },
+   "hint": {
+    "fr": "Compte de 4 en 4 jusqu'à 28.",
+    "en": "Count by 4s up to 28."
+   },
+   "explain": {
+    "fr": "4, 8, 12, 16, 20, 24, 28 : 7 sacs. Donc 28 ÷ 4 = 7.",
+    "en": "4, 8, 12, 16, 20, 24, 28: 7 bags. So 28 ÷ 4 = 7."
+   },
+   "tags": [
+    "division",
+    "grouping",
+    "oranges"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_da382dc06c6d6138d139"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.partage.010",
+   "quest": "cuisine.partage",
+   "skill": "ARI-SOP-A03a",
+   "type": "truefalse",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah achète 5 sacs de 6 pommes chacun.",
+    "en": "Noah buys 5 bags with 6 apples each."
+   },
+   "prompt": {
+    "fr": "Il dit qu'il a 11 pommes en tout. A-t-il raison ?",
+    "en": "He says he has 11 apples in all. Is he right?"
+   },
+   "math_text": "5 x 6 = 11",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_add_instead_of_multiply"
+   },
+   "hint": {
+    "fr": "5 sacs de 6, c'est 6 répété 5 fois.",
+    "en": "5 bags of 6 is 6 repeated 5 times."
+   },
+   "explain": {
+    "fr": "5 x 6 = 30. Noah a 30 pommes, pas 11.",
+    "en": "5 x 6 = 30. Noah has 30 apples, not 11."
+   },
+   "tags": [
+    "true-false",
+    "multiplication",
+    "apples"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_7e37f4ad4d227d283f9a"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.partage.011",
+   "quest": "cuisine.partage",
+   "skill": "ARI-SOP-A03a",
+   "type": "order",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Quatre cuisiniers calculent le nombre de portions de leurs recettes.",
+    "en": "Four cooks work out the number of servings in their recipes."
+   },
+   "prompt": {
+    "fr": "Range les calculs, du plus petit résultat au plus grand.",
+    "en": "Put the calculations in order, from the smallest result to the biggest."
+   },
+   "items": [
+    {
+     "id": "i1",
+     "text": {
+      "fr": "24 ÷ 6",
+      "en": "24 ÷ 6"
+     },
+     "key": "4"
+    },
+    {
+     "id": "i2",
+     "text": {
+      "fr": "3 x 5",
+      "en": "3 x 5"
+     },
+     "key": "15"
+    },
+    {
+     "id": "i3",
+     "text": {
+      "fr": "36 ÷ 4",
+      "en": "36 ÷ 4"
+     },
+     "key": "9"
+    },
+    {
+     "id": "i4",
+     "text": {
+      "fr": "2 x 7",
+      "en": "2 x 7"
+     },
+     "key": "14"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "i1",
+     "i3",
+     "i4",
+     "i2"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Calcule d'abord le résultat de chacun.",
+    "en": "First work out each result."
+   },
+   "explain": {
+    "fr": "Les résultats sont 4, 9, 14 et 15.",
+    "en": "The results are 4, 9, 14 and 15."
+   },
+   "tags": [
+    "ordering",
+    "division",
+    "multiplication"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_da382dc06c6d6138d139"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.partage.012",
+   "quest": "cuisine.partage",
+   "skill": "ARI-SOP-A03a",
+   "type": "match",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Jade relie des situations du marché avec la bonne opération.",
+    "en": "Jade matches market situations with the right operation."
+   },
+   "prompt": {
+    "fr": "Relie chaque situation à son opération.",
+    "en": "Match each situation to its operation."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "Partager 12 bonbons entre 3 amis",
+       "en": "Share 12 sweets among 3 friends"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "3 sacs de 4 bonbons",
+       "en": "3 bags of 4 sweets"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "Des paquets de 5 avec 20 bonbons",
+       "en": "Packs of 5 with 20 sweets"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "2 sachets de 6 bonbons",
+       "en": "2 pouches of 6 sweets"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "3 x 4",
+       "en": "3 x 4"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "20 ÷ 5",
+       "en": "20 ÷ 5"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "2 x 6",
+       "en": "2 x 6"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "12 ÷ 3",
+       "en": "12 ÷ 3"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ],
+     [
+      "l4",
+      "r4"
+     ]
+    ],
+    "misconception": "mis_wrong_operation"
+   },
+   "hint": {
+    "fr": "Cherche si l'on partage ou si l'on répète un groupe.",
+    "en": "See if we are sharing or repeating a group."
+   },
+   "explain": {
+    "fr": "Partager ou former des groupes, c'est diviser. Répéter un groupe, c'est multiplier.",
+    "en": "Sharing or making groups means dividing. Repeating a group means multiplying."
+   },
+   "tags": [
+    "matching",
+    "operations"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_c090dd6ffc45eee09041"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.partage.013",
+   "quest": "cuisine.partage",
+   "skill": "ARI-SOP-A03a",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le marchand a mis 18 baies sur sa table. Chaque ligne de la grille montre des baies.",
+    "en": "The vendor put 18 berries on his table. Each line of the grid shows berries."
+   },
+   "prompt": {
+    "fr": "Il les range en barquettes de 6. Combien de barquettes remplit-il ?",
+    "en": "He packs them into trays of 6. How many trays does he fill?"
+   },
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 6,
+     "rows": 3,
+     "cells": [
+      {
+       "x": 0,
+       "y": 0,
+       "label": "B"
+      },
+      {
+       "x": 1,
+       "y": 0,
+       "label": "B"
+      },
+      {
+       "x": 2,
+       "y": 0,
+       "label": "B"
+      },
+      {
+       "x": 3,
+       "y": 0,
+       "label": "B"
+      },
+      {
+       "x": 4,
+       "y": 0,
+       "label": "B"
+      },
+      {
+       "x": 5,
+       "y": 0,
+       "label": "B"
+      },
+      {
+       "x": 0,
+       "y": 1,
+       "label": "B"
+      },
+      {
+       "x": 1,
+       "y": 1,
+       "label": "B"
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": "B"
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": "B"
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": "B"
+      },
+      {
+       "x": 5,
+       "y": 1,
+       "label": "B"
+      },
+      {
+       "x": 0,
+       "y": 2,
+       "label": "B"
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": "B"
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": "B"
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": "B"
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": "B"
+      },
+      {
+       "x": 5,
+       "y": 2,
+       "label": "B"
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3,
+    "calc": "18/6"
+   },
+   "common_errors": [
+    {
+     "value": 12,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On forme des groupes égaux : on divise.",
+      "en": "We form equal groups, so we divide."
+     }
+    },
+    {
+     "value": 6,
+     "misconception": "mis_remainder_as_quotient",
+     "feedback": {
+      "fr": "6 est la taille d'un groupe, pas le nombre de groupes.",
+      "en": "6 is the size of a group, not the number of groups."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les baies, puis fais des groupes de 6.",
+    "en": "Count the berries, then make groups of 6."
+   },
+   "explain": {
+    "fr": "Il y a 18 baies. 18 divisé par 6 donne 3 barquettes.",
+    "en": "There are 18 berries. 18 divided by 6 gives 3 trays."
+   },
+   "tags": [
+    "grid",
+    "division",
+    "berries"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_c090dd6ffc45eee09041"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.partage.014",
+   "quest": "cuisine.partage",
+   "skill": "ARI-SOP-A03a",
+   "type": "estimate",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un marchand a 98 oranges. Il veut les mettre dans des sacs de 10.",
+    "en": "A vendor has 98 oranges. He wants to put them in bags of 10."
+   },
+   "prompt": {
+    "fr": "Environ combien de sacs aura-t-il ?",
+    "en": "About how many bags will he have?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "environ 10 sacs",
+      "en": "about 10 bags"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "environ 90 sacs",
+      "en": "about 90 bags"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "environ 100 sacs",
+      "en": "about 100 bags"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "environ 1 sac",
+      "en": "about 1 bag"
+     },
+     "misconception": "mis_place_value"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "98 est près de 100. Combien de dizaines dans 100 ?",
+    "en": "98 is close to 100. How many tens in 100?"
+   },
+   "explain": {
+    "fr": "98 est presque 100, et 100 ÷ 10 = 10. Il aura environ 10 sacs.",
+    "en": "98 is almost 100, and 100 ÷ 10 = 10. He will have about 10 bags."
+   },
+   "tags": [
+    "estimation",
+    "division",
+    "tens"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_da382dc06c6d6138d139"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.tablee.001",
+   "quest": "cuisine.tablee",
+   "skill": "ARI-OPE-A07a",
+   "type": "numeric",
+   "grade": 4,
+   "difficulty": 2,
+   "story": {
+    "fr": "Pour un repas de famille, il y a 23 invités. Chaque table a 4 places.",
+    "en": "For a family dinner there are 23 guests. Each table has 4 seats."
+   },
+   "prompt": {
+    "fr": "Combien de tables sont pleines et combien d'invités restent debout ? Donne le quotient puis le reste.",
+    "en": "How many tables are full and how many guests are left standing? Give the quotient then the remainder."
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": [
+     5,
+     3
+    ],
+    "calc": "divmod(23,4)"
+   },
+   "common_errors": [],
+   "hint": {
+    "fr": "Cherche le plus grand multiple de 4 sans dépasser 23.",
+    "en": "Find the biggest multiple of 4 that does not go over 23."
+   },
+   "explain": {
+    "fr": "5 x 4 = 20 et 23 - 20 = 3. Il y a 5 tables pleines et 3 invités de reste.",
+    "en": "5 x 4 = 20 and 23 - 20 = 3. There are 5 full tables and 3 guests left over."
+   },
+   "tags": [
+    "division",
+    "remainder",
+    "seating"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_f960ee90963465552540"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.tablee.002",
+   "quest": "cuisine.tablee",
+   "skill": "ARI-OPE-A07a",
+   "type": "numeric",
+   "grade": 4,
+   "difficulty": 2,
+   "story": {
+    "fr": "Un traiteur dispose 38 assiettes. Il fait des piles de 7.",
+    "en": "A caterer sets out 38 plates. He makes stacks of 7."
+   },
+   "prompt": {
+    "fr": "Combien de piles complètes et combien d'assiettes restent seules ? Donne le quotient puis le reste.",
+    "en": "How many full stacks and how many plates are left over? Give the quotient then the remainder."
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": [
+     5,
+     3
+    ],
+    "calc": "divmod(38,7)"
+   },
+   "common_errors": [],
+   "hint": {
+    "fr": "Compte de 7 en 7 sans dépasser 38.",
+    "en": "Count by 7s without going over 38."
+   },
+   "explain": {
+    "fr": "5 x 7 = 35 et 38 - 35 = 3. Il y a 5 piles et 3 assiettes seules.",
+    "en": "5 x 7 = 35 and 38 - 35 = 3. There are 5 stacks and 3 plates alone."
+   },
+   "tags": [
+    "division",
+    "remainder",
+    "plates"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_37c884f0ae91a7393bea"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.tablee.003",
+   "quest": "cuisine.tablee",
+   "skill": "ARI-OPE-A07a",
+   "type": "numeric",
+   "grade": 4,
+   "difficulty": 2,
+   "story": {
+    "fr": "Il y a 29 invités. Chaque table a 5 places et tout le monde doit être assis.",
+    "en": "There are 29 guests. Each table has 5 seats and everyone must sit down."
+   },
+   "prompt": {
+    "fr": "Combien de tables faut-il ?",
+    "en": "How many tables are needed?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 6,
+    "calc": "6"
+   },
+   "common_errors": [
+    {
+     "value": 5,
+     "misconception": "mis_ignore_remainder",
+     "feedback": {
+      "fr": "Il reste 4 invités sans place : il faut une table de plus.",
+      "en": "4 guests have no seat: one more table is needed."
+     }
+    },
+    {
+     "value": 4,
+     "misconception": "mis_remainder_as_quotient",
+     "feedback": {
+      "fr": "4 est le reste, pas le nombre de tables.",
+      "en": "4 is the remainder, not the number of tables."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Après les tables pleines, il reste des invités.",
+    "en": "After the full tables, some guests are left."
+   },
+   "explain": {
+    "fr": "5 x 5 = 25 et il reste 4 invités. On ajoute une table : 6 tables.",
+    "en": "5 x 5 = 25 and 4 guests remain. We add one table: 6 tables."
+   },
+   "tags": [
+    "division",
+    "remainder",
+    "seating"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_37c884f0ae91a7393bea"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.tablee.004",
+   "quest": "cuisine.tablee",
+   "skill": "ARI-OPE-A07a",
+   "type": "numeric",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un cuisinier a 50 chaises. Il les range en rangées de 8.",
+    "en": "A cook has 50 chairs. He lines them up in rows of 8."
+   },
+   "prompt": {
+    "fr": "Combien de chaises y a-t-il dans la dernière rangée, qui n'est pas pleine ?",
+    "en": "How many chairs are in the last row, which is not full?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 2,
+    "calc": "50-6*8"
+   },
+   "common_errors": [
+    {
+     "value": 6,
+     "misconception": "mis_remainder_as_quotient",
+     "feedback": {
+      "fr": "6 est le nombre de rangées pleines.",
+      "en": "6 is the number of full rows."
+     }
+    },
+    {
+     "value": 7,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Vérifie : 7 rangées de 8 font 56, c'est trop.",
+      "en": "Check: 7 rows of 8 make 56, which is too many."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Cherche combien de rangées pleines tu peux faire.",
+    "en": "Find how many full rows you can make."
+   },
+   "explain": {
+    "fr": "6 x 8 = 48 et 50 - 48 = 2. La dernière rangée a 2 chaises.",
+    "en": "6 x 8 = 48 and 50 - 48 = 2. The last row has 2 chairs."
+   },
+   "tags": [
+    "division",
+    "remainder",
+    "chairs"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_f960ee90963465552540"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.tablee.005",
+   "quest": "cuisine.tablee",
+   "skill": "ARI-OPE-A07a",
+   "type": "numeric",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa a 47 nappes en papier. Elles sont vendues en paquets de 6.",
+    "en": "Lea has 47 paper tablecloths. They are packed in bundles of 6."
+   },
+   "prompt": {
+    "fr": "Combien de nappes ne sont pas dans un paquet complet ?",
+    "en": "How many tablecloths are not in a full bundle?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "47-7*6"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_remainder_as_quotient",
+     "feedback": {
+      "fr": "7 est le nombre de paquets complets.",
+      "en": "7 is the number of full bundles."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "8 paquets de 6 font 48, c'est trop.",
+      "en": "8 bundles of 6 make 48, which is too many."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Trouve les paquets complets, puis ce qui reste.",
+    "en": "Find the full bundles, then what is left."
+   },
+   "explain": {
+    "fr": "7 x 6 = 42 et 47 - 42 = 5. Il reste 5 nappes.",
+    "en": "7 x 6 = 42 and 47 - 42 = 5. 5 tablecloths are left."
+   },
+   "tags": [
+    "division",
+    "remainder",
+    "tablecloths"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_f960ee90963465552540"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.tablee.006",
+   "quest": "cuisine.tablee",
+   "skill": "ARI-OPE-A07a",
+   "type": "word",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Il y a 34 enfants à la fête. Chaque table a 7 places.",
+    "en": "There are 34 children at the party. Each table has 7 seats."
+   },
+   "prompt": {
+    "fr": "Combien de tables faut-il pour asseoir tous les enfants ?",
+    "en": "How many tables are needed to seat all the children?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "5"
+   },
+   "common_errors": [
+    {
+     "value": 4,
+     "misconception": "mis_ignore_remainder",
+     "feedback": {
+      "fr": "Il reste des enfants sans place : il faut une table de plus.",
+      "en": "Some children have no seat: one more table is needed."
+     }
+    },
+    {
+     "value": 6,
+     "misconception": "mis_remainder_as_quotient",
+     "feedback": {
+      "fr": "6 est le reste, pas le nombre de tables.",
+      "en": "6 is the remainder, not the number of tables."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Divise, puis pense aux enfants qui restent.",
+    "en": "Divide, then think of the children left over."
+   },
+   "explain": {
+    "fr": "4 x 7 = 28 et il reste 6 enfants. Il faut 5 tables.",
+    "en": "4 x 7 = 28 and 6 children remain. 5 tables are needed."
+   },
+   "tags": [
+    "word-problem",
+    "division",
+    "remainder"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_37c884f0ae91a7393bea"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.tablee.007",
+   "quest": "cuisine.tablee",
+   "skill": "ARI-OPE-A07a",
+   "type": "word",
+   "grade": 4,
+   "difficulty": 4,
+   "story": {
+    "fr": "Un groupe de 75 personnes arrive au restaurant. Chaque table a 8 places.",
+    "en": "A group of 75 people arrives at the restaurant. Each table has 8 seats."
+   },
+   "prompt": {
+    "fr": "Combien de tables seront complètement pleines ?",
+    "en": "How many tables will be completely full?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 9,
+    "calc": "9"
+   },
+   "common_errors": [
+    {
+     "value": 10,
+     "misconception": "mis_ignore_remainder",
+     "feedback": {
+      "fr": "La dixième table n'est pas pleine.",
+      "en": "The tenth table is not full."
+     }
+    },
+    {
+     "value": 3,
+     "misconception": "mis_remainder_as_quotient",
+     "feedback": {
+      "fr": "3 est le reste, pas le nombre de tables pleines.",
+      "en": "3 is the remainder, not the number of full tables."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Cherche le plus grand multiple de 8 sans dépasser 75.",
+    "en": "Find the biggest multiple of 8 that does not go over 75."
+   },
+   "explain": {
+    "fr": "9 x 8 = 72 et 75 - 72 = 3. Il y a 9 tables pleines.",
+    "en": "9 x 8 = 72 and 75 - 72 = 3. There are 9 full tables."
+   },
+   "tags": [
+    "word-problem",
+    "division",
+    "remainder"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_37c884f0ae91a7393bea"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.tablee.008",
+   "quest": "cuisine.tablee",
+   "skill": "ARI-OPE-A07a",
+   "type": "word",
+   "grade": 4,
+   "difficulty": 4,
+   "story": {
+    "fr": "Un boulanger a 52 biscuits. Il remplit des assiettes de 9 biscuits.",
+    "en": "A baker has 52 cookies. He fills plates with 9 cookies each."
+   },
+   "prompt": {
+    "fr": "Combien d'assiettes pleines, et combien de biscuits sur l'assiette qui n'est pas pleine ?",
+    "en": "How many full plates, and how many cookies on the plate that is not full?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": [
+     5,
+     7
+    ],
+    "calc": "divmod(52,9)"
+   },
+   "common_errors": [],
+   "hint": {
+    "fr": "Trouve le plus grand multiple de 9 sans dépasser 52.",
+    "en": "Find the biggest multiple of 9 that does not go over 52."
+   },
+   "explain": {
+    "fr": "5 x 9 = 45 et 52 - 45 = 7. Il y a 5 assiettes pleines et 7 biscuits sur la dernière.",
+    "en": "5 x 9 = 45 and 52 - 45 = 7. There are 5 full plates and 7 cookies on the last one."
+   },
+   "tags": [
+    "word-problem",
+    "division",
+    "remainder"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_993be93a875309e87925"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.tablee.009",
+   "quest": "cuisine.tablee",
+   "skill": "ARI-OPE-A07a",
+   "type": "choice",
+   "grade": 4,
+   "difficulty": 2,
+   "story": {
+    "fr": "Rosalie partage 17 biscuits entre 5 assiettes, autant que possible.",
+    "en": "Rosalie shares 17 cookies among 5 plates, as evenly as possible."
+   },
+   "prompt": {
+    "fr": "Quel est le résultat de 17 ÷ 5 ?",
+    "en": "What is the result of 17 ÷ 5?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "3 reste 2",
+      "en": "3 remainder 2"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "2 reste 3",
+      "en": "2 remainder 3"
+     },
+     "misconception": "mis_remainder_as_quotient"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "3",
+      "en": "3"
+     },
+     "misconception": "mis_ignore_remainder"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "4 reste 3",
+      "en": "4 remainder 3"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "5 x 3 = 15. Que reste-t-il pour atteindre 17 ?",
+    "en": "5 x 3 = 15. What is left to reach 17?"
+   },
+   "explain": {
+    "fr": "3 x 5 = 15 et 17 - 15 = 2. Le résultat est 3 reste 2.",
+    "en": "3 x 5 = 15 and 17 - 15 = 2. The result is 3 remainder 2."
+   },
+   "tags": [
+    "division",
+    "remainder"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_993be93a875309e87925"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.tablee.010",
+   "quest": "cuisine.tablee",
+   "skill": "ARI-OPE-A07a",
+   "type": "choice",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Il y a 43 invités et 6 places par table.",
+    "en": "There are 43 guests and 6 seats per table."
+   },
+   "prompt": {
+    "fr": "Quel est le reste de 43 ÷ 6 ?",
+    "en": "What is the remainder of 43 ÷ 6?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "1",
+      "en": "1"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "7",
+      "en": "7"
+     },
+     "misconception": "mis_remainder_as_quotient"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "5",
+      "en": "5"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "0",
+      "en": "0"
+     },
+     "misconception": "mis_ignore_remainder"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "6 x 7 = 42. Compare 42 et 43.",
+    "en": "6 x 7 = 42. Compare 42 and 43."
+   },
+   "explain": {
+    "fr": "7 x 6 = 42 et 43 - 42 = 1. Le reste est 1.",
+    "en": "7 x 6 = 42 and 43 - 42 = 1. The remainder is 1."
+   },
+   "tags": [
+    "division",
+    "remainder"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_37c884f0ae91a7393bea"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.tablee.011",
+   "quest": "cuisine.tablee",
+   "skill": "ARI-OPE-A07a",
+   "type": "truefalse",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Il y a 26 invités et chaque table a 4 places.",
+    "en": "There are 26 guests and each table has 4 seats."
+   },
+   "prompt": {
+    "fr": "Zoé dit que 6 tables suffisent pour tout le monde. A-t-elle raison ?",
+    "en": "Zoe says 6 tables are enough for everyone. Is she right?"
+   },
+   "math_text": "26 ÷ 4 = 6",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_ignore_remainder"
+   },
+   "hint": {
+    "fr": "Calcule combien de personnes 6 tables peuvent asseoir.",
+    "en": "Work out how many people 6 tables can seat."
+   },
+   "explain": {
+    "fr": "6 x 4 = 24, et il y a 26 invités. Il faut 7 tables.",
+    "en": "6 x 4 = 24, and there are 26 guests. 7 tables are needed."
+   },
+   "tags": [
+    "true-false",
+    "division",
+    "remainder"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_37c884f0ae91a7393bea"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.tablee.012",
+   "quest": "cuisine.tablee",
+   "skill": "ARI-OPE-A07a",
+   "type": "order",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Quatre divisions ont des restes différents.",
+    "en": "Four divisions have different remainders."
+   },
+   "prompt": {
+    "fr": "Range les divisions selon leur reste, du plus petit au plus grand.",
+    "en": "Put the divisions in order by their remainder, from the smallest to the biggest."
+   },
+   "items": [
+    {
+     "id": "i1",
+     "text": {
+      "fr": "23 ÷ 6",
+      "en": "23 ÷ 6"
+     },
+     "key": "5"
+    },
+    {
+     "id": "i2",
+     "text": {
+      "fr": "17 ÷ 5",
+      "en": "17 ÷ 5"
+     },
+     "key": "2"
+    },
+    {
+     "id": "i3",
+     "text": {
+      "fr": "25 ÷ 7",
+      "en": "25 ÷ 7"
+     },
+     "key": "4"
+    },
+    {
+     "id": "i4",
+     "text": {
+      "fr": "19 ÷ 8",
+      "en": "19 ÷ 8"
+     },
+     "key": "3"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "i2",
+     "i4",
+     "i3",
+     "i1"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Trouve d'abord le reste de chaque division.",
+    "en": "First find the remainder of each division."
+   },
+   "explain": {
+    "fr": "Les restes sont 2, 3, 4 et 5.",
+    "en": "The remainders are 2, 3, 4 and 5."
+   },
+   "tags": [
+    "ordering",
+    "remainder"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_37c884f0ae91a7393bea"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.tablee.013",
+   "quest": "cuisine.tablee",
+   "skill": "ARI-OPE-A07a",
+   "type": "match",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa vérifie des divisions pour placer ses invités.",
+    "en": "Lea checks divisions to seat her guests."
+   },
+   "prompt": {
+    "fr": "Relie chaque division à son résultat.",
+    "en": "Match each division to its result."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "17 ÷ 4",
+       "en": "17 ÷ 4"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "22 ÷ 5",
+       "en": "22 ÷ 5"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "31 ÷ 6",
+       "en": "31 ÷ 6"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "29 ÷ 8",
+       "en": "29 ÷ 8"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "4 reste 2",
+       "en": "4 remainder 2"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "5 reste 1",
+       "en": "5 remainder 1"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "3 reste 5",
+       "en": "3 remainder 5"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "4 reste 1",
+       "en": "4 remainder 1"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ],
+     [
+      "l4",
+      "r4"
+     ]
+    ],
+    "misconception": "mis_match"
+   },
+   "hint": {
+    "fr": "Cherche le plus grand multiple sans dépasser le nombre.",
+    "en": "Find the biggest multiple without going over the number."
+   },
+   "explain": {
+    "fr": "Voici les résultats. 17 = 4 x 4 + 1. 22 = 4 x 5 + 2. 31 = 5 x 6 + 1. 29 = 3 x 8 + 5.",
+    "en": "Here are the results. 17 = 4 x 4 + 1. 22 = 4 x 5 + 2. 31 = 5 x 6 + 1. 29 = 3 x 8 + 5."
+   },
+   "tags": [
+    "matching",
+    "remainder"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_37c884f0ae91a7393bea"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.tablee.014",
+   "quest": "cuisine.tablee",
+   "skill": "ARI-OPE-A07a",
+   "type": "visual",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "La grille montre 18 invités assis à des tables de 5 places. Chaque ligne est une table.",
+    "en": "The grid shows 18 guests seated at tables of 5 seats. Each line is a table."
+   },
+   "prompt": {
+    "fr": "Combien d'invités sont assis à la dernière table, qui n'est pas pleine ?",
+    "en": "How many guests sit at the last table, which is not full?"
+   },
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 5,
+     "rows": 4,
+     "cells": [
+      {
+       "x": 0,
+       "y": 0,
+       "label": "I"
+      },
+      {
+       "x": 1,
+       "y": 0,
+       "label": "I"
+      },
+      {
+       "x": 2,
+       "y": 0,
+       "label": "I"
+      },
+      {
+       "x": 3,
+       "y": 0,
+       "label": "I"
+      },
+      {
+       "x": 4,
+       "y": 0,
+       "label": "I"
+      },
+      {
+       "x": 0,
+       "y": 1,
+       "label": "I"
+      },
+      {
+       "x": 1,
+       "y": 1,
+       "label": "I"
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": "I"
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": "I"
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": "I"
+      },
+      {
+       "x": 0,
+       "y": 2,
+       "label": "I"
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": "I"
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": "I"
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": "I"
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": "I"
+      },
+      {
+       "x": 0,
+       "y": 3,
+       "label": "I"
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": "I"
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": "I"
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3,
+    "calc": "18-3*5"
+   },
+   "common_errors": [
+    {
+     "value": 5,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "5 est la taille d'une table pleine.",
+      "en": "5 is the size of a full table."
+     }
+    },
+    {
+     "value": 4,
+     "misconception": "mis_remainder_as_quotient",
+     "feedback": {
+      "fr": "4 est le nombre de tables, pas le reste.",
+      "en": "4 is the number of tables, not the remainder."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Regarde la dernière ligne de la grille.",
+    "en": "Look at the last line of the grid."
+   },
+   "explain": {
+    "fr": "Trois tables sont pleines avec 15 invités. 18 - 15 = 3 invités à la dernière table.",
+    "en": "Three tables are full with 15 guests. 18 - 15 = 3 guests at the last table."
+   },
+   "tags": [
+    "grid",
+    "remainder",
+    "seating"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_37c884f0ae91a7393bea"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  },
+  {
+   "id": "cuisine.tablee.015",
+   "quest": "cuisine.tablee",
+   "skill": "ARI-OPE-A07a",
+   "type": "estimate",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un traiteur doit asseoir 100 invités à des tables de 8 places.",
+    "en": "A caterer must seat 100 guests at tables of 8 seats."
+   },
+   "prompt": {
+    "fr": "Environ combien de tables lui faut-il ?",
+    "en": "About how many tables does he need?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "environ 12 tables",
+      "en": "about 12 tables"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "environ 80 tables",
+      "en": "about 80 tables"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "environ 108 tables",
+      "en": "about 108 tables"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "environ 1 table",
+      "en": "about 1 table"
+     },
+     "misconception": "mis_place_value"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Pense à 96 ÷ 8 : un nombre proche de 100.",
+    "en": "Think of 96 ÷ 8: a number close to 100."
+   },
+   "explain": {
+    "fr": "8 x 12 = 96, c'est près de 100. Il faut environ 12 tables.",
+    "en": "8 x 12 = 96, which is close to 100. About 12 tables are needed."
+   },
+   "tags": [
+    "estimation",
+    "division"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_37c884f0ae91a7393bea"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4a",
+   "version": 1
+  }
+ ]
+}
