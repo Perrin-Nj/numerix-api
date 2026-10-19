@@ -1,0 +1,3802 @@
+{
+ "world": "ocean",
+ "schema": 1,
+ "questions": [
+  {
+   "id": "ocean.recif.001",
+   "quest": "ocean.recif",
+   "skill": "ARI-SEN-A02c",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Dans le récif, les petits poissons nagent par groupes de 2.",
+    "en": "On the reef, small fish swim in groups of 2."
+   },
+   "prompt": {
+    "fr": "Il y a 3 groupes. Combien de poissons y a-t-il ?",
+    "en": "There are 3 groups. How many fish are there?"
+   },
+   "math_text": "2 + 2 + 2 = ?",
+   "answer": {
+    "kind": "numeric",
+    "value": 6,
+    "calc": "3*2"
+   },
+   "common_errors": [
+    {
+     "value": 5,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Compte par 2 sans perdre le fil : 2, 4, ...",
+      "en": "Count by 2s without losing track: 2, 4, ..."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as compté un groupe de trop.",
+      "en": "You counted one group too many."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte par 2 : 2, 4, ...",
+    "en": "Count by 2s: 2, 4, ..."
+   },
+   "explain": {
+    "fr": "2, 4, 6. Il y a 6 poissons.",
+    "en": "2, 4, 6. There are 6 fish."
+   },
+   "tags": [
+    "fish",
+    "groups",
+    "skip-count"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_95ae8af3b76106849ef5"
+    },
+    {
+     "role": "object",
+     "asset": "a_6179b36bbd40d25863d2"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.recif.002",
+   "quest": "ocean.recif",
+   "skill": "ARI-SEN-A02c",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa voit des poissons rayés par groupes de 5.",
+    "en": "Lea sees striped fish in groups of 5."
+   },
+   "prompt": {
+    "fr": "Ils forment 4 groupes. Combien de poissons rayés en tout ?",
+    "en": "They make 4 groups. How many striped fish in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 20,
+    "calc": "4*5"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Quatre groupes de 5 : on compte par bonds de 5.",
+      "en": "Four groups of 5: we count in jumps of 5."
+     }
+    },
+    {
+     "value": 25,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as compté un groupe de trop.",
+      "en": "You counted one group too many."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte par 5 : 5, 10, ...",
+    "en": "Count by 5s: 5, 10, ..."
+   },
+   "explain": {
+    "fr": "5, 10, 15, 20. Il y a 20 poissons.",
+    "en": "5, 10, 15, 20. There are 20 fish."
+   },
+   "tags": [
+    "fish",
+    "groups",
+    "skip-count"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_95ae8af3b76106849ef5"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.recif.003",
+   "quest": "ocean.recif",
+   "skill": "ARI-SEN-A02c",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah compte de grands bancs de poissons.",
+    "en": "Noah counts big schools of fish."
+   },
+   "prompt": {
+    "fr": "Il y a 3 bancs de 10 poissons. Combien de poissons en tout ?",
+    "en": "There are 3 schools of 10 fish. How many fish in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 30,
+    "calc": "3*10"
+   },
+   "common_errors": [
+    {
+     "value": 13,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Trois bancs de 10 : on compte par dizaines.",
+      "en": "Three schools of 10: we count by tens."
+     }
+    },
+    {
+     "value": 103,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "Compte par dizaines : 10, 20, ...",
+      "en": "Count by tens: 10, 20, ..."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte par dizaines : 10, 20, ...",
+    "en": "Count by tens: 10, 20, ..."
+   },
+   "explain": {
+    "fr": "10, 20, 30. Il y a 30 poissons.",
+    "en": "10, 20, 30. There are 30 fish."
+   },
+   "tags": [
+    "fish",
+    "groups",
+    "tens"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.recif.004",
+   "quest": "ocean.recif",
+   "skill": "ARI-SEN-A02c",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Un banc de poissons en rejoint un autre.",
+    "en": "One school of fish joins another."
+   },
+   "prompt": {
+    "fr": "Léa voit 12 poissons rayés, puis 7 poissons bleus. Combien en tout ?",
+    "en": "Lea sees 12 striped fish, then 7 blue fish. How many in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 19,
+    "calc": "12+7"
+   },
+   "common_errors": [
+    {
+     "value": 5,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Les bancs se joignent : on additionne.",
+      "en": "The schools join, so we add."
+     }
+    },
+    {
+     "value": 18,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte à partir de 12.",
+      "en": "Close! Count again from 12."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pars de 12 et avance de 7.",
+    "en": "Start at 12 and move on by 7."
+   },
+   "explain": {
+    "fr": "12 + 7 = 19 poissons.",
+    "en": "12 + 7 = 19 fish."
+   },
+   "tags": [
+    "fish",
+    "add"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.recif.005",
+   "quest": "ocean.recif",
+   "skill": "ARI-SEN-A02c",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa compte les poissons par 2.",
+    "en": "Lea counts the fish by 2s."
+   },
+   "prompt": {
+    "fr": "Elle dit 2, 4, 6. Quel nombre vient ensuite ?",
+    "en": "She says 2, 4, 6. Which number comes next?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "7",
+      "en": "7"
+     },
+     "misconception": "mis_skip_count"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "8",
+      "en": "8"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "9",
+      "en": "9"
+     },
+     "misconception": "mis_skip_count"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "10",
+      "en": "10"
+     },
+     "misconception": "mis_skip_count"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b",
+    "calc_choice": {
+     "b": "6+2"
+    }
+   },
+   "hint": {
+    "fr": "Ajoute 2 à chaque fois.",
+    "en": "Add 2 each time."
+   },
+   "explain": {
+    "fr": "6 + 2 = 8. On compte 2, 4, 6, 8.",
+    "en": "6 + 2 = 8. We count 2, 4, 6, 8."
+   },
+   "tags": [
+    "fish",
+    "skip-count"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.recif.006",
+   "quest": "ocean.recif",
+   "skill": "ARI-SEN-A02c",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah regroupe 15 poissons en petits groupes de 5.",
+    "en": "Noah puts 15 fish into small groups of 5."
+   },
+   "prompt": {
+    "fr": "Combien de groupes fait-il ?",
+    "en": "How many groups does he make?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "10",
+      "en": "10"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "3",
+      "en": "3"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "20",
+      "en": "20"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "75",
+      "en": "75"
+     },
+     "misconception": "mis_wrong_operation"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b",
+    "calc_choice": {
+     "b": "15/5"
+    }
+   },
+   "hint": {
+    "fr": "Compte par 5 jusqu’à 15.",
+    "en": "Count by 5s up to 15."
+   },
+   "explain": {
+    "fr": "5, 10, 15 : cela fait 3 groupes.",
+    "en": "5, 10, 15: that makes 3 groups."
+   },
+   "tags": [
+    "fish",
+    "groups",
+    "sharing"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.recif.007",
+   "quest": "ocean.recif",
+   "skill": "ARI-SEN-A02c",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa regarde les poissons du récif.",
+    "en": "Lea looks at the fish on the reef."
+   },
+   "prompt": {
+    "fr": "Quel groupe a le plus de poissons ?",
+    "en": "Which group has the most fish?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Poissons du récif",
+      "en": "Reef fish"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "jaunes",
+        "en": "yellow"
+       },
+       "count": 7
+      },
+      {
+       "label": {
+        "fr": "bleus",
+        "en": "blue"
+       },
+       "count": 4
+      },
+      {
+       "label": {
+        "fr": "verts",
+        "en": "green"
+       },
+       "count": 9
+      }
+     ]
+    }
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Les poissons jaunes",
+      "en": "The yellow fish"
+     },
+     "misconception": "mis_read_wrong_bar"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Les poissons bleus",
+      "en": "The blue fish"
+     },
+     "misconception": "mis_read_wrong_bar"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Les poissons verts",
+      "en": "The green fish"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c"
+   },
+   "hint": {
+    "fr": "Cherche la ligne qui a le plus d’images.",
+    "en": "Look for the row with the most pictures."
+   },
+   "explain": {
+    "fr": "La ligne des poissons verts a 9 images. C’est la plus longue.",
+    "en": "The green fish row has 9 pictures. It is the longest."
+   },
+   "tags": [
+    "fish",
+    "pictograph",
+    "most"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_95ae8af3b76106849ef5"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.recif.008",
+   "quest": "ocean.recif",
+   "skill": "ARI-SEN-A02c",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Un plongeur compte les poissons qu’il voit.",
+    "en": "A diver counts the fish he sees."
+   },
+   "prompt": {
+    "fr": "Il voit 5 poissons, puis 3, puis 4. Combien en tout ?",
+    "en": "He sees 5 fish, then 3, then 4. How many in all?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "8",
+      "en": "8"
+     },
+     "misconception": "mis_partial_result"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "11",
+      "en": "11"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "12",
+      "en": "12"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "60",
+      "en": "60"
+     },
+     "misconception": "mis_multiply_instead_of_add"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "5+3+4"
+    }
+   },
+   "hint": {
+    "fr": "Additionne 5 et 3, puis ajoute le reste.",
+    "en": "Add 5 and 3, then add the rest."
+   },
+   "explain": {
+    "fr": "5 + 3 = 8, puis 8 + 4 = 12 poissons.",
+    "en": "5 + 3 = 8, then 8 + 4 = 12 fish."
+   },
+   "tags": [
+    "fish",
+    "word-problem",
+    "add"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.recif.009",
+   "quest": "ocean.recif",
+   "skill": "ARI-SEN-A02c",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un banc de poissons nage près du récif.",
+    "en": "A school of fish swims near the reef."
+   },
+   "prompt": {
+    "fr": "Il y a 20 poissons et 8 s’en vont. Combien en reste-t-il ?",
+    "en": "There are 20 fish and 8 swim away. How many are left?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 12,
+    "calc": "20-8"
+   },
+   "common_errors": [
+    {
+     "value": 28,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Des poissons partent : il en reste moins.",
+      "en": "Some fish leave, so fewer are left."
+     }
+    },
+    {
+     "value": 13,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte à partir de 8.",
+      "en": "Close! Count again from 8."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 8 jusqu’à 20.",
+    "en": "Count from 8 up to 20."
+   },
+   "explain": {
+    "fr": "8 + 12 = 20, donc il en reste 12.",
+    "en": "8 + 12 = 20, so 12 are left."
+   },
+   "tags": [
+    "fish",
+    "word-problem",
+    "subtract"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.recif.010",
+   "quest": "ocean.recif",
+   "skill": "ARI-SEN-A02c",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Une pieuvre a 8 bras, et une autre aussi.",
+    "en": "An octopus has 8 arms, and so does another one."
+   },
+   "prompt": {
+    "fr": "Combien de bras ont les deux pieuvres ensemble ?",
+    "en": "How many arms do the two octopuses have together?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 16,
+    "calc": "2*8"
+   },
+   "common_errors": [
+    {
+     "value": 10,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Deux pieuvres, chacune avec 8 bras : double 8.",
+      "en": "Two octopuses with 8 arms each: double 8."
+     }
+    },
+    {
+     "value": 14,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Double 8 avec soin.",
+      "en": "Close! Double 8 carefully."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense au double de 8.",
+    "en": "Think of double 8."
+   },
+   "explain": {
+    "fr": "8 + 8 = 16 bras.",
+    "en": "8 + 8 = 16 arms."
+   },
+   "tags": [
+    "octopus",
+    "doubles",
+    "word-problem"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_4dfd49959bc303d641dc"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.recif.011",
+   "quest": "ocean.recif",
+   "skill": "ARI-SEN-A02c",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Un crabe a 10 pattes. Noah les compte par 2.",
+    "en": "A crab has 10 legs. Noah counts them by 2s."
+   },
+   "prompt": {
+    "fr": "Il dit qu’il fait 5 groupes de 2. A-t-il raison ?",
+    "en": "He says he makes 5 groups of 2. Is he right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": true
+   },
+   "hint": {
+    "fr": "Compte par 2 : 2, 4, 6, ...",
+    "en": "Count by 2s: 2, 4, 6, ..."
+   },
+   "explain": {
+    "fr": "2, 4, 6, 8, 10 : cela fait 5 groupes de 2.",
+    "en": "2, 4, 6, 8, 10: that makes 5 groups of 2."
+   },
+   "tags": [
+    "crab",
+    "true-false",
+    "skip-count"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_5dab35d6ebc98078d272"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.recif.012",
+   "quest": "ocean.recif",
+   "skill": "ARI-SEN-A02c",
+   "type": "order",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Quatre bancs de poissons nagent dans le récif.",
+    "en": "Four schools of fish swim on the reef."
+   },
+   "prompt": {
+    "fr": "Range les bancs du plus petit au plus grand.",
+    "en": "Put the schools in order, smallest to biggest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "15 poissons",
+      "en": "15 fish"
+     },
+     "key": "15"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "7 poissons",
+      "en": "7 fish"
+     },
+     "key": "7"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "11 poissons",
+      "en": "11 fish"
+     },
+     "key": "11"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "3 poissons",
+      "en": "3 fish"
+     },
+     "key": "3"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "d",
+     "b",
+     "c",
+     "a"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Cherche d’abord le plus petit nombre.",
+    "en": "First find the smallest number."
+   },
+   "explain": {
+    "fr": "3, 7, 11 puis 15 poissons.",
+    "en": "3, 7, 11 then 15 fish."
+   },
+   "tags": [
+    "fish",
+    "ordering"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.recif.013",
+   "quest": "ocean.recif",
+   "skill": "ARI-SEN-A02c",
+   "type": "match",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa relie des groupes de poissons à leur total.",
+    "en": "Lea links groups of fish to their total."
+   },
+   "prompt": {
+    "fr": "Relie chaque groupe à son total.",
+    "en": "Match each group to its total."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "3 groupes de 2",
+       "en": "3 groups of 2"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "2 groupes de 5",
+       "en": "2 groups of 5"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "4 groupes de 5",
+       "en": "4 groups of 5"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "20",
+       "en": "20"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "6",
+       "en": "6"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "10",
+       "en": "10"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r2"
+     ],
+     [
+      "l2",
+      "r3"
+     ],
+     [
+      "l3",
+      "r1"
+     ]
+    ],
+    "misconception": "mis_skip_count"
+   },
+   "hint": {
+    "fr": "Compte par 2 ou par 5 selon le groupe.",
+    "en": "Count by 2s or by 5s depending on the group."
+   },
+   "explain": {
+    "fr": "2, 4, 6 fait 6. 5, 10 fait 10. 5, 10, 15, 20 fait 20.",
+    "en": "2, 4, 6 makes 6. 5, 10 makes 10. 5, 10, 15, 20 makes 20."
+   },
+   "tags": [
+    "fish",
+    "matching",
+    "skip-count"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.recif.014",
+   "quest": "ocean.recif",
+   "skill": "ARI-SEN-A02c",
+   "type": "estimate",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah voit deux bancs de poissons.",
+    "en": "Noah sees two schools of fish."
+   },
+   "prompt": {
+    "fr": "Un banc a 9 poissons et l’autre 11. Environ combien de poissons en tout ?",
+    "en": "One school has 9 fish and the other 11. About how many fish in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 18,
+    "max": 22,
+    "exact_for_check": 20,
+    "calc": "9+11"
+   },
+   "common_errors": [
+    {
+     "value": 2,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Les deux bancs se joignent : on additionne.",
+      "en": "The two schools join, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "9 est proche de 10 et 11 aussi.",
+    "en": "9 is close to 10 and so is 11."
+   },
+   "explain": {
+    "fr": "10 + 10 = 20, donc environ 20 poissons.",
+    "en": "10 + 10 = 20, so about 20 fish."
+   },
+   "tags": [
+    "fish",
+    "estimation",
+    "rounding"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.profondeur.001",
+   "quest": "ocean.profondeur",
+   "skill": "ARI-SEN-A10",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Un plongeur descend le long d’une corde graduée.",
+    "en": "A diver goes down a marked rope."
+   },
+   "prompt": {
+    "fr": "La flèche montre où il est. À quelle profondeur, en mètres ?",
+    "en": "The arrow shows where he is. At what depth, in metres?"
+   },
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 0,
+     "max": 20,
+     "step": 1,
+     "labels": [
+      0,
+      5,
+      10,
+      15,
+      20
+     ],
+     "arrow": 8
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 8,
+    "calc": "8"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Compte les petits traits depuis 5.",
+      "en": "Close! Count the small marks from 5."
+     }
+    },
+    {
+     "value": 10,
+     "misconception": "mis_read_scale",
+     "feedback": {
+      "fr": "10 est le trait marqué le plus proche. Compte depuis 5.",
+      "en": "10 is the nearest labelled mark. Count from 5."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les petits traits à partir de 5.",
+    "en": "Count the small marks from 5."
+   },
+   "explain": {
+    "fr": "La flèche est 3 traits après le 5 : 8 m.",
+    "en": "The arrow is 3 marks after the 5: 8 m."
+   },
+   "tags": [
+    "depth",
+    "number-line",
+    "metres"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_95ae8af3b76106849ef5"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.profondeur.002",
+   "quest": "ocean.profondeur",
+   "skill": "ARI-SEN-A10",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un sous-marin descend le long d’une échelle de profondeur.",
+    "en": "A submarine goes down a depth scale."
+   },
+   "prompt": {
+    "fr": "Où est le sous-marin ? Lis la profondeur en mètres.",
+    "en": "Where is the submarine? Read the depth in metres."
+   },
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 0,
+     "max": 50,
+     "step": 1,
+     "labels": [
+      0,
+      10,
+      20,
+      30,
+      40,
+      50
+     ],
+     "arrow": 35
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 35,
+    "calc": "35"
+   },
+   "common_errors": [
+    {
+     "value": 30,
+     "misconception": "mis_read_scale",
+     "feedback": {
+      "fr": "30 est le trait marqué le plus proche. Continue de compter.",
+      "en": "30 is the nearest labelled mark. Keep counting."
+     }
+    },
+    {
+     "value": 40,
+     "misconception": "mis_read_scale",
+     "feedback": {
+      "fr": "La flèche n’est pas encore sur 40.",
+      "en": "The arrow is not yet on 40."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "La flèche est entre 30 et 40. Compte à partir de 30.",
+    "en": "The arrow is between 30 and 40. Count from 30."
+   },
+   "explain": {
+    "fr": "La flèche est à mi-chemin entre 30 et 40 : 35 m.",
+    "en": "The arrow is halfway between 30 and 40: 35 m."
+   },
+   "tags": [
+    "depth",
+    "number-line",
+    "scale"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_5c845cd93cc069195f33"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.profondeur.003",
+   "quest": "ocean.profondeur",
+   "skill": "ARI-SEN-A10",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Une tortue nage près du fond marin.",
+    "en": "A turtle swims near the sea floor."
+   },
+   "prompt": {
+    "fr": "À quelle profondeur est la flèche, en mètres ?",
+    "en": "At what depth is the arrow, in metres?"
+   },
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 20,
+     "max": 30,
+     "step": 1,
+     "labels": [
+      20,
+      25,
+      30
+     ],
+     "arrow": 26
+    }
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "62",
+      "en": "62"
+     },
+     "misconception": "mis_digit_swap"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "25",
+      "en": "25"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "26",
+      "en": "26"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "30",
+      "en": "30"
+     },
+     "misconception": "mis_read_scale"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "26"
+    }
+   },
+   "hint": {
+    "fr": "La flèche est juste après 25.",
+    "en": "The arrow is just after 25."
+   },
+   "explain": {
+    "fr": "Un trait après 25 : 26 m.",
+    "en": "One mark after 25: 26 m."
+   },
+   "tags": [
+    "depth",
+    "number-line",
+    "turtle"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.profondeur.004",
+   "quest": "ocean.profondeur",
+   "skill": "ARI-SEN-A10",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Le sous-marin est à 12 m de profondeur.",
+    "en": "The submarine is 12 m deep."
+   },
+   "prompt": {
+    "fr": "Il descend encore de 5 m. À quelle profondeur est-il ?",
+    "en": "It goes down 5 m more. How deep is it?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 17,
+    "calc": "12+5"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Il descend : la profondeur augmente.",
+      "en": "It goes down, so the depth grows."
+     }
+    },
+    {
+     "value": 16,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les 5 mètres.",
+      "en": "Close! Count the 5 metres again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pars de 12 et avance de 5.",
+    "en": "Start at 12 and move on by 5."
+   },
+   "explain": {
+    "fr": "12 + 5 font 17 m.",
+    "en": "12 + 5 makes 17 m."
+   },
+   "tags": [
+    "depth",
+    "add",
+    "submarine"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.profondeur.005",
+   "quest": "ocean.profondeur",
+   "skill": "ARI-SEN-A10",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Une plongeuse remonte vers la surface.",
+    "en": "A diver swims up toward the surface."
+   },
+   "prompt": {
+    "fr": "Elle est à 25 m et remonte de 10 m. À quelle profondeur est-elle ?",
+    "en": "She is at 25 m and swims up 10 m. How deep is she now?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 15,
+    "calc": "25-10"
+   },
+   "common_errors": [
+    {
+     "value": 35,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Elle remonte : la profondeur diminue.",
+      "en": "She goes up, so the depth shrinks."
+     }
+    },
+    {
+     "value": 14,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les 10 mètres.",
+      "en": "Close! Count the 10 metres again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Remonter, c’est enlever.",
+    "en": "Going up means taking away."
+   },
+   "explain": {
+    "fr": "25 - 10 donne 15 m.",
+    "en": "25 - 10 gives 15 m."
+   },
+   "tags": [
+    "depth",
+    "subtract",
+    "diver"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.profondeur.006",
+   "quest": "ocean.profondeur",
+   "skill": "ARI-SEN-A10",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa regarde les repères de la corde.",
+    "en": "Lea looks at the marks on the rope."
+   },
+   "prompt": {
+    "fr": "Quel nombre est entre 14 et 16 ?",
+    "en": "Which number is between 14 and 16?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "13",
+      "en": "13"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "15",
+      "en": "15"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "17",
+      "en": "17"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "12",
+      "en": "12"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b",
+    "calc_choice": {
+     "b": "15"
+    }
+   },
+   "hint": {
+    "fr": "Compte : 14, puis le nombre suivant.",
+    "en": "Count: 14, then the next number."
+   },
+   "explain": {
+    "fr": "14, 15, 16 : 15 est au milieu.",
+    "en": "14, 15, 16: 15 is in the middle."
+   },
+   "tags": [
+    "depth",
+    "between",
+    "number-line"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.profondeur.007",
+   "quest": "ocean.profondeur",
+   "skill": "ARI-SEN-A10",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Quatre plongeurs sont à des profondeurs différentes.",
+    "en": "Four divers are at different depths."
+   },
+   "prompt": {
+    "fr": "Quelle profondeur est la plus grande ?",
+    "en": "Which depth is the greatest?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "9 m",
+      "en": "9 m"
+     },
+     "misconception": "mis_order_reversed"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "19 m",
+      "en": "19 m"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "12 m",
+      "en": "12 m"
+     },
+     "misconception": "mis_order_partial"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "11 m",
+      "en": "11 m"
+     },
+     "misconception": "mis_order_partial"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Compare d’abord les dizaines.",
+    "en": "Compare the tens first."
+   },
+   "explain": {
+    "fr": "19 a 1 dizaine. 9 n’en a aucune. 19 est le plus grand.",
+    "en": "19 has 1 ten. 9 has none. 19 is the greatest."
+   },
+   "tags": [
+    "depth",
+    "compare"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.profondeur.008",
+   "quest": "ocean.profondeur",
+   "skill": "ARI-SEN-A10",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un plongeur remonte par étapes.",
+    "en": "A diver swims up in stages."
+   },
+   "prompt": {
+    "fr": "Parti de 30 m, il remonte de 5 m, puis de 5 m. Où arrive-t-il ?",
+    "en": "Starting at 30 m, he goes up 5 m, then 5 m. Where does he arrive?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "40",
+      "en": "40"
+     },
+     "misconception": "mis_add_instead_of_subtract"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "25",
+      "en": "25"
+     },
+     "misconception": "mis_partial_result"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "20",
+      "en": "20"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "35",
+      "en": "35"
+     },
+     "misconception": "mis_add_instead_of_subtract"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "30-5-5"
+    }
+   },
+   "hint": {
+    "fr": "Enlève 5, puis enlève encore 5.",
+    "en": "Take away 5, then take away 5 again."
+   },
+   "explain": {
+    "fr": "30 - 5 = 25, puis 25 - 5 = 20 m.",
+    "en": "30 - 5 = 25, then 25 - 5 = 20 m."
+   },
+   "tags": [
+    "depth",
+    "subtract",
+    "two-steps"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.profondeur.009",
+   "quest": "ocean.profondeur",
+   "skill": "ARI-SEN-A10",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un petit sous-marin explore le récif.",
+    "en": "A small submarine explores the reef."
+   },
+   "prompt": {
+    "fr": "Parti de 40 m, il descend de 20 m puis remonte de 10 m. Où est-il ?",
+    "en": "Starting at 40 m, it goes down 20 m then up 10 m. Where is it?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 50,
+    "calc": "40+20-10"
+   },
+   "common_errors": [
+    {
+     "value": 60,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié la remontée de 10 m.",
+      "en": "You forgot the 10 m going back up."
+     }
+    },
+    {
+     "value": 70,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Quand il remonte, on enlève.",
+      "en": "When it goes up, we take away."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Descends d’abord, puis remonte.",
+    "en": "Go down first, then go up."
+   },
+   "explain": {
+    "fr": "40 + 20 = 60, puis 60 - 10 = 50 m.",
+    "en": "40 + 20 = 60, then 60 - 10 = 50 m."
+   },
+   "tags": [
+    "depth",
+    "word-problem",
+    "two-steps"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.profondeur.010",
+   "quest": "ocean.profondeur",
+   "skill": "ARI-SEN-A10",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 4,
+   "story": {
+    "fr": "Deux plongeurs explorent le récif.",
+    "en": "Two divers explore the reef."
+   },
+   "prompt": {
+    "fr": "Un plongeur est à 18 m, un autre à 11 m. Quel est l’écart entre eux ?",
+    "en": "One diver is at 18 m, another at 11 m. What is the gap between them?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 7,
+    "calc": "18-11"
+   },
+   "common_errors": [
+    {
+     "value": 29,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche l’écart : on compare.",
+      "en": "We look for the gap, so we compare."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte de 11 jusqu’à 18.",
+      "en": "Close! Count again from 11 up to 18."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 11 jusqu’à 18.",
+    "en": "Count from 11 up to 18."
+   },
+   "explain": {
+    "fr": "11 + 7 = 18, donc l’écart est de 7 m.",
+    "en": "11 + 7 = 18, so the gap is 7 m."
+   },
+   "tags": [
+    "depth",
+    "word-problem",
+    "difference"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.profondeur.011",
+   "quest": "ocean.profondeur",
+   "skill": "ARI-SEN-A10",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Noah observe la corde de plongée.",
+    "en": "Noah looks at the dive rope."
+   },
+   "prompt": {
+    "fr": "Il dit que plus on descend, plus la profondeur est grande. A-t-il raison ?",
+    "en": "He says the further down we go, the greater the depth. Is he right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": true
+   },
+   "hint": {
+    "fr": "Pense à une corde qui s’enfonce dans l’eau.",
+    "en": "Think of a rope sinking into the water."
+   },
+   "explain": {
+    "fr": "Plus on descend, plus on est profond.",
+    "en": "The further down we go, the deeper we are."
+   },
+   "tags": [
+    "depth",
+    "true-false"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.profondeur.012",
+   "quest": "ocean.profondeur",
+   "skill": "ARI-SEN-A10",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Quatre plongeurs sont à des profondeurs différentes.",
+    "en": "Four divers are at different depths."
+   },
+   "prompt": {
+    "fr": "Range les profondeurs de la plus grande à la plus petite.",
+    "en": "Put the depths in order, from the greatest to the smallest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "25 m",
+      "en": "25 m"
+     },
+     "key": "25"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "8 m",
+      "en": "8 m"
+     },
+     "key": "8"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "30 m",
+      "en": "30 m"
+     },
+     "key": "30"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "17 m",
+      "en": "17 m"
+     },
+     "key": "17"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "c",
+     "a",
+     "d",
+     "b"
+    ],
+    "by": "desc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Le plongeur le plus profond est à la plus grande profondeur.",
+    "en": "The deepest diver is at the greatest depth."
+   },
+   "explain": {
+    "fr": "Dans l’ordre : 30 m, 25 m, 17 m puis 8 m.",
+    "en": "In order: 30 m, 25 m, 17 m then 8 m."
+   },
+   "tags": [
+    "depth",
+    "ordering"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.profondeur.013",
+   "quest": "ocean.profondeur",
+   "skill": "ARI-SEN-A10",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa place des profondeurs sur la droite numérique.",
+    "en": "Lea places depths on the number line."
+   },
+   "prompt": {
+    "fr": "Relie chaque profondeur à sa place.",
+    "en": "Match each depth to its place."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "12 m",
+       "en": "12 m"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "25 m",
+       "en": "25 m"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "40 m",
+       "en": "40 m"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "à mi-chemin entre 30 et 50",
+       "en": "halfway between 30 and 50"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "juste après 10",
+       "en": "just after 10"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "à mi-chemin entre 20 et 30",
+       "en": "halfway between 20 and 30"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r2"
+     ],
+     [
+      "l2",
+      "r3"
+     ],
+     [
+      "l3",
+      "r1"
+     ]
+    ],
+    "misconception": "mis_read_scale"
+   },
+   "hint": {
+    "fr": "Cherche le milieu de chaque paire de nombres.",
+    "en": "Find the middle of each pair of numbers."
+   },
+   "explain": {
+    "fr": "12 est juste après 10. 25 est entre 20 et 30. 40 est entre 30 et 50.",
+    "en": "12 is just after 10. 25 is between 20 and 30. 40 is between 30 and 50."
+   },
+   "tags": [
+    "depth",
+    "matching",
+    "number-line"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.profondeur.014",
+   "quest": "ocean.profondeur",
+   "skill": "ARI-SEN-A10",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Une plongeuse descend en deux étapes.",
+    "en": "A diver goes down in two stages."
+   },
+   "prompt": {
+    "fr": "Elle descend de 19 m, puis de 22 m. Environ combien de mètres en tout ?",
+    "en": "She goes down 19 m, then 22 m. About how many metres in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 37,
+    "max": 45,
+    "exact_for_check": 41,
+    "calc": "19+22"
+   },
+   "common_errors": [
+    {
+     "value": 3,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Elle continue de descendre : on additionne.",
+      "en": "She keeps going down, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis chaque nombre à la dizaine.",
+    "en": "Round each number to the nearest ten."
+   },
+   "explain": {
+    "fr": "19 devient 20 et 22 devient 20. 20 + 20 = 40, donc environ 40 m.",
+    "en": "19 becomes 20 and 22 becomes 20. 20 + 20 = 40, so about 40 m."
+   },
+   "tags": [
+    "depth",
+    "estimation",
+    "rounding"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.baleines.001",
+   "quest": "ocean.baleines",
+   "skill": "ARI-OPE-A04b",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa observe les baleines dans le Saint-Laurent.",
+    "en": "Lea watches whales in the St. Lawrence."
+   },
+   "prompt": {
+    "fr": "Elle prend 124 photos le matin et 135 l’après-midi. Combien de photos en tout ?",
+    "en": "She takes 124 photos in the morning and 135 in the afternoon. How many photos in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 259,
+    "calc": "124+135"
+   },
+   "common_errors": [
+    {
+     "value": 11,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les photos des deux moments : on additionne.",
+      "en": "We put the photos of both times together, so we add."
+     }
+    },
+    {
+     "value": 249,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Vérifie la colonne des dizaines.",
+      "en": "Close! Check the tens column."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne les unités, puis les dizaines, puis les centaines.",
+    "en": "Add the ones, then the tens, then the hundreds."
+   },
+   "explain": {
+    "fr": "4 + 5 = 9, 2 + 3 = 5, 1 + 1 = 2. Donc 259 photos.",
+    "en": "4 + 5 = 9, 2 + 3 = 5, 1 + 1 = 2. So 259 photos."
+   },
+   "tags": [
+    "whales",
+    "add-3-digit"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_20e7c8b063f98f323783"
+    },
+    {
+     "role": "object",
+     "asset": "a_f5c6da4e8e26ffff4430"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.baleines.002",
+   "quest": "ocean.baleines",
+   "skill": "ARI-OPE-A04b",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah note les bélugas aperçus par son équipe.",
+    "en": "Noah records the belugas spotted by his team."
+   },
+   "prompt": {
+    "fr": "Lundi, il y en a 247. Mardi, il y en a 138. Combien de bélugas en tout ?",
+    "en": "On Monday there are 247. On Tuesday there are 138. How many belugas in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 385,
+    "calc": "247+138"
+   },
+   "common_errors": [
+    {
+     "value": 375,
+     "misconception": "mis_forgot_carry",
+     "feedback": {
+      "fr": "7 + 8 fait 15 : n’oublie pas la retenue.",
+      "en": "7 + 8 makes 15: do not forget to carry."
+     }
+    },
+    {
+     "value": 109,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les deux jours : on additionne.",
+      "en": "We put both days together, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "7 + 8 dépasse 10 : pense à la retenue.",
+    "en": "7 + 8 is more than 10: think of carrying."
+   },
+   "explain": {
+    "fr": "7 + 8 = 15, on retient 1. 4 + 3 + 1 = 8. 2 + 1 = 3. Donc 385.",
+    "en": "7 + 8 = 15, carry 1. 4 + 3 + 1 = 8. 2 + 1 = 3. So 385."
+   },
+   "tags": [
+    "whales",
+    "add-3-digit",
+    "carry"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_20e7c8b063f98f323783"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.baleines.003",
+   "quest": "ocean.baleines",
+   "skill": "ARI-OPE-A04b",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa compte les observations de deux semaines.",
+    "en": "Lea counts the sightings of two weeks."
+   },
+   "prompt": {
+    "fr": "La première semaine, elle en note 468. La deuxième, 275. Combien en tout ?",
+    "en": "In the first week she notes 468. In the second, 275. How many in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 743,
+    "calc": "468+275"
+   },
+   "common_errors": [
+    {
+     "value": 633,
+     "misconception": "mis_forgot_carry",
+     "feedback": {
+      "fr": "Il y a deux retenues dans ce calcul.",
+      "en": "There are two carries in this sum."
+     }
+    },
+    {
+     "value": 193,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les deux semaines : on additionne.",
+      "en": "We put both weeks together, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "8 + 5 dépasse 10 : retiens 1.",
+    "en": "8 + 5 is more than 10: carry 1."
+   },
+   "explain": {
+    "fr": "8 + 5 = 13, on retient 1. 6 + 7 + 1 = 14, on retient 1. 4 + 2 + 1 = 7. Donc 743.",
+    "en": "8 + 5 = 13, carry 1. 6 + 7 + 1 = 14, carry 1. 4 + 2 + 1 = 7. So 743."
+   },
+   "tags": [
+    "whales",
+    "add-3-digit",
+    "carry"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.baleines.004",
+   "quest": "ocean.baleines",
+   "skill": "ARI-OPE-A04b",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah fait un calcul rapide sur son carnet de bord.",
+    "en": "Noah does a quick sum in his logbook."
+   },
+   "prompt": {
+    "fr": "Combien font 240 + 150 ?",
+    "en": "How much is 240 + 150?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "90",
+      "en": "90"
+     },
+     "misconception": "mis_subtract_instead_of_add"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "380",
+      "en": "380"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "390",
+      "en": "390"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "490",
+      "en": "490"
+     },
+     "misconception": "mis_place_value"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "240+150"
+    }
+   },
+   "hint": {
+    "fr": "Additionne les centaines, puis les dizaines.",
+    "en": "Add the hundreds, then the tens."
+   },
+   "explain": {
+    "fr": "240 + 150 : 200 + 100 = 300 et 40 + 50 = 90. Donc 390.",
+    "en": "240 + 150: 200 + 100 = 300 and 40 + 50 = 90. So 390."
+   },
+   "tags": [
+    "whales",
+    "add-3-digit",
+    "mental"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.baleines.005",
+   "quest": "ocean.baleines",
+   "skill": "ARI-OPE-A04b",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa lit un grand nombre sur son carnet.",
+    "en": "Lea reads a big number in her notebook."
+   },
+   "prompt": {
+    "fr": "Dans 346, que vaut le chiffre 4 ?",
+    "en": "In 346, what is the value of the digit 4?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "4",
+      "en": "4"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "400",
+      "en": "400"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "40",
+      "en": "40"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "300",
+      "en": "300"
+     },
+     "random": true
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "4*10"
+    }
+   },
+   "hint": {
+    "fr": "Le chiffre 4 est à la place des dizaines.",
+    "en": "The digit 4 is in the tens place."
+   },
+   "explain": {
+    "fr": "Le 4 est dans les dizaines : il vaut 40.",
+    "en": "The 4 is in the tens place: it is worth 40."
+   },
+   "tags": [
+    "whales",
+    "place-value"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.baleines.006",
+   "quest": "ocean.baleines",
+   "skill": "ARI-OPE-A04b",
+   "type": "estimate",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "L’équipe fait une estimation avant de calculer.",
+    "en": "The team makes an estimate before calculating."
+   },
+   "prompt": {
+    "fr": "Quelle est la meilleure estimation de 398 + 205 ?",
+    "en": "Which is the best estimate of 398 + 205?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "500",
+      "en": "500"
+     },
+     "misconception": "mis_estimate_rounding"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "600",
+      "en": "600"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "700",
+      "en": "700"
+     },
+     "misconception": "mis_estimate_rounding"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "200",
+      "en": "200"
+     },
+     "misconception": "mis_subtract_instead_of_add"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b",
+    "calc_choice": {
+     "b": "400+200"
+    }
+   },
+   "hint": {
+    "fr": "Arrondis chaque nombre à la centaine.",
+    "en": "Round each number to the nearest hundred."
+   },
+   "explain": {
+    "fr": "398 devient 400 et 205 devient 200. Donc environ 600.",
+    "en": "398 becomes 400 and 205 becomes 200. So about 600."
+   },
+   "tags": [
+    "whales",
+    "estimation",
+    "rounding"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.baleines.007",
+   "quest": "ocean.baleines",
+   "skill": "ARI-OPE-A04b",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un bateau d’observation compte les animaux marins.",
+    "en": "A whale-watching boat counts sea animals."
+   },
+   "prompt": {
+    "fr": "Il voit 215 bélugas, 128 dauphins et 56 phoques. Combien d’animaux en tout ?",
+    "en": "It sees 215 belugas, 128 dolphins and 56 seals. How many animals in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 399,
+    "calc": "215+128+56"
+   },
+   "common_errors": [
+    {
+     "value": 343,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié les phoques.",
+      "en": "You left out the seals."
+     }
+    },
+    {
+     "value": 389,
+     "misconception": "mis_forgot_carry",
+     "feedback": {
+      "fr": "N’oublie pas la retenue.",
+      "en": "Do not forget to carry."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne deux nombres, puis le troisième.",
+    "en": "Add two numbers, then the third one."
+   },
+   "explain": {
+    "fr": "215 + 128 = 343, puis 343 + 56 = 399.",
+    "en": "215 + 128 = 343, then 343 + 56 = 399."
+   },
+   "tags": [
+    "whales",
+    "word-problem",
+    "add-3-digit"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.baleines.008",
+   "quest": "ocean.baleines",
+   "skill": "ARI-OPE-A04b",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "L’équipe de Léa note ses observations chaque jour.",
+    "en": "Lea’s team records its sightings each day."
+   },
+   "prompt": {
+    "fr": "Mardi, elle note 365 observations. Mercredi, elle en note 148 de plus. Combien mercredi ?",
+    "en": "On Tuesday she records 365 sightings. On Wednesday she records 148 more. How many on Wednesday?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 513,
+    "calc": "365+148"
+   },
+   "common_errors": [
+    {
+     "value": 403,
+     "misconception": "mis_forgot_carry",
+     "feedback": {
+      "fr": "N’oublie pas les retenues.",
+      "en": "Do not forget the carries."
+     }
+    },
+    {
+     "value": 217,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "« De plus » veut dire qu’on ajoute.",
+      "en": "“More” means we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Mercredi, c’est le total de mardi plus 148.",
+    "en": "Wednesday is Tuesday’s total plus 148."
+   },
+   "explain": {
+    "fr": "365 + 148 : 5 + 8 = 13, 6 + 4 + 1 = 11, 3 + 1 + 1 = 5. Donc 513.",
+    "en": "365 + 148: 5 + 8 = 13, 6 + 4 + 1 = 11, 3 + 1 + 1 = 5. So 513."
+   },
+   "tags": [
+    "whales",
+    "word-problem",
+    "carry"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.baleines.009",
+   "quest": "ocean.baleines",
+   "skill": "ARI-OPE-A04b",
+   "type": "truefalse",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah additionne deux nombres de son carnet.",
+    "en": "Noah adds two numbers from his notebook."
+   },
+   "prompt": {
+    "fr": "Il dit que 250 + 150 donne 400. A-t-il raison ?",
+    "en": "He says 250 + 150 makes 400. Is he right?"
+   },
+   "math_text": "250 + 150 = 400",
+   "answer": {
+    "kind": "truefalse",
+    "value": true
+   },
+   "hint": {
+    "fr": "50 + 50 fait 100.",
+    "en": "50 + 50 makes 100."
+   },
+   "explain": {
+    "fr": "250 + 150 = 400.",
+    "en": "250 + 150 = 400."
+   },
+   "tags": [
+    "whales",
+    "true-false",
+    "add-3-digit"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.baleines.010",
+   "quest": "ocean.baleines",
+   "skill": "ARI-OPE-A04b",
+   "type": "truefalse",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa vérifie le calcul de Noah.",
+    "en": "Lea checks Noah’s sum."
+   },
+   "prompt": {
+    "fr": "Noah affirme que 199 + 101 fait 290. Est-ce vrai ?",
+    "en": "Noah claims that 199 + 101 equals 290. Is that true?"
+   },
+   "math_text": "199 + 101 = 290",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_forgot_carry"
+   },
+   "hint": {
+    "fr": "199 est tout près de 200.",
+    "en": "199 is very close to 200."
+   },
+   "explain": {
+    "fr": "199 + 101 = 300, pas 290.",
+    "en": "199 + 101 = 300, not 290."
+   },
+   "tags": [
+    "whales",
+    "true-false",
+    "carry"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.baleines.011",
+   "quest": "ocean.baleines",
+   "skill": "ARI-OPE-A04b",
+   "type": "order",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Quatre calculs sont écrits au tableau.",
+    "en": "Four sums are written on the board."
+   },
+   "prompt": {
+    "fr": "Range les sommes de la plus petite à la plus grande.",
+    "en": "Put the sums in order, smallest to biggest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "300 + 150",
+      "en": "300 + 150"
+     },
+     "key": "450"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "200 + 380",
+      "en": "200 + 380"
+     },
+     "key": "580"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "120 + 90",
+      "en": "120 + 90"
+     },
+     "key": "210"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "400 + 100",
+      "en": "400 + 100"
+     },
+     "key": "500"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "c",
+     "a",
+     "d",
+     "b"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_partial"
+   },
+   "hint": {
+    "fr": "Calcule chaque somme avant de ranger.",
+    "en": "Work out each sum before ordering."
+   },
+   "explain": {
+    "fr": "210, 450, 500 puis 580.",
+    "en": "210, 450, 500 then 580."
+   },
+   "tags": [
+    "whales",
+    "ordering",
+    "sums"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.baleines.012",
+   "quest": "ocean.baleines",
+   "skill": "ARI-OPE-A04b",
+   "type": "order",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa note les observations de quatre mois.",
+    "en": "Lea records the sightings of four months."
+   },
+   "prompt": {
+    "fr": "Range les nombres d’observations du plus grand au plus petit.",
+    "en": "Put the numbers of sightings in order, biggest to smallest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "305",
+      "en": "305"
+     },
+     "key": "305"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "530",
+      "en": "530"
+     },
+     "key": "530"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "289",
+      "en": "289"
+     },
+     "key": "289"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "350",
+      "en": "350"
+     },
+     "key": "350"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "d",
+     "a",
+     "c"
+    ],
+    "by": "desc",
+    "misconception": "mis_order_partial"
+   },
+   "hint": {
+    "fr": "Compare d’abord les centaines.",
+    "en": "Compare the hundreds first."
+   },
+   "explain": {
+    "fr": "530, 350, 305 puis 289.",
+    "en": "530, 350, 305 then 289."
+   },
+   "tags": [
+    "whales",
+    "ordering",
+    "3-digit"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.baleines.013",
+   "quest": "ocean.baleines",
+   "skill": "ARI-OPE-A04b",
+   "type": "match",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah associe des additions à leurs résultats.",
+    "en": "Noah matches additions with their results."
+   },
+   "prompt": {
+    "fr": "Relie chaque addition à son résultat.",
+    "en": "Match each addition to its result."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "120 + 130",
+       "en": "120 + 130"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "250 + 250",
+       "en": "250 + 250"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "175 + 125",
+       "en": "175 + 125"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "500",
+       "en": "500"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "300",
+       "en": "300"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "250",
+       "en": "250"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r3"
+     ],
+     [
+      "l2",
+      "r1"
+     ],
+     [
+      "l3",
+      "r2"
+     ]
+    ],
+    "misconception": "mis_forgot_carry"
+   },
+   "hint": {
+    "fr": "Commence par 250 + 250, c’est un double.",
+    "en": "Start with 250 + 250, it is a double."
+   },
+   "explain": {
+    "fr": "120 + 130 = 250, 250 + 250 = 500 et 175 + 125 = 300.",
+    "en": "120 + 130 = 250, 250 + 250 = 500 and 175 + 125 = 300."
+   },
+   "tags": [
+    "whales",
+    "matching",
+    "add-3-digit"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.baleines.014",
+   "quest": "ocean.baleines",
+   "skill": "ARI-OPE-A04b",
+   "type": "match",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Léa estime des sommes avant de les calculer.",
+    "en": "Lea estimates sums before calculating."
+   },
+   "prompt": {
+    "fr": "Associe chaque addition à son estimation.",
+    "en": "Pair each addition with its estimate."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "298 + 305",
+       "en": "298 + 305"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "502 + 198",
+       "en": "502 + 198"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "399 + 101",
+       "en": "399 + 101"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "environ 700",
+       "en": "about 700"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "environ 500",
+       "en": "about 500"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "environ 600",
+       "en": "about 600"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r3"
+     ],
+     [
+      "l2",
+      "r1"
+     ],
+     [
+      "l3",
+      "r2"
+     ]
+    ],
+    "misconception": "mis_estimate_rounding"
+   },
+   "hint": {
+    "fr": "Arrondis chaque nombre à la centaine.",
+    "en": "Round each number to the nearest hundred."
+   },
+   "explain": {
+    "fr": "300 + 300 = 600, 500 + 200 = 700 et 400 + 100 = 500.",
+    "en": "300 + 300 = 600, 500 + 200 = 700 and 400 + 100 = 500."
+   },
+   "tags": [
+    "whales",
+    "matching",
+    "estimation"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.baleines.015",
+   "quest": "ocean.baleines",
+   "skill": "ARI-OPE-A04b",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le diagramme montre les baleines vues pendant trois jours.",
+    "en": "The chart shows the whales seen over three days."
+   },
+   "prompt": {
+    "fr": "Combien de baleines ont été vues en tout ?",
+    "en": "How many whales were seen in all?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Baleines vues par jour",
+      "en": "Whales seen per day"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "jour 1",
+        "en": "day 1"
+       },
+       "value": 120
+      },
+      {
+       "label": {
+        "fr": "jour 2",
+        "en": "day 2"
+       },
+       "value": 145
+      },
+      {
+       "label": {
+        "fr": "jour 3",
+        "en": "day 3"
+       },
+       "value": 210
+      }
+     ],
+     "max": 250
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 475,
+    "calc": "120+145+210"
+   },
+   "common_errors": [
+    {
+     "value": 265,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié la dernière barre.",
+      "en": "You left out the last bar."
+     }
+    },
+    {
+     "value": 330,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as oublié la barre du milieu.",
+      "en": "You left out the middle bar."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Lis chaque barre, puis additionne.",
+    "en": "Read each bar, then add."
+   },
+   "explain": {
+    "fr": "120 + 145 = 265, puis 265 + 210 = 475.",
+    "en": "120 + 145 = 265, then 265 + 210 = 475."
+   },
+   "tags": [
+    "whales",
+    "bar-chart",
+    "add-3-digit"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.sous-marin.001",
+   "quest": "ocean.sous-marin",
+   "skill": "MES-A05a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa mesure un tuyau du petit sous-marin.",
+    "en": "Lea measures a pipe of the little submarine."
+   },
+   "prompt": {
+    "fr": "Le tuyau mesure 2 m. Combien de centimètres cela fait-il ? (1 m = 100 cm)",
+    "en": "The pipe is 2 m long. How many centimetres is that? (1 m = 100 cm)"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 200,
+    "calc": "2*100"
+   },
+   "common_errors": [
+    {
+     "value": 20,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "Un mètre vaut 100 cm, pas 10 cm.",
+      "en": "One metre is 100 cm, not 10 cm."
+     }
+    },
+    {
+     "value": 2,
+     "misconception": "mis_unit_ignored",
+     "feedback": {
+      "fr": "Il faut changer de mètres en centimètres.",
+      "en": "You need to change metres into centimetres."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Chaque mètre vaut 100 cm. Compte 2 fois.",
+    "en": "Each metre is worth 100 cm. Count 2 times."
+   },
+   "explain": {
+    "fr": "100 + 100 = 200. Le tuyau mesure 200 cm.",
+    "en": "100 + 100 = 200. The pipe is 200 cm long."
+   },
+   "tags": [
+    "metres",
+    "centimetres",
+    "conversion"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_5c845cd93cc069195f33"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.sous-marin.002",
+   "quest": "ocean.sous-marin",
+   "skill": "MES-A05a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah prépare une corde pour le sous-marin.",
+    "en": "Noah prepares a rope for the submarine."
+   },
+   "prompt": {
+    "fr": "La corde mesure 4 m et 50 cm. Combien de centimètres en tout ?",
+    "en": "The rope is 4 m and 50 cm long. How many centimetres in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 450,
+    "calc": "4*100+50"
+   },
+   "common_errors": [
+    {
+     "value": 54,
+     "misconception": "mis_unit_ignored",
+     "feedback": {
+      "fr": "Les mètres et les centimètres ne s’additionnent pas sans conversion.",
+      "en": "Metres and centimetres cannot be added without converting."
+     }
+    },
+    {
+     "value": 4050,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "4 m, c’est 400 cm, pas 4000 cm.",
+      "en": "4 m is 400 cm, not 4000 cm."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Change d’abord les mètres en centimètres.",
+    "en": "First change the metres into centimetres."
+   },
+   "explain": {
+    "fr": "4 m = 400 cm. Puis 400 + 50 = 450.",
+    "en": "4 m = 400 cm. Then 400 + 50 = 450."
+   },
+   "tags": [
+    "metres",
+    "centimetres",
+    "mixed-units"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.sous-marin.003",
+   "quest": "ocean.sous-marin",
+   "skill": "MES-A05a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Le sous-marin mesure 12 m. Son modèle réduit en mesure 150 cm.",
+    "en": "The submarine is 12 m long. Its small model is 150 cm long."
+   },
+   "prompt": {
+    "fr": "Combien de centimètres de plus mesure le vrai sous-marin ?",
+    "en": "How many more centimetres is the real submarine?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 1050,
+    "calc": "12*100-150"
+   },
+   "common_errors": [
+    {
+     "value": 138,
+     "misconception": "mis_unit_ignored",
+     "feedback": {
+      "fr": "Convertis les mètres en centimètres avant de soustraire.",
+      "en": "Convert the metres into centimetres before subtracting."
+     }
+    },
+    {
+     "value": 1350,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On cherche l’écart : on soustrait.",
+      "en": "We look for the gap, so we subtract."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "12 m valent 1200 cm. Ensuite, compare.",
+    "en": "12 m is worth 1200 cm. Then compare."
+   },
+   "explain": {
+    "fr": "12 m = 1200 cm. Puis 1200 - 150 = 1050.",
+    "en": "12 m = 1200 cm. Then 1200 - 150 = 1050."
+   },
+   "tags": [
+    "metres",
+    "centimetres",
+    "difference"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.sous-marin.004",
+   "quest": "ocean.sous-marin",
+   "skill": "MES-A05a",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa veut mesurer la longueur du sous-marin.",
+    "en": "Lea wants to measure the length of the submarine."
+   },
+   "prompt": {
+    "fr": "Quelle unité convient le mieux ?",
+    "en": "Which unit suits best?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "cm",
+      "en": "cm"
+     },
+     "misconception": "mis_unit_confusion"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "m",
+      "en": "m"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "kg",
+      "en": "kg"
+     },
+     "misconception": "mis_unit_confusion"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "L",
+      "en": "L"
+     },
+     "random": true
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Un sous-marin est très long.",
+    "en": "A submarine is very long."
+   },
+   "explain": {
+    "fr": "Un sous-marin est long : on le mesure en mètres.",
+    "en": "A submarine is long, so we measure it in metres."
+   },
+   "tags": [
+    "metres",
+    "units",
+    "length"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_5c845cd93cc069195f33"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.sous-marin.005",
+   "quest": "ocean.sous-marin",
+   "skill": "MES-A05a",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah apprend à convertir les longueurs.",
+    "en": "Noah is learning to convert lengths."
+   },
+   "prompt": {
+    "fr": "Combien de centimètres y a-t-il dans un mètre ?",
+    "en": "How many centimetres are there in one metre?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "10 cm",
+      "en": "10 cm"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "100 cm",
+      "en": "100 cm"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "1000 cm",
+      "en": "1000 cm"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "1 cm",
+      "en": "1 cm"
+     },
+     "misconception": "mis_unit_confusion"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Une règle d’un mètre est longue.",
+    "en": "A one-metre ruler is long."
+   },
+   "explain": {
+    "fr": "Un mètre vaut 100 cm.",
+    "en": "One metre equals 100 cm."
+   },
+   "tags": [
+    "metres",
+    "centimetres",
+    "conversion"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.sous-marin.006",
+   "quest": "ocean.sous-marin",
+   "skill": "MES-A05a",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Quatre tuyaux sont alignés dans l’atelier du sous-marin.",
+    "en": "Four pipes are lined up in the submarine workshop."
+   },
+   "prompt": {
+    "fr": "Quel tuyau est le plus long ?",
+    "en": "Which pipe is the longest?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "4 m",
+      "en": "4 m"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "250 cm",
+      "en": "250 cm"
+     },
+     "misconception": "mis_unit_ignored"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "310 cm",
+      "en": "310 cm"
+     },
+     "misconception": "mis_unit_ignored"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "290 cm",
+      "en": "290 cm"
+     },
+     "misconception": "mis_unit_ignored"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Mets toutes les longueurs en centimètres.",
+    "en": "Put all the lengths in centimetres."
+   },
+   "explain": {
+    "fr": "4 m = 400 cm. C’est plus que 310 cm, 290 cm et 250 cm.",
+    "en": "4 m = 400 cm. That is more than 310 cm, 290 cm and 250 cm."
+   },
+   "tags": [
+    "metres",
+    "centimetres",
+    "compare"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.sous-marin.007",
+   "quest": "ocean.sous-marin",
+   "skill": "MES-A05a",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa a un câble de 3 m pour le sous-marin.",
+    "en": "Lea has a 3 m cable for the submarine."
+   },
+   "prompt": {
+    "fr": "Elle en coupe 80 cm. Combien de centimètres reste-t-il ?",
+    "en": "She cuts off 80 cm. How many centimetres are left?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "77",
+      "en": "77"
+     },
+     "misconception": "mis_unit_ignored"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "380",
+      "en": "380"
+     },
+     "misconception": "mis_add_instead_of_subtract"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "220",
+      "en": "220"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "2020",
+      "en": "2020"
+     },
+     "misconception": "mis_place_value"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "3*100-80"
+    }
+   },
+   "hint": {
+    "fr": "Change 3 m en centimètres, puis enlève.",
+    "en": "Change 3 m into centimetres, then take away."
+   },
+   "explain": {
+    "fr": "3 m = 300 cm. Puis 300 - 80 = 220 cm.",
+    "en": "3 m = 300 cm. Then 300 - 80 = 220 cm."
+   },
+   "tags": [
+    "metres",
+    "centimetres",
+    "word-problem"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.sous-marin.008",
+   "quest": "ocean.sous-marin",
+   "skill": "MES-A05a",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah aligne trois sous-marins jouets.",
+    "en": "Noah lines up three toy submarines."
+   },
+   "prompt": {
+    "fr": "Chaque jouet mesure 45 cm. Quelle longueur font-ils ensemble, en cm ?",
+    "en": "Each toy is 45 cm long. What length do they make together, in cm?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 135,
+    "calc": "3*45"
+   },
+   "common_errors": [
+    {
+     "value": 48,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Trois jouets égaux : on multiplie.",
+      "en": "Three equal toys: we multiply."
+     }
+    },
+    {
+     "value": 90,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as compté deux jouets seulement.",
+      "en": "You counted only two toys."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne 45 trois fois.",
+    "en": "Add 45 three times."
+   },
+   "explain": {
+    "fr": "45 + 45 = 90, puis 90 + 45 = 135 cm.",
+    "en": "45 + 45 = 90, then 90 + 45 = 135 cm."
+   },
+   "tags": [
+    "centimetres",
+    "word-problem",
+    "multiply"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.sous-marin.009",
+   "quest": "ocean.sous-marin",
+   "skill": "MES-A05a",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Léa coupe un long tuyau pour réparer le sous-marin.",
+    "en": "Lea cuts a long pipe to repair the submarine."
+   },
+   "prompt": {
+    "fr": "Le tuyau mesure 5 m. Chaque morceau coupé mesure 50 cm. Combien de morceaux ?",
+    "en": "The pipe is 5 m long. Each piece cut is 50 cm long. How many pieces?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 10,
+    "calc": "500/50"
+   },
+   "common_errors": [
+    {
+     "value": 450,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "On cherche combien de morceaux : on partage.",
+      "en": "We look for how many pieces, so we share."
+     }
+    },
+    {
+     "value": 100,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "Convertis 5 m en centimètres, puis partage.",
+      "en": "Convert 5 m into centimetres, then share."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Change 5 m en centimètres, puis partage par 50.",
+    "en": "Change 5 m into centimetres, then share by 50."
+   },
+   "explain": {
+    "fr": "5 m = 500 cm. Puis 500 ÷ 50 = 10 morceaux.",
+    "en": "5 m = 500 cm. Then 500 ÷ 50 = 10 pieces."
+   },
+   "tags": [
+    "metres",
+    "centimetres",
+    "division"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.sous-marin.010",
+   "quest": "ocean.sous-marin",
+   "skill": "MES-A05a",
+   "type": "truefalse",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah explique la mesure d’un mètre.",
+    "en": "Noah explains how long a metre is."
+   },
+   "prompt": {
+    "fr": "Il dit qu’un mètre vaut 10 cm. A-t-il raison ?",
+    "en": "He says a metre is worth 10 cm. Is he right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_place_value"
+   },
+   "hint": {
+    "fr": "Une règle d’école fait 30 cm. Un mètre est bien plus long.",
+    "en": "A school ruler is 30 cm. A metre is much longer."
+   },
+   "explain": {
+    "fr": "Un mètre vaut 100 cm, pas 10 cm.",
+    "en": "A metre is worth 100 cm, not 10 cm."
+   },
+   "tags": [
+    "metres",
+    "true-false",
+    "conversion"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.sous-marin.011",
+   "quest": "ocean.sous-marin",
+   "skill": "MES-A05a",
+   "type": "order",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa mesure quatre pièces du sous-marin.",
+    "en": "Lea measures four parts of the submarine."
+   },
+   "prompt": {
+    "fr": "Range les longueurs de la plus courte à la plus longue.",
+    "en": "Put the lengths in order, shortest to longest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "2 m",
+      "en": "2 m"
+     },
+     "key": "200"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "150 cm",
+      "en": "150 cm"
+     },
+     "key": "150"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "1 m 80 cm",
+      "en": "1 m 80 cm"
+     },
+     "key": "180"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "95 cm",
+      "en": "95 cm"
+     },
+     "key": "95"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "d",
+     "b",
+     "c",
+     "a"
+    ],
+    "by": "asc",
+    "misconception": "mis_unit_ignored"
+   },
+   "hint": {
+    "fr": "Mets toutes les longueurs en centimètres.",
+    "en": "Put all the lengths in centimetres."
+   },
+   "explain": {
+    "fr": "95 cm, 150 cm, 180 cm puis 200 cm.",
+    "en": "95 cm, 150 cm, 180 cm then 200 cm."
+   },
+   "tags": [
+    "metres",
+    "ordering",
+    "units"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.sous-marin.012",
+   "quest": "ocean.sous-marin",
+   "skill": "MES-A05a",
+   "type": "match",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah écrit les mêmes longueurs de deux façons.",
+    "en": "Noah writes the same lengths in two ways."
+   },
+   "prompt": {
+    "fr": "Relie chaque longueur à son écriture en centimètres.",
+    "en": "Match each length to its writing in centimetres."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "1 m 50 cm",
+       "en": "1 m 50 cm"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "2 m 5 cm",
+       "en": "2 m 5 cm"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "3 m",
+       "en": "3 m"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "300 cm",
+       "en": "300 cm"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "150 cm",
+       "en": "150 cm"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "205 cm",
+       "en": "205 cm"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r2"
+     ],
+     [
+      "l2",
+      "r3"
+     ],
+     [
+      "l3",
+      "r1"
+     ]
+    ],
+    "misconception": "mis_unit_confusion"
+   },
+   "hint": {
+    "fr": "Change d’abord les mètres en centimètres.",
+    "en": "First change the metres into centimetres."
+   },
+   "explain": {
+    "fr": "1 m 50 cm = 150 cm, 2 m 5 cm = 205 cm et 3 m = 300 cm.",
+    "en": "1 m 50 cm = 150 cm, 2 m 5 cm = 205 cm and 3 m = 300 cm."
+   },
+   "tags": [
+    "metres",
+    "matching",
+    "conversion"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.sous-marin.013",
+   "quest": "ocean.sous-marin",
+   "skill": "MES-A05a",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le diagramme montre la longueur de trois modèles réduits.",
+    "en": "The chart shows the length of three small models."
+   },
+   "prompt": {
+    "fr": "De combien de cm le modèle C est-il plus long que le modèle B ?",
+    "en": "By how many cm is model C longer than model B?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Longueur des modèles (cm)",
+      "en": "Model length (cm)"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "A",
+        "en": "A"
+       },
+       "value": 120
+      },
+      {
+       "label": {
+        "fr": "B",
+        "en": "B"
+       },
+       "value": 85
+      },
+      {
+       "label": {
+        "fr": "C",
+        "en": "C"
+       },
+       "value": 140
+      }
+     ],
+     "max": 150
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 55,
+    "calc": "140-85"
+   },
+   "common_errors": [
+    {
+     "value": 225,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On compare : on cherche l’écart.",
+      "en": "We compare, so we look for the gap."
+     }
+    },
+    {
+     "value": 140,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "140 est la barre de C. Cherche l’écart avec B.",
+      "en": "140 is C’s bar. Find the gap with B."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Lis la barre de C et celle de B.",
+    "en": "Read C’s bar and B’s bar."
+   },
+   "explain": {
+    "fr": "C mesure 140 cm et B mesure 85 cm. 140 - 85 = 55.",
+    "en": "C is 140 cm and B is 85 cm. 140 - 85 = 55."
+   },
+   "tags": [
+    "centimetres",
+    "bar-chart",
+    "difference"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  },
+  {
+   "id": "ocean.sous-marin.014",
+   "quest": "ocean.sous-marin",
+   "skill": "MES-A05a",
+   "type": "estimate",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un tuyau du sous-marin mesure 1 m 98 cm.",
+    "en": "A submarine pipe measures 1 m 98 cm."
+   },
+   "prompt": {
+    "fr": "Environ combien de centimètres mesure-t-il ?",
+    "en": "About how many centimetres is it?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 190,
+    "max": 210,
+    "exact_for_check": 198,
+    "calc": "1*100+98"
+   },
+   "common_errors": [
+    {
+     "value": 98,
+     "misconception": "mis_unit_ignored",
+     "feedback": {
+      "fr": "N’oublie pas le mètre entier.",
+      "en": "Do not forget the whole metre."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "98 cm est tout près de 1 m.",
+    "en": "98 cm is very close to 1 m."
+   },
+   "explain": {
+    "fr": "Ce tuyau est proche de 2 m, soit environ 200 cm.",
+    "en": "This pipe is close to 2 m, about 200 cm."
+   },
+   "tags": [
+    "metres",
+    "estimation",
+    "rounding"
+   ],
+   "status": "published",
+   "author": "numerix-p4b",
+   "version": 1
+  }
+ ]
+}
