@@ -1,0 +1,3876 @@
+{
+ "world": "animaux",
+ "schema": 1,
+ "questions": [
+  {
+   "id": "animaux.ferme.001",
+   "quest": "animaux.ferme",
+   "skill": "ARI-SOP-A02a",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa nourrit les poules de la ferme.",
+    "en": "Lea feeds the hens on the farm."
+   },
+   "prompt": {
+    "fr": "Il y a 6 poules dans l’enclos et 3 autres arrivent. Combien de poules en tout ?",
+    "en": "There are 6 hens in the pen and 3 more arrive. How many hens in all?"
+   },
+   "math_text": "6 + 3 = ?",
+   "answer": {
+    "kind": "numeric",
+    "value": 9,
+    "calc": "6+3"
+   },
+   "common_errors": [
+    {
+     "value": 8,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les poules qui arrivent.",
+      "en": "Close! Count the hens that arrive again."
+     }
+    },
+    {
+     "value": 3,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Les poules se joignent aux autres : on additionne.",
+      "en": "The hens join the others, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pars de 6 et avance de 3 pas.",
+    "en": "Start at 6 and hop 3 steps."
+   },
+   "explain": {
+    "fr": "6 + 3 = 9. Il y a 9 poules en tout.",
+    "en": "6 + 3 = 9. There are 9 hens in all."
+   },
+   "tags": [
+    "ferme",
+    "addition",
+    "poules"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_25148b5acd41c1a6f2c1"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.ferme.002",
+   "quest": "animaux.ferme",
+   "skill": "ARI-SOP-A02a",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah visite l’étable avec son grand-père.",
+    "en": "Noah visits the barn with his grandfather."
+   },
+   "prompt": {
+    "fr": "Il voit 7 vaches dans le champ et 5 vaches dans l’étable. Combien de vaches en tout ?",
+    "en": "He sees 7 cows in the field and 5 cows in the barn. How many cows in all?"
+   },
+   "math_text": "7 + 5 = ?",
+   "answer": {
+    "kind": "numeric",
+    "value": 12,
+    "calc": "7+5"
+   },
+   "common_errors": [
+    {
+     "value": 11,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les vaches de l’étable.",
+      "en": "Close! Count the cows in the barn again."
+     }
+    },
+    {
+     "value": 2,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les deux groupes : on additionne.",
+      "en": "We put both groups together, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Complète d’abord pour faire 10.",
+    "en": "First fill up to make 10."
+   },
+   "explain": {
+    "fr": "7 + 5 = 7 + 3 + 2, donc 10 + 2 = 12.",
+    "en": "7 + 5 = 7 + 3 + 2, so 10 + 2 = 12."
+   },
+   "tags": [
+    "ferme",
+    "addition",
+    "make-ten"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_3f0a0245f131cbf14ed7"
+    },
+    {
+     "role": "object",
+     "asset": "a_38ab704ca4ffc464f7ac"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.ferme.003",
+   "quest": "animaux.ferme",
+   "skill": "ARI-SOP-A02a",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Rosalie compte les agneaux au printemps.",
+    "en": "Rosalie counts the lambs in spring."
+   },
+   "prompt": {
+    "fr": "Il y a 9 agneaux près de la clôture et 8 agneaux sous l’arbre. Combien d’agneaux en tout ?",
+    "en": "There are 9 lambs by the fence and 8 lambs under the tree. How many lambs in all?"
+   },
+   "math_text": "9 + 8 = ?",
+   "answer": {
+    "kind": "numeric",
+    "value": 17,
+    "calc": "9+8"
+   },
+   "common_errors": [
+    {
+     "value": 16,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Il manque un agneau.",
+      "en": "Close! One lamb is missing."
+     }
+    },
+    {
+     "value": 1,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On réunit les agneaux : on additionne.",
+      "en": "We put the lambs together, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "9 est tout près de 10.",
+    "en": "9 is very close to 10."
+   },
+   "explain": {
+    "fr": "9 + 8 = 10 + 7 = 17.",
+    "en": "9 + 8 = 10 + 7 = 17."
+   },
+   "tags": [
+    "ferme",
+    "addition",
+    "near-ten"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_223a428af6c1056b6c9b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.ferme.004",
+   "quest": "animaux.ferme",
+   "skill": "ARI-SOP-A02a",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Les chevaux sortent de l’écurie.",
+    "en": "The horses come out of the stable."
+   },
+   "prompt": {
+    "fr": "Il y a 4 chevaux dans l’enclos et 6 autres arrivent. Combien de chevaux maintenant ?",
+    "en": "There are 4 horses in the paddock and 6 more arrive. How many horses now?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "9",
+      "en": "9"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "10",
+      "en": "10"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "2",
+      "en": "2"
+     },
+     "misconception": "mis_subtract_instead_of_add"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "11",
+      "en": "11"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b",
+    "calc_choice": {
+     "b": "4+6"
+    }
+   },
+   "hint": {
+    "fr": "Compte 6 pas à partir de 4.",
+    "en": "Count 6 steps up from 4."
+   },
+   "explain": {
+    "fr": "4 + 6 = 10. Il y a 10 chevaux.",
+    "en": "4 + 6 = 10. There are 10 horses."
+   },
+   "tags": [
+    "ferme",
+    "addition",
+    "chevaux"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_ff0729b37bc624b02e11"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.ferme.005",
+   "quest": "animaux.ferme",
+   "skill": "ARI-SOP-A02a",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Une poule promène ses poussins dans la cour.",
+    "en": "A hen walks her chicks across the yard."
+   },
+   "prompt": {
+    "fr": "Elle a 15 poussins et 6 vont dormir. Combien de poussins restent dans la cour ?",
+    "en": "She has 15 chicks and 6 go to sleep. How many chicks stay in the yard?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "21",
+      "en": "21"
+     },
+     "misconception": "mis_add_instead_of_subtract"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "8",
+      "en": "8"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "9",
+      "en": "9"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "10",
+      "en": "10"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "15-6"
+    }
+   },
+   "hint": {
+    "fr": "Enlève 5, puis enlève encore 1.",
+    "en": "Take away 5, then take away 1 more."
+   },
+   "explain": {
+    "fr": "15 - 6 = 15 - 5 - 1 = 9.",
+    "en": "15 - 6 = 15 - 5 - 1 = 9."
+   },
+   "tags": [
+    "ferme",
+    "subtraction",
+    "poussins"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_25148b5acd41c1a6f2c1"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.ferme.006",
+   "quest": "animaux.ferme",
+   "skill": "ARI-SOP-A02a",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 4,
+   "story": {
+    "fr": "Le fermier compte ses cochons.",
+    "en": "The farmer counts his pigs."
+   },
+   "prompt": {
+    "fr": "Il y a 14 cochons en tout, dont 8 dans l’étable. Combien de cochons sont dans le champ ?",
+    "en": "There are 14 pigs in all, and 8 are in the barn. How many pigs are in the field?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "22",
+      "en": "22"
+     },
+     "misconception": "mis_add_instead_of_subtract"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "8",
+      "en": "8"
+     },
+     "misconception": "mis_missing_term"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "7",
+      "en": "7"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "6",
+      "en": "6"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d",
+    "calc_choice": {
+     "d": "14-8"
+    }
+   },
+   "hint": {
+    "fr": "Combien faut-il ajouter à 8 pour arriver à 14 ?",
+    "en": "How many must you add to 8 to reach 14?"
+   },
+   "explain": {
+    "fr": "8 + 6 = 14, donc 14 - 8 = 6.",
+    "en": "8 + 6 = 14, so 14 - 8 = 6."
+   },
+   "tags": [
+    "ferme",
+    "missing-addend",
+    "cochons"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_8446bb06dc2c1049b28e"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.ferme.007",
+   "quest": "animaux.ferme",
+   "skill": "ARI-SOP-A02a",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Rosalie ramasse les oeufs au poulailler.",
+    "en": "Rosalie collects eggs in the henhouse."
+   },
+   "prompt": {
+    "fr": "Elle trouve 8 oeufs le matin et 7 oeufs l’après-midi. Combien d’oeufs en tout ?",
+    "en": "She finds 8 eggs in the morning and 7 eggs in the afternoon. How many eggs in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 15,
+    "calc": "8+7"
+   },
+   "common_errors": [
+    {
+     "value": 14,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les oeufs de l’après-midi.",
+      "en": "Close! Count the afternoon eggs again."
+     }
+    },
+    {
+     "value": 1,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Tous les oeufs vont dans le même panier : on additionne.",
+      "en": "All the eggs go in the same basket, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Commence par 8 et ajoute 2 pour faire 10.",
+    "en": "Start at 8 and add 2 to make 10."
+   },
+   "explain": {
+    "fr": "8 + 7 = 8 + 2 + 5 = 15.",
+    "en": "8 + 7 = 8 + 2 + 5 = 15."
+   },
+   "tags": [
+    "word-problem",
+    "addition",
+    "oeufs"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_efc307f317a1b758eb43"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.ferme.008",
+   "quest": "animaux.ferme",
+   "skill": "ARI-SOP-A02a",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 4,
+   "story": {
+    "fr": "Mamadou a 18 carottes pour les animaux.",
+    "en": "Mamadou has 18 carrots for the animals."
+   },
+   "prompt": {
+    "fr": "Il en donne 9 aux lapins et 4 aux chevaux. Combien lui en reste-t-il ?",
+    "en": "He gives 9 to the rabbits and 4 to the horses. How many are left?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "18-9-4"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as enlevé seulement les carottes des lapins. Enlève aussi celles des chevaux.",
+      "en": "You took away only the rabbits’ carrots. Take away the horses’ carrots too."
+     }
+    },
+    {
+     "value": 13,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "Les carottes données sont enlevées : on soustrait deux fois.",
+      "en": "The carrots given away are taken off, so we subtract twice."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Enlève 9, puis enlève 4.",
+    "en": "Take away 9, then take away 4."
+   },
+   "explain": {
+    "fr": "18 - 9 = 9, puis 9 - 4 = 5.",
+    "en": "18 - 9 = 9, then 9 - 4 = 5."
+   },
+   "tags": [
+    "word-problem",
+    "subtraction",
+    "two-steps"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_add5179377b74ccfb6dc"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.ferme.009",
+   "quest": "animaux.ferme",
+   "skill": "ARI-SOP-A02a",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa vérifie le compte de son frère.",
+    "en": "Lea checks her brother’s count."
+   },
+   "prompt": {
+    "fr": "Léa dit que 5 + 4 donne 9. A-t-elle raison ?",
+    "en": "Lea says that 5 + 4 makes 9. Is she right?"
+   },
+   "math_text": "5 + 4 = 9",
+   "answer": {
+    "kind": "truefalse",
+    "value": true
+   },
+   "hint": {
+    "fr": "Pars de 5 et avance de 4 pas.",
+    "en": "Start at 5 and hop 4 steps."
+   },
+   "explain": {
+    "fr": "5 + 4 = 9. Léa a raison.",
+    "en": "5 + 4 = 9. Lea is right."
+   },
+   "tags": [
+    "true-false",
+    "addition"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.ferme.010",
+   "quest": "animaux.ferme",
+   "skill": "ARI-SOP-A02a",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah compte les animaux de l’étable.",
+    "en": "Noah counts the animals in the barn."
+   },
+   "prompt": {
+    "fr": "Noah dit que 7 vaches et 6 veaux font 12 animaux. A-t-il raison ?",
+    "en": "Noah says that 7 cows and 6 calves make 12 animals. Is he right?"
+   },
+   "math_text": "7 + 6 = 12",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_off_by_one"
+   },
+   "hint": {
+    "fr": "Refais 7 + 6 en partant de 7.",
+    "en": "Do 7 + 6 again, starting at 7."
+   },
+   "explain": {
+    "fr": "7 + 6 = 13, pas 12. Il manque un animal.",
+    "en": "7 + 6 = 13, not 12. One animal is missing."
+   },
+   "tags": [
+    "true-false",
+    "addition"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_3f0a0245f131cbf14ed7"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.ferme.011",
+   "quest": "animaux.ferme",
+   "skill": "ARI-SOP-A02a",
+   "type": "order",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le fermier compte ses animaux.",
+    "en": "The farmer counts his animals."
+   },
+   "prompt": {
+    "fr": "Range les enclos du moins d’animaux au plus d’animaux.",
+    "en": "Put the pens in order, from the fewest animals to the most."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "12 poules",
+      "en": "12 hens"
+     },
+     "key": "12"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "4 chevaux",
+      "en": "4 horses"
+     },
+     "key": "4"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "9 cochons",
+      "en": "9 pigs"
+     },
+     "key": "9"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "7 vaches",
+      "en": "7 cows"
+     },
+     "key": "7"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "d",
+     "c",
+     "a"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Cherche d’abord le plus petit nombre.",
+    "en": "First find the smallest number."
+   },
+   "explain": {
+    "fr": "4 est plus petit que 7, 7 que 9, et 9 que 12.",
+    "en": "4 is smaller than 7, 7 than 9, and 9 than 12."
+   },
+   "tags": [
+    "ordering",
+    "comparison"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.ferme.012",
+   "quest": "animaux.ferme",
+   "skill": "ARI-SOP-A02a",
+   "type": "match",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa additionne les animaux de la ferme.",
+    "en": "Lea adds up the farm animals."
+   },
+   "prompt": {
+    "fr": "Relie chaque addition à son total.",
+    "en": "Match each sum to its total."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "5 poules + 4 poules",
+       "en": "5 hens + 4 hens"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "6 vaches + 6 vaches",
+       "en": "6 cows + 6 cows"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "8 moutons + 3 moutons",
+       "en": "8 sheep + 3 sheep"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "11",
+       "en": "11"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "9",
+       "en": "9"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "12",
+       "en": "12"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r2"
+     ],
+     [
+      "l2",
+      "r3"
+     ],
+     [
+      "l3",
+      "r1"
+     ]
+    ],
+    "misconception": "mis_off_by_one"
+   },
+   "hint": {
+    "fr": "Fais chaque addition sur tes doigts.",
+    "en": "Do each sum on your fingers."
+   },
+   "explain": {
+    "fr": "5 + 4 = 9, 6 + 6 = 12 et 8 + 3 = 11.",
+    "en": "5 + 4 = 9, 6 + 6 = 12 and 8 + 3 = 11."
+   },
+   "tags": [
+    "matching",
+    "addition"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.ferme.013",
+   "quest": "animaux.ferme",
+   "skill": "ARI-SOP-A02a",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah regarde le tableau de la ferme.",
+    "en": "Noah looks at the farm chart."
+   },
+   "prompt": {
+    "fr": "Combien de poules et de vaches en tout ?",
+    "en": "How many hens and cows in all?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Animaux de la ferme",
+      "en": "Farm animals"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "poules",
+        "en": "hens"
+       },
+       "count": 8
+      },
+      {
+       "label": {
+        "fr": "vaches",
+        "en": "cows"
+       },
+       "count": 5
+      },
+      {
+       "label": {
+        "fr": "chevaux",
+        "en": "horses"
+       },
+       "count": 3
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 13,
+    "calc": "8+5"
+   },
+   "common_errors": [
+    {
+     "value": 8,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as compté seulement les poules. Ajoute les vaches.",
+      "en": "You counted only the hens. Add the cows."
+     }
+    },
+    {
+     "value": 3,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as lu la ligne des chevaux.",
+      "en": "You read the horses row."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les images de chaque ligne.",
+    "en": "Count the pictures in each row."
+   },
+   "explain": {
+    "fr": "Il y a 8 poules et 5 vaches : 8 + 5 = 13.",
+    "en": "There are 8 hens and 5 cows: 8 + 5 = 13."
+   },
+   "tags": [
+    "pictograph",
+    "addition"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_3f0a0245f131cbf14ed7"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.ferme.014",
+   "quest": "animaux.ferme",
+   "skill": "ARI-SOP-A02a",
+   "type": "estimate",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Au marché de la ferme, on compte les oiseaux.",
+    "en": "At the farm market, we count the birds."
+   },
+   "prompt": {
+    "fr": "Il y a 19 poules et 11 canards. Environ combien d’oiseaux en tout ?",
+    "en": "There are 19 hens and 11 ducks. About how many birds in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 28,
+    "max": 32,
+    "exact_for_check": 30,
+    "calc": "19+11"
+   },
+   "common_errors": [
+    {
+     "value": 8,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Les oiseaux sont réunis : on additionne.",
+      "en": "The birds are put together, so we add."
+     }
+    },
+    {
+     "value": 20,
+     "misconception": "mis_estimate_rounding",
+     "feedback": {
+      "fr": "Tu as arrondi trop loin. Garde 10 pour 11.",
+      "en": "You rounded too far. Keep 10 for 11."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis 19 à 20 et 11 à 10.",
+    "en": "Round 19 to 20 and 11 to 10."
+   },
+   "explain": {
+    "fr": "19 est près de 20 et 11 est près de 10. 20 + 10 = 30.",
+    "en": "19 is close to 20 and 11 is close to 10. 20 + 10 = 30."
+   },
+   "tags": [
+    "estimation",
+    "rounding"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_25148b5acd41c1a6f2c1"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.pattes.001",
+   "quest": "animaux.pattes",
+   "skill": "ARI-SEN-A01c",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa compte les pattes des poules, deux par deux.",
+    "en": "Lea counts the hens’ legs, two by two."
+   },
+   "prompt": {
+    "fr": "2, 4, 6, 8, … Quel nombre vient après 8 ?",
+    "en": "2, 4, 6, 8, … Which number comes after 8?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 10,
+    "calc": "8+2"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "On compte de 2 en 2, pas de 1 en 1.",
+      "en": "We count by 2s, not by 1s."
+     }
+    },
+    {
+     "value": 12,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as sauté un nombre.",
+      "en": "You jumped one number too far."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Ajoute 2 à 8.",
+    "en": "Add 2 to 8."
+   },
+   "explain": {
+    "fr": "On ajoute 2 chaque fois : 8 + 2 = 10.",
+    "en": "We add 2 each time: 8 + 2 = 10."
+   },
+   "tags": [
+    "skip-counting",
+    "by-2"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_25148b5acd41c1a6f2c1"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.pattes.002",
+   "quest": "animaux.pattes",
+   "skill": "ARI-SEN-A01c",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah observe des étoiles de mer. Chacune a 5 bras.",
+    "en": "Noah looks at starfish. Each one has 5 arms."
+   },
+   "prompt": {
+    "fr": "Il compte les bras : 5, 10, 15, 20, … Quel nombre vient ensuite ?",
+    "en": "He counts the arms: 5, 10, 15, 20, … Which number comes next?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 25,
+    "calc": "20+5"
+   },
+   "common_errors": [
+    {
+     "value": 21,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "On compte de 5 en 5.",
+      "en": "We count by 5s."
+     }
+    },
+    {
+     "value": 30,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as sauté un nombre : 25 vient avant 30.",
+      "en": "You jumped one number: 25 comes before 30."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Ajoute 5 à 20.",
+    "en": "Add 5 to 20."
+   },
+   "explain": {
+    "fr": "On ajoute 5 chaque fois : 20 + 5 = 25.",
+    "en": "We add 5 each time: 20 + 5 = 25."
+   },
+   "tags": [
+    "skip-counting",
+    "by-5"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.pattes.003",
+   "quest": "animaux.pattes",
+   "skill": "ARI-SEN-A01c",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Chaque poule du poulailler a 2 pattes.",
+    "en": "Each hen in the henhouse has 2 legs."
+   },
+   "prompt": {
+    "fr": "Combien de pattes ont 6 poules ? Compte de 2 en 2.",
+    "en": "How many legs do 6 hens have? Count by 2s."
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 12,
+    "calc": "6*2"
+   },
+   "common_errors": [
+    {
+     "value": 8,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "6 + 2 donne 8, mais chaque poule a 2 pattes.",
+      "en": "6 + 2 is 8, but every hen has 2 legs."
+     }
+    },
+    {
+     "value": 10,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu t’es arrêté une poule trop tôt.",
+      "en": "You stopped one hen too early."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte 2, 4, 6 … en levant un doigt par poule.",
+    "en": "Count 2, 4, 6 … raising one finger per hen."
+   },
+   "explain": {
+    "fr": "2, 4, 6, 8, 10, 12 : six bonds de 2 donnent 12.",
+    "en": "2, 4, 6, 8, 10, 12: six jumps of 2 make 12."
+   },
+   "tags": [
+    "skip-counting",
+    "by-2"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_7562dc09000d60228668"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.pattes.004",
+   "quest": "animaux.pattes",
+   "skill": "ARI-SEN-A01c",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa range des canards deux par deux.",
+    "en": "Lea puts ducks in groups of two."
+   },
+   "prompt": {
+    "fr": "Quelle suite se compte de 2 en 2 ?",
+    "en": "Which list counts by 2s?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "5, 10, 15, 20",
+      "en": "5, 10, 15, 20"
+     },
+     "misconception": "mis_pattern_wrong_rule"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "2, 3, 4, 5",
+      "en": "2, 3, 4, 5"
+     },
+     "misconception": "mis_skip_count"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "2, 4, 6, 8",
+      "en": "2, 4, 6, 8"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c"
+   },
+   "hint": {
+    "fr": "Chaque nombre est 2 de plus que le précédent.",
+    "en": "Each number is 2 more than the one before."
+   },
+   "explain": {
+    "fr": "2, 4, 6, 8 : on ajoute 2 chaque fois.",
+    "en": "2, 4, 6, 8: we add 2 each time."
+   },
+   "tags": [
+    "skip-counting",
+    "by-2"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.pattes.005",
+   "quest": "animaux.pattes",
+   "skill": "ARI-SEN-A01c",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah compte les seaux de grains en descendant.",
+    "en": "Noah counts the grain buckets going down."
+   },
+   "prompt": {
+    "fr": "50, 40, 30, … Quel nombre vient ensuite ?",
+    "en": "50, 40, 30, … Which number comes next?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "35",
+      "en": "35"
+     },
+     "misconception": "mis_skip_count"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "60",
+      "en": "60"
+     },
+     "misconception": "mis_pattern_wrong_rule"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "20",
+      "en": "20"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "29",
+      "en": "29"
+     },
+     "misconception": "mis_skip_count"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "30-10"
+    }
+   },
+   "hint": {
+    "fr": "On enlève 10 chaque fois.",
+    "en": "We take away 10 each time."
+   },
+   "explain": {
+    "fr": "50, 40, 30, 20 : on enlève 10 chaque fois.",
+    "en": "50, 40, 30, 20: we take away 10 each time."
+   },
+   "tags": [
+    "skip-counting",
+    "by-10",
+    "backwards"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.pattes.006",
+   "quest": "animaux.pattes",
+   "skill": "ARI-SEN-A01c",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 4,
+   "story": {
+    "fr": "Le fermier charge sa charrette de sacs de grains.",
+    "en": "The farmer loads his cart with grain bags."
+   },
+   "prompt": {
+    "fr": "Chaque charrette porte 10 sacs. Combien de sacs portent 4 charrettes ?",
+    "en": "Each cart carries 10 bags. How many bags do 4 carts carry?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "14",
+      "en": "14"
+     },
+     "misconception": "mis_add_instead_of_multiply"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "30",
+      "en": "30"
+     },
+     "misconception": "mis_skip_count"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "50",
+      "en": "50"
+     },
+     "misconception": "mis_skip_count"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "40",
+      "en": "40"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d",
+    "calc_choice": {
+     "d": "4*10"
+    }
+   },
+   "hint": {
+    "fr": "Compte 10, 20, 30 …",
+    "en": "Count 10, 20, 30 …"
+   },
+   "explain": {
+    "fr": "10, 20, 30, 40 : quatre bonds de 10 donnent 40.",
+    "en": "10, 20, 30, 40: four jumps of 10 make 40."
+   },
+   "tags": [
+    "skip-counting",
+    "by-10"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.pattes.007",
+   "quest": "animaux.pattes",
+   "skill": "ARI-SEN-A01c",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Dans le poulailler, Zoé range des poules.",
+    "en": "In the henhouse, Zoe counts hens."
+   },
+   "prompt": {
+    "fr": "Il y a 4 poules, et chaque poule a 2 pattes. Combien de pattes en tout ?",
+    "en": "There are 4 hens, and each hen has 2 legs. How many legs in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 8,
+    "calc": "4*2"
+   },
+   "common_errors": [
+    {
+     "value": 6,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "4 + 2 donne 6, mais chaque poule a 2 pattes.",
+      "en": "4 + 2 is 6, but every hen has 2 legs."
+     }
+    },
+    {
+     "value": 4,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "4 est le nombre de poules, pas de pattes.",
+      "en": "4 is the number of hens, not legs."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 2 en 2, quatre fois.",
+    "en": "Count by 2s, four times."
+   },
+   "explain": {
+    "fr": "2, 4, 6, 8 : il y a 8 pattes.",
+    "en": "2, 4, 6, 8: there are 8 legs."
+   },
+   "tags": [
+    "word-problem",
+    "skip-counting"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_25148b5acd41c1a6f2c1"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.pattes.008",
+   "quest": "animaux.pattes",
+   "skill": "ARI-SEN-A01c",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 5,
+   "story": {
+    "fr": "Zoé prépare des graines pour les oiseaux.",
+    "en": "Zoe prepares seeds for the birds."
+   },
+   "prompt": {
+    "fr": "Elle a 3 sacs de 10 graines et 2 sacs de 5 graines. Combien de graines en tout ?",
+    "en": "She has 3 bags of 10 seeds and 2 bags of 5 seeds. How many seeds in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 40,
+    "calc": "3*10+2*5"
+   },
+   "common_errors": [
+    {
+     "value": 30,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as compté seulement les gros sacs.",
+      "en": "You counted only the big bags."
+     }
+    },
+    {
+     "value": 15,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Chaque sac contient plusieurs graines.",
+      "en": "Every bag holds many seeds."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 10 en 10, puis de 5 en 5.",
+    "en": "Count by 10s, then by 5s."
+   },
+   "explain": {
+    "fr": "10, 20, 30, puis 35, 40. Il y a 40 graines.",
+    "en": "10, 20, 30, then 35, 40. There are 40 seeds."
+   },
+   "tags": [
+    "word-problem",
+    "skip-counting",
+    "by-5",
+    "by-10"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.pattes.009",
+   "quest": "animaux.pattes",
+   "skill": "ARI-SEN-A01c",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa compte à voix haute avec les poules.",
+    "en": "Lea counts out loud with the hens."
+   },
+   "prompt": {
+    "fr": "Léa dit : on compte 2, 4, 6, 8 de 2 en 2. A-t-elle raison ?",
+    "en": "Lea says: we count 2, 4, 6, 8 by 2s. Is she right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": true
+   },
+   "hint": {
+    "fr": "Vérifie l’écart entre deux nombres.",
+    "en": "Check the gap between two numbers."
+   },
+   "explain": {
+    "fr": "Chaque nombre est 2 de plus que le précédent.",
+    "en": "Each number is 2 more than the one before."
+   },
+   "tags": [
+    "true-false",
+    "skip-counting"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.pattes.010",
+   "quest": "animaux.pattes",
+   "skill": "ARI-SEN-A01c",
+   "type": "order",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah compte des seaux de 5 poissons.",
+    "en": "Noah counts buckets of 5 fish."
+   },
+   "prompt": {
+    "fr": "Range ces nombres comptés de 5 en 5, du plus petit au plus grand.",
+    "en": "Put these numbers counted by 5s in order, smallest to biggest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "15",
+      "en": "15"
+     },
+     "key": "15"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "5",
+      "en": "5"
+     },
+     "key": "5"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "20",
+      "en": "20"
+     },
+     "key": "20"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "10",
+      "en": "10"
+     },
+     "key": "10"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "d",
+     "a",
+     "c"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Cherche d’abord 5.",
+    "en": "First look for 5."
+   },
+   "explain": {
+    "fr": "5, 10, 15, 20 : on ajoute 5 chaque fois.",
+    "en": "5, 10, 15, 20: we add 5 each time."
+   },
+   "tags": [
+    "ordering",
+    "by-5"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.pattes.011",
+   "quest": "animaux.pattes",
+   "skill": "ARI-SEN-A01c",
+   "type": "order",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa descend l’échelle du grenier de 10 en 10.",
+    "en": "Lea counts down the loft ladder by 10s."
+   },
+   "prompt": {
+    "fr": "Range ces nombres du plus grand au plus petit.",
+    "en": "Put these numbers in order, biggest to smallest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "40",
+      "en": "40"
+     },
+     "key": "40"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "10",
+      "en": "10"
+     },
+     "key": "10"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "30",
+      "en": "30"
+     },
+     "key": "30"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "20",
+      "en": "20"
+     },
+     "key": "20"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "a",
+     "c",
+     "d",
+     "b"
+    ],
+    "by": "desc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Commence par le plus grand nombre.",
+    "en": "Start with the biggest number."
+   },
+   "explain": {
+    "fr": "40, 30, 20, 10 : on enlève 10 chaque fois.",
+    "en": "40, 30, 20, 10: we take away 10 each time."
+   },
+   "tags": [
+    "ordering",
+    "by-10",
+    "backwards"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.pattes.012",
+   "quest": "animaux.pattes",
+   "skill": "ARI-SEN-A01c",
+   "type": "match",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah complète des suites de nombres.",
+    "en": "Noah finishes number lists."
+   },
+   "prompt": {
+    "fr": "Relie chaque façon de compter à sa suite.",
+    "en": "Match each way of counting to its list."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "Compter de 2 en 2",
+       "en": "Count by 2s"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "Compter de 5 en 5",
+       "en": "Count by 5s"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "Compter de 10 en 10",
+       "en": "Count by 10s"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "30, 40, 50",
+       "en": "30, 40, 50"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "6, 8, 10",
+       "en": "6, 8, 10"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "15, 20, 25",
+       "en": "15, 20, 25"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r2"
+     ],
+     [
+      "l2",
+      "r3"
+     ],
+     [
+      "l3",
+      "r1"
+     ]
+    ],
+    "misconception": "mis_skip_count"
+   },
+   "hint": {
+    "fr": "Regarde l’écart entre deux nombres.",
+    "en": "Look at the gap between two numbers."
+   },
+   "explain": {
+    "fr": "6, 8, 10 saute de 2. 15, 20, 25 saute de 5. 30, 40, 50 saute de 10.",
+    "en": "6, 8, 10 jumps by 2. 15, 20, 25 jumps by 5. 30, 40, 50 jumps by 10."
+   },
+   "tags": [
+    "matching",
+    "skip-counting"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.pattes.013",
+   "quest": "animaux.pattes",
+   "skill": "ARI-SEN-A01c",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa compte les poules de la ferme.",
+    "en": "Lea counts the hens on the farm."
+   },
+   "prompt": {
+    "fr": "Chaque image vaut 2 poules. Combien de poules dans l’enclos du nord ?",
+    "en": "Each picture is worth 2 hens. How many hens are in the north pen?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Poules par enclos",
+      "en": "Hens per pen"
+     },
+     "each": 2,
+     "rows": [
+      {
+       "label": {
+        "fr": "enclos nord",
+        "en": "north pen"
+       },
+       "count": 4
+      },
+      {
+       "label": {
+        "fr": "enclos sud",
+        "en": "south pen"
+       },
+       "count": 3
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 8,
+    "calc": "4*2"
+   },
+   "common_errors": [
+    {
+     "value": 4,
+     "misconception": "mis_read_scale",
+     "feedback": {
+      "fr": "Chaque image vaut 2 poules, pas 1.",
+      "en": "Each picture is worth 2 hens, not 1."
+     }
+    },
+    {
+     "value": 6,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as lu la ligne de l’enclos sud.",
+      "en": "You read the south pen row."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 2 en 2 les images du nord.",
+    "en": "Count the north pictures by 2s."
+   },
+   "explain": {
+    "fr": "4 images de 2 poules : 2, 4, 6, 8.",
+    "en": "4 pictures of 2 hens: 2, 4, 6, 8."
+   },
+   "tags": [
+    "pictograph",
+    "skip-counting"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_25148b5acd41c1a6f2c1"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.pattes.014",
+   "quest": "animaux.pattes",
+   "skill": "ARI-SEN-A01c",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un escargot avance sur une règle de jardin.",
+    "en": "A snail crawls along a garden ruler."
+   },
+   "prompt": {
+    "fr": "La flèche montre où est l’escargot. Quel nombre montre-t-elle ?",
+    "en": "The arrow shows where the snail is. Which number does it show?"
+   },
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 0,
+     "max": 50,
+     "step": 5,
+     "labels": [
+      0,
+      10,
+      20,
+      30,
+      40,
+      50
+     ],
+     "arrow": 35
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 35,
+    "calc": "35"
+   },
+   "common_errors": [
+    {
+     "value": 40,
+     "misconception": "mis_read_scale",
+     "feedback": {
+      "fr": "40 est le trait marqué le plus proche. Compte de 5 en 5 depuis 30.",
+      "en": "40 is the nearest labelled mark. Count by 5s from 30."
+     }
+    },
+    {
+     "value": 30,
+     "misconception": "mis_read_scale",
+     "feedback": {
+      "fr": "30 est le trait marqué avant. La flèche est un petit trait plus loin.",
+      "en": "30 is the labelled mark before. The arrow is one small mark further."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 5 en 5 depuis 30.",
+    "en": "Count by 5s from 30."
+   },
+   "explain": {
+    "fr": "La flèche est un trait après 30 : 30 + 5 = 35.",
+    "en": "The arrow is one mark after 30: 30 + 5 = 35."
+   },
+   "tags": [
+    "number-line",
+    "by-5"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_4520e1a8ab0d83d7a42d"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.pattes.015",
+   "quest": "animaux.pattes",
+   "skill": "ARI-SEN-A01c",
+   "type": "estimate",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le fermier compte les vaches de ses prés.",
+    "en": "The farmer counts the cows in his fields."
+   },
+   "prompt": {
+    "fr": "Il y a 4 prés avec environ 10 vaches chacun. Environ combien de vaches en tout ?",
+    "en": "There are 4 fields with about 10 cows each. About how many cows in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 36,
+    "max": 44,
+    "exact_for_check": 40,
+    "calc": "4*10"
+   },
+   "common_errors": [
+    {
+     "value": 14,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Il y a 10 vaches dans chaque pré : on compte de 10 en 10.",
+      "en": "Each field has 10 cows, so count by 10s."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte 10, 20, 30 …",
+    "en": "Count 10, 20, 30 …"
+   },
+   "explain": {
+    "fr": "10, 20, 30, 40 : environ 40 vaches.",
+    "en": "10, 20, 30, 40: about 40 cows."
+   },
+   "tags": [
+    "estimation",
+    "by-10"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_3f0a0245f131cbf14ed7"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.zoo.001",
+   "quest": "animaux.zoo",
+   "skill": "ARI-SOP-A03a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Au zoo, le soigneur nourrit les singes.",
+    "en": "At the zoo, the keeper feeds the monkeys."
+   },
+   "prompt": {
+    "fr": "Il partage 12 bananes en parts égales entre 4 singes. Combien de bananes par singe ?",
+    "en": "He shares 12 bananas equally among 4 monkeys. How many bananas for each monkey?"
+   },
+   "math_text": "12 ÷ 4 = ?",
+   "answer": {
+    "kind": "numeric",
+    "value": 3,
+    "calc": "12/4"
+   },
+   "common_errors": [
+    {
+     "value": 8,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "Pour partager, on divise : pas de soustraction.",
+      "en": "To share, we divide, not subtract."
+     }
+    },
+    {
+     "value": 16,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "Pour partager, on divise : pas d’addition.",
+      "en": "To share, we divide, not add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Combien de fois 4 va dans 12 ?",
+    "en": "How many times does 4 fit in 12?"
+   },
+   "explain": {
+    "fr": "4 × 3 = 12, donc 12 ÷ 4 = 3.",
+    "en": "4 × 3 = 12, so 12 ÷ 4 = 3."
+   },
+   "tags": [
+    "zoo",
+    "division",
+    "sharing"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.zoo.002",
+   "quest": "animaux.zoo",
+   "skill": "ARI-SOP-A03a",
+   "type": "numeric",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le soigneur prépare des paniers pour les éléphants.",
+    "en": "The keeper prepares baskets for the elephants."
+   },
+   "prompt": {
+    "fr": "Chaque panier contient 5 pommes. Combien de pommes dans 6 paniers ?",
+    "en": "Each basket holds 5 apples. How many apples in 6 baskets?"
+   },
+   "math_text": "6 × 5 = ?",
+   "answer": {
+    "kind": "numeric",
+    "value": 30,
+    "calc": "6*5"
+   },
+   "common_errors": [
+    {
+     "value": 11,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Il y a 6 paniers de 5 pommes : on multiplie.",
+      "en": "There are 6 baskets of 5 apples, so we multiply."
+     }
+    },
+    {
+     "value": 25,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as compté 5 paniers au lieu de 6.",
+      "en": "You counted 5 baskets instead of 6."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 5 en 5, six fois.",
+    "en": "Count by 5s, six times."
+   },
+   "explain": {
+    "fr": "6 × 5 = 30.",
+    "en": "6 × 5 = 30."
+   },
+   "tags": [
+    "zoo",
+    "multiplication",
+    "groups"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_ffffb3ee0fb715c0c494"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.zoo.003",
+   "quest": "animaux.zoo",
+   "skill": "ARI-SOP-A03a",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 1,
+   "story": {
+    "fr": "Au zoo, les otaries reçoivent leur repas.",
+    "en": "At the zoo, the sea lions get their meal."
+   },
+   "prompt": {
+    "fr": "Chaque otarie mange 3 poissons. Il y a 7 otaries. Quelle opération donne le nombre de poissons ?",
+    "en": "Each sea lion eats 3 fish. There are 7 sea lions. Which operation gives the number of fish?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "7 + 3",
+      "en": "7 + 3"
+     },
+     "misconception": "mis_add_instead_of_multiply"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "7 × 3",
+      "en": "7 × 3"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "7 - 3",
+      "en": "7 - 3"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "7 ÷ 3",
+      "en": "7 ÷ 3"
+     },
+     "misconception": "mis_wrong_operation"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Il y a 7 groupes de 3 poissons.",
+    "en": "There are 7 groups of 3 fish."
+   },
+   "explain": {
+    "fr": "7 groupes de 3 : 7 × 3 = 21 poissons.",
+    "en": "7 groups of 3: 7 × 3 = 21 fish."
+   },
+   "tags": [
+    "zoo",
+    "multiplication",
+    "groups"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.zoo.004",
+   "quest": "animaux.zoo",
+   "skill": "ARI-SOP-A03a",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Les lapins du zoo adorent les carottes.",
+    "en": "The zoo rabbits love carrots."
+   },
+   "prompt": {
+    "fr": "Le soigneur partage 20 carottes entre 5 lapins. Chaque lapin en reçoit autant. Combien chacun ?",
+    "en": "The keeper shares 20 carrots among 5 rabbits. Each rabbit gets the same. How many each?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "15",
+      "en": "15"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "25",
+      "en": "25"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "5",
+      "en": "5"
+     },
+     "misconception": "mis_missing_term"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "4",
+      "en": "4"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d",
+    "calc_choice": {
+     "d": "20/5"
+    }
+   },
+   "hint": {
+    "fr": "Combien de fois 5 va dans 20 ?",
+    "en": "How many times does 5 fit in 20?"
+   },
+   "explain": {
+    "fr": "5 × 4 = 20, donc 20 ÷ 5 = 4.",
+    "en": "5 × 4 = 20, so 20 ÷ 5 = 4."
+   },
+   "tags": [
+    "zoo",
+    "division",
+    "sharing"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_7562dc09000d60228668"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.zoo.005",
+   "quest": "animaux.zoo",
+   "skill": "ARI-SOP-A03a",
+   "type": "choice",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Les girafes mangent des branches feuillues.",
+    "en": "The giraffes eat leafy branches."
+   },
+   "prompt": {
+    "fr": "Elles mangent 24 branches. Chaque girafe en mange 6. Combien de girafes y a-t-il ?",
+    "en": "They eat 24 branches. Each giraffe eats 6. How many giraffes are there?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "18",
+      "en": "18"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "30",
+      "en": "30"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "6",
+      "en": "6"
+     },
+     "misconception": "mis_missing_term"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "4",
+      "en": "4"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d",
+    "calc_choice": {
+     "d": "24/6"
+    }
+   },
+   "hint": {
+    "fr": "Combien de groupes de 6 dans 24 ?",
+    "en": "How many groups of 6 are in 24?"
+   },
+   "explain": {
+    "fr": "6 × 4 = 24, donc il y a 4 girafes.",
+    "en": "6 × 4 = 24, so there are 4 giraffes."
+   },
+   "tags": [
+    "zoo",
+    "division",
+    "grouping"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_39ac0ffe62c1eefbfc43"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.zoo.006",
+   "quest": "animaux.zoo",
+   "skill": "ARI-SOP-A03a",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Le soigneur lance du poisson aux pingouins.",
+    "en": "The keeper tosses fish to the penguins."
+   },
+   "prompt": {
+    "fr": "Il partage 26 poissons entre 4 pingouins, en parts égales. Combien chacun en reçoit-il, et combien en reste-t-il ?",
+    "en": "He shares 26 fish among 4 penguins in equal parts. How many does each get, and how many are left over?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": [
+     6,
+     2
+    ],
+    "calc": "divmod(26,4)"
+   },
+   "hint": {
+    "fr": "Cherche le plus grand multiple de 4 sous 26.",
+    "en": "Find the biggest multiple of 4 under 26."
+   },
+   "explain": {
+    "fr": "4 × 6 = 24 et 26 - 24 = 2. Chacun reçoit 6, reste 2.",
+    "en": "4 × 6 = 24 and 26 - 24 = 2. Each gets 6, 2 are left."
+   },
+   "tags": [
+    "word-problem",
+    "remainder",
+    "sharing"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.zoo.007",
+   "quest": "animaux.zoo",
+   "skill": "ARI-SOP-A03a",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Quatre groupes d’élèves visitent le zoo.",
+    "en": "Four groups of students visit the zoo."
+   },
+   "prompt": {
+    "fr": "Chaque groupe compte 8 enfants. Combien d’enfants visitent les girafes en tout ?",
+    "en": "Each group has 8 children. How many children visit the giraffes in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 32,
+    "calc": "4*8"
+   },
+   "common_errors": [
+    {
+     "value": 12,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Il y a 4 groupes de 8 : on multiplie.",
+      "en": "There are 4 groups of 8, so we multiply."
+     }
+    },
+    {
+     "value": 24,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as compté 3 groupes au lieu de 4.",
+      "en": "You counted 3 groups instead of 4."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 8 en 8, quatre fois.",
+    "en": "Count by 8s, four times."
+   },
+   "explain": {
+    "fr": "4 × 8 = 32 enfants.",
+    "en": "4 × 8 = 32 children."
+   },
+   "tags": [
+    "word-problem",
+    "multiplication",
+    "groups"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_39ac0ffe62c1eefbfc43"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.zoo.008",
+   "quest": "animaux.zoo",
+   "skill": "ARI-SOP-A03a",
+   "type": "word",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Le zoo reçoit du grain pour une semaine.",
+    "en": "The zoo gets grain for one week."
+   },
+   "prompt": {
+    "fr": "Il reçoit 56 kg de grain pour 7 jours, la même quantité chaque jour. Combien de kg par jour ?",
+    "en": "It gets 56 kg of grain for 7 days, the same amount each day. How many kg per day?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 8,
+    "calc": "56/7"
+   },
+   "common_errors": [
+    {
+     "value": 49,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "On partage sur 7 jours : on divise.",
+      "en": "We share over 7 days, so we divide."
+     }
+    },
+    {
+     "value": 63,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "On partage sur 7 jours : on divise.",
+      "en": "We share over 7 days, so we divide."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense aux tables de 7.",
+    "en": "Think of the 7 times table."
+   },
+   "explain": {
+    "fr": "7 × 8 = 56, donc 56 ÷ 7 = 8 kg.",
+    "en": "7 × 8 = 56, so 56 ÷ 7 = 8 kg."
+   },
+   "tags": [
+    "word-problem",
+    "division",
+    "kg"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.zoo.009",
+   "quest": "animaux.zoo",
+   "skill": "ARI-SOP-A03a",
+   "type": "truefalse",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa partage des bananes entre les singes.",
+    "en": "Lea shares bananas among the monkeys."
+   },
+   "prompt": {
+    "fr": "Léa dit que 18 bananes partagées entre 3 singes donnent 5 bananes chacun. A-t-elle raison ?",
+    "en": "Lea says that 18 bananas shared among 3 monkeys gives 5 bananas each. Is she right?"
+   },
+   "math_text": "18 ÷ 3 = 5",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_off_by_one"
+   },
+   "hint": {
+    "fr": "Vérifie : 3 × 5 donne-t-il 18 ?",
+    "en": "Check: does 3 × 5 make 18?"
+   },
+   "explain": {
+    "fr": "3 × 5 = 15, pas 18. 3 × 6 = 18, donc chacun reçoit 6.",
+    "en": "3 × 5 = 15, not 18. 3 × 6 = 18, so each gets 6."
+   },
+   "tags": [
+    "true-false",
+    "division"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.zoo.010",
+   "quest": "animaux.zoo",
+   "skill": "ARI-SOP-A03a",
+   "type": "order",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah calcule les parts de nourriture.",
+    "en": "Noah works out the food shares."
+   },
+   "prompt": {
+    "fr": "Range ces partages du plus petit au plus grand résultat.",
+    "en": "Put these shares in order, from the smallest result to the biggest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "24 ÷ 3",
+      "en": "24 ÷ 3"
+     },
+     "key": "8"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "12 ÷ 4",
+      "en": "12 ÷ 4"
+     },
+     "key": "3"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "18 ÷ 2",
+      "en": "18 ÷ 2"
+     },
+     "key": "9"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "20 ÷ 4",
+      "en": "20 ÷ 4"
+     },
+     "key": "5"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "d",
+     "a",
+     "c"
+    ],
+    "by": "asc",
+    "misconception": "mis_order"
+   },
+   "hint": {
+    "fr": "Calcule d’abord chaque partage.",
+    "en": "Work out each share first."
+   },
+   "explain": {
+    "fr": "12 ÷ 4 = 3, 20 ÷ 4 = 5, 24 ÷ 3 = 8, 18 ÷ 2 = 9.",
+    "en": "12 ÷ 4 = 3, 20 ÷ 4 = 5, 24 ÷ 3 = 8, 18 ÷ 2 = 9."
+   },
+   "tags": [
+    "ordering",
+    "division"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.zoo.011",
+   "quest": "animaux.zoo",
+   "skill": "ARI-SOP-A03a",
+   "type": "match",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Au zoo, chaque animal reçoit sa part.",
+    "en": "At the zoo, each animal gets its share."
+   },
+   "prompt": {
+    "fr": "Relie chaque partage à sa part.",
+    "en": "Match each share to its amount."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "15 pommes pour 3 chevaux",
+       "en": "15 apples for 3 horses"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "16 carottes pour 4 lapins",
+       "en": "16 carrots for 4 rabbits"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "18 poissons pour 2 otaries",
+       "en": "18 fish for 2 sea lions"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "4",
+       "en": "4"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "9",
+       "en": "9"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "5",
+       "en": "5"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r3"
+     ],
+     [
+      "l2",
+      "r1"
+     ],
+     [
+      "l3",
+      "r2"
+     ]
+    ],
+    "misconception": "mis_wrong_operation"
+   },
+   "hint": {
+    "fr": "Cherche le nombre qui, multiplié, donne le total.",
+    "en": "Find the number that times the group count gives the total."
+   },
+   "explain": {
+    "fr": "15 ÷ 3 = 5, 16 ÷ 4 = 4 et 18 ÷ 2 = 9.",
+    "en": "15 ÷ 3 = 5, 16 ÷ 4 = 4 and 18 ÷ 2 = 9."
+   },
+   "tags": [
+    "matching",
+    "division",
+    "sharing"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.zoo.012",
+   "quest": "animaux.zoo",
+   "skill": "ARI-SOP-A03a",
+   "type": "match",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa écrit des calculs pour le zoo.",
+    "en": "Lea writes sums for the zoo."
+   },
+   "prompt": {
+    "fr": "Relie chaque situation à son calcul.",
+    "en": "Match each situation to its calculation."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "Partager 20 oiseaux dans 4 cages",
+       "en": "Share 20 birds into 4 cages"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "5 cages de 4 oiseaux",
+       "en": "5 cages of 4 birds"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "Ajouter 4 oiseaux à 20 oiseaux",
+       "en": "Add 4 birds to 20 birds"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "Retirer 4 oiseaux de 20 oiseaux",
+       "en": "Take 4 birds away from 20 birds"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "20 - 4",
+       "en": "20 - 4"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "20 + 4",
+       "en": "20 + 4"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "5 × 4",
+       "en": "5 × 4"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "20 ÷ 4",
+       "en": "20 ÷ 4"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r4"
+     ],
+     [
+      "l2",
+      "r3"
+     ],
+     [
+      "l3",
+      "r2"
+     ],
+     [
+      "l4",
+      "r1"
+     ]
+    ],
+    "misconception": "mis_wrong_operation"
+   },
+   "hint": {
+    "fr": "Partager veut dire diviser, grouper veut dire multiplier.",
+    "en": "Sharing means divide, grouping means multiply."
+   },
+   "explain": {
+    "fr": "Partager : ÷. Groupes égaux : ×. Ajouter : +. Retirer : -.",
+    "en": "Share: ÷. Equal groups: ×. Add: +. Take away: -."
+   },
+   "tags": [
+    "matching",
+    "operations"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.zoo.013",
+   "quest": "animaux.zoo",
+   "skill": "ARI-SOP-A03a",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le soigneur note les pommes données aux animaux.",
+    "en": "The keeper notes the apples given to the animals."
+   },
+   "prompt": {
+    "fr": "Les singes se partagent leurs pommes entre 4. Combien de pommes par singe ?",
+    "en": "The monkeys share their apples among 4. How many apples for each monkey?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Pommes données",
+      "en": "Apples given"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "éléphants",
+        "en": "elephants"
+       },
+       "value": 24
+      },
+      {
+       "label": {
+        "fr": "girafes",
+        "en": "giraffes"
+       },
+       "value": 18
+      },
+      {
+       "label": {
+        "fr": "singes",
+        "en": "monkeys"
+       },
+       "value": 12
+      }
+     ],
+     "max": 30
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3,
+    "calc": "12/4"
+   },
+   "common_errors": [
+    {
+     "value": 12,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "12 est le total des singes. Il reste à partager.",
+      "en": "12 is the monkeys’ total. It still has to be shared."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "Pour partager, on divise.",
+      "en": "To share, we divide."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Lis la barre des singes, puis divise par 4.",
+    "en": "Read the monkeys’ bar, then divide by 4."
+   },
+   "explain": {
+    "fr": "Les singes ont 12 pommes. 12 ÷ 4 = 3.",
+    "en": "The monkeys have 12 apples. 12 ÷ 4 = 3."
+   },
+   "tags": [
+    "bar-chart",
+    "division"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_7562dc09000d60228668"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.zoo.014",
+   "quest": "animaux.zoo",
+   "skill": "ARI-SOP-A03a",
+   "type": "visual",
+   "grade": 3,
+   "difficulty": 4,
+   "story": {
+    "fr": "Le zoo a installé des cages pour les perroquets.",
+    "en": "The zoo set up cages for the parrots."
+   },
+   "prompt": {
+    "fr": "Chaque image représente 4 perroquets. Combien de perroquets y a-t-il ?",
+    "en": "Each picture stands for 4 parrots. How many parrots are there?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Perroquets du zoo",
+      "en": "Zoo parrots"
+     },
+     "each": 4,
+     "rows": [
+      {
+       "label": {
+        "fr": "perroquets",
+        "en": "parrots"
+       },
+       "count": 6
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 24,
+    "calc": "6*4"
+   },
+   "common_errors": [
+    {
+     "value": 6,
+     "misconception": "mis_read_scale",
+     "feedback": {
+      "fr": "Chaque image vaut 4 perroquets.",
+      "en": "Each picture is worth 4 parrots."
+     }
+    },
+    {
+     "value": 10,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Il y a 6 images de 4 : on multiplie.",
+      "en": "There are 6 pictures of 4, so we multiply."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 4 en 4, six fois.",
+    "en": "Count by 4s, six times."
+   },
+   "explain": {
+    "fr": "6 images de 4 : 6 × 4 = 24.",
+    "en": "6 pictures of 4: 6 × 4 = 24."
+   },
+   "tags": [
+    "pictograph",
+    "multiplication"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_458f758fd9ac7578259f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.zoo.015",
+   "quest": "animaux.zoo",
+   "skill": "ARI-SOP-A03a",
+   "type": "estimate",
+   "grade": 3,
+   "difficulty": 3,
+   "story": {
+    "fr": "Une girafe mange beaucoup de feuilles.",
+    "en": "A giraffe eats a lot of leaves."
+   },
+   "prompt": {
+    "fr": "Elle mange environ 29 kg de feuilles par jour. Environ combien de kg en 3 jours ?",
+    "en": "She eats about 29 kg of leaves a day. About how many kg in 3 days?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 80,
+    "max": 94,
+    "exact_for_check": 87,
+    "calc": "29*3"
+   },
+   "common_errors": [
+    {
+     "value": 32,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Il y a 3 jours de 29 kg : on multiplie.",
+      "en": "There are 3 days of 29 kg, so we multiply."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis 29 à 30.",
+    "en": "Round 29 to 30."
+   },
+   "explain": {
+    "fr": "29 est près de 30 et 3 × 30 = 90. Le vrai total est 87 kg.",
+    "en": "29 is close to 30 and 3 × 30 = 90. The exact total is 87 kg."
+   },
+   "tags": [
+    "estimation",
+    "multiplication"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_39ac0ffe62c1eefbfc43"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.pairs.001",
+   "quest": "animaux.pairs",
+   "skill": "ARI-SEN-A11a",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Noah compte les pas des canards, deux par deux.",
+    "en": "Noah counts the ducks’ steps, two by two."
+   },
+   "prompt": {
+    "fr": "Quel est le nombre pair qui vient juste après 9 ?",
+    "en": "Which even number comes right after 9?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 10,
+    "calc": "9+1"
+   },
+   "common_errors": [
+    {
+     "value": 11,
+     "misconception": "mis_even_odd",
+     "feedback": {
+      "fr": "11 est impair. Cherche un nombre pair.",
+      "en": "11 is odd. Look for an even number."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "8 vient avant 9, pas après.",
+      "en": "8 comes before 9, not after."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Les nombres pairs se comptent de 2 en 2.",
+    "en": "Even numbers are counted by 2s."
+   },
+   "explain": {
+    "fr": "Après 9 vient 10, et 10 est pair.",
+    "en": "After 9 comes 10, and 10 is even."
+   },
+   "tags": [
+    "even-odd",
+    "next-number"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.pairs.002",
+   "quest": "animaux.pairs",
+   "skill": "ARI-SEN-A11a",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa met 14 chevaux par paires pour la balade.",
+    "en": "Lea puts 14 horses in pairs for the ride."
+   },
+   "prompt": {
+    "fr": "Combien de paires peut-elle former ?",
+    "en": "How many pairs can she make?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 7,
+    "calc": "14/2"
+   },
+   "common_errors": [
+    {
+     "value": 28,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "Pour former des paires, on divise par 2.",
+      "en": "To make pairs, we divide by 2."
+     }
+    },
+    {
+     "value": 12,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "Pour former des paires, on divise par 2.",
+      "en": "To make pairs, we divide by 2."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte 2, 4, 6 … jusqu’à 14.",
+    "en": "Count 2, 4, 6 … up to 14."
+   },
+   "explain": {
+    "fr": "14 ÷ 2 = 7 paires, sans reste : 14 est pair.",
+    "en": "14 ÷ 2 = 7 pairs with none left: 14 is even."
+   },
+   "tags": [
+    "even-odd",
+    "pairs"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_2318b9437a2dd31eb698"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.pairs.003",
+   "quest": "animaux.pairs",
+   "skill": "ARI-SEN-A11a",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 4,
+   "story": {
+    "fr": "Le fermier regarde les numéros des enclos.",
+    "en": "The farmer looks at the pen numbers."
+   },
+   "prompt": {
+    "fr": "Parmi 5, 8, 15, 20, 23 et 30, combien de nombres sont pairs ?",
+    "en": "Among 5, 8, 15, 20, 23 and 30, how many numbers are even?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3,
+    "calc": "3"
+   },
+   "common_errors": [
+    {
+     "value": 4,
+     "misconception": "mis_even_odd",
+     "feedback": {
+      "fr": "Vérifie le chiffre des unités de chaque nombre.",
+      "en": "Check the ones digit of each number."
+     }
+    },
+    {
+     "value": 2,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Il y en a un de plus. Regarde encore.",
+      "en": "There is one more. Look again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Un nombre pair finit par 0, 2, 4, 6 ou 8.",
+    "en": "An even number ends in 0, 2, 4, 6 or 8."
+   },
+   "explain": {
+    "fr": "Les nombres pairs sont 8, 20 et 30. Il y en a 3.",
+    "en": "The even numbers are 8, 20 and 30. There are 3."
+   },
+   "tags": [
+    "even-odd",
+    "sorting"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.pairs.004",
+   "quest": "animaux.pairs",
+   "skill": "ARI-SEN-A11a",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa regarde les numéros des stalles.",
+    "en": "Lea looks at the stall numbers."
+   },
+   "prompt": {
+    "fr": "Quel numéro de stalle est pair ?",
+    "en": "Which stall number is even?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "7",
+      "en": "7"
+     },
+     "misconception": "mis_even_odd"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "9",
+      "en": "9"
+     },
+     "misconception": "mis_even_odd"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "6",
+      "en": "6"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "11",
+      "en": "11"
+     },
+     "misconception": "mis_even_odd"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c"
+   },
+   "hint": {
+    "fr": "Un nombre pair se compte de 2 en 2.",
+    "en": "An even number is counted by 2s."
+   },
+   "explain": {
+    "fr": "6 = 2 + 2 + 2. C’est un nombre pair.",
+    "en": "6 = 2 + 2 + 2. It is an even number."
+   },
+   "tags": [
+    "even-odd",
+    "stalls"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_ff0729b37bc624b02e11"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.pairs.005",
+   "quest": "animaux.pairs",
+   "skill": "ARI-SEN-A11a",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa partage des carottes en paires.",
+    "en": "Lea puts carrots in pairs."
+   },
+   "prompt": {
+    "fr": "Avec quel nombre de carottes y a-t-il toujours une carotte seule ?",
+    "en": "With which number of carrots is one always left alone?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "12",
+      "en": "12"
+     },
+     "misconception": "mis_even_odd"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "16",
+      "en": "16"
+     },
+     "misconception": "mis_even_odd"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "13",
+      "en": "13"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "10",
+      "en": "10"
+     },
+     "misconception": "mis_even_odd"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c"
+   },
+   "hint": {
+    "fr": "Un nombre impair ne forme pas de paires complètes.",
+    "en": "An odd number does not make complete pairs."
+   },
+   "explain": {
+    "fr": "13 = 6 paires et une carotte seule : 13 est impair.",
+    "en": "13 = 6 pairs and a lone carrot: 13 is odd."
+   },
+   "tags": [
+    "even-odd",
+    "pairs"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_add5179377b74ccfb6dc"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.pairs.006",
+   "quest": "animaux.pairs",
+   "skill": "ARI-SEN-A11a",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah lit les numéros de ses billets de ferme.",
+    "en": "Noah reads the numbers on his farm tickets."
+   },
+   "prompt": {
+    "fr": "Lequel de ces nombres est pair ?",
+    "en": "Which of these numbers is even?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "83",
+      "en": "83"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "35",
+      "en": "35"
+     },
+     "misconception": "mis_even_odd"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "38",
+      "en": "38"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "49",
+      "en": "49"
+     },
+     "misconception": "mis_even_odd"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c"
+   },
+   "hint": {
+    "fr": "Regarde seulement le chiffre des unités.",
+    "en": "Look only at the ones digit."
+   },
+   "explain": {
+    "fr": "38 finit par 8, donc 38 est pair.",
+    "en": "38 ends in 8, so 38 is even."
+   },
+   "tags": [
+    "even-odd",
+    "place-value"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.pairs.007",
+   "quest": "animaux.pairs",
+   "skill": "ARI-SEN-A11a",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Les poussins marchent deux par deux.",
+    "en": "The chicks walk two by two."
+   },
+   "prompt": {
+    "fr": "Il y a 17 poussins. Combien de paires complètes peut-on former ?",
+    "en": "There are 17 chicks. How many full pairs can be made?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 8,
+    "calc": "(17-1)/2"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "9 paires demanderaient 18 poussins.",
+      "en": "9 pairs would need 18 chicks."
+     }
+    },
+    {
+     "value": 34,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "On forme des paires : on divise par 2.",
+      "en": "Making pairs means dividing by 2."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Retire le poussin seul avant de compter.",
+    "en": "Remove the lone chick before counting."
+   },
+   "explain": {
+    "fr": "17 est impair. 16 poussins font 8 paires.",
+    "en": "17 is odd. 16 chicks make 8 pairs."
+   },
+   "tags": [
+    "word-problem",
+    "even-odd",
+    "pairs"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_25148b5acd41c1a6f2c1"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.pairs.008",
+   "quest": "animaux.pairs",
+   "skill": "ARI-SEN-A11a",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 4,
+   "story": {
+    "fr": "Zoé met tous les animaux de la ferme en paires.",
+    "en": "Zoe puts all the farm animals in pairs."
+   },
+   "prompt": {
+    "fr": "Il y a 12 vaches et 9 veaux. Peut-elle former des paires sans reste avec tous les animaux ?",
+    "en": "There are 12 cows and 9 calves. Can she make pairs with none left over using all the animals?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Oui, car 12 est pair",
+      "en": "Yes, because 12 is even"
+     },
+     "misconception": "mis_partial_result"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Oui, car 21 est pair",
+      "en": "Yes, because 21 is even"
+     },
+     "misconception": "mis_even_odd"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Non, car 21 est impair",
+      "en": "No, because 21 is odd"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c"
+   },
+   "hint": {
+    "fr": "Additionne d’abord les animaux.",
+    "en": "Add the animals first."
+   },
+   "explain": {
+    "fr": "12 + 9 = 21. 21 est impair, donc un animal reste seul.",
+    "en": "12 + 9 = 21. 21 is odd, so one animal is left alone."
+   },
+   "tags": [
+    "word-problem",
+    "even-odd",
+    "addition"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.pairs.009",
+   "quest": "animaux.pairs",
+   "skill": "ARI-SEN-A11a",
+   "type": "truefalse",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa et Noah comparent des nombres.",
+    "en": "Lea and Noah compare numbers."
+   },
+   "prompt": {
+    "fr": "Léa dit que 3 + 5 donne un nombre impair. A-t-elle raison ?",
+    "en": "Lea says that 3 + 5 gives an odd number. Is she right?"
+   },
+   "math_text": "3 + 5 = 8",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_even_odd"
+   },
+   "hint": {
+    "fr": "Calcule 3 + 5, puis regarde le résultat.",
+    "en": "Work out 3 + 5, then look at the result."
+   },
+   "explain": {
+    "fr": "3 + 5 = 8 et 8 est pair. Deux nombres impairs font un nombre pair.",
+    "en": "3 + 5 = 8 and 8 is even. Two odd numbers make an even number."
+   },
+   "tags": [
+    "true-false",
+    "even-odd"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.pairs.010",
+   "quest": "animaux.pairs",
+   "skill": "ARI-SEN-A11a",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah lit les numéros impairs des boîtes aux lettres.",
+    "en": "Noah reads the odd mailbox numbers."
+   },
+   "prompt": {
+    "fr": "Range ces nombres impairs du plus grand au plus petit.",
+    "en": "Put these odd numbers in order, from the biggest to the smallest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "9",
+      "en": "9"
+     },
+     "key": "9"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "15",
+      "en": "15"
+     },
+     "key": "15"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "3",
+      "en": "3"
+     },
+     "key": "3"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "11",
+      "en": "11"
+     },
+     "key": "11"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "d",
+     "a",
+     "c"
+    ],
+    "by": "desc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Commence par le plus grand.",
+    "en": "Start with the biggest."
+   },
+   "explain": {
+    "fr": "15, 11, 9, 3 : du plus grand au plus petit.",
+    "en": "15, 11, 9, 3: from biggest to smallest."
+   },
+   "tags": [
+    "ordering",
+    "even-odd"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.pairs.011",
+   "quest": "animaux.pairs",
+   "skill": "ARI-SEN-A11a",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa range des pattes en paires.",
+    "en": "Lea sorts legs into pairs."
+   },
+   "prompt": {
+    "fr": "Relie chaque nombre de pattes à son nombre de paires.",
+    "en": "Match each number of legs to its number of pairs."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "8 pattes",
+       "en": "8 legs"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "12 pattes",
+       "en": "12 legs"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "20 pattes",
+       "en": "20 legs"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "10 paires",
+       "en": "10 pairs"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "4 paires",
+       "en": "4 pairs"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "6 paires",
+       "en": "6 pairs"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r2"
+     ],
+     [
+      "l2",
+      "r3"
+     ],
+     [
+      "l3",
+      "r1"
+     ]
+    ],
+    "misconception": "mis_wrong_operation"
+   },
+   "hint": {
+    "fr": "Une paire, c’est 2 pattes.",
+    "en": "One pair is 2 legs."
+   },
+   "explain": {
+    "fr": "8 ÷ 2 = 4, 12 ÷ 2 = 6 et 20 ÷ 2 = 10.",
+    "en": "8 ÷ 2 = 4, 12 ÷ 2 = 6 and 20 ÷ 2 = 10."
+   },
+   "tags": [
+    "matching",
+    "even-odd",
+    "pairs"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.pairs.012",
+   "quest": "animaux.pairs",
+   "skill": "ARI-SEN-A11a",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah lit un tableau d’images sur les oiseaux.",
+    "en": "Noah reads a picture chart about birds."
+   },
+   "prompt": {
+    "fr": "Combien de rangées ont un nombre pair d’oiseaux ?",
+    "en": "How many rows have an even number of birds?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Oiseaux de la ferme",
+      "en": "Farm birds"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "poules",
+        "en": "hens"
+       },
+       "count": 7
+      },
+      {
+       "label": {
+        "fr": "canards",
+        "en": "ducks"
+       },
+       "count": 8
+      },
+      {
+       "label": {
+        "fr": "oies",
+        "en": "geese"
+       },
+       "count": 6
+      },
+      {
+       "label": {
+        "fr": "dindons",
+        "en": "turkeys"
+       },
+       "count": 9
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 2,
+    "calc": "2"
+   },
+   "common_errors": [
+    {
+     "value": 3,
+     "misconception": "mis_even_odd",
+     "feedback": {
+      "fr": "Compte seulement les rangées dont le nombre est pair.",
+      "en": "Count only the rows whose number is even."
+     }
+    },
+    {
+     "value": 4,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Toutes les rangées ne sont pas paires.",
+      "en": "Not every row is even."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les images de chaque rangée.",
+    "en": "Count the pictures in each row."
+   },
+   "explain": {
+    "fr": "Les rangées paires sont 8 et 6. Il y en a 2.",
+    "en": "The even rows are 8 and 6. There are 2."
+   },
+   "tags": [
+    "pictograph",
+    "even-odd"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_25148b5acd41c1a6f2c1"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "animaux.pairs.013",
+   "quest": "animaux.pairs",
+   "skill": "ARI-SEN-A11a",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le fermier met ses poussins en paires.",
+    "en": "The farmer puts his chicks in pairs."
+   },
+   "prompt": {
+    "fr": "Il y a 49 poussins. Environ combien de paires peut-on former ?",
+    "en": "There are 49 chicks. About how many pairs can be made?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 23,
+    "max": 26,
+    "exact_for_check": 24.5,
+    "calc": "49/2"
+   },
+   "common_errors": [
+    {
+     "value": 98,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "On forme des paires : on divise par 2.",
+      "en": "Making pairs means dividing by 2."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à 50 poussins.",
+    "en": "Think of 50 chicks."
+   },
+   "explain": {
+    "fr": "50 ÷ 2 = 25. Avec 49, c’est un peu moins : 24 paires et un poussin seul.",
+    "en": "50 ÷ 2 = 25. With 49 it is a little less: 24 pairs and a lone chick."
+   },
+   "tags": [
+    "estimation",
+    "pairs"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_25148b5acd41c1a6f2c1"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  }
+ ]
+}
