@@ -1,0 +1,3841 @@
+{
+ "world": "pirates",
+ "schema": 1,
+ "questions": [
+  {
+   "id": "pirates.carte.001",
+   "quest": "pirates.carte",
+   "skill": "GEO-A01",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Max le pirate suit la carte au trésor.",
+    "en": "Max the pirate follows the treasure map."
+   },
+   "prompt": {
+    "fr": "Il fait 3 pas vers la droite, puis 4 pas vers la droite. Combien de pas depuis le départ ?",
+    "en": "He takes 3 steps to the right, then 4 steps to the right. How many steps from the start?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 7,
+    "calc": "3+4"
+   },
+   "common_errors": [
+    {
+     "value": 1,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Les deux séries de pas vont dans le même sens : on additionne.",
+      "en": "Both sets of steps go the same way, so we add."
+     }
+    },
+    {
+     "value": 6,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les pas.",
+      "en": "Close! Count the steps again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pars de 3 et avance de 4 pas.",
+    "en": "Start at 3 and hop 4 steps."
+   },
+   "explain": {
+    "fr": "3 + 4 = 7 pas depuis le départ.",
+    "en": "3 + 4 = 7 steps from the start."
+   },
+   "tags": [
+    "map",
+    "steps",
+    "addition"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_f91fc32bb4767cd81e9e"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.carte.002",
+   "quest": "pirates.carte",
+   "skill": "GEO-A01",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Max avance puis recule sur la plage.",
+    "en": "Max walks forward, then back along the beach."
+   },
+   "prompt": {
+    "fr": "Il fait 9 pas vers la droite, puis 3 pas vers la gauche. À combien de pas du départ est-il ?",
+    "en": "He takes 9 steps right, then 3 steps left. How many steps from the start is he?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 6,
+    "calc": "9-3"
+   },
+   "common_errors": [
+    {
+     "value": 12,
+     "misconception": "mis_direction",
+     "feedback": {
+      "fr": "Aller à gauche te ramène vers le départ : on soustrait.",
+      "en": "Going left brings you back toward the start, so we subtract."
+     }
+    },
+    {
+     "value": 3,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "3 est le recul. Il reste le chemin fait vers la droite.",
+      "en": "3 is the step back. The way forward is still to count."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Recule de 3 pas à partir de 9.",
+    "en": "Go back 3 steps from 9."
+   },
+   "explain": {
+    "fr": "9 - 3 = 6 pas du départ.",
+    "en": "9 - 3 = 6 steps from the start."
+   },
+   "tags": [
+    "map",
+    "left-right",
+    "subtraction"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_f266c21ec76e1e9608b3"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.carte.003",
+   "quest": "pirates.carte",
+   "skill": "GEO-A01",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Sur la carte, le palmier est à gauche du coffre.",
+    "en": "On the map, the palm tree is to the left of the chest."
+   },
+   "prompt": {
+    "fr": "Où est le coffre par rapport au palmier ?",
+    "en": "Where is the chest compared with the palm tree?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "à gauche",
+      "en": "à gauche"
+     },
+     "misconception": "mis_direction"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "à droite",
+      "en": "à droite"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "en haut",
+      "en": "en haut"
+     },
+     "random": true
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Si A est à gauche de B, B est de l’autre côté.",
+    "en": "If A is left of B, then B is on the other side."
+   },
+   "explain": {
+    "fr": "Le palmier est à gauche, donc le coffre est à droite.",
+    "en": "The palm tree is on the left, so the chest is on the right."
+   },
+   "tags": [
+    "map",
+    "left-right"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_146e39368bbeb95049ca"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.carte.004",
+   "quest": "pirates.carte",
+   "skill": "GEO-A01",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "L’île est sous le bateau sur la carte.",
+    "en": "The island is below the boat on the map."
+   },
+   "prompt": {
+    "fr": "Où est le bateau par rapport à l’île ?",
+    "en": "Where is the boat compared with the island?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "en dessous",
+      "en": "en dessous"
+     },
+     "misconception": "mis_direction"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "au-dessus",
+      "en": "au-dessus"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "à droite",
+      "en": "à droite"
+     },
+     "random": true
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Si l’île est sous le bateau, le bateau est plus haut.",
+    "en": "If the island is below the boat, the boat is higher."
+   },
+   "explain": {
+    "fr": "L’île est en bas, donc le bateau est au-dessus.",
+    "en": "The island is low, so the boat is above it."
+   },
+   "tags": [
+    "map",
+    "up-down"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_8c18b9d212392ebc2098"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.carte.005",
+   "quest": "pirates.carte",
+   "skill": "GEO-A01",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 4,
+   "story": {
+    "fr": "Max est à la case (2, 3) : 2 à droite, 3 en bas.",
+    "en": "Max is at square (2, 3): 2 right, 3 down."
+   },
+   "prompt": {
+    "fr": "Il avance de 1 case vers la droite. Où est-il maintenant ?",
+    "en": "He moves 1 square to the right. Where is he now?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "(1, 3)",
+      "en": "(1, 3)"
+     },
+     "misconception": "mis_direction"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "(2, 4)",
+      "en": "(2, 4)"
+     },
+     "misconception": "mis_grid_axes"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "(3, 3)",
+      "en": "(3, 3)"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "(3, 2)",
+      "en": "(3, 2)"
+     },
+     "misconception": "mis_grid_axes"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c"
+   },
+   "hint": {
+    "fr": "La droite change le premier nombre.",
+    "en": "Going right changes the first number."
+   },
+   "explain": {
+    "fr": "Vers la droite, le premier nombre augmente de 1 : (3, 3).",
+    "en": "Going right, the first number goes up by 1: (3, 3)."
+   },
+   "tags": [
+    "map",
+    "coordinates"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_87792558ceb30cde6a09"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.carte.006",
+   "quest": "pirates.carte",
+   "skill": "GEO-A01",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa cherche le trésor sur l’île.",
+    "en": "Lea looks for the treasure on the island."
+   },
+   "prompt": {
+    "fr": "Elle fait 4 pas vers la droite, puis 3 pas vers le bas. Combien de pas en tout ?",
+    "en": "She takes 4 steps right, then 3 steps down. How many steps in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 7,
+    "calc": "4+3"
+   },
+   "common_errors": [
+    {
+     "value": 1,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On compte tous les pas : on additionne.",
+      "en": "We count all the steps, so we add."
+     }
+    },
+    {
+     "value": 12,
+     "misconception": "mis_multiply_instead_of_add",
+     "feedback": {
+      "fr": "On additionne les pas, on ne les multiplie pas.",
+      "en": "We add the steps, we do not multiply them."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les pas vers la droite, puis ceux vers le bas.",
+    "en": "Count the steps right, then the steps down."
+   },
+   "explain": {
+    "fr": "4 + 3 = 7 pas.",
+    "en": "4 + 3 = 7 steps."
+   },
+   "tags": [
+    "word-problem",
+    "map",
+    "addition"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_f266c21ec76e1e9608b3"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.carte.007",
+   "quest": "pirates.carte",
+   "skill": "GEO-A01",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 4,
+   "story": {
+    "fr": "La carte donne un chemin en trois étapes.",
+    "en": "The map gives a path in three stages."
+   },
+   "prompt": {
+    "fr": "Max fait 8 pas à droite, 6 à gauche, puis 3 à droite. Où est-il, en pas depuis le départ ?",
+    "en": "Max takes 8 steps right, 6 left, then 3 right. How many steps from the start?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "8-6+3"
+   },
+   "common_errors": [
+    {
+     "value": 17,
+     "misconception": "mis_direction",
+     "feedback": {
+      "fr": "Les pas vers la gauche font reculer : on soustrait.",
+      "en": "Steps to the left go back, so we subtract."
+     }
+    },
+    {
+     "value": 2,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Il reste une étape : 3 pas à droite.",
+      "en": "One stage is left: 3 steps to the right."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Fais une étape à la fois.",
+    "en": "Do one stage at a time."
+   },
+   "explain": {
+    "fr": "8 - 6 = 2, puis 2 + 3 = 5 pas.",
+    "en": "8 - 6 = 2, then 2 + 3 = 5 steps."
+   },
+   "tags": [
+    "word-problem",
+    "map",
+    "two-steps"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_f91fc32bb4767cd81e9e"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.carte.008",
+   "quest": "pirates.carte",
+   "skill": "GEO-A01",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Sur la carte, le palmier est en haut et le coffre en bas.",
+    "en": "On the map, the palm tree is high and the chest is low."
+   },
+   "prompt": {
+    "fr": "Le coffre est plus bas que le palmier. Vrai ?",
+    "en": "The chest is lower than the palm tree. True?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": true
+   },
+   "hint": {
+    "fr": "Regarde où est le haut de la carte.",
+    "en": "Look at where the top of the map is."
+   },
+   "explain": {
+    "fr": "Le coffre est en bas, donc il est plus bas.",
+    "en": "The chest is at the bottom, so it is lower."
+   },
+   "tags": [
+    "true-false",
+    "map",
+    "up-down"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.carte.009",
+   "quest": "pirates.carte",
+   "skill": "GEO-A01",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Max est à 4 pas du départ.",
+    "en": "Max is 4 steps from the start."
+   },
+   "prompt": {
+    "fr": "Après 2 pas de plus à droite, Max dit qu’il est à 8 pas. A-t-il raison ?",
+    "en": "After 2 more steps right, Max says he is 8 steps away. Is he right?"
+   },
+   "math_text": "4 + 2 = 8",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_multiply_instead_of_add"
+   },
+   "hint": {
+    "fr": "Avancer, c’est ajouter des pas.",
+    "en": "Moving forward means adding steps."
+   },
+   "explain": {
+    "fr": "4 + 2 = 6 pas, pas 8.",
+    "en": "4 + 2 = 6 steps, not 8."
+   },
+   "tags": [
+    "true-false",
+    "map",
+    "addition"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.carte.010",
+   "quest": "pirates.carte",
+   "skill": "GEO-A01",
+   "type": "order",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa marque des croix le long du chemin.",
+    "en": "Lea marks crosses along the path."
+   },
+   "prompt": {
+    "fr": "Range les croix de la plus proche à la plus loin du départ.",
+    "en": "Put the crosses in order, from the nearest to the farthest from the start."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "à 7 cases",
+      "en": "7 squares away"
+     },
+     "key": "7"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "à 2 cases",
+      "en": "2 squares away"
+     },
+     "key": "2"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "à 9 cases",
+      "en": "9 squares away"
+     },
+     "key": "9"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "à 5 cases",
+      "en": "5 squares away"
+     },
+     "key": "5"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "d",
+     "a",
+     "c"
+    ],
+    "by": "asc",
+    "misconception": "mis_order"
+   },
+   "hint": {
+    "fr": "Commence par le plus petit nombre de cases.",
+    "en": "Start with the smallest number of squares."
+   },
+   "explain": {
+    "fr": "2, puis 5, puis 7, puis 9 cases.",
+    "en": "2, then 5, then 7, then 9 squares."
+   },
+   "tags": [
+    "ordering",
+    "map",
+    "distance"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.carte.011",
+   "quest": "pirates.carte",
+   "skill": "GEO-A01",
+   "type": "match",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le perroquet connaît des mots contraires.",
+    "en": "The parrot knows opposite words."
+   },
+   "prompt": {
+    "fr": "Relie chaque mot à son contraire.",
+    "en": "Match each word to its opposite."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "à gauche",
+       "en": "left"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "en haut",
+       "en": "up"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "devant",
+       "en": "in front"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "derrière",
+       "en": "behind"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "à droite",
+       "en": "right"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "en bas",
+       "en": "down"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r2"
+     ],
+     [
+      "l2",
+      "r3"
+     ],
+     [
+      "l3",
+      "r1"
+     ]
+    ],
+    "misconception": "mis_direction"
+   },
+   "hint": {
+    "fr": "Pense à la direction de l’autre côté.",
+    "en": "Think of the direction on the other side."
+   },
+   "explain": {
+    "fr": "Gauche et droite, haut et bas, devant et derrière.",
+    "en": "Left and right, up and down, in front and behind."
+   },
+   "tags": [
+    "matching",
+    "map",
+    "opposites"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_458f758fd9ac7578259f"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.carte.012",
+   "quest": "pirates.carte",
+   "skill": "GEO-A01",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Sur la carte, D est le départ et C est le coffre.",
+    "en": "On the map, D is the start and C is the chest."
+   },
+   "prompt": {
+    "fr": "C est à combien de cases à droite de D ?",
+    "en": "C is how many squares to the right of D?"
+   },
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 5,
+     "rows": 3,
+     "cells": [
+      {
+       "x": 0,
+       "y": 0,
+       "label": {
+        "fr": "D",
+        "en": "D"
+       }
+      },
+      {
+       "x": 3,
+       "y": 0,
+       "label": {
+        "fr": "C",
+        "en": "C"
+       }
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3,
+    "calc": "3"
+   },
+   "common_errors": [
+    {
+     "value": 2,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Compte les cases que tu traverses, sans compter D.",
+      "en": "Count the squares you move across, not counting D."
+     }
+    },
+    {
+     "value": 4,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Compte les pas à partir de D, pas la case C.",
+      "en": "Count the steps from D, not square C."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Fais un pas à la fois depuis D.",
+    "en": "Take one step at a time from D."
+   },
+   "explain": {
+    "fr": "De D à C, on fait 3 pas vers la droite.",
+    "en": "From D to C, we take 3 steps to the right."
+   },
+   "tags": [
+    "grid",
+    "map",
+    "coordinates"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_f91fc32bb4767cd81e9e"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.carte.013",
+   "quest": "pirates.carte",
+   "skill": "GEO-A01",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "D est le départ et C est le coffre sur la grille.",
+    "en": "D is the start and C is the chest on the grid."
+   },
+   "prompt": {
+    "fr": "Combien de pas de D à C, à droite puis vers le bas ?",
+    "en": "How many steps from D to C, going right and then down?"
+   },
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 6,
+     "rows": 5,
+     "cells": [
+      {
+       "x": 0,
+       "y": 0,
+       "label": {
+        "fr": "D",
+        "en": "D"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "C",
+        "en": "C"
+       }
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 6,
+    "calc": "4+2"
+   },
+   "common_errors": [
+    {
+     "value": 4,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as compté seulement les pas vers la droite.",
+      "en": "You counted only the steps to the right."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_multiply_instead_of_add",
+     "feedback": {
+      "fr": "On additionne les pas, on ne les multiplie pas.",
+      "en": "We add the steps, we do not multiply them."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les pas à droite, puis ceux vers le bas.",
+    "en": "Count the steps right, then the steps down."
+   },
+   "explain": {
+    "fr": "4 pas à droite et 2 pas en bas : 4 + 2 = 6.",
+    "en": "4 steps right and 2 steps down: 4 + 2 = 6."
+   },
+   "tags": [
+    "grid",
+    "map",
+    "coordinates"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.carte.014",
+   "quest": "pirates.carte",
+   "skill": "GEO-A01",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 4,
+   "story": {
+    "fr": "D est le départ et C est le coffre.",
+    "en": "D is the start and C is the chest."
+   },
+   "prompt": {
+    "fr": "Où est le coffre C ?",
+    "en": "Where is the chest C?"
+   },
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 7,
+     "rows": 4,
+     "cells": [
+      {
+       "x": 0,
+       "y": 0,
+       "label": {
+        "fr": "D",
+        "en": "D"
+       }
+      },
+      {
+       "x": 5,
+       "y": 1,
+       "label": {
+        "fr": "C",
+        "en": "C"
+       }
+      }
+     ]
+    }
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "1 case à droite, 5 en bas",
+      "en": "1 case à droite, 5 en bas"
+     },
+     "misconception": "mis_grid_axes"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "5 cases à droite, 1 en bas",
+      "en": "5 cases à droite, 1 en bas"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "5 cases à droite, 2 en bas",
+      "en": "5 cases à droite, 2 en bas"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "6 cases à droite, 1 en bas",
+      "en": "6 cases à droite, 1 en bas"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Compte d’abord vers la droite, puis vers le bas.",
+    "en": "Count right first, then down."
+   },
+   "explain": {
+    "fr": "C est à 5 cases à droite et 1 case en bas de D.",
+    "en": "C is 5 squares right and 1 square down from D."
+   },
+   "tags": [
+    "grid",
+    "coordinates"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_87792558ceb30cde6a09"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.carte.015",
+   "quest": "pirates.carte",
+   "skill": "GEO-A01",
+   "type": "estimate",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le pirate compte ses pas pour traverser l’île.",
+    "en": "The pirate counts his steps to cross the island."
+   },
+   "prompt": {
+    "fr": "Il fait 19 pas sur la plage et 12 pas dans la forêt. Environ combien de pas en tout ?",
+    "en": "He takes 19 steps on the beach and 12 steps in the forest. About how many steps in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 29,
+    "max": 33,
+    "exact_for_check": 31,
+    "calc": "19+12"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Tous les pas comptent ensemble : on additionne.",
+      "en": "All the steps count together, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis 19 à 20 et 12 à 10.",
+    "en": "Round 19 to 20 and 12 to 10."
+   },
+   "explain": {
+    "fr": "20 + 10 = 30, donc environ 30 pas. Le vrai total est 31.",
+    "en": "20 + 10 = 30, so about 30 steps. The exact total is 31."
+   },
+   "tags": [
+    "estimation",
+    "map",
+    "steps"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_f266c21ec76e1e9608b3"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.tresor.001",
+   "quest": "pirates.tresor",
+   "skill": "ARI-SEN-A03",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Le coffre du pirate contient des sacs de pièces.",
+    "en": "The pirate’s chest holds bags of coins."
+   },
+   "prompt": {
+    "fr": "Il y a 4 sacs de 10 pièces et 7 pièces seules. Combien de pièces en tout ?",
+    "en": "There are 4 bags of 10 coins and 7 loose coins. How many coins in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 47,
+    "calc": "4*10+7"
+   },
+   "common_errors": [
+    {
+     "value": 11,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "Un sac vaut 10 pièces, pas 1.",
+      "en": "A bag is worth 10 coins, not 1."
+     }
+    },
+    {
+     "value": 74,
+     "misconception": "mis_digit_swap",
+     "feedback": {
+      "fr": "Les sacs de 10 sont les dizaines : 4 dizaines, 7 unités.",
+      "en": "Bags of 10 are the tens: 4 tens, 7 ones."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 10 en 10, puis ajoute les pièces seules.",
+    "en": "Count by 10s, then add the loose coins."
+   },
+   "explain": {
+    "fr": "4 sacs font 40 et 40 + 7 = 47 pièces.",
+    "en": "4 bags make 40, and 40 + 7 = 47 coins."
+   },
+   "tags": [
+    "place-value",
+    "tens-ones",
+    "coins"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4b02ff07fe7051d84283"
+    },
+    {
+     "role": "object",
+     "asset": "a_cec19b9cf0beac5bbd27"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.tresor.002",
+   "quest": "pirates.tresor",
+   "skill": "ARI-SEN-A03",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa écrit un nombre sur sa carte au trésor.",
+    "en": "Lea writes a number on her treasure map."
+   },
+   "prompt": {
+    "fr": "Quel nombre s’écrit avec 5 dizaines et 8 unités ?",
+    "en": "Which number is written with 5 tens and 8 ones?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 58,
+    "calc": "5*10+8"
+   },
+   "common_errors": [
+    {
+     "value": 85,
+     "misconception": "mis_digit_swap",
+     "feedback": {
+      "fr": "Les dizaines s’écrivent en premier.",
+      "en": "The tens are written first."
+     }
+    },
+    {
+     "value": 13,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "5 dizaines, c’est 50, pas 5.",
+      "en": "5 tens is 50, not 5."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "5 dizaines, c’est 50.",
+    "en": "5 tens is 50."
+   },
+   "explain": {
+    "fr": "50 + 8 = 58. C’est la réponse.",
+    "en": "50 + 8 = 58. That is the answer."
+   },
+   "tags": [
+    "place-value",
+    "tens-ones"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.tresor.003",
+   "quest": "pirates.tresor",
+   "skill": "ARI-SEN-A03",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah a deux cartes de nombres : 3 et 8.",
+    "en": "Noah has two number cards: 3 and 8."
+   },
+   "prompt": {
+    "fr": "Quel est le plus petit nombre à deux chiffres qu’il peut former ?",
+    "en": "What is the smallest two-digit number he can make?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 38,
+    "calc": "38"
+   },
+   "common_errors": [
+    {
+     "value": 83,
+     "misconception": "mis_order_reversed",
+     "feedback": {
+      "fr": "83 est le plus grand. Cherche le plus petit.",
+      "en": "83 is the biggest. Look for the smallest."
+     }
+    },
+    {
+     "value": 11,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "On forme un nombre avec ces deux cartes, on ne les additionne pas.",
+      "en": "We make a number from these two cards, we do not add them."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Mets le plus petit chiffre en premier.",
+    "en": "Put the smaller digit first."
+   },
+   "explain": {
+    "fr": "3 dizaines et 8 unités font 38. 83 est plus grand.",
+    "en": "3 tens and 8 ones make 38. 83 is bigger."
+   },
+   "tags": [
+    "place-value",
+    "digits",
+    "smallest"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.tresor.004",
+   "quest": "pirates.tresor",
+   "skill": "ARI-SEN-A03",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le coffre contient 63 pièces.",
+    "en": "The chest holds 63 coins."
+   },
+   "prompt": {
+    "fr": "Comment lit-on ce nombre ?",
+    "en": "How do we read this number?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "trente-six",
+      "en": "thirty-six"
+     },
+     "misconception": "mis_digit_swap"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "soixante-trois",
+      "en": "sixty-three"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "soixante-deux",
+      "en": "sixty-two"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "6 dizaines se disent soixante.",
+    "en": "6 tens is said sixty."
+   },
+   "explain": {
+    "fr": "63 se lit soixante-trois.",
+    "en": "63 is read sixty-three."
+   },
+   "tags": [
+    "read-numbers",
+    "number-words"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4b02ff07fe7051d84283"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.tresor.005",
+   "quest": "pirates.tresor",
+   "skill": "ARI-SEN-A03",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa compte les pièces à voix haute.",
+    "en": "Lea counts the coins out loud."
+   },
+   "prompt": {
+    "fr": "Quel nombre vient juste après 39 ?",
+    "en": "Which number comes right after 39?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "38",
+      "en": "38"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "49",
+      "en": "49"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "30",
+      "en": "30"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "40",
+      "en": "40"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d"
+   },
+   "hint": {
+    "fr": "Après 39, les dizaines changent.",
+    "en": "After 39, the tens change."
+   },
+   "explain": {
+    "fr": "39 + 1 = 40. C’est la réponse.",
+    "en": "39 + 1 = 40. That is the answer."
+   },
+   "tags": [
+    "number-sequence",
+    "tens-ones"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.tresor.006",
+   "quest": "pirates.tresor",
+   "skill": "ARI-SEN-A03",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Max écrit le nombre de pièces du coffre.",
+    "en": "Max writes the number of coins in the chest."
+   },
+   "prompt": {
+    "fr": "Quel nombre a 6 dizaines et 2 unités ?",
+    "en": "Which number has 6 tens and 2 ones?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "26",
+      "en": "26"
+     },
+     "misconception": "mis_digit_swap"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "8",
+      "en": "8"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "602",
+      "en": "602"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "62",
+      "en": "62"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d",
+    "calc_choice": {
+     "d": "6*10+2"
+    }
+   },
+   "hint": {
+    "fr": "Les dizaines s’écrivent à gauche.",
+    "en": "The tens are written on the left."
+   },
+   "explain": {
+    "fr": "6 dizaines = 60 et 60 + 2 = 62.",
+    "en": "6 tens = 60 and 60 + 2 = 62."
+   },
+   "tags": [
+    "place-value",
+    "tens-ones"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.tresor.007",
+   "quest": "pirates.tresor",
+   "skill": "ARI-SEN-A03",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Max compte les pièces de son butin.",
+    "en": "Max counts the coins of his loot."
+   },
+   "prompt": {
+    "fr": "Il a 30 pièces d’or et 5 pièces d’argent. Combien de pièces en tout ?",
+    "en": "He has 30 gold coins and 5 silver coins. How many coins in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 35,
+    "calc": "30+5"
+   },
+   "common_errors": [
+    {
+     "value": 305,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "On ajoute 5 unités à 3 dizaines.",
+      "en": "We add 5 ones to 3 tens."
+     }
+    },
+    {
+     "value": 25,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Toutes les pièces vont ensemble : on additionne.",
+      "en": "All the coins go together, so we add."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "30 et 5 : les dizaines et les unités.",
+    "en": "30 and 5: the tens and the ones."
+   },
+   "explain": {
+    "fr": "30 + 5 = 35 pièces.",
+    "en": "30 + 5 = 35 coins."
+   },
+   "tags": [
+    "word-problem",
+    "tens-ones",
+    "coins"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.tresor.008",
+   "quest": "pirates.tresor",
+   "skill": "ARI-SEN-A03",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 4,
+   "story": {
+    "fr": "Zoé écrit un nombre avec 7 dizaines et 4 unités.",
+    "en": "Zoe writes a number with 7 tens and 4 ones."
+   },
+   "prompt": {
+    "fr": "Elle ajoute 1 dizaine. Quel est son nouveau nombre ?",
+    "en": "She adds 1 ten. What is her new number?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 84,
+    "calc": "7*10+4+10"
+   },
+   "common_errors": [
+    {
+     "value": 75,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "1 dizaine, c’est 10, pas 1.",
+      "en": "1 ten is 10, not 1."
+     }
+    },
+    {
+     "value": 74,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "74 est le nombre de départ. Il faut ajouter la dizaine.",
+      "en": "74 is the starting number. Add the ten."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Une dizaine de plus change le chiffre des dizaines.",
+    "en": "One more ten changes the tens digit."
+   },
+   "explain": {
+    "fr": "74 + 10 = 84. C’est la réponse.",
+    "en": "74 + 10 = 84. That is the answer."
+   },
+   "tags": [
+    "word-problem",
+    "place-value",
+    "add-ten"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.tresor.009",
+   "quest": "pirates.tresor",
+   "skill": "ARI-SEN-A03",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah lit un nombre sur le coffre.",
+    "en": "Noah reads a number on the chest."
+   },
+   "prompt": {
+    "fr": "Noah dit que 38 se lit quatre-vingt-trois. A-t-il raison ?",
+    "en": "Noah says that 38 is read eighty-three. Is he right?"
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_digit_swap"
+   },
+   "hint": {
+    "fr": "Lis d’abord les dizaines : 3 dizaines.",
+    "en": "Read the tens first: 3 tens."
+   },
+   "explain": {
+    "fr": "38 se lit trente-huit. Quatre-vingt-trois est 83.",
+    "en": "38 is read thirty-eight. Eighty-three is 83."
+   },
+   "tags": [
+    "true-false",
+    "read-numbers"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.tresor.010",
+   "quest": "pirates.tresor",
+   "skill": "ARI-SEN-A03",
+   "type": "order",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Max compte quatre coffres.",
+    "en": "Max counts four chests."
+   },
+   "prompt": {
+    "fr": "Range les nombres de pièces du plus petit au plus grand.",
+    "en": "Put the numbers of coins in order, from the smallest to the biggest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "47",
+      "en": "47"
+     },
+     "key": "47"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "74",
+      "en": "74"
+     },
+     "key": "74"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "38",
+      "en": "38"
+     },
+     "key": "38"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "83",
+      "en": "83"
+     },
+     "key": "83"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "c",
+     "a",
+     "b",
+     "d"
+    ],
+    "by": "asc",
+    "misconception": "mis_order"
+   },
+   "hint": {
+    "fr": "Regarde d’abord le chiffre des dizaines.",
+    "en": "Look at the tens digit first."
+   },
+   "explain": {
+    "fr": "38, 47, 74, 83 : on compare les dizaines.",
+    "en": "38, 47, 74, 83: we compare the tens."
+   },
+   "tags": [
+    "ordering",
+    "place-value"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.tresor.011",
+   "quest": "pirates.tresor",
+   "skill": "ARI-SEN-A03",
+   "type": "order",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa choisit quel coffre ouvrir en premier.",
+    "en": "Lea picks which chest to open first."
+   },
+   "prompt": {
+    "fr": "Range les nombres de pièces du plus grand au plus petit.",
+    "en": "Put the numbers of coins in order, from the biggest to the smallest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "29",
+      "en": "29"
+     },
+     "key": "29"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "92",
+      "en": "92"
+     },
+     "key": "92"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "51",
+      "en": "51"
+     },
+     "key": "51"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "15",
+      "en": "15"
+     },
+     "key": "15"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "c",
+     "a",
+     "d"
+    ],
+    "by": "desc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Commence par le plus grand nombre de dizaines.",
+    "en": "Start with the most tens."
+   },
+   "explain": {
+    "fr": "92, 51, 29, 15. C’est la réponse.",
+    "en": "92, 51, 29, 15. That is the answer."
+   },
+   "tags": [
+    "ordering",
+    "place-value",
+    "descending"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.tresor.012",
+   "quest": "pirates.tresor",
+   "skill": "ARI-SEN-A03",
+   "type": "match",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Zoé décompose des nombres de pièces.",
+    "en": "Zoe breaks coin numbers apart."
+   },
+   "prompt": {
+    "fr": "Relie chaque nombre à ses dizaines et unités.",
+    "en": "Match each number to its tens and ones."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "34",
+       "en": "34"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "43",
+       "en": "43"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "30",
+       "en": "30"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "4 dizaines et 3 unités",
+       "en": "4 tens and 3 ones"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "3 dizaines",
+       "en": "3 tens"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "3 dizaines et 4 unités",
+       "en": "3 tens and 4 ones"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r3"
+     ],
+     [
+      "l2",
+      "r1"
+     ],
+     [
+      "l3",
+      "r2"
+     ]
+    ],
+    "misconception": "mis_place_value"
+   },
+   "hint": {
+    "fr": "Le premier chiffre compte les dizaines.",
+    "en": "The first digit counts the tens."
+   },
+   "explain": {
+    "fr": "34 = 3 dizaines et 4 unités. 43 = 4 dizaines et 3 unités. 30 = 3 dizaines.",
+    "en": "34 = 3 tens and 4 ones. 43 = 4 tens and 3 ones. 30 = 3 tens."
+   },
+   "tags": [
+    "matching",
+    "place-value"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.tresor.013",
+   "quest": "pirates.tresor",
+   "skill": "ARI-SEN-A03",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Une flèche montre le nombre de pièces sur la règle du coffre.",
+    "en": "An arrow shows the number of coins on the chest ruler."
+   },
+   "prompt": {
+    "fr": "Quel nombre la flèche montre-t-elle ?",
+    "en": "Which number does the arrow show?"
+   },
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 60,
+     "max": 70,
+     "step": 1,
+     "labels": [
+      60,
+      65,
+      70
+     ],
+     "arrow": 67
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 67,
+    "calc": "67"
+   },
+   "common_errors": [
+    {
+     "value": 66,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Compte bien les petits traits depuis 65.",
+      "en": "Count the small marks carefully from 65."
+     }
+    },
+    {
+     "value": 76,
+     "misconception": "mis_digit_swap",
+     "feedback": {
+      "fr": "Les dizaines sont 6, pas 7.",
+      "en": "The tens digit is 6, not 7."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les traits depuis 65.",
+    "en": "Count the marks from 65."
+   },
+   "explain": {
+    "fr": "La flèche est 2 traits après 65 : 67.",
+    "en": "The arrow is 2 marks after 65: 67."
+   },
+   "tags": [
+    "number-line",
+    "read-numbers"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4b02ff07fe7051d84283"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.tresor.014",
+   "quest": "pirates.tresor",
+   "skill": "ARI-SEN-A03",
+   "type": "estimate",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Max regarde un sac plein de pièces.",
+    "en": "Max looks at a bag full of coins."
+   },
+   "prompt": {
+    "fr": "Le sac contient 49 pièces. Environ combien de pièces y a-t-il ?",
+    "en": "The bag holds 49 coins. About how many coins are there?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "environ 5",
+      "en": "about 5"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "environ 50",
+      "en": "about 50"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "environ 500",
+      "en": "about 500"
+     },
+     "misconception": "mis_place_value"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "49 est tout près d’une dizaine ronde.",
+    "en": "49 is very close to a round ten."
+   },
+   "explain": {
+    "fr": "49 est près de 50 : environ 50 pièces.",
+    "en": "49 is close to 50: about 50 coins."
+   },
+   "tags": [
+    "estimation",
+    "rounding"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_17e2a0c226342fe2cdd2"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.butin.001",
+   "quest": "pirates.butin",
+   "skill": "ARI-SOP-A05a",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Max a 2 sacs de 10 pièces.",
+    "en": "Max has 2 bags of 10 coins."
+   },
+   "prompt": {
+    "fr": "Il vide ses sacs pour avoir des pièces seules. Combien de pièces seules a-t-il ?",
+    "en": "He empties his bags to get loose coins. How many loose coins does he have?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 20,
+    "calc": "2*10"
+   },
+   "common_errors": [
+    {
+     "value": 12,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Chaque sac vaut 10 pièces : 2 sacs, c’est 10 + 10.",
+      "en": "Each bag is 10 coins: 2 bags is 10 + 10."
+     }
+    },
+    {
+     "value": 2,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Il y a 2 sacs, mais chaque sac contient 10 pièces.",
+      "en": "There are 2 bags, but each bag holds 10 coins."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 10 en 10.",
+    "en": "Count by 10s."
+   },
+   "explain": {
+    "fr": "10 + 10 = 20 pièces.",
+    "en": "10 + 10 = 20 coins."
+   },
+   "tags": [
+    "equivalence",
+    "tens"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_cec19b9cf0beac5bbd27"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.butin.002",
+   "quest": "pirates.butin",
+   "skill": "ARI-SOP-A05a",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Noah a 40 pièces seules.",
+    "en": "Noah has 40 loose coins."
+   },
+   "prompt": {
+    "fr": "Il les met dans des sacs de 10. Combien de sacs peut-il remplir ?",
+    "en": "He puts them into bags of 10. How many bags can he fill?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 4,
+    "calc": "40/10"
+   },
+   "common_errors": [
+    {
+     "value": 400,
+     "misconception": "mis_place_value",
+     "feedback": {
+      "fr": "Un sac contient 10 pièces : on regroupe.",
+      "en": "A bag holds 10 coins: we group them."
+     }
+    },
+    {
+     "value": 30,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On cherche combien de groupes de 10.",
+      "en": "We look for how many groups of 10."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte 10, 20, 30, 40.",
+    "en": "Count 10, 20, 30, 40."
+   },
+   "explain": {
+    "fr": "40 = 10 + 10 + 10 + 10, donc 4 sacs.",
+    "en": "40 = 10 + 10 + 10 + 10, so 4 bags."
+   },
+   "tags": [
+    "equivalence",
+    "grouping"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.butin.003",
+   "quest": "pirates.butin",
+   "skill": "ARI-SOP-A05a",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Zoé a 15 pièces seules.",
+    "en": "Zoe has 15 loose coins."
+   },
+   "prompt": {
+    "fr": "Elle remplit un sac de 10 pièces. Combien de pièces seules lui reste-t-il ?",
+    "en": "She fills one bag of 10 coins. How many loose coins are left?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "15-10"
+   },
+   "common_errors": [
+    {
+     "value": 25,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Le sac prend 10 pièces : on enlève.",
+      "en": "The bag takes 10 coins, so we take away."
+     }
+    },
+    {
+     "value": 10,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "10 pièces sont dans le sac. Combien restent dehors ?",
+      "en": "10 coins are in the bag. How many are outside?"
+     }
+    }
+   ],
+   "hint": {
+    "fr": "15 = 10 + combien ?",
+    "en": "15 = 10 + how many?"
+   },
+   "explain": {
+    "fr": "15 = 10 + 5, donc 5 pièces seules.",
+    "en": "15 = 10 + 5, so 5 loose coins."
+   },
+   "tags": [
+    "equivalence",
+    "decomposition"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4b02ff07fe7051d84283"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.butin.004",
+   "quest": "pirates.butin",
+   "skill": "ARI-SOP-A05a",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Les pirates aiment les additions qui font 10.",
+    "en": "Pirates like sums that make 10."
+   },
+   "prompt": {
+    "fr": "Quelle addition donne 10 ?",
+    "en": "Which sum makes 10?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "6 + 5",
+      "en": "6 + 5"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "7 + 2",
+      "en": "7 + 2"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "6 + 4",
+      "en": "6 + 4"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "5 + 4",
+      "en": "5 + 4"
+     },
+     "misconception": "mis_off_by_one"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c"
+   },
+   "hint": {
+    "fr": "Pense aux doigts de tes deux mains.",
+    "en": "Think of the fingers on your two hands."
+   },
+   "explain": {
+    "fr": "6 + 4 = 10. C’est la réponse.",
+    "en": "6 + 4 = 10. That is the answer."
+   },
+   "tags": [
+    "equivalence",
+    "make-ten"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.butin.005",
+   "quest": "pirates.butin",
+   "skill": "ARI-SOP-A05a",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah cherche un calcul qui vaut autant que 7 + 6.",
+    "en": "Noah looks for a sum worth the same as 7 + 6."
+   },
+   "prompt": {
+    "fr": "Quelle addition donne le même total ?",
+    "en": "Which sum gives the same total?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "9 + 5",
+      "en": "9 + 5"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "7 + 7",
+      "en": "7 + 7"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "6 + 6",
+      "en": "6 + 6"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "8 + 5",
+      "en": "8 + 5"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d"
+   },
+   "hint": {
+    "fr": "Calcule 7 + 6 d’abord.",
+    "en": "Work out 7 + 6 first."
+   },
+   "explain": {
+    "fr": "7 + 6 = 13 et 8 + 5 = 13.",
+    "en": "7 + 6 = 13 and 8 + 5 = 13."
+   },
+   "tags": [
+    "equivalence",
+    "sums"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.butin.006",
+   "quest": "pirates.butin",
+   "skill": "ARI-SOP-A05a",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa échange un sac de 10 pièces.",
+    "en": "Lea swaps one bag of 10 coins."
+   },
+   "prompt": {
+    "fr": "Contre quoi peut-elle l’échanger ?",
+    "en": "What can she swap it for?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "1 pièce seule",
+      "en": "1 pièce seule"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "100 pièces seules",
+      "en": "100 pièces seules"
+     },
+     "misconception": "mis_place_value"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "5 pièces seules",
+      "en": "5 pièces seules"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "10 pièces seules",
+      "en": "10 pièces seules"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d"
+   },
+   "hint": {
+    "fr": "Un sac de 10 contient 10 pièces.",
+    "en": "A bag of 10 holds 10 coins."
+   },
+   "explain": {
+    "fr": "1 sac de 10 vaut 10 pièces seules.",
+    "en": "1 bag of 10 is worth 10 loose coins."
+   },
+   "tags": [
+    "equivalence",
+    "tens"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4b02ff07fe7051d84283"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.butin.007",
+   "quest": "pirates.butin",
+   "skill": "ARI-SOP-A05a",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa échange des pièces avec Max.",
+    "en": "Lea swaps coins with Max."
+   },
+   "prompt": {
+    "fr": "Elle donne 2 piles de 5 pièces. Combien de pièces seules donne-t-elle ?",
+    "en": "She gives 2 stacks of 5 coins. How many loose coins does she give?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 10,
+    "calc": "2*5"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Chaque pile a 5 pièces : 5 + 5.",
+      "en": "Each stack has 5 coins: 5 + 5."
+     }
+    },
+    {
+     "value": 5,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "5 est une seule pile. Il y en a 2.",
+      "en": "5 is one stack. There are 2."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 5 en 5.",
+    "en": "Count by 5s."
+   },
+   "explain": {
+    "fr": "5 + 5 = 10 pièces.",
+    "en": "5 + 5 = 10 coins."
+   },
+   "tags": [
+    "word-problem",
+    "equivalence"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.butin.008",
+   "quest": "pirates.butin",
+   "skill": "ARI-SOP-A05a",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 4,
+   "story": {
+    "fr": "Max a un sac de 10 et 4 pièces. Noah a 2 piles de 5 et 7 pièces.",
+    "en": "Max has a bag of 10 and 4 coins. Noah has 2 stacks of 5 and 7 coins."
+   },
+   "prompt": {
+    "fr": "Combien de pièces de plus a Noah ?",
+    "en": "How many more coins does Noah have?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3,
+    "calc": "2*5+7-(10+4)"
+   },
+   "common_errors": [
+    {
+     "value": 17,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "17 est le total de Noah. Compare avec celui de Max.",
+      "en": "17 is Noah’s total. Compare it with Max’s."
+     }
+    },
+    {
+     "value": 14,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "14 est le total de Max. Compare avec celui de Noah.",
+      "en": "14 is Max’s total. Compare it with Noah’s."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Trouve d’abord le total de chacun.",
+    "en": "First find each total."
+   },
+   "explain": {
+    "fr": "Max : 10 + 4 = 14. Noah : 5 + 5 + 7 = 17. 17 - 14 = 3.",
+    "en": "Max: 10 + 4 = 14. Noah: 5 + 5 + 7 = 17. 17 - 14 = 3."
+   },
+   "tags": [
+    "word-problem",
+    "equivalence",
+    "compare"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4b02ff07fe7051d84283"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.butin.009",
+   "quest": "pirates.butin",
+   "skill": "ARI-SOP-A05a",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa vérifie un échange.",
+    "en": "Lea checks a swap."
+   },
+   "prompt": {
+    "fr": "Léa dit que 4 + 6 vaut autant que 5 + 4. A-t-elle raison ?",
+    "en": "Lea says that 4 + 6 is worth the same as 5 + 4. Is she right?"
+   },
+   "math_text": "4 + 6 = 5 + 4",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_off_by_one"
+   },
+   "hint": {
+    "fr": "Calcule chaque côté.",
+    "en": "Work out each side."
+   },
+   "explain": {
+    "fr": "4 + 6 = 10 et 5 + 4 = 9. Ce n’est pas égal.",
+    "en": "4 + 6 = 10 and 5 + 4 = 9. They are not equal."
+   },
+   "tags": [
+    "true-false",
+    "equivalence"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.butin.010",
+   "quest": "pirates.butin",
+   "skill": "ARI-SOP-A05a",
+   "type": "order",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Max compare quatre calculs de pièces.",
+    "en": "Max compares four coin sums."
+   },
+   "prompt": {
+    "fr": "Range ces valeurs de la plus petite à la plus grande.",
+    "en": "Put these values in order, from the smallest to the biggest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "5 + 4",
+      "en": "5 + 4"
+     },
+     "key": "9"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "8",
+      "en": "8"
+     },
+     "key": "8"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "6 + 6",
+      "en": "6 + 6"
+     },
+     "key": "12"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "10 + 0",
+      "en": "10 + 0"
+     },
+     "key": "10"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "a",
+     "d",
+     "c"
+    ],
+    "by": "asc",
+    "misconception": "mis_order"
+   },
+   "hint": {
+    "fr": "Calcule d’abord chaque valeur.",
+    "en": "Work out each value first."
+   },
+   "explain": {
+    "fr": "8, puis 9, puis 10, puis 12.",
+    "en": "8, then 9, then 10, then 12."
+   },
+   "tags": [
+    "ordering",
+    "equivalence"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.butin.011",
+   "quest": "pirates.butin",
+   "skill": "ARI-SOP-A05a",
+   "type": "match",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Zoé échange des pièces contre des sacs.",
+    "en": "Zoe swaps coins for bags."
+   },
+   "prompt": {
+    "fr": "Relie chaque nombre de pièces au nombre de sacs de 10.",
+    "en": "Match each number of coins to the number of bags of 10."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "10 pièces",
+       "en": "10 coins"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "20 pièces",
+       "en": "20 coins"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "30 pièces",
+       "en": "30 coins"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "3 sacs",
+       "en": "3 bags"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "1 sac",
+       "en": "1 bag"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "2 sacs",
+       "en": "2 bags"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r2"
+     ],
+     [
+      "l2",
+      "r3"
+     ],
+     [
+      "l3",
+      "r1"
+     ]
+    ],
+    "misconception": "mis_place_value"
+   },
+   "hint": {
+    "fr": "Un sac vaut 10 pièces.",
+    "en": "One bag is worth 10 coins."
+   },
+   "explain": {
+    "fr": "10 = 1 sac, 20 = 2 sacs, 30 = 3 sacs.",
+    "en": "10 = 1 bag, 20 = 2 bags, 30 = 3 bags."
+   },
+   "tags": [
+    "matching",
+    "equivalence"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_cec19b9cf0beac5bbd27"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.butin.012",
+   "quest": "pirates.butin",
+   "skill": "ARI-SOP-A05a",
+   "type": "match",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Max cherche des calculs qui valent autant.",
+    "en": "Max looks for sums worth the same."
+   },
+   "prompt": {
+    "fr": "Relie les additions qui donnent le même total.",
+    "en": "Match the sums that give the same total."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "3 + 3",
+       "en": "3 + 3"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "5 + 2",
+       "en": "5 + 2"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "9 + 1",
+       "en": "9 + 1"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "7 + 3",
+       "en": "7 + 3"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "2 + 4",
+       "en": "2 + 4"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "6 + 1",
+       "en": "6 + 1"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r2"
+     ],
+     [
+      "l2",
+      "r3"
+     ],
+     [
+      "l3",
+      "r1"
+     ]
+    ],
+    "misconception": "mis_match"
+   },
+   "hint": {
+    "fr": "Calcule les deux côtés de chaque paire.",
+    "en": "Work out both sides of each pair."
+   },
+   "explain": {
+    "fr": "3 + 3 = 2 + 4 = 6. 5 + 2 = 6 + 1 = 7. 9 + 1 = 7 + 3 = 10. C’est la réponse.",
+    "en": "3 + 3 = 2 + 4 = 6. 5 + 2 = 6 + 1 = 7. 9 + 1 = 7 + 3 = 10. That is the answer."
+   },
+   "tags": [
+    "matching",
+    "equivalence"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.butin.013",
+   "quest": "pirates.butin",
+   "skill": "ARI-SOP-A05a",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Chaque image du tableau est un sac de 10 pièces.",
+    "en": "Each picture in the chart is a bag of 10 coins."
+   },
+   "prompt": {
+    "fr": "Combien de pièces dans les sacs rouges ?",
+    "en": "How many coins are in the red bags?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Sacs de pièces",
+      "en": "Bags of coins"
+     },
+     "each": 10,
+     "rows": [
+      {
+       "label": {
+        "fr": "sacs bleus",
+        "en": "blue bags"
+       },
+       "count": 2
+      },
+      {
+       "label": {
+        "fr": "sacs rouges",
+        "en": "red bags"
+       },
+       "count": 3
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 30,
+    "calc": "3*10"
+   },
+   "common_errors": [
+    {
+     "value": 3,
+     "misconception": "mis_read_scale",
+     "feedback": {
+      "fr": "Chaque image vaut 10 pièces, pas 1.",
+      "en": "Each picture is worth 10 coins, not 1."
+     }
+    },
+    {
+     "value": 20,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as lu la ligne des sacs bleus.",
+      "en": "You read the blue bags row."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte de 10 en 10.",
+    "en": "Count by 10s."
+   },
+   "explain": {
+    "fr": "3 sacs de 10 : 10, 20, 30 pièces.",
+    "en": "3 bags of 10: 10, 20, 30 coins."
+   },
+   "tags": [
+    "pictograph",
+    "equivalence",
+    "tens"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_4b02ff07fe7051d84283"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.butin.014",
+   "quest": "pirates.butin",
+   "skill": "ARI-SOP-A05a",
+   "type": "estimate",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa veut remplir des sacs de 10 pièces.",
+    "en": "Lea wants to fill bags of 10 coins."
+   },
+   "prompt": {
+    "fr": "Elle a 48 pièces. Environ combien de sacs peut-elle remplir ?",
+    "en": "She has 48 coins. About how many bags can she fill?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "environ 2 sacs",
+      "en": "about 2 bags"
+     },
+     "misconception": "mis_estimate_rounding"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "environ 5 sacs",
+      "en": "about 5 bags"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "environ 50 sacs",
+      "en": "about 50 bags"
+     },
+     "misconception": "mis_place_value"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "48 est près de 50.",
+    "en": "48 is close to 50."
+   },
+   "explain": {
+    "fr": "50 ÷ 10 = 5, donc environ 5 sacs.",
+    "en": "50 ÷ 10 = 5, so about 5 bags."
+   },
+   "tags": [
+    "estimation",
+    "equivalence"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_17e2a0c226342fe2cdd2"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.navire.001",
+   "quest": "pirates.navire",
+   "skill": "ARI-OPE-A08",
+   "type": "numeric",
+   "grade": 4,
+   "difficulty": 1,
+   "story": {
+    "fr": "Le navire emporte des caisses de noix de coco.",
+    "en": "The ship carries crates of coconuts."
+   },
+   "prompt": {
+    "fr": "Chaque caisse contient 4 noix de coco. Il y a 28 noix de coco. Combien de caisses ?",
+    "en": "Each crate holds 4 coconuts. There are 28 coconuts. How many crates?"
+   },
+   "math_text": "? × 4 = 28",
+   "answer": {
+    "kind": "numeric",
+    "value": 7,
+    "calc": "28/4"
+   },
+   "common_errors": [
+    {
+     "value": 24,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "On cherche le facteur manquant : on divise.",
+      "en": "We look for the missing factor, so we divide."
+     }
+    },
+    {
+     "value": 32,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "On cherche le facteur manquant : on divise.",
+      "en": "We look for the missing factor, so we divide."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Quel nombre multiplié par 4 donne 28 ?",
+    "en": "Which number times 4 gives 28?"
+   },
+   "explain": {
+    "fr": "7 × 4 = 28, donc 7 caisses.",
+    "en": "7 × 4 = 28, so 7 crates."
+   },
+   "tags": [
+    "missing-factor",
+    "division",
+    "crates"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_8c18b9d212392ebc2098"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.navire.002",
+   "quest": "pirates.navire",
+   "skill": "ARI-OPE-A08",
+   "type": "numeric",
+   "grade": 4,
+   "difficulty": 2,
+   "story": {
+    "fr": "Les pirates rament en rangées de 8.",
+    "en": "The pirates row in rows of 8."
+   },
+   "prompt": {
+    "fr": "Il y a 72 rameurs. Combien de rangées de 8 peut-on former ?",
+    "en": "There are 72 rowers. How many rows of 8 can be made?"
+   },
+   "math_text": "? × 8 = 72",
+   "answer": {
+    "kind": "numeric",
+    "value": 9,
+    "calc": "72/8"
+   },
+   "common_errors": [
+    {
+     "value": 64,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "On cherche le facteur manquant : on divise.",
+      "en": "We look for the missing factor, so we divide."
+     }
+    },
+    {
+     "value": 80,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "On cherche le facteur manquant : on divise.",
+      "en": "We look for the missing factor, so we divide."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pense à la table de 8.",
+    "en": "Think of the 8 times table."
+   },
+   "explain": {
+    "fr": "9 × 8 = 72, donc 9 rangées.",
+    "en": "9 × 8 = 72, so 9 rows."
+   },
+   "tags": [
+    "missing-factor",
+    "division",
+    "rows"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.navire.003",
+   "quest": "pirates.navire",
+   "skill": "ARI-OPE-A08",
+   "type": "numeric",
+   "grade": 4,
+   "difficulty": 4,
+   "story": {
+    "fr": "Le navire prend de l’eau douce pour le voyage.",
+    "en": "The ship takes fresh water for the trip."
+   },
+   "prompt": {
+    "fr": "Un tonneau contient 15 litres. Le navire emporte 180 litres. Combien de tonneaux ?",
+    "en": "One barrel holds 15 litres. The ship takes 180 litres. How many barrels?"
+   },
+   "math_text": "? × 15 = 180",
+   "answer": {
+    "kind": "numeric",
+    "value": 12,
+    "calc": "180/15"
+   },
+   "common_errors": [
+    {
+     "value": 165,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "On cherche le facteur manquant : on divise.",
+      "en": "We look for the missing factor, so we divide."
+     }
+    },
+    {
+     "value": 195,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "On cherche le facteur manquant : on divise.",
+      "en": "We look for the missing factor, so we divide."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Essaie 10 tonneaux, puis ajuste.",
+    "en": "Try 10 barrels, then adjust."
+   },
+   "explain": {
+    "fr": "10 × 15 = 150 et 2 × 15 = 30. Donc 12 tonneaux.",
+    "en": "10 × 15 = 150 and 2 × 15 = 30. So 12 barrels."
+   },
+   "tags": [
+    "missing-factor",
+    "division",
+    "barrels"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.navire.004",
+   "quest": "pirates.navire",
+   "skill": "ARI-OPE-A08",
+   "type": "choice",
+   "grade": 4,
+   "difficulty": 1,
+   "story": {
+    "fr": "Le capitaine range des cordes.",
+    "en": "The captain stores ropes."
+   },
+   "prompt": {
+    "fr": "Quel nombre manque : ? × 3 = 24 ?",
+    "en": "Which number is missing: ? × 3 = 24?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "21",
+      "en": "21"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "27",
+      "en": "27"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "3",
+      "en": "3"
+     },
+     "misconception": "mis_missing_term"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "8",
+      "en": "8"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d",
+    "calc_choice": {
+     "d": "24/3"
+    }
+   },
+   "hint": {
+    "fr": "Combien de fois 3 dans 24 ?",
+    "en": "How many times does 3 fit in 24?"
+   },
+   "explain": {
+    "fr": "8 × 3 = 24, donc le nombre manquant est 8.",
+    "en": "8 × 3 = 24, so the missing number is 8."
+   },
+   "tags": [
+    "missing-factor",
+    "multiplication-facts"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.navire.005",
+   "quest": "pirates.navire",
+   "skill": "ARI-OPE-A08",
+   "type": "choice",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Les voiles du navire sont rangées en piles.",
+    "en": "The ship’s sails are stored in piles."
+   },
+   "prompt": {
+    "fr": "Quel nombre manque : 9 × ? = 54 ?",
+    "en": "Which number is missing: 9 × ? = 54?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "45",
+      "en": "45"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "63",
+      "en": "63"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "5",
+      "en": "5"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "6",
+      "en": "6"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d",
+    "calc_choice": {
+     "d": "54/9"
+    }
+   },
+   "hint": {
+    "fr": "Pense à la table de 9.",
+    "en": "Think of the 9 times table."
+   },
+   "explain": {
+    "fr": "9 × 6 = 54, donc 6.",
+    "en": "9 × 6 = 54, so 6."
+   },
+   "tags": [
+    "missing-factor",
+    "multiplication-facts"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_8c18b9d212392ebc2098"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.navire.006",
+   "quest": "pirates.navire",
+   "skill": "ARI-OPE-A08",
+   "type": "choice",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa cherche le facteur manquant dans ? × 7 = 56.",
+    "en": "Lea looks for the missing factor in ? × 7 = 56."
+   },
+   "prompt": {
+    "fr": "Quelle opération le donne ?",
+    "en": "Which operation gives it?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "56 - 7",
+      "en": "56 - 7"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "56 × 7",
+      "en": "56 × 7"
+     },
+     "misconception": "mis_wrong_operation"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "56 ÷ 7",
+      "en": "56 ÷ 7"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "56 + 7",
+      "en": "56 + 7"
+     },
+     "misconception": "mis_wrong_operation"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c"
+   },
+   "hint": {
+    "fr": "La division défait la multiplication.",
+    "en": "Division undoes multiplication."
+   },
+   "explain": {
+    "fr": "Pour trouver le facteur manquant, on divise : 56 ÷ 7 = 8.",
+    "en": "To find the missing factor, we divide: 56 ÷ 7 = 8."
+   },
+   "tags": [
+    "missing-factor",
+    "operation-choice"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.navire.007",
+   "quest": "pirates.navire",
+   "skill": "ARI-OPE-A08",
+   "type": "word",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le capitaine range des pièces d’or dans des sacs.",
+    "en": "The captain puts gold coins into bags."
+   },
+   "prompt": {
+    "fr": "Chaque sac contient 9 pièces. Il y a 63 pièces. Combien de sacs faut-il ?",
+    "en": "Each bag holds 9 coins. There are 63 coins. How many bags are needed?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 7,
+    "calc": "63/9"
+   },
+   "common_errors": [
+    {
+     "value": 54,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "On cherche le facteur manquant : on divise.",
+      "en": "We look for the missing factor, so we divide."
+     }
+    },
+    {
+     "value": 72,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "On cherche le facteur manquant : on divise.",
+      "en": "We look for the missing factor, so we divide."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Quel nombre multiplié par 9 donne 63 ?",
+    "en": "Which number times 9 gives 63?"
+   },
+   "explain": {
+    "fr": "7 × 9 = 63, donc 7 sacs.",
+    "en": "7 × 9 = 63, so 7 bags."
+   },
+   "tags": [
+    "word-problem",
+    "missing-factor"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.navire.008",
+   "quest": "pirates.navire",
+   "skill": "ARI-OPE-A08",
+   "type": "word",
+   "grade": 4,
+   "difficulty": 5,
+   "story": {
+    "fr": "Le navire a 5 caisses de 12 noix de coco.",
+    "en": "The ship has 5 crates of 12 coconuts."
+   },
+   "prompt": {
+    "fr": "Chaque pirate reçoit 4 noix de coco. Combien de pirates reçoivent des noix ?",
+    "en": "Each pirate gets 4 coconuts. How many pirates get coconuts?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 15,
+    "calc": "5*12/4"
+   },
+   "common_errors": [
+    {
+     "value": 60,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "60 est le nombre de noix. Il faut ensuite les partager.",
+      "en": "60 is the number of coconuts. They still have to be shared."
+     }
+    },
+    {
+     "value": 3,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "Les noix sont d’abord comptées en tout.",
+      "en": "First count all the coconuts."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Trouve d’abord le total de noix.",
+    "en": "First find the total number of coconuts."
+   },
+   "explain": {
+    "fr": "5 × 12 = 60 noix. ? × 4 = 60, donc 60 ÷ 4 = 15 pirates.",
+    "en": "5 × 12 = 60 coconuts. ? × 4 = 60, so 60 ÷ 4 = 15 pirates."
+   },
+   "tags": [
+    "word-problem",
+    "missing-factor",
+    "two-steps"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_8c18b9d212392ebc2098"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.navire.009",
+   "quest": "pirates.navire",
+   "skill": "ARI-OPE-A08",
+   "type": "truefalse",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le capitaine vérifie un calcul du second.",
+    "en": "The captain checks the first mate’s sum."
+   },
+   "prompt": {
+    "fr": "Il dit que dans 7 × ? = 49, le facteur manquant est 6. A-t-il raison ?",
+    "en": "He says that in 7 × ? = 49, the missing factor is 6. Is he right?"
+   },
+   "math_text": "7 × 6 = 49",
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_off_by_one"
+   },
+   "hint": {
+    "fr": "Calcule 7 × 6.",
+    "en": "Work out 7 × 6."
+   },
+   "explain": {
+    "fr": "7 × 6 = 42. Le bon facteur est 7, car 7 × 7 = 49.",
+    "en": "7 × 6 = 42. The right factor is 7, because 7 × 7 = 49."
+   },
+   "tags": [
+    "true-false",
+    "missing-factor"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.navire.010",
+   "quest": "pirates.navire",
+   "skill": "ARI-OPE-A08",
+   "type": "order",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le capitaine classe des calculs à trou.",
+    "en": "The captain sorts fill-in-the-blank sums."
+   },
+   "prompt": {
+    "fr": "Range ces calculs du plus petit au plus grand facteur manquant.",
+    "en": "Put these sums in order, from the smallest missing factor to the biggest."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "? × 2 = 14",
+      "en": "? × 2 = 14"
+     },
+     "key": "7"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "? × 5 = 15",
+      "en": "? × 5 = 15"
+     },
+     "key": "3"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "? × 8 = 64",
+      "en": "? × 8 = 64"
+     },
+     "key": "8"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "? × 4 = 20",
+      "en": "? × 4 = 20"
+     },
+     "key": "5"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "d",
+     "a",
+     "c"
+    ],
+    "by": "asc",
+    "misconception": "mis_order"
+   },
+   "hint": {
+    "fr": "Trouve chaque facteur manquant d’abord.",
+    "en": "Find each missing factor first."
+   },
+   "explain": {
+    "fr": "Les facteurs sont 3, 5, 7 et 8.",
+    "en": "The factors are 3, 5, 7 and 8."
+   },
+   "tags": [
+    "ordering",
+    "missing-factor"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.navire.011",
+   "quest": "pirates.navire",
+   "skill": "ARI-OPE-A08",
+   "type": "match",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa complète des calculs à trou.",
+    "en": "Lea fills in blank sums."
+   },
+   "prompt": {
+    "fr": "Relie chaque calcul à son facteur manquant.",
+    "en": "Match each sum to its missing factor."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "? × 3 = 18",
+       "en": "? × 3 = 18"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "? × 5 = 45",
+       "en": "? × 5 = 45"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "? × 8 = 32",
+       "en": "? × 8 = 32"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r1",
+      "text": {
+       "fr": "4",
+       "en": "4"
+      }
+     },
+     {
+      "id": "r2",
+      "text": {
+       "fr": "6",
+       "en": "6"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "9",
+       "en": "9"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r2"
+     ],
+     [
+      "l2",
+      "r3"
+     ],
+     [
+      "l3",
+      "r1"
+     ]
+    ],
+    "misconception": "mis_missing_term"
+   },
+   "hint": {
+    "fr": "Divise le résultat par le facteur connu.",
+    "en": "Divide the result by the known factor."
+   },
+   "explain": {
+    "fr": "18 ÷ 3 = 6, 45 ÷ 5 = 9 et 32 ÷ 8 = 4.",
+    "en": "18 ÷ 3 = 6, 45 ÷ 5 = 9 and 32 ÷ 8 = 4."
+   },
+   "tags": [
+    "matching",
+    "missing-factor"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.navire.012",
+   "quest": "pirates.navire",
+   "skill": "ARI-OPE-A08",
+   "type": "visual",
+   "grade": 4,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le diagramme montre les sacs chargés sur deux navires.",
+    "en": "The chart shows the bags loaded on two ships."
+   },
+   "prompt": {
+    "fr": "Chaque caisse contient 4 sacs. Combien de caisses sur le navire rouge ?",
+    "en": "Each crate holds 4 bags. How many crates on the red ship?"
+   },
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Sacs par navire",
+      "en": "Bags per ship"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "navire rouge",
+        "en": "red ship"
+       },
+       "value": 36
+      },
+      {
+       "label": {
+        "fr": "navire bleu",
+        "en": "blue ship"
+       },
+       "value": 28
+      }
+     ],
+     "max": 40
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 9,
+    "calc": "36/4"
+   },
+   "common_errors": [
+    {
+     "value": 36,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "36 est le nombre de sacs. Il faut les mettre en caisses.",
+      "en": "36 is the number of bags. They must be put in crates."
+     }
+    },
+    {
+     "value": 7,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as lu la barre du navire bleu.",
+      "en": "You read the blue ship bar."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Lis la barre rouge, puis cherche ? × 4.",
+    "en": "Read the red bar, then find ? × 4."
+   },
+   "explain": {
+    "fr": "9 × 4 = 36, donc 9 caisses.",
+    "en": "9 × 4 = 36, so 9 crates."
+   },
+   "tags": [
+    "bar-chart",
+    "missing-factor"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_8c18b9d212392ebc2098"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.navire.013",
+   "quest": "pirates.navire",
+   "skill": "ARI-OPE-A08",
+   "type": "visual",
+   "grade": 4,
+   "difficulty": 5,
+   "story": {
+    "fr": "Chaque image du tableau représente 4 tonneaux.",
+    "en": "Each picture in the chart stands for 4 barrels."
+   },
+   "prompt": {
+    "fr": "Chaque navire emporte 8 tonneaux. Combien de navires pour tous les tonneaux ?",
+    "en": "Each ship carries 8 barrels. How many ships for all the barrels?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Tonneaux au port",
+      "en": "Barrels in port"
+     },
+     "each": 4,
+     "rows": [
+      {
+       "label": {
+        "fr": "tonneaux",
+        "en": "barrels"
+       },
+       "count": 10
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "10*4/8"
+   },
+   "common_errors": [
+    {
+     "value": 10,
+     "misconception": "mis_read_scale",
+     "feedback": {
+      "fr": "10 est le nombre d’images. Chaque image vaut 4 tonneaux.",
+      "en": "10 is the number of pictures. Each picture is worth 4 barrels."
+     }
+    },
+    {
+     "value": 40,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "40 est le nombre de tonneaux. Il faut former des groupes de 8.",
+      "en": "40 is the number of barrels. Make groups of 8."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Trouve d’abord le nombre de tonneaux.",
+    "en": "First find the number of barrels."
+   },
+   "explain": {
+    "fr": "10 × 4 = 40 tonneaux. ? × 8 = 40, donc 5 navires.",
+    "en": "10 × 4 = 40 barrels. ? × 8 = 40, so 5 ships."
+   },
+   "tags": [
+    "pictograph",
+    "missing-factor",
+    "two-steps"
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  },
+  {
+   "id": "pirates.navire.014",
+   "quest": "pirates.navire",
+   "skill": "ARI-OPE-A08",
+   "type": "estimate",
+   "grade": 4,
+   "difficulty": 4,
+   "story": {
+    "fr": "Le navire charge des noix de coco.",
+    "en": "The ship loads coconuts."
+   },
+   "prompt": {
+    "fr": "Chaque caisse contient 19 noix. Il y a 399 noix. Environ combien de caisses ?",
+    "en": "Each crate holds 19 coconuts. There are 399 coconuts. About how many crates?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 20,
+    "max": 22,
+    "exact_for_check": 21,
+    "calc": "399/19"
+   },
+   "common_errors": [
+    {
+     "value": 380,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "On cherche combien de groupes de 19 : on divise.",
+      "en": "We look for how many groups of 19, so we divide."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis 19 à 20.",
+    "en": "Round 19 to 20."
+   },
+   "explain": {
+    "fr": "400 ÷ 20 = 20, donc environ 20 caisses. Le vrai résultat est 21.",
+    "en": "400 ÷ 20 = 20, so about 20 crates. The exact result is 21."
+   },
+   "tags": [
+    "estimation",
+    "division",
+    "rounding"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_8c18b9d212392ebc2098"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4c",
+   "version": 1
+  }
+ ]
+}
