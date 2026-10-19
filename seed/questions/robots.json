@@ -1,0 +1,3667 @@
+{
+ "world": "robots",
+ "schema": 1,
+ "questions": [
+  {
+   "id": "robots.programme.001",
+   "quest": "robots.programme",
+   "skill": "ARI-OPE-A14",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Le robot compte à voix haute : 2, 4, 6, 8.",
+    "en": "The robot counts out loud: 2, 4, 6, 8."
+   },
+   "prompt": {
+    "fr": "Quel nombre vient ensuite ?",
+    "en": "Which number comes next?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 10,
+    "calc": "8+2"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_pattern_wrong_rule",
+     "feedback": {
+      "fr": "Le robot ajoute 2, pas 1.",
+      "en": "The robot adds 2, not 1."
+     }
+    },
+    {
+     "value": 12,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as sauté un nombre. Avance de 2 seulement.",
+      "en": "You skipped one. Go up by 2 only."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Regarde de combien le robot avance chaque fois.",
+    "en": "Look at how much the robot goes up each time."
+   },
+   "explain": {
+    "fr": "Le robot ajoute 2 chaque fois. 8 + 2 = 10.",
+    "en": "The robot adds 2 each time. 8 + 2 = 10."
+   },
+   "tags": [
+    "robot",
+    "sequence",
+    "skip-count"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_59f055964a223a409104"
+    },
+    {
+     "role": "object",
+     "asset": "a_3f9b5a00b53c8bddda36"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.programme.002",
+   "quest": "robots.programme",
+   "skill": "ARI-OPE-A14",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Le robot avance de 3 pas, puis de 4 pas.",
+    "en": "The robot walks 3 steps, then 4 steps."
+   },
+   "prompt": {
+    "fr": "Combien de pas fait-il en tout ?",
+    "en": "How many steps does it take in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 7,
+    "calc": "3+4"
+   },
+   "common_errors": [
+    {
+     "value": 1,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Les pas s'ajoutent : on additionne.",
+      "en": "The steps add up, so we add."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les pas.",
+      "en": "Close! Count the steps again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Pars de 3 et avance de 4.",
+    "en": "Start at 3 and go up 4."
+   },
+   "explain": {
+    "fr": "3 + 4 = 7. Le robot fait 7 pas.",
+    "en": "3 + 4 = 7. The robot takes 7 steps."
+   },
+   "tags": [
+    "robot",
+    "add-within-20"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1dc6513e9558df323015"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.programme.003",
+   "quest": "robots.programme",
+   "skill": "ARI-OPE-A14",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le programme du robot : 5, 10, 15, 20.",
+    "en": "The robot's program: 5, 10, 15, 20."
+   },
+   "prompt": {
+    "fr": "Quel nombre vient ensuite ?",
+    "en": "Which number comes next?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 25,
+    "calc": "20+5"
+   },
+   "common_errors": [
+    {
+     "value": 21,
+     "misconception": "mis_pattern_wrong_rule",
+     "feedback": {
+      "fr": "Le robot ajoute 5, pas 1.",
+      "en": "The robot adds 5, not 1."
+     }
+    },
+    {
+     "value": 30,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as sauté un nombre. Compte par 5.",
+      "en": "You skipped one. Count by fives."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte par bonds de 5.",
+    "en": "Count by fives."
+   },
+   "explain": {
+    "fr": "Le robot ajoute 5 chaque fois. 20 + 5 = 25.",
+    "en": "The robot adds 5 each time. 20 + 5 = 25."
+   },
+   "tags": [
+    "robot",
+    "sequence",
+    "skip-count"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_59f055964a223a409104"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.programme.004",
+   "quest": "robots.programme",
+   "skill": "ARI-OPE-A14",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le robot ajoute 3 chaque fois : 3, 6, 9.",
+    "en": "The robot adds 3 each time: 3, 6, 9."
+   },
+   "prompt": {
+    "fr": "Quel nombre vient ensuite ?",
+    "en": "Which number comes next?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "10",
+      "en": "10"
+     },
+     "misconception": "mis_pattern_wrong_rule"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "12",
+      "en": "12"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "11",
+      "en": "11"
+     },
+     "misconception": "mis_pattern_wrong_rule"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "15",
+      "en": "15"
+     },
+     "misconception": "mis_skip_count"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b",
+    "calc_choice": {
+     "b": "9+3"
+    }
+   },
+   "hint": {
+    "fr": "Ajoute 3 au dernier nombre.",
+    "en": "Add 3 to the last number."
+   },
+   "explain": {
+    "fr": "9 + 3 = 12. La suite continue : 3, 6, 9, 12.",
+    "en": "9 + 3 = 12. The sequence goes: 3, 6, 9, 12."
+   },
+   "tags": [
+    "robot",
+    "sequence",
+    "rule"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1dc6513e9558df323015"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.programme.005",
+   "quest": "robots.programme",
+   "skill": "ARI-OPE-A14",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le robot enlève 2 chaque fois : 20, 18, 16.",
+    "en": "The robot takes away 2 each time: 20, 18, 16."
+   },
+   "prompt": {
+    "fr": "Quel nombre vient ensuite ?",
+    "en": "Which number comes next?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "12",
+      "en": "12"
+     },
+     "misconception": "mis_skip_count"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "14",
+      "en": "14"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "15",
+      "en": "15"
+     },
+     "misconception": "mis_pattern_wrong_rule"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "18",
+      "en": "18"
+     },
+     "misconception": "mis_pattern_last_step"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b",
+    "calc_choice": {
+     "b": "16-2"
+    }
+   },
+   "hint": {
+    "fr": "Les nombres descendent. Enlève 2.",
+    "en": "The numbers go down. Take away 2."
+   },
+   "explain": {
+    "fr": "16 - 2 = 14. La suite : 20, 18, 16, 14.",
+    "en": "16 - 2 = 14. The sequence: 20, 18, 16, 14."
+   },
+   "tags": [
+    "robot",
+    "sequence",
+    "subtract"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_3f9b5a00b53c8bddda36"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.programme.006",
+   "quest": "robots.programme",
+   "skill": "ARI-OPE-A14",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 4,
+   "story": {
+    "fr": "Voici la suite du robot : 4, 8, 12, 16.",
+    "en": "Here is the robot's sequence: 4, 8, 12, 16."
+   },
+   "prompt": {
+    "fr": "Quelle règle le robot suit-il ?",
+    "en": "Which rule does the robot follow?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Ajoute 2 chaque fois",
+      "en": "Ajoute 2 chaque fois"
+     },
+     "misconception": "mis_pattern_wrong_rule"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Ajoute 4 chaque fois",
+      "en": "Ajoute 4 chaque fois"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Enlève 4 chaque fois",
+      "en": "Enlève 4 chaque fois"
+     },
+     "misconception": "mis_add_instead_of_subtract"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "Ajoute 8 chaque fois",
+      "en": "Ajoute 8 chaque fois"
+     },
+     "misconception": "mis_pattern_wrong_rule"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Compare deux nombres l'un à côté de l'autre.",
+    "en": "Compare two numbers side by side."
+   },
+   "explain": {
+    "fr": "8 - 4 = 4 et 12 - 8 = 4. Le robot ajoute 4.",
+    "en": "8 - 4 = 4 and 12 - 8 = 4. The robot adds 4."
+   },
+   "tags": [
+    "robot",
+    "sequence",
+    "rule"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_d6ef96706bb3f4141400"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.programme.007",
+   "quest": "robots.programme",
+   "skill": "ARI-OPE-A14",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le robot met des boulons dans des boîtes.",
+    "en": "The robot puts bolts in boxes."
+   },
+   "prompt": {
+    "fr": "Il met 4 boulons dans chacune de 3 boîtes. Combien de boulons en tout ?",
+    "en": "It puts 4 bolts in each of 3 boxes. How many bolts in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 12,
+    "calc": "4+4+4"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Chaque boîte reçoit 4 boulons : répète 4, trois fois.",
+      "en": "Each box gets 4 bolts: repeat 4 three times."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Il y a trois boîtes. Tu en as compté deux.",
+      "en": "There are three boxes. You counted two."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Ajoute 4 une fois pour chaque boîte.",
+    "en": "Add 4 once for each box."
+   },
+   "explain": {
+    "fr": "4 + 4 = 8, puis 8 + 4 = 12.",
+    "en": "4 + 4 = 8, then 8 + 4 = 12."
+   },
+   "tags": [
+    "word-problem",
+    "robot",
+    "repeated-addition"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_bdc463bdfdd87d5bbd1b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.programme.008",
+   "quest": "robots.programme",
+   "skill": "ARI-OPE-A14",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un robot a 15 piles dans son atelier. Il en utilise 6.",
+    "en": "A robot has 15 batteries in its workshop. It uses 6."
+   },
+   "prompt": {
+    "fr": "Combien de piles lui reste-t-il ?",
+    "en": "How many batteries does it have left?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 9,
+    "calc": "15-6"
+   },
+   "common_errors": [
+    {
+     "value": 21,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Il en utilise : on enlève des piles.",
+      "en": "It uses some, so we take batteries away."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte à reculons.",
+      "en": "Close! Count back again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Recule de 6 en partant de 15.",
+    "en": "Count back 6 from 15."
+   },
+   "explain": {
+    "fr": "15 - 6 = 9. Il reste 9 piles.",
+    "en": "15 - 6 = 9. There are 9 batteries left."
+   },
+   "tags": [
+    "word-problem",
+    "robot",
+    "subtract"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_fba57eb05629a1d98b8a"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.programme.009",
+   "quest": "robots.programme",
+   "skill": "ARI-OPE-A14",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Léa regarde la suite d'un robot.",
+    "en": "Lea looks at a robot's sequence."
+   },
+   "prompt": {
+    "fr": "Vrai ou faux : la suite 2, 4, 6, 9 suit toujours la même règle.",
+    "en": "True or false: the sequence 2, 4, 6, 9 always follows the same rule."
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_pattern_last_step"
+   },
+   "hint": {
+    "fr": "De 6 à 9, de combien le robot avance-t-il ?",
+    "en": "From 6 to 9, how far does the robot go?"
+   },
+   "explain": {
+    "fr": "On ajoute 2, 2, puis 3. La règle change : la suite est brisée.",
+    "en": "We add 2, 2, then 3. The rule changes: the sequence is broken."
+   },
+   "tags": [
+    "robot",
+    "sequence",
+    "rule"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_3f9b5a00b53c8bddda36"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.programme.010",
+   "quest": "robots.programme",
+   "skill": "ARI-OPE-A14",
+   "type": "order",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa écrit le programme d'un robot.",
+    "en": "Lea writes a robot's program."
+   },
+   "prompt": {
+    "fr": "Mets les étapes dans le bon ordre.",
+    "en": "Put the steps in the right order."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Prendre la balle",
+      "en": "Pick up the ball"
+     },
+     "key": "3"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Allumer le robot",
+      "en": "Turn on the robot"
+     },
+     "key": "1"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Éteindre le robot",
+      "en": "Turn off the robot"
+     },
+     "key": "4"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "Avancer de 3 pas",
+      "en": "Walk 3 steps"
+     },
+     "key": "2"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "d",
+     "a",
+     "c"
+    ],
+    "by": "asc",
+    "misconception": "mis_order"
+   },
+   "hint": {
+    "fr": "Que fait-on avant de bouger ?",
+    "en": "What do we do before moving?"
+   },
+   "explain": {
+    "fr": "On allume, on avance, on prend la balle, puis on éteint.",
+    "en": "We turn on, walk, pick up the ball, then turn off."
+   },
+   "tags": [
+    "robot",
+    "algorithm",
+    "ordering"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_d6ef96706bb3f4141400"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.programme.011",
+   "quest": "robots.programme",
+   "skill": "ARI-OPE-A14",
+   "type": "match",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le robot suit des règles différentes.",
+    "en": "The robot follows different rules."
+   },
+   "prompt": {
+    "fr": "Relie chaque suite au nombre qui vient ensuite.",
+    "en": "Match each sequence to the number that comes next."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "2, 4, 6, ?",
+       "en": "2, 4, 6, ?"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "10, 20, 30, ?",
+       "en": "10, 20, 30, ?"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "5, 10, 15, ?",
+       "en": "5, 10, 15, ?"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "40",
+       "en": "40"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "20",
+       "en": "20"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "8",
+       "en": "8"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ]
+    ],
+    "misconception": "mis_pattern_wrong_rule"
+   },
+   "hint": {
+    "fr": "Cherche de combien la suite avance.",
+    "en": "Find how much the sequence goes up."
+   },
+   "explain": {
+    "fr": "On ajoute 2, puis 10, puis 5 : 8, 40 et 20.",
+    "en": "We add 2, then 10, then 5: 8, 40 and 20."
+   },
+   "tags": [
+    "robot",
+    "sequence",
+    "matching"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1dc6513e9558df323015"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.programme.012",
+   "quest": "robots.programme",
+   "skill": "ARI-OPE-A14",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le robot assemble des pièces. Voici son tableau d'images.",
+    "en": "The robot assembles parts. Here is its picture chart."
+   },
+   "prompt": {
+    "fr": "Si le motif continue, combien de pièces jeudi ?",
+    "en": "If the pattern continues, how many parts on Thursday?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Pièces montées",
+      "en": "Parts built"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "lundi",
+        "en": "Monday"
+       },
+       "count": 3
+      },
+      {
+       "label": {
+        "fr": "mardi",
+        "en": "Tuesday"
+       },
+       "count": 6
+      },
+      {
+       "label": {
+        "fr": "mercredi",
+        "en": "Wednesday"
+       },
+       "count": 9
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 12,
+    "calc": "9+3"
+   },
+   "common_errors": [
+    {
+     "value": 10,
+     "misconception": "mis_pattern_wrong_rule",
+     "feedback": {
+      "fr": "Le robot ajoute 3 chaque jour, pas 1.",
+      "en": "The robot adds 3 each day, not 1."
+     }
+    },
+    {
+     "value": 15,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as sauté un jour. Avance d'un seul bond.",
+      "en": "You skipped a day. Go just one jump."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "De combien les pièces augmentent-elles chaque jour ?",
+    "en": "By how much do the parts grow each day?"
+   },
+   "explain": {
+    "fr": "Chaque jour, il y a 3 pièces de plus. 9 + 3 = 12.",
+    "en": "Each day there are 3 more parts. 9 + 3 = 12."
+   },
+   "tags": [
+    "pictograph",
+    "robot",
+    "sequence"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_bdc463bdfdd87d5bbd1b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.programme.013",
+   "quest": "robots.programme",
+   "skill": "ARI-OPE-A14",
+   "type": "estimate",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le robot trie des boulons. Il y en a 19 dans une boîte et 21 dans l'autre.",
+    "en": "The robot sorts bolts. One box has 19 and the other has 21."
+   },
+   "prompt": {
+    "fr": "Environ combien de boulons en tout ?",
+    "en": "About how many bolts in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 36,
+    "max": 44,
+    "exact_for_check": 40,
+    "calc": "19+21"
+   },
+   "common_errors": [
+    {
+     "value": 30,
+     "misconception": "mis_estimate_rounding",
+     "feedback": {
+      "fr": "Tu as arrondi trop bas.",
+      "en": "You rounded too low."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis chaque nombre à la dizaine.",
+    "en": "Round each number to the nearest ten."
+   },
+   "explain": {
+    "fr": "19 est proche de 20 et 21 aussi. 20 + 20 = 40.",
+    "en": "19 is close to 20 and so is 21. 20 + 20 = 40."
+   },
+   "tags": [
+    "estimation",
+    "robot",
+    "rounding"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_3f9b5a00b53c8bddda36"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.grille.001",
+   "quest": "robots.grille",
+   "skill": "GEO-A02",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Le robot avance de 2 cases à droite, puis de 3 cases à droite.",
+    "en": "The robot moves 2 squares right, then 3 squares right."
+   },
+   "prompt": {
+    "fr": "Combien de cases a-t-il avancé en tout ?",
+    "en": "How many squares did it move in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 5,
+    "calc": "2+3"
+   },
+   "common_errors": [
+    {
+     "value": 1,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "Les deux déplacements vont dans le même sens : on additionne.",
+      "en": "Both moves go the same way, so we add."
+     }
+    },
+    {
+     "value": 6,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte les cases.",
+      "en": "Close! Count the squares again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Additionne les deux déplacements.",
+    "en": "Add the two moves."
+   },
+   "explain": {
+    "fr": "2 + 3 = 5. Le robot a avancé de 5 cases.",
+    "en": "2 + 3 = 5. The robot moved 5 squares."
+   },
+   "tags": [
+    "grid",
+    "robot",
+    "add-within-20"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1dc6513e9558df323015"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.grille.002",
+   "quest": "robots.grille",
+   "skill": "GEO-A02",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Le robot avance de 6 cases, puis recule de 2 cases.",
+    "en": "The robot moves forward 6 squares, then back 2 squares."
+   },
+   "prompt": {
+    "fr": "De combien de cases est-il loin du départ ?",
+    "en": "How many squares from the start is it?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 4,
+    "calc": "6-2"
+   },
+   "common_errors": [
+    {
+     "value": 8,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "Reculer ramène vers le départ : on soustrait.",
+      "en": "Going back brings it toward the start, so we subtract."
+     }
+    },
+    {
+     "value": 3,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Recompte à reculons.",
+      "en": "Close! Count back again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Recule de 2 en partant de 6.",
+    "en": "Go back 2 from 6."
+   },
+   "explain": {
+    "fr": "6 - 2 = 4. Il est à 4 cases du départ.",
+    "en": "6 - 2 = 4. It is 4 squares from the start."
+   },
+   "tags": [
+    "grid",
+    "robot",
+    "subtract"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_009ff5c78532a49023e2"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.grille.003",
+   "quest": "robots.grille",
+   "skill": "GEO-A02",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le robot fait 4 pas vers la droite et 3 pas vers le haut.",
+    "en": "The robot takes 4 steps right and 3 steps up."
+   },
+   "prompt": {
+    "fr": "Combien de pas fait-il en tout ?",
+    "en": "How many steps does it take in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 7,
+    "calc": "4+3"
+   },
+   "common_errors": [
+    {
+     "value": 1,
+     "misconception": "mis_subtract_instead_of_add",
+     "feedback": {
+      "fr": "On compte tous les pas : on additionne.",
+      "en": "We count all the steps, so we add."
+     }
+    },
+    {
+     "value": 12,
+     "misconception": "mis_multiply_instead_of_add",
+     "feedback": {
+      "fr": "On additionne les pas. On ne multiplie pas.",
+      "en": "We add the steps. We do not multiply."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les pas à droite, puis ceux vers le haut.",
+    "en": "Count the steps right, then the steps up."
+   },
+   "explain": {
+    "fr": "4 + 3 = 7. Le robot fait 7 pas.",
+    "en": "4 + 3 = 7. The robot takes 7 steps."
+   },
+   "tags": [
+    "grid",
+    "robot",
+    "add-within-20"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1dc6513e9558df323015"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.grille.004",
+   "quest": "robots.grille",
+   "skill": "GEO-A02",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le robot est sur la case 2 de la rangée. Il avance de 4 cases.",
+    "en": "The robot is on square 2 of the row. It moves 4 squares."
+   },
+   "prompt": {
+    "fr": "Sur quelle case arrive-t-il ?",
+    "en": "Which square does it land on?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "8",
+      "en": "8"
+     },
+     "misconception": "mis_multiply_instead_of_add"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "5",
+      "en": "5"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "6",
+      "en": "6"
+     }
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "2",
+      "en": "2"
+     },
+     "misconception": "mis_subtract_instead_of_add"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "c",
+    "calc_choice": {
+     "c": "2+4"
+    }
+   },
+   "hint": {
+    "fr": "Compte 4 cases à partir de la case 2.",
+    "en": "Count 4 squares from square 2."
+   },
+   "explain": {
+    "fr": "Depuis 2 : 3, 4, 5, 6. Il arrive sur la case 6.",
+    "en": "From 2: 3, 4, 5, 6. It lands on square 6."
+   },
+   "tags": [
+    "grid",
+    "robot",
+    "number-line"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1dc6513e9558df323015"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.grille.005",
+   "quest": "robots.grille",
+   "skill": "GEO-A02",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le robot fait trois commandes : droite, droite, gauche.",
+    "en": "The robot does three commands: right, right, left."
+   },
+   "prompt": {
+    "fr": "Où est-il par rapport au départ ?",
+    "en": "Where is it compared with the start?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Deux cases à droite",
+      "en": "Deux cases à droite"
+     },
+     "misconception": "mis_partial_result"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Une case à droite",
+      "en": "Une case à droite"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Une case à gauche",
+      "en": "Une case à gauche"
+     },
+     "misconception": "mis_direction"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "Sur le départ",
+      "en": "Sur le départ"
+     },
+     "misconception": "mis_wrong_operation"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Gauche défait un pas à droite.",
+    "en": "Left undoes one step right."
+   },
+   "explain": {
+    "fr": "Droite, droite fait deux pas. Gauche en défait un : il reste un pas à droite.",
+    "en": "Right, right makes two steps. Left undoes one: one step right remains."
+   },
+   "tags": [
+    "grid",
+    "robot",
+    "directions"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_009ff5c78532a49023e2"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.grille.006",
+   "quest": "robots.grille",
+   "skill": "GEO-A02",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Léa programme le robot. Il fait 3 pas à droite, 2 en haut, puis 4 à droite.",
+    "en": "Lea programs the robot. It takes 3 steps right, 2 up, then 4 right."
+   },
+   "prompt": {
+    "fr": "Combien de pas à droite en tout ?",
+    "en": "How many steps right in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 7,
+    "calc": "3+4"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_wrong_operation",
+     "feedback": {
+      "fr": "Les pas vers le haut ne comptent pas ici.",
+      "en": "The steps up do not count here."
+     }
+    },
+    {
+     "value": 6,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié un pas. Recompte.",
+      "en": "You missed a step. Count again."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Ignore les pas vers le haut.",
+    "en": "Ignore the steps up."
+   },
+   "explain": {
+    "fr": "3 + 4 = 7. Le robot fait 7 pas à droite.",
+    "en": "3 + 4 = 7. The robot takes 7 steps right."
+   },
+   "tags": [
+    "word-problem",
+    "grid",
+    "robot"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1dc6513e9558df323015"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.grille.007",
+   "quest": "robots.grille",
+   "skill": "GEO-A02",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "La grille du robot a 4 rangées. Chaque rangée a 5 cases.",
+    "en": "The robot's grid has 4 rows. Each row has 5 squares."
+   },
+   "prompt": {
+    "fr": "Combien de cases y a-t-il en tout ?",
+    "en": "How many squares are there in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 20,
+    "calc": "5+5+5+5"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Chaque rangée a 5 cases : répète 5, quatre fois.",
+      "en": "Each row has 5 squares: repeat 5 four times."
+     }
+    },
+    {
+     "value": 15,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Il y a quatre rangées. Tu en as compté trois.",
+      "en": "There are four rows. You counted three."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte par bonds de 5, une fois par rangée.",
+    "en": "Count by fives, once for each row."
+   },
+   "explain": {
+    "fr": "5, 10, 15, 20. Quatre rangées de 5 cases font 20.",
+    "en": "5, 10, 15, 20. Four rows of 5 squares make 20."
+   },
+   "tags": [
+    "word-problem",
+    "grid",
+    "skip-count"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_fba57eb05629a1d98b8a"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.grille.008",
+   "quest": "robots.grille",
+   "skill": "GEO-A02",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah teste une idée avec le robot.",
+    "en": "Noah tests an idea with the robot."
+   },
+   "prompt": {
+    "fr": "Vrai ou faux : 3 pas à droite, puis 3 à gauche, ramènent au départ.",
+    "en": "True or false: 3 steps right, then 3 left, return to the start."
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": true
+   },
+   "hint": {
+    "fr": "Gauche est le contraire de droite.",
+    "en": "Left is the opposite of right."
+   },
+   "explain": {
+    "fr": "Les 3 pas à gauche défont les 3 pas à droite. Le robot revient au départ.",
+    "en": "The 3 steps left undo the 3 steps right. The robot is back at the start."
+   },
+   "tags": [
+    "grid",
+    "directions",
+    "robot"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_009ff5c78532a49023e2"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.grille.009",
+   "quest": "robots.grille",
+   "skill": "GEO-A02",
+   "type": "order",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le robot avance de 2 cases, tourne à droite, puis avance de 3 cases.",
+    "en": "The robot must move 2 squares, turn right, then move 3 squares."
+   },
+   "prompt": {
+    "fr": "Mets les commandes dans le bon ordre.",
+    "en": "Put the commands in the right order."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Avancer de 3 cases",
+      "en": "Move 3 squares"
+     },
+     "key": "3"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Avancer de 2 cases",
+      "en": "Move 2 squares"
+     },
+     "key": "1"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Tourner à droite",
+      "en": "Turn right"
+     },
+     "key": "2"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "c",
+     "a"
+    ],
+    "by": "asc",
+    "misconception": "mis_order"
+   },
+   "hint": {
+    "fr": "Quelle commande vient en premier ?",
+    "en": "Which command comes first?"
+   },
+   "explain": {
+    "fr": "D'abord 2 cases, ensuite on tourne, enfin 3 cases.",
+    "en": "First 2 squares, then turn, then 3 squares."
+   },
+   "tags": [
+    "grid",
+    "algorithm",
+    "ordering"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_d6ef96706bb3f4141400"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.grille.010",
+   "quest": "robots.grille",
+   "skill": "GEO-A02",
+   "type": "match",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le robot reçoit de courtes suites de commandes.",
+    "en": "The robot receives short lists of commands."
+   },
+   "prompt": {
+    "fr": "Relie chaque suite à son déplacement.",
+    "en": "Match each list to its move."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "haut, haut, haut",
+       "en": "up, up, up"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "droite, droite",
+       "en": "right, right"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "gauche, gauche, gauche, gauche",
+       "en": "left, left, left, left"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "2 cases vers la droite",
+       "en": "2 squares right"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "4 cases vers la gauche",
+       "en": "4 squares left"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "3 cases vers le haut",
+       "en": "3 squares up"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ]
+    ],
+    "misconception": "mis_direction"
+   },
+   "hint": {
+    "fr": "Compte combien de fois chaque mot se répète.",
+    "en": "Count how many times each word repeats."
+   },
+   "explain": {
+    "fr": "Trois fois haut, deux fois droite, quatre fois gauche.",
+    "en": "Three times up, two times right, four times left."
+   },
+   "tags": [
+    "grid",
+    "directions",
+    "matching"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_1dc6513e9558df323015"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.grille.011",
+   "quest": "robots.grille",
+   "skill": "GEO-A02",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Le robot veut atteindre la pile sur la grille.",
+    "en": "The robot wants to reach the battery on the grid."
+   },
+   "prompt": {
+    "fr": "Combien de pas à droite pour atteindre la pile ?",
+    "en": "How many steps right to reach the battery?"
+   },
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 6,
+     "rows": 6,
+     "cells": [
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "robot",
+        "en": "robot"
+       }
+      },
+      {
+       "x": 4,
+       "y": 3,
+       "label": {
+        "fr": "pile",
+        "en": "battery"
+       }
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3,
+    "calc": "4-1"
+   },
+   "common_errors": [
+    {
+     "value": 4,
+     "misconception": "mis_grid_axes",
+     "feedback": {
+      "fr": "Tu as lu la colonne de la pile. Compte les pas entre les deux.",
+      "en": "You read the battery column. Count the steps between them."
+     }
+    },
+    {
+     "value": 2,
+     "misconception": "mis_fence_post",
+     "feedback": {
+      "fr": "Tu as compté les cases au milieu. Compte les pas.",
+      "en": "You counted the squares between. Count the steps."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les bonds d'une case à l'autre.",
+    "en": "Count the jumps from one square to the next."
+   },
+   "explain": {
+    "fr": "Le robot est à la colonne 1 et la pile à la colonne 4. 4 - 1 = 3 pas.",
+    "en": "The robot is in column 1 and the battery in column 4. 4 - 1 = 3 steps."
+   },
+   "tags": [
+    "grid",
+    "robot",
+    "coordinates"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_009ff5c78532a49023e2"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.grille.012",
+   "quest": "robots.grille",
+   "skill": "GEO-A02",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le robot va vers la pile sur la grille, à droite puis en haut.",
+    "en": "The robot must go to the battery on the grid, right then up."
+   },
+   "prompt": {
+    "fr": "Combien de pas en tout pour y arriver ?",
+    "en": "How many steps in all to get there?"
+   },
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 6,
+     "rows": 6,
+     "cells": [
+      {
+       "x": 1,
+       "y": 5,
+       "label": {
+        "fr": "robot",
+        "en": "robot"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "pile",
+        "en": "battery"
+       }
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 6,
+    "calc": "3+3"
+   },
+   "common_errors": [
+    {
+     "value": 3,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as compté un seul des deux trajets.",
+      "en": "You counted only one of the two trips."
+     }
+    },
+    {
+     "value": 7,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Compte les bonds, pas les cases.",
+      "en": "Close! Count the jumps, not the squares."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les pas vers la droite, puis les pas vers le haut.",
+    "en": "Count the steps right, then the steps up."
+   },
+   "explain": {
+    "fr": "Il y a 3 pas vers la droite et 3 pas vers le haut. 3 + 3 = 6.",
+    "en": "There are 3 steps right and 3 steps up. 3 + 3 = 6."
+   },
+   "tags": [
+    "grid",
+    "robot",
+    "coordinates"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_009ff5c78532a49023e2"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.grille.013",
+   "quest": "robots.grille",
+   "skill": "GEO-A02",
+   "type": "estimate",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "La grille du robot a 5 colonnes et 5 rangées.",
+    "en": "The robot's grid has 5 columns and 5 rows."
+   },
+   "prompt": {
+    "fr": "Environ combien de cases a la grille ?",
+    "en": "About how many squares does the grid have?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 23,
+    "max": 27,
+    "exact_for_check": 25,
+    "calc": "5*5"
+   },
+   "common_errors": [
+    {
+     "value": 10,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Chaque rangée a 5 cases, et il y a 5 rangées.",
+      "en": "Each row has 5 squares, and there are 5 rows."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte par 5 : une fois par rangée.",
+    "en": "Count by fives: once for each row."
+   },
+   "explain": {
+    "fr": "5, 10, 15, 20, 25. Cinq rangées de 5 cases font 25 cases.",
+    "en": "5, 10, 15, 20, 25. Five rows of 5 squares make 25 squares."
+   },
+   "tags": [
+    "estimation",
+    "grid",
+    "skip-count"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_3f9b5a00b53c8bddda36"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.miroir.001",
+   "quest": "robots.miroir",
+   "skill": "GEO-D01",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Le robot miroir copie un triangle.",
+    "en": "The mirror robot copies a triangle."
+   },
+   "prompt": {
+    "fr": "Combien de côtés a la copie ?",
+    "en": "How many sides does the copy have?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3,
+    "calc": "3"
+   },
+   "common_errors": [
+    {
+     "value": 4,
+     "misconception": "mis_shape_name",
+     "feedback": {
+      "fr": "Un triangle n'a pas quatre côtés.",
+      "en": "A triangle does not have four sides."
+     }
+    },
+    {
+     "value": 2,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Presque ! Compte les côtés du triangle.",
+      "en": "Close! Count the triangle's sides."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "La copie est identique à l'original.",
+    "en": "The copy is identical to the original."
+   },
+   "explain": {
+    "fr": "Une copie exacte garde la même forme. Un triangle a 3 côtés.",
+    "en": "An exact copy keeps the same shape. A triangle has 3 sides."
+   },
+   "tags": [
+    "congruent",
+    "shapes",
+    "robot"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_59f055964a223a409104"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.miroir.002",
+   "quest": "robots.miroir",
+   "skill": "GEO-D01",
+   "type": "numeric",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le robot copie un triangle dont les 3 côtés mesurent 4 cm.",
+    "en": "The robot copies a triangle with three 4 cm sides."
+   },
+   "prompt": {
+    "fr": "Quel est le contour de la copie, en cm ?",
+    "en": "What is the distance around the copy, in cm?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 12,
+    "calc": "4+4+4"
+   },
+   "common_errors": [
+    {
+     "value": 8,
+     "misconception": "mis_perimeter_missing_side",
+     "feedback": {
+      "fr": "Il manque un côté. Un triangle en a trois.",
+      "en": "A side is missing. A triangle has three."
+     }
+    },
+    {
+     "value": 4,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "4 cm, c'est un seul côté. Fais le tour.",
+      "en": "4 cm is just one side. Go all the way around."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "La copie a les mêmes mesures. Additionne les trois côtés.",
+    "en": "The copy has the same measures. Add the three sides."
+   },
+   "explain": {
+    "fr": "4 + 4 + 4 = 12. La copie fait 12 cm de tour.",
+    "en": "4 + 4 + 4 = 12. The copy measures 12 cm around."
+   },
+   "tags": [
+    "congruent",
+    "perimeter",
+    "robot"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_d6ef96706bb3f4141400"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.miroir.003",
+   "quest": "robots.miroir",
+   "skill": "GEO-D01",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Le robot miroir copie un carré. Chaque côté fait 3 cm.",
+    "en": "The mirror robot copies a square. Each side is 3 cm."
+   },
+   "prompt": {
+    "fr": "Quelle figure est une copie exacte ?",
+    "en": "Which shape is an exact copy?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Un carré de 3 cm",
+      "en": "Un carré de 3 cm"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Un carré de 5 cm",
+      "en": "Un carré de 5 cm"
+     },
+     "misconception": "mis_match"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Un rectangle",
+      "en": "Un rectangle"
+     },
+     "misconception": "mis_shape_name"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "Un triangle",
+      "en": "Un triangle"
+     },
+     "misconception": "mis_shape_name"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Une copie exacte a la même forme et la même taille.",
+    "en": "An exact copy has the same shape and the same size."
+   },
+   "explain": {
+    "fr": "La copie doit être un carré de la même taille.",
+    "en": "The copy must be a square of the same size."
+   },
+   "tags": [
+    "congruent",
+    "shapes"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_59f055964a223a409104"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.miroir.004",
+   "quest": "robots.miroir",
+   "skill": "GEO-D01",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le robot tourne une figure d'un quart de tour.",
+    "en": "The robot turns a shape a quarter turn."
+   },
+   "prompt": {
+    "fr": "La figure tournée est-elle identique ?",
+    "en": "Is the turned shape identical?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Oui, même forme et même taille",
+      "en": "Oui, même forme et même taille"
+     }
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Non, elle est plus petite",
+      "en": "Non, elle est plus petite"
+     },
+     "misconception": "mis_shape_orientation"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Non, c'est une autre figure",
+      "en": "Non, c'est une autre figure"
+     },
+     "misconception": "mis_shape_orientation"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "a"
+   },
+   "hint": {
+    "fr": "Tourner une figure ne la change pas.",
+    "en": "Turning a shape does not change it."
+   },
+   "explain": {
+    "fr": "Tourner garde la forme et la taille. La figure est identique.",
+    "en": "Turning keeps the shape and the size. The shape is identical."
+   },
+   "tags": [
+    "congruent",
+    "rotation",
+    "shapes"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_d6ef96706bb3f4141400"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.miroir.005",
+   "quest": "robots.miroir",
+   "skill": "GEO-D01",
+   "type": "choice",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le robot fait 3 copies d'une figure.",
+    "en": "The robot makes 3 copies of a shape."
+   },
+   "prompt": {
+    "fr": "Avec l'original, combien de figures identiques y a-t-il ?",
+    "en": "With the original, how many identical shapes are there?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "3",
+      "en": "3"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "6",
+      "en": "6"
+     },
+     "misconception": "mis_multiply_instead_of_add"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "5",
+      "en": "5"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "4",
+      "en": "4"
+     }
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "d",
+    "calc_choice": {
+     "d": "3+1"
+    }
+   },
+   "hint": {
+    "fr": "N'oublie pas la figure de départ.",
+    "en": "Do not forget the starting shape."
+   },
+   "explain": {
+    "fr": "3 copies et 1 original : 3 + 1 = 4 figures.",
+    "en": "3 copies and 1 original: 3 + 1 = 4 shapes."
+   },
+   "tags": [
+    "congruent",
+    "counting",
+    "robot"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_59f055964a223a409104"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.miroir.006",
+   "quest": "robots.miroir",
+   "skill": "GEO-D01",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le robot copie un pentagone, une figure de 5 côtés. Il fait 2 copies.",
+    "en": "The robot copies a pentagon, a shape with 5 sides. It makes 2 copies."
+   },
+   "prompt": {
+    "fr": "Combien de côtés en tout, avec l'original ?",
+    "en": "How many sides in all, with the original?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 15,
+    "calc": "5+5+5"
+   },
+   "common_errors": [
+    {
+     "value": 10,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié l'original.",
+      "en": "You forgot the original."
+     }
+    },
+    {
+     "value": 7,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Chaque figure a 5 côtés : répète 5, trois fois.",
+      "en": "Each shape has 5 sides: repeat 5 three times."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les figures, puis les côtés par bonds de 5.",
+    "en": "Count the shapes, then the sides by fives."
+   },
+   "explain": {
+    "fr": "Il y a 3 figures de 5 côtés. 5 + 5 + 5 = 15.",
+    "en": "There are 3 shapes with 5 sides. 5 + 5 + 5 = 15."
+   },
+   "tags": [
+    "word-problem",
+    "congruent",
+    "robot"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_bdc463bdfdd87d5bbd1b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.miroir.007",
+   "quest": "robots.miroir",
+   "skill": "GEO-D01",
+   "type": "word",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Chaque carré a 4 côtés. Le robot dessine 5 carrés identiques.",
+    "en": "Each square has 4 sides. The robot draws 5 identical squares."
+   },
+   "prompt": {
+    "fr": "Combien de côtés y a-t-il en tout ?",
+    "en": "How many sides are there in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 20,
+    "calc": "4*5"
+   },
+   "common_errors": [
+    {
+     "value": 9,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Chaque carré a 4 côtés : répète 4, cinq fois.",
+      "en": "Each square has 4 sides: repeat 4 five times."
+     }
+    },
+    {
+     "value": 16,
+     "misconception": "mis_off_by_one",
+     "feedback": {
+      "fr": "Il y a cinq carrés. Tu en as compté quatre.",
+      "en": "There are five squares. You counted four."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte par bonds de 4, une fois par carré.",
+    "en": "Count by fours, once for each square."
+   },
+   "explain": {
+    "fr": "4, 8, 12, 16, 20. Cinq carrés font 20 côtés.",
+    "en": "4, 8, 12, 16, 20. Five squares make 20 sides."
+   },
+   "tags": [
+    "word-problem",
+    "congruent",
+    "skip-count"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_3f9b5a00b53c8bddda36"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.miroir.008",
+   "quest": "robots.miroir",
+   "skill": "GEO-D01",
+   "type": "truefalse",
+   "grade": 2,
+   "difficulty": 1,
+   "story": {
+    "fr": "Léa compare un carré et sa copie exacte.",
+    "en": "Lea compares a square and its exact copy."
+   },
+   "prompt": {
+    "fr": "Vrai ou faux : une figure et sa copie exacte ont la même taille.",
+    "en": "True or false: a shape and its exact copy have the same size."
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": true
+   },
+   "hint": {
+    "fr": "Pense à une photocopie bien faite.",
+    "en": "Think of a good photocopy."
+   },
+   "explain": {
+    "fr": "Une copie exacte garde la forme et la taille.",
+    "en": "An exact copy keeps the shape and the size."
+   },
+   "tags": [
+    "congruent",
+    "shapes"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_59f055964a223a409104"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.miroir.009",
+   "quest": "robots.miroir",
+   "skill": "GEO-D01",
+   "type": "truefalse",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Noah regarde deux triangles de tailles différentes.",
+    "en": "Noah looks at two triangles of different sizes."
+   },
+   "prompt": {
+    "fr": "Vrai ou faux : un petit triangle et un grand triangle sont des copies exactes.",
+    "en": "True or false: a small triangle and a big triangle are exact copies."
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_match"
+   },
+   "hint": {
+    "fr": "Compare la taille des deux triangles.",
+    "en": "Compare the size of the two triangles."
+   },
+   "explain": {
+    "fr": "Ils ont la même forme, mais pas la même taille. Ce ne sont pas des copies exactes.",
+    "en": "They have the same shape but not the same size. They are not exact copies."
+   },
+   "tags": [
+    "congruent",
+    "shapes",
+    "size"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_d6ef96706bb3f4141400"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.miroir.010",
+   "quest": "robots.miroir",
+   "skill": "GEO-D01",
+   "type": "order",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le robot miroir dessine plusieurs figures.",
+    "en": "The mirror robot draws several shapes."
+   },
+   "prompt": {
+    "fr": "Range-les du moins de côtés au plus de côtés.",
+    "en": "Put them in order, from fewest sides to most sides."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "pentagone",
+      "en": "pentagon"
+     },
+     "key": "5"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "triangle",
+      "en": "triangle"
+     },
+     "key": "3"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "hexagone",
+      "en": "hexagon"
+     },
+     "key": "6"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "carré",
+      "en": "square"
+     },
+     "key": "4"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "d",
+     "a",
+     "c"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_reversed"
+   },
+   "hint": {
+    "fr": "Un triangle a trois côtés.",
+    "en": "A triangle has three sides."
+   },
+   "explain": {
+    "fr": "Triangle (3), carré (4), pentagone (5), hexagone (6).",
+    "en": "Triangle (3), square (4), pentagon (5), hexagon (6)."
+   },
+   "tags": [
+    "shapes",
+    "ordering",
+    "sides"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_bdc463bdfdd87d5bbd1b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.miroir.011",
+   "quest": "robots.miroir",
+   "skill": "GEO-D01",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le robot miroir connaît ses figures.",
+    "en": "The mirror robot knows its shapes."
+   },
+   "prompt": {
+    "fr": "Relie chaque figure à son nombre de côtés.",
+    "en": "Match each shape to its number of sides."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "triangle",
+       "en": "triangle"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "carré",
+       "en": "square"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "hexagone",
+       "en": "hexagon"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "4 côtés",
+       "en": "4 sides"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "6 côtés",
+       "en": "6 sides"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "3 côtés",
+       "en": "3 sides"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ]
+    ],
+    "misconception": "mis_shape_name"
+   },
+   "hint": {
+    "fr": "Compte les côtés de chaque figure.",
+    "en": "Count the sides of each shape."
+   },
+   "explain": {
+    "fr": "Le triangle a 3 côtés, le carré 4 et l'hexagone 6.",
+    "en": "The triangle has 3 sides, the square 4 and the hexagon 6."
+   },
+   "tags": [
+    "shapes",
+    "matching",
+    "sides"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_59f055964a223a409104"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.miroir.012",
+   "quest": "robots.miroir",
+   "skill": "GEO-D01",
+   "type": "match",
+   "grade": 2,
+   "difficulty": 4,
+   "story": {
+    "fr": "Le robot tourne ses figures. Une figure tournée reste identique.",
+    "en": "The robot turns its shapes. A turned shape stays identical."
+   },
+   "prompt": {
+    "fr": "Relie chaque figure à sa copie tournée.",
+    "en": "Match each shape to its turned copy."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "carré de 2 cm",
+       "en": "2 cm square"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "carré de 4 cm",
+       "en": "4 cm square"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "rectangle de 2 cm sur 4 cm",
+       "en": "2 cm by 4 cm rectangle"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "carré de 4 cm tourné",
+       "en": "turned 4 cm square"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "rectangle de 4 cm sur 2 cm",
+       "en": "4 cm by 2 cm rectangle"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "carré de 2 cm tourné",
+       "en": "turned 2 cm square"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ]
+    ],
+    "misconception": "mis_shape_orientation"
+   },
+   "hint": {
+    "fr": "Une copie garde les mêmes mesures.",
+    "en": "A copy keeps the same measures."
+   },
+   "explain": {
+    "fr": "Le rectangle 2 sur 4, tourné, devient 4 sur 2. Les mesures restent les mêmes.",
+    "en": "The 2 by 4 rectangle, turned, becomes 4 by 2. The measures stay the same."
+   },
+   "tags": [
+    "congruent",
+    "rotation",
+    "matching"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_d6ef96706bb3f4141400"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.miroir.013",
+   "quest": "robots.miroir",
+   "skill": "GEO-D01",
+   "type": "visual",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le robot miroir a dessiné des figures. Voici son tableau d'images.",
+    "en": "The mirror robot drew shapes. Here is its picture chart."
+   },
+   "prompt": {
+    "fr": "Combien de triangles de plus que de cercles ?",
+    "en": "How many more triangles than circles?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Figures dessinées",
+      "en": "Shapes drawn"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "triangles",
+        "en": "triangles"
+       },
+       "count": 7
+      },
+      {
+       "label": {
+        "fr": "carrés",
+        "en": "squares"
+       },
+       "count": 5
+      },
+      {
+       "label": {
+        "fr": "cercles",
+        "en": "circles"
+       },
+       "count": 4
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 3,
+    "calc": "7-4"
+   },
+   "common_errors": [
+    {
+     "value": 11,
+     "misconception": "mis_add_instead_of_subtract",
+     "feedback": {
+      "fr": "On compare : on soustrait.",
+      "en": "We compare, so we subtract."
+     }
+    },
+    {
+     "value": 5,
+     "misconception": "mis_read_wrong_bar",
+     "feedback": {
+      "fr": "Tu as lu la ligne des carrés. Compare les triangles aux cercles.",
+      "en": "You read the squares row. Compare triangles with circles."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte les images de chaque ligne, puis compare.",
+    "en": "Count the pictures in each row, then compare."
+   },
+   "explain": {
+    "fr": "7 triangles et 4 cercles. 7 - 4 = 3.",
+    "en": "7 triangles and 4 circles. 7 - 4 = 3."
+   },
+   "tags": [
+    "pictograph",
+    "shapes",
+    "compare"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_59f055964a223a409104"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.miroir.014",
+   "quest": "robots.miroir",
+   "skill": "GEO-D01",
+   "type": "estimate",
+   "grade": 2,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le robot dessine 19 triangles, puis 21 copies exactes.",
+    "en": "The robot draws 19 triangles, then 21 exact copies."
+   },
+   "prompt": {
+    "fr": "Environ combien de triangles en tout ?",
+    "en": "About how many triangles in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 36,
+    "max": 44,
+    "exact_for_check": 40,
+    "calc": "19+21"
+   },
+   "common_errors": [
+    {
+     "value": 30,
+     "misconception": "mis_estimate_rounding",
+     "feedback": {
+      "fr": "Tu as arrondi trop bas.",
+      "en": "You rounded too low."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Arrondis chaque nombre à la dizaine.",
+    "en": "Round each number to the nearest ten."
+   },
+   "explain": {
+    "fr": "19 est proche de 20 et 21 aussi. 20 + 20 = 40.",
+    "en": "19 is close to 20 and so is 21. 20 + 20 = 40."
+   },
+   "tags": [
+    "estimation",
+    "congruent",
+    "rounding"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_59f055964a223a409104"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.boucles.001",
+   "quest": "robots.boucles",
+   "skill": "ARI-OPE-A13b",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 1,
+   "story": {
+    "fr": "Le robot répète 3 fois : avancer de 2 pas.",
+    "en": "The robot repeats 3 times: walk 2 steps."
+   },
+   "prompt": {
+    "fr": "Combien de pas fait-il en tout ?",
+    "en": "How many steps does it take in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 6,
+    "calc": "2+2+2"
+   },
+   "common_errors": [
+    {
+     "value": 5,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Chaque tour fait 2 pas : répète 2, trois fois.",
+      "en": "Each loop is 2 steps: repeat 2 three times."
+     }
+    },
+    {
+     "value": 3,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as compté seulement les tours. Compte les pas.",
+      "en": "You counted only the loops. Count the steps."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Ajoute 2 une fois pour chaque tour.",
+    "en": "Add 2 once for each loop."
+   },
+   "explain": {
+    "fr": "2 + 2 + 2 = 6. Le robot fait 6 pas.",
+    "en": "2 + 2 + 2 = 6. The robot takes 6 steps."
+   },
+   "tags": [
+    "loop",
+    "repeated-addition",
+    "robot"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_59f055964a223a409104"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.boucles.002",
+   "quest": "robots.boucles",
+   "skill": "ARI-OPE-A13b",
+   "type": "numeric",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le robot répète 5 fois : allumer 2 lumières.",
+    "en": "The robot repeats 5 times: turn on 2 lights."
+   },
+   "prompt": {
+    "fr": "Combien de lumières sont allumées ?",
+    "en": "How many lights are on?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 10,
+    "calc": "2+2+2+2+2"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Chaque tour allume 2 lumières : compte par bonds de 2.",
+      "en": "Each loop turns on 2 lights: count by twos."
+     }
+    },
+    {
+     "value": 8,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Il y a cinq tours. Tu en as compté quatre.",
+      "en": "There are five loops. You counted four."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte par bonds de 2, cinq fois.",
+    "en": "Count by twos, five times."
+   },
+   "explain": {
+    "fr": "2, 4, 6, 8, 10. Cinq tours de 2 lumières font 10.",
+    "en": "2, 4, 6, 8, 10. Five loops of 2 lights make 10."
+   },
+   "tags": [
+    "loop",
+    "skip-count",
+    "robot"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_fba57eb05629a1d98b8a"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.boucles.003",
+   "quest": "robots.boucles",
+   "skill": "ARI-OPE-A13b",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le robot répète ce motif : étoile, rond, rond, étoile, rond, rond, étoile.",
+    "en": "The robot repeats this pattern: star, circle, circle, star, circle, circle, star."
+   },
+   "prompt": {
+    "fr": "Que dessine-t-il ensuite ?",
+    "en": "What does it draw next?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "étoile",
+      "en": "étoile"
+     },
+     "misconception": "mis_pattern_wrong_rule"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "rond",
+      "en": "rond"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "carré",
+      "en": "carré"
+     },
+     "random": true
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Trouve le petit groupe qui se répète.",
+    "en": "Find the small group that repeats."
+   },
+   "explain": {
+    "fr": "Le motif est étoile, rond, rond. Après l'étoile, il y a un rond.",
+    "en": "The pattern is star, circle, circle. After the star comes a circle."
+   },
+   "tags": [
+    "loop",
+    "pattern",
+    "robot"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_d6ef96706bb3f4141400"
+    }
+   ],
+   "allow_operand_equals_answer": true,
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.boucles.004",
+   "quest": "robots.boucles",
+   "skill": "ARI-OPE-A13b",
+   "type": "choice",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le motif du robot : A, B, C, A, B, C, et ainsi de suite.",
+    "en": "The robot's pattern is A, B, C, A, B, C, and so on."
+   },
+   "prompt": {
+    "fr": "Quelle lettre est en 7e position ?",
+    "en": "Which letter is in 7th position?"
+   },
+   "choices": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "B",
+      "en": "B"
+     },
+     "misconception": "mis_off_by_one"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "A",
+      "en": "A"
+     }
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "C",
+      "en": "C"
+     },
+     "misconception": "mis_skip_count"
+    }
+   ],
+   "answer": {
+    "kind": "choice",
+    "correct": "b"
+   },
+   "hint": {
+    "fr": "Chaque groupe a 3 lettres. Compte les groupes.",
+    "en": "Each group has 3 letters. Count the groups."
+   },
+   "explain": {
+    "fr": "Deux groupes font 6 lettres. La 7e lettre commence un nouveau groupe : A.",
+    "en": "Two groups make 6 letters. The 7th letter starts a new group: A."
+   },
+   "tags": [
+    "loop",
+    "pattern",
+    "repeat"
+   ],
+   "media": [
+    {
+     "role": "object",
+     "asset": "a_3f9b5a00b53c8bddda36"
+    }
+   ],
+   "allow_operand_equals_answer": true,
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.boucles.005",
+   "quest": "robots.boucles",
+   "skill": "ARI-OPE-A13b",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le robot fabrique un collier. Un motif a 3 perles, répété 4 fois.",
+    "en": "The robot makes a necklace. One pattern has 3 beads, repeated 4 times."
+   },
+   "prompt": {
+    "fr": "Combien de perles y a-t-il en tout ?",
+    "en": "How many beads are there in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 12,
+    "calc": "3+3+3+3"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Chaque motif a 3 perles : répète 3, quatre fois.",
+      "en": "Each pattern has 3 beads: repeat 3 four times."
+     }
+    },
+    {
+     "value": 9,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Il y a quatre motifs. Tu en as compté trois.",
+      "en": "There are four patterns. You counted three."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte par bonds de 3, une fois par motif.",
+    "en": "Count by threes, once for each pattern."
+   },
+   "explain": {
+    "fr": "3, 6, 9, 12. Quatre motifs de 3 perles font 12.",
+    "en": "3, 6, 9, 12. Four patterns of 3 beads make 12."
+   },
+   "tags": [
+    "word-problem",
+    "loop",
+    "skip-count"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_bdc463bdfdd87d5bbd1b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.boucles.006",
+   "quest": "robots.boucles",
+   "skill": "ARI-OPE-A13b",
+   "type": "word",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Un bracelet a un motif de 2 perles bleues et 1 perle rouge. Le motif est répété 5 fois.",
+    "en": "A bracelet has a pattern of 2 blue beads and 1 red bead. The pattern repeats 5 times."
+   },
+   "prompt": {
+    "fr": "Combien de perles y a-t-il en tout ?",
+    "en": "How many beads are there in all?"
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 15,
+    "calc": "3*5"
+   },
+   "common_errors": [
+    {
+     "value": 8,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Un motif a 3 perles : répète 3, cinq fois.",
+      "en": "One pattern has 3 beads: repeat 3 five times."
+     }
+    },
+    {
+     "value": 10,
+     "misconception": "mis_partial_result",
+     "feedback": {
+      "fr": "Tu as oublié les perles rouges.",
+      "en": "You forgot the red beads."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Combien de perles dans un seul motif ?",
+    "en": "How many beads in a single pattern?"
+   },
+   "explain": {
+    "fr": "Un motif a 2 + 1 = 3 perles. 3, 6, 9, 12, 15.",
+    "en": "One pattern has 2 + 1 = 3 beads. 3, 6, 9, 12, 15."
+   },
+   "tags": [
+    "word-problem",
+    "loop",
+    "skip-count"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_fba57eb05629a1d98b8a"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.boucles.007",
+   "quest": "robots.boucles",
+   "skill": "ARI-OPE-A13b",
+   "type": "truefalse",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Dans la boucle du robot, il répète 4 fois : 2 pas.",
+    "en": "In the robot's loop, it repeats 4 times: 2 steps."
+   },
+   "prompt": {
+    "fr": "Vrai ou faux : le robot fait 6 pas en tout.",
+    "en": "True or false: the robot takes 6 steps in all."
+   },
+   "answer": {
+    "kind": "truefalse",
+    "value": false,
+    "misconception": "mis_add_instead_of_multiply"
+   },
+   "hint": {
+    "fr": "Compte par bonds de 2, quatre fois.",
+    "en": "Count by twos, four times."
+   },
+   "explain": {
+    "fr": "2, 4, 6, 8. Le robot fait 8 pas, pas 6.",
+    "en": "2, 4, 6, 8. The robot takes 8 steps, not 6."
+   },
+   "tags": [
+    "loop",
+    "robot",
+    "repeated-addition"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_d6ef96706bb3f4141400"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.boucles.008",
+   "quest": "robots.boucles",
+   "skill": "ARI-OPE-A13b",
+   "type": "order",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le robot suit un programme avec une boucle au milieu.",
+    "en": "The robot follows a program with a loop in the middle."
+   },
+   "prompt": {
+    "fr": "Mets les lignes du programme dans le bon ordre.",
+    "en": "Put the program lines in the right order."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "Éteindre le robot",
+      "en": "Turn off the robot"
+     },
+     "key": "3"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "Allumer le robot",
+      "en": "Turn on the robot"
+     },
+     "key": "1"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "Répéter 3 fois : avancer",
+      "en": "Repeat 3 times: move forward"
+     },
+     "key": "2"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "b",
+     "c",
+     "a"
+    ],
+    "by": "asc",
+    "misconception": "mis_order"
+   },
+   "hint": {
+    "fr": "Que fait-on en premier et en dernier ?",
+    "en": "What do we do first and last?"
+   },
+   "explain": {
+    "fr": "On allume, on répète la boucle, puis on éteint.",
+    "en": "We turn on, repeat the loop, then turn off."
+   },
+   "tags": [
+    "loop",
+    "algorithm",
+    "ordering"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_59f055964a223a409104"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.boucles.009",
+   "quest": "robots.boucles",
+   "skill": "ARI-OPE-A13b",
+   "type": "order",
+   "grade": 1,
+   "difficulty": 4,
+   "story": {
+    "fr": "Quatre boucles de robot font avancer le robot d'un certain nombre de pas.",
+    "en": "Four robot loops make it move a certain number of steps."
+   },
+   "prompt": {
+    "fr": "Range les boucles du moins de pas au plus de pas.",
+    "en": "Put the loops in order, from fewest steps to most steps."
+   },
+   "items": [
+    {
+     "id": "a",
+     "text": {
+      "fr": "2 fois 3 pas",
+      "en": "2 times 3 steps"
+     },
+     "key": "6"
+    },
+    {
+     "id": "b",
+     "text": {
+      "fr": "4 fois 2 pas",
+      "en": "4 times 2 steps"
+     },
+     "key": "8"
+    },
+    {
+     "id": "c",
+     "text": {
+      "fr": "3 fois 1 pas",
+      "en": "3 times 1 step"
+     },
+     "key": "3"
+    },
+    {
+     "id": "d",
+     "text": {
+      "fr": "5 fois 2 pas",
+      "en": "5 times 2 steps"
+     },
+     "key": "10"
+    }
+   ],
+   "answer": {
+    "kind": "order",
+    "sequence": [
+     "c",
+     "a",
+     "b",
+     "d"
+    ],
+    "by": "asc",
+    "misconception": "mis_order_partial"
+   },
+   "hint": {
+    "fr": "Calcule d'abord le total de chaque boucle.",
+    "en": "Work out each loop's total first."
+   },
+   "explain": {
+    "fr": "Totaux : 6, 8, 3 et 10. Du plus petit au plus grand : 3, 6, 8, 10.",
+    "en": "Totals: 6, 8, 3 and 10. Smallest to biggest: 3, 6, 8, 10."
+   },
+   "tags": [
+    "loop",
+    "ordering",
+    "repeated-addition"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_bdc463bdfdd87d5bbd1b"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.boucles.010",
+   "quest": "robots.boucles",
+   "skill": "ARI-OPE-A13b",
+   "type": "match",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le robot connaît le total de chaque boucle.",
+    "en": "The robot knows the total of each loop."
+   },
+   "prompt": {
+    "fr": "Relie chaque boucle à son total de pas.",
+    "en": "Match each loop to its total steps."
+   },
+   "items": {
+    "left": [
+     {
+      "id": "l1",
+      "text": {
+       "fr": "3 fois 2 pas",
+       "en": "3 times 2 steps"
+      }
+     },
+     {
+      "id": "l2",
+      "text": {
+       "fr": "2 fois 5 pas",
+       "en": "2 times 5 steps"
+      }
+     },
+     {
+      "id": "l3",
+      "text": {
+       "fr": "4 fois 2 pas",
+       "en": "4 times 2 steps"
+      }
+     },
+     {
+      "id": "l4",
+      "text": {
+       "fr": "5 fois 1 pas",
+       "en": "5 times 1 step"
+      }
+     }
+    ],
+    "right": [
+     {
+      "id": "r2",
+      "text": {
+       "fr": "10 pas",
+       "en": "10 steps"
+      }
+     },
+     {
+      "id": "r3",
+      "text": {
+       "fr": "8 pas",
+       "en": "8 steps"
+      }
+     },
+     {
+      "id": "r4",
+      "text": {
+       "fr": "5 pas",
+       "en": "5 steps"
+      }
+     },
+     {
+      "id": "r1",
+      "text": {
+       "fr": "6 pas",
+       "en": "6 steps"
+      }
+     }
+    ]
+   },
+   "answer": {
+    "kind": "match",
+    "pairs": [
+     [
+      "l1",
+      "r1"
+     ],
+     [
+      "l2",
+      "r2"
+     ],
+     [
+      "l3",
+      "r3"
+     ],
+     [
+      "l4",
+      "r4"
+     ]
+    ],
+    "misconception": "mis_add_instead_of_multiply"
+   },
+   "hint": {
+    "fr": "Ajoute le même nombre plusieurs fois.",
+    "en": "Add the same number several times."
+   },
+   "explain": {
+    "fr": "3 fois 2 font 6. 2 fois 5 font 10. 4 fois 2 font 8. 5 fois 1 font 5.",
+    "en": "3 times 2 is 6. 2 times 5 is 10. 4 times 2 is 8. 5 times 1 is 5."
+   },
+   "tags": [
+    "loop",
+    "matching",
+    "repeated-addition"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_d6ef96706bb3f4141400"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.boucles.011",
+   "quest": "robots.boucles",
+   "skill": "ARI-OPE-A13b",
+   "type": "visual",
+   "grade": 1,
+   "difficulty": 2,
+   "story": {
+    "fr": "Le robot fait plus de boucles chaque jour. Voici son tableau d'images.",
+    "en": "The robot does more loops each day. Here is its picture chart."
+   },
+   "prompt": {
+    "fr": "Si le motif continue, combien de boucles jeudi ?",
+    "en": "If the pattern continues, how many loops on Thursday?"
+   },
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Boucles du robot",
+      "en": "Robot loops"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "lundi",
+        "en": "Monday"
+       },
+       "count": 2
+      },
+      {
+       "label": {
+        "fr": "mardi",
+        "en": "Tuesday"
+       },
+       "count": 4
+      },
+      {
+       "label": {
+        "fr": "mercredi",
+        "en": "Wednesday"
+       },
+       "count": 6
+      }
+     ]
+    }
+   },
+   "answer": {
+    "kind": "numeric",
+    "value": 8,
+    "calc": "6+2"
+   },
+   "common_errors": [
+    {
+     "value": 7,
+     "misconception": "mis_pattern_wrong_rule",
+     "feedback": {
+      "fr": "Le robot ajoute 2 chaque jour, pas 1.",
+      "en": "The robot adds 2 each day, not 1."
+     }
+    },
+    {
+     "value": 10,
+     "misconception": "mis_skip_count",
+     "feedback": {
+      "fr": "Tu as sauté un jour. Avance d'un seul bond.",
+      "en": "You skipped a day. Go just one jump."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Regarde de combien chaque jour augmente.",
+    "en": "Look at how much each day grows."
+   },
+   "explain": {
+    "fr": "Chaque jour, il y a 2 boucles de plus. 6 + 2 = 8.",
+    "en": "Each day there are 2 more loops. 6 + 2 = 8."
+   },
+   "tags": [
+    "pictograph",
+    "loop",
+    "robot"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_59f055964a223a409104"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  },
+  {
+   "id": "robots.boucles.012",
+   "quest": "robots.boucles",
+   "skill": "ARI-OPE-A13b",
+   "type": "estimate",
+   "grade": 1,
+   "difficulty": 3,
+   "story": {
+    "fr": "Le robot répète 10 fois : 3 pas.",
+    "en": "The robot repeats 10 times: 3 steps."
+   },
+   "prompt": {
+    "fr": "Environ combien de pas fait-il en tout ?",
+    "en": "About how many steps does it take in all?"
+   },
+   "answer": {
+    "kind": "range",
+    "min": 27,
+    "max": 33,
+    "exact_for_check": 30,
+    "calc": "3*10"
+   },
+   "common_errors": [
+    {
+     "value": 13,
+     "misconception": "mis_add_instead_of_multiply",
+     "feedback": {
+      "fr": "Chaque tour fait 3 pas, et il y a 10 tours.",
+      "en": "Each loop is 3 steps, and there are 10 loops."
+     }
+    }
+   ],
+   "hint": {
+    "fr": "Compte par bonds de 3, dix fois.",
+    "en": "Count by threes, ten times."
+   },
+   "explain": {
+    "fr": "10 tours de 3 pas font 30 pas.",
+    "en": "10 loops of 3 steps make 30 steps."
+   },
+   "tags": [
+    "estimation",
+    "loop",
+    "skip-count"
+   ],
+   "media": [
+    {
+     "role": "scene",
+     "asset": "a_d6ef96706bb3f4141400"
+    }
+   ],
+   "status": "published",
+   "author": "numerix-p4d",
+   "version": 1
+  }
+ ]
+}
