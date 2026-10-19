@@ -1,0 +1,210 @@
+[
+ {
+  "id": "v_378a67dc1b31",
+  "key": "num:80",
+  "lang": "fr",
+  "speaker": "Estrie",
+  "qa": {
+   "pass": false,
+   "issues": [
+    "output-peak"
+   ],
+   "dur": 0.76,
+   "meanDb": -16.6,
+   "peakDb": 0,
+   "srcClippedSamples": null
+  }
+ },
+ {
+  "id": "v_1252fee2dcff",
+  "key": "day:tue",
+  "lang": "fr",
+  "speaker": "Yug",
+  "qa": {
+   "pass": false,
+   "issues": [
+    "output-peak"
+   ],
+   "dur": 0.59,
+   "meanDb": -19.1,
+   "peakDb": 0,
+   "srcClippedSamples": null
+  }
+ },
+ {
+  "id": "v_8ab4ed0988c1",
+  "key": "praise:no",
+  "lang": "fr",
+  "speaker": "DenisdeShawi",
+  "qa": {
+   "pass": false,
+   "issues": [
+    "output-peak"
+   ],
+   "dur": 0.46,
+   "meanDb": -17.9,
+   "peakDb": 0,
+   "srcClippedSamples": null
+  }
+ },
+ {
+  "id": "v_3846843512b4",
+  "key": "num:98",
+  "lang": "fr",
+  "speaker": "WikiLucas00",
+  "qa": {
+   "pass": false,
+   "issues": [
+    "output-peak"
+   ],
+   "dur": 0.96,
+   "meanDb": -17.5,
+   "peakDb": 0,
+   "srcClippedSamples": null
+  }
+ },
+ {
+  "id": "v_48238ebf800d",
+  "key": "day:fri",
+  "lang": "fr",
+  "speaker": "WikiLucas00",
+  "qa": {
+   "pass": false,
+   "issues": [
+    "output-peak"
+   ],
+   "dur": 0.57,
+   "meanDb": -16.9,
+   "peakDb": -0.1,
+   "srcClippedSamples": null
+  }
+ },
+ {
+  "id": "v_23dc726057aa",
+  "key": "colour:grey",
+  "lang": "en",
+  "speaker": "PerfectSoundWhatever",
+  "qa": {
+   "pass": false,
+   "issues": [
+    "source-clipped"
+   ],
+   "dur": 0.53,
+   "meanDb": -17.7,
+   "peakDb": -0.3,
+   "srcClippedSamples": 13
+  }
+ },
+ {
+  "id": "v_cbc4d8daba26",
+  "key": "num:60",
+  "lang": "en",
+  "speaker": "Back ache",
+  "qa": {
+   "pass": false,
+   "issues": [
+    "output-peak"
+   ],
+   "dur": 0.59,
+   "meanDb": -19.3,
+   "peakDb": 0,
+   "srcClippedSamples": null
+  }
+ },
+ {
+  "id": "v_bb043a1e1a76",
+  "key": "num:61",
+  "lang": "en",
+  "speaker": "Back ache",
+  "qa": {
+   "pass": false,
+   "issues": [
+    "source-clipped"
+   ],
+   "dur": 0.74,
+   "meanDb": -16.7,
+   "peakDb": -4.8,
+   "srcClippedSamples": 5
+  }
+ },
+ {
+  "id": "v_5f0d02d423df",
+  "key": "num:74",
+  "lang": "en",
+  "speaker": "Back ache",
+  "qa": {
+   "pass": false,
+   "issues": [
+    "source-clipped"
+   ],
+   "dur": 0.93,
+   "meanDb": -16.7,
+   "peakDb": -4.4,
+   "srcClippedSamples": 10
+  }
+ },
+ {
+  "id": "v_38efbd94b804",
+  "key": "num:76",
+  "lang": "en",
+  "speaker": "Back ache",
+  "qa": {
+   "pass": false,
+   "issues": [
+    "source-clipped"
+   ],
+   "dur": 0.96,
+   "meanDb": -17.7,
+   "peakDb": -4.5,
+   "srcClippedSamples": 24
+  }
+ },
+ {
+  "id": "v_9b1474eb36a0",
+  "key": "num:77",
+  "lang": "en",
+  "speaker": "Back ache",
+  "qa": {
+   "pass": false,
+   "issues": [
+    "source-clipped"
+   ],
+   "dur": 1.13,
+   "meanDb": -17.3,
+   "peakDb": -4.5,
+   "srcClippedSamples": 8
+  }
+ },
+ {
+  "id": "v_a6f666495c80",
+  "key": "num:78",
+  "lang": "en",
+  "speaker": "Back ache",
+  "qa": {
+   "pass": false,
+   "issues": [
+    "source-clipped"
+   ],
+   "dur": 1.17,
+   "meanDb": -17.5,
+   "peakDb": -5.3,
+   "srcClippedSamples": 7
+  }
+ },
+ {
+  "id": "v_15d2b01f9ee3",
+  "key": "praise:bravo",
+  "lang": "en",
+  "speaker": "Grendelkhan",
+  "qa": {
+   "pass": false,
+   "issues": [
+    "source-clipped"
+   ],
+   "dur": 0.55,
+   "meanDb": -16.7,
+   "peakDb": -2.1,
+   "srcClippedSamples": 83
+  }
+ }
+]
