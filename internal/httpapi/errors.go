@@ -44,6 +44,8 @@ var (
 	ErrUnauthorized   = NewError(http.StatusUnauthorized, "unauthorized", "")
 	ErrForbidden      = NewError(http.StatusForbidden, "forbidden", "")
 	ErrNotFound       = NewError(http.StatusNotFound, "not_found", "")
+	// ErrPayloadTooLarge is the 413 for a body over MaxBodyBytes.
+	ErrPayloadTooLarge = NewError(http.StatusRequestEntityTooLarge, "payload_too_large", "The request is too large.")
 )
 
 // RateLimited builds a 429 with the retry delay.
@@ -62,6 +64,7 @@ var titles = map[string][2]string{ // [fr, en]
 	"forbidden":              {"Accès refusé", "Access denied"},
 	"not_found":              {"Introuvable", "Not found"},
 	"validation_failed":      {"Vérifie les informations", "Please check the information"},
+	"payload_too_large":      {"Requête trop volumineuse", "Request too large"},
 	"rate_limited":           {"Doucement", "Slow down a little"},
 	"internal_error":         {"Quelque chose s’est mal passé", "Something went wrong"},
 	"not_implemented":        {"Pas encore disponible", "Not available yet"},

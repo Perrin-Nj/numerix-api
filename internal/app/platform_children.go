@@ -277,7 +277,10 @@ func (s *Server) CreateChildToken(ctx context.Context, req api.CreateChildTokenR
 		if req.Body != nil && req.Body.Pin != nil {
 			pin = *req.Body.Pin
 		}
-		ok, _ := auth.Verify(pin, c.PinHash.String) // an empty pin simply fails the check
+		ok := len(pin) <= 8 // a PIN is 4 digits: anything long is wrong, and never reaches argon2 (QA-BE-001)
+		if ok {
+			ok, _ = auth.Verify(pin, c.PinHash.String) // an empty pin simply fails the check
+		}
 		if !ok {
 			s.PINLimit.Fail(id)
 			return nil, httpapi.NewError(http.StatusForbidden, "invalid_pin", "That PIN does not match.")

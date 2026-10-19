@@ -235,3 +235,19 @@ func ConcurrencyLimit(n int) Middleware {
 		})
 	}
 }
+
+// ---- request body size cap ----
+
+// MaxBodyBytes is the largest JSON body any endpoint accepts (QA-BE-001). No contract operation needs more.
+const MaxBodyBytes = 64 << 10
+
+// BodyLimit makes reads past n bytes fail with *http.MaxBytesError, so a 2 MB body is never buffered
+// or hashed. The decode hook turns that error into 413 (Spring: spring.servlet.multipart.max-request-size).
+func BodyLimit(n int64) Middleware {
+	return func(next http.Handler) http.Handler {
+		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			r.Body = http.MaxBytesReader(w, r.Body, n)
+			next.ServeHTTP(w, r)
+		})
+	}
+}

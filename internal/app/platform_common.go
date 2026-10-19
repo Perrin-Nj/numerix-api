@@ -36,6 +36,9 @@ const plMaxChildren = 8
 var plWorldIDs = []string{"nature", "espace", "cuisine", "sport", "construction", "medecine", "science", "echecs",
 	"ocean", "dinosaures", "animaux", "musique", "transport", "pirates", "marche", "meteo", "robots", "arts", "hiver", "jeux"}
 
+// plPasswordMax caps password length before argon2 runs (QA-BE-001).
+const plPasswordMax = 128
+
 // plPinRe is the PIN format: exactly four digits.
 var plPinRe = regexp.MustCompile(`^[0-9]{4}$`)
 

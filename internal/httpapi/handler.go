@@ -1,6 +1,7 @@
 package httpapi
 
 import (
+	"errors"
 	"log/slog"
 	"net/http"
 
@@ -21,7 +22,7 @@ type Deps struct {
 
 // NewHandler assembles the full HTTP stack, outermost first:
 // request id -> access log -> panic recovery -> security headers -> CORS -> concurrency limit -> per-IP limit
-// -> request deadline -> token parsing -> generated router -> per-operation guard -> your handler.
+// -> request deadline -> body size cap -> token parsing -> generated router -> per-operation guard -> your handler.
 func NewHandler(d Deps) http.Handler {
 	lim := d.Limiter
 	if lim == nil {
@@ -33,6 +34,14 @@ func NewHandler(d Deps) http.Handler {
 	// The two error hooks route every failure through WriteError so the format is always problem+json.
 	strict := api.NewStrictHandlerWithOptions(d.Impl, []api.StrictMiddlewareFunc{Guard(lim, cfg.TrustProxy)}, api.StrictHTTPServerOptions{
 		RequestErrorHandlerFunc: func(w http.ResponseWriter, r *http.Request, err error) {
+			if authFirst(w, r) { // auth always beats validation (QA-BE-002)
+				return
+			}
+			var tooBig *http.MaxBytesError // BodyLimit tripped while the generated code read the body
+			if errors.As(err, &tooBig) {
+				WriteError(w, r, ErrPayloadTooLarge)
+				return
+			}
 			// malformed JSON / bad body: the contract has one client-error code, validation_failed (422).
 			WriteError(w, r, Validation(FieldError{Field: "body", Message: "invalid request body"}))
 		},
@@ -50,6 +59,9 @@ func NewHandler(d Deps) http.Handler {
 		BaseURL:    "/v1",
 		BaseRouter: mux,
 		ErrorHandlerFunc: func(w http.ResponseWriter, r *http.Request, err error) {
+			if authFirst(w, r) {
+				return
+			}
 			WriteError(w, r, Validation(FieldError{Field: "parameters", Message: "invalid parameter"}))
 		},
 	})
@@ -65,6 +77,7 @@ func NewHandler(d Deps) http.Handler {
 		ConcurrencyLimit(cfg.MaxConcurrent),
 		IPLimit(lim, cfg.RateLimitIPPerMin, cfg.TrustProxy),
 		Deadline(cfg.RequestTimeout),
+		BodyLimit(MaxBodyBytes),
 		Middleware(auth.Middleware(d.Issuer)),
 	)
 }

@@ -56,8 +56,8 @@ func (s *Server) RegisterParent(ctx context.Context, req api.RegisterParentReque
 	if !strings.Contains(email, "@") || len(email) > 254 {
 		bad = append(bad, plField("email", "invalid email"))
 	}
-	if len([]rune(req.Body.Password)) < 10 {
-		bad = append(bad, plField("password", "at least 10 characters"))
+	if n := len([]rune(req.Body.Password)); n < 10 || n > plPasswordMax { // the cap keeps argon2 off oversized input (QA-BE-001)
+		bad = append(bad, plField("password", "10 to 128 characters"))
 	}
 	if locale == "" {
 		locale = s.plConfig(ctx).DefaultLocale
@@ -103,6 +103,9 @@ func (s *Server) LoginParent(ctx context.Context, req api.LoginParentRequestObje
 		return nil, httpapi.Validation(plField("body", "required"))
 	}
 	email := plNormEmail(string(req.Body.Email))
+	if len(email) > 254 || len([]rune(req.Body.Password)) > plPasswordMax { // refuse before any hashing (QA-BE-001)
+		return nil, httpapi.Validation(plField("password", "too long"))
+	}
 	if locked, wait := s.LoginLimit.Locked(email); locked {
 		return nil, httpapi.RateLimited(httpapi.RetrySeconds(wait))
 	}

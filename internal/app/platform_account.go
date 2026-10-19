@@ -104,8 +104,8 @@ func (s *Server) DeleteAccount(ctx context.Context, req api.DeleteAccountRequest
 	if err != nil {
 		return nil, err
 	}
-	if req.Body == nil || req.Body.Password == "" {
-		return nil, httpapi.Validation(plField("password", "required"))
+	if req.Body == nil || req.Body.Password == "" || len([]rune(req.Body.Password)) > plPasswordMax {
+		return nil, httpapi.Validation(plField("password", "required, 128 characters at most"))
 	}
 	key := "del:" + p.ParentID
 	if locked, wait := s.LoginLimit.Locked(key); locked {
