@@ -307,7 +307,47 @@ func (s *Server) plDefaultSettings(ctx context.Context) api.ChildSettings {
 		limit = &d
 	}
 	return api.ChildSettings{DailyGoalChapters: 1, DailyTimeLimitMinutes: limit, EnabledWorlds: worlds,
-		KidCanChangeLanguage: plPtr(true), ReadAloud: true, Sound: true}
+		KidCanChangeLanguage: plPtr(true), ReadAloud: true, Sound: true,
+		Music: plPtr(defaultMusic()), Voice: plPtr(defaultVoice())}
+}
+
+// defaultMusic: music on at a low volume (it still starts only after the first tap, client side), not locked.
+func defaultMusic() api.MusicSettings { return api.MusicSettings{Enabled: true, Volume: 30} }
+
+// defaultVoice: human clips on, the computer voice off until a parent opts in.
+func defaultVoice() api.VoiceSettings { return api.VoiceSettings{HumanEnabled: true} }
+
+// fillSettings gives settings stored before R3 their music and voice blocks, and enforces the parent lock.
+func fillSettings(st *api.ChildSettings) {
+	if st.Music == nil {
+		st.Music = plPtr(defaultMusic())
+	}
+	if st.Voice == nil {
+		st.Voice = plPtr(defaultVoice())
+	}
+	if st.Music.ParentLocked {
+		st.Music.Enabled = false // a locked music switch always reads as off
+	}
+}
+
+// mergeChildSettings applies a child's PUT: only its own music on/off and volume and the human voice switch
+// change; everything else, including the parent lock and the computer voice, keeps the stored value.
+func mergeChildSettings(stored, in api.ChildSettings) api.ChildSettings {
+	out := stored
+	if in.Music != nil {
+		m := *out.Music // copy, so the stored pointer is not edited through the alias
+		m.Volume = in.Music.Volume
+		if !m.ParentLocked {
+			m.Enabled = in.Music.Enabled
+		}
+		out.Music = &m
+	}
+	if in.Voice != nil {
+		v := *out.Voice
+		v.HumanEnabled = in.Voice.HumanEnabled
+		out.Voice = &v
+	}
+	return out
 }
 
 // GetChildSettings reads the settings (a child token may read its own).
@@ -331,6 +371,7 @@ func (s *Server) GetChildSettings(ctx context.Context, req api.GetChildSettingsR
 	if out.KidCanChangeLanguage == nil {
 		out.KidCanChangeLanguage = plPtr(true)
 	}
+	fillSettings(&out)
 	return api.GetChildSettings200JSONResponse(out), nil
 }
 
@@ -349,10 +390,14 @@ func (s *Server) UpdateChildSettings(ctx context.Context, req api.UpdateChildSet
 	}
 	in := *req.Body
 	var bad []httpapi.FieldError
-	if in.DailyGoalChapters < 1 || in.DailyGoalChapters > 5 {
+	if m := in.Music; m != nil && (m.Volume < 0 || m.Volume > 100) {
+		bad = append(bad, plField("music.volume", "0 to 100"))
+	}
+	child := p.Role == auth.RoleChild // a child edit is merged below; its other fields are ignored, so not validated
+	if !child && (in.DailyGoalChapters < 1 || in.DailyGoalChapters > 5) {
 		bad = append(bad, plField("daily_goal_chapters", "1 to 5"))
 	}
-	if l := in.DailyTimeLimitMinutes; l != nil && (*l < 5 || *l > 180) {
+	if l := in.DailyTimeLimitMinutes; !child && l != nil && (*l < 5 || *l > 180) {
 		bad = append(bad, plField("daily_time_limit_minutes", "null or 5 to 180"))
 	}
 	known := map[string]bool{}
@@ -361,17 +406,40 @@ func (s *Server) UpdateChildSettings(ctx context.Context, req api.UpdateChildSet
 	}
 	seen := map[api.WorldId]bool{}
 	for _, w := range in.EnabledWorlds {
+		if child {
+			break
+		}
 		if !known[string(w)] || seen[w] {
 			bad = append(bad, plField("enabled_worlds", "unknown or repeated world"))
 			break
 		}
 		seen[w] = true
 	}
-	if len(in.EnabledWorlds) == 0 {
+	if !child && len(in.EnabledWorlds) == 0 {
 		bad = append(bad, plField("enabled_worlds", "at least one world"))
 	}
 	if len(bad) > 0 {
 		return nil, httpapi.Validation(bad...)
+	}
+	// the stored settings: what a child edit is merged into, and what an omitted music or voice block keeps
+	stored := s.plDefaultSettings(ctx)
+	var prev string
+	if e := s.Store.R.QueryRowContext(ctx, `SELECT json FROM child_settings WHERE child_id = ?`, id).Scan(&prev); e == nil {
+		_ = json.Unmarshal([]byte(prev), &stored)
+	} else if !errors.Is(e, sql.ErrNoRows) {
+		return nil, s.plInternalErr(ctx, "load settings", e)
+	}
+	fillSettings(&stored)
+	if child {
+		in = mergeChildSettings(stored, in)
+	} else {
+		if in.Music == nil {
+			in.Music = stored.Music
+		}
+		if in.Voice == nil {
+			in.Voice = stored.Voice
+		}
+		fillSettings(&in)
 	}
 	if in.KidCanChangeLanguage == nil {
 		in.KidCanChangeLanguage = plPtr(true) // default true

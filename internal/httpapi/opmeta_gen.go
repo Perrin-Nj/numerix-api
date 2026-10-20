@@ -73,5 +73,5 @@ var Ops = map[string]OpMeta{
 	"UnsubscribePush":           {Method: "DELETE", Path: "/push/subscribe", Public: false, Roles: []string{"parent"}},
 	"UpdateAccount":             {Method: "PATCH", Path: "/account", Public: false, Roles: []string{"parent"}},
 	"UpdateChild":               {Method: "PATCH", Path: "/children/{childId}", Public: false, Roles: []string{"parent"}},
-	"UpdateChildSettings":       {Method: "PUT", Path: "/children/{childId}/settings", Public: false, Roles: []string{"parent"}},
+	"UpdateChildSettings":       {Method: "PUT", Path: "/children/{childId}/settings", Public: false, Roles: []string{"parent", "child"}},
 }

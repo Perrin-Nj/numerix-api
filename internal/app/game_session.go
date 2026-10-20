@@ -190,6 +190,7 @@ func (s *Server) sessionView(ctx context.Context, r sessRow, lang string, withBe
 		Id: plUUID(r.ID), ChildId: plUUID(r.ChildID), World: api.WorldId(r.World), Kind: api.SessionKind(r.Data.Kind),
 		Status: api.SessionStatus(r.Status), ChapterLength: r.Data.Length, BeatsAnswered: len(outcomes),
 		StoryTitle: &title, StartedAt: plParseTS(r.Started),
+		VariantHistory: plPtr(append([]string{}, r.Data.Variants...)), // always an array, never null
 	}
 	if r.Status == "completed" {
 		out.EndedAt = plNullTime(r.Finished)
@@ -254,6 +255,7 @@ func (s *Server) beatView(ctx context.Context, b beatRow, lang string) (api.Beat
 		Id: plUUID(b.ID), SessionId: plUUID(b.SessionID), Index: b.Index, SkillId: q.Problem.CompetenceID,
 		Question:  api.Question{MathText: localMath(&q.Problem, lang), Choices: choices},
 		Scene:     api.Narration{Status: api.Pending},
+		SceneKey:  sceneKeyPtr(sceneFamily(q.Problem.CompetenceID)), // the wrong-answer part is known only after the answer
 		CreatedAt: &created,
 	}, nil
 }

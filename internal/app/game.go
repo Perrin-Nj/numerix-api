@@ -156,6 +156,8 @@ type sessData struct {
 	Reason   string `json:"reason"`
 	Lang     string `json:"lang"`           // language of the story title stored on the card
 	Idem     string `json:"idem,omitempty"` // Idempotency-Key of the start request (a retry returns the same session)
+	// Variants are the client's recent scene ids (last maxVariantHistory), kept so a reload keeps the no-repeat rule.
+	Variants []string `json:"variants,omitempty"`
 }
 
 // sessRow is one sessions row with its parsed JSON and the owning child.

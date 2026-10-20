@@ -151,7 +151,7 @@ func TestPlatformFullFlow(t *testing.T) {
 	code, set, _ := plCall(t, h, "GET", "/v1/children/"+maxID+"/settings", childTok, nil)
 	plWant(t, code, set, 200, "child reads settings")
 	code, body, _ = plCall(t, h, "PUT", "/v1/children/"+maxID+"/settings", childTok, set)
-	plWant(t, code, body, 403, "child writes settings")
+	plWant(t, code, body, 200, "child writes settings (R3: music and voice only, the rest is ignored)")
 	code, body, _ = plCall(t, h, "GET", "/v1/children/"+kidID, childTok, nil)
 	plWant(t, code, body, 403, "child reads a sibling")
 
