@@ -248,3 +248,96 @@ func TestQAPasskeyCeremonyOnDevPort(t *testing.T) {
 		t.Fatalf("login on dev port: %d %s", rec.Code, rec.Body)
 	}
 }
+
+// qaSetProfile overwrites the fixture child's mastery profile (test setup only).
+func (f feedFixture) qaSetProfile(t *testing.T, states map[string]*engine.SkillState) {
+	t.Helper()
+	ctx := context.Background()
+	prof, err := f.s.loadProfile(ctx, f.childID)
+	if err != nil {
+		t.Fatal(err)
+	}
+	for id, st := range states {
+		prof.States[id] = st
+	}
+	now := f.s.game().now()
+	if err := f.s.Store.WithWriteTx(ctx, func(tx *sql.Tx) error { return saveProfile(ctx, tx, prof, now) }); err != nil {
+		t.Fatal(err)
+	}
+}
+
+// QA-BE-006: every skill id the API offers to start (home.suggested, home.quest, GET quests/daily) must start with 201,
+// never 422 "locked", whatever the child's progress. Table-driven: one row per (world, progress state).
+// Go for Spring people: a slice of structs ranged over with t.Run is a JUnit @ParameterizedTest with @MethodSource.
+func TestQAOfferedSkillsAlwaysStart(t *testing.T) {
+	// each state prepares the child's profile; lockedSkill is a prerequisite-locked skill of the world (may be "")
+	states := []struct {
+		name  string
+		setup func(f feedFixture, lockedSkill string)
+	}{
+		{"fresh child", func(f feedFixture, _ string) {}},
+		{"prerequisites mastered", func(f feedFixture, locked string) {
+			if locked != "" {
+				f.unlock(t, locked)
+			}
+		}},
+		{"one skill due for review", func(f feedFixture, locked string) {
+			if locked == "" {
+				return
+			}
+			f.unlock(t, locked)
+			sk, _ := f.s.game().graph.Get(locked)
+			old := f.s.game().now().Add(-72 * time.Hour).UTC().Format(time.RFC3339Nano)
+			// mastered once (Peak 1) but a tiny half-life and an old Last: mastery has decayed, so it is due
+			f.qaSetProfile(t, map[string]*engine.SkillState{sk.Prerequisites[0]: {P: 1, HalfLife: 0.001, Last: old, Peak: 1}})
+		}},
+		{"in progress, not mastered", func(f feedFixture, locked string) {
+			if locked == "" {
+				return
+			}
+			sk, _ := f.s.game().graph.Get(locked)
+			now := f.s.game().now().UTC().Format(time.RFC3339Nano)
+			f.qaSetProfile(t, map[string]*engine.SkillState{sk.Prerequisites[0]: {P: 0.3, HalfLife: 24, Last: now}})
+		}},
+	}
+	for _, world := range []string{"echecs", "nature"} {
+		for _, st := range states {
+			t.Run(world+"/"+st.name, func(t *testing.T) {
+				f := newFeedFixture(t, true)
+				f.sql(t, `UPDATE children SET favorite_world = ? WHERE id = ?`, world, f.childID)
+				_, j, _ := f.gcall(t, "GET", "/v1/children/"+f.childID+"/journey?world="+world, f.childTok, "", nil)
+				locked := ""
+				for _, n := range j["nodes"].([]any) {
+					if m := n.(map[string]any); m["state"] == "locked" && m["locked_reason"] == "prerequisites" {
+						locked = m["skill_id"].(string)
+						break
+					}
+				}
+				st.setup(f, locked)
+				// collect every offered (world, skill) pair from the three endpoints
+				offered := map[string]bool{}
+				_, home, _ := f.gcall(t, "GET", "/v1/children/"+f.childID+"/home", f.childTok, "", nil)
+				sg := home["suggested"].(map[string]any)
+				if sk, ok := sg["skill_id"].(string); ok {
+					offered[sk] = true
+				}
+				_, daily, _ := f.gcall(t, "GET", "/v1/children/"+f.childID+"/quests/daily", f.childTok, "", nil)
+				for _, q := range []map[string]any{home["quest"].(map[string]any), daily} {
+					for _, id := range q["skill_ids"].([]any) {
+						offered[id.(string)] = true
+					}
+				}
+				if len(offered) == 0 {
+					t.Fatal("nothing offered: the child has no way to play")
+				}
+				for sk := range offered {
+					code, _, raw := f.gcall(t, "POST", "/v1/children/"+f.childID+"/sessions", f.childTok,
+						`{"world":"`+sg["world"].(string)+`","kind":"chapter","skill_id":"`+sk+`"}`, nil)
+					if code != 201 {
+						t.Fatalf("offered %s in %s: start answered %d %s, want 201", sk, sg["world"], code, raw)
+					}
+				}
+			})
+		}
+	}
+}

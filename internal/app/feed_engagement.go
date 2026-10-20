@@ -13,6 +13,7 @@ import (
 	"time"
 
 	"github.com/Perrin-Nj/numerix-api/api"
+	"github.com/Perrin-Nj/numerix-api/internal/engine"
 	"github.com/google/uuid"
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
@@ -39,8 +40,13 @@ var feedWorlds = []feedWorldInfo{
 	{"echecs", "Échecs", "Chess", "Un tournoi t’attend", "A tournament awaits", "#4A5568", 43},
 }
 
-// starterSkill is the skill suggested when the child has no review due (same default as the mock).
-const starterSkill api.SkillId = "ARI-OPE-A06a"
+// feedHomeWorld is the world home suggests (and the quest is computed for): favorite, else nature.
+func feedHomeWorld(c plChild) api.WorldId {
+	if c.FavoriteWorld.Valid {
+		return api.WorldId(c.FavoriteWorld.String)
+	}
+	return "nature"
+}
 
 // feedTime parses a stored timestamp; the zero time means missing or malformed.
 func feedTime(s string) time.Time {
@@ -227,7 +233,7 @@ func (s *Server) GetEngagement(ctx context.Context, req api.GetEngagementRequest
 	return api.GetEngagement200JSONResponse(s.feedEngagement(ctx, c, ss, time.Now().UTC())), nil
 }
 
-// feedQuest builds today's review quest: skills due for review, else the starter skill.
+// feedQuest builds today's review quest: skills due for review, else the planner's pick; only startable skills (QA-BE-006).
 func (s *Server) feedQuest(ctx context.Context, c plChild, sessions []feedSession, now time.Time) api.DailyQuest {
 	loc := feedLoc(c)
 	q := api.DailyQuest{Available: true}
@@ -236,24 +242,30 @@ func (s *Server) feedQuest(ctx context.Context, c plChild, sessions []feedSessio
 			q.Completed = true
 		}
 	}
-	ids := []api.SkillId{}
-	var raw string
-	if s.Store.R.QueryRowContext(ctx, `SELECT bkt FROM child_profiles WHERE child_id = ?`, c.ID).Scan(&raw) == nil {
-		// shortcut: assumes bkt is {skillId: {"due_at": RFC3339}}; align with internal/engine once its format is final.
-		var bkt map[string]struct {
-			DueAt string `json:"due_at"`
-		}
-		if json.Unmarshal([]byte(raw), &bkt) == nil {
-			for id, v := range bkt {
-				if t := feedTime(v.DueAt); !t.IsZero() && !t.After(now) {
-					ids = append(ids, api.SkillId(id))
-				}
-			}
+	ids := []api.SkillId{} // never nil: the contract wants [] not null
+	g := s.game()          // skill graph + the shared lock rule (Spring: an injected @Service)
+	s.syncBank(ctx)        // fresh view of which skills have bank questions
+	prof, err := s.loadProfile(ctx, c.ID)
+	if err != nil {
+		q.SkillIds = &ids // no profile, no offer: an empty list never points at a skill that start refuses
+		return q
+	}
+	world, grade := string(feedHomeWorld(c)), gradeOf(c)
+	mastered, due := prof.Mastered(now), map[string]bool{}
+	reviews := prof.ToReview(now) // most forgotten first
+	for _, d := range reviews {
+		due[d.SkillID] = true
+	}
+	for _, d := range reviews {
+		// QA-BE-006: offer only what StartSession accepts (playable in the world, not locked), same rule as the journey.
+		if g.graph.PlayableFor(world, d.SkillID, grade) && g.skillState(prof, d.SkillID, mastered, due) != api.NodeStateLocked {
+			ids = append(ids, api.SkillId(d.SkillID))
 		}
 	}
-	sort.Slice(ids, func(i, j int) bool { return ids[i] < ids[j] }) // stable answer
-	if len(ids) == 0 {
-		ids = append(ids, starterSkill)
+	if len(ids) == 0 { // nothing due: the planner's pick, which is never locked (it is what StartSession itself chooses)
+		if sel, cerr := engine.Choose(g.graph, prof, world, grade, engine.NewRNG(g.seed()), now); cerr == nil {
+			ids = append(ids, api.SkillId(sel.SkillID))
+		}
 	}
 	if len(ids) > 3 {
 		ids = ids[:3]
@@ -397,13 +409,11 @@ func (s *Server) GetHome(ctx context.Context, req api.GetHomeRequestObject) (api
 	quest := s.feedQuest(ctx, c, ss, now)
 	h := api.Home{Quest: quest, RecentCards: cards, Engagement: s.feedEngagement(ctx, c, ss, now), Growth: feedGrowth(ss, now, 7)}
 	// Suggested chapter: favorite world, else the last played one, else nature. open_session stays null (see report).
-	world := api.WorldId("nature")
-	if c.FavoriteWorld.Valid {
-		world = api.WorldId(c.FavoriteWorld.String)
-	}
+	world := feedHomeWorld(c)
 	h.Suggested.World = world
-	skill := (*quest.SkillIds)[0]
-	h.Suggested.SkillId = &skill
+	if ids := *quest.SkillIds; len(ids) > 0 { // empty means nothing startable: no skill, the client opens the world instead
+		h.Suggested.SkillId = &ids[0]
+	}
 	h.Suggested.Label = map[bool]string{true: "Continue the adventure", false: "Continue l’aventure"}[en]
 	homeLang := "fr"
 	if en {
