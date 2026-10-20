@@ -58,3 +58,26 @@ func TestLoadValues(t *testing.T) {
 		t.Fatalf("asset base url: %q", cfg.AssetBaseURL)
 	}
 }
+
+// QA-BE-005: in dev the passkey origin list covers any localhost port (web app on 13xxx); production gets none by default.
+func TestWebAuthnDevOriginsAnyLocalhostPort(t *testing.T) {
+	cfg, err := Load(env(map[string]string{}))
+	if err != nil {
+		t.Fatal(err)
+	}
+	has := func(o string) bool {
+		for _, x := range cfg.WebAuthnOrigins {
+			if x == o {
+				return true
+			}
+		}
+		return false
+	}
+	if cfg.WebAuthnRPID != "localhost" || !has("http://localhost:3000") || !has("http://localhost:13150") || has("https://evil.example") {
+		t.Fatalf("dev webauthn: rp %q, %d origins", cfg.WebAuthnRPID, len(cfg.WebAuthnOrigins))
+	}
+	prod, err := Load(env(map[string]string{"APP_ENV": "production", "JWT_SECRET": strings.Repeat("x", 32)}))
+	if err != nil || prod.WebAuthnRPID != "" || len(prod.WebAuthnOrigins) != 0 {
+		t.Fatalf("prod webauthn must be off by default: %v %q %d", err, prod.WebAuthnRPID, len(prod.WebAuthnOrigins))
+	}
+}

@@ -12,7 +12,7 @@ Tick every line before the frontend branch `chore/go-backend-cutover` is merged 
 | `ADMIN_API_TOKEN` | yes | 16+ random chars; the same value as on the Vercel admin project. Without it the admin API answers 503 `admin_disabled` |
 | `ALLOWED_ORIGINS` | yes | the exact web origin(s), comma separated (CORS and cookies) |
 | `ADMIN_ORIGIN` | yes | the admin origin |
-| `WEBAUTHN_RP_ID`, `WEBAUTHN_ORIGINS`, `WEBAUTHN_RP_NAME` | yes | the real domain (no scheme) and the web origin; passkeys fail on a wrong value |
+| `WEBAUTHN_RP_ID`, `WEBAUTHN_ORIGINS`, `WEBAUTHN_RP_NAME` | yes | the real domain (no scheme) and the web origin; passkeys fail on a wrong value. In dev (no env set) every `http://localhost:<port>` origin is accepted, so a web app on any port works |
 | `TRUST_PROXY` | yes | `true` behind Caddy so rate limits see the client IP |
 | `FEATURE_WELCOME_GIFT` | no | `false` until the gift is wanted |
 | `ASSET_BASE_URL` | no | empty: the web app serves `/assets/*` through its rewrite |

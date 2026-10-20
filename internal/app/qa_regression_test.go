@@ -6,14 +6,18 @@ package app
 // httptest.NewRecorder is MockMvc: it records the response without opening a socket.
 
 import (
+	"context"
+	"database/sql"
 	"net/http"
 	"net/http/httptest"
 	"regexp"
 	"strings"
 	"testing"
+	"time"
 
 	"github.com/google/uuid"
 
+	"github.com/Perrin-Nj/numerix-api/internal/engine"
 	"github.com/Perrin-Nj/numerix-api/internal/httpapi"
 )
 
@@ -170,5 +174,77 @@ func TestQAAnswerReplayBypassesRateLimit(t *testing.T) {
 	c2, again := f.answer(t, sid, beatID, 1, key)
 	if c2 != 200 || again["outcome"] != first["outcome"] {
 		t.Fatalf("replay: %d %v, want 200 %v", c2, again, first)
+	}
+}
+
+// unlock marks the direct prerequisites of a skill as mastered for the fixture child (test setup only).
+func (f feedFixture) unlock(t *testing.T, skill string) {
+	t.Helper()
+	ctx := context.Background()
+	sk, err := f.s.game().graph.Get(skill) // the skill record, including its prerequisite ids
+	if err != nil {
+		t.Fatal(err)
+	}
+	prof, err := f.s.loadProfile(ctx, f.childID)
+	if err != nil {
+		t.Fatal(err)
+	}
+	now := f.s.game().now()
+	for _, p := range sk.Prerequisites {
+		// P=1 and a huge half-life: mastery stays above the threshold; Peak keeps it out of "needs review"
+		prof.States[p] = &engine.SkillState{P: 1, HalfLife: 1e6, Last: now.UTC().Format(time.RFC3339Nano), Peak: 1}
+	}
+	if err := f.s.Store.WithWriteTx(ctx, func(tx *sql.Tx) error { return saveProfile(ctx, tx, prof, now) }); err != nil {
+		t.Fatal(err)
+	}
+}
+
+// QA-BE-004: an explicit skill_id locked by prerequisites is refused with 422 (like the planner, which never picks it),
+// and the same skill starts once its prerequisites are mastered.
+func TestQAExplicitLockedSkillIsRefused(t *testing.T) {
+	f := newFeedFixture(t, true)
+	_, j, _ := f.gcall(t, "GET", "/v1/children/"+f.childID+"/journey?world=nature", f.childTok, "", nil)
+	var locked []string
+	for _, n := range j["nodes"].([]any) {
+		if m := n.(map[string]any); m["state"] == "locked" && m["locked_reason"] == "prerequisites" {
+			locked = append(locked, m["skill_id"].(string))
+		}
+	}
+	if len(locked) == 0 {
+		t.Fatal("no prerequisite-locked node in nature, test is not testing anything")
+	}
+	start := func(skill string) (int, string) {
+		code, _, raw := f.gcall(t, "POST", "/v1/children/"+f.childID+"/sessions", f.childTok,
+			`{"world":"nature","kind":"chapter","skill_id":"`+skill+`"}`, map[string]string{"Idempotency-Key": uuid.NewString()})
+		return code, raw
+	}
+	for _, sk := range locked {
+		if code, raw := start(sk); code != 422 || !strings.Contains(raw, "locked") {
+			t.Fatalf("%s: status %d body %s, want 422 locked", sk, code, raw)
+		}
+	}
+	f.unlock(t, locked[0])
+	if code, raw := start(locked[0]); code != 201 {
+		t.Fatalf("after unlock: %d %s", code, raw)
+	}
+}
+
+// QA-BE-005: a full register + login ceremony (software authenticator) from a dev web app on a 13xxx port works with
+// the default dev config; before the fix only http://localhost:3000 was accepted and registration failed.
+func TestQAPasskeyCeremonyOnDevPort(t *testing.T) {
+	h, _ := newTestServer(t)
+	tok, _ := dvRegister(t, h, "qa5@example.com")
+	const origin = "http://localhost:13150"
+	k := &fakeKey{}
+	session, ch, uid := optionsOf(t, dvCall(t, h, "POST", "/v1/auth/passkeys/register/begin", tok, "", nil))
+	rec := dvCall(t, h, "POST", "/v1/auth/passkeys/register/finish", tok, "", map[string]any{
+		"session_id": session, "nickname": "Virtual", "credential": k.register(ch, origin, uid)})
+	if rec.Code != 201 {
+		t.Fatalf("register on dev port: %d %s", rec.Code, rec.Body)
+	}
+	session, ch, _ = optionsOf(t, dvCall(t, h, "POST", "/v1/auth/passkeys/login/begin", "", "", nil))
+	rec = dvCall(t, h, "POST", "/v1/auth/passkeys/login/finish", "", "", map[string]any{"session_id": session, "credential": k.assert(ch, origin, 1)})
+	if rec.Code != 200 {
+		t.Fatalf("login on dev port: %d %s", rec.Code, rec.Body)
 	}
 }

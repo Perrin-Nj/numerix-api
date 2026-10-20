@@ -121,15 +121,23 @@ func Load(getenv func(string) string) (Config, error) {
 	}
 
 	// Passkeys: localhost defaults outside production so dev works at once; production must opt in.
-	defRP, defOrigin := "", ""
+	// The browser sends the page origin (scheme+host+PORT) and the library compares it exactly, so a dev web app on
+	// any port (3000, 13xxx...) needs its origin listed (QA-BE-005). With no WEBAUTHN_ORIGINS in dev we list every
+	// localhost port; the RP id "localhost" already pins the host. Production never gets this default.
+	defRP := ""
 	if !cfg.IsProduction() {
-		defRP, defOrigin = "localhost", "http://localhost:3000"
+		defRP = "localhost"
 	}
 	cfg.WebAuthnRPID = get("WEBAUTHN_RP_ID", defRP)
 	cfg.WebAuthnRPName = get("WEBAUTHN_RP_NAME", "Numerix")
-	for _, o := range strings.Split(get("WEBAUTHN_ORIGINS", defOrigin), ",") {
+	for _, o := range strings.Split(get("WEBAUTHN_ORIGINS", ""), ",") {
 		if o = strings.TrimSpace(o); o != "" {
 			cfg.WebAuthnOrigins = append(cfg.WebAuthnOrigins, o)
+		}
+	}
+	if len(cfg.WebAuthnOrigins) == 0 && !cfg.IsProduction() && cfg.WebAuthnRPID == "localhost" {
+		for port := 1; port <= 65535; port++ { // shortcut: 65k exact origins, fine for dev; upgrade if the lib gains wildcards
+			cfg.WebAuthnOrigins = append(cfg.WebAuthnOrigins, "http://localhost:"+strconv.Itoa(port))
 		}
 	}
 
