@@ -28,6 +28,10 @@ Facts to re-check on Oracle's pages before relying on them (they change): the Al
 6. Restore drill (do it once, before trusting backups): on a scratch folder `litestream restore -config /etc/litestream.yml -o /tmp/restored.db /var/lib/numerix/numerix.db` and open the file with sqlite.
 7. Point the web app at it: on Vercel set `API_URL=https://numerix-api.duckdns.org/v1`, `PLATFORM_API_URL` for the admin app, redeploy.
 
+### Discover media (videos, photos, captions)
+
+The 200 Discover items are files, not database rows: copy `seed/feed-media/` (45 MB) to the VM, for example `/var/lib/numerix/feed-media`, set `MEDIA_DIR=/var/lib/numerix/feed-media` in `/etc/numerix/api.env`, then load the texts with `./feedseed --db /var/lib/numerix/numerix.db --items seed/feed/items.json --media /var/lib/numerix/feed-media` (validates first, idempotent). The files are immutable (name = content hash), so back them up once per release: `rclone copy /var/lib/numerix/feed-media oci:numerix-backup/feed-media` (same bucket as Litestream, other prefix). Restore = copy the folder back and run feedseed. Videos stay out of SQLite on purpose: blobs would grow the file Litestream replicates. Details: docs/FEED_MEDIA.md.
+
 ## Optional: MongoDB Atlas M0 (free) for bests, family board and stats
 
 Skip this and the app runs the same (SQLite serves everything; the log says "mongo sync is off"). To turn it on, you do these in the browser:

@@ -16,6 +16,7 @@ Tick every line before the frontend branch `chore/go-backend-cutover` is merged 
 | `TRUST_PROXY` | yes | `true` behind Caddy so rate limits see the client IP |
 | `FEATURE_WELCOME_GIFT` | no | `false` until the gift is wanted |
 | `ASSET_BASE_URL` | no | empty: the web app serves `/assets/*` through its rewrite |
+| `MEDIA_DIR`, `MEDIA_BASE_URL` | yes for Discover | folder with the 200 Discover files (default `./seed/feed-media`) and the URL prefix the web app rewrites (`/feed-media`); back the folder up with the release (docs/FEED_MEDIA.md) |
 | `LLM_PROVIDER`, `LLM_API_KEY`, `LLM_MODEL`, `LLM_MONTHLY_CAP` | no | empty keeps canned stories; `ANTHROPIC_API_KEY` and `NARRATOR_MODEL` switch on the admin AI drafts |
 | `MONGODB_URI`, `MONGODB_DB`, `MONGO_PSEUDO_SECRET` | no | see section 5 |
 
@@ -59,6 +60,7 @@ Off by default (SQLite serves everything). To enable: M0 cluster in a Canadian r
 - [ ] Content seeded (section 2) and `locked_reason` present in journeys (this release).
 - [ ] `API_URL` and `PLATFORM_API_URL` set, no placeholder host left.
 - [ ] Litestream snapshot exists and the restore drill passed.
+- [ ] Discover media: `MEDIA_DIR` copied and backed up, `feedseed --validate-only` passes, `GET /v1/feed-media/<file>` answers 200, 206 with Range, and 304 with If-None-Match.
 - [ ] Frontend, from `Services/frontend`: `pnpm check`, `bash scripts/test.sh` suites `contract flows ui errors mobile play state sounds arch` all green, `pnpm build`, `(cd admin && npm test && npm run build)`.
 - [ ] API, from `Services/numerix-api`: `gofmt -l .` empty, `go vet ./...`, `staticcheck ./...`, `go test ./... -count=1`, `govulncheck ./...` (the only finding allowed is the `golang.org/x/crypto` openpgp advisory, which has no fixed version and is not imported), `GOOS=linux GOARCH=arm64 go build ./cmd/api ./cmd/seed`.
 - [ ] Load smoke on the VM (not a laptop with host stalls): `bin/loadtest -rps 50 -duration 20s`, zero 5xx, answer p95 under 400 ms.

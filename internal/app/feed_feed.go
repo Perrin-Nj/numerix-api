@@ -140,14 +140,13 @@ func feedItem(n int, en bool, liked, saved bool, name string, world api.WorldId,
 	}
 	by := "numerix-seed" // honest label: seeded content, no LLM
 	item.GeneratedBy = &by
-	pip, lumiName, fox, owl := "Pip", "Lumi", "🦊", "🦉"
+	numa := "Numa" // the one storyteller: the owl mascot, never an emoji
 	item.Author = &struct {
 		Emoji *string `json:"emoji,omitempty"`
 		Name  *string `json:"name,omitempty"`
-	}{Emoji: &fox, Name: &pip}
+	}{Name: &numa}
 	if lumi {
-		item.Author.Emoji, item.Author.Name = &owl, &lumiName
-		item.Title = map[bool]string{true: "Lumi’s puzzle", false: "Le casse-tête de Lumi"}[en]
+		item.Title = map[bool]string{true: "Numa’s puzzle", false: "Le casse-tête de Numa"}[en]
 		p := puzzleFor(n)
 		q := api.Question{MathText: fmt.Sprintf("%d × %d = ?", p.A, p.B)}
 		for _, c := range p.Choices { // choices as numbers, never the answer flag
@@ -266,7 +265,7 @@ func (s *Server) ReactToFeedItem(ctx context.Context, req api.ReactToFeedItemReq
 	if req.Body == nil {
 		return nil, httpapi.Validation(plField("body", "required"))
 	}
-	if !feedIDRe.MatchString(req.ItemId) { // never store ids the server did not generate
+	if !feedIDRe.MatchString(req.ItemId) && !s.isDiscoverID(ctx, req.ItemId) { // never store ids the server did not generate
 		return nil, httpapi.ErrNotFound
 	}
 	now := time.Now().UTC().Format(plTSLayout)

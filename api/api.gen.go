@@ -121,6 +121,30 @@ func (e ConsentRequestAccepted) Valid() bool {
 	}
 }
 
+// Defines values for DiscoverItemKind.
+const (
+	DiscoverItemKindAnimation DiscoverItemKind = "animation"
+	DiscoverItemKindPhoto     DiscoverItemKind = "photo"
+	DiscoverItemKindPuzzle    DiscoverItemKind = "puzzle"
+	DiscoverItemKindVideo     DiscoverItemKind = "video"
+)
+
+// Valid indicates whether the value is a known member of the DiscoverItemKind enum.
+func (e DiscoverItemKind) Valid() bool {
+	switch e {
+	case DiscoverItemKindAnimation:
+		return true
+	case DiscoverItemKindPhoto:
+		return true
+	case DiscoverItemKindPuzzle:
+		return true
+	case DiscoverItemKindVideo:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for FeedItemAiGenerated.
 const (
 	FeedItemAiGeneratedTrue FeedItemAiGenerated = true
@@ -172,6 +196,27 @@ func (e JourneyNodeLockedReason) Valid() bool {
 	case Grade:
 		return true
 	case Prerequisites:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for MediaItemMediaKind.
+const (
+	MediaItemMediaKindAnimation MediaItemMediaKind = "animation"
+	MediaItemMediaKindPhoto     MediaItemMediaKind = "photo"
+	MediaItemMediaKindVideo     MediaItemMediaKind = "video"
+)
+
+// Valid indicates whether the value is a known member of the MediaItemMediaKind enum.
+func (e MediaItemMediaKind) Valid() bool {
+	switch e {
+	case MediaItemMediaKindAnimation:
+		return true
+	case MediaItemMediaKindPhoto:
+		return true
+	case MediaItemMediaKindVideo:
 		return true
 	default:
 		return false
@@ -1234,6 +1279,35 @@ type DeviceList struct {
 	Items []Device `json:"items"`
 }
 
+// DiscoverItem defines model for DiscoverItem.
+type DiscoverItem struct {
+	// Id `m-<slug>` for media, `feed-<n>` for a puzzle.
+	Id    string           `json:"id"`
+	Kind  DiscoverItemKind `json:"kind"`
+	Liked bool             `json:"liked"`
+
+	// Media One curated Discover item (a real photo, a short animation or a short captioned video). Texts are in the language of the request.
+	Media      *MediaItem `json:"media,omitempty"`
+	PuzzleItem *FeedItem  `json:"puzzle_item,omitempty"`
+	Saved      bool       `json:"saved"`
+}
+
+// DiscoverItemKind defines model for DiscoverItem.Kind.
+type DiscoverItemKind string
+
+// DiscoverPage defines model for DiscoverPage.
+type DiscoverPage struct {
+	// Cycle How many full passes over the items were completed before this page starts.
+	Cycle int `json:"cycle"`
+
+	// CycleSize How many media items fit the child's grade (one pass).
+	CycleSize int            `json:"cycle_size"`
+	Items     []DiscoverItem `json:"items"`
+
+	// NextCursor Opaque. Always set; the feed does not end.
+	NextCursor string `json:"next_cursor"`
+}
+
 // Engagement defines model for Engagement.
 type Engagement struct {
 	DailyGoal struct {
@@ -1438,6 +1512,84 @@ type MediaCredit struct {
 	// Text Example: Photo by Jane Doe on Pexels
 	Text string `json:"text"`
 }
+
+// MediaItem One curated Discover item (a real photo, a short animation or a short captioned video). Texts are in the language of the request.
+type MediaItem struct {
+	// Alt What the picture shows
+	Alt string `json:"alt"`
+
+	// Attribution Credit line
+	Attribution string `json:"attribution"`
+
+	// Caption The fun fact
+	Caption string `json:"caption"`
+
+	// Captions WebVTT tracks of a video, fr-CA and en-CA. Captions describe what is shown.
+	Captions *[]struct {
+		Label string `json:"label"`
+
+		// Lang Example: fr-CA
+		Lang string `json:"lang"`
+		Src  string `json:"src"`
+	} `json:"captions,omitempty"`
+	Creator string `json:"creator"`
+
+	// DurationMs Set for animation and video.
+	DurationMs *int `json:"duration_ms,omitempty"`
+
+	// GradeMin Lowest school year the item is meant for (shown from one year below).
+	GradeMin int `json:"grade_min"`
+
+	// HasAudio True when the video has a sound track. Videos start muted.
+	HasAudio *bool `json:"has_audio,omitempty"`
+	Height   int   `json:"height"`
+
+	// Id Slug, stable. The item id used for reactions is `m-<id>`.
+	Id string `json:"id"`
+
+	// Licence Example: CC BY 4.0
+	Licence    string  `json:"licence"`
+	LicenceUrl *string `json:"licence_url,omitempty"`
+
+	// Lqip Tiny blurred placeholder as a data URI (blur-up).
+	Lqip      string             `json:"lqip"`
+	MediaKind MediaItemMediaKind `json:"media_kind"`
+
+	// MotionNote Set when the clip is a slow zoom on a photo; the UI labels it.
+	MotionNote *string `json:"motion_note,omitempty"`
+
+	// Poster Poster image of an animation or video (webp).
+	Poster *string `json:"poster,omitempty"`
+
+	// Question Optional micro question. The child taps to reveal the answer; it is not graded and not stored.
+	Question *struct {
+		Answer string `json:"answer"`
+		Prompt string `json:"prompt"`
+	} `json:"question,omitempty"`
+
+	// SourceUrl Page of the original work.
+	SourceUrl string `json:"source_url"`
+
+	// Src Photo 960 px webp
+	Src string `json:"src"`
+
+	// SrcSmall Photo 480 px webp (data saver and small screens).
+	SrcSmall *string  `json:"src_small,omitempty"`
+	Tags     []string `json:"tags"`
+	Title    string   `json:"title"`
+
+	// Topic counting, symmetry, patterns, shapes, fractions, measurement, time, multiplication, geometry, space, nature
+	Topic string `json:"topic"`
+	Width int    `json:"width"`
+
+	// World The twenty story worlds. The first eight are the original worlds; the other twelve came with the question bank
+	// (CR-11). A client must treat an id it does not know as a generic world (accent colour and name come from
+	// `GET /worlds`), so a new world never needs a release.
+	World WorldId `json:"world"`
+}
+
+// MediaItemMediaKind defines model for MediaItem.MediaKind.
+type MediaItemMediaKind string
 
 // MediaRef defines model for MediaRef.
 type MediaRef struct {
@@ -2184,6 +2336,15 @@ type GetCollectionParams struct {
 	AcceptLanguage *AcceptLanguage `json:"Accept-Language,omitempty"`
 }
 
+// GetDiscoverParams defines parameters for GetDiscover.
+type GetDiscoverParams struct {
+	Cursor *string `form:"cursor,omitempty" json:"cursor,omitempty"`
+	Limit  *int    `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// AcceptLanguage fr-CA or en-CA. The app forwards the NEXT_LOCALE cookie, else the browser header. Default fr-CA.
+	AcceptLanguage *AcceptLanguage `json:"Accept-Language,omitempty"`
+}
+
 // GetEngagementParams defines parameters for GetEngagement.
 type GetEngagementParams struct {
 	// AcceptLanguage fr-CA or en-CA. The app forwards the NEXT_LOCALE cookie, else the browser header. Default fr-CA.
@@ -2330,6 +2491,13 @@ type SendEventsJSONBody struct {
 		Name  string                  `json:"name"`
 		Props *map[string]interface{} `json:"props,omitempty"`
 	} `json:"events"`
+}
+
+// GetFeedMediaParams defines parameters for GetFeedMedia.
+type GetFeedMediaParams struct {
+	IfNoneMatch *string `json:"If-None-Match,omitempty"`
+	Range       *string `json:"Range,omitempty"`
+	IfRange     *string `json:"If-Range,omitempty"`
 }
 
 // Health200JSONResponseBodyNarrator defines parameters for Health.
@@ -2844,6 +3012,9 @@ type ServerInterface interface {
 	// GetCollection Story cards earned by finishing chapters
 	// (GET /children/{childId}/collection)
 	GetCollection(w http.ResponseWriter, r *http.Request, childId ChildId, params GetCollectionParams)
+	// GetDiscover The Discover feed, 200 real-world photos, animations and short educational videos in a private random order (BE-80)
+	// (GET /children/{childId}/discover)
+	GetDiscover(w http.ResponseWriter, r *http.Request, childId ChildId, params GetDiscoverParams)
 	// GetEngagement Story-day streak and daily goal
 	// (GET /children/{childId}/engagement)
 	GetEngagement(w http.ResponseWriter, r *http.Request, childId ChildId, params GetEngagementParams)
@@ -2901,6 +3072,9 @@ type ServerInterface interface {
 	// SendEvents Batch of privacy-safe UI events (no names, no free text)
 	// (POST /events)
 	SendEvents(w http.ResponseWriter, r *http.Request)
+	// GetFeedMedia One Discover media file, with HTTP Range for video (BE-81)
+	// (GET /feed-media/{file})
+	GetFeedMedia(w http.ResponseWriter, r *http.Request, file string, params GetFeedMediaParams)
 	// Health Liveness, with the narrator state
 	// (GET /health)
 	Health(w http.ResponseWriter, r *http.Request)
@@ -3796,6 +3970,82 @@ func (siw *ServerInterfaceWrapper) GetCollection(w http.ResponseWriter, r *http.
 
 	handler := http.Handler(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		siw.Handler.GetCollection(w, r, childId, params)
+	}))
+
+	for _, middleware := range siw.HandlerMiddlewares {
+		handler = middleware(handler)
+	}
+
+	handler.ServeHTTP(w, r)
+}
+
+// GetDiscover operation middleware
+func (siw *ServerInterfaceWrapper) GetDiscover(w http.ResponseWriter, r *http.Request) {
+
+	var err error
+	_ = err
+
+	// ------------- Path parameter "childId" -------------
+	var childId ChildId
+
+	err = runtime.BindStyledParameterWithOptions("simple", "childId", r.PathValue("childId"), &childId, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationPath, Explode: false, Required: true, Type: "string", Format: "uuid", ValueIsUnescaped: true})
+	if err != nil {
+		siw.ErrorHandlerFunc(w, r, &InvalidParamFormatError{ParamName: "childId", Err: err})
+		return
+	}
+
+	// Parameter object where we will unmarshal all parameters from the context
+	var params GetDiscoverParams
+
+	// ------------- Optional query parameter "cursor" -------------
+
+	err = runtime.BindQueryParameterWithOptions("form", true, false, "cursor", r.URL.Query(), &params.Cursor, runtime.BindQueryParameterOptions{Type: "string", Format: ""})
+	if err != nil {
+		var requiredError *runtime.RequiredParameterError
+		if errors.As(err, &requiredError) {
+			siw.ErrorHandlerFunc(w, r, &RequiredParamError{ParamName: "cursor"})
+		} else {
+			siw.ErrorHandlerFunc(w, r, &InvalidParamFormatError{ParamName: "cursor", Err: err})
+		}
+		return
+	}
+
+	// ------------- Optional query parameter "limit" -------------
+
+	err = runtime.BindQueryParameterWithOptions("form", true, false, "limit", r.URL.Query(), &params.Limit, runtime.BindQueryParameterOptions{Type: "integer", Format: ""})
+	if err != nil {
+		var requiredError *runtime.RequiredParameterError
+		if errors.As(err, &requiredError) {
+			siw.ErrorHandlerFunc(w, r, &RequiredParamError{ParamName: "limit"})
+		} else {
+			siw.ErrorHandlerFunc(w, r, &InvalidParamFormatError{ParamName: "limit", Err: err})
+		}
+		return
+	}
+
+	headers := r.Header
+
+	// ------------- Optional header parameter "Accept-Language" -------------
+	if valueList, found := headers[http.CanonicalHeaderKey("Accept-Language")]; found {
+		var AcceptLanguage AcceptLanguage
+		n := len(valueList)
+		if n != 1 {
+			siw.ErrorHandlerFunc(w, r, &TooManyValuesForParamError{ParamName: "Accept-Language", Count: n})
+			return
+		}
+
+		err = runtime.BindStyledParameterWithOptions("simple", "Accept-Language", valueList[0], &AcceptLanguage, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""})
+		if err != nil {
+			siw.ErrorHandlerFunc(w, r, &InvalidParamFormatError{ParamName: "Accept-Language", Err: err})
+			return
+		}
+
+		params.AcceptLanguage = &AcceptLanguage
+
+	}
+
+	handler := http.Handler(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		siw.Handler.GetDiscover(w, r, childId, params)
 	}))
 
 	for _, middleware := range siw.HandlerMiddlewares {
@@ -4806,6 +5056,94 @@ func (siw *ServerInterfaceWrapper) SendEvents(w http.ResponseWriter, r *http.Req
 
 	handler := http.Handler(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		siw.Handler.SendEvents(w, r)
+	}))
+
+	for _, middleware := range siw.HandlerMiddlewares {
+		handler = middleware(handler)
+	}
+
+	handler.ServeHTTP(w, r)
+}
+
+// GetFeedMedia operation middleware
+func (siw *ServerInterfaceWrapper) GetFeedMedia(w http.ResponseWriter, r *http.Request) {
+
+	var err error
+	_ = err
+
+	// ------------- Path parameter "file" -------------
+	var file string
+
+	err = runtime.BindStyledParameterWithOptions("simple", "file", r.PathValue("file"), &file, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationPath, Explode: false, Required: true, Type: "string", Format: "", ValueIsUnescaped: true})
+	if err != nil {
+		siw.ErrorHandlerFunc(w, r, &InvalidParamFormatError{ParamName: "file", Err: err})
+		return
+	}
+
+	// Parameter object where we will unmarshal all parameters from the context
+	var params GetFeedMediaParams
+
+	headers := r.Header
+
+	// ------------- Optional header parameter "If-None-Match" -------------
+	if valueList, found := headers[http.CanonicalHeaderKey("If-None-Match")]; found {
+		var IfNoneMatch string
+		n := len(valueList)
+		if n != 1 {
+			siw.ErrorHandlerFunc(w, r, &TooManyValuesForParamError{ParamName: "If-None-Match", Count: n})
+			return
+		}
+
+		err = runtime.BindStyledParameterWithOptions("simple", "If-None-Match", valueList[0], &IfNoneMatch, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""})
+		if err != nil {
+			siw.ErrorHandlerFunc(w, r, &InvalidParamFormatError{ParamName: "If-None-Match", Err: err})
+			return
+		}
+
+		params.IfNoneMatch = &IfNoneMatch
+
+	}
+
+	// ------------- Optional header parameter "Range" -------------
+	if valueList, found := headers[http.CanonicalHeaderKey("Range")]; found {
+		var Range string
+		n := len(valueList)
+		if n != 1 {
+			siw.ErrorHandlerFunc(w, r, &TooManyValuesForParamError{ParamName: "Range", Count: n})
+			return
+		}
+
+		err = runtime.BindStyledParameterWithOptions("simple", "Range", valueList[0], &Range, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""})
+		if err != nil {
+			siw.ErrorHandlerFunc(w, r, &InvalidParamFormatError{ParamName: "Range", Err: err})
+			return
+		}
+
+		params.Range = &Range
+
+	}
+
+	// ------------- Optional header parameter "If-Range" -------------
+	if valueList, found := headers[http.CanonicalHeaderKey("If-Range")]; found {
+		var IfRange string
+		n := len(valueList)
+		if n != 1 {
+			siw.ErrorHandlerFunc(w, r, &TooManyValuesForParamError{ParamName: "If-Range", Count: n})
+			return
+		}
+
+		err = runtime.BindStyledParameterWithOptions("simple", "If-Range", valueList[0], &IfRange, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""})
+		if err != nil {
+			siw.ErrorHandlerFunc(w, r, &InvalidParamFormatError{ParamName: "If-Range", Err: err})
+			return
+		}
+
+		params.IfRange = &IfRange
+
+	}
+
+	handler := http.Handler(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		siw.Handler.GetFeedMedia(w, r, file, params)
 	}))
 
 	for _, middleware := range siw.HandlerMiddlewares {
@@ -6096,6 +6434,8 @@ func HandlerWithOptions(si ServerInterface, options StdHTTPServerOptions) http.H
 	m.HandleFunc(http.MethodGet+" "+options.BaseURL+"/children/{childId}/engagement", wrapper.GetEngagement)
 	m.HandleFunc(http.MethodGet+" "+options.BaseURL+"/children/{childId}/home", wrapper.GetHome)
 	m.HandleFunc(http.MethodGet+" "+options.BaseURL+"/children/{childId}/feed", wrapper.GetFeed)
+	m.HandleFunc(http.MethodGet+" "+options.BaseURL+"/children/{childId}/discover", wrapper.GetDiscover)
+	m.HandleFunc(http.MethodGet+" "+options.BaseURL+"/feed-media/{file}", wrapper.GetFeedMedia)
 	m.HandleFunc(http.MethodPut+" "+options.BaseURL+"/children/{childId}/feed/{itemId}/reaction", wrapper.ReactToFeedItem)
 	m.HandleFunc(http.MethodPost+" "+options.BaseURL+"/children/{childId}/feed/{itemId}/answer", wrapper.AnswerFeedPuzzle)
 	m.HandleFunc(http.MethodGet+" "+options.BaseURL+"/children/{childId}/collection", wrapper.GetCollection)
@@ -8649,6 +8989,128 @@ func (response GetCollection500ApplicationProblemPlusJSONResponse) VisitGetColle
 	return err
 }
 
+type GetDiscoverRequestObject struct {
+	ChildId ChildId `json:"childId"`
+	Params  GetDiscoverParams
+}
+
+type GetDiscoverResponseObject interface {
+	VisitGetDiscoverResponse(w http.ResponseWriter) error
+}
+
+type GetDiscover200JSONResponse DiscoverPage
+
+func (response GetDiscover200JSONResponse) VisitGetDiscoverResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(200)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type GetDiscover401ApplicationProblemPlusJSONResponse struct {
+	UnauthorizedApplicationProblemPlusJSONResponse
+}
+
+func (response GetDiscover401ApplicationProblemPlusJSONResponse) VisitGetDiscoverResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(401)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type GetDiscover403ApplicationProblemPlusJSONResponse struct {
+	ForbiddenApplicationProblemPlusJSONResponse
+}
+
+func (response GetDiscover403ApplicationProblemPlusJSONResponse) VisitGetDiscoverResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(403)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type GetDiscover404ApplicationProblemPlusJSONResponse struct {
+	NotFoundApplicationProblemPlusJSONResponse
+}
+
+func (response GetDiscover404ApplicationProblemPlusJSONResponse) VisitGetDiscoverResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(404)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type GetDiscover422ApplicationProblemPlusJSONResponse struct {
+	ValidationErrorApplicationProblemPlusJSONResponse
+}
+
+func (response GetDiscover422ApplicationProblemPlusJSONResponse) VisitGetDiscoverResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(422)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type GetDiscover429ApplicationProblemPlusJSONResponse struct {
+	RateLimitedApplicationProblemPlusJSONResponse
+}
+
+func (response GetDiscover429ApplicationProblemPlusJSONResponse) VisitGetDiscoverResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response.Body); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	if response.Headers.RetryAfter != nil {
+		w.Header().Set("Retry-After", fmt.Sprint(*response.Headers.RetryAfter))
+	}
+	w.WriteHeader(429)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type GetDiscover500ApplicationProblemPlusJSONResponse struct {
+	ServerErrorApplicationProblemPlusJSONResponse
+}
+
+func (response GetDiscover500ApplicationProblemPlusJSONResponse) VisitGetDiscoverResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(500)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
 type GetEngagementRequestObject struct {
 	ChildId ChildId `json:"childId"`
 	Params  GetEngagementParams
@@ -10482,6 +10944,174 @@ type SendEvents500ApplicationProblemPlusJSONResponse struct {
 }
 
 func (response SendEvents500ApplicationProblemPlusJSONResponse) VisitSendEventsResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(500)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type GetFeedMediaRequestObject struct {
+	File   string `json:"file"`
+	Params GetFeedMediaParams
+}
+
+type GetFeedMediaResponseObject interface {
+	VisitGetFeedMediaResponse(w http.ResponseWriter) error
+}
+
+type GetFeedMedia200ResponseHeaders struct {
+	AcceptRanges *string
+	CacheControl *string
+	ETag         *string
+}
+
+type GetFeedMedia200ApplicationoctetStreamResponse struct {
+	Body          io.Reader
+	Headers       GetFeedMedia200ResponseHeaders
+	ContentLength int64
+}
+
+func (response GetFeedMedia200ApplicationoctetStreamResponse) VisitGetFeedMediaResponse(w http.ResponseWriter) error {
+
+	w.Header().Set("Content-Type", "application/octet-stream")
+	if response.ContentLength != 0 {
+		w.Header().Set("Content-Length", fmt.Sprint(response.ContentLength))
+	}
+	if response.Headers.AcceptRanges != nil {
+		w.Header().Set("Accept-Ranges", fmt.Sprint(*response.Headers.AcceptRanges))
+	}
+	if response.Headers.CacheControl != nil {
+		w.Header().Set("Cache-Control", fmt.Sprint(*response.Headers.CacheControl))
+	}
+	if response.Headers.ETag != nil {
+		w.Header().Set("ETag", fmt.Sprint(*response.Headers.ETag))
+	}
+	w.WriteHeader(200)
+
+	if closer, ok := response.Body.(io.ReadCloser); ok {
+		defer closer.Close()
+	}
+	_, err := io.Copy(w, response.Body)
+	return err
+}
+
+type GetFeedMedia206ResponseHeaders struct {
+	AcceptRanges *string
+	ContentRange *string
+	ETag         *string
+}
+
+type GetFeedMedia206ApplicationoctetStreamResponse struct {
+	Body          io.Reader
+	Headers       GetFeedMedia206ResponseHeaders
+	ContentLength int64
+}
+
+func (response GetFeedMedia206ApplicationoctetStreamResponse) VisitGetFeedMediaResponse(w http.ResponseWriter) error {
+
+	w.Header().Set("Content-Type", "application/octet-stream")
+	if response.ContentLength != 0 {
+		w.Header().Set("Content-Length", fmt.Sprint(response.ContentLength))
+	}
+	if response.Headers.AcceptRanges != nil {
+		w.Header().Set("Accept-Ranges", fmt.Sprint(*response.Headers.AcceptRanges))
+	}
+	if response.Headers.ContentRange != nil {
+		w.Header().Set("Content-Range", fmt.Sprint(*response.Headers.ContentRange))
+	}
+	if response.Headers.ETag != nil {
+		w.Header().Set("ETag", fmt.Sprint(*response.Headers.ETag))
+	}
+	w.WriteHeader(206)
+
+	if closer, ok := response.Body.(io.ReadCloser); ok {
+		defer closer.Close()
+	}
+	_, err := io.Copy(w, response.Body)
+	return err
+}
+
+type GetFeedMedia304ResponseHeaders struct {
+	CacheControl *string
+	ETag         *string
+}
+
+type GetFeedMedia304Response struct {
+	Headers GetFeedMedia304ResponseHeaders
+}
+
+func (response GetFeedMedia304Response) VisitGetFeedMediaResponse(w http.ResponseWriter) error {
+	if response.Headers.CacheControl != nil {
+		w.Header().Set("Cache-Control", fmt.Sprint(*response.Headers.CacheControl))
+	}
+	if response.Headers.ETag != nil {
+		w.Header().Set("ETag", fmt.Sprint(*response.Headers.ETag))
+	}
+	w.WriteHeader(304)
+	return nil
+}
+
+type GetFeedMedia404ApplicationProblemPlusJSONResponse struct {
+	NotFoundApplicationProblemPlusJSONResponse
+}
+
+func (response GetFeedMedia404ApplicationProblemPlusJSONResponse) VisitGetFeedMediaResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(404)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type GetFeedMedia416ResponseHeaders struct {
+	ContentRange *string
+}
+
+type GetFeedMedia416Response struct {
+	Headers GetFeedMedia416ResponseHeaders
+}
+
+func (response GetFeedMedia416Response) VisitGetFeedMediaResponse(w http.ResponseWriter) error {
+	if response.Headers.ContentRange != nil {
+		w.Header().Set("Content-Range", fmt.Sprint(*response.Headers.ContentRange))
+	}
+	w.WriteHeader(416)
+	return nil
+}
+
+type GetFeedMedia429ApplicationProblemPlusJSONResponse struct {
+	RateLimitedApplicationProblemPlusJSONResponse
+}
+
+func (response GetFeedMedia429ApplicationProblemPlusJSONResponse) VisitGetFeedMediaResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response.Body); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	if response.Headers.RetryAfter != nil {
+		w.Header().Set("Retry-After", fmt.Sprint(*response.Headers.RetryAfter))
+	}
+	w.WriteHeader(429)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type GetFeedMedia500ApplicationProblemPlusJSONResponse struct {
+	ServerErrorApplicationProblemPlusJSONResponse
+}
+
+func (response GetFeedMedia500ApplicationProblemPlusJSONResponse) VisitGetFeedMediaResponse(w http.ResponseWriter) error {
 
 	var buf bytes.Buffer
 	if err := json.NewEncoder(&buf).Encode(response); err != nil {
@@ -12770,6 +13400,9 @@ type StrictServerInterface interface {
 	// GetCollection Story cards earned by finishing chapters
 	// (GET /children/{childId}/collection)
 	GetCollection(ctx context.Context, request GetCollectionRequestObject) (GetCollectionResponseObject, error)
+	// GetDiscover The Discover feed, 200 real-world photos, animations and short educational videos in a private random order (BE-80)
+	// (GET /children/{childId}/discover)
+	GetDiscover(ctx context.Context, request GetDiscoverRequestObject) (GetDiscoverResponseObject, error)
 	// GetEngagement Story-day streak and daily goal
 	// (GET /children/{childId}/engagement)
 	GetEngagement(ctx context.Context, request GetEngagementRequestObject) (GetEngagementResponseObject, error)
@@ -12827,6 +13460,9 @@ type StrictServerInterface interface {
 	// SendEvents Batch of privacy-safe UI events (no names, no free text)
 	// (POST /events)
 	SendEvents(ctx context.Context, request SendEventsRequestObject) (SendEventsResponseObject, error)
+	// GetFeedMedia One Discover media file, with HTTP Range for video (BE-81)
+	// (GET /feed-media/{file})
+	GetFeedMedia(ctx context.Context, request GetFeedMediaRequestObject) (GetFeedMediaResponseObject, error)
 	// Health Liveness, with the narrator state
 	// (GET /health)
 	Health(ctx context.Context, request HealthRequestObject) (HealthResponseObject, error)
@@ -13679,6 +14315,33 @@ func (sh *strictHandler) GetCollection(w http.ResponseWriter, r *http.Request, c
 	}
 }
 
+// GetDiscover operation middleware
+func (sh *strictHandler) GetDiscover(w http.ResponseWriter, r *http.Request, childId ChildId, params GetDiscoverParams) {
+	var request GetDiscoverRequestObject
+
+	request.ChildId = childId
+	request.Params = params
+
+	handler := func(ctx context.Context, w http.ResponseWriter, r *http.Request, request interface{}) (interface{}, error) {
+		return sh.ssi.GetDiscover(ctx, request.(GetDiscoverRequestObject))
+	}
+	for _, middleware := range sh.middlewares {
+		handler = middleware(handler, "GetDiscover")
+	}
+
+	response, err := handler(r.Context(), w, r, request)
+
+	if err != nil {
+		sh.options.ResponseErrorHandlerFunc(w, r, err)
+	} else if validResponse, ok := response.(GetDiscoverResponseObject); ok {
+		if err := validResponse.VisitGetDiscoverResponse(w); err != nil {
+			sh.options.ResponseErrorHandlerFunc(w, r, err)
+		}
+	} else if response != nil {
+		sh.options.ResponseErrorHandlerFunc(w, r, fmt.Errorf("unexpected response type: %T", response))
+	}
+}
+
 // GetEngagement operation middleware
 func (sh *strictHandler) GetEngagement(w http.ResponseWriter, r *http.Request, childId ChildId, params GetEngagementParams) {
 	var request GetEngagementRequestObject
@@ -14226,6 +14889,33 @@ func (sh *strictHandler) SendEvents(w http.ResponseWriter, r *http.Request) {
 		sh.options.ResponseErrorHandlerFunc(w, r, err)
 	} else if validResponse, ok := response.(SendEventsResponseObject); ok {
 		if err := validResponse.VisitSendEventsResponse(w); err != nil {
+			sh.options.ResponseErrorHandlerFunc(w, r, err)
+		}
+	} else if response != nil {
+		sh.options.ResponseErrorHandlerFunc(w, r, fmt.Errorf("unexpected response type: %T", response))
+	}
+}
+
+// GetFeedMedia operation middleware
+func (sh *strictHandler) GetFeedMedia(w http.ResponseWriter, r *http.Request, file string, params GetFeedMediaParams) {
+	var request GetFeedMediaRequestObject
+
+	request.File = file
+	request.Params = params
+
+	handler := func(ctx context.Context, w http.ResponseWriter, r *http.Request, request interface{}) (interface{}, error) {
+		return sh.ssi.GetFeedMedia(ctx, request.(GetFeedMediaRequestObject))
+	}
+	for _, middleware := range sh.middlewares {
+		handler = middleware(handler, "GetFeedMedia")
+	}
+
+	response, err := handler(r.Context(), w, r, request)
+
+	if err != nil {
+		sh.options.ResponseErrorHandlerFunc(w, r, err)
+	} else if validResponse, ok := response.(GetFeedMediaResponseObject); ok {
+		if err := validResponse.VisitGetFeedMediaResponse(w); err != nil {
 			sh.options.ResponseErrorHandlerFunc(w, r, err)
 		}
 	} else if response != nil {

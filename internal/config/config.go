@@ -50,6 +50,8 @@ type Config struct {
 	MongoDB            string        // MONGODB_DB: database name (default numerix)
 	MongoPseudoSecret  string        // MONGO_PSEUDO_SECRET: HMAC key for pseudonymous ids (min 32 chars when MONGODB_URI is set)
 	AssetBaseURL       string        // ASSET_BASE_URL: path prefix of image URLs sent to clients (default /assets, rewritten by the web app to /v1/assets)
+	MediaDir           string        // MEDIA_DIR: folder with the Discover media files (videos, photos, captions); default ./seed/feed-media
+	MediaBaseURL       string        // MEDIA_BASE_URL: path prefix of Discover media URLs sent to clients (default /feed-media, rewritten by the web app to /v1/feed-media)
 }
 
 // IsProduction tells whether strict production rules apply.
@@ -101,6 +103,8 @@ func Load(getenv func(string) string) (Config, error) {
 		MongoDB:            get("MONGODB_DB", "numerix"),
 		MongoPseudoSecret:  get("MONGO_PSEUDO_SECRET", ""),
 		AssetBaseURL:       strings.TrimRight(get("ASSET_BASE_URL", "/assets"), "/"),
+		MediaDir:           get("MEDIA_DIR", "./seed/feed-media"),
+		MediaBaseURL:       strings.TrimRight(get("MEDIA_BASE_URL", "/feed-media"), "/"),
 	}
 	// Comma separated list -> slice, dropping blanks.
 	for _, o := range strings.Split(get("ALLOWED_ORIGINS", ""), ",") {

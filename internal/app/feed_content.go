@@ -76,31 +76,31 @@ var feedPuzzles = [][2]string{
 	{"La clé {dW} ne tourne que pour le bon produit.", "The key {dW} turns only for the right product."},
 }
 
-// feedPipOpen holds Pip openers: fr, en.
+// feedPipOpen holds Numa openers: fr, en.
 var feedPipOpen = [][2]string{
 	{"Psst, {n}, j’ai une idée.", "Psst, {n}, I have an idea."},
-	{"Prêt, {n} ? Pip a du neuf.", "Ready, {n}? Pip has news."},
+	{"Prêt, {n} ? Numa a du neuf.", "Ready, {n}? Numa has news."},
 	{"Regarde ce que j’ai trouvé, {n}.", "Look what I found, {n}."},
-	{"{n}, installe-toi, Pip raconte.", "Settle in {n}, Pip is talking."},
+	{"{n}, installe-toi, Numa raconte.", "Settle in {n}, Numa is talking."},
 	{"Coucou {n} ! Devine un peu.", "Hi {n}! Guess what."},
 	{"Eh {n}, une minute pour moi ?", "Hey {n}, got a minute?"},
 	{"Alors {n}, une petite surprise ?", "So {n}, a little surprise?"},
 	{"Dis {n}, tu aimes les mystères ?", "Tell me {n}, do you like mysteries?"},
 }
 
-// feedPipClose holds Pip closers: fr, en.
+// feedPipClose holds Numa closers: fr, en.
 var feedPipClose = [][2]string{
 	{"Tu en penses quoi, {n} ?", "What do you think, {n}?"},
 	{"Moi, ça me fait sourire.", "That makes me smile."},
 	{"On en reparle bientôt.", "We will talk again soon."},
 	{"Allez, {n}, je file !", "Right, {n}, off I go!"},
 	{"Devineras-tu la suite ?", "Can you guess what is next?"},
-	{"Pip a parlé !", "Pip has spoken!"},
+	{"Numa a parlé !", "Numa has spoken!"},
 	{"À toi de jouer, {n}.", "Your turn, {n}."},
 	{"Raconte-moi ce que tu trouves.", "Tell me what you find."},
 }
 
-// feedLumiOpen holds Lumi openers: fr, en.
+// feedLumiOpen holds Numa openers: fr, en.
 var feedLumiOpen = [][2]string{
 	{"Hou hou, {n} ! Un casse-tête.", "Hoo hoo, {n}! A puzzle."},
 	{"{n}, j’ai caché une énigme.", "{n}, I hid a riddle."},
@@ -108,10 +108,10 @@ var feedLumiOpen = [][2]string{
 	{"Alors {n}, les yeux grands ouverts ?", "So {n}, eyes wide open?"},
 	{"Pause réflexion, {n}.", "Thinking break, {n}."},
 	{"Chut {n}, écoute cette énigme.", "Shh {n}, listen to this riddle."},
-	{"Lumi te lance un défi, {n}.", "Lumi throws you a challenge, {n}."},
+	{"Numa te lance un défi, {n}.", "Numa throws you a challenge, {n}."},
 }
 
-// feedLumiClose holds Lumi closers: fr, en.
+// feedLumiClose holds Numa closers: fr, en.
 var feedLumiClose = [][2]string{
 	{"Prends ton temps, la nuit est longue.", "Take your time, the night is long."},
 	{"Qu’en dis-tu, {n} ?", "What do you say, {n}?"},

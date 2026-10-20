@@ -1254,6 +1254,147 @@ paths:
           $ref: '#/components/responses/RateLimited'
         '500':
           $ref: '#/components/responses/ServerError'
+  /children/{childId}/discover:
+    parameters:
+      - $ref: '#/components/parameters/ChildId'
+    get:
+      tags:
+        - Engagement
+      operationId: getDiscover
+      summary: The Discover feed, 200 real-world photos, animations and short educational videos in a private random order (BE-80)
+      x-roles:
+        - child
+      description: |
+        An endless, cursor paginated feed built from a curated set of 200 items (photos with a fun fact, short
+        animations, short captioned videos), each tied to maths in real life or to a wonder fact. The order is random
+        per child and never repeats an item until every item suited to the child's grade has been shown; then the
+        order is reshuffled (`cycle` grows). No more than two videos follow each other. About one slot in eight is a
+        puzzle (`kind: puzzle`, a regular `FeedItem`) so likes, saves and answers keep using the feed operations.
+        The cursor is opaque: pass `next_cursor` back unchanged; a cursor the server did not issue is a 422.
+        Items are curated by Numerix (never AI generated, never user generated) with source, creator and licence.
+      parameters:
+        - $ref: '#/components/parameters/AcceptLanguage'
+        - name: cursor
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 12
+            default: 12
+      responses:
+        '200':
+          description: A page of Discover items
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DiscoverPage'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /feed-media/{file}:
+    get:
+      tags:
+        - Engagement
+      operationId: getFeedMedia
+      summary: One Discover media file, with HTTP Range for video (BE-81)
+      security: []
+      description: |
+        Files are named `<id>-<8 hex of the content hash>.<ext>` so the bytes behind a URL never change:
+        `Cache-Control: public, max-age=31536000, immutable`, a strong `ETag`, 304 for `If-None-Match`, and
+        `Range` support (206 and `Accept-Ranges: bytes`) so a browser can start a video before it is downloaded.
+        Types: webp and jpg images, mp4 and webm video, `text/vtt` captions. In the web app this path is rewritten
+        from `/feed-media/*` like `/assets/*`.
+      parameters:
+        - name: file
+          in: path
+          required: true
+          schema:
+            type: string
+            pattern: ^[a-z0-9][a-z0-9._-]{2,100}\.(webp|jpg|mp4|webm|vtt)$
+        - name: If-None-Match
+          in: header
+          required: false
+          schema:
+            type: string
+        - name: Range
+          in: header
+          required: false
+          schema:
+            type: string
+        - name: If-Range
+          in: header
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The whole file
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
+            Accept-Ranges:
+              schema:
+                type: string
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        '206':
+          description: A byte range of the file
+          headers:
+            ETag:
+              schema:
+                type: string
+            Content-Range:
+              schema:
+                type: string
+            Accept-Ranges:
+              schema:
+                type: string
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        '304':
+          description: Not modified
+          headers:
+            ETag:
+              schema:
+                type: string
+            Cache-Control:
+              schema:
+                type: string
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '416':
+          description: Range not satisfiable
+          headers:
+            Content-Range:
+              schema:
+                type: string
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
   /children/{childId}/feed/{itemId}/reaction:
     parameters:
       - $ref: '#/components/parameters/ChildId'
@@ -4431,6 +4572,178 @@ components:
                 skill_id:
                   $ref: '#/components/schemas/SkillId'
             - type: 'null'
+    MediaItem:
+      type: object
+      description: One curated Discover item (a real photo, a short animation or a short captioned video). Texts are in the language of the request.
+      required:
+        - id
+        - media_kind
+        - title
+        - caption
+        - alt
+        - world
+        - topic
+        - tags
+        - grade_min
+        - src
+        - width
+        - height
+        - lqip
+        - source_url
+        - creator
+        - licence
+        - attribution
+      properties:
+        id:
+          type: string
+          description: Slug, stable. The item id used for reactions is `m-<id>`.
+        media_kind:
+          type: string
+          enum:
+            - photo
+            - animation
+            - video
+        title:
+          type: string
+        caption:
+          type: string
+          description: The fun fact
+          one or two short sentences.: null
+        alt:
+          type: string
+          description: What the picture shows
+          for screen readers.: null
+        question:
+          type: object
+          description: Optional micro question. The child taps to reveal the answer; it is not graded and not stored.
+          required:
+            - prompt
+            - answer
+          properties:
+            prompt:
+              type: string
+            answer:
+              type: string
+        world:
+          $ref: '#/components/schemas/WorldId'
+        topic:
+          type: string
+          description: counting, symmetry, patterns, shapes, fractions, measurement, time, multiplication, geometry, space, nature
+        tags:
+          type: array
+          items:
+            type: string
+        grade_min:
+          type: integer
+          minimum: 1
+          maximum: 6
+          description: Lowest school year the item is meant for (shown from one year below).
+        duration_ms:
+          type: integer
+          description: Set for animation and video.
+        src:
+          type: string
+          description: Photo 960 px webp
+          or the mp4 of an animation or video. Relative to the API base: null
+          served by getFeedMedia.: null
+        src_small:
+          type: string
+          description: Photo 480 px webp (data saver and small screens).
+        poster:
+          type: string
+          description: Poster image of an animation or video (webp).
+        width:
+          type: integer
+        height:
+          type: integer
+        lqip:
+          type: string
+          description: Tiny blurred placeholder as a data URI (blur-up).
+        has_audio:
+          type: boolean
+          description: True when the video has a sound track. Videos start muted.
+        captions:
+          type: array
+          description: WebVTT tracks of a video, fr-CA and en-CA. Captions describe what is shown.
+          items:
+            type: object
+            required:
+              - lang
+              - label
+              - src
+            properties:
+              lang:
+                type: string
+                example: fr-CA
+              label:
+                type: string
+              src:
+                type: string
+        motion_note:
+          type: string
+          description: Set when the clip is a slow zoom on a photo; the UI labels it.
+        source_url:
+          type: string
+          description: Page of the original work.
+        creator:
+          type: string
+        licence:
+          type: string
+          example: CC BY 4.0
+        licence_url:
+          type: string
+        attribution:
+          type: string
+          description: Credit line
+          always shown on the card.: null
+    DiscoverItem:
+      type: object
+      required:
+        - id
+        - kind
+        - liked
+        - saved
+      properties:
+        id:
+          type: string
+          description: '`m-<slug>` for media, `feed-<n>` for a puzzle.'
+        kind:
+          type: string
+          enum:
+            - photo
+            - animation
+            - video
+            - puzzle
+        liked:
+          type: boolean
+        saved:
+          type: boolean
+        media:
+          $ref: '#/components/schemas/MediaItem'
+        puzzle_item:
+          $ref: '#/components/schemas/FeedItem'
+    DiscoverPage:
+      type: object
+      required:
+        - items
+        - next_cursor
+        - cycle
+        - cycle_size
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/DiscoverItem'
+        next_cursor:
+          type: string
+          description: Opaque. Always set; the feed does not end.
+        cycle:
+          type: integer
+          minimum: 0
+          description: How many full passes over the items were completed before this page starts.
+        cycle_size:
+          type: integer
+          description: How many media items fit the child's grade (one pass).
     FeedPage:
       type: object
       required:

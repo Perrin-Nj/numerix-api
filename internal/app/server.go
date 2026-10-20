@@ -17,6 +17,7 @@ import (
 	"github.com/Perrin-Nj/numerix-api/internal/auth"
 	"github.com/Perrin-Nj/numerix-api/internal/config"
 	"github.com/Perrin-Nj/numerix-api/internal/contentdb"
+	"github.com/Perrin-Nj/numerix-api/internal/feedmedia"
 	"github.com/Perrin-Nj/numerix-api/internal/mongosync"
 	"github.com/Perrin-Nj/numerix-api/internal/store"
 )
@@ -49,6 +50,8 @@ type Server struct {
 	Content *contentdb.Repo
 	// Assets is the image store behind world art, question media and the /assets endpoint.
 	Assets *assetstore.Store
+	// Feed is the curated Discover item repository (cache included). See feed_discover.go.
+	Feed *feedmedia.Repo
 }
 
 // NewServer wires the dependencies (Spring: constructor injection; no container, main() calls this).
@@ -64,6 +67,7 @@ func NewServer(s *store.Store, cfg config.Config, log *slog.Logger) *Server {
 		WebAuthn:   newWebAuthn(cfg),
 		Content:    contentdb.New(s, nil),
 		Assets:     assetstore.New(s),
+		Feed:       feedmedia.NewRepo(s, time.Minute),
 	}
 }
 

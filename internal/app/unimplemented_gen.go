@@ -133,6 +133,11 @@ func (Unimplemented) GetDailyQuest(ctx context.Context, request api.GetDailyQues
 	return nil, httpapi.ErrNotImplemented
 }
 
+// GetDiscover is not built yet: answers 501.
+func (Unimplemented) GetDiscover(ctx context.Context, request api.GetDiscoverRequestObject) (api.GetDiscoverResponseObject, error) {
+	return nil, httpapi.ErrNotImplemented
+}
+
 // GetEngagement is not built yet: answers 501.
 func (Unimplemented) GetEngagement(ctx context.Context, request api.GetEngagementRequestObject) (api.GetEngagementResponseObject, error) {
 	return nil, httpapi.ErrNotImplemented
@@ -140,6 +145,11 @@ func (Unimplemented) GetEngagement(ctx context.Context, request api.GetEngagemen
 
 // GetFeed is not built yet: answers 501.
 func (Unimplemented) GetFeed(ctx context.Context, request api.GetFeedRequestObject) (api.GetFeedResponseObject, error) {
+	return nil, httpapi.ErrNotImplemented
+}
+
+// GetFeedMedia is not built yet: answers 501.
+func (Unimplemented) GetFeedMedia(ctx context.Context, request api.GetFeedMediaRequestObject) (api.GetFeedMediaResponseObject, error) {
 	return nil, httpapi.ErrNotImplemented
 }
 
