@@ -66,3 +66,19 @@ Off by default (SQLite serves everything). To enable: M0 cluster in a Canadian r
 - [ ] Load smoke on the VM (not a laptop with host stalls): `bin/loadtest -rps 50 -duration 20s`, zero 5xx, answer p95 under 400 ms.
 - [ ] Secrets only in the VM env file and in Vercel; `git log -p` shows none; commits carry no AI attribution.
 - [ ] After the merge: `bash scripts/test.sh live` against the production URL, then open the admin app and sign in.
+
+## R3 release candidate notes (branch `release/r3`, both repos)
+
+Merged in this order. Frontend: fix/r3-nav-perf, fix/r3-welcome, feat/r3-contract, feat/r3-adminconfig-contract, feat/r3-voice, feat/r3-music, feat/r3-consequences, feat/r3-adminconfig. API: fix/r3-be006, feat/r3-adminconfig (contains feat/r3-backend). Conflicts: scripts/test.sh (union of all suites), speech `useReadAloud` (computer voice opt-in AND the explicit-tap notice), prefs store and Settings (music + computer voice), admin `/voice` (recorder kept at `/voice`, the config editor moved to `/voice-settings`), `qa_regression_test.go` (both test sets kept).
+
+Regenerate the API code from any checkout: `FRONTEND_DIR=/path/to/frontend bash scripts/gen.sh` (default `../frontend`).
+Run the frontend suites against any API checkout: `API_DIR=/path/to/numerix-api bash scripts/test.sh all` (default `../numerix-api`); ports `API_PORT`, `APP_PORT`.
+
+What the player now reads from the admin (all through `GET /v1/config/public`, cached 60 s, failure means "nothing customised"):
+music on/off and track list, child music and voice switches (synced with the child settings: `music.enabled`, `music.volume`, `music.parent_locked`, `voice.human_enabled`, `voice.computer_voice`), scene physics switch and families/variants off, Discover nav item, welcome gift, maintenance banner and blocked screen, kid-visible copy (home tip, empty feed, chapter done).
+Not read by the player yet: `features` map, `family_board_visible` (no family board exists in the app), recorded `voice.clips` (the static manifest stays the base; the manifest ships empty).
+
+Gates run on fresh databases and own ports (2026-10-20): pnpm check, `scripts/test.sh all` (contract, spoken, voices, voiceplay, coach, scene, cards, music, consequence, sounds, visual, flows, ui, errors, nav, mobile, feed, images, bank, apifuzz, sweep, regress-ui, regress-strict, extra, adminfx, play), admin typecheck/lint/smoke (`admin/scripts/test.sh`), go vet, go test ./... -count=1 (530), staticcheck (only generated-code ST1005), govulncheck (0 reachable), api-fuzz (143 calls, 0 5xx), loadtest 50 rps x 30 s (0 errors, 0 429, all p95 under budget).
+Known fixture reasons for the old "4 failures": flows/ui assumed the first skill of a fresh child is ARI-OPE-A02a (locked by prerequisites since BE-006) and that questions are equations; with the real bank they are word problems, so `all` runs the generated-question suites first and restarts only the API with the bank for the bank suites.
+
+Safari: each music loop has an AAC twin (`public/music/*.m4a`, 2.3 MB for 7; only the browsers without webm/opus download it). Not tested on a real Safari; AAC loops may click at the seam.
