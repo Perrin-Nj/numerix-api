@@ -66,6 +66,7 @@ type Narrator struct {
 	Fallback Provider // canned bank, always present
 	Cache    Cache    // optional
 	Log      *slog.Logger
+Off      func() bool // optional runtime switch (admin config): true = canned text only, the provider is never called
 }
 
 // New builds a Narrator with the canned bank as fallback.
@@ -86,7 +87,7 @@ func (n *Narrator) Mode() string {
 
 // Narrate returns a text that passed the leak check. forbidden lists answer tokens that must not appear.
 func (n *Narrator) Narrate(ctx context.Context, r Request, forbidden []string) Result {
-	if n.Primary == nil { // canned only: nothing can fail except a template bug, which the leak check catches
+	if n.Primary == nil || (n.Off != nil && n.Off()) { // canned only (no provider, or the admin switched the model off): nothing can fail except a template bug, which the leak check catches
 		return n.canned(ctx, r, forbidden, StatusReady)
 	}
 	if n.Cache != nil && r.CacheKey != "" {

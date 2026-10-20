@@ -8,6 +8,7 @@ package app
 import (
 	"context"
 	"database/sql"
+	"encoding/json"
 	"net/http"
 	"net/http/httptest"
 	"regexp"
@@ -339,5 +340,90 @@ func TestQAOfferedSkillsAlwaysStart(t *testing.T) {
 				}
 			})
 		}
+	}
+}
+
+// R3-B1: the family comes from the skill id; a typical error adds the misconception id, a right answer never does.
+func TestR3SceneKey(t *testing.T) {
+	cases := []struct{ skill, outcome, code, want string }{
+		{"ARI-SEN-B02", "correct", "", "fractions"},
+		{"ARI-SEN-A01a", "correct", "", "number"},
+		{"ARI-OPE-A03a", "correct", "", "add_sub"},
+		{"ARI-OPE-A06a", "correct", "", "mult_div"},
+		{"ARI-OPE-A06a", "erreur_typique", "MIS-X", "mult_div:MIS-X"},
+		{"ARI-OPE-A06a", "erreur_aleatoire", "", "mult_div"},
+		{"GEO-A01", "correct", "", "geometry"},
+		{"MES-A03", "correct", "", "measure"},
+		{"STA-02", "correct", "", "data"},
+	}
+	for _, c := range cases {
+		if got := sceneKeyFor(c.skill, c.outcome, c.code); got != c.want {
+			t.Errorf("%s/%s: got %q, want %q", c.skill, c.outcome, got, c.want)
+		}
+	}
+}
+
+// R3-B1 and B2 over HTTP: the beat and the answer carry scene_key; variant_history is stored, capped, returned on reload.
+func TestR3BeatSceneKeyAndVariantHistory(t *testing.T) {
+	f := newFeedFixture(t, true)
+	sid := f.startChapter(t, "ARI-OPE-A06a")
+	code, beat, raw := f.gcall(t, "POST", "/v1/sessions/"+sid+"/beats", f.childTok, "{}", nil)
+	if code != 201 || beat["scene_key"] != "mult_div" {
+		t.Fatalf("beat: %d scene_key %v (%s)", code, beat["scene_key"], raw)
+	}
+	beatID := beat["id"].(string)
+	// 31 ids is refused before anything is written
+	long := `["` + strings.Repeat(`a","`, 30) + `a"]`
+	if c, _, _ := f.gcall(t, "POST", "/v1/sessions/"+sid+"/beats/"+beatID+"/answer", f.childTok, `{"answer":1,"variant_history":`+long+`}`, nil); c != 422 {
+		t.Fatalf("31 ids: %d, want 422", c)
+	}
+	c, out, raw := f.gcall(t, "POST", "/v1/sessions/"+sid+"/beats/"+beatID+"/answer", f.childTok, `{"answer":999999,"variant_history":["w1","r2"]}`, nil)
+	if c != 200 || out["scene_key"] != "mult_div" {
+		t.Fatalf("answer: %d scene_key %v (%s)", c, out["scene_key"], raw)
+	}
+	// reload: the session read back still has the history
+	c, sess, _ := f.gcall(t, "GET", "/v1/sessions/"+sid, f.childTok, "", nil)
+	got, _ := sess["variant_history"].([]any)
+	if c != 200 || len(got) != 2 || got[0] != "w1" || got[1] != "r2" {
+		t.Fatalf("reload: %d variant_history %v", c, sess["variant_history"])
+	}
+}
+
+// R3-B3: parent locks music; a child can change its own volume and voice but not the lock or the computer voice.
+func TestR3MusicVoiceSettings(t *testing.T) {
+	f := newFeedFixture(t, true)
+	path := "/v1/children/" + f.childID + "/settings"
+	_, st, _ := f.gcall(t, "GET", path, f.childTok, "", nil)
+	if m := st["music"].(map[string]any); m["enabled"] != true || m["volume"] != float64(30) || m["parent_locked"] != false {
+		t.Fatalf("default music %v", m)
+	}
+	if v := st["voice"].(map[string]any); v["human_enabled"] != true || v["computer_voice"] != false {
+		t.Fatalf("default voice %v", v)
+	}
+	// parent: lock music off and opt in to the computer voice
+	st["music"] = map[string]any{"enabled": true, "volume": 50, "parent_locked": true}
+	st["voice"] = map[string]any{"human_enabled": true, "computer_voice": true}
+	b, _ := json.Marshal(st)
+	if c, out, raw := f.gcall(t, "PUT", path, f.parentTok, string(b), nil); c != 200 || out["music"].(map[string]any)["enabled"] != false {
+		t.Fatalf("parent put: %d %s", c, raw)
+	}
+	// child: tries to unlock, turn music on and drop the daily goal
+	child := `{"daily_goal_chapters":5,"enabled_worlds":[],"read_aloud":false,"sound":false,"music":{"enabled":true,"volume":80,"parent_locked":false},"voice":{"human_enabled":false,"computer_voice":false}}`
+	c, out, raw := f.gcall(t, "PUT", path, f.childTok, child, nil)
+	if c != 200 {
+		t.Fatalf("child put: %d %s", c, raw)
+	}
+	m, v := out["music"].(map[string]any), out["voice"].(map[string]any)
+	if m["parent_locked"] != true || m["enabled"] != false || m["volume"] != float64(80) {
+		t.Fatalf("lock must hold, volume may change: %v", m)
+	}
+	if v["human_enabled"] != false || v["computer_voice"] != true {
+		t.Fatalf("child may switch human voice only: %v", v)
+	}
+	if out["daily_goal_chapters"] != float64(1) {
+		t.Fatalf("child changed the daily goal: %v", out["daily_goal_chapters"])
+	}
+	if c, _, _ := f.gcall(t, "PUT", path, f.parentTok, strings.Replace(string(b), `"volume":50`, `"volume":101`, 1), nil); c != 422 {
+		t.Fatalf("volume 101: %d, want 422", c)
 	}
 }

@@ -37,6 +37,45 @@ func (e AccountLocale) Valid() bool {
 	}
 }
 
+// Defines values for AppPublicConfigMaintenanceLevel.
+const (
+	Critical AppPublicConfigMaintenanceLevel = "critical"
+	Info     AppPublicConfigMaintenanceLevel = "info"
+	Warning  AppPublicConfigMaintenanceLevel = "warning"
+)
+
+// Valid indicates whether the value is a known member of the AppPublicConfigMaintenanceLevel enum.
+func (e AppPublicConfigMaintenanceLevel) Valid() bool {
+	switch e {
+	case Critical:
+		return true
+	case Info:
+		return true
+	case Warning:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AppPublicConfigVoiceClipsLocale.
+const (
+	AppPublicConfigVoiceClipsLocaleEnCA AppPublicConfigVoiceClipsLocale = "en-CA"
+	AppPublicConfigVoiceClipsLocaleFrCA AppPublicConfigVoiceClipsLocale = "fr-CA"
+)
+
+// Valid indicates whether the value is a known member of the AppPublicConfigVoiceClipsLocale enum.
+func (e AppPublicConfigVoiceClipsLocale) Valid() bool {
+	switch e {
+	case AppPublicConfigVoiceClipsLocaleEnCA:
+		return true
+	case AppPublicConfigVoiceClipsLocaleFrCA:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for ChallengeStatus.
 const (
 	ChallengeStatusActive    ChallengeStatus = "active"
@@ -993,6 +1032,9 @@ type AnswerRequest struct {
 
 	// ResponseTimeMs Used by mastery tracking only. Never displayed, never a timer.
 	ResponseTimeMs *int `json:"response_time_ms,omitempty"`
+
+	// VariantHistory Optional. The client's recent scene ids, oldest first. The server stores them on the session (last 30 kept) and returns them as `session.variant_history`, so a reload cannot reset the no-repeat rule. An omitted field leaves the stored list unchanged.
+	VariantHistory *[]string `json:"variant_history,omitempty"`
 }
 
 // AnswerResult Example: {"correct_answer":42,"denouement":{"illustration_url":null,"status":"pending","text":null},"method_visual":{"alt":"6 groupes de 7 points font 42.","cache_key":"equal_groups:6,7:fr","kind":"equal_groups","params":{"groups":6,"size":7},"steps":[{"caption":"6 groupes."},{"caption":"7 dans chaque groupe."},{"caption":"6 groupes de 7 font 42."}]},"outcome":"correct","rewards":[{"type":"chapter_complete"},{"card":{"earned_at":"2026-10-12T14:00:00Z","id":"55555555-5555-4555-8555-555555555551","image_url":"","session_id":"33333333-3333-4333-8333-333333333333","title":"Le tournoi des tours","world":"echecs"},"type":"card_earned"},{"skill_id":"ARI-OPE-A06a","type":"skill_mastered"}],"session":{"beats_answered":3,"chapter_length":3,"child_id":"11111111-1111-4111-8111-111111111111","current_beat":null,"ended_at":"2026-10-12T14:00:00Z","id":"33333333-3333-4333-8333-333333333333","kind":"chapter","score":{"card_awarded":true,"correct":3,"pct":100,"threshold_pct":70,"total":3},"started_at":"2026-10-12T14:00:00Z","status":"completed","story_title":"Le tournoi des tours","world":"echecs"}}
@@ -1022,7 +1064,15 @@ type AnswerResult struct {
 	// must never render it as success/failure chrome (no red X).
 	Outcome Outcome   `json:"outcome"`
 	Rewards *[]Reward `json:"rewards,omitempty"`
-	Session Session   `json:"session"`
+
+	// SceneKey Hint for the client to pick a consequence scene. It is the topic family (number, add_sub, mult_div, fractions,
+	// measure, geometry, data, time). On an `AnswerResult` for a typical error it is `<family>:<misconception id>`.
+	// Stable for a given question and answer; never shown to the child.
+	//
+	//
+	// Example: mult_div:MIS-MUL-001
+	SceneKey *SceneKey `json:"scene_key,omitempty"`
+	Session  Session   `json:"session"`
 }
 
 // AnswerValue Example: 48
@@ -1051,6 +1101,67 @@ type AnswerValue5 = []string
 // AnswerValue6 defines model for AnswerValue.6.
 type AnswerValue6 = [][]string
 
+// AppPublicConfig defines model for AppPublicConfig.
+type AppPublicConfig struct {
+	Copy struct {
+		FeedEmpty   BilingualText `json:"feed_empty"`
+		HomeTip     BilingualText `json:"home_tip"`
+		SessionDone BilingualText `json:"session_done"`
+	} `json:"copy"`
+	Features map[string]bool `json:"features"`
+	Feed     struct {
+		DiscoverEnabled    bool `json:"discover_enabled"`
+		FamilyBoardVisible bool `json:"family_board_visible"`
+	} `json:"feed"`
+	Maintenance struct {
+		// BlockPlay true: game requests answer 503 maintenance
+		BlockPlay bool                            `json:"block_play"`
+		Enabled   bool                            `json:"enabled"`
+		Level     AppPublicConfigMaintenanceLevel `json:"level"`
+		Message   BilingualText                   `json:"message"`
+	} `json:"maintenance"`
+	Music struct {
+		DefaultVolume int  `json:"default_volume"`
+		Enabled       bool `json:"enabled"`
+
+		// Tracks Enabled tracks only
+		Tracks []struct {
+			Id    string        `json:"id"`
+			Title BilingualText `json:"title"`
+		} `json:"tracks"`
+	} `json:"music"`
+	Scenes struct {
+		Families map[string]struct {
+			DisabledVariants []string `json:"disabled_variants"`
+			Enabled          bool     `json:"enabled"`
+		} `json:"families"`
+
+		// PhysicsEnabled false: play the plain animation, no simulation
+		PhysicsEnabled bool `json:"physics_enabled"`
+	} `json:"scenes"`
+
+	// Version Sum of the versions of every config document; changes on any edit
+	Version int `json:"version"`
+	Voice   struct {
+		// Clips Enabled recorded lines managed by the admin (the static voice manifest stays the base)
+		Clips []struct {
+			Enabled bool                            `json:"enabled"`
+			LineId  string                          `json:"line_id"`
+			Locale  AppPublicConfigVoiceClipsLocale `json:"locale"`
+			Url     string                          `json:"url"`
+		} `json:"clips"`
+		ComputerVoiceAllowed bool `json:"computer_voice_allowed"`
+		HumanEnabledDefault  bool `json:"human_enabled_default"`
+	} `json:"voice"`
+	WelcomeGift bool `json:"welcome_gift"`
+}
+
+// AppPublicConfigMaintenanceLevel defines model for AppPublicConfig.Maintenance.Level.
+type AppPublicConfigMaintenanceLevel string
+
+// AppPublicConfigVoiceClipsLocale defines model for AppPublicConfig.Voice.Clips.Locale.
+type AppPublicConfigVoiceClipsLocale string
+
 // AuthSession defines model for AuthSession.
 type AuthSession struct {
 	AccessToken string `json:"access_token"`
@@ -1065,7 +1176,7 @@ type AuthSession struct {
 	RefreshToken string `json:"refresh_token"`
 }
 
-// Beat Example: {"created_at":"2026-10-12T14:00:00Z","id":"44444444-4444-4444-8444-444444444440","index":0,"question":{"choices":[42,13,48,36],"math_text":"6 × 7 = ?"},"scene":{"illustration_url":null,"status":"pending","text":null},"session_id":"33333333-3333-4333-8333-333333333333","skill_id":"ARI-OPE-A06a"}
+// Beat Example: {"created_at":"2026-10-12T14:00:00Z","id":"44444444-4444-4444-8444-444444444440","index":0,"question":{"choices":[42,13,48,36],"math_text":"6 × 7 = ?"},"scene":{"illustration_url":null,"status":"pending","text":null},"scene_key":"mult_div","session_id":"33333333-3333-4333-8333-333333333333","skill_id":"ARI-OPE-A06a"}
 type Beat struct {
 	CreatedAt *time.Time         `json:"created_at,omitempty"`
 	Id        openapi_types.UUID `json:"id"`
@@ -1083,13 +1194,27 @@ type Beat struct {
 
 	// Scene For a curated question the beat's `scene` is `ready` at once with the question's own story text and no model is
 	// called (CR-15); the narration stream then replays the same text. Generated questions keep the pending flow.
-	Scene     Narration          `json:"scene"`
+	Scene Narration `json:"scene"`
+
+	// SceneKey Hint for the client to pick a consequence scene. It is the topic family (number, add_sub, mult_div, fractions,
+	// measure, geometry, data, time). On an `AnswerResult` for a typical error it is `<family>:<misconception id>`.
+	// Stable for a given question and answer; never shown to the child.
+	//
+	//
+	// Example: mult_div:MIS-MUL-001
+	SceneKey  *SceneKey          `json:"scene_key,omitempty"`
 	SessionId openapi_types.UUID `json:"session_id"`
 
 	// SkillId PDA skill id from the curriculum graph
 	//
 	// Example: ARI-OPE-A07a
 	SkillId SkillId `json:"skill_id"`
+}
+
+// BilingualText defines model for BilingualText.
+type BilingualText struct {
+	En string `json:"en"`
+	Fr string `json:"fr"`
 }
 
 // Challenge A challenge as the child sees it. The catalogue (ids, metrics, targets) is server data; the six launch challenges are in the guide.
@@ -1186,7 +1311,7 @@ type ChildCreate struct {
 	Timezone    *string `json:"timezone,omitempty"`
 }
 
-// ChildSettings Example: {"daily_goal_chapters":1,"daily_time_limit_minutes":null,"enabled_worlds":["nature","espace","cuisine","sport","construction","medecine","science","echecs"],"kid_can_change_language":true,"read_aloud":true,"sound":true}
+// ChildSettings Example: {"daily_goal_chapters":1,"daily_time_limit_minutes":null,"enabled_worlds":["nature","espace","cuisine","sport","construction","medecine","science","echecs"],"kid_can_change_language":true,"music":{"enabled":true,"parent_locked":false,"volume":30},"read_aloud":true,"sound":true,"voice":{"computer_voice":false,"human_enabled":true}}
 type ChildSettings struct {
 	DailyGoalChapters     int       `json:"daily_goal_chapters"`
 	DailyTimeLimitMinutes *int      `json:"daily_time_limit_minutes,omitempty"`
@@ -1195,12 +1320,18 @@ type ChildSettings struct {
 	// KidCanChangeLanguage When false the kid app hides the language switch; the server returns the value with the settings (BE-28)
 	KidCanChangeLanguage *bool `json:"kid_can_change_language,omitempty"`
 
+	// Music Background music. Optional on write (an omitted block keeps the stored one); always present on read.
+	Music *MusicSettings `json:"music,omitempty"`
+
 	// ReadAloud Narration is spoken (reading levels vary from age 6 to 11)
 	ReadAloud bool `json:"read_aloud"`
 
 	// RememberOnDevice When true, a valid nx_device cookie lets this child start without the PIN on that device (BE-64)
 	RememberOnDevice *bool `json:"remember_on_device,omitempty"`
 	Sound            bool  `json:"sound"`
+
+	// Voice Read-aloud voice. Optional on write (an omitted block keeps the stored one); always present on read.
+	Voice *VoiceSettings `json:"voice,omitempty"`
 }
 
 // ChildToken defines model for ChildToken.
@@ -1651,6 +1782,16 @@ type Misconception struct {
 	SkillIds    []SkillId `json:"skill_ids"`
 }
 
+// MusicSettings Background music. Optional on write (an omitted block keeps the stored one); always present on read.
+type MusicSettings struct {
+	// Enabled The child toggle. Always false while parent_locked is true.
+	Enabled bool `json:"enabled"`
+
+	// ParentLocked Parent switch: music stays off and the child cannot turn it on. Only a parent token can change it.
+	ParentLocked bool `json:"parent_locked"`
+	Volume       int  `json:"volume"`
+}
+
 // Narration For a curated question the beat's `scene` is `ready` at once with the question's own story text and no model is
 // called (CR-15); the narration stream then replays the same text. Generated questions keep the pending flow.
 type Narration struct {
@@ -1946,6 +2087,13 @@ type Reward struct {
 // RewardType defines model for Reward.Type.
 type RewardType string
 
+// SceneKey Hint for the client to pick a consequence scene. It is the topic family (number, add_sub, mult_div, fractions,
+// measure, geometry, data, time). On an `AnswerResult` for a typical error it is `<family>:<misconception id>`.
+// Stable for a given question and answer; never shown to the child.
+//
+// Example: mult_div:MIS-MUL-001
+type SceneKey = string
+
 // Score First-try score of a chapter. `correct` counts beats whose outcome is `correct`; `total` counts answered beats;
 // `pct = round(1000 * correct / total) / 10` (one decimal, 0 when total is 0). `card_awarded` is true only
 // when the chapter is completed and `pct >= threshold_pct`. The threshold is `PlatformConfig.card_threshold_pct`
@@ -1987,6 +2135,9 @@ type Session struct {
 	StartedAt  time.Time     `json:"started_at"`
 	Status     SessionStatus `json:"status"`
 	StoryTitle *string       `json:"story_title,omitempty"`
+
+	// VariantHistory Scene ids the client showed most recently in this session (oldest first, 30 at most), as last sent on an answer. A reload keeps the no-repeat rule by reading this back.
+	VariantHistory *[]string `json:"variant_history,omitempty"`
 
 	// World The twenty story worlds. The first eight are the original worlds; the other twelve came with the question bank
 	// (CR-11). A client must treat an id it does not know as a generic world (accent colour and name come from
@@ -2117,6 +2268,15 @@ type SubscriptionViewPlan string
 
 // SubscriptionViewStatus Effective status (a trial or paid period that ended reads expired)
 type SubscriptionViewStatus string
+
+// VoiceSettings Read-aloud voice. Optional on write (an omitted block keeps the stored one); always present on read.
+type VoiceSettings struct {
+	// ComputerVoice Parent opt-in to the browser computer voice when no human clip exists. Only a parent token can change it.
+	ComputerVoice bool `json:"computer_voice"`
+
+	// HumanEnabled Play the recorded human clip when one exists
+	HumanEnabled bool `json:"human_enabled"`
+}
 
 // WeeklyReport defines model for WeeklyReport.
 type WeeklyReport struct {
@@ -3066,6 +3226,9 @@ type ServerInterface interface {
 	// CreateChildToken Switch to a child (play mode)
 	// (POST /children/{childId}/token)
 	CreateChildToken(w http.ResponseWriter, r *http.Request, childId ChildId, params CreateChildTokenParams)
+	// GetPublicConfig Admin-controlled app configuration (music defaults, voice, scenes, feature flags, maintenance banner, kid-visible copy)
+	// (GET /config/public)
+	GetPublicConfig(w http.ResponseWriter, r *http.Request)
 	// ListCredits Attributions required by the images in use (CR-17)
 	// (GET /credits)
 	ListCredits(w http.ResponseWriter, r *http.Request)
@@ -5037,6 +5200,20 @@ func (siw *ServerInterfaceWrapper) CreateChildToken(w http.ResponseWriter, r *ht
 	handler.ServeHTTP(w, r)
 }
 
+// GetPublicConfig operation middleware
+func (siw *ServerInterfaceWrapper) GetPublicConfig(w http.ResponseWriter, r *http.Request) {
+
+	handler := http.Handler(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		siw.Handler.GetPublicConfig(w, r)
+	}))
+
+	for _, middleware := range siw.HandlerMiddlewares {
+		handler = middleware(handler)
+	}
+
+	handler.ServeHTTP(w, r)
+}
+
 // ListCredits operation middleware
 func (siw *ServerInterfaceWrapper) ListCredits(w http.ResponseWriter, r *http.Request) {
 
@@ -6447,6 +6624,7 @@ func HandlerWithOptions(si ServerInterface, options StdHTTPServerOptions) http.H
 	m.HandleFunc(http.MethodGet+" "+options.BaseURL+"/notifications", wrapper.ListNotifications)
 	m.HandleFunc(http.MethodPost+" "+options.BaseURL+"/notifications/{notificationId}/read", wrapper.MarkNotificationRead)
 	m.HandleFunc(http.MethodGet+" "+options.BaseURL+"/platform/public", wrapper.GetPlatformPublic)
+	m.HandleFunc(http.MethodGet+" "+options.BaseURL+"/config/public", wrapper.GetPublicConfig)
 	m.HandleFunc(http.MethodDelete+" "+options.BaseURL+"/push/subscribe", wrapper.UnsubscribePush)
 	m.HandleFunc(http.MethodPost+" "+options.BaseURL+"/push/subscribe", wrapper.SubscribePush)
 	m.HandleFunc(http.MethodGet+" "+options.BaseURL+"/children/{childId}/challenges", wrapper.ListChallenges)
@@ -10804,6 +10982,72 @@ func (response CreateChildToken500ApplicationProblemPlusJSONResponse) VisitCreat
 	return err
 }
 
+type GetPublicConfigRequestObject struct {
+}
+
+type GetPublicConfigResponseObject interface {
+	VisitGetPublicConfigResponse(w http.ResponseWriter) error
+}
+
+type GetPublicConfig200ResponseHeaders struct {
+	CacheControl *string
+}
+
+type GetPublicConfig200JSONResponse struct {
+	Body    AppPublicConfig
+	Headers GetPublicConfig200ResponseHeaders
+}
+
+func (response GetPublicConfig200JSONResponse) VisitGetPublicConfigResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response.Body); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/json")
+	if response.Headers.CacheControl != nil {
+		w.Header().Set("Cache-Control", fmt.Sprint(*response.Headers.CacheControl))
+	}
+	w.WriteHeader(200)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type GetPublicConfig429ApplicationProblemPlusJSONResponse struct {
+	RateLimitedApplicationProblemPlusJSONResponse
+}
+
+func (response GetPublicConfig429ApplicationProblemPlusJSONResponse) VisitGetPublicConfigResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response.Body); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	if response.Headers.RetryAfter != nil {
+		w.Header().Set("Retry-After", fmt.Sprint(*response.Headers.RetryAfter))
+	}
+	w.WriteHeader(429)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type GetPublicConfig500ApplicationProblemPlusJSONResponse struct {
+	ServerErrorApplicationProblemPlusJSONResponse
+}
+
+func (response GetPublicConfig500ApplicationProblemPlusJSONResponse) VisitGetPublicConfigResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(500)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
 type ListCreditsRequestObject struct {
 }
 
@@ -13454,6 +13698,9 @@ type StrictServerInterface interface {
 	// CreateChildToken Switch to a child (play mode)
 	// (POST /children/{childId}/token)
 	CreateChildToken(ctx context.Context, request CreateChildTokenRequestObject) (CreateChildTokenResponseObject, error)
+	// GetPublicConfig Admin-controlled app configuration (music defaults, voice, scenes, feature flags, maintenance banner, kid-visible copy)
+	// (GET /config/public)
+	GetPublicConfig(ctx context.Context, request GetPublicConfigRequestObject) (GetPublicConfigResponseObject, error)
 	// ListCredits Attributions required by the images in use (CR-17)
 	// (GET /credits)
 	ListCredits(ctx context.Context, request ListCreditsRequestObject) (ListCreditsResponseObject, error)
@@ -14834,6 +15081,30 @@ func (sh *strictHandler) CreateChildToken(w http.ResponseWriter, r *http.Request
 		sh.options.ResponseErrorHandlerFunc(w, r, err)
 	} else if validResponse, ok := response.(CreateChildTokenResponseObject); ok {
 		if err := validResponse.VisitCreateChildTokenResponse(w); err != nil {
+			sh.options.ResponseErrorHandlerFunc(w, r, err)
+		}
+	} else if response != nil {
+		sh.options.ResponseErrorHandlerFunc(w, r, fmt.Errorf("unexpected response type: %T", response))
+	}
+}
+
+// GetPublicConfig operation middleware
+func (sh *strictHandler) GetPublicConfig(w http.ResponseWriter, r *http.Request) {
+	var request GetPublicConfigRequestObject
+
+	handler := func(ctx context.Context, w http.ResponseWriter, r *http.Request, request interface{}) (interface{}, error) {
+		return sh.ssi.GetPublicConfig(ctx, request.(GetPublicConfigRequestObject))
+	}
+	for _, middleware := range sh.middlewares {
+		handler = middleware(handler, "GetPublicConfig")
+	}
+
+	response, err := handler(r.Context(), w, r, request)
+
+	if err != nil {
+		sh.options.ResponseErrorHandlerFunc(w, r, err)
+	} else if validResponse, ok := response.(GetPublicConfigResponseObject); ok {
+		if err := validResponse.VisitGetPublicConfigResponse(w); err != nil {
 			sh.options.ResponseErrorHandlerFunc(w, r, err)
 		}
 	} else if response != nil {

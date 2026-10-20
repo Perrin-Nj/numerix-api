@@ -178,6 +178,11 @@ func (Unimplemented) GetProgress(ctx context.Context, request api.GetProgressReq
 	return nil, httpapi.ErrNotImplemented
 }
 
+// GetPublicConfig is not built yet: answers 501.
+func (Unimplemented) GetPublicConfig(ctx context.Context, request api.GetPublicConfigRequestObject) (api.GetPublicConfigResponseObject, error) {
+	return nil, httpapi.ErrNotImplemented
+}
+
 // GetReviewCalendar is not built yet: answers 501.
 func (Unimplemented) GetReviewCalendar(ctx context.Context, request api.GetReviewCalendarRequestObject) (api.GetReviewCalendarResponseObject, error) {
 	return nil, httpapi.ErrNotImplemented

@@ -16,10 +16,12 @@ import (
 	"io"
 	"log/slog"
 	"net/http"
+	"os"
 	"strconv"
 	"strings"
 	"time"
 
+	"github.com/Perrin-Nj/numerix-api/internal/appconfig"
 	"github.com/Perrin-Nj/numerix-api/internal/assetstore"
 	"github.com/Perrin-Nj/numerix-api/internal/contentdb"
 	"github.com/Perrin-Nj/numerix-api/internal/drafter"
@@ -41,6 +43,8 @@ type Deps struct {
 	Content    *contentdb.Repo        // the question bank repository, shared with the game so its cache is invalidated; nil = a private one
 	Assets     *assetstore.Store      // image store; nil = a private one
 	Drafter    drafter.Provider       // AI draft provider; nil = POST /questions/ai-draft answers 503 not_configured
+	Cfg        *appconfig.Store       // runtime config store, shared with the game so its cache is invalidated; nil = a private one
+	Getenv     func(string) string    // reads the environment for the read-only view; nil = os.Getenv
 }
 
 // API holds the dependencies shared by every handler method.
@@ -56,6 +60,8 @@ type API struct {
 	content *contentdb.Repo
 	assets  *assetstore.Store
 	drafter drafter.Provider
+	cfg     *appconfig.Store
+	getenv  func(string) string
 	drafts  draftLimiter // AI draft rate limit per admin
 }
 
@@ -64,9 +70,15 @@ const tsLayout = "2006-01-02T15:04:05.000Z"
 
 // New builds the handler to mount at /admin/v1/ (Spring: building the controller bean + filter chain).
 func New(d Deps) http.Handler {
-	a := &API{db: d.Store, log: d.Log, now: d.Now, sync: d.Sync, content: d.Content, assets: d.Assets, drafter: d.Drafter}
+	a := &API{db: d.Store, log: d.Log, now: d.Now, sync: d.Sync, content: d.Content, assets: d.Assets, drafter: d.Drafter, cfg: d.Cfg, getenv: d.Getenv}
 	if a.content == nil {
 		a.content = contentdb.New(d.Store, nil)
+	}
+	if a.cfg == nil {
+		a.cfg = appconfig.New(d.Store, false)
+	}
+	if a.getenv == nil {
+		a.getenv = os.Getenv
 	}
 	if a.assets == nil {
 		a.assets = assetstore.New(d.Store)
@@ -106,6 +118,11 @@ func New(d Deps) http.Handler {
 	mux.HandleFunc("PUT /admin/v1/subscriptions/plans", a.putPlans)
 	mux.HandleFunc("GET /admin/v1/config", a.getConfig)
 	mux.HandleFunc("PUT /admin/v1/config", a.putConfig)
+	mux.HandleFunc("GET /admin/v1/appconfig", a.listAppConfig)
+	mux.HandleFunc("GET /admin/v1/appconfig/{ns}", a.getAppConfig)
+	mux.HandleFunc("PUT /admin/v1/appconfig/{ns}", a.putAppConfig)
+	mux.HandleFunc("GET /admin/v1/appconfig/{ns}/versions", a.appConfigVersions)
+	mux.HandleFunc("POST /admin/v1/appconfig/{ns}/rollback", a.rollbackAppConfig)
 	// notifications and audit
 	mux.HandleFunc("GET /admin/v1/notifications", a.listBroadcasts)
 	mux.HandleFunc("POST /admin/v1/notifications/broadcast", a.broadcast)

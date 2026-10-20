@@ -16,6 +16,7 @@ import (
 	"strings"
 
 	"github.com/Perrin-Nj/numerix-api/api"
+	"github.com/Perrin-Nj/numerix-api/internal/appconfig"
 	"github.com/Perrin-Nj/numerix-api/internal/feedmedia"
 	"github.com/Perrin-Nj/numerix-api/internal/httpapi"
 )
@@ -83,10 +84,14 @@ func discoverSlots(childID string, pos, limit int, items []feedmedia.Item) []dis
 }
 
 // discoverEligible keeps the items one year of stretch above the child's grade (an unknown grade counts as 6: all).
-func discoverEligible(all []feedmedia.Item, grade int) []feedmedia.Item {
+func discoverEligible(all []feedmedia.Item, grade int, fc appconfig.Feed) []feedmedia.Item {
+	hidden := make(map[string]bool, len(fc.HiddenItemIDs))
+	for _, id := range fc.HiddenItemIDs {
+		hidden[id] = true
+	}
 	out := make([]feedmedia.Item, 0, len(all))
 	for _, it := range all {
-		if it.GradeMin <= grade+1 {
+		if it.GradeMin <= grade+fc.MaxGradeStretch && !hidden[it.ID] {
 			out = append(out, it)
 		}
 	}
@@ -181,7 +186,11 @@ func (s *Server) GetDiscover(ctx context.Context, req api.GetDiscoverRequestObje
 	if err != nil {
 		return nil, s.plInternalErr(ctx, "load discover items", err)
 	}
-	items := discoverEligible(all, gradeOf(c))
+	fc := appconfig.Get[appconfig.Feed](ctx, s.Cfg, appconfig.NSFeed)
+	if !fc.DiscoverEnabled { // the admin switched Discover off
+		return nil, httpapi.NewError(http.StatusServiceUnavailable, "feed_empty", "The Discover feed is switched off.")
+	}
+	items := discoverEligible(all, gradeOf(c), fc)
 	if len(items) == 0 {
 		return nil, httpapi.NewError(http.StatusServiceUnavailable, "feed_empty", "The Discover feed has no items yet.")
 	}

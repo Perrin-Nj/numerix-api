@@ -13,6 +13,7 @@ import (
 	"github.com/go-webauthn/webauthn/webauthn"
 
 	"github.com/Perrin-Nj/numerix-api/api"
+	"github.com/Perrin-Nj/numerix-api/internal/appconfig"
 	"github.com/Perrin-Nj/numerix-api/internal/assetstore"
 	"github.com/Perrin-Nj/numerix-api/internal/auth"
 	"github.com/Perrin-Nj/numerix-api/internal/config"
@@ -52,6 +53,8 @@ type Server struct {
 	Assets *assetstore.Store
 	// Feed is the curated Discover item repository (cache included). See feed_discover.go.
 	Feed *feedmedia.Repo
+	// Cfg is the versioned runtime configuration the admin edits (cached; main shares it with the admin API).
+	Cfg *appconfig.Store
 }
 
 // NewServer wires the dependencies (Spring: constructor injection; no container, main() calls this).
@@ -68,6 +71,7 @@ func NewServer(s *store.Store, cfg config.Config, log *slog.Logger) *Server {
 		Content:    contentdb.New(s, nil),
 		Assets:     assetstore.New(s),
 		Feed:       feedmedia.NewRepo(s, time.Minute),
+		Cfg:        appconfig.New(s, cfg.FeatureWelcomeGift),
 	}
 }
 

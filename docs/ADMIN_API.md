@@ -61,3 +61,7 @@ Code: `internal/adminapi/{content,assets,aidraft}.go`. Same auth, CORS, problem+
 - `GET /worlds`, `PUT /worlds/{id}`, `GET /quests?world=`, `PUT /quests/{id}`: edits are hotfixes; the seed files own worlds and quests.
 - `GET /content/coverage` gives per quest the counts by status and type against `target_count`, and per world the missing quota by type.
 - Media: `GET /assets?kind=&world=&status=&licence=&facet=&value=&q=`, `GET /assets/{id}`, `PATCH /assets/{id} {alt_fr, alt_en, review_status, people_free, brand_free, tags}` (approval needs alt in both languages, people_free and brand_free; a Pexels photo needs creator_url), `GET /assets/search?world=&topic=&object=&mood=&setting=&kind=&grade=` (scored candidates), `GET /assets/resolve?...&child=&question=` (what a child would get, or `fallback: gradient`). `POST /assets` answers 501: images come from `tools/assets` and `cmd/seed`.
+
+## Runtime config (appconfig)
+
+See docs/ADMIN_CONFIG_MATRIX.md. Endpoints: GET /appconfig, GET|PUT /appconfig/{ns}, GET /appconfig/{ns}/versions, POST /appconfig/{ns}/rollback. Audit actions: appconfig.set, appconfig.rollback. Problem codes: version_conflict 409, nothing_to_roll_back 409, ai_disabled 503.

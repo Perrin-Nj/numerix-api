@@ -27,6 +27,7 @@ import (
 	"github.com/google/uuid"
 
 	"github.com/Perrin-Nj/numerix-api/api"
+	"github.com/Perrin-Nj/numerix-api/internal/appconfig"
 	"github.com/Perrin-Nj/numerix-api/internal/auth"
 	"github.com/Perrin-Nj/numerix-api/internal/engine"
 	"github.com/Perrin-Nj/numerix-api/internal/httpapi"
@@ -63,6 +64,7 @@ func (s *Server) game() *gameState {
 	}
 	gs := &gameState{graph: graph, seed: rand.Uint64, now: func() time.Time { return time.Now().UTC() }}
 	gs.narr = narrator.New(narrator.FromEnv(os.Getenv, log), narrationCache{s}, log)
+	gs.narr.Off = func() bool { return !appconfig.Get[appconfig.AI](context.Background(), s.Cfg, appconfig.NSAI).NarratorEnabled }
 	v, _ := games.LoadOrStore(s, gs) // another request may have won the race: use its value
 	return v.(*gameState)
 }
@@ -129,6 +131,9 @@ func (s *Server) gameChild(ctx context.Context, childID string, requirePlay bool
 // gamePlayAllowed refuses a blocked parent (403) and an inactive subscription unless the platform policy
 // is "allow" (402). The start gate is can_play OR unpaid_policy allow (contract SubscriptionView).
 func (s *Server) gamePlayAllowed(ctx context.Context, parentID string) error {
+	if m := appconfig.Get[appconfig.Maintenance](ctx, s.Cfg, appconfig.NSMaintenance); m.Enabled && m.BlockPlay {
+		return httpapi.NewError(http.StatusServiceUnavailable, "maintenance", m.Message.EN) // the admin closed play for maintenance
+	}
 	var blocked sql.NullString
 	if err := s.Store.R.QueryRowContext(ctx, `SELECT blocked_at FROM parents WHERE id = ?`, parentID).Scan(&blocked); err != nil {
 		return s.plInternalErr(ctx, "load parent", err)
@@ -156,6 +161,8 @@ type sessData struct {
 	Reason   string `json:"reason"`
 	Lang     string `json:"lang"`           // language of the story title stored on the card
 	Idem     string `json:"idem,omitempty"` // Idempotency-Key of the start request (a retry returns the same session)
+	// Variants are the client's recent scene ids (last maxVariantHistory), kept so a reload keeps the no-repeat rule.
+	Variants []string `json:"variants,omitempty"`
 }
 
 // sessRow is one sessions row with its parsed JSON and the owning child.

@@ -399,6 +399,11 @@ paths:
       summary: Replace a child's play settings
       x-roles:
         - parent
+        - child
+      description: |
+        A parent replaces everything. A child token may change only its own `music.enabled`, `music.volume` and
+        `voice.human_enabled`; every other field in the body is ignored and the stored value is kept. While
+        `music.parent_locked` is true the server keeps `music.enabled` false whoever asks.
       requestBody:
         required: true
         content:
@@ -1828,6 +1833,32 @@ paths:
           $ref: '#/components/responses/RateLimited'
         '500':
           $ref: '#/components/responses/ServerError'
+  /config/public:
+    get:
+      tags:
+        - Platform
+      operationId: getPublicConfig
+      summary: Admin-controlled app configuration (music defaults, voice, scenes, feature flags, maintenance banner, kid-visible copy)
+      description: |
+        No auth, no personal data. Edited by admins at runtime; the server caches it and answers
+        `Cache-Control: public, max-age=60`. `version` changes whenever anything changes. The client uses it
+        minimally: music defaults, feature flags and the maintenance banner. Any field it does not know is ignored.
+      security: []
+      responses:
+        '200':
+          description: Public config
+          headers:
+            Cache-Control:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppPublicConfig'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
   /push/subscribe:
     post:
       tags:
@@ -3202,6 +3233,10 @@ components:
           type: boolean
           default: true
           description: When false the kid app hides the language switch; the server returns the value with the settings (BE-28)
+        music:
+          $ref: '#/components/schemas/MusicSettings'
+        voice:
+          $ref: '#/components/schemas/VoiceSettings'
       example:
         daily_goal_chapters: 1
         daily_time_limit_minutes: null
@@ -3217,6 +3252,49 @@ components:
         read_aloud: true
         sound: true
         kid_can_change_language: true
+        music:
+          enabled: true
+          volume: 30
+          parent_locked: false
+        voice:
+          human_enabled: true
+          computer_voice: false
+    MusicSettings:
+      type: object
+      required:
+        - enabled
+        - volume
+        - parent_locked
+      description: Background music. Optional on write (an omitted block keeps the stored one); always present on read.
+      properties:
+        enabled:
+          type: boolean
+          default: true
+          description: The child toggle. Always false while parent_locked is true.
+        volume:
+          type: integer
+          minimum: 0
+          maximum: 100
+          default: 30
+        parent_locked:
+          type: boolean
+          default: false
+          description: 'Parent switch: music stays off and the child cannot turn it on. Only a parent token can change it.'
+    VoiceSettings:
+      type: object
+      required:
+        - human_enabled
+        - computer_voice
+      description: Read-aloud voice. Optional on write (an omitted block keeps the stored one); always present on read.
+      properties:
+        human_enabled:
+          type: boolean
+          default: true
+          description: Play the recorded human clip when one exists
+        computer_voice:
+          type: boolean
+          default: false
+          description: Parent opt-in to the browser computer voice when no human clip exists. Only a parent token can change it.
     Device:
       type: object
       required:
@@ -3543,6 +3621,167 @@ components:
           challenges: true
           push: false
           payments: true
+    BilingualText:
+      type: object
+      required:
+        - fr
+        - en
+      properties:
+        fr:
+          type: string
+          maxLength: 280
+        en:
+          type: string
+          maxLength: 280
+    AppPublicConfig:
+      type: object
+      required:
+        - version
+        - music
+        - voice
+        - scenes
+        - features
+        - welcome_gift
+        - feed
+        - maintenance
+        - copy
+      properties:
+        version:
+          type: integer
+          minimum: 0
+          description: Sum of the versions of every config document; changes on any edit
+        music:
+          type: object
+          required:
+            - enabled
+            - default_volume
+            - tracks
+          properties:
+            enabled:
+              type: boolean
+            default_volume:
+              type: integer
+              minimum: 0
+              maximum: 100
+            tracks:
+              type: array
+              description: Enabled tracks only
+              items:
+                type: object
+                required:
+                  - id
+                  - title
+                properties:
+                  id:
+                    type: string
+                  title:
+                    $ref: '#/components/schemas/BilingualText'
+        voice:
+          type: object
+          required:
+            - human_enabled_default
+            - computer_voice_allowed
+            - clips
+          properties:
+            human_enabled_default:
+              type: boolean
+            computer_voice_allowed:
+              type: boolean
+            clips:
+              type: array
+              description: Enabled recorded lines managed by the admin (the static voice manifest stays the base)
+              items:
+                type: object
+                required:
+                  - line_id
+                  - locale
+                  - url
+                  - enabled
+                properties:
+                  line_id:
+                    type: string
+                  locale:
+                    type: string
+                    enum:
+                      - fr-CA
+                      - en-CA
+                  url:
+                    type: string
+                  enabled:
+                    type: boolean
+        scenes:
+          type: object
+          required:
+            - physics_enabled
+            - families
+          properties:
+            physics_enabled:
+              type: boolean
+              description: 'false: play the plain animation, no simulation'
+            families:
+              type: object
+              additionalProperties:
+                type: object
+                required:
+                  - enabled
+                  - disabled_variants
+                properties:
+                  enabled:
+                    type: boolean
+                  disabled_variants:
+                    type: array
+                    items:
+                      type: string
+        features:
+          type: object
+          additionalProperties:
+            type: boolean
+        welcome_gift:
+          type: boolean
+        feed:
+          type: object
+          required:
+            - discover_enabled
+            - family_board_visible
+          properties:
+            discover_enabled:
+              type: boolean
+            family_board_visible:
+              type: boolean
+        maintenance:
+          type: object
+          required:
+            - enabled
+            - level
+            - message
+            - block_play
+          properties:
+            enabled:
+              type: boolean
+            level:
+              type: string
+              enum:
+                - info
+                - warning
+                - critical
+            message:
+              $ref: '#/components/schemas/BilingualText'
+            block_play:
+              type: boolean
+              description: 'true: game requests answer 503 maintenance'
+        copy:
+          type: object
+          required:
+            - home_tip
+            - feed_empty
+            - session_done
+          properties:
+            home_tip:
+              $ref: '#/components/schemas/BilingualText'
+            feed_empty:
+              $ref: '#/components/schemas/BilingualText'
+            session_done:
+              $ref: '#/components/schemas/BilingualText'
     World:
       type: object
       required:
@@ -3790,6 +4029,13 @@ components:
         story_title:
           type: string
           nullable: true
+        variant_history:
+          type: array
+          maxItems: 30
+          items:
+            type: string
+            maxLength: 64
+          description: Scene ids the client showed most recently in this session (oldest first, 30 at most), as last sent on an answer. A reload keeps the no-repeat rule by reading this back.
         started_at:
           type: string
           format: date-time
@@ -4072,6 +4318,8 @@ components:
           $ref: '#/components/schemas/Question'
         scene:
           $ref: '#/components/schemas/Narration'
+        scene_key:
+          $ref: '#/components/schemas/SceneKey'
         created_at:
           type: string
           format: date-time
@@ -4091,7 +4339,16 @@ components:
           status: pending
           text: null
           illustration_url: null
+        scene_key: mult_div
         created_at: '2026-10-12T14:00:00Z'
+    SceneKey:
+      type: string
+      maxLength: 80
+      example: mult_div:MIS-MUL-001
+      description: |
+        Hint for the client to pick a consequence scene. It is the topic family (number, add_sub, mult_div, fractions,
+        measure, geometry, data, time). On an `AnswerResult` for a typical error it is `<family>:<misconception id>`.
+        Stable for a given question and answer; never shown to the child.
     AnswerRequest:
       type: object
       required:
@@ -4103,6 +4360,13 @@ components:
           type: integer
           minimum: 0
           description: Used by mastery tracking only. Never displayed, never a timer.
+        variant_history:
+          type: array
+          maxItems: 30
+          items:
+            type: string
+            maxLength: 64
+          description: Optional. The client's recent scene ids, oldest first. The server stores them on the session (last 30 kept) and returns them as `session.variant_history`, so a reload cannot reset the no-repeat rule. An omitted field leaves the stored list unchanged.
     Outcome:
       type: string
       description: |
@@ -4155,6 +4419,8 @@ components:
           type: string
           description: 'Curated questions only: the kind message written for the matched common error, when there is one.'
           nullable: true
+        scene_key:
+          $ref: '#/components/schemas/SceneKey'
         denouement:
           $ref: '#/components/schemas/Narration'
         session:

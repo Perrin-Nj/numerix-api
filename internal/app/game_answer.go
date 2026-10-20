@@ -51,6 +51,16 @@ func (s *Server) AnswerBeat(ctx context.Context, req api.AnswerBeatRequestObject
 		ms = max(0, *req.Body.ResponseTimeMs)
 	}
 
+	// B2: the client's recent scene ids, validated before any write; nil means "leave the stored list alone"
+	var variants []string
+	if req.Body.VariantHistory != nil {
+		v, msg := cleanVariants(*req.Body.VariantHistory)
+		if msg != "" {
+			return nil, httpapi.Validation(plField("variant_history", msg))
+		}
+		variants = append([]string{}, v...) // non-nil even when empty, so an empty list clears the history
+	}
+
 	var stored storedAnswer
 	var problem engine.Problem
 	var cur *content.Question // the curated question, nil for a generated one
@@ -179,6 +189,12 @@ func (s *Server) AnswerBeat(ctx context.Context, req api.AnswerBeatRequestObject
 				return e
 			}
 		}
+		if variants != nil { // json_set rewrites one key in place, so a concurrent session update is not lost
+			vj, _ := json.Marshal(variants) // a string slice always marshals
+			if _, e := tx.ExecContext(ctx, `UPDATE sessions SET json = json_set(json, '$.variants', json(?)) WHERE id = ?`, string(vj), r.ID); e != nil {
+				return e
+			}
+		}
 		aj, e := json.Marshal(stored)
 		if e != nil {
 			return e
@@ -213,6 +229,7 @@ func (s *Server) AnswerBeat(ctx context.Context, req api.AnswerBeatRequestObject
 		Denouement:    api.Narration{Status: api.Pending},
 		Session:       sess,
 		Rewards:       &stored.Rewards,
+		SceneKey:      sceneKeyPtr(sceneKeyFor(stored.Skill, stored.Outcome, stored.Code)),
 	}
 	if cur != nil {
 		out.CorrectAnswer = answerFromJSON(cur.CorrectAnswer(lang))

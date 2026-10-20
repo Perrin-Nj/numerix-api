@@ -37,6 +37,7 @@ var Ops = map[string]OpMeta{
 	"GetJourney":                {Method: "GET", Path: "/children/{childId}/journey", Public: false, Roles: []string{"parent", "child"}},
 	"GetPlatformPublic":         {Method: "GET", Path: "/platform/public", Public: true, Roles: []string{}},
 	"GetProgress":               {Method: "GET", Path: "/children/{childId}/progress", Public: false, Roles: []string{"parent"}},
+	"GetPublicConfig":           {Method: "GET", Path: "/config/public", Public: true, Roles: []string{}},
 	"GetReviewCalendar":         {Method: "GET", Path: "/children/{childId}/reviews", Public: false, Roles: []string{"parent", "child"}},
 	"GetSession":                {Method: "GET", Path: "/sessions/{sessionId}", Public: false, Roles: []string{"parent", "child"}},
 	"GetSessionSummary":         {Method: "GET", Path: "/sessions/{sessionId}/summary", Public: false, Roles: []string{"parent"}},
@@ -73,5 +74,5 @@ var Ops = map[string]OpMeta{
 	"UnsubscribePush":           {Method: "DELETE", Path: "/push/subscribe", Public: false, Roles: []string{"parent"}},
 	"UpdateAccount":             {Method: "PATCH", Path: "/account", Public: false, Roles: []string{"parent"}},
 	"UpdateChild":               {Method: "PATCH", Path: "/children/{childId}", Public: false, Roles: []string{"parent"}},
-	"UpdateChildSettings":       {Method: "PUT", Path: "/children/{childId}/settings", Public: false, Roles: []string{"parent"}},
+	"UpdateChildSettings":       {Method: "PUT", Path: "/children/{childId}/settings", Public: false, Roles: []string{"parent", "child"}},
 }

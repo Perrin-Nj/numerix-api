@@ -352,6 +352,7 @@ func (s *Server) curatedBeatView(ctx context.Context, b beatRow, cq *content.Que
 	return api.Beat{
 		Id: plUUID(b.ID), SessionId: plUUID(b.SessionID), Index: b.Index, SkillId: cq.Skill, Question: view,
 		Scene:     api.Narration{Status: api.Ready, Text: &story, IllustrationUrl: scene},
+		SceneKey:  sceneKeyPtr(sceneFamily(cq.Skill)),
 		CreatedAt: &created,
 	}, nil
 }
