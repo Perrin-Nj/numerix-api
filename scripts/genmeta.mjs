@@ -2,12 +2,17 @@
 //   internal/httpapi/opmeta_gen.go      Go operation name (as given to strict middleware) -> public flag + allowed roles (from `security: []` and `x-roles`)
 //   internal/app/unimplemented_gen.go   a 501 stub for every operation of api.StrictServerInterface
 // Run through scripts/gen.sh. Reads ../frontend/contracts/openapi.yaml.
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
+import path from 'node:path';
 import { createRequire } from 'node:module';
 
 const require = createRequire(import.meta.url);
-const yaml = require('../../frontend/node_modules/.pnpm/js-yaml@4.3.2/node_modules/js-yaml');
-const spec = yaml.load(readFileSync('../frontend/contracts/openapi.yaml', 'utf8'));
+// FRONTEND_DIR overrides the sibling checkout (any worktree layout)
+const FE = process.env.FRONTEND_DIR || '../frontend';
+const pnpmDir = `${FE}/node_modules/.pnpm`;
+const yamlPkg = readdirSync(pnpmDir).find((d) => d.startsWith('js-yaml@'));
+const yaml = require(path.resolve(`${pnpmDir}/${yamlPkg}/node_modules/js-yaml`));
+const spec = yaml.load(readFileSync(`${FE}/contracts/openapi.yaml`, 'utf8'));
 
 const ops = [];
 for (const [path, item] of Object.entries(spec.paths)) {

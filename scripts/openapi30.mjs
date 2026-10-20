@@ -1,13 +1,18 @@
 // Turns the OpenAPI 3.1 contract into a 3.0.3 copy that oapi-codegen understands.
 // Run: node scripts/openapi30.mjs  (reads ../frontend/contracts/openapi.yaml, writes api/openapi30.yaml)
 // Changes: type [X,'null'] -> type X + nullable; other type arrays -> no type; const -> enum; examples -> example.
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
+import path from 'node:path';
 import { createRequire } from 'node:module';
 
 const require = createRequire(import.meta.url);
-const yaml = require('../../frontend/node_modules/.pnpm/js-yaml@4.3.2/node_modules/js-yaml');
+// FRONTEND_DIR overrides the sibling checkout (any worktree layout)
+const FE = process.env.FRONTEND_DIR || '../frontend';
+const pnpmDir = `${FE}/node_modules/.pnpm`;
+const yamlPkg = readdirSync(pnpmDir).find((d) => d.startsWith('js-yaml@'));
+const yaml = require(path.resolve(`${pnpmDir}/${yamlPkg}/node_modules/js-yaml`));
 
-const spec = yaml.load(readFileSync('../frontend/contracts/openapi.yaml', 'utf8'));
+const spec = yaml.load(readFileSync(`${FE}/contracts/openapi.yaml`, 'utf8'));
 spec.openapi = '3.0.3';
 
 function fix(node) {
