@@ -88,6 +88,16 @@ func (s *Server) StartSession(ctx context.Context, req api.StartSessionRequestOb
 		if gerr != nil || !g.graph.PlayableFor(world, sk.ID, gradeOf(c)) { // also refuses a chapter this grade has too few questions for
 			return nil, httpapi.Validation(plField("skill_id", "unknown or not available yet"))
 		}
+		// Same lock rule as the journey map (QA-BE-004): a chapter whose prerequisites are not mastered is refused with 422.
+		// skillState is shared with the journey so the two can never disagree (Spring: one @Service method, two controllers).
+		mastered := prof.Mastered(now)
+		due := map[string]bool{}
+		for _, d := range prof.ToReview(now) {
+			due[d.SkillID] = true
+		}
+		if g.skillState(prof, sk.ID, mastered, due) == api.NodeStateLocked {
+			return nil, httpapi.Validation(plField("skill_id", "locked: "+string(api.Prerequisites))) // locked_reason = prerequisites
+		}
 		skill = sk.ID
 	} else {
 		sel, cerr := engine.Choose(g.graph, prof, world, gradeOf(c), engine.NewRNG(g.seed()), now)

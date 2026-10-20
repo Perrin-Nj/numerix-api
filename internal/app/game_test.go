@@ -43,6 +43,7 @@ func (f feedFixture) startChapter(t *testing.T, skill string) string {
 	t.Helper()
 	body := `{"world":"nature","kind":"chapter"`
 	if skill != "" {
+		f.unlock(t, skill) // an explicit skill must be unlocked (QA-BE-004), so master its prerequisites first
 		body += `,"skill_id":"` + skill + `"`
 	}
 	code, out, raw := f.gcall(t, "POST", "/v1/children/"+f.childID+"/sessions", f.childTok, body+"}", map[string]string{"Idempotency-Key": uuid.NewString()})
