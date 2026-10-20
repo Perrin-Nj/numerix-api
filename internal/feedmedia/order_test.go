@@ -113,3 +113,28 @@ func TestVideoShareIsSpreadNotClumped(t *testing.T) {
 		t.Fatal("a pass starts and ends on a non-video item")
 	}
 }
+
+// Go for Spring people: a plain loop test. 500 random visit numbers must give a first item that varies a lot and
+// first pages that are (almost) never equal; visit -1 keeps the child's old fixed order.
+func TestSeedWithVisitsShuffleDifferently(t *testing.T) {
+	kinds := catalogue(110, 40, 50)
+	first := map[int]bool{}
+	pages := map[string]bool{}
+	for v := 0; v < 500; v++ {
+		o := Order(SeedWith("child-1", v), 0, kinds)
+		first[o[0]] = true
+		pages[fmt.Sprint(o[:12])] = true
+	}
+	if len(first) < 100 {
+		t.Fatalf("only %d distinct first items over 500 visits", len(first))
+	}
+	if len(pages) != 500 {
+		t.Fatalf("only %d distinct first pages over 500 visits", len(pages))
+	}
+	if SeedWith("child-1", -1) != SeedOf("child-1") {
+		t.Fatal("no visit number must keep the fixed order")
+	}
+	if SeedWith("child-1", 7) != SeedWith("child-1", 7) {
+		t.Fatal("same visit number must give the same order")
+	}
+}

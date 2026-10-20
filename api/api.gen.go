@@ -2499,7 +2499,11 @@ type GetCollectionParams struct {
 // GetDiscoverParams defines parameters for GetDiscover.
 type GetDiscoverParams struct {
 	Cursor *string `form:"cursor,omitempty" json:"cursor,omitempty"`
-	Limit  *int    `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Seed A fresh random number the app picks each time the child opens or taps the Discover tab. It changes the
+	// order; send the same seed with every page of one visit. Without it the order is the child's fixed one.
+	Seed  *int `form:"seed,omitempty" json:"seed,omitempty"`
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
 
 	// AcceptLanguage fr-CA or en-CA. The app forwards the NEXT_LOCALE cookie, else the browser header. Default fr-CA.
 	AcceptLanguage *AcceptLanguage `json:"Accept-Language,omitempty"`
@@ -4169,6 +4173,19 @@ func (siw *ServerInterfaceWrapper) GetDiscover(w http.ResponseWriter, r *http.Re
 			siw.ErrorHandlerFunc(w, r, &RequiredParamError{ParamName: "cursor"})
 		} else {
 			siw.ErrorHandlerFunc(w, r, &InvalidParamFormatError{ParamName: "cursor", Err: err})
+		}
+		return
+	}
+
+	// ------------- Optional query parameter "seed" -------------
+
+	err = runtime.BindQueryParameterWithOptions("form", true, false, "seed", r.URL.Query(), &params.Seed, runtime.BindQueryParameterOptions{Type: "integer", Format: ""})
+	if err != nil {
+		var requiredError *runtime.RequiredParameterError
+		if errors.As(err, &requiredError) {
+			siw.ErrorHandlerFunc(w, r, &RequiredParamError{ParamName: "seed"})
+		} else {
+			siw.ErrorHandlerFunc(w, r, &InvalidParamFormatError{ParamName: "seed", Err: err})
 		}
 		return
 	}

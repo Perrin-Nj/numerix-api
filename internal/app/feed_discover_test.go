@@ -169,8 +169,8 @@ func TestDiscoverCursorIsStableOpaqueAndBoundToTheChild(t *testing.T) {
 func TestDiscoverOrderDiffersPerChildAndLanguageSwitches(t *testing.T) {
 	f, _ := discoverFixture(t, 30)
 	idsA, _, _ := f.walk(t, 1, 12)
-	a := discoverSlots("11111111-1111-4111-8111-111111111111", 0, 7, discoverEligibleForTest(t, f))
-	b := discoverSlots("22222222-2222-4222-8222-222222222222", 0, 7, discoverEligibleForTest(t, f))
+	a := discoverSlots("11111111-1111-4111-8111-111111111111", -1, 0, 7, discoverEligibleForTest(t, f))
+	b := discoverSlots("22222222-2222-4222-8222-222222222222", -1, 0, 7, discoverEligibleForTest(t, f))
 	same := 0
 	for i := range a {
 		if a[i].media.ID == b[i].media.ID {
@@ -330,5 +330,42 @@ func TestDiscoverValidateRefusesBadItems(t *testing.T) {
 		if len(it.Validate(dir)) == 0 {
 			t.Errorf("%s: must be refused", name)
 		}
+	}
+}
+
+// The seed query parameter reshuffles: same seed gives the same pages, another seed another first page, and a walk
+// with one seed shows no media item twice inside one pass.
+func TestDiscoverSeedReshuffles(t *testing.T) {
+	f, _ := discoverFixture(t, 30)
+	first := func(seed int) []string {
+		_, p := f.call(t, "GET", discoverPath(f, "", 12)+fmt.Sprintf("&seed=%d", seed), f.childTok, "")
+		var ids []string
+		for _, it := range p["items"].([]any) {
+			ids = append(ids, it.(map[string]any)["id"].(string))
+		}
+		return ids
+	}
+	if fmt.Sprint(first(5)) != fmt.Sprint(first(5)) {
+		t.Fatal("same seed must give the same first page")
+	}
+	distinct := map[string]bool{}
+	for s := 0; s < 5; s++ {
+		distinct[fmt.Sprint(first(1000+s*7919))] = true
+	}
+	if len(distinct) < 5 {
+		t.Fatalf("5 seeds gave only %d distinct first pages", len(distinct))
+	}
+	seen := map[string]bool{}
+	cursor := ""
+	for page := 0; page < 2; page++ {
+		_, p := f.call(t, "GET", discoverPath(f, cursor, 12)+"&seed=42", f.childTok, "")
+		for _, it := range p["items"].([]any) {
+			id := it.(map[string]any)["id"].(string)
+			if strings.HasPrefix(id, "m-") && seen[id] {
+				t.Fatalf("%s repeated inside one pass", id)
+			}
+			seen[id] = true
+		}
+		cursor = p["next_cursor"].(string)
 	}
 }

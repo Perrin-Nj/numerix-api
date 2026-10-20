@@ -64,12 +64,12 @@ func discoverMediaCounter(p int) int { return p - p/discoverPuzzleGap }
 func discoverPuzzleNumber(k int) int { return 6*(k/2) + 2 + 3*(k%2) }
 
 // discoverSlots lays out `limit` slots from pos for a child whose eligible items are `items`.
-func discoverSlots(childID string, pos, limit int, items []feedmedia.Item) []discoverSlot {
+func discoverSlots(childID string, visit, pos, limit int, items []feedmedia.Item) []discoverSlot {
 	kinds := make([]string, len(items))
 	for i, it := range items {
 		kinds[i] = it.Kind
 	}
-	seed := feedmedia.SeedOf(childID)
+	seed := feedmedia.SeedWith(childID, visit)
 	out := make([]discoverSlot, limit)
 	for k := range out {
 		p := pos + k
@@ -194,7 +194,11 @@ func (s *Server) GetDiscover(ctx context.Context, req api.GetDiscoverRequestObje
 	if len(items) == 0 {
 		return nil, httpapi.NewError(http.StatusServiceUnavailable, "feed_empty", "The Discover feed has no items yet.")
 	}
-	slots := discoverSlots(c.ID, pos, limit, items)
+	visit := -1 // no seed sent: the child's fixed order
+	if req.Params.Seed != nil && *req.Params.Seed >= 0 {
+		visit = *req.Params.Seed
+	}
+	slots := discoverSlots(c.ID, visit, pos, limit, items)
 	ids := make([]any, len(slots)) // item ids of the page, for one reactions query
 	for i, sl := range slots {
 		if sl.media != nil {

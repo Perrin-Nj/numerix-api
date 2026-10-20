@@ -2,6 +2,7 @@ package feedmedia
 
 import (
 	"hash/fnv"
+	"strconv"
 	"math/rand/v2"
 )
 
@@ -12,6 +13,17 @@ const MaxVideoRun = 2
 func SeedOf(childID string) uint64 {
 	h := fnv.New64a() // a small, fast, non-cryptographic hash (the order is not a secret)
 	_, _ = h.Write([]byte("discover:" + childID))
+	return h.Sum64()
+}
+
+// SeedWith is SeedOf for one visit: the same child with a different visit number (the client picks a fresh random one
+// each time the Discover tab opens) gets a different order. visit < 0 means "no visit number": the child's fixed order.
+func SeedWith(childID string, visit int) uint64 {
+	if visit < 0 {
+		return SeedOf(childID)
+	}
+	h := fnv.New64a()
+	_, _ = h.Write([]byte("discover:" + childID + ":visit:" + strconv.Itoa(visit)))
 	return h.Sum64()
 }
 

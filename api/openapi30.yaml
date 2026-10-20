@@ -1283,6 +1283,15 @@ paths:
           in: query
           schema:
             type: string
+        - name: seed
+          in: query
+          description: |
+            A fresh random number the app picks each time the child opens or taps the Discover tab. It changes the
+            order; send the same seed with every page of one visit. Without it the order is the child's fixed one.
+          schema:
+            type: integer
+            minimum: 0
+            maximum: 9007199254740991
         - name: limit
           in: query
           schema:
