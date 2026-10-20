@@ -304,7 +304,9 @@ func TestGiftHomeAndQuest(t *testing.T) {
 	if sg := home["suggested"].(map[string]any); sg["world"] != "echecs" || sg["skill_id"] != "ARI-OPE-A06a" {
 		t.Fatalf("suggested: %v", sg)
 	}
-	f.s.Config.FeatureWelcomeGift = true
+	if _, err := f.s.Cfg.Set(context.Background(), "platform", []byte(`{"welcome_gift":true}`), "test", nil); err != nil { // the admin switch replaces the old env flag at runtime
+		t.Fatal(err)
+	}
 	_, home = f.call(t, "GET", "/v1/children/11111111-1111-4111-8111-111111111111/home", f.childTok, "")
 	if home["gift_available"] != true {
 		t.Fatalf("gift should be available: %v", home)

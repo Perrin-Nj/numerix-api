@@ -19,6 +19,7 @@ import (
 	"github.com/google/uuid"
 
 	"github.com/Perrin-Nj/numerix-api/api"
+	"github.com/Perrin-Nj/numerix-api/internal/appconfig"
 	"github.com/Perrin-Nj/numerix-api/internal/auth"
 	"github.com/Perrin-Nj/numerix-api/internal/httpapi"
 )
@@ -303,12 +304,14 @@ func (s *Server) plDefaultSettings(ctx context.Context) api.ChildSettings {
 		worlds[i] = api.WorldId(w)
 	}
 	var limit *int
-	if d := s.plConfig(ctx).DailyTimeLimitMinutesDefault; d > 0 {
-		limit = &d
+	if d := s.plConfig(ctx).DailyTimeLimitMinutesDefault; d != nil && *d > 0 {
+		v := *d
+		limit = &v
 	}
-	return api.ChildSettings{DailyGoalChapters: 1, DailyTimeLimitMinutes: limit, EnabledWorlds: worlds,
+	cfg, mu, vo := s.plConfig(ctx), appconfig.Get[appconfig.Music](ctx, s.Cfg, appconfig.NSMusic), appconfig.Get[appconfig.Voice](ctx, s.Cfg, appconfig.NSVoice)
+	return api.ChildSettings{DailyGoalChapters: cfg.DailyGoalDefault, DailyTimeLimitMinutes: limit, EnabledWorlds: worlds,
 		KidCanChangeLanguage: plPtr(true), ReadAloud: true, Sound: true,
-		Music: plPtr(defaultMusic()), Voice: plPtr(defaultVoice())}
+		Music: plPtr(api.MusicSettings{Enabled: mu.Enabled, Volume: mu.DefaultVolume}), Voice: plPtr(api.VoiceSettings{HumanEnabled: vo.HumanEnabledDefault})}
 }
 
 // defaultMusic: music on at a low volume (it still starts only after the first tap, client side), not locked.

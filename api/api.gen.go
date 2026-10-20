@@ -37,6 +37,45 @@ func (e AccountLocale) Valid() bool {
 	}
 }
 
+// Defines values for AppPublicConfigMaintenanceLevel.
+const (
+	Critical AppPublicConfigMaintenanceLevel = "critical"
+	Info     AppPublicConfigMaintenanceLevel = "info"
+	Warning  AppPublicConfigMaintenanceLevel = "warning"
+)
+
+// Valid indicates whether the value is a known member of the AppPublicConfigMaintenanceLevel enum.
+func (e AppPublicConfigMaintenanceLevel) Valid() bool {
+	switch e {
+	case Critical:
+		return true
+	case Info:
+		return true
+	case Warning:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AppPublicConfigVoiceClipsLocale.
+const (
+	AppPublicConfigVoiceClipsLocaleEnCA AppPublicConfigVoiceClipsLocale = "en-CA"
+	AppPublicConfigVoiceClipsLocaleFrCA AppPublicConfigVoiceClipsLocale = "fr-CA"
+)
+
+// Valid indicates whether the value is a known member of the AppPublicConfigVoiceClipsLocale enum.
+func (e AppPublicConfigVoiceClipsLocale) Valid() bool {
+	switch e {
+	case AppPublicConfigVoiceClipsLocaleEnCA:
+		return true
+	case AppPublicConfigVoiceClipsLocaleFrCA:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for ChallengeStatus.
 const (
 	ChallengeStatusActive    ChallengeStatus = "active"
@@ -1062,6 +1101,67 @@ type AnswerValue5 = []string
 // AnswerValue6 defines model for AnswerValue.6.
 type AnswerValue6 = [][]string
 
+// AppPublicConfig defines model for AppPublicConfig.
+type AppPublicConfig struct {
+	Copy struct {
+		FeedEmpty   BilingualText `json:"feed_empty"`
+		HomeTip     BilingualText `json:"home_tip"`
+		SessionDone BilingualText `json:"session_done"`
+	} `json:"copy"`
+	Features map[string]bool `json:"features"`
+	Feed     struct {
+		DiscoverEnabled    bool `json:"discover_enabled"`
+		FamilyBoardVisible bool `json:"family_board_visible"`
+	} `json:"feed"`
+	Maintenance struct {
+		// BlockPlay true: game requests answer 503 maintenance
+		BlockPlay bool                            `json:"block_play"`
+		Enabled   bool                            `json:"enabled"`
+		Level     AppPublicConfigMaintenanceLevel `json:"level"`
+		Message   BilingualText                   `json:"message"`
+	} `json:"maintenance"`
+	Music struct {
+		DefaultVolume int  `json:"default_volume"`
+		Enabled       bool `json:"enabled"`
+
+		// Tracks Enabled tracks only
+		Tracks []struct {
+			Id    string        `json:"id"`
+			Title BilingualText `json:"title"`
+		} `json:"tracks"`
+	} `json:"music"`
+	Scenes struct {
+		Families map[string]struct {
+			DisabledVariants []string `json:"disabled_variants"`
+			Enabled          bool     `json:"enabled"`
+		} `json:"families"`
+
+		// PhysicsEnabled false: play the plain animation, no simulation
+		PhysicsEnabled bool `json:"physics_enabled"`
+	} `json:"scenes"`
+
+	// Version Sum of the versions of every config document; changes on any edit
+	Version int `json:"version"`
+	Voice   struct {
+		// Clips Enabled recorded lines managed by the admin (the static voice manifest stays the base)
+		Clips []struct {
+			Enabled bool                            `json:"enabled"`
+			LineId  string                          `json:"line_id"`
+			Locale  AppPublicConfigVoiceClipsLocale `json:"locale"`
+			Url     string                          `json:"url"`
+		} `json:"clips"`
+		ComputerVoiceAllowed bool `json:"computer_voice_allowed"`
+		HumanEnabledDefault  bool `json:"human_enabled_default"`
+	} `json:"voice"`
+	WelcomeGift bool `json:"welcome_gift"`
+}
+
+// AppPublicConfigMaintenanceLevel defines model for AppPublicConfig.Maintenance.Level.
+type AppPublicConfigMaintenanceLevel string
+
+// AppPublicConfigVoiceClipsLocale defines model for AppPublicConfig.Voice.Clips.Locale.
+type AppPublicConfigVoiceClipsLocale string
+
 // AuthSession defines model for AuthSession.
 type AuthSession struct {
 	AccessToken string `json:"access_token"`
@@ -1109,6 +1209,12 @@ type Beat struct {
 	//
 	// Example: ARI-OPE-A07a
 	SkillId SkillId `json:"skill_id"`
+}
+
+// BilingualText defines model for BilingualText.
+type BilingualText struct {
+	En string `json:"en"`
+	Fr string `json:"fr"`
 }
 
 // Challenge A challenge as the child sees it. The catalogue (ids, metrics, targets) is server data; the six launch challenges are in the guide.
@@ -3120,6 +3226,9 @@ type ServerInterface interface {
 	// CreateChildToken Switch to a child (play mode)
 	// (POST /children/{childId}/token)
 	CreateChildToken(w http.ResponseWriter, r *http.Request, childId ChildId, params CreateChildTokenParams)
+	// GetPublicConfig Admin-controlled app configuration (music defaults, voice, scenes, feature flags, maintenance banner, kid-visible copy)
+	// (GET /config/public)
+	GetPublicConfig(w http.ResponseWriter, r *http.Request)
 	// ListCredits Attributions required by the images in use (CR-17)
 	// (GET /credits)
 	ListCredits(w http.ResponseWriter, r *http.Request)
@@ -5091,6 +5200,20 @@ func (siw *ServerInterfaceWrapper) CreateChildToken(w http.ResponseWriter, r *ht
 	handler.ServeHTTP(w, r)
 }
 
+// GetPublicConfig operation middleware
+func (siw *ServerInterfaceWrapper) GetPublicConfig(w http.ResponseWriter, r *http.Request) {
+
+	handler := http.Handler(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		siw.Handler.GetPublicConfig(w, r)
+	}))
+
+	for _, middleware := range siw.HandlerMiddlewares {
+		handler = middleware(handler)
+	}
+
+	handler.ServeHTTP(w, r)
+}
+
 // ListCredits operation middleware
 func (siw *ServerInterfaceWrapper) ListCredits(w http.ResponseWriter, r *http.Request) {
 
@@ -6501,6 +6624,7 @@ func HandlerWithOptions(si ServerInterface, options StdHTTPServerOptions) http.H
 	m.HandleFunc(http.MethodGet+" "+options.BaseURL+"/notifications", wrapper.ListNotifications)
 	m.HandleFunc(http.MethodPost+" "+options.BaseURL+"/notifications/{notificationId}/read", wrapper.MarkNotificationRead)
 	m.HandleFunc(http.MethodGet+" "+options.BaseURL+"/platform/public", wrapper.GetPlatformPublic)
+	m.HandleFunc(http.MethodGet+" "+options.BaseURL+"/config/public", wrapper.GetPublicConfig)
 	m.HandleFunc(http.MethodDelete+" "+options.BaseURL+"/push/subscribe", wrapper.UnsubscribePush)
 	m.HandleFunc(http.MethodPost+" "+options.BaseURL+"/push/subscribe", wrapper.SubscribePush)
 	m.HandleFunc(http.MethodGet+" "+options.BaseURL+"/children/{childId}/challenges", wrapper.ListChallenges)
@@ -10858,6 +10982,72 @@ func (response CreateChildToken500ApplicationProblemPlusJSONResponse) VisitCreat
 	return err
 }
 
+type GetPublicConfigRequestObject struct {
+}
+
+type GetPublicConfigResponseObject interface {
+	VisitGetPublicConfigResponse(w http.ResponseWriter) error
+}
+
+type GetPublicConfig200ResponseHeaders struct {
+	CacheControl *string
+}
+
+type GetPublicConfig200JSONResponse struct {
+	Body    AppPublicConfig
+	Headers GetPublicConfig200ResponseHeaders
+}
+
+func (response GetPublicConfig200JSONResponse) VisitGetPublicConfigResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response.Body); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/json")
+	if response.Headers.CacheControl != nil {
+		w.Header().Set("Cache-Control", fmt.Sprint(*response.Headers.CacheControl))
+	}
+	w.WriteHeader(200)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type GetPublicConfig429ApplicationProblemPlusJSONResponse struct {
+	RateLimitedApplicationProblemPlusJSONResponse
+}
+
+func (response GetPublicConfig429ApplicationProblemPlusJSONResponse) VisitGetPublicConfigResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response.Body); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	if response.Headers.RetryAfter != nil {
+		w.Header().Set("Retry-After", fmt.Sprint(*response.Headers.RetryAfter))
+	}
+	w.WriteHeader(429)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
+type GetPublicConfig500ApplicationProblemPlusJSONResponse struct {
+	ServerErrorApplicationProblemPlusJSONResponse
+}
+
+func (response GetPublicConfig500ApplicationProblemPlusJSONResponse) VisitGetPublicConfigResponse(w http.ResponseWriter) error {
+
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(response); err != nil {
+		return err
+	}
+	w.Header().Set("Content-Type", "application/problem+json")
+	w.WriteHeader(500)
+	_, err := buf.WriteTo(w)
+	return err
+}
+
 type ListCreditsRequestObject struct {
 }
 
@@ -13508,6 +13698,9 @@ type StrictServerInterface interface {
 	// CreateChildToken Switch to a child (play mode)
 	// (POST /children/{childId}/token)
 	CreateChildToken(ctx context.Context, request CreateChildTokenRequestObject) (CreateChildTokenResponseObject, error)
+	// GetPublicConfig Admin-controlled app configuration (music defaults, voice, scenes, feature flags, maintenance banner, kid-visible copy)
+	// (GET /config/public)
+	GetPublicConfig(ctx context.Context, request GetPublicConfigRequestObject) (GetPublicConfigResponseObject, error)
 	// ListCredits Attributions required by the images in use (CR-17)
 	// (GET /credits)
 	ListCredits(ctx context.Context, request ListCreditsRequestObject) (ListCreditsResponseObject, error)
@@ -14888,6 +15081,30 @@ func (sh *strictHandler) CreateChildToken(w http.ResponseWriter, r *http.Request
 		sh.options.ResponseErrorHandlerFunc(w, r, err)
 	} else if validResponse, ok := response.(CreateChildTokenResponseObject); ok {
 		if err := validResponse.VisitCreateChildTokenResponse(w); err != nil {
+			sh.options.ResponseErrorHandlerFunc(w, r, err)
+		}
+	} else if response != nil {
+		sh.options.ResponseErrorHandlerFunc(w, r, fmt.Errorf("unexpected response type: %T", response))
+	}
+}
+
+// GetPublicConfig operation middleware
+func (sh *strictHandler) GetPublicConfig(w http.ResponseWriter, r *http.Request) {
+	var request GetPublicConfigRequestObject
+
+	handler := func(ctx context.Context, w http.ResponseWriter, r *http.Request, request interface{}) (interface{}, error) {
+		return sh.ssi.GetPublicConfig(ctx, request.(GetPublicConfigRequestObject))
+	}
+	for _, middleware := range sh.middlewares {
+		handler = middleware(handler, "GetPublicConfig")
+	}
+
+	response, err := handler(r.Context(), w, r, request)
+
+	if err != nil {
+		sh.options.ResponseErrorHandlerFunc(w, r, err)
+	} else if validResponse, ok := response.(GetPublicConfigResponseObject); ok {
+		if err := validResponse.VisitGetPublicConfigResponse(w); err != nil {
 			sh.options.ResponseErrorHandlerFunc(w, r, err)
 		}
 	} else if response != nil {

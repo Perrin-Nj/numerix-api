@@ -6,7 +6,6 @@ import (
 	"encoding/json"
 	"errors"
 	"net/http"
-	"regexp"
 	"slices"
 	"strconv"
 )
@@ -60,36 +59,6 @@ func defaultPlans() plansDoc {
 		}}
 }
 
-// defaultConfig is the platform public config until an admin changes it.
-func defaultConfig() map[string]any {
-	return map[string]any{"card_threshold_pct": 70.0, "unpaid_policy": "block", "trial_days": 14.0, "daily_time_limit_minutes_default": 60.0,
-		"reminder_hour_local": 17.0, "expiring_warning_days": 7.0, "default_locale": "fr-CA",
-		"features": map[string]any{"feed": true, "challenges": true, "push": false, "payments": true}}
-}
-
-// configRules validate each config key (same rules as the mock).
-var configRules = map[string]func(any) bool{
-	"card_threshold_pct":               func(v any) bool { f, ok := v.(float64); return ok && f >= 0 && f <= 100 },
-	"unpaid_policy":                    func(v any) bool { return v == "block" || v == "allow" },
-	"trial_days":                       func(v any) bool { return isInt(v, 0, 365) },
-	"daily_time_limit_minutes_default": func(v any) bool { return v == nil || isInt(v, 5, 180) },
-	"reminder_hour_local":              func(v any) bool { return isInt(v, 0, 23) },
-	"expiring_warning_days":            func(v any) bool { return isInt(v, 0, 60) },
-	"default_locale": func(v any) bool {
-		s, ok := v.(string)
-		return ok && regexp.MustCompile(`^[a-z]{2}-[A-Z]{2}$`).MatchString(s)
-	},
-	"features": func(v any) bool {
-		m, ok := v.(map[string]any)
-		for _, x := range m {
-			if _, isB := x.(bool); !isB {
-				return false
-			}
-		}
-		return ok
-	},
-}
-
 // kvQuerier is *sql.DB or *sql.Tx.
 type kvQuerier interface {
 	QueryRowContext(ctx context.Context, q string, args ...any) *sql.Row
@@ -115,21 +84,10 @@ func (a *API) saveKV(tx *sql.Tx, key string, v any) error {
 		return err
 	}
 	_, err = tx.Exec(`INSERT INTO admin_kv (key, json, updated_at) VALUES (?,?,?) ON CONFLICT(key) DO UPDATE SET json = excluded.json, updated_at = excluded.updated_at`, key, string(raw), a.stamp())
+	if err == nil && key == "plans" { // the game reads plan_catalog; before this mirror, admin edits never reached it
+		_, err = tx.Exec(`INSERT INTO plan_catalog (id, json, updated_at) VALUES (1,?,?) ON CONFLICT(id) DO UPDATE SET json = excluded.json, updated_at = excluded.updated_at`, string(raw), a.stamp())
+	}
 	return err
-}
-
-// LoadConfig returns the platform public config (defaults overlaid with the saved values).
-// The platform module reads unpaid_policy, trial_days, features... through this function.
-func LoadConfig(ctx context.Context, q kvQuerier) (map[string]any, error) {
-	cfg := defaultConfig()
-	saved := map[string]any{}
-	if _, err := loadKV(ctx, q, "config", &saved); err != nil {
-		return nil, err
-	}
-	for k, v := range saved {
-		cfg[k] = v
-	}
-	return cfg, nil
 }
 
 // loadPlans returns the saved plans document or the defaults.
@@ -221,48 +179,3 @@ func validatePlans(d plansDoc) error {
 	return nil
 }
 
-// GET /admin/v1/config
-func (a *API) getConfig(w http.ResponseWriter, r *http.Request) {
-	cfg, err := LoadConfig(r.Context(), a.db.R)
-	if err != nil {
-		a.fail(w, r, err)
-		return
-	}
-	writeJSON(w, http.StatusOK, cfg)
-}
-
-// PUT /admin/v1/config: partial update, every given key is validated.
-func (a *API) putConfig(w http.ResponseWriter, r *http.Request) {
-	b := map[string]any{}
-	if err := decode(r, &b); err != nil {
-		a.fail(w, r, err)
-		return
-	}
-	for k, v := range b {
-		if rule := configRules[k]; rule == nil || !rule(v) {
-			a.fail(w, r, bad("invalid config "+k))
-			return
-		}
-	}
-	var out map[string]any
-	err := a.db.WithWriteTx(r.Context(), func(tx *sql.Tx) error {
-		cfg, err := LoadConfig(r.Context(), tx)
-		if err != nil {
-			return err
-		}
-		for k, v := range b {
-			cfg[k] = v
-		}
-		out = cfg
-		if err := a.saveKV(tx, "config", cfg); err != nil {
-			return err
-		}
-		d, _ := json.Marshal(b)
-		return a.writeAudit(tx, actor(r), "config.update", "config", "*", string(d))
-	})
-	if err != nil {
-		a.fail(w, r, err)
-		return
-	}
-	writeJSON(w, http.StatusOK, out)
-}

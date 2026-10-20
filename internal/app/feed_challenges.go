@@ -354,7 +354,7 @@ func (s *Server) ClaimWelcomeGift(ctx context.Context, req api.ClaimWelcomeGiftR
 	if err != nil {
 		return nil, err
 	}
-	if !s.Config.FeatureWelcomeGift { // FEATURE_WELCOME_GIFT is off: no welcome gift exists
+	if !s.plConfig(ctx).WelcomeGift { // FEATURE_WELCOME_GIFT is off: no welcome gift exists
 		return nil, httpapi.NewError(http.StatusNotFound, "not_found", "")
 	}
 	now := time.Now().UTC().Format(plTSLayout)

@@ -18,6 +18,7 @@ import (
 	"github.com/google/uuid"
 
 	"github.com/Perrin-Nj/numerix-api/api"
+	"github.com/Perrin-Nj/numerix-api/internal/appconfig"
 	"github.com/Perrin-Nj/numerix-api/internal/httpapi"
 )
 
@@ -69,34 +70,12 @@ func (s *Server) plPayments() PaymentProvider {
 
 // ───────────── Platform config and plan catalog (defaults when the admin never saved one) ─────────────
 
-// platformConfig is the JSON document in platform_config (same keys as the mock's DEFAULT_CONFIG).
-type platformConfig struct {
-	CardThresholdPct             int             `json:"card_threshold_pct"`
-	UnpaidPolicy                 string          `json:"unpaid_policy"`
-	TrialDays                    int             `json:"trial_days"`
-	DailyTimeLimitMinutesDefault int             `json:"daily_time_limit_minutes_default"`
-	ReminderHourLocal            int             `json:"reminder_hour_local"`
-	ExpiringWarningDays          int             `json:"expiring_warning_days"`
-	DefaultLocale                string          `json:"default_locale"`
-	Features                     map[string]bool `json:"features"`
-}
+// platformConfig is the platform policy document, now owned by the versioned config store (internal/appconfig).
+type platformConfig = appconfig.Platform
 
-func plDefaultConfig() platformConfig {
-	return platformConfig{
-		CardThresholdPct: 70, UnpaidPolicy: "block", TrialDays: 14, DailyTimeLimitMinutesDefault: 60,
-		ReminderHourLocal: 17, ExpiringWarningDays: 7, DefaultLocale: "fr-CA",
-		Features: map[string]bool{"feed": true, "challenges": true, "push": false, "payments": true},
-	}
-}
-
-// plConfig reads the config row over the defaults; on any problem the defaults are used (never fails a request).
+// plConfig reads the policy from the cached config store; a read problem returns the defaults (never fails a request).
 func (s *Server) plConfig(ctx context.Context) platformConfig {
-	cfg := plDefaultConfig()
-	var raw string
-	if err := s.Store.R.QueryRowContext(ctx, `SELECT json FROM platform_config WHERE id = 1`).Scan(&raw); err == nil {
-		_ = json.Unmarshal([]byte(raw), &cfg) // keys missing in the JSON keep their default
-	}
-	return cfg
+	return appconfig.Get[appconfig.Platform](ctx, s.Cfg, appconfig.NSPlatform)
 }
 
 // plDefaultPlans is the catalog of the mock (CAD cents). Stored form and API form are the same JSON.
@@ -129,7 +108,7 @@ func (s *Server) GetPlatformPublic(ctx context.Context, _ api.GetPlatformPublicR
 		TrialDays:                    &c.TrialDays,
 		DefaultLocale:                &c.DefaultLocale,
 		Features:                     &c.Features,
-		DailyTimeLimitMinutesDefault: &c.DailyTimeLimitMinutesDefault,
+		DailyTimeLimitMinutesDefault: c.DailyTimeLimitMinutesDefault,
 		ReminderHourLocal:            &c.ReminderHourLocal,
 		ExpiringWarningDays:          &c.ExpiringWarningDays,
 	}, nil

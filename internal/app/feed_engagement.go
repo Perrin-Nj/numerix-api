@@ -111,13 +111,13 @@ func feedMinutes(x feedSession) int {
 func (s *Server) feedGoalTarget(ctx context.Context, childID string) int {
 	var raw string
 	if err := s.Store.R.QueryRowContext(ctx, `SELECT json FROM child_settings WHERE child_id = ?`, childID).Scan(&raw); err != nil {
-		return 1 // no settings row yet
+		return s.plConfig(ctx).DailyGoalDefault // no settings row yet
 	}
 	var st struct {
 		Goal int `json:"daily_goal_chapters"`
 	}
 	if json.Unmarshal([]byte(raw), &st) != nil || st.Goal < 1 || st.Goal > 5 {
-		return 1
+		return s.plConfig(ctx).DailyGoalDefault
 	}
 	return st.Goal
 }
@@ -415,7 +415,7 @@ func (s *Server) GetHome(ctx context.Context, req api.GetHomeRequestObject) (api
 	}
 	h.Worlds = append(h.Worlds, worlds...)
 	gift := false
-	if s.Config.FeatureWelcomeGift {
+	if s.plConfig(ctx).WelcomeGift {
 		var n int
 		if err := s.Store.R.QueryRowContext(ctx, `SELECT COUNT(*) FROM collection WHERE child_id = ? AND card_id = 'welcome'`, c.ID).Scan(&n); err != nil && err != sql.ErrNoRows {
 			return nil, s.plInternalErr(ctx, "load gift", err)

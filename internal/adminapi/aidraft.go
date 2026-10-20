@@ -18,6 +18,7 @@ import (
 	"net/http"
 	"slices"
 
+	"github.com/Perrin-Nj/numerix-api/internal/appconfig"
 	"github.com/Perrin-Nj/numerix-api/internal/content"
 	"github.com/Perrin-Nj/numerix-api/internal/contentdb"
 	"github.com/Perrin-Nj/numerix-api/internal/drafter"
@@ -44,6 +45,10 @@ var kindForType = map[string]string{
 
 func (a *API) aiDraft(w http.ResponseWriter, r *http.Request) {
 	ctx := r.Context()
+	if !appconfig.Get[appconfig.AI](ctx, a.cfg, appconfig.NSAI).DraftEnabled { // the admin switched AI drafts off
+		a.fail(w, r, httpapi.NewError(http.StatusServiceUnavailable, "ai_disabled", "AI drafts are switched off in the config."))
+		return
+	}
 	if a.drafter == nil {
 		a.fail(w, r, httpapi.NewError(http.StatusServiceUnavailable, "not_configured", "AI drafts need ANTHROPIC_API_KEY and NARRATOR_MODEL."))
 		return

@@ -1833,6 +1833,32 @@ paths:
           $ref: '#/components/responses/RateLimited'
         '500':
           $ref: '#/components/responses/ServerError'
+  /config/public:
+    get:
+      tags:
+        - Platform
+      operationId: getPublicConfig
+      summary: Admin-controlled app configuration (music defaults, voice, scenes, feature flags, maintenance banner, kid-visible copy)
+      description: |
+        No auth, no personal data. Edited by admins at runtime; the server caches it and answers
+        `Cache-Control: public, max-age=60`. `version` changes whenever anything changes. The client uses it
+        minimally: music defaults, feature flags and the maintenance banner. Any field it does not know is ignored.
+      security: []
+      responses:
+        '200':
+          description: Public config
+          headers:
+            Cache-Control:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppPublicConfig'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
   /push/subscribe:
     post:
       tags:
@@ -3595,6 +3621,167 @@ components:
           challenges: true
           push: false
           payments: true
+    BilingualText:
+      type: object
+      required:
+        - fr
+        - en
+      properties:
+        fr:
+          type: string
+          maxLength: 280
+        en:
+          type: string
+          maxLength: 280
+    AppPublicConfig:
+      type: object
+      required:
+        - version
+        - music
+        - voice
+        - scenes
+        - features
+        - welcome_gift
+        - feed
+        - maintenance
+        - copy
+      properties:
+        version:
+          type: integer
+          minimum: 0
+          description: Sum of the versions of every config document; changes on any edit
+        music:
+          type: object
+          required:
+            - enabled
+            - default_volume
+            - tracks
+          properties:
+            enabled:
+              type: boolean
+            default_volume:
+              type: integer
+              minimum: 0
+              maximum: 100
+            tracks:
+              type: array
+              description: Enabled tracks only
+              items:
+                type: object
+                required:
+                  - id
+                  - title
+                properties:
+                  id:
+                    type: string
+                  title:
+                    $ref: '#/components/schemas/BilingualText'
+        voice:
+          type: object
+          required:
+            - human_enabled_default
+            - computer_voice_allowed
+            - clips
+          properties:
+            human_enabled_default:
+              type: boolean
+            computer_voice_allowed:
+              type: boolean
+            clips:
+              type: array
+              description: Enabled recorded lines managed by the admin (the static voice manifest stays the base)
+              items:
+                type: object
+                required:
+                  - line_id
+                  - locale
+                  - url
+                  - enabled
+                properties:
+                  line_id:
+                    type: string
+                  locale:
+                    type: string
+                    enum:
+                      - fr-CA
+                      - en-CA
+                  url:
+                    type: string
+                  enabled:
+                    type: boolean
+        scenes:
+          type: object
+          required:
+            - physics_enabled
+            - families
+          properties:
+            physics_enabled:
+              type: boolean
+              description: 'false: play the plain animation, no simulation'
+            families:
+              type: object
+              additionalProperties:
+                type: object
+                required:
+                  - enabled
+                  - disabled_variants
+                properties:
+                  enabled:
+                    type: boolean
+                  disabled_variants:
+                    type: array
+                    items:
+                      type: string
+        features:
+          type: object
+          additionalProperties:
+            type: boolean
+        welcome_gift:
+          type: boolean
+        feed:
+          type: object
+          required:
+            - discover_enabled
+            - family_board_visible
+          properties:
+            discover_enabled:
+              type: boolean
+            family_board_visible:
+              type: boolean
+        maintenance:
+          type: object
+          required:
+            - enabled
+            - level
+            - message
+            - block_play
+          properties:
+            enabled:
+              type: boolean
+            level:
+              type: string
+              enum:
+                - info
+                - warning
+                - critical
+            message:
+              $ref: '#/components/schemas/BilingualText'
+            block_play:
+              type: boolean
+              description: 'true: game requests answer 503 maintenance'
+        copy:
+          type: object
+          required:
+            - home_tip
+            - feed_empty
+            - session_done
+          properties:
+            home_tip:
+              $ref: '#/components/schemas/BilingualText'
+            feed_empty:
+              $ref: '#/components/schemas/BilingualText'
+            session_done:
+              $ref: '#/components/schemas/BilingualText'
     World:
       type: object
       required:
