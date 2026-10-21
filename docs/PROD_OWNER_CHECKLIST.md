@@ -18,7 +18,7 @@ RULE: never paste a password, key or token into chat. Secrets go only into the n
 
 - [ ] B1 Buy the domain (Porkbun `.ca`, about 9 USD per year, WHOIS privacy free). Section 6.
 - [ ] B2 Create the host account. Oracle: pick home region Canada Southeast (Montreal). OVH: VPS-1, Beauharnois (Quebec). Read the order screen for currency and commitment BEFORE paying.
-- [ ] B3 Create a bucket for backups (Oracle Object Storage) and an access key pair for it (Oracle: Profile, Customer Secret Keys). Optional second copy: Backblaze B2 bucket and application key.
+- [ ] B3 Create a bucket for backups (Oracle Object Storage) and an access key pair for it (Oracle: Profile, Customer Secret Keys). Bucket name `numerix-backup`. A Backblaze B2 second copy needs extra work from Claude (Litestream 0.5 allows one replica per database, section 9).
 - [ ] B4 Pick a free uptime monitor and READ its terms for commercial use (UptimeRobot, Better Stack or Healthchecks.io).
 - [ ] B5 Delete or disconnect the old Vercel project (Vercel, Project, Settings, Git, Disconnect) so a push to `main` does not deploy there.
 

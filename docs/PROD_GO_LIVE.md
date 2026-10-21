@@ -210,7 +210,7 @@ No AAAA records unless you gave the VM an IPv6 address and tested it. No CAA rec
 systemd units: numerix-api, numerix-web, numerix-admin, caddy, litestream, numerix-verify-backup.timer
 ```
 
-Users: `numerix` runs the services and cannot log in. `deploy` has a key that works only for `numerix-deploy` (forced command, no shell, no port forwarding). Sudo for `deploy` is limited to restarting the three services and running the backup, restore and seed helpers as `numerix`.
+Users: `numerix` runs the services and cannot log in. `deploy` has a key that works only for `numerix-deploy` (forced command, no shell, no port forwarding). Sudo for `deploy` is limited to restarting the three services, stopping and starting the API and Litestream (for a database restore), and running the backup, restore and seed helpers as `numerix`. Litestream runs as `numerix` too (set in its override file) so the files it creates next to the database stay writable by the API.
 
 Verbs of the gate, tested offline in WSL (Ubuntu) on 2026-10-21 with `deploy/oracle/test-gate.sh`: put (with checksum, refuses overwrites, unsafe archives, bad names), activate, rollback, verify, backup, restore-db, seed, status.
 
@@ -264,7 +264,7 @@ Create two **Environments** in EACH repo: `staging` and `production`. The same n
 | Kind | Name | Environment | Meaning |
 |---|---|---|---|
 | Secret | `DEPLOY_SSH_KEY` | staging, production | PRIVATE half of that environment's deploy key (one key pair per environment) |
-| Secret | `DEPLOY_KNOWN_HOSTS` | staging, production | output of `ssh-keyscan -t ed25519 <vm-ip>` for that VM, after you checked the fingerprint |
+| Secret | `DEPLOY_KNOWN_HOSTS` | staging, production | output of `ssh-keyscan -t ed25519 <DEPLOY_HOST value>` for that VM, after you checked the fingerprint. Scan the exact address you put in `DEPLOY_HOST` (IP or name), or the pinned host key will not match |
 | Secret (optional) | `SMOKE_ADMIN_API_TOKEN` | staging only | lets the API smoke test check the admin API; do NOT set on production |
 | Variable | `DEPLOY_HOST` | staging, production | the VM address |
 | Variable | `DEPLOY_USER` | staging, production | `deploy` |
@@ -297,8 +297,8 @@ Until you decide, the production workflow refuses to run (`PROD_APPROVAL_CONFIRM
 
 What exists:
 
-- **Continuous copy** of the database with Litestream to an Oracle bucket (`/etc/litestream.yml`, path `prod/numerix.db` or `staging/numerix.db`). Retention in the file: 168 hours (7 days) of history. Litestream version: the setup script downloads the latest `.deb` from GitHub; the configuration keys in the repo file were not re-checked against that newest version: UNVERIFIED, verify by running the restore drill below right after setup.
-- **Second off-site copy (recommended for production):** in `litestream.yml` add a second `replicas:` entry of type `s3` pointing at a Backblaze B2 bucket (B2 offers an S3-compatible endpoint; exact endpoint format for your region: UNVERIFIED, shown on the B2 bucket page). B2 free tier covers 10 GB (VERIFIED).
+- **Continuous copy** of the database with Litestream to an Oracle bucket (`/etc/litestream.yml`, path `prod/numerix.db` or `staging/numerix.db`). History kept in the bucket: 7 days (`snapshot.retention: 168h`). Litestream version: the setup script downloads the latest `.deb` from GitHub. The repo file was checked 2026-10-21 against Litestream 0.5.17 (config reference https://litestream.io/reference/config/ and by running the real binary): one `replica:` per database, retention is a global setting (the old per-replica `retention` and a `replicas:` list with two entries are NOT accepted any more). Oracle: endpoint `https://NAMESPACE.compat.objectstorage.REGION.oraclecloud.com`, region = the Oracle region id (for example `ca-montreal-1`), path-style addressing, and a Customer Secret Key pair.
+- **Second off-site copy (recommended for production):** Litestream 0.5 refuses two replicas on one database ("multiple replicas on a single database are no longer supported", tested), so the second copy cannot be a second entry in the same file. Options: (a) a second Litestream process with its own config file and its own `meta-path`, replicating to a Backblaze B2 bucket (B2 endpoint `https://s3.REGION.backblazeb2.com`, region as shown on the bucket page, keys = B2 keyID and applicationKey; NOT built or tested here: UNVERIFIED), or (b) a nightly job that copies the newest Oracle replica to B2. Ask Claude to build and rehearse one of them before you rely on it; until then the only copy is the Oracle bucket. B2 free tier covers 10 GB (VERIFIED).
 - **Before every production deploy and every staging deploy:** `numerix-deploy backup` makes a consistent copy (`VACUUM INTO`, integrity checked) in `/var/lib/numerix/backups`, last 14 kept.
 - **Before every content seed:** the seed tool makes its own backup.
 - **Daily restore check:** `numerix-verify-backup.timer` (04:30) restores the newest replica into a temp folder and runs the integrity check. If it fails, `systemctl status numerix-verify-backup` shows it. It also keeps the machine slightly busy, which helps a little against Oracle's idle rule but is not a guarantee.
@@ -307,9 +307,9 @@ What exists:
 
 Restore drill (do it once on staging BEFORE go-live, then once on production right after the first real data, then whenever the daily check fails):
 
-1. On the VM: `litestream restore -config /etc/litestream.yml -o /tmp/restored.db /var/lib/numerix/numerix.db`.
-2. `sqlite3 /tmp/restored.db "PRAGMA integrity_check; SELECT COUNT(*) FROM bank_questions;"` must print `ok` and about 1229 (published plus retired rows, `RELEASE_CHECKLIST.md` section 4).
-3. Full rehearsal (staging only): stop the API, move the database away, restore into place, start the API, run the smoke test.
+1. On the VM run the same check the daily timer runs: `sudo systemctl start numerix-verify-backup` (wait until the prompt returns), then `sudo journalctl -u numerix-verify-backup -n 5 --no-pager`. It restores the newest replica to a temporary folder, runs the integrity check and prints `backup restore ok: N questions`.
+2. Expect `backup restore ok` and N about 1229 (published plus retired rows, `RELEASE_CHECKLIST.md` section 4; only after the content seed ran). A failure shows as `failed` in `systemctl status numerix-verify-backup`.
+3. Full rehearsal (staging only), on the VM: `sudo systemctl stop numerix-api litestream`, then `sudo mv /var/lib/numerix/numerix.db /var/lib/numerix/numerix.db.old && sudo rm -f /var/lib/numerix/numerix.db-wal /var/lib/numerix/numerix.db-shm`, then `sudo -u numerix bash -c 'set -a; . /etc/litestream.env; set +a; litestream restore -config /etc/litestream.yml /var/lib/numerix/numerix.db'`, then `sudo systemctl start litestream numerix-api`, then check `curl -fsS https://staging-api.YOURDOMAIN/v1/ready` and run the smoke test (Actions, `rollback` for staging). Litestream MUST be stopped while the file is replaced (tested: replacing the file under a running Litestream corrupts the copy in the bucket). The gate's `restore-db` does this for you.
 4. Write the date of the drill in `docs/PLAN.md`.
 
 ---
@@ -329,7 +329,7 @@ Restore drill (do it once on staging BEFORE go-live, then once on production rig
 | Is it up? | `GET https://api.YOURDOMAIN/v1/health` (returns status and version), `GET https://app.YOURDOMAIN/api/health` (says which side is down), `https://admin.YOURDOMAIN/login` | free |
 | Who checks? | The repo workflow `keepalive.yml` pings every 5 minutes from GitHub and fails when something is down (GitHub emails the owner on failure). Plus one external free monitor with email or phone alerts: UptimeRobot, Better Stack or Healthchecks.io (terms UNVERIFIED, section 4). | $0 |
 | Certificate and disk | smoke tests check the certificate; add a monitor on the same URLs (a failing certificate shows as down) | $0 |
-| Backups | `systemctl status numerix-verify-backup` and `litestream snapshots -config /etc/litestream.yml /var/lib/numerix/numerix.db` | $0 |
+| Backups | `systemctl status numerix-verify-backup` and `systemctl status litestream` (active; `journalctl -u litestream` shows no repeating ERROR lines). The command `litestream snapshots` no longer exists in 0.5 | $0 |
 | Logs | `journalctl -u numerix-api -f` (JSON lines: request id, status, duration; no names, emails or answers by design), `journalctl -u numerix-web`, `journalctl -u caddy` | $0 |
 | Admin view | `GET /admin/v1/health` with the admin token reports Mongo sync state | $0 |
 | Oracle emails | read them: they warn before reclaiming | $0 |
@@ -384,7 +384,7 @@ What you (the owner) must do, with a lawyer where marked:
 
 - Design targets: answer under 400 ms, next-question under 800 ms, health under 100 ms at the 95th percentile; about 200 kids at the same time.
 - The test tool is `cmd/loadtest`. On the shared laptop, p50 was 1-3 ms in every run; the 95th percentile missed the targets in most runs because the laptop itself stalled for 1 to 1.7 seconds (the test's own timer woke late). Zero server errors and zero database-locked errors in every run. The document's verdict: "targets are NOT reliably met on this machine; re-run on a quiet Linux host".
-- A quiet-host number does not exist yet. **Staging run is the gate**: on the staging VM run `bin/loadtest -rps 50 -duration 20s` and require zero 5xx and answer p95 under 400 ms (as `RELEASE_CHECKLIST.md` says). Until that is done, the capacity claim is UNVERIFIED.
+- A quiet-host number does not exist yet. **Staging run is the gate**: on the staging VM run the load test of step S4 and require zero 5xx and answer p95 under 400 ms (as `RELEASE_CHECKLIST.md` says). Until that is done, the capacity claim is UNVERIFIED.
 - Known limit: SQLite has one writer; the first real ceiling is expected above a few hundred requests per second. The rate limiter is per process. One API process per environment is the supported shape.
 - A 1 OCPU / 8 GB Oracle VM or a 2 vCore / 4 GB OVH VM is far above what a launch needs if those numbers hold: UNVERIFIED until measured on the VM.
 
@@ -436,9 +436,9 @@ Files, in BOTH repos under `.github/workflows` (and a shared step in `.github/ac
 | `db-content.yml` | Run workflow (API repo) | content seed: dry run, then apply only if ticked; production waits for approval |
 | `keepalive.yml` (web repo) | every 5 minutes | pings the health URLs in `KEEPALIVE_URLS` |
 
-Checked 2026-10-21: `actionlint` 1.7.7, `yamllint` 1.35 and `shellcheck` give no findings on these files. Pinned tool versions: staticcheck v0.8.2, govulncheck v1.9.0, oapi-codegen v2.8.0, Node 22, pnpm from `packageManager`. Third-party actions are pinned by major tag (`@v4`, `@v5`); Dependabot (weekly) is configured for them. Whether newer major versions exist: UNVERIFIED.
+Checked 2026-10-21 (review pass 2: actionlint 1.7.12, yamllint, shellcheck, `caddy validate` 2.11.7 on the rendered Caddyfile, `systemd-analyze verify` on the units, `test-gate.sh`): no findings. Fixed in pass 2: the production job lacked `actions: read`, which downloading the staging run's artifact needs; the CI call from deploy-staging did not pass secrets and shared a cancelling concurrency group with the push-triggered CI run; `put` refused a workflow re-run of the same release. Pinned tool versions: staticcheck v0.8.2, govulncheck v1.9.0, oapi-codegen v2.8.0, Node 22, pnpm from `packageManager`. Third-party actions are pinned by major tag (`@v4`, `@v5`); Dependabot (weekly) is configured for them. Whether newer major versions exist: UNVERIFIED.
 
-Honest limits: the YAML has been linted but NEVER RUN on GitHub (no remote access from here). The first staging run is the real test of the workflow files. The "same artifact" promise: staging and production use the exact files (checksum compared); artifacts expire after 90 days, after which a tag must wait for a fresh staging run.
+Honest limits: the YAML has been linted but NEVER RUN on GitHub (no remote access from here). The first staging run is the real test of the workflow files. The "same artifact" promise: staging and production use the exact files (checksum compared); artifacts expire after 90 days, after which a tag must wait for a fresh staging run. GitHub keeps only ONE waiting run per concurrency group: if you merge twice to `main` while a staging deploy is still running, the middle run is cancelled and that commit has no staging deploy, so tag only a commit whose `deploy-staging` run is green. A failed deploy can simply be re-run: the gate accepts the same release bytes again.
 
 Order of a release when both repos change: merge API, wait for its staging deploy; merge web, wait for its staging deploy; test staging by hand; tag the API (approve); tag the web (approve). The API is backward compatible with the previous web release for one version (contract rule); do not skip this order.
 
@@ -461,13 +461,13 @@ Do the steps in order. After each step compare with "Expect". If it does not mat
 - **R2. Open ports.** Section 6 item 4, on the network of each VM. Expect: you can still SSH.
 - **R3. DNS records** (section 6). Expect, from your PC, `nslookup app.YOURDOMAIN` returns the production IP (may take a few minutes).
 - **R4. Deploy keys.** On your PC, twice (staging and production):
-  `ssh-keygen -t ed25519 -f nx_deploy_staging -C numerix-staging-deploy -N ""` and the same for `nx_deploy_production`.
+  `ssh-keygen -t ed25519 -f nx_deploy_staging -C numerix-staging-deploy -N ""` and the same for `nx_deploy_production`. Use Git Bash (plain Windows PowerShell can drop the empty `-N ""` and ask for a passphrase). The passphrase must stay empty because GitHub Actions cannot type one.
   Expect: four files. The `.pub` files are public. The files without `.pub` are PRIVATE: they go only into GitHub secrets (R7) and are then deleted from your PC.
 - **R5. Run the setup script on each VM.** The login name of a new VM depends on the host: Oracle's Ubuntu image uses `ubuntu`. For OVH the first login user is shown in the order email and the control panel: UNVERIFIED, use the one it shows. Below, `ubuntu` stands for that name. Copy the folder: `scp -r deploy/oracle ubuntu@VMIP:~/` and `scp nx_deploy_staging.pub ubuntu@VMIP:/tmp/deploy.pub`. Then `ssh ubuntu@VMIP` and run
   `sudo bash ~/oracle/setup.sh --app staging-app.YOURDOMAIN --admin staging-admin.YOURDOMAIN --api staging-api.YOURDOMAIN --deploy-key /tmp/deploy.pub`
   (production: the `app.`, `admin.`, `api.` names and the production public key). Expect the last line "setup done". If Litestream download fails, install it by hand from its releases page.
-- **R6. Fill the settings on the VM.** `sudo nano /etc/numerix/api.env`: set `JWT_SECRET`, `ADMIN_API_TOKEN` (run `openssl rand -hex 32` twice on the VM), the five origin and passkey lines for that environment (see `env.example`; staging uses the `staging-` names). `sudo nano /etc/numerix/admin.env`: same `ADMIN_API_TOKEN`, a long `ADMIN_PASSWORD`, `openssl rand -hex 32` for `ADMIN_SESSION_SECRET`. `sudo nano /etc/litestream.yml`: replace `__ENV__` with `staging` or `prod`, `__NAMESPACE__`, `__REGION__`. `sudo nano /etc/litestream.env`: the two bucket keys. Then `sudo systemctl restart litestream`. Expect: `systemctl status litestream` says active (it may wait for the database to exist).
-- **R7. GitHub secrets and variables** (section 8.5), in both repos, both environments, using the GitHub website. Get the host key line with `ssh-keyscan -t ed25519 VMIP` on your PC, and compare its fingerprint with `ssh-keygen -lf /etc/ssh/ssh_host_ed25519_key.pub` run on the VM. Expect: all names in the list exist (values are hidden).
+- **R6. Fill the settings on the VM.** `sudo nano /etc/numerix/api.env`: set `JWT_SECRET`, `ADMIN_API_TOKEN` (run `openssl rand -hex 32` twice on the VM), the five origin and passkey lines for that environment (see `env.example`; staging uses the `staging-` names). `sudo nano /etc/numerix/admin.env`: same `ADMIN_API_TOKEN`, a long `ADMIN_PASSWORD`, `openssl rand -hex 32` for `ADMIN_SESSION_SECRET`. `sudo nano /etc/litestream.yml`: replace `__ENV__` with `staging` or `prod`, `__NAMESPACE__` (Oracle: Profile, Tenancy, Object storage namespace), and both `__REGION__` words with the region id such as `ca-montreal-1`. The bucket `numerix-backup` must exist (Oracle: Storage, Buckets, Create bucket). `sudo nano /etc/litestream.env`: the two bucket keys. Then `sudo systemctl restart litestream`. Expect: `systemctl status litestream` says active (it may wait for the database to exist, which appears after the first deploy). If the log shows `AccessDenied` or `SignatureDoesNotMatch`, the key pair or region is wrong.
+- **R7. GitHub secrets and variables** (section 8.5), in both repos, both environments, using the GitHub website. Paste the WHOLE private key file (from the `-----BEGIN` line to the `-----END` line) into `DEPLOY_SSH_KEY`. Get the host key line with `ssh-keyscan -t ed25519 VMIP > hostkey.txt` on your PC (same address as `DEPLOY_HOST`), look at its fingerprint with `ssh-keygen -lf hostkey.txt`, and compare it with `ssh-keygen -lf /etc/ssh/ssh_host_ed25519_key.pub` run on the VM. Paste the content of `hostkey.txt` into `DEPLOY_KNOWN_HOSTS`. Expect: all names in the list exist (values are hidden).
 - **R8. Copy the Discover media once.** `scp -r seed/feed-media ubuntu@VMIP:/tmp/` then on the VM `sudo mv /tmp/feed-media /var/lib/numerix/feed-media && sudo chown -R numerix:numerix /var/lib/numerix/feed-media`. Expect: 200 files plus captions.
 
 **Part S: staging rehearsal**
@@ -475,7 +475,7 @@ Do the steps in order. After each step compare with "Expect". If it does not mat
 - **S1. First staging deploy.** Only after the QA sign-off of the release candidate (`docs/QA_SIGNOFF.md` says SIGNED OFF): the branch `prod/go-live` is built on top of the release candidate `release/r3`, so merging it also merges all of release r3. Merge `prod/go-live` to `main` in the API repo, then the web repo. WARNING: if the old Vercel project is still connected to the web repo, a push to `main` also starts a Vercel deploy. Disconnect or delete that Vercel project first (Vercel dashboard, Project, Settings, Git, Disconnect). Watch Actions, workflow `deploy-staging`. Expect: all jobs green; the summary shows the release id; the log ends with `SMOKE PASSED`. If the SSH step fails: wrong key, host key line or `DEPLOY_HOST`.
 - **S2. Load the Discover items on staging.** SSH to the staging VM, then `ls /opt/numerix/seed/releases/` (note the newest id) and run `cd /opt/numerix/seed/releases/<id> && sudo -u numerix ./bin/feedseed --db /var/lib/numerix/numerix.db --items seed/feed/items.json --media /var/lib/numerix/feed-media` (the seed bundle includes `feedseed`). Expect: it validates, then reports the items loaded; running it twice changes nothing.
 - **S3. Look at staging with your own eyes.** Open https://staging-app.YOURDOMAIN, register a parent, add a child, play a chapter, open Discover (videos play, scrubbing works), try a passkey. Open https://staging-admin.YOURDOMAIN and sign in. Expect: everything works, no browser warning on the padlock.
-- **S4. Load test on staging.** `bin/loadtest -rps 50 -duration 20s` against the staging API. Expect: zero 5xx, answer p95 under 400 ms. If not, stop: capacity is not proven.
+- **S4. Load test on staging.** On the staging VM (the tool is in the seed bundle; it talks to the API directly because Caddy hides the fake visitor addresses and the sign-up limit would block it): `/opt/numerix/seed/releases/<id>/bin/loadtest -base http://127.0.0.1:8081 -rps 50 -duration 20s -families 50` (same `<id>` as in S2). It creates 50 fake families on staging. Expect: zero 5xx, answer p95 under 400 ms. If not, stop: capacity is not proven.
 - **S5. Restore drill on staging** (section 9). Expect: `ok` and about 1229.
 - **S6. Rollback drill on staging.** Actions, `rollback`, environment staging. Expect: green, and the smoke test passes. Then run `deploy-staging` again (Run workflow) to roll forward.
 - **S7. Failed-deploy drill (optional but recommended).** Temporarily set the staging variable `API_URL` to a wrong address and run deploy-staging; expect it to fail loudly with a red cross. Fix the variable.
@@ -517,7 +517,7 @@ By hand, 10 minutes, production, with a real test parent account that you delete
 - Every hour for the first 3 hours, then every 4: `journalctl -u numerix-api --since "1 hour ago" | grep -c '"level":"ERROR"'` should stay at zero or tiny.
 - Disk: `df -h /var/lib/numerix` below 70 percent.
 - Memory: `systemctl status numerix-web numerix-admin` memory well under the 900 MB cap (a restart loop means it is hitting it).
-- Backups: `litestream snapshots ...` shows a snapshot from the last hour; next morning the 04:30 restore check passed.
+- Backups: `systemctl status litestream` is active and `sudo journalctl -u litestream --since "1 hour ago"` has no ERROR lines; next morning the 04:30 restore check passed.
 - Certificates: padlock fine on all three public names.
 - Rate limits: no wave of `429` in the API log from normal families (this is the check for fix 1 in section 15).
 - Sign-ups arriving, no database-locked errors, no 5xx.
