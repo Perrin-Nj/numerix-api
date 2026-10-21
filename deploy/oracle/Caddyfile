@@ -11,6 +11,9 @@ __APP_HOST__ {
 __ADMIN_HOST__ {
 	encode zstd gzip
 	header Strict-Transport-Security "max-age=31536000"
+	# After the owner has a stable admin IP, uncomment and replace the address:
+	# @admin_blocked not remote_ip 203.0.113.10/32
+	# respond @admin_blocked 403
 	reverse_proxy 127.0.0.1:3100
 }
 

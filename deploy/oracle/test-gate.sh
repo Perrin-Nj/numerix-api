@@ -45,6 +45,19 @@ g put web w1 <"$T/web.tgz" >/dev/null
 [ -f "$T/base/web/releases/w1/server.js" ] || fail "web archive not extracted"
 tar -czf "$T/evil.tgz" -C "$T/web/x" --transform 's#^server.js#../server.js#' server.js
 g put web evil <"$T/evil.tgz" 2>/dev/null && fail "unsafe archive must be refused"
+ln -s target "$T/web/x/link"
+tar -cf "$T/symlink-write.tar" -C "$T/web/x" link
+tar -rf "$T/symlink-write.tar" -C "$T/web/x" --transform 's#^server.js#link/payload#' server.js
+gzip -f "$T/symlink-write.tar"
+g put web symlink-write <"$T/symlink-write.tar.gz" 2>/dev/null && fail "archive write through an in-archive symlink must be refused"
+ln "$T/web/x/server.js" "$T/web/x/hardlink"
+tar -czf "$T/hardlink.tgz" -C "$T/web/x" server.js hardlink
+g put web hardlink <"$T/hardlink.tgz" 2>/dev/null && fail "archive hard links must be refused"
+mkdir -p "$T/base/web/releases/stale.part"
+ln -s /tmp "$T/base/web/releases/stale.part/link"
+tar -czf "$T/clean.tgz" -C "$T/web/x" server.js
+g put web stale <"$T/clean.tgz" >/dev/null
+[ ! -e "$T/base/web/releases/stale.part/link" ] || fail "stale partial release was not removed before extraction"
 g put database x <"$T/a1" 2>/dev/null && fail "unknown component must be refused"
 g put api '../x' <"$T/a1" 2>/dev/null && fail "bad release id must be refused"
 g activate api nope 2>/dev/null && fail "activate of a missing release must fail"

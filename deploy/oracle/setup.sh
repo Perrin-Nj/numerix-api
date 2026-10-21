@@ -33,16 +33,24 @@ install -d -m 750 -g numerix /etc/numerix
 
 # 2. Packages: Caddy from its official apt repository, sqlite3 for backups.
 apt-get update -y
-apt-get install -y debian-keyring debian-archive-keyring apt-transport-https curl gpg sqlite3 xz-utils
+apt-get install -y debian-keyring debian-archive-keyring apt-transport-https curl gpg python3 sqlite3 xz-utils
 curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | gpg --dearmor --yes -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
 curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' >/etc/apt/sources.list.d/caddy-stable.list
 apt-get update -y && apt-get install -y caddy
 
-# 3. Litestream: latest .deb for this CPU from GitHub releases.
-LARCH=$([ "$ARCH" = arm64 ] && echo arm64 || echo x86_64) # the .deb files are named linux-arm64 and linux-x86_64
-URL="$(curl -fsS https://api.github.com/repos/benbjohnson/litestream/releases/latest | grep browser_download_url | grep -E "linux-${LARCH}\.deb\"" | head -1 | cut -d '"' -f 4 || true)"
-[ -n "$URL" ] || { echo "could not find the Litestream .deb for $ARCH, install it by hand"; exit 1; }
-curl -sL "$URL" -o /tmp/litestream.deb && dpkg -i /tmp/litestream.deb
+# 3. Litestream: pin the reviewed release and verify the architecture-specific package before installing it.
+case "$ARCH" in
+  arm64) RELEASE_ARCH="arm64"; SHA256="7d34ed3356844fe3dd127462b9f4ea7e79ef14679eadf2fed6c737dcb797358e" ;;
+  amd64) RELEASE_ARCH="x86_64"; SHA256="a191a0928884d1820fab1f866ede1d0d5811c323d0587bf863a43481a82a7668" ;;
+  *) echo "unsupported Litestream architecture: $ARCH" >&2; exit 1 ;;
+esac
+VERSION="0.5.17"
+DEB="$(mktemp /tmp/litestream.XXXXXX.deb)"
+trap 'rm -f "$DEB"' EXIT
+URL="https://github.com/benbjohnson/litestream/releases/download/v${VERSION}/litestream-${VERSION}-linux-${RELEASE_ARCH}.deb"
+curl --fail --silent --show-error --location "$URL" -o "$DEB"
+echo "$SHA256  $DEB" | sha256sum --check --status || { echo "Litestream checksum verification failed" >&2; exit 1; }
+dpkg -i "$DEB"
 
 # 4. Node.js from nodejs.org, checksum verified (Ubuntu's own package is too old for Next.js 16).
 NARCH=$([ "$ARCH" = arm64 ] && echo arm64 || echo x64)
@@ -56,9 +64,9 @@ fi
 
 # 5. The deploy gate and the restricted deploy key (cannot open a shell, cannot forward ports).
 install -m 755 -o root -g root "$HERE/numerix-deploy" /usr/local/bin/numerix-deploy
-install -d -o deploy -g deploy -m 700 /home/deploy/.ssh
+install -d -o root -g deploy -m 750 /home/deploy/.ssh
 printf 'restrict,command="/usr/local/bin/numerix-deploy" %s\n' "$(head -1 "$DEPLOY_KEY")" >/home/deploy/.ssh/authorized_keys
-chown deploy:deploy /home/deploy/.ssh/authorized_keys && chmod 600 /home/deploy/.ssh/authorized_keys
+chown root:deploy /home/deploy/.ssh/authorized_keys && chmod 640 /home/deploy/.ssh/authorized_keys
 cat >/etc/sudoers.d/numerix-deploy <<'SUDO'
 deploy ALL=(root) NOPASSWD: /usr/bin/systemctl restart numerix-api, /usr/bin/systemctl restart numerix-web, /usr/bin/systemctl restart numerix-admin, /usr/bin/systemctl stop numerix-api, /usr/bin/systemctl start numerix-api, /usr/bin/systemctl stop litestream, /usr/bin/systemctl start litestream
 deploy ALL=(numerix) NOPASSWD: /usr/local/bin/numerix-deploy _backup, /usr/local/bin/numerix-deploy _restore *, /usr/local/bin/numerix-deploy _seed *

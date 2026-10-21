@@ -55,7 +55,7 @@ Staging and production both run the API with `APP_ENV=production`. That is delib
 | API | http://localhost:8081 | https://staging-api.YOURDOMAIN | https://api.YOURDOMAIN |
 | Passkey RP id | `localhost` | `staging-app.YOURDOMAIN` | `app.YOURDOMAIN` |
 | Database | `data/*.db` on the PC | SQLite on the staging VM | SQLite on the production VM |
-| Backups | none | Litestream to bucket path `staging/` | Litestream to bucket path `prod/`, plus B2 copy |
+| Backups | none | Litestream to the Oracle bucket path `staging/` | Litestream to the Oracle bucket path `prod/`; a second B2 copy is not implemented |
 | Secrets | dev defaults | their own random values | their own random values (never reused from staging) |
 | Who deploys | the developer | GitHub Actions on every push to `main`, no approval | GitHub Actions on a version tag, only after YOU press Approve |
 | `APP_ENV` | development | production | production |
@@ -108,7 +108,7 @@ VERIFIED = read on the vendor's own page on that date. SECONDARY = a comparison 
 | | Porkbun `.com` | about $0.92 | $11.08 register and renew | VERIFIED same page |
 | | Namecheap `.ca` renewal | about $1.00 | $11.98 | SECONDARY (domainoffer.net, Aug 2026). WHOIS privacy free there: SECONDARY. |
 | | Cloudflare Registrar | at cost, no markup | UNVERIFIED for `.ca` (a forum says `.ca` was added; not on an official page I could open) | https://blog.cloudflare.com/registrar-for-everyone/ . Check the registrar's `.ca` list before counting on it. |
-| Monitoring | GitHub Actions scheduled check (already in the repo: `keepalive.yml`) | $0 | $0 | free for what we use; 5-minute schedules may be delayed by GitHub: UNVERIFIED limit |
+| Monitoring | GitHub Actions scheduled check (already in the repo: `keepalive.yml`) | $0 | $0 | 30-minute schedule; job usage counts against the Actions allowance. Configure URLs and an external alert monitor before launch. |
 | | UptimeRobot free | $0 | $0 | CONFLICTING: several comparison sites say the free plan is personal and non-commercial only since late 2024, but UptimeRobot's own page says it is available for any use. UNVERIFIED: read their terms before using it for a paid product. |
 | | Better Stack / Healthchecks.io free tiers | $0 | $0 | UNVERIFIED limits and terms; check before use |
 | Email | none needed today | $0 | $0 | no code sends email (section 10). When BE-34/BE-35 are built you will need a sender (a free-tier transactional service or your registrar's mailbox): price UNVERIFIED until you pick one |
@@ -227,11 +227,12 @@ Generate a strong value: `openssl rand -hex 32` (Mac, Linux, Git Bash on Windows
 | Name | Purpose | Where set | How generated | Rotation |
 |---|---|---|---|---|
 | `JWT_SECRET` | signs login tokens (32+ chars enforced) | VM file | `openssl rand -hex 32`, different on staging and prod | Change it, restart: everyone signs in again. Do it if you suspect a leak. |
-| `ADMIN_API_TOKEN` | the admin app proves itself to the API (16+ chars enforced) | API file AND admin file on the same VM | `openssl rand -hex 32` | Change both files at the same minute, restart both services. |
+| `ADMIN_API_TOKEN` | the admin app proves itself to the API (required, 16+ chars enforced) | API file AND admin file on the same VM | `openssl rand -hex 32` | Change both files at the same minute, restart both services. API refuses to boot in production if this is empty. |
 | `MONGO_PSEUDO_SECRET` | scrambles ids sent to Mongo (only if Mongo on) | VM file | `openssl rand -hex 32` | NEVER change it (every pseudonym would change). Back it up in your password manager. |
 | `MONGODB_URI` | Atlas connection (only if Mongo on) | VM file | Atlas screen | Create a new database user, switch, delete the old user. |
 | `ANTHROPIC_API_KEY` | optional story and question-draft writer | VM file | Anthropic console | Revoke and re-create in the console. Leave empty to use canned stories. |
-| `APP_ENV`, `PORT`, `LISTEN_HOST`, `DB_PATH`, `TRUST_PROXY`, `ADMIN_ORIGIN`, `ALLOWED_ORIGINS`, `WEBAUTHN_RP_ID`, `WEBAUTHN_ORIGINS`, `WEBAUTHN_RP_NAME`, `FEATURE_WELCOME_GIFT`, `MEDIA_DIR`, `NARRATOR_MODEL`, `ASSET_BASE_URL` | settings, not secrets | VM file | see `deploy/oracle/env.example` | when the domain changes |
+| `APP_ENV`, `PORT`, `LISTEN_HOST`, `DB_PATH`, `TRUST_PROXY`, `ADMIN_ORIGIN`, `ALLOWED_ORIGINS`, `WEBAUTHN_RP_ID`, `WEBAUTHN_ORIGINS`, `WEBAUTHN_RP_NAME`, `FEATURE_WELCOME_GIFT`, `MEDIA_DIR`, `NARRATOR_MODEL`, `ASSET_BASE_URL` | settings, not secrets | VM file | see `deploy/oracle/api.production.env.example` or `api.staging.env.example` | when the domain changes |
+| `ANTHROPIC_BASE_URL`, `ANTHROPIC_DRAFT_MODEL` | optional story-writer endpoint and draft model | VM file | leave empty while the story writer is off |
 | other optional knobs | `RATE_LIMIT_IP_PER_MIN` (600), `MAX_CONCURRENT_REQUESTS` (256), `ACCESS_TTL_SECONDS` (900), `CHILD_TTL_SECONDS` (28800), `REFRESH_TTL_SECONDS` (30 days), `REQUEST_TIMEOUT_SECONDS` (10), `MEDIA_BASE_URL`, `LLM_*` | VM file | defaults are the contract values | leave alone |
 
 ### 8.2 Web app (`/etc/numerix/web.env`)
@@ -275,7 +276,7 @@ Create two **Environments** in EACH repo: `staging` and `production`. The same n
 | Variable (repository, optional) | `WEB_REPO`, `WEB_REF` | API repo | which repo and branch holds the contract the API is generated from (defaults `Perrin-Nj/numerix-web`, `main`) |
 | Variable (repository, optional) | `API_REPO` | web repo | the owner of `numerix-api` for the full-suite job |
 | Secret (only if repos are private) | `WEB_REPO_TOKEN`, `API_REPO_TOKEN` | repository | a fine-grained token with read access to the other repo, used only by CI to check out the other side |
-| Variable (optional) | `KEEPALIVE_URLS` | web repo | space-separated health URLs for the 5-minute check |
+| Variable (optional) | `KEEPALIVE_URLS` | web repo | space-separated health URLs; empty means no pings; scheduled every 30 minutes |
 
 Switching hosts later (for example Oracle to OVH) means changing `DEPLOY_HOST`, `TARGET_ARCH`, the two secrets and the DNS records, and running `setup.sh` on the new machine. No workflow changes. The workflows only speak SSH to the `numerix-deploy` gate.
 
@@ -291,13 +292,15 @@ So the manual "press Approve" gate you asked for needs ONE of:
 
 Until you decide, the production workflow refuses to run (`PROD_APPROVAL_CONFIRMED` is not `yes`).
 
+For the `production` environment, also restrict deployment branches/tags to `main` and `v*.*.*`. The workflow independently rejects tags that are not on `main` and without a successful staging deploy. Do not set `PROD_APPROVAL_CONFIRMED=yes` until the reviewer rule and deployment restriction are visible in both repositories.
+
 ---
 
 ## 9. Backups and the restore drill
 
 What exists:
 
-- **Continuous copy** of the database with Litestream to an Oracle bucket (`/etc/litestream.yml`, path `prod/numerix.db` or `staging/numerix.db`). History kept in the bucket: 7 days (`snapshot.retention: 168h`). Litestream version: the setup script downloads the latest `.deb` from GitHub. The repo file was checked 2026-10-21 against Litestream 0.5.17 (config reference https://litestream.io/reference/config/ and by running the real binary): one `replica:` per database, retention is a global setting (the old per-replica `retention` and a `replicas:` list with two entries are NOT accepted any more). Oracle: endpoint `https://NAMESPACE.compat.objectstorage.REGION.oraclecloud.com`, region = the Oracle region id (for example `ca-montreal-1`), path-style addressing, and a Customer Secret Key pair.
+- **Continuous copy** of the database with Litestream to an Oracle bucket (`/etc/litestream.yml`, path `prod/numerix.db` or `staging/numerix.db`). History kept in the bucket: 7 days (`snapshot.retention: 168h`). The setup script pins Litestream 0.5.17 and verifies the architecture-specific SHA-256 before install. This version supports one `replica:` per database; a second replica in the same config is unsupported. Oracle: endpoint `https://NAMESPACE.compat.objectstorage.REGION.oraclecloud.com`, region = the Oracle region id (for example `ca-montreal-1`), path-style addressing, and a Customer Secret Key pair.
 - **Second off-site copy (recommended for production):** Litestream 0.5 refuses two replicas on one database ("multiple replicas on a single database are no longer supported", tested), so the second copy cannot be a second entry in the same file. Options: (a) a second Litestream process with its own config file and its own `meta-path`, replicating to a Backblaze B2 bucket (B2 endpoint `https://s3.REGION.backblazeb2.com`, region as shown on the bucket page, keys = B2 keyID and applicationKey; NOT built or tested here: UNVERIFIED), or (b) a nightly job that copies the newest Oracle replica to B2. Ask Claude to build and rehearse one of them before you rely on it; until then the only copy is the Oracle bucket. B2 free tier covers 10 GB (VERIFIED).
 - **Before every production deploy and every staging deploy:** `numerix-deploy backup` makes a consistent copy (`VACUUM INTO`, integrity checked) in `/var/lib/numerix/backups`, last 14 kept.
 - **Before every content seed:** the seed tool makes its own backup.
@@ -327,7 +330,7 @@ Restore drill (do it once on staging BEFORE go-live, then once on production rig
 | What | How | Cost |
 |---|---|---|
 | Is it up? | `GET https://api.YOURDOMAIN/v1/health` (returns status and version), `GET https://app.YOURDOMAIN/api/health` (says which side is down), `https://admin.YOURDOMAIN/login` | free |
-| Who checks? | The repo workflow `keepalive.yml` pings every 5 minutes from GitHub and fails when something is down (GitHub emails the owner on failure). Plus one external free monitor with email or phone alerts: UptimeRobot, Better Stack or Healthchecks.io (terms UNVERIFIED, section 4). | $0 |
+| Who checks? | The repo workflow `keepalive.yml` pings configured URLs every 30 minutes and fails when something is down. Empty `KEEPALIVE_URLS` deliberately skips pings. Add an external monitor with email or phone alerts and verify its commercial terms; GitHub Actions is not a substitute for an alerting service. | $0 |
 | Certificate and disk | smoke tests check the certificate; add a monitor on the same URLs (a failing certificate shows as down) | $0 |
 | Backups | `systemctl status numerix-verify-backup` and `systemctl status litestream` (active; `journalctl -u litestream` shows no repeating ERROR lines). The command `litestream snapshots` no longer exists in 0.5 | $0 |
 | Logs | `journalctl -u numerix-api -f` (JSON lines: request id, status, duration; no names, emails or answers by design), `journalctl -u numerix-web`, `journalctl -u caddy` | $0 |
@@ -396,13 +399,13 @@ Read: `internal/config/config.go`, `cmd/api/main.go`, `internal/httpapi` (CORS, 
 
 Works already:
 
-- `APP_ENV` allows `development`, `test`, `production`; production refuses a missing or short `JWT_SECRET`, a short admin token, `PPROF`, and a Mongo URI without its pseudonym secret.
+- `APP_ENV` allows `development`, `test`, `production`; production refuses a missing or short `JWT_SECRET`, a missing or short `ADMIN_API_TOKEN`, `PPROF`, and a Mongo URI without its pseudonym secret.
 - CORS answers only origins listed in `ALLOWED_ORIGINS` (API) and `ADMIN_ORIGIN` (admin API); no wildcard.
 - The API device cookie `nx_device` is `HttpOnly`, `SameSite=Lax`, `Secure` outside development. The web app's cookies are `Secure` when `NODE_ENV=production`, which every `next build` output is, so staging must also be HTTPS (it is).
 - Passkeys need `WEBAUTHN_RP_ID` and `WEBAUTHN_ORIGINS`; the library compares the origin exactly.
 - Cookies carry no `Domain` attribute, so each environment's cookies stay on their own host (staging and production never share a login).
 
-Gaps found and FIXED in this branch (with tests):
+Gaps found and FIXED or hardened in this branch (tests are listed where present):
 
 1. **Every family would have shared one rate limit (important).** The web server called the API without telling it the visitor's address, so with `TRUST_PROXY=true` the API saw one address (the web server) for everybody: 600 requests a minute and 5 sign-ups an hour for ALL users together. Fix: the web proxy now forwards the visitor's address from the host in front of it (`src/shared/client-ip.ts`, 7 checks in `scripts/check-client-ip.mjs`). The API trusts that header only because it listens on `127.0.0.1`, so nobody can reach it directly to forge it. The same problem would have existed on Vercel.
 2. **The API listened on all network interfaces.** With `TRUST_PROXY=true` and a reachable port, a visitor could forge their address. Fix: new `LISTEN_HOST` setting (default empty = unchanged behaviour); the production file sets `127.0.0.1`.
@@ -410,12 +413,15 @@ Gaps found and FIXED in this branch (with tests):
 4. **`config/env/production.env` could not build.** It set `NEXT_PUBLIC_MASCOT_KIND=emoji`, which the app rejects (`image`, `owl` or `rive`), so `next build` failed. Fixed to `owl` in the three env files. Found by running the real self-host build.
 5. **Security headers existed only on Vercel** (`vercel.ts`). Added the same headers to the self-host build (`next.config.ts`, switched on by `NEXT_OUTPUT=standalone`); `scripts/smoke-web.sh` checks them on the live host.
 6. **Image resizing** needs a native library that would not match an ARM VM when built on an x86 runner. The self-host build serves the already-sized pictures as they are (`images.unoptimized`); Vercel builds are unchanged.
+7. **Deploy archives could write through in-archive links.** `numerix-deploy put` now rejects hard links, absolute paths, duplicate paths, unsupported entry types, and entries beneath archive symlinks before extraction. Its gate test covers hard links, symlink traversal, and stale partial directories.
+8. **Deploy credentials and rollback state needed hardening.** `authorized_keys` is now root-owned and read-only to `deploy`. Staging and production workflows only roll back a release that is currently active, so a pre-activation failure cannot swap in an older release.
+9. **Admin/browser and environment hardening.** Admin CSP is now set for the self-host build. The Go API rejects an empty production admin token, and web/admin API URLs require HTTPS except for loopback.
+10. **Production bootstrap trust.** The setup script pins Litestream 0.5.17 and checks its architecture-specific SHA-256; `render-env.sh` produces separate, secret-free staging/production examples.
 
 Gaps found and NOT fixed (decisions or larger work):
 
 - No email, no password reset or email verification (section 10).
-- `.env.example` is missing from the web repo (it is ignored by `.gitignore`), which `scripts/vercel-env.mjs` needs. Only matters if you ever use Vercel again.
-- The web app's per-IP admin login limit and the API's limiter live in memory of one process; fine for one process per environment.
+- Shared rate limiting is deferred by owner request. The web admin login limiter and API limiter are process-local; external edge/shared protection is still needed against distributed attempts.
 - Passkey RP id is one host. Moving the web app to another host name later invalidates every passkey.
 - "Same artifact" is exact for the API (one binary per CPU type) and for web and admin (one archive; nothing environment-specific inside). It holds only because the API address `127.0.0.1:8081` is the same on every VM.
 - Self-hosted Next.js with `next/image` unoptimized and the video route was tested locally only (section 21).
@@ -434,11 +440,21 @@ Files, in BOTH repos under `.github/workflows` (and a shared step in `.github/ac
 | `deploy-prod.yml` | push of a tag `vX.Y.Z`, or Run workflow | refuses unless the tag is on `main`, a staging deploy of that exact commit succeeded and `PROD_APPROVAL_CONFIRMED=yes`; then WAITS for a human to approve (environment `production`); downloads the SAME artifact staging used and checks its checksums; backs up the database; installs; health check; smoke; automatic rollback |
 | `rollback.yml` | Run workflow | puts the previous release back (API: optionally restores the newest backup) and runs the smoke test |
 | `db-content.yml` | Run workflow (API repo) | content seed: dry run, then apply only if ticked; production waits for approval |
-| `keepalive.yml` (web repo) | every 5 minutes | pings the health URLs in `KEEPALIVE_URLS` |
+| `keepalive.yml` (web repo) | every 30 minutes | pings configured `KEEPALIVE_URLS`; empty means no pings |
 
-Checked 2026-10-21 (review pass 2: actionlint 1.7.12, yamllint, shellcheck, `caddy validate` 2.11.7 on the rendered Caddyfile, `systemd-analyze verify` on the units, `test-gate.sh`): no findings. Fixed in pass 2: the production job lacked `actions: read`, which downloading the staging run's artifact needs; the CI call from deploy-staging did not pass secrets and shared a cancelling concurrency group with the push-triggered CI run; `put` refused a workflow re-run of the same release. Pinned tool versions: staticcheck v0.8.2, govulncheck v1.9.0, oapi-codegen v2.8.0, Node 22, pnpm from `packageManager`. Third-party actions are pinned by major tag (`@v4`, `@v5`); Dependabot (weekly) is configured for them. Whether newer major versions exist: UNVERIFIED.
+`pnpm/action-setup` is pinned to a verified v4 commit SHA. Other third-party actions still use major tags (`@v4`, `@v5`); Dependabot is configured weekly. Keep their updates under review.
 
 Honest limits: the YAML has been linted but NEVER RUN on GitHub (no remote access from here). The first staging run is the real test of the workflow files. The "same artifact" promise: staging and production use the exact files (checksum compared); artifacts expire after 90 days, after which a tag must wait for a fresh staging run. GitHub keeps only ONE waiting run per concurrency group: if you merge twice to `main` while a staging deploy is still running, the middle run is cancelled and that commit has no staging deploy, so tag only a commit whose `deploy-staging` run is green. A failed deploy can simply be re-run: the gate accepts the same release bytes again.
+
+### What happens when code is pushed to `main`
+
+- Both repositories run CI on pull requests and pushes to `main`.
+- Each `deploy-staging` workflow also runs on `main`. If the environment variable `DEPLOY_HOST` is empty, the gate reports a green skip; no build or deployment occurs. When configured, staging deploys automatically without approval.
+- The API repository does not deploy production on a `main` push. Production needs a `vX.Y.Z` tag or manual dispatch, the exact commit must be on `main` and have a successful staging deployment, and the production environment must require approval.
+- The web repository may also trigger an old Vercel deployment if that project remains connected. Disconnect it before merging the production branch.
+- `PROD_APPROVAL_CONFIRMED` must remain unset until production reviewers and branch/tag restrictions are configured. Setting it to `yes` alone does not create an approval rule.
+- GitHub reports failed workflow runs and can email repository watchers. The 30-minute workflow is only a configured health ping, not an independent alert monitor; empty URLs mean no pings. Add and test an external uptime alert before production.
+- The `keepalive.yml` schedule can use significant private-repository Actions minutes. Review actual billing; turn off its schedule if the budget is not acceptable.
 
 Order of a release when both repos change: merge API, wait for its staging deploy; merge web, wait for its staging deploy; test staging by hand; tag the API (approve); tag the web (approve). The API is backward compatible with the previous web release for one version (contract rule); do not skip this order.
 
@@ -457,22 +473,22 @@ Do the steps in order. After each step compare with "Expect". If it does not mat
 
 **Part R: servers**
 
-- **R1. Create the two VMs.** Oracle: Menu, Compute, Instances, Create instance. Name `numerix-staging`, image Ubuntu 24.04, shape Ampere `VM.Standard.A1.Flex` 1 OCPU / 4 GB, paste your SSH public key, create. Repeat for `numerix-prod` with 1 OCPU / 8 GB (or rent the OVH VPS). Expect: two machines in state Running with public IPs. If "out of capacity", retry later or try another availability domain.
+- **R1. Create the two VMs.** Use the selected layout: Oracle Always Free in Montreal for staging (Ubuntu 24.04, Ampere `VM.Standard.A1.Flex`, 1 OCPU / 4 GB, `arm64`); OVH VPS-1 in Beauharnois for production (Ubuntu 24.04, `amd64`). For OVH, use the first-login username shown in the order email or control panel; do not assume it is `ubuntu`. Expect: two machines in state Running with public IPs. If Oracle reports "out of capacity", retry later or use a different availability domain.
 - **R2. Open ports.** Section 6 item 4, on the network of each VM. Expect: you can still SSH.
 - **R3. DNS records** (section 6). Expect, from your PC, `nslookup app.YOURDOMAIN` returns the production IP (may take a few minutes).
 - **R4. Deploy keys.** On your PC, twice (staging and production):
   `ssh-keygen -t ed25519 -f nx_deploy_staging -C numerix-staging-deploy -N ""` and the same for `nx_deploy_production`. Use Git Bash (plain Windows PowerShell can drop the empty `-N ""` and ask for a passphrase). The passphrase must stay empty because GitHub Actions cannot type one.
   Expect: four files. The `.pub` files are public. The files without `.pub` are PRIVATE: they go only into GitHub secrets (R7) and are then deleted from your PC.
-- **R5. Run the setup script on each VM.** The login name of a new VM depends on the host: Oracle's Ubuntu image uses `ubuntu`. For OVH the first login user is shown in the order email and the control panel: UNVERIFIED, use the one it shows. Below, `ubuntu` stands for that name. Copy the folder: `scp -r deploy/oracle ubuntu@VMIP:~/` and `scp nx_deploy_staging.pub ubuntu@VMIP:/tmp/deploy.pub`. Then `ssh ubuntu@VMIP` and run
+- **R5. Run the setup script on each VM.** Oracle's Ubuntu image uses `ubuntu`; for OVH use the first-login username shown in the order email or control panel. Below, `LOGIN` stands for that name. Render the matching environment files on your PC with `bash scripts/render-env.sh --domain YOURDOMAIN --env staging` or `--env production`; these files contain blank secrets and stay ignored by Git. Copy the folder: `scp -r deploy/oracle LOGIN@VMIP:~/` and `scp nx_deploy_staging.pub LOGIN@VMIP:/tmp/deploy.pub`. Then `ssh LOGIN@VMIP` and run
   `sudo bash ~/oracle/setup.sh --app staging-app.YOURDOMAIN --admin staging-admin.YOURDOMAIN --api staging-api.YOURDOMAIN --deploy-key /tmp/deploy.pub`
   (production: the `app.`, `admin.`, `api.` names and the production public key). Expect the last line "setup done". If Litestream download fails, install it by hand from its releases page.
-- **R6. Fill the settings on the VM.** `sudo nano /etc/numerix/api.env`: set `JWT_SECRET`, `ADMIN_API_TOKEN` (run `openssl rand -hex 32` twice on the VM), the five origin and passkey lines for that environment (see `env.example`; staging uses the `staging-` names). `sudo nano /etc/numerix/admin.env`: same `ADMIN_API_TOKEN`, a long `ADMIN_PASSWORD`, `openssl rand -hex 32` for `ADMIN_SESSION_SECRET`. `sudo nano /etc/litestream.yml`: replace `__ENV__` with `staging` or `prod`, `__NAMESPACE__` (Oracle: Profile, Tenancy, Object storage namespace), and both `__REGION__` words with the region id such as `ca-montreal-1`. The bucket `numerix-backup` must exist (Oracle: Storage, Buckets, Create bucket). `sudo nano /etc/litestream.env`: the two bucket keys. Then `sudo systemctl restart litestream`. Expect: `systemctl status litestream` says active (it may wait for the database to exist, which appears after the first deploy). If the log shows `AccessDenied` or `SignatureDoesNotMatch`, the key pair or region is wrong.
+- **R6. Install environment files and backup credentials.** Copy the three generated files (`api.env`, `web.env`, `admin.env`) to `/tmp` on the VM, then install them as root-owned, `numerix`-group, mode `640` files under `/etc/numerix/`. Before installing, fill unique `JWT_SECRET`, `ADMIN_API_TOKEN`, `ADMIN_PASSWORD`, and `ADMIN_SESSION_SECRET` values locally; use one shared admin token in API and admin files, but never reuse it across staging and production. `ADMIN_API_TOKEN` is required for the API to start in production. In `/etc/litestream.yml`, replace `__ENV__` with `staging` or `prod`, `__NAMESPACE__` (Oracle: Profile, Tenancy, Object storage namespace), and both `__REGION__` words with the region id such as `ca-montreal-1`. The bucket `numerix-backup` must exist. Fill `/etc/litestream.env` with the two bucket keys, then restart Litestream. Expect: `systemctl status litestream` says active (it may wait for the database to exist, which appears after the first deploy). If the log shows `AccessDenied` or `SignatureDoesNotMatch`, the key pair or region is wrong.
 - **R7. GitHub secrets and variables** (section 8.5), in both repos, both environments, using the GitHub website. Paste the WHOLE private key file (from the `-----BEGIN` line to the `-----END` line) into `DEPLOY_SSH_KEY`. Get the host key line with `ssh-keyscan -t ed25519 VMIP > hostkey.txt` on your PC (same address as `DEPLOY_HOST`), look at its fingerprint with `ssh-keygen -lf hostkey.txt`, and compare it with `ssh-keygen -lf /etc/ssh/ssh_host_ed25519_key.pub` run on the VM. Paste the content of `hostkey.txt` into `DEPLOY_KNOWN_HOSTS`. Expect: all names in the list exist (values are hidden).
 - **R8. Copy the Discover media once.** `scp -r seed/feed-media ubuntu@VMIP:/tmp/` then on the VM `sudo mv /tmp/feed-media /var/lib/numerix/feed-media && sudo chown -R numerix:numerix /var/lib/numerix/feed-media`. Expect: 200 files plus captions.
 
 **Part S: staging rehearsal**
 
-- **S1. First staging deploy.** Only after the QA sign-off of the release candidate (`docs/QA_SIGNOFF.md` says SIGNED OFF): the branch `prod/go-live` is built on top of the release candidate `release/r3`, so merging it also merges all of release r3. Merge `prod/go-live` to `main` in the API repo, then the web repo. WARNING: if the old Vercel project is still connected to the web repo, a push to `main` also starts a Vercel deploy. Disconnect or delete that Vercel project first (Vercel dashboard, Project, Settings, Git, Disconnect). Watch Actions, workflow `deploy-staging`. Expect: all jobs green; the summary shows the release id; the log ends with `SMOKE PASSED`. If the SSH step fails: wrong key, host key line or `DEPLOY_HOST`.
+- **S1. First staging deploy.** Only after the QA sign-off of the exact release candidate (`docs/QA_SIGNOFF.md` says SIGNED OFF): the branch `prod/go-live` is built on top of `release/r3`, so merging it also merges all of release r3. Merge the production branch to `main` in the API repo, then the web repo. WARNING: if the old Vercel project is still connected to the web repo, a push to `main` also starts a Vercel deploy. Disconnect or delete that project first. Watch Actions, workflow `deploy-staging`. Expect: all jobs green; the summary shows the release id; the log ends with `SMOKE PASSED`. If the SSH step fails: wrong key, host key line or `DEPLOY_HOST`.
 - **S2. Load the Discover items on staging.** SSH to the staging VM, then `ls /opt/numerix/seed/releases/` (note the newest id) and run `cd /opt/numerix/seed/releases/<id> && sudo -u numerix ./bin/feedseed --db /var/lib/numerix/numerix.db --items seed/feed/items.json --media /var/lib/numerix/feed-media` (the seed bundle includes `feedseed`). Expect: it validates, then reports the items loaded; running it twice changes nothing.
 - **S3. Look at staging with your own eyes.** Open https://staging-app.YOURDOMAIN, register a parent, add a child, play a chapter, open Discover (videos play, scrubbing works), try a passkey. Open https://staging-admin.YOURDOMAIN and sign in. Expect: everything works, no browser warning on the padlock.
 - **S4. Load test on staging.** On the staging VM (the tool is in the seed bundle; it talks to the API directly because Caddy hides the fake visitor addresses and the sign-up limit would block it): `/opt/numerix/seed/releases/<id>/bin/loadtest -base http://127.0.0.1:8081 -rps 50 -duration 20s -families 50` (same `<id>` as in S2). It creates 50 fake families on staging. Expect: zero 5xx, answer p95 under 400 ms. If not, stop: capacity is not proven.

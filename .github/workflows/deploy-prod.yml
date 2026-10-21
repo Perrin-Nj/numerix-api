@@ -95,6 +95,7 @@ jobs:
       API_URL: ${{ vars.API_URL }}
       # CPU type of THIS environment's host: arm64 (Oracle Ampere) or amd64 (most paid VPS). Set per environment.
       ARCH: ${{ vars.TARGET_ARCH || 'arm64' }}
+      ACTIVATED: '0'
     steps:
       - uses: actions/checkout@v4
         with:
@@ -126,15 +127,38 @@ jobs:
           set -euo pipefail
           SUM="$(grep " api-$ARCH\$" dist/SHA256SUMS | cut -d' ' -f1)"
           SEED_SUM="$(grep " seed-$ARCH.tgz\$" dist/SHA256SUMS | cut -d' ' -f1)"
+          # shellcheck disable=SC2029
           ssh nxvm "put api $ID $SUM" < "dist/api-$ARCH"
+          # shellcheck disable=SC2029
           ssh nxvm "put seed $ID $SEED_SUM" < "dist/seed-$ARCH.tgz"
-          ssh nxvm "activate api $ID"
+          # shellcheck disable=SC2029
+          if ssh nxvm "activate api $ID"; then
+            echo "ACTIVATED=1" >> "$GITHUB_ENV"
+          else
+            STATUS="$(ssh nxvm status || true)"
+            CURRENT="$(printf '%s\n' "$STATUS" | awk '$1 == "api" {sub(/^current=/, "", $2); print $2}')"
+            if [ "$CURRENT" = "releases/$ID" ]; then echo "ACTIVATED=1" >> "$GITHUB_ENV"; fi
+            exit 1
+          fi
+      - name: Roll back if activation failed partway through
+        if: failure() && env.ACTIVATED == '1'
+        run: |
+          STATUS="$(ssh nxvm status || true)"
+          CURRENT="$(printf '%s\n' "$STATUS" | awk '$1 == "api" {sub(/^current=/, "", $2); print $2}')"
+          if [ "$CURRENT" = "releases/$ID" ]; then
+            echo "::error::activation of API release $ID failed; restoring the prior release"
+            ssh nxvm "rollback api"
+            ssh nxvm "verify api" || true
+          else
+            echo "API release $ID is not active; no automatic rollback needed."
+          fi
       - name: Health check, smoke test, automatic rollback
         run: |
           set -uo pipefail
           if ! ssh nxvm "verify api"; then
             echo "::error::new release never became healthy. Rolling back the binary AND restoring the pre-deploy database (nobody was served by the new release, so no family data is lost)."
             ssh nxvm "rollback api"
+            # shellcheck disable=SC2029
             ssh nxvm "restore-db $BACKUP"
             ssh nxvm "verify api"
             exit 1

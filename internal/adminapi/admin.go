@@ -35,7 +35,7 @@ import (
 type Deps struct {
 	Store      *store.Store
 	Log        *slog.Logger
-	Token      string // ADMIN_API_TOKEN; empty outside production falls back to a dev token, empty in production = disabled
+	Token      string // ADMIN_API_TOKEN; required by config in production, empty outside production uses a dev token
 	Production bool
 	Origins    string                 // ADMIN_ORIGIN: comma separated browser origins allowed by CORS; nothing else gets CORS headers
 	Now        func() time.Time       // clock, replaced in tests; nil = time.Now

@@ -275,7 +275,7 @@ func TestPasskeysOffWithoutRPID(t *testing.T) {
 // The documented real-domain shape (deploy/oracle/env.example) must produce a working passkey instance, not a silent nil.
 func TestPasskeysProductionShape(t *testing.T) {
 	env := map[string]string{
-		"APP_ENV": "production", "JWT_SECRET": strings.Repeat("a", 32), "ADMIN_ORIGIN": "https://admin.example.ca",
+		"APP_ENV": "production", "JWT_SECRET": strings.Repeat("a", 32), "ADMIN_API_TOKEN": strings.Repeat("t", 32), "ADMIN_ORIGIN": "https://admin.example.ca",
 		"ALLOWED_ORIGINS": "https://app.example.ca", "WEBAUTHN_RP_ID": "app.example.ca", "WEBAUTHN_ORIGINS": "https://app.example.ca",
 	}
 	cfg, err := config.Load(func(k string) string { return env[k] })

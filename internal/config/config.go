@@ -180,6 +180,9 @@ func Load(getenv func(string) string) (Config, error) {
 		errs = append(errs, errors.New("ADMIN_API_TOKEN must be at least 16 characters when set"))
 	}
 	if cfg.IsProduction() {
+		if cfg.AdminAPIToken == "" {
+			errs = append(errs, errors.New("ADMIN_API_TOKEN is required in production"))
+		}
 		errs = append(errs, productionOriginProblems(cfg, get("ADMIN_ORIGIN", ""))...)
 	}
 	return cfg, errors.Join(errs...) // nil when errs is empty

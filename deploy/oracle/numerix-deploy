@@ -48,12 +48,46 @@ case "$verb" in
       [ "$(cat "$dir/SHA256" 2>/dev/null)" = "$got" ] || die "release $c/$id already exists with different content (use a new id)"
       echo "already stored $c/$id sha256=$got"; exit 0
     fi
+    rm -rf -- "$dir.part"
     mkdir -p "$dir.part"
     if [ "$c" = api ]; then
       install -m 755 "$tmp" "$dir.part/api"
     else
-      # refuse archives with absolute paths, .. or links that point outside
-      if tar -tzf "$tmp" | grep -E '^/|(^|/)\.\.(/|$)' >/dev/null; then rm -rf "$dir.part"; die "unsafe archive"; fi
+      # Validate the whole member set before extraction; tar can follow an earlier symlink while writing later entries.
+      python3 - "$tmp" <<'PY' || { rm -rf -- "$dir.part"; die "unsafe archive"; }
+import posixpath
+import sys
+import tarfile
+
+try:
+    with tarfile.open(sys.argv[1], "r:gz") as archive:
+        members = archive.getmembers()
+        names = set()
+        symlinks = set()
+        for member in members:
+            raw = member.name
+            path = posixpath.normpath(raw)
+            if raw.startswith("/") or any(part == ".." for part in raw.split("/")) or path in ("..",) or path.startswith("../"):
+                raise ValueError("unsafe member path")
+            if path in names:
+                raise ValueError("duplicate member path")
+            names.add(path)
+            if member.islnk() or not (member.isfile() or member.isdir() or member.issym()):
+                raise ValueError("unsupported member type")
+            if member.issym():
+                if member.linkname.startswith("/"):
+                    raise ValueError("absolute symbolic link")
+                symlinks.add(path)
+
+        for path in names:
+            parent = posixpath.dirname(path)
+            while parent not in ("", "."):
+                if parent in symlinks:
+                    raise ValueError("member is beneath a symbolic link")
+                parent = posixpath.dirname(parent)
+except (OSError, tarfile.TarError, ValueError):
+    sys.exit(1)
+PY
       tar -xzf "$tmp" -C "$dir.part" --no-same-owner --no-same-permissions
     fi
     echo "$got" >"$dir.part/SHA256"

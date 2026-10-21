@@ -6,4 +6,5 @@
 .env
 .env.*
 !.env.example
+/deploy/oracle/generated/
 /data/

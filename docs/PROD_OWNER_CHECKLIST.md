@@ -9,7 +9,7 @@ RULE: never paste a password, key or token into chat. Secrets go only into the n
   - [ ] make both repos public, or
   - [ ] pay for a GitHub plan that supports it on private repos (check the plan page first), or
   - [ ] ask Claude to build the weaker typed-confirmation fallback (you stay the only approver).
-- [ ] D2 Production host (section 5): OVH VPS in Quebec (about 7 USD per month in total, recommended) or Oracle Always Free (0 USD, can be reclaimed as idle).
+- [x] D2 Production/staging layout selected: OVH VPS-1 in Beauharnois for production (`amd64`), Oracle Always Free in Montreal for staging (`arm64`). Confirm current pricing/terms at checkout.
 - [ ] D3 Email (section 10): no email is sent today, so no password reset by email. Accept a manual support path for launch, or ask for it to be built.
 - [ ] D4 Story writer (Anthropic): leave OFF at launch.
 - [ ] D5 MongoDB Atlas: leave OFF at launch.
@@ -18,8 +18,8 @@ RULE: never paste a password, key or token into chat. Secrets go only into the n
 
 - [ ] B1 Buy the domain (Porkbun `.ca`, about 9 USD per year, WHOIS privacy free). Section 6.
 - [ ] B2 Create the host account. Oracle: pick home region Canada Southeast (Montreal). OVH: VPS-1, Beauharnois (Quebec). Read the order screen for currency and commitment BEFORE paying.
-- [ ] B3 Create a bucket for backups (Oracle Object Storage) and an access key pair for it (Oracle: Profile, Customer Secret Keys). Bucket name `numerix-backup`. A Backblaze B2 second copy needs extra work from Claude (Litestream 0.5 allows one replica per database, section 9).
-- [ ] B4 Pick a free uptime monitor and READ its terms for commercial use (UptimeRobot, Better Stack or Healthchecks.io).
+- [ ] B3 Create an Oracle Object Storage bucket and access key pair (Oracle: Profile, Customer Secret Keys). Bucket name `numerix-backup`. The tested setup stores one replica there; do not rely on Backblaze B2 until a separate copy job is implemented and restore-tested.
+- [ ] B4 Pick and test an external uptime monitor with email/phone alerts. Read its terms for commercial use; GitHub Actions checks are not an alerting substitute.
 - [ ] B5 Delete or disconnect the old Vercel project (Vercel, Project, Settings, Git, Disconnect) so a push to `main` does not deploy there.
 
 ## C. What to send me in chat (NOT secrets)
@@ -39,6 +39,7 @@ RULE: never paste a password, key or token into chat. Secrets go only into the n
 ## E. GitHub (both repos: numerix-api and numerix-web)
 
 - [ ] Settings, Environments: create `staging` (no rules) and `production` (Required reviewers: you).
+- [ ] In each `production` environment, restrict deployment branches/tags to `main` and `v*.*.*`.
 - [ ] Repository variable `PROD_APPROVAL_CONFIRMED` = `yes` (only after production has Required reviewers).
 - [ ] Per environment, secrets: `DEPLOY_SSH_KEY` (private key of that environment's deploy key), `DEPLOY_KNOWN_HOSTS` (`ssh-keyscan -t ed25519 VMIP` output, fingerprint checked against the VM).
 - [ ] Per environment, variables: `DEPLOY_HOST`, `DEPLOY_USER` (= `deploy`), `TARGET_ARCH` (API repo), `API_URL` (API repo), `WEB_URL`, `ADMIN_URL` (web repo).
@@ -56,11 +57,12 @@ For each VM (staging first):
 - [ ] Create it: Ubuntu 24.04, your SSH public key.
 - [ ] Open TCP 22, 80, 443 in the cloud firewall.
 - [ ] Copy `deploy/oracle` and the matching `.pub`, run `setup.sh` with your three host names. Expect "setup done".
-- [ ] Fill `/etc/numerix/api.env` (JWT_SECRET, ADMIN_API_TOKEN, origins, passkey lines), `/etc/numerix/admin.env` (same ADMIN_API_TOKEN, long ADMIN_PASSWORD, ADMIN_SESSION_SECRET), `/etc/litestream.yml`, `/etc/litestream.env`. Generate secrets with `openssl rand -hex 32` on the VM. Different values on staging and production.
+- [ ] Render the matching example files with `bash scripts/render-env.sh --domain YOURDOMAIN --env staging|production`; fill unique secrets locally. Install `/etc/numerix/api.env`, `web.env`, and `admin.env`; `ADMIN_API_TOKEN` must be at least 16 characters and match in API/admin files. The API now refuses to start in production if it is empty. Fill `/etc/litestream.yml` and `/etc/litestream.env`; never reuse secrets between staging and production.
 - [ ] Copy the Discover media (200 files) once: `/var/lib/numerix/feed-media`.
 
 ## H. Rehearsal on staging (do not skip, section 17 part S)
 
+- [ ] Confirm `docs/QA_SIGNOFF.md` says SIGNED OFF for the exact release being merged.
 - [ ] Merge to `main` (only after QA sign-off), watch `deploy-staging` finish green with `SMOKE PASSED`.
 - [ ] Load the Discover items on staging.
 - [ ] Use the staging site yourself: register, add a child, play, Discover videos, passkey, admin login.
@@ -81,6 +83,7 @@ For each VM (staging first):
 
 ## J. Legal (before real families, section 13)
 
+- [ ] These are launch gates, not post-launch cleanup.
 - [ ] Name the person in charge of personal information; publish their contact.
 - [ ] Privacy policy and consent text in French and English (lawyer).
 - [ ] Parental consent flow reviewed for children under 14 (lawyer).

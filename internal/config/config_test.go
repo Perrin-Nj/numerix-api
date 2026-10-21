@@ -19,7 +19,8 @@ func TestLoad(t *testing.T) {
 		{"defaults in development", map[string]string{}, ""},
 		{"production without secret", map[string]string{"APP_ENV": "production"}, "JWT_SECRET"},
 		{"production short secret", map[string]string{"APP_ENV": "production", "JWT_SECRET": "short"}, "JWT_SECRET"},
-		{"production ok", map[string]string{"APP_ENV": "production", "JWT_SECRET": strings.Repeat("x", 32)}, ""},
+		{"production without admin token", map[string]string{"APP_ENV": "production", "JWT_SECRET": strings.Repeat("x", 32)}, "ADMIN_API_TOKEN"},
+		{"production ok", map[string]string{"APP_ENV": "production", "JWT_SECRET": strings.Repeat("x", 32), "ADMIN_API_TOKEN": strings.Repeat("t", 32)}, ""},
 		{"bad env", map[string]string{"APP_ENV": "staging"}, "APP_ENV"},
 		{"bad port", map[string]string{"PORT": "abc"}, "PORT"},
 		{"bad ttl", map[string]string{"ACCESS_TTL_SECONDS": "x"}, "ACCESS_TTL_SECONDS"},
@@ -76,7 +77,7 @@ func TestWebAuthnDevOriginsAnyLocalhostPort(t *testing.T) {
 	if cfg.WebAuthnRPID != "localhost" || !has("http://localhost:3000") || !has("http://localhost:13150") || has("https://evil.example") {
 		t.Fatalf("dev webauthn: rp %q, %d origins", cfg.WebAuthnRPID, len(cfg.WebAuthnOrigins))
 	}
-	prod, err := Load(env(map[string]string{"APP_ENV": "production", "JWT_SECRET": strings.Repeat("x", 32)}))
+	prod, err := Load(env(map[string]string{"APP_ENV": "production", "JWT_SECRET": strings.Repeat("x", 32), "ADMIN_API_TOKEN": strings.Repeat("t", 32)}))
 	if err != nil || prod.WebAuthnRPID != "" || len(prod.WebAuthnOrigins) != 0 {
 		t.Fatalf("prod webauthn must be off by default: %v %q %d", err, prod.WebAuthnRPID, len(prod.WebAuthnOrigins))
 	}
@@ -85,7 +86,7 @@ func TestWebAuthnDevOriginsAnyLocalhostPort(t *testing.T) {
 // TestProductionOrigins covers the staging/production guards: both environments run APP_ENV=production.
 func TestProductionOrigins(t *testing.T) {
 	base := func(extra map[string]string) map[string]string {
-		m := map[string]string{"APP_ENV": "production", "JWT_SECRET": strings.Repeat("x", 32)}
+		m := map[string]string{"APP_ENV": "production", "JWT_SECRET": strings.Repeat("x", 32), "ADMIN_API_TOKEN": strings.Repeat("t", 32)}
 		for k, v := range extra {
 			m[k] = v
 		}
