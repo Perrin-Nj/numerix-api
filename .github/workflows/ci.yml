@@ -1,13 +1,23 @@
 name: ci
 
+# Runs on every pull request and every push to main. deploy-staging.yml calls it first, so nothing is deployed unless it is green.
 on:
   push:
     branches: [main]
   pull_request:
+  workflow_call:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       # go.mod pins the toolchain (go1.27.2), so CI builds with the same compiler as the VM.
@@ -16,17 +26,82 @@ jobs:
           go-version-file: go.mod
       - run: go vet ./...
       - run: test -z "$(gofmt -l cmd internal)"
+      - name: staticcheck (ST1005 is generated code, SA4000 is the deliberate "same input twice" determinism tests)
+        run: go install honnef.co/go/tools/cmd/staticcheck@v0.8.2 && staticcheck -checks 'inherit,-ST1005,-SA4000' ./...
       # Linux has gcc, so the race detector (not available on the dev laptop) runs here.
       - run: go test ./... -race -count=1
-      - run: go install golang.org/x/vuln/cmd/govulncheck@latest && govulncheck ./...
       # Same static build the Oracle VM runs.
       - run: GOOS=linux GOARCH=arm64 CGO_ENABLED=0 go build -o /dev/null ./cmd/api
       - name: Seed files validate
         run: go run ./cmd/seed --validate-only --exclude _examples
-      - name: Load test smoke (20 rps x 10 s, zero 5xx)
+      - name: Deploy gate (numerix-deploy) offline test
+        run: bash deploy/oracle/test-gate.sh
+      - name: Load test smoke (20 rps x 10 s, zero 5xx) and smoke-prod.sh against the local API
         run: |
-          go build -o bin/api ./cmd/api && go build -o bin/loadtest ./cmd/loadtest
-          PORT=8090 DB_PATH=./data/ci.db APP_ENV=development FEATURE_WELCOME_GIFT=false TRUST_PROXY=true ./bin/api & 
+          go build -ldflags "-X github.com/Perrin-Nj/numerix-api/internal/app.Version=ci" -o bin/api ./cmd/api && go build -o bin/loadtest ./cmd/loadtest
+          PORT=8090 DB_PATH=./data/ci.db APP_ENV=development FEATURE_WELCOME_GIFT=false TRUST_PROXY=true ./bin/api &
           sleep 3
+          SMOKE_WRITE=1 bash scripts/smoke-prod.sh http://127.0.0.1:8090 ci
           ./bin/loadtest -rps 20 -duration 10s -families 50 | tee load.log
           ! grep -E "conn-errors=[1-9]" load.log
+
+  contract:
+    # The API code is generated from the web repo's contracts/openapi.yaml. A pull request that changes either side alone fails here.
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ vars.WEB_REPO || 'Perrin-Nj/numerix-web' }}
+          ref: ${{ vars.WEB_REF || 'main' }}
+          path: web
+          token: ${{ secrets.WEB_REPO_TOKEN || github.token }}
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - uses: pnpm/action-setup@v4
+        with:
+          package_json_file: web/package.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: pnpm install --frozen-lockfile
+        working-directory: web
+      - name: Regenerate and compare
+        run: |
+          go install github.com/oapi-codegen/oapi-codegen/v2/cmd/oapi-codegen@v2.8.0
+          GOBIN_DIR="$(go env GOPATH)/bin"
+          export PATH="$PATH:$GOBIN_DIR"
+          FRONTEND_DIR="$GITHUB_WORKSPACE/web" bash scripts/gen.sh
+          git diff --exit-code -- api internal/httpapi/opmeta_gen.go internal/app/unimplemented_gen.go
+
+  security:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: Known vulnerabilities in code that is actually called
+        run: go install golang.org/x/vuln/cmd/govulncheck@v1.9.0 && govulncheck ./...
+      - name: Secret scan (files and history)
+        run: bash scripts/secret-scan.sh
+
+  workflows:
+    # The pipeline code is checked like any other code.
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - run: go install github.com/rhysd/actionlint/cmd/actionlint@v1.7.7 && "$(go env GOPATH)/bin/actionlint"
+      - run: shellcheck deploy/oracle/*.sh deploy/oracle/numerix-deploy scripts/*.sh
+      - run: |
+          pipx install yamllint==1.35.1
+          yamllint -c .yamllint .github

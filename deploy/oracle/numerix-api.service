@@ -8,10 +8,11 @@ User=numerix
 Group=numerix
 # Secrets and settings live in /etc/numerix/api.env, never in the repo.
 EnvironmentFile=/etc/numerix/api.env
-ExecStart=/opt/numerix/api
+# "current" is a symlink to the active release (see numerix-deploy); rollback just moves the link.
+ExecStart=/opt/numerix/api/current/api
 Restart=always
 RestartSec=2
-# SQLite file lives here; the API listens only on localhost, Caddy faces the internet.
+# SQLite file lives here; the API listens only on 127.0.0.1 (LISTEN_HOST), Caddy faces the internet.
 WorkingDirectory=/var/lib/numerix
 # Hardening: no new privileges, read-only system, write only to the data folder.
 NoNewPrivileges=true

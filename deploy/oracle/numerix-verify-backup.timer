@@ -1,0 +1,9 @@
+[Unit]
+Description=Run the Numerix backup restore check every day
+
+[Timer]
+OnCalendar=*-*-* 04:30:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

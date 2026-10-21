@@ -1,0 +1,5 @@
+# SC2029: "ssh host command $VAR" expands on the runner on purpose (the VM gate receives the finished words).
+paths:
+  .github/workflows/**/*.yml:
+    ignore:
+      - 'SC2029'

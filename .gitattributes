@@ -1,0 +1,7 @@
+*.sh text eol=lf
+deploy/oracle/numerix-deploy text eol=lf
+deploy/oracle/*.service text eol=lf
+deploy/oracle/*.timer text eol=lf
+deploy/oracle/Caddyfile text eol=lf
+.github/**/*.yml text eol=lf
+.github/**/*.yaml text eol=lf

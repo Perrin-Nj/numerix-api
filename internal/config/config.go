@@ -7,6 +7,7 @@ package config
 import (
 	"errors"  // errors.Join merges several validation problems into one error
 	"fmt"     // Sprintf/Errorf formatting
+	"net/url" // parses origins like https://app.example.ca
 	"strconv" // string -> number conversion
 	"strings" // string helpers
 	"time"    // durations for token lifetimes and timeouts
@@ -25,6 +26,7 @@ const devJWTSecret = "dev-only-secret-do-not-use-in-production-0123456789"
 // Config holds every setting the service needs (Spring: a @ConfigurationProperties bean).
 type Config struct {
 	Port               string        // TCP port to listen on
+	ListenHost         string        // LISTEN_HOST: interface to bind (empty = all; production behind Caddy uses 127.0.0.1)
 	Env                string        // development, test or production
 	DBPath             string        // SQLite file path
 	JWTSecret          string        // HMAC key used to sign access tokens
@@ -83,6 +85,7 @@ func Load(getenv func(string) string) (Config, error) {
 
 	cfg := Config{
 		Port:               get("PORT", "8081"), // 8081 matches API_URL in the web app contract
+		ListenHost:         get("LISTEN_HOST", ""),
 		Env:                get("APP_ENV", EnvDevelopment),
 		DBPath:             get("DB_PATH", "./data/numerix.db"),
 		JWTSecret:          get("JWT_SECRET", ""),
@@ -176,5 +179,49 @@ func Load(getenv func(string) string) (Config, error) {
 	if cfg.AdminAPIToken != "" && len(cfg.AdminAPIToken) < 16 {
 		errs = append(errs, errors.New("ADMIN_API_TOKEN must be at least 16 characters when set"))
 	}
+	if cfg.IsProduction() {
+		errs = append(errs, productionOriginProblems(cfg, get("ADMIN_ORIGIN", ""))...)
+	}
 	return cfg, errors.Join(errs...) // nil when errs is empty
+}
+
+// productionOriginProblems rejects origin settings that would silently break or weaken a real deployment:
+// plain http, localhost, wildcards, a passkey id set without origins (passkeys would quietly stay off), and
+// origins that do not belong to the passkey id. Staging runs with APP_ENV=production on purpose, so it gets the same checks.
+func productionOriginProblems(cfg Config, adminOrigins string) []error {
+	var errs []error
+	check := func(name, origin string) *url.URL {
+		u, err := url.Parse(origin)
+		if err != nil || u.Scheme != "https" || u.Host == "" || u.Path != "" && u.Path != "/" {
+			errs = append(errs, fmt.Errorf("%s entry %q must be a plain https origin like https://app.example.ca", name, origin))
+			return nil
+		}
+		if h := u.Hostname(); h == "localhost" || h == "127.0.0.1" || strings.HasPrefix(h, "*") {
+			errs = append(errs, fmt.Errorf("%s entry %q must be a real public host in production", name, origin))
+			return nil
+		}
+		return u
+	}
+	for _, o := range cfg.AllowedOrigins {
+		check("ALLOWED_ORIGINS", o)
+	}
+	for _, o := range strings.Split(adminOrigins, ",") {
+		if o = strings.TrimSpace(o); o != "" {
+			check("ADMIN_ORIGIN", o)
+		}
+	}
+	if (cfg.WebAuthnRPID == "") != (len(cfg.WebAuthnOrigins) == 0) {
+		errs = append(errs, errors.New("WEBAUTHN_RP_ID and WEBAUTHN_ORIGINS must be set together (or both empty to keep passkeys off)"))
+	}
+	if strings.Contains(cfg.WebAuthnRPID, "://") || strings.Contains(cfg.WebAuthnRPID, ":") || strings.Contains(cfg.WebAuthnRPID, "/") {
+		errs = append(errs, errors.New("WEBAUTHN_RP_ID must be a bare host name (no scheme, port or path)"))
+	}
+	for _, o := range cfg.WebAuthnOrigins {
+		if u := check("WEBAUTHN_ORIGINS", o); u != nil && cfg.WebAuthnRPID != "" {
+			if h := u.Hostname(); h != cfg.WebAuthnRPID && !strings.HasSuffix(h, "."+cfg.WebAuthnRPID) {
+				errs = append(errs, fmt.Errorf("WEBAUTHN_ORIGINS entry %q is not inside WEBAUTHN_RP_ID %q", o, cfg.WebAuthnRPID))
+			}
+		}
+	}
+	return errs
 }

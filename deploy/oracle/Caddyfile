@@ -1,7 +1,19 @@
-__DOMAIN__ {
-	# Caddy gets and renews the HTTPS certificate by itself.
+# One Caddy per VM. setup.sh replaces the three __..._HOST__ words. Caddy gets and renews the HTTPS certificates by
+# itself and, for clients it does not trust, REPLACES X-Forwarded-For with the real client address (the API reads it).
+__APP_HOST__ {
 	encode zstd gzip
-	# The Go API only listens on localhost.
+	reverse_proxy 127.0.0.1:3000 {
+		flush_interval -1
+	}
+}
+
+__ADMIN_HOST__ {
+	encode zstd gzip
+	reverse_proxy 127.0.0.1:3100
+}
+
+__API_HOST__ {
+	encode zstd gzip
 	reverse_proxy 127.0.0.1:8081 {
 		# Server-sent events (narration) must not be buffered.
 		flush_interval -1

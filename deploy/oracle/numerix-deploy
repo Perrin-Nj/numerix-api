@@ -1,0 +1,152 @@
+#!/usr/bin/env bash
+# The ONLY thing the CI deploy key may run on the VM (installed at /usr/local/bin/numerix-deploy).
+# authorized_keys pins the key to this script (command="...", restrict), so a stolen key can install a release,
+# switch releases, take a backup and run the content seed. It cannot open a shell or read other files.
+# Manual use, as the deploy user:  sudo -u deploy numerix-deploy status
+#
+# Verbs (c = api | web | admin, id = release id such as a git sha):
+#   put <c|seed> <id> [sha256]   read the release from stdin (api: the binary; others: a .tar.gz); checks sha256 if given
+#   activate <c> <id>            point "current" at the release, remember the old one as "previous", restart the service
+#   verify <c>                   local health check of the running service (exit 1 when not healthy within 40 s)
+#   rollback <c>                 swap "current" and "previous" and restart
+#   backup                       consistent copy of the database into /var/lib/numerix/backups, prints the file name
+#   restore-db <file|latest>     stop the API, put a backup in place, start the API (file name from "backup")
+#   seed <id> <dry|apply>        run scripts/db-prod-deploy.sh from a "seed" release
+#   status                       current and previous release of each component and whether it is running
+set -euo pipefail
+
+BASE=/opt/numerix
+DB=/var/lib/numerix/numerix.db
+BACKUPS=/var/lib/numerix/backups
+
+die() { echo "numerix-deploy: $*" >&2; exit 1; }
+
+# Forced-command mode: sshd puts what the client typed in SSH_ORIGINAL_COMMAND.
+if [ -n "${SSH_ORIGINAL_COMMAND:-}" ]; then
+  read -r -a ARGV <<<"$SSH_ORIGINAL_COMMAND"
+  set -- "${ARGV[@]}"
+fi
+
+verb="${1:-}"; [ $# -gt 0 ] && shift
+
+component() { case "${1:-}" in api|web|admin) ;; *) die "component must be api, web or admin";; esac; }
+release_id() { [[ "${1:-}" =~ ^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$ ]] || die "bad release id"; }
+
+case "$verb" in
+  put)
+    c="${1:-}"; id="${2:-}"; want="${3:-}"
+    [ "$c" = seed ] || component "$c"
+    release_id "$id"
+    [ -z "$want" ] || [[ "$want" =~ ^[0-9a-f]{64}$ ]] || die "bad sha256"
+    dir="$BASE/$c/releases/$id"
+    [ ! -e "$dir" ] || die "release $c/$id already exists (releases are immutable; use a new id)"
+    tmp="$(mktemp)"; trap 'rm -f "$tmp"' EXIT
+    head -c 400000000 >"$tmp" # hard cap 400 MB
+    got="$(sha256sum "$tmp" | cut -d' ' -f1)"
+    [ -z "$want" ] || [ "$got" = "$want" ] || die "sha256 mismatch: got $got"
+    mkdir -p "$dir.part"
+    if [ "$c" = api ]; then
+      install -m 755 "$tmp" "$dir.part/api"
+    else
+      # refuse archives with absolute paths, .. or links that point outside
+      if tar -tzf "$tmp" | grep -E '^/|(^|/)\.\.(/|$)' >/dev/null; then rm -rf "$dir.part"; die "unsafe archive"; fi
+      tar -xzf "$tmp" -C "$dir.part" --no-same-owner --no-same-permissions
+    fi
+    echo "$got" >"$dir.part/SHA256"
+    mv "$dir.part" "$dir"
+    echo "stored $c/$id sha256=$got"
+    ;;
+
+  activate)
+    c="${1:-}"; id="${2:-}"; component "$c"; release_id "$id"
+    [ -d "$BASE/$c/releases/$id" ] || die "no such release $c/$id"
+    old="$(readlink "$BASE/$c/current" 2>/dev/null || true)"
+    if [ -n "$old" ] && [ "$old" != "releases/$id" ]; then ln -sfn "$old" "$BASE/$c/previous"; fi
+    ln -sfn "releases/$id" "$BASE/$c/current.new" && mv -T "$BASE/$c/current.new" "$BASE/$c/current"
+    sudo -n /usr/bin/systemctl restart "numerix-$c"
+    echo "activated $c/$id (previous: ${old:-none})"
+    # keep the 5 newest releases (release ids are validated, so ls output is safe to parse)
+    # shellcheck disable=SC2012
+    ls -1dt "$BASE/$c"/releases/*/ 2>/dev/null | tail -n +6 | while read -r d; do
+      case "$(readlink "$BASE/$c/current"):$(readlink "$BASE/$c/previous" 2>/dev/null)" in *"$(basename "$d")"*) ;; *) rm -rf "$d";; esac
+    done
+    ;;
+
+  verify)
+    c="${1:-}"; component "$c"
+    case "$c" in
+      api) url=http://127.0.0.1:8081/v1/ready ;;
+      web) url=http://127.0.0.1:3000/api/health ;;
+      admin) url=http://127.0.0.1:3100/login ;;
+    esac
+    for _ in $(seq 1 20); do
+      if curl -fsS -m 3 -o /dev/null "$url"; then echo "$c healthy ($url)"; exit 0; fi
+      sleep 2
+    done
+    systemctl is-active "numerix-$c" || true
+    die "$c not healthy after 40 s ($url)"
+    ;;
+
+  rollback)
+    c="${1:-}"; component "$c"
+    [ -L "$BASE/$c/previous" ] || die "no previous release for $c"
+    cur="$(readlink "$BASE/$c/current")"; prev="$(readlink "$BASE/$c/previous")"
+    ln -sfn "$prev" "$BASE/$c/current.new" && mv -T "$BASE/$c/current.new" "$BASE/$c/current"
+    ln -sfn "$cur" "$BASE/$c/previous"
+    sudo -n /usr/bin/systemctl restart "numerix-$c"
+    echo "rolled back $c: now $prev (was $cur)"
+    ;;
+
+  backup) exec sudo -n -u numerix /usr/local/bin/numerix-deploy _backup ;;
+  _backup)
+    [ "$(id -un)" = numerix ] || die "internal verb"
+    mkdir -p "$BACKUPS"; f="pre-deploy-$(date -u +%Y%m%dT%H%M%SZ).db"
+    # VACUUM INTO makes a consistent copy while the API keeps running
+    sqlite3 "$DB" "VACUUM INTO '$BACKUPS/$f'"
+    [ "$(sqlite3 "$BACKUPS/$f" 'PRAGMA integrity_check;')" = ok ] || die "backup failed integrity_check"
+    # shellcheck disable=SC2012
+    ls -1t "$BACKUPS"/pre-deploy-*.db | tail -n +15 | xargs -r rm -f
+    echo "$f"
+    ;;
+
+  restore-db)
+    f="${1:-}"; [[ "$f" = latest || "$f" =~ ^pre-deploy-[0-9TZ]+\.db$ ]] || die "bad backup file name"
+    sudo -n /usr/bin/systemctl stop numerix-api
+    sudo -n -u numerix /usr/local/bin/numerix-deploy _restore "$f"
+    sudo -n /usr/bin/systemctl start numerix-api
+    echo "database restored ($f)"
+    ;;
+  _restore)
+    [ "$(id -un)" = numerix ] || die "internal verb"
+    f="${1:-}"; [[ "$f" = latest || "$f" =~ ^pre-deploy-[0-9TZ]+\.db$ ]] || die "bad backup file name"
+    # shellcheck disable=SC2012
+    [ "$f" != latest ] || f="$(ls -1t "$BACKUPS"/pre-deploy-*.db | head -1 | xargs -r basename)"
+    [ -f "$BACKUPS/$f" ] || die "no such backup"
+    rm -f "$DB-wal" "$DB-shm"
+    cp "$BACKUPS/$f" "$DB"
+    echo "restored from $f"
+    ;;
+
+  seed)
+    id="${1:-}"; mode="${2:-}"; release_id "$id"
+    case "$mode" in dry) flag="" ;; apply) flag="--apply" ;; *) die "mode must be dry or apply";; esac
+    [ -d "$BASE/seed/releases/$id" ] || die "no such seed release $id"
+    exec sudo -n -u numerix /usr/local/bin/numerix-deploy _seed "$id" "${flag:-dry}"
+    ;;
+  _seed)
+    [ "$(id -un)" = numerix ] || die "internal verb"
+    id="${1:-}"; flag="${2:-}"; release_id "$id"
+    cd "$BASE/seed/releases/$id"
+    [ "$flag" = dry ] && flag=""
+    DB_PATH="$DB" APP_ENV=production SEED_BIN=./bin/seed bash scripts/db-prod-deploy.sh ${flag:+$flag}
+    ;;
+
+  status)
+    for c in api web admin; do
+      printf '%-6s current=%s previous=%s service=%s\n' "$c" "$(readlink "$BASE/$c/current" 2>/dev/null || echo -)" \
+        "$(readlink "$BASE/$c/previous" 2>/dev/null || echo -)" "$(systemctl is-active "numerix-$c" 2>/dev/null || true)"
+    done
+    ;;
+
+  *) die "unknown verb '$verb' (put activate verify rollback backup restore-db seed status)" ;;
+esac

@@ -1,0 +1,131 @@
+name: deploy-prod
+
+# Production deploy. Starts when a version tag vX.Y.Z is pushed (or by hand with "Run workflow").
+# A human must press Approve: the job below uses the GitHub Environment "production" with REQUIRED REVIEWERS.
+# It ships the artifact that deploy-staging.yml built and tested for the same commit. It never rebuilds.
+on:
+  push:
+    tags: ['v[0-9]+.[0-9]+.[0-9]+']
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Version tag to deploy, for example v1.0.0 (must be on main and must have passed staging)
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      actions: read
+    outputs:
+      id: ${{ steps.find.outputs.id }}
+      staging_run: ${{ steps.find.outputs.run }}
+      tag: ${{ steps.find.outputs.tag }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - id: find
+        env:
+          GH_TOKEN: ${{ github.token }}
+          INPUT_TAG: ${{ inputs.tag }}
+          EVENT: ${{ github.event_name }}
+          PUSHED_TAG: ${{ github.ref_name }}
+          APPROVAL_CONFIRMED: ${{ vars.PROD_APPROVAL_CONFIRMED }}
+        run: |
+          set -euo pipefail
+          TAG="$PUSHED_TAG"
+          if [ "$EVENT" = workflow_dispatch ]; then TAG="$INPUT_TAG"; fi
+          [[ "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo "::error::tag must look like v1.2.3, got '$TAG'"; exit 1; }
+          [ "$APPROVAL_CONFIRMED" = yes ] || { echo "::error::set the repository variable PROD_APPROVAL_CONFIRMED to yes only after the production environment has Required reviewers (docs/PROD_GO_LIVE.md, step G2)"; exit 1; }
+          git fetch --tags --force origin
+          SHA="$(git rev-list -n 1 "refs/tags/$TAG")"
+          git merge-base --is-ancestor "$SHA" origin/main || { echo "::error::tag $TAG is not on main"; exit 1; }
+          RUN="$(gh run list --workflow deploy-staging.yml --commit "$SHA" --status success --json databaseId --jq '.[0].databaseId')"
+          [ -n "$RUN" ] || { echo "::error::no successful staging deploy for commit $SHA. Merge to main, wait for deploy-staging, then tag."; exit 1; }
+          {
+            echo "id=${SHA:0:12}"
+            echo "run=$RUN"
+            echo "tag=$TAG"
+          } >> "$GITHUB_OUTPUT"
+          echo "Deploying $TAG = commit $SHA, artifact from staging run $RUN" >> "$GITHUB_STEP_SUMMARY"
+
+  deploy:
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment: production
+    env:
+      ID: ${{ needs.prepare.outputs.id }}
+      API_URL: ${{ vars.API_URL }}
+      # CPU type of THIS environment's host: arm64 (Oracle Ampere) or amd64 (most paid VPS). Set per environment.
+      ARCH: ${{ vars.TARGET_ARCH || 'arm64' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.prepare.outputs.tag }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: release-${{ needs.prepare.outputs.id }}
+          path: dist
+          run-id: ${{ needs.prepare.outputs.staging_run }}
+          github-token: ${{ github.token }}
+      - uses: ./.github/actions/vm-ssh
+        with:
+          host: ${{ vars.DEPLOY_HOST }}
+          user: ${{ vars.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          known-hosts: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+      - name: Check the settings
+        run: '[[ "$API_URL" == https://* ]] || { echo "::error::variable API_URL must be the https address of the production API"; exit 1; }'
+      - name: Verify the artifact is exactly what staging tested
+        run: cd dist && sha256sum -c SHA256SUMS
+      - name: Backup the database first
+        run: |
+          set -euo pipefail
+          BACKUP="$(ssh nxvm backup | tail -1)"
+          echo "BACKUP=$BACKUP" >> "$GITHUB_ENV"
+          echo "database backup: $BACKUP" >> "$GITHUB_STEP_SUMMARY"
+      - name: Install and activate (migrations run when the new binary starts)
+        run: |
+          set -euo pipefail
+          SUM="$(grep " api-$ARCH\$" dist/SHA256SUMS | cut -d' ' -f1)"
+          SEED_SUM="$(grep " seed-$ARCH.tgz\$" dist/SHA256SUMS | cut -d' ' -f1)"
+          ssh nxvm "put api $ID $SUM" < "dist/api-$ARCH"
+          ssh nxvm "put seed $ID $SEED_SUM" < "dist/seed-$ARCH.tgz"
+          ssh nxvm "activate api $ID"
+      - name: Health check, smoke test, automatic rollback
+        run: |
+          set -uo pipefail
+          if ! ssh nxvm "verify api"; then
+            echo "::error::new release never became healthy. Rolling back the binary AND restoring the pre-deploy database (nobody was served by the new release, so no family data is lost)."
+            ssh nxvm "rollback api"
+            ssh nxvm "restore-db $BACKUP"
+            ssh nxvm "verify api"
+            exit 1
+          fi
+          if ! bash scripts/smoke-prod.sh "$API_URL" "$ID"; then
+            echo "::error::smoke test failed after the release was serving. Rolling back the BINARY only. The database was NOT restored (it may hold new family data). Decide by hand: docs/PROD_GO_LIVE.md, section Rollback."
+            ssh nxvm "rollback api"
+            ssh nxvm "verify api"
+            exit 1
+          fi
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "### Production deploy of API \`${{ needs.prepare.outputs.tag }}\` (release \`$ID\`)"
+            echo "- result: **${{ job.status }}**"
+            echo "- database backup taken first: \`${BACKUP:-none}\`"
+            echo "- content seed is a separate approval: run db-content.yml"
+          } >> "$GITHUB_STEP_SUMMARY"

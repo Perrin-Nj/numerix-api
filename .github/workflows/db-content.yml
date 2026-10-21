@@ -1,0 +1,56 @@
+name: db-content
+
+# Content seed (worlds, quests, questions, assets) into an environment's database with the existing seed tool.
+# Always a dry run first (shows added / changed / unchanged and writes nothing). "apply" makes a backup first.
+# For production this job waits for the same human approval as a code deploy.
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Target environment
+        required: true
+        type: choice
+        options: [staging, production]
+      release:
+        description: Release id to take the seed files from (12 characters, from the deploy summary)
+        required: true
+        type: string
+      apply:
+        description: Apply after the dry run (leave off for a dry run only)
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-${{ inputs.environment }}
+  cancel-in-progress: false
+
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: ${{ inputs.environment }}
+    env:
+      ID: ${{ inputs.release }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/vm-ssh
+        with:
+          host: ${{ vars.DEPLOY_HOST }}
+          user: ${{ vars.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          known-hosts: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+      - name: Dry run (validates the files, then shows what would change, writes nothing)
+        run: |
+          set -euo pipefail
+          ssh nxvm "seed $ID dry" | tee dry.log
+          { echo '### Seed dry run'; echo '```'; tail -40 dry.log; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+      - name: Apply (backup, migrate, write only what changed)
+        if: ${{ inputs.apply }}
+        run: |
+          set -euo pipefail
+          ssh nxvm "seed $ID apply" | tee apply.log
+          { echo '### Seed applied'; echo '```'; tail -40 apply.log; echo '```'; } >> "$GITHUB_STEP_SUMMARY"

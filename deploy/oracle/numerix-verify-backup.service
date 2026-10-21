@@ -1,0 +1,8 @@
+[Unit]
+Description=Numerix daily backup restore check
+
+[Service]
+Type=oneshot
+User=numerix
+EnvironmentFile=-/etc/litestream.env
+ExecStart=/usr/local/bin/numerix-verify-backup

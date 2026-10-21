@@ -9,6 +9,7 @@ import (
 	"context"
 	"errors"
 	"log/slog" // structured logging in the standard library (Spring: SLF4J + Logback)
+	"net"
 	"net/http"
 	"net/http/pprof" // profiling handlers; mounted only when PPROF=true (config refuses it in production)
 	"os"
@@ -105,7 +106,7 @@ func run() error {
 		Impl: server, Config: cfg, Log: log, Issuer: server.Issuer,
 	}))
 	srv := &http.Server{
-		Addr:    ":" + cfg.Port,
+		Addr:    net.JoinHostPort(cfg.ListenHost, cfg.Port), // LISTEN_HOST empty = all interfaces
 		Handler: root,
 		// Timeouts protect us from slow or stuck clients when many kids connect at once.
 		ReadHeaderTimeout: 5 * time.Second,

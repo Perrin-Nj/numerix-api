@@ -1,0 +1,25 @@
+[Unit]
+Description=Numerix admin app (Next.js)
+After=network-online.target numerix-api.service
+Wants=network-online.target
+
+[Service]
+User=numerix
+Group=numerix
+EnvironmentFile=/etc/numerix/admin.env
+Environment=NODE_ENV=production PORT=3100 HOSTNAME=127.0.0.1
+# Next.js "standalone" build: server.js sits at the top of the release folder.
+WorkingDirectory=/opt/numerix/admin/current
+ExecStart=/opt/numerix/node/bin/node server.js
+Restart=always
+RestartSec=2
+# A Next.js process that grows past this is restarted instead of starving the API on the same VM.
+MemoryMax=900M
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target

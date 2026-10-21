@@ -81,3 +81,49 @@ func TestWebAuthnDevOriginsAnyLocalhostPort(t *testing.T) {
 		t.Fatalf("prod webauthn must be off by default: %v %q %d", err, prod.WebAuthnRPID, len(prod.WebAuthnOrigins))
 	}
 }
+
+// TestProductionOrigins covers the staging/production guards: both environments run APP_ENV=production.
+func TestProductionOrigins(t *testing.T) {
+	base := func(extra map[string]string) map[string]string {
+		m := map[string]string{"APP_ENV": "production", "JWT_SECRET": strings.Repeat("x", 32)}
+		for k, v := range extra {
+			m[k] = v
+		}
+		return m
+	}
+	tests := []struct {
+		name    string
+		env     map[string]string
+		wantErr string
+	}{
+		{"real domain ok", base(map[string]string{"ALLOWED_ORIGINS": "https://app.example.ca", "ADMIN_ORIGIN": "https://admin.example.ca", "WEBAUTHN_RP_ID": "app.example.ca", "WEBAUTHN_ORIGINS": "https://app.example.ca"}), ""},
+		{"passkeys off ok", base(nil), ""},
+		{"http origin", base(map[string]string{"ALLOWED_ORIGINS": "http://app.example.ca"}), "ALLOWED_ORIGINS"},
+		{"localhost origin", base(map[string]string{"ADMIN_ORIGIN": "https://localhost"}), "ADMIN_ORIGIN"},
+		{"origin with path", base(map[string]string{"ALLOWED_ORIGINS": "https://app.example.ca/x"}), "ALLOWED_ORIGINS"},
+		{"rp id without origins", base(map[string]string{"WEBAUTHN_RP_ID": "app.example.ca"}), "set together"},
+		{"origins without rp id", base(map[string]string{"WEBAUTHN_ORIGINS": "https://app.example.ca"}), "set together"},
+		{"rp id with scheme", base(map[string]string{"WEBAUTHN_RP_ID": "https://app.example.ca", "WEBAUTHN_ORIGINS": "https://app.example.ca"}), "bare host"},
+		{"origin outside rp id", base(map[string]string{"WEBAUTHN_RP_ID": "app.example.ca", "WEBAUTHN_ORIGINS": "https://staging-app.example.ca"}), "not inside"},
+		{"development stays relaxed", map[string]string{"ALLOWED_ORIGINS": "http://localhost:3000"}, ""},
+	}
+	for _, tc := range tests {
+		t.Run(tc.name, func(t *testing.T) {
+			_, err := Load(env(tc.env))
+			if tc.wantErr == "" && err != nil {
+				t.Fatalf("unexpected error: %v", err)
+			}
+			if tc.wantErr != "" && (err == nil || !strings.Contains(err.Error(), tc.wantErr)) {
+				t.Fatalf("want error containing %q, got %v", tc.wantErr, err)
+			}
+		})
+	}
+}
+
+// TestListenHost: LISTEN_HOST is read as given, empty by default.
+func TestListenHost(t *testing.T) {
+	c, err := Load(env(map[string]string{"LISTEN_HOST": "127.0.0.1"}))
+	if err != nil || c.ListenHost != "127.0.0.1" {
+		t.Fatalf("got %q, %v", c.ListenHost, err)
+	}
+}

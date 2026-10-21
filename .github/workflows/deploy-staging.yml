@@ -1,0 +1,122 @@
+name: deploy-staging
+
+# Every push to main: run all checks, build the release ONCE, deploy it to the staging VM, smoke test it, then apply the
+# content seed (dry run first). The same artifact is what deploy-prod.yml later ships to production.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-staging
+  cancel-in-progress: false
+
+jobs:
+  checks:
+    uses: ./.github/workflows/ci.yml
+
+  build:
+    needs: checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    outputs:
+      id: ${{ steps.id.outputs.id }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - id: id
+        run: echo "id=$(git rev-parse --short=12 HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Build static Linux binaries for BOTH CPU types, so any host can be used (arm64 = Oracle Ampere, amd64 = most VPS)
+        env:
+          ID: ${{ steps.id.outputs.id }}
+        run: |
+          mkdir -p dist
+          export GOOS=linux CGO_ENABLED=0
+          for arch in arm64 amd64; do
+            export GOARCH=$arch
+            go build -trimpath -ldflags "-s -w -X github.com/Perrin-Nj/numerix-api/internal/app.Version=$ID" -o "dist/api-$arch" ./cmd/api
+            rm -rf "dist/seed-$arch" && mkdir -p "dist/seed-$arch/bin" "dist/seed-$arch/scripts"
+            go build -trimpath -ldflags "-s -w" -o "dist/seed-$arch/bin/seed" ./cmd/seed
+            # the 45 MB of Discover media is copied by hand once per release, not part of the content seed
+            tar -cf - --exclude=seed/feed-media seed | tar -xf - -C "dist/seed-$arch"
+            cp scripts/db-prod-deploy.sh "dist/seed-$arch/scripts/"
+            tar -czf "dist/seed-$arch.tgz" -C "dist/seed-$arch" .
+            rm -rf "dist/seed-$arch"
+          done
+          (cd dist && sha256sum api-arm64 api-amd64 seed-arm64.tgz seed-amd64.tgz > SHA256SUMS && cat SHA256SUMS)
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-${{ steps.id.outputs.id }}
+          path: |
+            dist/api-arm64
+            dist/api-amd64
+            dist/seed-arm64.tgz
+            dist/seed-amd64.tgz
+            dist/SHA256SUMS
+          retention-days: 90
+          if-no-files-found: error
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment: staging
+    env:
+      ID: ${{ needs.build.outputs.id }}
+      API_URL: ${{ vars.API_URL }}
+      # CPU type of THIS environment's host: arm64 (Oracle Ampere) or amd64 (most paid VPS). Set per environment.
+      ARCH: ${{ vars.TARGET_ARCH || 'arm64' }}
+      SMOKE_ADMIN_API_TOKEN: ${{ secrets.SMOKE_ADMIN_API_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: release-${{ needs.build.outputs.id }}
+          path: dist
+      - uses: ./.github/actions/vm-ssh
+        with:
+          host: ${{ vars.DEPLOY_HOST }}
+          user: ${{ vars.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          known-hosts: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+      - name: Check the settings
+        run: '[[ "$API_URL" == https://* ]] || { echo "::error::variable API_URL must be the https address of the staging API"; exit 1; }'
+      - name: Backup, install, activate, health check
+        run: |
+          set -euo pipefail
+          (cd dist && sha256sum -c SHA256SUMS)
+          SUM="$(grep " api-$ARCH\$" dist/SHA256SUMS | cut -d' ' -f1)"
+          SEED_SUM="$(grep " seed-$ARCH.tgz\$" dist/SHA256SUMS | cut -d' ' -f1)"
+          BACKUP="$(ssh nxvm backup | tail -1)"
+          echo "BACKUP=$BACKUP" >> "$GITHUB_ENV"
+          ssh nxvm "put api $ID $SUM" < "dist/api-$ARCH"
+          ssh nxvm "put seed $ID $SEED_SUM" < "dist/seed-$ARCH.tgz"
+          ssh nxvm "activate api $ID"
+          ssh nxvm "verify api"
+      - name: Smoke test (includes a real register, read and delete on staging)
+        run: SMOKE_WRITE=1 ADMIN_API_TOKEN="$SMOKE_ADMIN_API_TOKEN" bash scripts/smoke-prod.sh "$API_URL" "$ID"
+      - name: Content seed, dry run then apply
+        run: |
+          ssh nxvm "seed $ID dry"
+          ssh nxvm "seed $ID apply"
+      - name: Put the previous release back if anything above failed
+        if: failure()
+        run: |
+          echo "::error::staging deploy of $ID failed, rolling back the API"
+          ssh nxvm "rollback api" || true
+          if [ -n "${BACKUP:-}" ]; then echo "database backup taken before this deploy: $BACKUP"; fi
+          ssh nxvm "verify api" || true
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "### Staging deploy of API release \`$ID\`"
+            echo "- result: **${{ job.status }}**"
+            echo "- artifact: release-$ID (reused unchanged by deploy-prod.yml)"
+            echo '```'; cat dist/SHA256SUMS; echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"

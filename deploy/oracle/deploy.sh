@@ -1,25 +1,23 @@
 #!/usr/bin/env bash
-# Run on YOUR PC from Services/numerix-api: bash deploy/oracle/deploy.sh ubuntu@<vm-ip> [arm64|amd64]
-# Builds a static Linux binary (no cgo), copies it to the VM, restarts the service, checks health.
+# MANUAL fallback (the normal path is the GitHub workflow). Run on YOUR PC from the API repo root:
+#   bash deploy/oracle/deploy.sh <ssh-target> [arm64|amd64] [release-id]
+# <ssh-target> is a login that may run "sudo -u deploy" (for example ubuntu@host). Uses the same numerix-deploy gate as CI,
+# so a manual deploy takes a backup first and can be rolled back with the same verbs.
+# shellcheck disable=SC2029 # the arguments are meant to expand on this PC; the VM runs the gate
 set -euo pipefail
 
-TARGET="${1:?usage: bash deploy/oracle/deploy.sh user@host [arm64|amd64]}"
+TARGET="${1:?usage: bash deploy/oracle/deploy.sh user@host [arm64|amd64] [release-id]}"
 ARCH="${2:-arm64}"
+ID="${3:-$(git rev-parse --short=12 HEAD)}"
 export PATH="$PATH:/c/Program Files/Go/bin"
+GATE="sudo -u deploy /usr/local/bin/numerix-deploy"
 
-# Static cross-compile: CGO off means one self-contained file, no C libraries on the server.
-GOOS=linux GOARCH="$ARCH" CGO_ENABLED=0 go build -trimpath -ldflags "-s -w" -o bin/api-linux ./cmd/api
+GOOS=linux GOARCH="$ARCH" CGO_ENABLED=0 go build -trimpath \
+  -ldflags "-s -w -X github.com/Perrin-Nj/numerix-api/internal/app.Version=$ID" -o bin/api-linux ./cmd/api
+SUM="$(sha256sum bin/api-linux | cut -d' ' -f1)"
 
-scp bin/api-linux "$TARGET:/tmp/numerix-api"
-ssh "$TARGET" 'sudo install -o numerix -g numerix -m 755 /tmp/numerix-api /opt/numerix/api && sudo systemctl restart numerix-api && sleep 2 && systemctl is-active numerix-api && curl -fsS http://127.0.0.1:8081/v1/health'
-echo
-echo "deployed. public check: curl https://<your-domain>/v1/health"
-
-# Optional content step: SEED_CONTENT=1 bash deploy/oracle/deploy.sh user@host
-# Builds cmd/seed, ships the seed files, runs a dry run, then applies (a backup is made first; see docs/DB_PROD_DEPLOY.md).
-if [ "${SEED_CONTENT:-0}" = "1" ]; then
-  GOOS=linux GOARCH="$ARCH" CGO_ENABLED=0 go build -trimpath -ldflags "-s -w" -o bin/seed-linux ./cmd/seed
-  tar czf /tmp/numerix-seed.tgz seed scripts/db-prod-deploy.sh
-  scp bin/seed-linux /tmp/numerix-seed.tgz "$TARGET:/tmp/"
-  ssh "$TARGET" 'set -e; cd /opt/numerix && sudo tar xzf /tmp/numerix-seed.tgz && sudo install -m 755 /tmp/seed-linux bin/seed && sudo -u numerix env DB_PATH=/var/lib/numerix/numerix.db APP_ENV=production bash scripts/db-prod-deploy.sh && sudo -u numerix env DB_PATH=/var/lib/numerix/numerix.db APP_ENV=production bash scripts/db-prod-deploy.sh --apply'
-fi
+ssh "$TARGET" "$GATE backup"
+ssh "$TARGET" "$GATE put api $ID $SUM" <bin/api-linux
+ssh "$TARGET" "$GATE activate api $ID"
+ssh "$TARGET" "$GATE verify api"
+echo "deployed $ID. public check: curl https://<api-host>/v1/health   rollback: ssh $TARGET '$GATE rollback api'"

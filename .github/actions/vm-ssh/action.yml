@@ -1,0 +1,43 @@
+name: vm-ssh
+description: Prepares an SSH alias "nxvm" for the restricted deploy key. The host key is pinned, never trusted on first use.
+inputs:
+  host:
+    description: VM address (DEPLOY_HOST)
+    required: true
+  user:
+    description: Login name, always "deploy" (DEPLOY_USER)
+    required: true
+  key:
+    description: Private deploy key (secret DEPLOY_SSH_KEY)
+    required: true
+  known-hosts:
+    description: Line(s) from ssh-keyscan -t ed25519 for the VM (secret DEPLOY_KNOWN_HOSTS)
+    required: true
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        NX_HOST: ${{ inputs.host }}
+        NX_USER: ${{ inputs.user }}
+        NX_KEY: ${{ inputs.key }}
+        NX_KNOWN: ${{ inputs.known-hosts }}
+      run: |
+        set -euo pipefail
+        for v in NX_HOST NX_USER NX_KEY NX_KNOWN; do
+          [ -n "${!v}" ] || { echo "::error::missing deploy setting ${v#NX_} (see docs/PROD_GO_LIVE.md, GitHub secrets list)"; exit 1; }
+        done
+        install -d -m 700 ~/.ssh
+        printf '%s\n' "$NX_KEY" > ~/.ssh/nxvm_key && chmod 600 ~/.ssh/nxvm_key
+        printf '%s\n' "$NX_KNOWN" > ~/.ssh/nxvm_known_hosts
+        {
+          echo "Host nxvm"
+          echo "  HostName $NX_HOST"
+          echo "  User $NX_USER"
+          echo "  IdentityFile ~/.ssh/nxvm_key"
+          echo "  IdentitiesOnly yes"
+          echo "  StrictHostKeyChecking yes"
+          echo "  UserKnownHostsFile ~/.ssh/nxvm_known_hosts"
+          echo "  ConnectTimeout 15"
+          echo "  ServerAliveInterval 15"
+        } > ~/.ssh/config
