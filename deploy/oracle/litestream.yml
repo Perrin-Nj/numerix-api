@@ -1,14 +1,22 @@
 # Streams every SQLite change to Oracle Object Storage (S3 compatible). Fill the placeholders in the VM copy.
+# Written for Litestream 0.5.x (checked against 0.5.17 on 2026-10-21): ONE "replica" per database, retention is global.
 # Credentials come from /etc/litestream.env (LITESTREAM_ACCESS_KEY_ID / LITESTREAM_SECRET_ACCESS_KEY), loaded by
 # /etc/systemd/system/litestream.service.d/override.conf, never from this file.
-# Use a DIFFERENT bucket path per environment (numerix-prod.db / numerix-staging.db) so a restore can never mix them.
+# Use a DIFFERENT bucket path per environment (prod / staging) so a restore can never mix them.
+# __REGION__ is the Oracle region id, for example ca-montreal-1 (Montreal). __NAMESPACE__ is the Object Storage namespace.
+# Oracle needs the S3 compatibility endpoint below plus a "Customer Secret Key" (not an API signing key).
+# Backblaze B2 instead: endpoint https://s3.<region>.backblazeb2.com , region <region> (for example us-west-004 or
+# ca-east-006, shown on the bucket page), keys = B2 keyID and applicationKey. Litestream 0.5 allows only one replica per
+# database, so a second off-site copy needs a second Litestream process (see docs/PROD_GO_LIVE.md, section 9).
+snapshot:
+  interval: 24h
+  retention: 168h # history kept in the bucket: 7 days
 dbs:
   - path: /var/lib/numerix/numerix.db
-    replicas:
-      - type: s3
-        bucket: numerix-backup
-        path: __ENV__/numerix.db
-        endpoint: https://__NAMESPACE__.compat.objectstorage.__REGION__.oraclecloud.com
-        region: __REGION__
-        force-path-style: true
-        retention: 168h
+    replica:
+      type: s3
+      bucket: numerix-backup
+      path: __ENV__/numerix.db
+      endpoint: https://__NAMESPACE__.compat.objectstorage.__REGION__.oraclecloud.com
+      region: __REGION__
+      force-path-style: true

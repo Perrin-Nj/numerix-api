@@ -17,6 +17,7 @@ concurrency:
 jobs:
   checks:
     uses: ./.github/workflows/ci.yml
+    secrets: inherit
 
   build:
     needs: checks
@@ -43,6 +44,7 @@ jobs:
             rm -rf "dist/seed-$arch" && mkdir -p "dist/seed-$arch/bin" "dist/seed-$arch/scripts"
             go build -trimpath -ldflags "-s -w" -o "dist/seed-$arch/bin/seed" ./cmd/seed
             go build -trimpath -ldflags "-s -w" -o "dist/seed-$arch/bin/feedseed" ./cmd/feedseed
+            go build -trimpath -ldflags "-s -w" -o "dist/seed-$arch/bin/loadtest" ./cmd/loadtest
             # the 45 MB of Discover media is copied by hand once per release, not part of the content seed
             tar -cf - --exclude=seed/feed-media seed | tar -xf - -C "dist/seed-$arch"
             cp scripts/db-prod-deploy.sh "dist/seed-$arch/scripts/"

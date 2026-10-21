@@ -25,7 +25,8 @@ fail() { echo "FAIL: $*" >&2; exit 1; }
 printf 'binary-one' >"$T/a1"; printf 'binary-two' >"$T/a2"
 s1="$(sha256sum "$T/a1" | cut -d' ' -f1)"
 g put api r1 "$s1" <"$T/a1" >/dev/null
-g put api r1 <"$T/a1" 2>/dev/null && fail "re-put of an existing release must be refused"
+g put api r1 <"$T/a1" >/dev/null || fail "re-put of the same bytes (workflow re-run) must succeed"
+g put api r1 <"$T/a2" 2>/dev/null && fail "different bytes under an existing release id must be refused"
 g put api r9 "$(printf '0%.0s' $(seq 64))" <"$T/a1" 2>/dev/null && fail "wrong sha256 must be refused"
 [ ! -e "$T/base/api/releases/r9" ] || fail "failed put left a release behind"
 g put api r2 <"$T/a2" >/dev/null

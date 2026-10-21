@@ -65,6 +65,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     environment: production
+    permissions:
+      contents: read
+      actions: read # needed to download the artifact of ANOTHER run (the staging run)
     env:
       ID: ${{ needs.prepare.outputs.id }}
       API_URL: ${{ vars.API_URL }}

@@ -11,7 +11,8 @@ permissions:
   contents: read
 
 concurrency:
-  group: ci-${{ github.ref }}
+  # github.workflow is the CALLER's name when deploy-staging calls this file, so a push to main does not cancel its own staging checks
+  group: ci-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:

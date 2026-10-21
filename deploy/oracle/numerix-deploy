@@ -39,11 +39,15 @@ case "$verb" in
     release_id "$id"
     [ -z "$want" ] || [[ "$want" =~ ^[0-9a-f]{64}$ ]] || die "bad sha256"
     dir="$BASE/$c/releases/$id"
-    [ ! -e "$dir" ] || die "release $c/$id already exists (releases are immutable; use a new id)"
     tmp="$(mktemp)"; trap 'rm -f "$tmp"' EXIT
     head -c 400000000 >"$tmp" # hard cap 400 MB
     got="$(sha256sum "$tmp" | cut -d' ' -f1)"
     [ -z "$want" ] || [ "$got" = "$want" ] || die "sha256 mismatch: got $got"
+    # releases are immutable: the same bytes again (a re-run of a workflow) is fine, different bytes under the same id is not
+    if [ -e "$dir" ]; then
+      [ "$(cat "$dir/SHA256" 2>/dev/null)" = "$got" ] || die "release $c/$id already exists with different content (use a new id)"
+      echo "already stored $c/$id sha256=$got"; exit 0
+    fi
     mkdir -p "$dir.part"
     if [ "$c" = api ]; then
       install -m 755 "$tmp" "$dir.part/api"
@@ -111,9 +115,14 @@ case "$verb" in
 
   restore-db)
     f="${1:-}"; [[ "$f" = latest || "$f" =~ ^pre-deploy-[0-9TZ]+\.db$ ]] || die "bad backup file name"
+    # Litestream must be stopped while the file is swapped, otherwise it keeps streaming the old file's pages and the
+    # backup copy in the bucket becomes unusable (tested with Litestream 0.5.17). On start it begins a clean new copy.
     sudo -n /usr/bin/systemctl stop numerix-api
-    sudo -n -u numerix /usr/local/bin/numerix-deploy _restore "$f"
+    sudo -n /usr/bin/systemctl stop litestream
+    rc=0; sudo -n -u numerix /usr/local/bin/numerix-deploy _restore "$f" || rc=$?
+    sudo -n /usr/bin/systemctl start litestream
     sudo -n /usr/bin/systemctl start numerix-api
+    [ "$rc" = 0 ] || die "restore failed, services started again on the unchanged database"
     echo "database restored ($f)"
     ;;
   _restore)

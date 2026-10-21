@@ -39,7 +39,8 @@ curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' >/etc/a
 apt-get update -y && apt-get install -y caddy
 
 # 3. Litestream: latest .deb for this CPU from GitHub releases.
-URL="$(curl -s https://api.github.com/repos/benbjohnson/litestream/releases/latest | grep browser_download_url | grep -E "linux-${ARCH}.*\.deb" | head -1 | cut -d '"' -f 4)"
+LARCH=$([ "$ARCH" = arm64 ] && echo arm64 || echo x86_64) # the .deb files are named linux-arm64 and linux-x86_64
+URL="$(curl -fsS https://api.github.com/repos/benbjohnson/litestream/releases/latest | grep browser_download_url | grep -E "linux-${LARCH}\.deb\"" | head -1 | cut -d '"' -f 4 || true)"
 [ -n "$URL" ] || { echo "could not find the Litestream .deb for $ARCH, install it by hand"; exit 1; }
 curl -sL "$URL" -o /tmp/litestream.deb && dpkg -i /tmp/litestream.deb
 
@@ -59,7 +60,7 @@ install -d -o deploy -g deploy -m 700 /home/deploy/.ssh
 printf 'restrict,command="/usr/local/bin/numerix-deploy" %s\n' "$(head -1 "$DEPLOY_KEY")" >/home/deploy/.ssh/authorized_keys
 chown deploy:deploy /home/deploy/.ssh/authorized_keys && chmod 600 /home/deploy/.ssh/authorized_keys
 cat >/etc/sudoers.d/numerix-deploy <<'SUDO'
-deploy ALL=(root) NOPASSWD: /usr/bin/systemctl restart numerix-api, /usr/bin/systemctl restart numerix-web, /usr/bin/systemctl restart numerix-admin, /usr/bin/systemctl stop numerix-api, /usr/bin/systemctl start numerix-api
+deploy ALL=(root) NOPASSWD: /usr/bin/systemctl restart numerix-api, /usr/bin/systemctl restart numerix-web, /usr/bin/systemctl restart numerix-admin, /usr/bin/systemctl stop numerix-api, /usr/bin/systemctl start numerix-api, /usr/bin/systemctl stop litestream, /usr/bin/systemctl start litestream
 deploy ALL=(numerix) NOPASSWD: /usr/local/bin/numerix-deploy _backup, /usr/local/bin/numerix-deploy _restore *, /usr/local/bin/numerix-deploy _seed *
 SUDO
 chmod 440 /etc/sudoers.d/numerix-deploy && visudo -cf /etc/sudoers.d/numerix-deploy
@@ -77,7 +78,10 @@ for f in api web admin; do [ -f "/etc/numerix/$f.env" ] || install -m 640 -g num
 LITESTREAM_SECRET_ACCESS_KEY=
 ' >/etc/litestream.env; }
 install -d /etc/systemd/system/litestream.service.d
+# runs as numerix like the API: files it creates next to the database must be writable by the API
 printf '[Service]
+User=numerix
+Group=numerix
 EnvironmentFile=/etc/litestream.env
 ' >/etc/systemd/system/litestream.service.d/override.conf
 

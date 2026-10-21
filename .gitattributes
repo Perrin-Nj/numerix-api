@@ -5,3 +5,5 @@ deploy/oracle/*.timer text eol=lf
 deploy/oracle/Caddyfile text eol=lf
 .github/**/*.yml text eol=lf
 .github/**/*.yaml text eol=lf
+deploy/oracle/*.yml text eol=lf
+deploy/oracle/*.example text eol=lf
