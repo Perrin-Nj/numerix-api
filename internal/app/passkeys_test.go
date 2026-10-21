@@ -17,8 +17,11 @@ import (
 	"encoding/json"
 	"net/http"
 	"net/http/httptest"
+	"strings"
 	"testing"
 	"time"
+
+	"github.com/Perrin-Nj/numerix-api/internal/config"
 )
 
 const (
@@ -266,5 +269,20 @@ func TestPasskeysOffWithoutRPID(t *testing.T) {
 		if rec.Code != 503 || plStr(dvJSON(rec), "code") != "passkeys_unavailable" {
 			t.Fatalf("%s: %d %s", c.path, rec.Code, rec.Body)
 		}
+	}
+}
+
+// The documented real-domain shape (deploy/oracle/env.example) must produce a working passkey instance, not a silent nil.
+func TestPasskeysProductionShape(t *testing.T) {
+	env := map[string]string{
+		"APP_ENV": "production", "JWT_SECRET": strings.Repeat("a", 32), "ADMIN_ORIGIN": "https://admin.example.ca",
+		"ALLOWED_ORIGINS": "https://app.example.ca", "WEBAUTHN_RP_ID": "app.example.ca", "WEBAUTHN_ORIGINS": "https://app.example.ca",
+	}
+	cfg, err := config.Load(func(k string) string { return env[k] })
+	if err != nil {
+		t.Fatal(err)
+	}
+	if newWebAuthn(cfg) == nil {
+		t.Fatal("production passkey config produced no WebAuthn instance")
 	}
 }
