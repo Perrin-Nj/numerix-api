@@ -42,6 +42,7 @@ jobs:
             go build -trimpath -ldflags "-s -w -X github.com/Perrin-Nj/numerix-api/internal/app.Version=$ID" -o "dist/api-$arch" ./cmd/api
             rm -rf "dist/seed-$arch" && mkdir -p "dist/seed-$arch/bin" "dist/seed-$arch/scripts"
             go build -trimpath -ldflags "-s -w" -o "dist/seed-$arch/bin/seed" ./cmd/seed
+            go build -trimpath -ldflags "-s -w" -o "dist/seed-$arch/bin/feedseed" ./cmd/feedseed
             # the 45 MB of Discover media is copied by hand once per release, not part of the content seed
             tar -cf - --exclude=seed/feed-media seed | tar -xf - -C "dist/seed-$arch"
             cp scripts/db-prod-deploy.sh "dist/seed-$arch/scripts/"

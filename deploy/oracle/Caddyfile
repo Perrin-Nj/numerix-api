@@ -2,6 +2,7 @@
 # itself and, for clients it does not trust, REPLACES X-Forwarded-For with the real client address (the API reads it).
 __APP_HOST__ {
 	encode zstd gzip
+	header Strict-Transport-Security "max-age=31536000"
 	reverse_proxy 127.0.0.1:3000 {
 		flush_interval -1
 	}
@@ -9,11 +10,13 @@ __APP_HOST__ {
 
 __ADMIN_HOST__ {
 	encode zstd gzip
+	header Strict-Transport-Security "max-age=31536000"
 	reverse_proxy 127.0.0.1:3100
 }
 
 __API_HOST__ {
 	encode zstd gzip
+	header Strict-Transport-Security "max-age=31536000"
 	reverse_proxy 127.0.0.1:8081 {
 		# Server-sent events (narration) must not be buffered.
 		flush_interval -1

@@ -81,12 +81,18 @@ printf '[Service]
 EnvironmentFile=/etc/litestream.env
 ' >/etc/systemd/system/litestream.service.d/override.conf
 
+# Automatic security updates of the operating system
+apt-get install -y unattended-upgrades
+
 # 7. Firewall: Oracle images ship iptables rules that block 80 and 443 even after the cloud rule opens them.
+# Other hosts (OVH, Hetzner...) usually have no such rule, so this only acts when iptables exists and rejects by default.
+if command -v iptables >/dev/null && iptables -S INPUT 2>/dev/null | grep -q REJECT; then
 iptables -C INPUT -p tcp --dport 443 -j ACCEPT 2>/dev/null || {
   iptables -I INPUT 6 -m state --state NEW -p tcp --dport 80 -j ACCEPT
   iptables -I INPUT 6 -m state --state NEW -p tcp --dport 443 -j ACCEPT
   command -v netfilter-persistent >/dev/null && netfilter-persistent save || true
 }
+fi
 
 systemctl daemon-reload
 systemctl enable numerix-api numerix-web numerix-admin caddy litestream numerix-verify-backup.timer
