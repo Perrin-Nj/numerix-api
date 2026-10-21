@@ -21,7 +21,29 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  gate:
+    # Safe before any server exists: PROD_APPROVAL_CONFIRMED (repository variable) is empty until the owner has created the
+    # production environment with Required reviewers. Empty = skip cleanly (green). Any other value than yes is an error in prepare.
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    outputs:
+      enabled: ${{ steps.g.outputs.enabled }}
+    steps:
+      - id: g
+        env:
+          CONFIRMED: ${{ vars.PROD_APPROVAL_CONFIRMED }}
+        run: |
+          if [ -n "$CONFIRMED" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::notice title=Production deploy skipped::repository variable PROD_APPROVAL_CONFIRMED is empty, so production is not set up yet. Nothing was deployed. See docs/PROD_GO_LIVE.md."
+            echo "Production deploy skipped: production is not set up yet (PROD_APPROVAL_CONFIRMED empty)." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
   prepare:
+    needs: gate
+    if: needs.gate.outputs.enabled == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:

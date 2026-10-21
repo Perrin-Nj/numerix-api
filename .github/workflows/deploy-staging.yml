@@ -19,8 +19,30 @@ jobs:
     uses: ./.github/workflows/ci.yml
     secrets: inherit
 
+  gate:
+    # Safe to merge before any server exists: with no DEPLOY_HOST the build and deploy jobs are skipped (green), CI still runs.
+    # environment: staging has no protection rules, so this job needs no approval; it only reads the variable.
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    environment: staging
+    outputs:
+      enabled: ${{ steps.g.outputs.enabled }}
+    steps:
+      - id: g
+        env:
+          HOST: ${{ vars.DEPLOY_HOST }}
+        run: |
+          if [ -n "$HOST" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::notice title=Staging deploy skipped::variable DEPLOY_HOST is empty in the staging environment, so no server is configured yet. CI ran; nothing was deployed. See docs/PROD_GO_LIVE.md."
+            echo "Staging deploy skipped: DEPLOY_HOST is empty (no server yet). CI still ran." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
   build:
-    needs: checks
+    needs: [checks, gate]
+    if: needs.gate.outputs.enabled == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     outputs:
