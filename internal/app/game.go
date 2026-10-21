@@ -64,7 +64,9 @@ func (s *Server) game() *gameState {
 	}
 	gs := &gameState{graph: graph, seed: rand.Uint64, now: func() time.Time { return time.Now().UTC() }}
 	gs.narr = narrator.New(narrator.FromEnv(os.Getenv, log), narrationCache{s}, log)
-	gs.narr.Off = func() bool { return !appconfig.Get[appconfig.AI](context.Background(), s.Cfg, appconfig.NSAI).NarratorEnabled }
+	gs.narr.Off = func() bool {
+		return !appconfig.Get[appconfig.AI](context.Background(), s.Cfg, appconfig.NSAI).NarratorEnabled
+	}
 	v, _ := games.LoadOrStore(s, gs) // another request may have won the race: use its value
 	return v.(*gameState)
 }

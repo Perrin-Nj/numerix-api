@@ -17,6 +17,7 @@ while [ $# -gt 0 ]; do
     *) echo "unknown option $1" >&2; exit 2 ;;
   esac
 done
+# shellcheck disable=SC2015
 [ -n "$APP_HOST" ] && [ -n "$ADMIN_HOST" ] && [ -n "$API_HOST" ] && [ -f "$DEPLOY_KEY" ] || {
   echo "usage: sudo bash setup.sh --app HOST --admin HOST --api HOST --deploy-key /path/to/public_key.pub" >&2; exit 2; }
 grep -qE '^ssh-(ed25519|rsa) ' "$DEPLOY_KEY" || { echo "$DEPLOY_KEY is not a public SSH key (ssh-ed25519 ...)" >&2; exit 2; }
@@ -102,6 +103,7 @@ if command -v iptables >/dev/null && iptables -S INPUT 2>/dev/null | grep -q REJ
 iptables -C INPUT -p tcp --dport 443 -j ACCEPT 2>/dev/null || {
   iptables -I INPUT 6 -m state --state NEW -p tcp --dport 80 -j ACCEPT
   iptables -I INPUT 6 -m state --state NEW -p tcp --dport 443 -j ACCEPT
+  # shellcheck disable=SC2015
   command -v netfilter-persistent >/dev/null && netfilter-persistent save || true
 }
 fi

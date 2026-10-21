@@ -178,4 +178,3 @@ func validatePlans(d plansDoc) error {
 	}
 	return nil
 }
-

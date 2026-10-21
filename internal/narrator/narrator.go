@@ -66,7 +66,7 @@ type Narrator struct {
 	Fallback Provider // canned bank, always present
 	Cache    Cache    // optional
 	Log      *slog.Logger
-Off      func() bool // optional runtime switch (admin config): true = canned text only, the provider is never called
+	Off      func() bool // optional runtime switch (admin config): true = canned text only, the provider is never called
 }
 
 // New builds a Narrator with the canned bank as fallback.
