@@ -2,14 +2,14 @@ name: deploy-prod
 
 # Production deploy. Starts when a version tag vX.Y.Z is pushed (or by hand with "Run workflow").
 # A human must press Approve: the job below uses the GitHub Environment "production" with REQUIRED REVIEWERS.
-# It ships the artifact that deploy-staging.yml built and tested for the same commit. It never rebuilds.
+# There is no staging: it builds the artifact from the tag, then deploys it to the single production VM.
 on:
   push:
     tags: ['v[0-9]+.[0-9]+.[0-9]+']
   workflow_dispatch:
     inputs:
       tag:
-        description: Version tag to deploy, for example v1.0.0 (must be on main and must have passed staging)
+        description: Version tag to deploy, for example v1.0.0 (must be on main)
         required: true
         type: string
 
@@ -51,7 +51,6 @@ jobs:
       actions: read
     outputs:
       id: ${{ steps.find.outputs.id }}
-      staging_run: ${{ steps.find.outputs.run }}
       tag: ${{ steps.find.outputs.tag }}
     steps:
       - uses: actions/checkout@v4
@@ -73,28 +72,68 @@ jobs:
           git fetch --tags --force origin
           SHA="$(git rev-list -n 1 "refs/tags/$TAG")"
           git merge-base --is-ancestor "$SHA" origin/main || { echo "::error::tag $TAG is not on main"; exit 1; }
-          RUN="$(gh run list --workflow deploy-staging.yml --commit "$SHA" --status success --json databaseId --jq '.[0].databaseId')"
-          [ -n "$RUN" ] || { echo "::error::no successful staging deploy for commit $SHA. Merge to main, wait for deploy-staging, then tag."; exit 1; }
           {
             echo "id=${SHA:0:12}"
-            echo "run=$RUN"
             echo "tag=$TAG"
           } >> "$GITHUB_OUTPUT"
-          echo "Deploying $TAG = commit $SHA, artifact from staging run $RUN" >> "$GITHUB_STEP_SUMMARY"
+          echo "Deploying $TAG = commit $SHA" >> "$GITHUB_STEP_SUMMARY"
+
+  build:
+    # Builds the release once from the tag, for both CPU types.
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.prepare.outputs.tag }}
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - id: id
+        run: echo "id=$(git rev-parse --short=12 HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Build static Linux binaries for BOTH CPU types, so any host can be used (arm64 = Oracle Ampere, amd64 = most VPS)
+        env:
+          ID: ${{ steps.id.outputs.id }}
+        run: |
+          mkdir -p dist
+          export GOOS=linux CGO_ENABLED=0
+          for arch in arm64 amd64; do
+            export GOARCH=$arch
+            go build -trimpath -ldflags "-s -w -X github.com/Perrin-Nj/numerix-api/internal/app.Version=$ID" -o "dist/api-$arch" ./cmd/api
+            rm -rf "dist/seed-$arch" && mkdir -p "dist/seed-$arch/bin" "dist/seed-$arch/scripts"
+            go build -trimpath -ldflags "-s -w" -o "dist/seed-$arch/bin/seed" ./cmd/seed
+            go build -trimpath -ldflags "-s -w" -o "dist/seed-$arch/bin/feedseed" ./cmd/feedseed
+            go build -trimpath -ldflags "-s -w" -o "dist/seed-$arch/bin/loadtest" ./cmd/loadtest
+            # the 45 MB of Discover media is copied by hand once per release, not part of the content seed
+            tar -cf - --exclude=seed/feed-media seed | tar -xf - -C "dist/seed-$arch"
+            cp scripts/db-prod-deploy.sh "dist/seed-$arch/scripts/"
+            tar -czf "dist/seed-$arch.tgz" -C "dist/seed-$arch" .
+            rm -rf "dist/seed-$arch"
+          done
+          (cd dist && sha256sum api-arm64 api-amd64 seed-arm64.tgz seed-amd64.tgz > SHA256SUMS && cat SHA256SUMS)
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-${{ steps.id.outputs.id }}
+          path: |
+            dist/api-arm64
+            dist/api-amd64
+            dist/seed-arm64.tgz
+            dist/seed-amd64.tgz
+            dist/SHA256SUMS
+          retention-days: 90
+          if-no-files-found: error
 
   deploy:
-    needs: prepare
+    needs: [prepare, build]
     runs-on: ubuntu-latest
     timeout-minutes: 30
     environment: production
-    permissions:
-      contents: read
-      actions: read # needed to download the artifact of ANOTHER run (the staging run)
     env:
       ID: ${{ needs.prepare.outputs.id }}
       API_URL: ${{ vars.API_URL }}
       # CPU type of THIS environment's host: arm64 (Oracle Ampere) or amd64 (most paid VPS). Set per environment.
-      ARCH: ${{ vars.TARGET_ARCH || 'arm64' }}
+      ARCH: ${{ vars.TARGET_ARCH || 'amd64' }}
       ACTIVATED: '0'
     steps:
       - uses: actions/checkout@v4
@@ -104,8 +143,6 @@ jobs:
         with:
           name: release-${{ needs.prepare.outputs.id }}
           path: dist
-          run-id: ${{ needs.prepare.outputs.staging_run }}
-          github-token: ${{ github.token }}
       - uses: ./.github/actions/vm-ssh
         with:
           host: ${{ vars.DEPLOY_HOST }}
@@ -114,7 +151,7 @@ jobs:
           known-hosts: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
       - name: Check the settings
         run: '[[ "$API_URL" == https://* ]] || { echo "::error::variable API_URL must be the https address of the production API"; exit 1; }'
-      - name: Verify the artifact is exactly what staging tested
+      - name: Verify the artifact is exactly what was built
         run: cd dist && sha256sum -c SHA256SUMS
       - name: Backup the database first
         run: |
