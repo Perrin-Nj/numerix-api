@@ -34,6 +34,19 @@ echo "== validate"
 "${SEED[@]}" --db "$DB" --seed-dir "$SEED_DIR" --exclude _examples --validate-only
 echo "== run (${MODE:-apply})"
 "${SEED[@]}" --db "$DB" --seed-dir "$SEED_DIR" --exclude _examples ${MODE:+$MODE} "${EXTRA[@]}"
+
+# Discover feed: the curated items (seed/feed/items.json) are a separate table loaded by feedseed; the media files are
+# copied to MEDIA_DIR by hand once per release. Skipped on --rollback, which only undoes a content run.
+FEED_BIN="${FEED_BIN:-./bin/feedseed}"
+if [ "$MODE" != "--rollback" ] && [ -x "$FEED_BIN" ] && [ -f "$SEED_DIR/feed/items.json" ]; then
+  export MEDIA_DIR="${MEDIA_DIR:-/var/lib/numerix/feed-media}"
+  echo "== feed (validate)"
+  "$FEED_BIN" --items "$SEED_DIR/feed/items.json" --media "$MEDIA_DIR" --validate-only
+  if [ -z "$MODE" ]; then
+    echo "== feed (apply)"
+    "$FEED_BIN" --db "$DB" --items "$SEED_DIR/feed/items.json" --media "$MEDIA_DIR"
+  fi
+fi
 if [ -z "$MODE" ]; then
   echo "== done. Check: curl -fsS http://127.0.0.1:8081/v1/health ; the API refreshes its view of the bank within 30 s."
 fi
