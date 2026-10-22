@@ -80,7 +80,10 @@ for u in numerix-api numerix-web numerix-admin; do install -m 644 "$HERE/$u.serv
 install -m 640 -g numerix "$HERE/litestream.yml" /etc/litestream.yml
 install -m 755 "$HERE/verify-backup.sh" /usr/local/bin/numerix-verify-backup
 install -m 644 "$HERE/numerix-verify-backup.service" "$HERE/numerix-verify-backup.timer" /etc/systemd/system/
-for f in api web admin; do [ -f "/etc/numerix/$f.env" ] || install -m 640 -g numerix "$HERE/$f.env.example" "/etc/numerix/$f.env"; done
+for f in api web admin; do
+  tpl="$HERE/$f.env.example"; [ "$f" = api ] && tpl="$HERE/env.example"
+  [ -f "/etc/numerix/$f.env" ] || install -m 640 -g numerix "$tpl" "/etc/numerix/$f.env"
+done
 
 # Backup credentials live in ONE file the owner fills by hand (never in the repo, never in chat).
 [ -f /etc/litestream.env ] || { install -m 640 -o root -g numerix /dev/null /etc/litestream.env; printf 'LITESTREAM_ACCESS_KEY_ID=
