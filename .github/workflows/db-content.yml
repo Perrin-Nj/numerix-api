@@ -36,7 +36,7 @@ jobs:
     env:
       ID: ${{ inputs.release }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: ./.github/actions/vm-ssh
         with:
           host: ${{ vars.DEPLOY_HOST }}
