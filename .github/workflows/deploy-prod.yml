@@ -53,7 +53,7 @@ jobs:
       id: ${{ steps.find.outputs.id }}
       tag: ${{ steps.find.outputs.tag }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - id: find
@@ -84,7 +84,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: ${{ needs.prepare.outputs.tag }}
       - uses: actions/setup-go@v5
@@ -136,7 +136,7 @@ jobs:
       ARCH: ${{ vars.TARGET_ARCH || 'amd64' }}
       ACTIVATED: '0'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: ${{ needs.prepare.outputs.tag }}
       - uses: actions/download-artifact@v4
