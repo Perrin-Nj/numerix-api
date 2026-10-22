@@ -10,7 +10,7 @@ on:
         description: Target environment
         required: true
         type: choice
-        options: [staging, production]
+        options: [production]
       release:
         description: Release id to take the seed files from (12 characters, from the deploy summary)
         required: true
