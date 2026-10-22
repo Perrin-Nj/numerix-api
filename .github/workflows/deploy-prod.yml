@@ -112,7 +112,7 @@ jobs:
             rm -rf "dist/seed-$arch"
           done
           (cd dist && sha256sum api-arm64 api-amd64 seed-arm64.tgz seed-amd64.tgz > SHA256SUMS && cat SHA256SUMS)
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: release-${{ steps.id.outputs.id }}
           path: |
