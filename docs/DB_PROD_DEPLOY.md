@@ -20,7 +20,7 @@ go run ./cmd/seed --db data/dev.db --dry-run --json
 
 Other flags: `--only worlds,quests,questions,assets`, `--world <id>`, `--exclude _examples`, `--allow-retire` (without it, questions removed from the seed are only reported), `--strict`, `--backup-dir`, `--actor`.
 
-Optional step in `deploy/oracle/deploy.sh`: `SEED_CONTENT=1 bash deploy/oracle/deploy.sh ubuntu@<ip>` ships the seed files and runs a dry run then the apply. The wrapper excludes the demo file `_examples.json`.
+Optional step in `deploy/vps/deploy.sh`: `SEED_CONTENT=1 bash deploy/vps/deploy.sh ubuntu@<ip>` ships the seed files and runs a dry run then the apply. The wrapper excludes the demo file `_examples.json`.
 
 The running API sees new content within 30 s (its view of the bank refreshes) and at once for admin edits made in the same process. Worlds and quests are owned by the seed files: an admin edit of a world or quest is a hotfix that the next seed run overwrites if the file differs.
 

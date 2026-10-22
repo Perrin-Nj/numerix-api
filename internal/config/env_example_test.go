@@ -11,9 +11,9 @@ func TestAPIEnvExamplesCoverRuntimeVariables(t *testing.T) {
 	sources := []string{"config.go", "../drafter/drafter.go"}
 	examples := []string{
 		"../../.env.example",
-		"../../deploy/oracle/env.example",
-		"../../deploy/oracle/api.staging.env.example",
-		"../../deploy/oracle/api.production.env.example",
+		"../../deploy/vps/env.example",
+		"../../deploy/vps/api.staging.env.example",
+		"../../deploy/vps/api.production.env.example",
 	}
 	names := map[string]struct{}{}
 	for _, source := range sources {
@@ -36,7 +36,7 @@ func TestAPIEnvExamplesCoverRuntimeVariables(t *testing.T) {
 			}
 		}
 	}
-	for _, example := range []string{"../../deploy/oracle/admin.env.example", "../../deploy/oracle/admin.staging.env.example", "../../deploy/oracle/admin.production.env.example"} {
+	for _, example := range []string{"../../deploy/vps/admin.env.example", "../../deploy/vps/admin.staging.env.example", "../../deploy/vps/admin.production.env.example"} {
 		data, err := os.ReadFile(example)
 		if err != nil {
 			t.Fatal(err)
@@ -47,7 +47,7 @@ func TestAPIEnvExamplesCoverRuntimeVariables(t *testing.T) {
 			}
 		}
 	}
-	for _, example := range []string{"../../deploy/oracle/web.staging.env.example", "../../deploy/oracle/web.production.env.example"} {
+	for _, example := range []string{"../../deploy/vps/web.staging.env.example", "../../deploy/vps/web.production.env.example"} {
 		data, err := os.ReadFile(example)
 		if err != nil {
 			t.Fatal(err)

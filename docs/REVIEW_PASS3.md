@@ -1,7 +1,7 @@
 # Review pass 3: repo reality and security (handoff)
 
 ## Task
-Verify every PROD_GO_LIVE.md claim against the repos; boot the real API under APP_ENV=production from deploy/oracle/env.example; run web and admin standalone with forwarded headers; security-review the deploy design (deploy key, sudoers, Caddy, systemd, workflows, admin exposure, CSP); fix defects with small edits and tests; update the docs; copy docs to master folder and both repos.
+Verify every PROD_GO_LIVE.md claim against the repos; boot the real API under APP_ENV=production from deploy/vps/env.example; run web and admin standalone with forwarded headers; security-review the deploy design (deploy key, sudoers, Caddy, systemd, workflows, admin exposure, CSP); fix defects with small edits and tests; update the docs; copy docs to master folder and both repos.
 
 ## DONE
 - API (gl-api, branch prod/go-live): built real binary, ran with a filled env.example on port 8350 with temp DB: /v1/health and /v1/ready 200, admin API 401 without token and 200 with, pprof 404.
@@ -12,7 +12,7 @@ Verify every PROD_GO_LIVE.md claim against the repos; boot the real API under AP
 - Another reviewer already fixed (HEAD 2ab277e): idempotent put, actions:read on prod deploy job, ci concurrency group includes github.workflow.
 
 ## NOT done (findings still open; none applied yet)
-1. numerix-deploy put (web/admin/seed): tar check only blocks absolute and .. names. Add: reject hard links, and reject any entry whose path lies under a symlink entry of the same archive (extraction through an in-archive symlink). Do NOT ban ".." in symlink targets (pnpm standalone needs them). Also rm -rf "$dir.part" before mkdir. Add cases to deploy/oracle/test-gate.sh.
+1. numerix-deploy put (web/admin/seed): tar check only blocks absolute and .. names. Add: reject hard links, and reject any entry whose path lies under a symlink entry of the same archive (extraction through an in-archive symlink). Do NOT ban ".." in symlink targets (pnpm standalone needs them). Also rm -rf "$dir.part" before mkdir. Add cases to deploy/vps/test-gate.sh.
 2. setup.sh: make /home/deploy/.ssh and authorized_keys root-owned (root:deploy 750 / 640) so the deploy key cannot rewrite its own forced command.
 3. deploy-staging.yml (API) failure step rolls back even when failure happened before activate (swaps to an OLDER release). Set ACTIVATED=1 in GITHUB_ENV after activate and use if: failure() && env.ACTIVATED == '1'. Same idea per component in the web repo staging workflow.
 4. Web repo keepalive.yml: no permissions block; ${{ vars.KEEPALIVE_URLS }} interpolated into run (move to env). Cron every 5 min likely exceeds the free private-repo Actions minutes (UNVERIFIED): say so in doc section 4.
@@ -24,7 +24,7 @@ Verify every PROD_GO_LIVE.md claim against the repos; boot the real API under AP
 
 ## Resume
 - Worktrees: C:\Users\Wandj\AppData\Local\Temp\claude\C--Users-Wandj-OneDrive-Documents-Numerix\5d717d80-429a-4e4f-95c3-84b74db517fd\scratchpad\gl-api and \gl-fe (branch prod/go-live). Re-read files first: another reviewer commits to them. Many files show "M" only from CRLF noise (git diff is empty).
-- Go: PATH needs /c/Program Files/Go/bin. Run gate test: bash deploy/oracle/test-gate.sh (needs bash/WSL Ubuntu). Local run kit in scratchpad\gl-run (api.exe, api.env, ports 8350 API, 3350 admin, 3351 web; all stopped). Admin build: cd gl-fe/admin; npm ci; NEXT_OUTPUT=standalone npm run build. Web standalone from the Windows tarball is broken (pnpm symlinks); run gl-fe/.next/standalone directly or build on Linux/WSL.
+- Go: PATH needs /c/Program Files/Go/bin. Run gate test: bash deploy/vps/test-gate.sh (needs bash/WSL Ubuntu). Local run kit in scratchpad\gl-run (api.exe, api.env, ports 8350 API, 3350 admin, 3351 web; all stopped). Admin build: cd gl-fe/admin; npm ci; NEXT_OUTPUT=standalone npm run build. Web standalone from the Windows tarball is broken (pnpm symlinks); run gl-fe/.next/standalone directly or build on Linux/WSL.
 
 ## Residual risks
 - Stolen deploy key = code execution as numerix (by design), not root.

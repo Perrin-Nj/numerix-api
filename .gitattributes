@@ -1,9 +1,9 @@
 *.sh text eol=lf
-deploy/oracle/numerix-deploy text eol=lf
-deploy/oracle/*.service text eol=lf
-deploy/oracle/*.timer text eol=lf
-deploy/oracle/Caddyfile text eol=lf
+deploy/vps/numerix-deploy text eol=lf
+deploy/vps/*.service text eol=lf
+deploy/vps/*.timer text eol=lf
+deploy/vps/Caddyfile text eol=lf
 .github/**/*.yml text eol=lf
 .github/**/*.yaml text eol=lf
-deploy/oracle/*.yml text eol=lf
-deploy/oracle/*.example text eol=lf
+deploy/vps/*.yml text eol=lf
+deploy/vps/*.example text eol=lf

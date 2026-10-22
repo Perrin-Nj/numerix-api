@@ -2,7 +2,7 @@
 
 Tick every line before the frontend branch `chore/go-backend-cutover` is merged to `main` (a push to `main` deploys the web and admin apps by itself). Detailed runbooks: `DEPLOY_ORACLE.md`, `DB_PROD_DEPLOY.md`, `MONGO_SYNC.md`, `ASSETS.md`, `LOAD_TEST.md`.
 
-## 1. API environment (VM file `/etc/numerix/api.env`, template `deploy/oracle/env.example`)
+## 1. API environment (VM file `/etc/numerix/api.env`, template `deploy/vps/env.example`)
 
 | Variable | Required | Value |
 |---|---|---|

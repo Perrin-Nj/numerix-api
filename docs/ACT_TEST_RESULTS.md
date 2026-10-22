@@ -9,7 +9,7 @@ Checked 2026-10-21 in the local `prod/go-live` worktrees. No secrets, commits, p
 | API Go tests | `go test ./... -count=1`: 547 tests passed across 23 packages |
 | API static checks | `go vet ./...`: passed |
 | API dependency scan | `govulncheck ./...`: no vulnerable call found |
-| Deployment archive gate | `bash deploy/oracle/test-gate.sh`: all checks passed |
+| Deployment archive gate | `bash deploy/vps/test-gate.sh`: all checks passed |
 | Deployment shell lint | ShellCheck passed for setup, deploy, test-gate, and env-render scripts |
 | Workflow lint | `actionlint` and repository-configured `yamllint` passed for API and frontend deploy workflows |
 | Deployment gate simulations | `act` 0.2.89 passed all four API/web staging and production gate simulations with deploy settings empty; runs were sequential and did not enable deployment |

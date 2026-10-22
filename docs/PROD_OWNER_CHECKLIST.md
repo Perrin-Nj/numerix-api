@@ -56,7 +56,7 @@ RULE: never paste a password, key or token into chat. Secrets go only into the n
 For each VM (staging first):
 - [ ] Create it: Ubuntu 24.04, your SSH public key.
 - [ ] Open TCP 22, 80, 443 in the cloud firewall.
-- [ ] Copy `deploy/oracle` and the matching `.pub`, run `setup.sh` with your three host names. Expect "setup done".
+- [ ] Copy `deploy/vps` and the matching `.pub`, run `setup.sh` with your three host names. Expect "setup done".
 - [ ] Render the matching example files with `bash scripts/render-env.sh --domain YOURDOMAIN --env staging|production`; fill unique secrets locally. Install `/etc/numerix/api.env`, `web.env`, and `admin.env`; `ADMIN_API_TOKEN` must be at least 16 characters and match in API/admin files. The API now refuses to start in production if it is empty. Fill `/etc/litestream.yml` and `/etc/litestream.env`; never reuse secrets between staging and production.
 - [ ] Copy the Discover media (200 files) once: `/var/lib/numerix/feed-media`.
 

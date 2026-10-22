@@ -36,7 +36,7 @@ jobs:
       - name: Seed files validate
         run: go run ./cmd/seed --validate-only --exclude _examples
       - name: Deploy gate (numerix-deploy) offline test
-        run: bash deploy/oracle/test-gate.sh
+        run: bash deploy/vps/test-gate.sh
       - name: Load test smoke (20 rps x 10 s, zero 5xx) and smoke-prod.sh against the local API
         run: |
           go build -ldflags "-X github.com/Perrin-Nj/numerix-api/internal/app.Version=ci" -o bin/api ./cmd/api && go build -o bin/loadtest ./cmd/loadtest
@@ -102,7 +102,7 @@ jobs:
         with:
           go-version-file: go.mod
       - run: go install github.com/rhysd/actionlint/cmd/actionlint@v1.7.7 && "$(go env GOPATH)/bin/actionlint"
-      - run: shellcheck deploy/oracle/*.sh deploy/oracle/numerix-deploy scripts/*.sh
+      - run: shellcheck deploy/vps/*.sh deploy/vps/numerix-deploy scripts/*.sh
       - run: |
           pipx install yamllint==1.35.1
           yamllint -c .yamllint .github

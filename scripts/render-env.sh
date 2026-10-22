@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-HERE="$(cd "$(dirname "$0")/../deploy/oracle" && pwd)"
+HERE="$(cd "$(dirname "$0")/../deploy/vps" && pwd)"
 DOMAIN=""
 TARGET_ENV=""
 while [ "$#" -gt 0 ]; do

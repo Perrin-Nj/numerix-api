@@ -47,7 +47,7 @@ Health: `GET /admin/v1/health` (admin token) has `mongo_sync`: `enabled`, `pendi
 
 ## Config
 
-`MONGODB_URI` (empty = off), `MONGODB_DB` (default `numerix`), `MONGO_PSEUDO_SECRET`. See `deploy/oracle/env.example` and the Atlas steps in `docs/DEPLOY_ORACLE.md`.
+`MONGODB_URI` (empty = off), `MONGODB_DB` (default `numerix`), `MONGO_PSEUDO_SECRET`. See `deploy/vps/env.example` and the Atlas steps in `docs/DEPLOY_ORACLE.md`.
 
 ## Tests
 
