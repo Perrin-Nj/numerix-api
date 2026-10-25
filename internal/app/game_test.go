@@ -171,7 +171,7 @@ func TestGameChapterFlow(t *testing.T) {
 	}
 	code, sum, _ := f.gcall(t, "GET", "/v1/sessions/"+sid+"/summary", f.parentTok, "", nil)
 	if code != 200 || len(sum["stuck_points"].([]any)) < 1 || len(sum["stuck_points"].([]any)) > 2 || // two typical errors may share one misconception code
-		 !strings.Contains(sum["story_recap"].(string), "3 sur 5") {
+		!strings.Contains(sum["story_recap"].(string), "3 sur 5") {
 		t.Fatalf("summary = %v", sum)
 	}
 	code, rep, raw := f.gcall(t, "GET", "/v1/reports/weekly?child_id="+f.childID+"&week_start=2020-01-06", f.parentTok, "", nil)

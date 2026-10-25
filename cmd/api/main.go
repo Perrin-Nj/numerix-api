@@ -20,9 +20,9 @@ import (
 	"github.com/Perrin-Nj/numerix-api/internal/adminapi"
 	"github.com/Perrin-Nj/numerix-api/internal/app"
 	"github.com/Perrin-Nj/numerix-api/internal/config"
-	"github.com/Perrin-Nj/numerix-api/internal/mediaopt"
 	"github.com/Perrin-Nj/numerix-api/internal/drafter"
 	"github.com/Perrin-Nj/numerix-api/internal/httpapi"
+	"github.com/Perrin-Nj/numerix-api/internal/mediaopt"
 	"github.com/Perrin-Nj/numerix-api/internal/mongosync"
 	"github.com/Perrin-Nj/numerix-api/internal/store"
 )
