@@ -19,6 +19,7 @@
     "prompt": {"$ref": "#/$defs/l"},
     "hint": {"$ref": "#/$defs/l"},
     "explain": {"$ref": "#/$defs/l"},
+    "reaction": {"type": "object", "required": ["right", "wrong"], "additionalProperties": false, "properties": {"right": {"$ref": "#/$defs/l"}, "wrong": {"$ref": "#/$defs/l"}}},
     "math_text": {"type": "string"},
     "visual": {"type": "object", "required": ["kind"], "properties": {"kind": {"enum": ["bars", "pictograph", "clock", "numberline", "grid", "fraction", "dice"]}, "data": {"type": "object"}}},
     "choices": {"type": "array", "minItems": 3, "maxItems": 5, "items": {"type": "object", "required": ["id", "text"], "properties": {"id": {"type": "string"}, "text": {"$ref": "#/$defs/l"}, "misconception": {"type": "string"}, "random": {"type": "boolean"}}}},

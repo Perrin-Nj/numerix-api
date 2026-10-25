@@ -1,0 +1,84 @@
+# Local copy of the production VM. Same binaries, same env templates, same Caddy rules.
+# api, web, admin and caddy share ONE network namespace (like the VM), so 127.0.0.1:8081 / :3000 / :3100 mean the
+# same thing here as in production. Start it with:  bash deploy/local/start.sh
+# Open https://app.localhost:8443 , https://admin.localhost:8443 , https://api.localhost:8443 (accept Caddy's local certificate).
+name: numerix-local
+
+services:
+  api:
+    build:
+      context: ../..
+      dockerfile: deploy/local/Dockerfile.api
+    env_file: ./.secrets/api.env
+    environment:
+      # The media shrinker rewrites files in place, and here that folder is your repo. Set to "true" to try it.
+      MEDIA_OPTIMIZE: "false"
+    volumes:
+      - data:/var/lib/numerix
+      - ../../seed/feed-media:/var/lib/numerix/feed-media
+    # Every port is published here because the other services join this container's network.
+    ports:
+      - "8443:443"
+      - "8080:80"
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8081/v1/ready"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
+  web:
+    build:
+      context: ${WEB_DIR}
+      dockerfile: ${LOCAL_DIR}/Dockerfile.web
+      target: web
+    network_mode: "service:api"
+    env_file: ./.secrets/web.env
+    environment: { PORT: "3000", HOSTNAME: "127.0.0.1", NODE_ENV: production }
+    depends_on:
+      api: { condition: service_healthy }
+    restart: unless-stopped
+
+  admin:
+    build:
+      context: ${WEB_DIR}
+      dockerfile: ${LOCAL_DIR}/Dockerfile.web
+      target: admin
+    network_mode: "service:api"
+    env_file: ./.secrets/admin.env
+    environment: { PORT: "3100", HOSTNAME: "127.0.0.1", NODE_ENV: production }
+    depends_on:
+      api: { condition: service_healthy }
+    restart: unless-stopped
+
+  caddy:
+    image: caddy:2
+    network_mode: "service:api"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+    depends_on:
+      api: { condition: service_healthy }
+    restart: unless-stopped
+
+  # One-shot, same script and tools the production "db-content" workflow runs on the VM.
+  #   docker compose run --rm seed            (dry run)      docker compose run --rm seed --apply
+  seed:
+    profiles: ["tools"]
+    build:
+      context: ../..
+      dockerfile: deploy/local/Dockerfile.api
+    working_dir: /opt/numerix/seed
+    entrypoint: ["bash", "scripts/db-prod-deploy.sh"]
+    env_file: ./.secrets/api.env
+    environment:
+      DB_PATH: /var/lib/numerix/numerix.db
+      MEDIA_DIR: /var/lib/numerix/feed-media
+      SEED_BIN: ./bin/seed
+    volumes:
+      - data:/var/lib/numerix
+      - ../../seed/feed-media:/var/lib/numerix/feed-media
+
+volumes:
+  data:
+  caddy-data:

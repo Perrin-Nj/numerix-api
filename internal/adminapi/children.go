@@ -70,7 +70,7 @@ func isInt(v any, lo, hi float64) bool {
 
 // defaultSettings fill gaps in the stored child_settings json.
 func defaultSettings() map[string]any {
-	return map[string]any{"daily_goal_chapters": 1.0, "daily_time_limit_minutes": nil, "enabled_worlds": []any{"nature", "espace", "cuisine", "sport", "construction", "medecine", "science", "echecs"},
+	return map[string]any{"daily_goal_chapters": 1.0, "daily_time_limit_minutes": nil, "enabled_worlds": []any{"echecs", "medecine", "espace"},
 		"read_aloud": true, "sound": true, "kid_can_change_language": false}
 }
 

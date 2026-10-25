@@ -21,12 +21,38 @@ var denouementLines = map[string][2][]string{
 	},
 }
 
-// DenouementText returns the line shown after an answer. When the typical error that matched has its own
-// feedback, that message comes first. variant picks one of the lines (use the beat index plus the session seed).
-func DenouementText(outcome, lang string, feedback LText, variant uint32) string {
-	if outcome == OutcomeTypicalError {
+// DenouementText returns the line shown after an answer. The line is about THIS question. A right answer gets the
+// reaction written for it (or, without one, the explanation), a typical error gets its own feedback, any other
+// miss gets the written reaction (or the hint). Only a question with none of these falls back to a neutral line.
+// variant picks one of the neutral lines (use the beat index plus the session seed).
+func DenouementText(outcome, lang string, q *Question, feedback LText, variant uint32) string {
+	yes, close, tip := "Oui ! ", "Pas tout à fait. ", "Un indice : "
+	if lang == "en" {
+		yes, close, tip = "Yes! ", "Not quite. ", "A hint: "
+	}
+	var right, wrong LText // the written reaction, empty when the question has none
+	if q.Reaction != nil {
+		right, wrong = q.Reaction.Right, q.Reaction.Wrong
+	}
+	switch outcome {
+	case OutcomeCorrect:
+		if r := strings.TrimSpace(right.Get(lang)); r != "" {
+			return r
+		}
+		if ex := strings.TrimSpace(q.Explain.Get(lang)); ex != "" {
+			return yes + ex
+		}
+	case OutcomeTypicalError:
 		if fb := strings.TrimSpace(feedback.Get(lang)); fb != "" {
-			return fb
+			return close + fb
+		}
+		fallthrough // no feedback written for this error: treat it like any other miss
+	default:
+		if w := strings.TrimSpace(wrong.Get(lang)); w != "" {
+			return w
+		}
+		if h := strings.TrimSpace(q.Hint.Get(lang)); h != "" {
+			return close + tip + h
 		}
 	}
 	lines, ok := denouementLines[outcome]

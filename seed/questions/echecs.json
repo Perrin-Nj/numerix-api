@@ -22,16 +22,42 @@
     "data": {
      "cols": 4,
      "rows": 4,
+     "board": true,
      "cells": [
       {
        "x": 3,
        "y": 2,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       }
-     ]
+     ],
+     "axes": "numbers",
+     "after": {
+      "marks": [
+       {
+        "x": 3,
+        "y": 1,
+        "tone": "info"
+       },
+       {
+        "x": 3,
+        "y": 3,
+        "tone": "info"
+       },
+       {
+        "x": 3,
+        "y": 4,
+        "tone": "info"
+       },
+       {
+        "x": 3,
+        "y": 2,
+        "tone": "good"
+       }
+      ]
+     }
     }
    },
    "answer": {
@@ -82,7 +108,17 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "reaction": {
+    "right": {
+     "fr": "Oui, le pion est dans la colonne 3. Tu as bien compté depuis la gauche.",
+     "en": "Yes, the pawn is in column 3. You counted from the left, nicely done."
+    },
+    "wrong": {
+     "fr": "Pose ton doigt sur la première case à gauche. Puis compte une colonne à la fois jusqu'au pion.",
+     "en": "Put your finger on the first square on the left. Then count one column at a time up to the pawn."
+    }
+   }
   },
   {
    "id": "echecs.cases.002",
@@ -104,16 +140,42 @@
     "data": {
      "cols": 4,
      "rows": 4,
+     "board": true,
      "cells": [
       {
        "x": 2,
        "y": 4,
        "label": {
-        "fr": "tour",
-        "en": "rook"
+        "fr": "img:chess-rook",
+        "en": "img:chess-rook"
        }
       }
-     ]
+     ],
+     "axes": "numbers",
+     "after": {
+      "marks": [
+       {
+        "x": 1,
+        "y": 4,
+        "tone": "info"
+       },
+       {
+        "x": 3,
+        "y": 4,
+        "tone": "info"
+       },
+       {
+        "x": 4,
+        "y": 4,
+        "tone": "info"
+       },
+       {
+        "x": 2,
+        "y": 4,
+        "tone": "good"
+       }
+      ]
+     }
     }
    },
    "answer": {
@@ -160,7 +222,17 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "reaction": {
+    "right": {
+     "fr": "La tour est dans la rangée 4. Compter depuis le bas, tu l'as fait !",
+     "en": "The rook is in row 4. You counted from the bottom, great!"
+    },
+    "wrong": {
+     "fr": "Commence tout en bas de la grille, à la rangée 1. Puis monte jusqu'à la tour.",
+     "en": "Start at the very bottom of the grid, row 1. Then climb up to the rook."
+    }
+   }
   },
   {
    "id": "echecs.cases.003",
@@ -182,24 +254,35 @@
     "data": {
      "cols": 4,
      "rows": 4,
+     "board": true,
      "cells": [
       {
        "x": 1,
        "y": 3,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       },
       {
        "x": 4,
        "y": 1,
        "label": {
-        "fr": "cavalier",
-        "en": "knight"
+        "fr": "img:chess-knight",
+        "en": "img:chess-knight"
        }
       }
-     ]
+     ],
+     "axes": "numbers",
+     "after": {
+      "marks": [
+       {
+        "x": 4,
+        "y": 1,
+        "tone": "good"
+       }
+      ]
+     }
     }
    },
    "choices": [
@@ -260,7 +343,17 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "reaction": {
+    "right": {
+     "fr": "Bien vu, tu as repéré le cavalier sur la grille.",
+     "en": "Good eye, you spotted the knight on the grid."
+    },
+    "wrong": {
+     "fr": "Cherche la case du cavalier : la colonne d'abord, puis la rangée.",
+     "en": "Look for the knight's square: the column first, then the row."
+    }
+   }
   },
   {
    "id": "echecs.cases.004",
@@ -321,7 +414,89 @@
      "role": "scene",
      "asset": "a_0fe341097d5f4008cfee"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 8,
+     "rows": 1,
+     "board": true,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 5,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 6,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      }
+     ],
+     "after": {
+      "marks": [
+       {
+        "x": 7,
+        "y": 1,
+        "tone": "good"
+       },
+       {
+        "x": 8,
+        "y": 1,
+        "tone": "good"
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Il reste 2 cases libres sur la rangée. 8 moins 6, c'est bien ça !",
+     "en": "Two squares are still free on the row. 8 minus 6, exactly!"
+    },
+    "wrong": {
+     "fr": "Regarde la rangée : 6 cases ont un pion. Combien de cases vides restent jusqu'à 8 ?",
+     "en": "Look at the row: 6 squares have a pawn. How many empty squares are left up to 8?"
+    }
+   }
   },
   {
    "id": "echecs.cases.005",
@@ -382,7 +557,90 @@
      "role": "scene",
      "asset": "a_0fe341097d5f4008cfee"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 3,
+     "board": true,
+     "cells": [],
+     "after": {
+      "marks": [
+       {
+        "x": 1,
+        "y": 1,
+        "tone": "info"
+       },
+       {
+        "x": 2,
+        "y": 1,
+        "tone": "info"
+       },
+       {
+        "x": 3,
+        "y": 1,
+        "tone": "info"
+       },
+       {
+        "x": 4,
+        "y": 1,
+        "tone": "info"
+       },
+       {
+        "x": 1,
+        "y": 2,
+        "tone": "info"
+       },
+       {
+        "x": 2,
+        "y": 2,
+        "tone": "info"
+       },
+       {
+        "x": 3,
+        "y": 2,
+        "tone": "info"
+       },
+       {
+        "x": 4,
+        "y": 2,
+        "tone": "info"
+       },
+       {
+        "x": 1,
+        "y": 3,
+        "tone": "info"
+       },
+       {
+        "x": 2,
+        "y": 3,
+        "tone": "info"
+       },
+       {
+        "x": 3,
+        "y": 3,
+        "tone": "info"
+       },
+       {
+        "x": 4,
+        "y": 3,
+        "tone": "info"
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "4 colonnes de 3 cases, ça fait 12 cases pour s'entraîner. Bien calculé !",
+     "en": "4 columns of 3 squares make 12 squares to practise on. Well counted!"
+    },
+    "wrong": {
+     "fr": "Compte les cases d'une colonne, 3, puis refais-le pour chacune des 4 colonnes.",
+     "en": "Count the squares in one column, 3. Then do it again for each of the 4 columns."
+    }
+   }
   },
   {
    "id": "echecs.cases.006",
@@ -457,7 +715,35 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 6,
+     "rows": 4,
+     "board": true,
+     "cells": [],
+     "after": {
+      "marks": [
+       {
+        "x": 2,
+        "y": 3,
+        "tone": "good"
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Colonne b, rangée 3 : tu as trouvé la bonne case. Les noms de cases n'ont plus de secret !",
+     "en": "Column b, row 3: you found the right square. Square names hold no secrets for you now!"
+    },
+    "wrong": {
+     "fr": "La lettre donne la colonne, le chiffre donne la rangée. Cherche b, puis monte jusqu'à 3.",
+     "en": "The letter gives the column, the number gives the row. Find b, then climb to 3."
+    }
+   }
   },
   {
    "id": "echecs.cases.007",
@@ -532,7 +818,56 @@
      "role": "scene",
      "asset": "a_0fe341097d5f4008cfee"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 6,
+     "rows": 5,
+     "board": true,
+     "cells": [
+      {
+       "x": 3,
+       "y": 4,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      }
+     ],
+     "after": {
+      "arrows": [
+       {
+        "from": {
+         "x": 3,
+         "y": 4
+        },
+        "to": {
+         "x": 4,
+         "y": 4
+        }
+       }
+      ],
+      "marks": [
+       {
+        "x": 4,
+        "y": 4,
+        "tone": "good"
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Juste à droite de c4, c'est d4. Tu as bien suivi la rangée.",
+     "en": "Right next to c4 on the right is d4. You followed the row well."
+    },
+    "wrong": {
+     "fr": "On reste sur la même rangée et on avance d'une colonne vers la droite. De c vers d.",
+     "en": "Stay on the same row and move one column to the right. From c to d."
+    }
+   }
   },
   {
    "id": "echecs.cases.008",
@@ -610,7 +945,83 @@
      "role": "scene",
      "asset": "a_0fe341097d5f4008cfee"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 8,
+     "rows": 3,
+     "board": true,
+     "cells": [
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 4,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "3 pions et 4 pions : 7 pions sur l'échiquier. Léa est prête à jouer !",
+     "en": "3 pawns and 4 pawns: 7 pawns on the board. Léa is ready to play!"
+    },
+    "wrong": {
+     "fr": "Compte les pions de la rangée 2. Puis ceux de la rangée 3, et additionne.",
+     "en": "Count the pawns on row 2, then those on row 3, and add them."
+    }
+   }
   },
   {
    "id": "echecs.cases.009",
@@ -671,7 +1082,141 @@
      "role": "scene",
      "asset": "a_0fe341097d5f4008cfee"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 2,
+     "rows": 8,
+     "board": true,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 1,
+       "y": 4,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 4,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 1,
+       "y": 5,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 5,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      }
+     ],
+     "after": {
+      "marks": [
+       {
+        "x": 1,
+        "y": 6,
+        "tone": "good"
+       },
+       {
+        "x": 2,
+        "y": 6,
+        "tone": "good"
+       },
+       {
+        "x": 1,
+        "y": 7,
+        "tone": "good"
+       },
+       {
+        "x": 2,
+        "y": 7,
+        "tone": "good"
+       },
+       {
+        "x": 1,
+        "y": 8,
+        "tone": "good"
+       },
+       {
+        "x": 2,
+        "y": 8,
+        "tone": "good"
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "5 rangées sont pleines, il en reste 3 de vides. Noah peut encore placer des pions.",
+     "en": "5 rows are full and 3 are still empty: Noah can place more pawns."
+    },
+    "wrong": {
+     "fr": "L'échiquier a 8 rangées. Retire les 5 rangées déjà remplies.",
+     "en": "The board has 8 rows. Take away the 5 rows that are already full."
+    }
+   }
   },
   {
    "id": "echecs.cases.010",
@@ -714,7 +1259,50 @@
      "role": "scene",
      "asset": "a_0fe341097d5f4008cfee"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 4,
+     "board": true,
+     "cells": [
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      }
+     ],
+     "axes": "numbers",
+     "after": {
+      "marks": [
+       {
+        "x": 3,
+        "y": 1,
+        "tone": "good"
+       },
+       {
+        "x": 1,
+        "y": 3,
+        "tone": "warn"
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Colonne 3, rangée 1 n'est pas colonne 1, rangée 3. Noah avait mélangé les deux nombres !",
+     "en": "Column 3, row 1 is not column 1, row 3. Noah mixed up the two numbers!"
+    },
+    "wrong": {
+     "fr": "Le premier nombre dit la colonne, le deuxième dit la rangée. Regarde où est la case sur la grille.",
+     "en": "The first number tells the column, the second tells the row. Look where the square is on the grid."
+    }
+   }
   },
   {
    "id": "echecs.cases.011",
@@ -797,7 +1385,93 @@
      "role": "scene",
      "asset": "a_0fe341097d5f4008cfee"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 6,
+     "rows": 4,
+     "board": true,
+     "cells": [
+      {
+       "x": 3,
+       "y": 4,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 6,
+       "y": 4,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 1,
+       "y": 4,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 4,
+       "y": 4,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      }
+     ],
+     "after": {
+      "arrows": [
+       {
+        "from": {
+         "x": 1,
+         "y": 4
+        },
+        "to": {
+         "x": 3,
+         "y": 4
+        }
+       },
+       {
+        "from": {
+         "x": 3,
+         "y": 4
+        },
+        "to": {
+         "x": 4,
+         "y": 4
+        }
+       },
+       {
+        "from": {
+         "x": 4,
+         "y": 4
+        },
+        "to": {
+         "x": 6,
+         "y": 4
+        }
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Tes cases sont bien rangées de gauche à droite sur la rangée 4.",
+     "en": "Your squares are in the right order from left to right on row 4."
+    },
+    "wrong": {
+     "fr": "Sur la rangée 4. Les lettres vont de a vers f en allant vers la droite. Commence par a.",
+     "en": "On row 4 the letters go from a to f as you move right. Start with a."
+    }
+   }
   },
   {
    "id": "echecs.cases.012",
@@ -901,7 +1575,50 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 8,
+     "rows": 8,
+     "board": true,
+     "cells": [],
+     "after": {
+      "marks": [
+       {
+        "x": 1,
+        "y": 1,
+        "tone": "good"
+       },
+       {
+        "x": 8,
+        "y": 1,
+        "tone": "good"
+       },
+       {
+        "x": 1,
+        "y": 8,
+        "tone": "good"
+       },
+       {
+        "x": 8,
+        "y": 8,
+        "tone": "info"
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "a1, h1 et a8 : tu as retrouvé chaque coin de l'échiquier !",
+     "en": "a1, h1 and a8: you found every corner of the board!"
+    },
+    "wrong": {
+     "fr": "a1 est tout en bas à gauche. La lettre va de gauche à droite, le chiffre de bas en haut.",
+     "en": "a1 is at the very bottom left. Letters go from left to right, numbers from bottom to top."
+    }
+   }
   },
   {
    "id": "echecs.cases.013",
@@ -956,7 +1673,70 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 8,
+     "rows": 8,
+     "board": true,
+     "cells": [],
+     "after": {
+      "marks": [
+       {
+        "x": 1,
+        "y": 1,
+        "tone": "info"
+       },
+       {
+        "x": 2,
+        "y": 1,
+        "tone": "info"
+       },
+       {
+        "x": 3,
+        "y": 1,
+        "tone": "info"
+       },
+       {
+        "x": 4,
+        "y": 1,
+        "tone": "info"
+       },
+       {
+        "x": 5,
+        "y": 1,
+        "tone": "info"
+       },
+       {
+        "x": 6,
+        "y": 1,
+        "tone": "info"
+       },
+       {
+        "x": 7,
+        "y": 1,
+        "tone": "info"
+       },
+       {
+        "x": 8,
+        "y": 1,
+        "tone": "info"
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "8 rangées de 8 cases, c'est environ 64 cases. Le grand échiquier du club est bien estimé.",
+     "en": "8 rows of 8 squares is about 64 squares. The club's big board is well estimated."
+    },
+    "wrong": {
+     "fr": "Pense à 8 fois 8, ou 8 rangées de 8 cases. C'est un peu plus que 60.",
+     "en": "Think 8 times 8, or 8 rows of 8 squares. It is a little more than 60."
+    }
+   }
   },
   {
    "id": "echecs.cases.014",
@@ -978,64 +1758,66 @@
     "data": {
      "cols": 5,
      "rows": 4,
+     "board": true,
      "cells": [
       {
        "x": 1,
        "y": 1,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       },
       {
        "x": 2,
        "y": 1,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       },
       {
        "x": 4,
        "y": 1,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       },
       {
        "x": 3,
        "y": 2,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       },
       {
        "x": 5,
        "y": 3,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       },
       {
        "x": 1,
        "y": 4,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       },
       {
        "x": 3,
        "y": 4,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       }
-     ]
+     ],
+     "axes": "numbers"
     }
    },
    "answer": {
@@ -1082,7 +1864,17 @@
      "role": "scene",
      "asset": "a_0fe341097d5f4008cfee"
     }
-   ]
+   ],
+   "reaction": {
+    "right": {
+     "fr": "Sept pions sur la grille : tu les as tous comptés.",
+     "en": "Seven pawns on the grid: you counted every one."
+    },
+    "wrong": {
+     "fr": "Passe les rangées une à une et compte chaque pion sans en oublier.",
+     "en": "Go through the rows one by one and count each pawn without missing any."
+    }
+   }
   },
   {
    "id": "echecs.parcours.001",
@@ -1104,16 +1896,39 @@
     "data": {
      "cols": 5,
      "rows": 3,
+     "board": true,
      "cells": [
       {
        "x": 1,
        "y": 2,
        "label": {
-        "fr": "cavalier",
-        "en": "knight"
+        "fr": "img:chess-knight",
+        "en": "img:chess-knight"
        }
       }
-     ]
+     ],
+     "axes": "numbers",
+     "after": {
+      "arrows": [
+       {
+        "from": {
+         "x": 1,
+         "y": 2
+        },
+        "to": {
+         "x": 3,
+         "y": 2
+        }
+       }
+      ],
+      "marks": [
+       {
+        "x": 3,
+        "y": 2,
+        "tone": "good"
+       }
+      ]
+     }
     }
    },
    "answer": {
@@ -1160,7 +1975,17 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "reaction": {
+    "right": {
+     "fr": "Le cavalier part de la colonne 1. Avance de 2 cases et arrive dans la colonne 3.",
+     "en": "The knight starts in column 1, moves 2 squares and lands in column 3."
+    },
+    "wrong": {
+     "fr": "Compte les cases une à une vers la droite depuis la colonne 1.",
+     "en": "Count the squares one by one to the right, starting from column 1."
+    }
+   }
   },
   {
    "id": "echecs.parcours.002",
@@ -1221,7 +2046,56 @@
      "role": "scene",
      "asset": "a_e498bd56e1046bb2593f"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 2,
+     "rows": 6,
+     "board": true,
+     "cells": [
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      }
+     ],
+     "after": {
+      "arrows": [
+       {
+        "from": {
+         "x": 1,
+         "y": 2
+        },
+        "to": {
+         "x": 1,
+         "y": 5
+        }
+       }
+      ],
+      "marks": [
+       {
+        "x": 1,
+        "y": 5,
+        "tone": "good"
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Le pion monte d'une case par tour. Après 3 tours, il est en rangée 5.",
+     "en": "The pawn climbs one square each turn. After 3 turns it is on row 5."
+    },
+    "wrong": {
+     "fr": "Pars de la rangée 2 et monte d'une rangée à chaque tour, trois fois.",
+     "en": "Start on row 2 and climb one row each turn, three times."
+    }
+   }
   },
   {
    "id": "echecs.parcours.003",
@@ -1282,7 +2156,59 @@
      "role": "scene",
      "asset": "a_e498bd56e1046bb2593f"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 8,
+     "rows": 1,
+     "board": true,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-rook",
+        "en": "img:chess-rook"
+       }
+      }
+     ],
+     "after": {
+      "arrows": [
+       {
+        "from": {
+         "x": 1,
+         "y": 1
+        },
+        "to": {
+         "x": 5,
+         "y": 1
+        }
+       },
+       {
+        "from": {
+         "x": 5,
+         "y": 1
+        },
+        "to": {
+         "x": 8,
+         "y": 1
+        }
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "4 cases puis 3 cases. La tour a glissé de 7 cases en tout.",
+     "en": "4 squares then 3 squares: the rook slid 7 squares in all."
+    },
+    "wrong": {
+     "fr": "Additionne les deux glissades de la tour : 4 puis 3.",
+     "en": "Add the rook's two slides: 4 and then 3."
+    }
+   }
   },
   {
    "id": "echecs.parcours.004",
@@ -1343,7 +2269,56 @@
      "role": "scene",
      "asset": "a_e498bd56e1046bb2593f"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 8,
+     "rows": 1,
+     "board": true,
+     "cells": [
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-rook",
+        "en": "img:chess-rook"
+       }
+      }
+     ],
+     "after": {
+      "arrows": [
+       {
+        "from": {
+         "x": 2,
+         "y": 1
+        },
+        "to": {
+         "x": 6,
+         "y": 1
+        }
+       }
+      ],
+      "marks": [
+       {
+        "x": 6,
+        "y": 1,
+        "tone": "good"
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "De la colonne 2. La tour avance de 4 cases et atteint la colonne 6.",
+     "en": "From column 2 the rook moves 4 squares and reaches column 6."
+    },
+    "wrong": {
+     "fr": "Pars de la colonne 2 et avance de 4 cases vers la droite. Une à la fois.",
+     "en": "Start at column 2 and move 4 squares to the right. One at a time."
+    }
+   }
   },
   {
    "id": "echecs.parcours.005",
@@ -1404,7 +2379,69 @@
      "role": "scene",
      "asset": "a_e498bd56e1046bb2593f"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 7,
+     "rows": 7,
+     "board": true,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-bishop",
+        "en": "img:chess-bishop"
+       }
+      }
+     ],
+     "after": {
+      "arrows": [
+       {
+        "from": {
+         "x": 1,
+         "y": 1
+        },
+        "to": {
+         "x": 3,
+         "y": 3
+        }
+       },
+       {
+        "from": {
+         "x": 3,
+         "y": 3
+        },
+        "to": {
+         "x": 5,
+         "y": 5
+        }
+       },
+       {
+        "from": {
+         "x": 5,
+         "y": 5
+        },
+        "to": {
+         "x": 7,
+         "y": 7
+        }
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "3 pas de 2 cases : le fou a parcouru 6 cases en diagonale.",
+     "en": "3 steps of 2 squares: the bishop covered 6 squares on the diagonal."
+    },
+    "wrong": {
+     "fr": "Chaque pas fait 2 cases. Compte 2, 4, 6.",
+     "en": "Each step is 2 squares. Count 2, 4, 6."
+    }
+   }
   },
   {
    "id": "echecs.parcours.006",
@@ -1478,7 +2515,49 @@
      "role": "scene",
      "asset": "a_e498bd56e1046bb2593f"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 3,
+     "rows": 4,
+     "board": true,
+     "cells": [
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      }
+     ],
+     "after": {
+      "arrows": [
+       {
+        "from": {
+         "x": 2,
+         "y": 2
+        },
+        "to": {
+         "x": 2,
+         "y": 3
+        }
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Le pion monte : il va vers le haut de l'échiquier.",
+     "en": "The pawn moves up: it heads to the top of the board."
+    },
+    "wrong": {
+     "fr": "Un pion avance vers l'autre côté de l'échiquier, donc vers le haut ici.",
+     "en": "A pawn advances towards the far side of the board, so upwards here."
+    }
+   }
   },
   {
    "id": "echecs.parcours.007",
@@ -1553,7 +2632,60 @@
      "role": "scene",
      "asset": "a_e498bd56e1046bb2593f"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 4,
+     "board": true,
+     "cells": [
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-knight",
+        "en": "img:chess-knight"
+       }
+      }
+     ],
+     "after": {
+      "arrows": [
+       {
+        "from": {
+         "x": 2,
+         "y": 1
+        },
+        "to": {
+         "x": 3,
+         "y": 3
+        },
+        "via": {
+         "x": 2,
+         "y": 3
+        }
+       }
+      ],
+      "marks": [
+       {
+        "x": 3,
+        "y": 3,
+        "tone": "good"
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Deux cases vers le haut, puis une vers la droite. Le cavalier arrive bien là !",
+     "en": "Two squares up, then one to the right: the knight lands right there!"
+    },
+    "wrong": {
+     "fr": "Suis les pas dans l'ordre. 2 cases vers le haut depuis b1, puis 1 case vers la droite.",
+     "en": "Follow the steps in order. 2 squares up from b1, then 1 square to the right."
+    }
+   }
   },
   {
    "id": "echecs.parcours.008",
@@ -1631,7 +2763,79 @@
      "role": "scene",
      "asset": "a_e498bd56e1046bb2593f"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 11,
+     "rows": 1,
+     "board": true,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-rook",
+        "en": "img:chess-rook"
+       }
+      }
+     ],
+     "after": {
+      "arrows": [
+       {
+        "from": {
+         "x": 1,
+         "y": 1
+        },
+        "to": {
+         "x": 3,
+         "y": 1
+        }
+       },
+       {
+        "from": {
+         "x": 3,
+         "y": 1
+        },
+        "to": {
+         "x": 5,
+         "y": 1
+        }
+       },
+       {
+        "from": {
+         "x": 5,
+         "y": 1
+        },
+        "to": {
+         "x": 7,
+         "y": 1
+        }
+       },
+       {
+        "from": {
+         "x": 7,
+         "y": 1
+        },
+        "to": {
+         "x": 11,
+         "y": 1
+        }
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "3 pas de 2, plus un pas de 4. La tour parcourt 10 cases.",
+     "en": "3 steps of 2, plus a step of 4: the rook covers 10 squares."
+    },
+    "wrong": {
+     "fr": "Calcule d'abord 3 pas de 2 cases. Puis ajoute les 4 cases du dernier pas.",
+     "en": "First work out 3 steps of 2 squares. Then add the 4 squares of the last step."
+    }
+   }
   },
   {
    "id": "echecs.parcours.009",
@@ -1692,7 +2896,59 @@
      "role": "scene",
      "asset": "a_e498bd56e1046bb2593f"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 8,
+     "rows": 1,
+     "board": true,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      }
+     ],
+     "after": {
+      "arrows": [
+       {
+        "from": {
+         "x": 1,
+         "y": 1
+        },
+        "to": {
+         "x": 3,
+         "y": 1
+        }
+       },
+       {
+        "from": {
+         "x": 3,
+         "y": 1
+        },
+        "to": {
+         "x": 8,
+         "y": 1
+        }
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "2 cases, puis une case pendant 5 tours. Le pion a avancé de 7 cases.",
+     "en": "2 squares, then one square for 5 turns: the pawn moved 7 squares."
+    },
+    "wrong": {
+     "fr": "Commence par les 2 cases, puis ajoute une case pour chacun des 5 tours.",
+     "en": "Start with the 2 squares. Then add one square for each of the 5 turns."
+    }
+   }
   },
   {
    "id": "echecs.parcours.010",
@@ -1734,7 +2990,56 @@
      "role": "scene",
      "asset": "a_e498bd56e1046bb2593f"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 3,
+     "rows": 8,
+     "board": true,
+     "cells": [
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      }
+     ],
+     "after": {
+      "arrows": [
+       {
+        "from": {
+         "x": 2,
+         "y": 2
+        },
+        "to": {
+         "x": 2,
+         "y": 7
+        }
+       }
+      ],
+      "marks": [
+       {
+        "x": 2,
+        "y": 8,
+        "tone": "info"
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Oui, le pion monte vers la rangée 8 et s'en rapproche à chaque pas.",
+     "en": "Yes, the pawn climbs towards row 8 and gets closer with every step."
+    },
+    "wrong": {
+     "fr": "Regarde le sens du pion : il monte, donc les numéros de rangée augmentent.",
+     "en": "Look at the pawn's direction: it goes up, so the row numbers go up."
+    }
+   }
   },
   {
    "id": "echecs.parcours.011",
@@ -1817,7 +3122,71 @@
      "role": "scene",
      "asset": "a_e498bd56e1046bb2593f"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 2,
+     "rows": 5,
+     "board": true,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-rook",
+        "en": "img:chess-rook"
+       }
+      }
+     ],
+     "after": {
+      "arrows": [
+       {
+        "from": {
+         "x": 1,
+         "y": 1
+        },
+        "to": {
+         "x": 1,
+         "y": 5
+        }
+       }
+      ],
+      "marks": [
+       {
+        "x": 1,
+        "y": 2,
+        "tone": "info"
+       },
+       {
+        "x": 1,
+        "y": 3,
+        "tone": "info"
+       },
+       {
+        "x": 1,
+        "y": 4,
+        "tone": "info"
+       },
+       {
+        "x": 1,
+        "y": 5,
+        "tone": "info"
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "De a1 à a5, tes cases suivent bien le chemin de la tour.",
+     "en": "From a1 to a5, your squares follow the rook's path well."
+    },
+    "wrong": {
+     "fr": "La tour monte la colonne a. A1, puis a2, a3, et ainsi de suite jusqu'à a5.",
+     "en": "The rook climbs column a. A1, then a2, a3, and so on up to a5."
+    }
+   }
   },
   {
    "id": "echecs.parcours.012",
@@ -1921,7 +3290,69 @@
      "role": "scene",
      "asset": "a_e498bd56e1046bb2593f"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 5,
+     "rows": 4,
+     "board": true,
+     "cells": [
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      }
+     ],
+     "after": {
+      "arrows": [
+       {
+        "from": {
+         "x": 2,
+         "y": 2
+        },
+        "to": {
+         "x": 2,
+         "y": 4
+        }
+       },
+       {
+        "from": {
+         "x": 2,
+         "y": 2
+        },
+        "to": {
+         "x": 4,
+         "y": 2
+        }
+       },
+       {
+        "from": {
+         "x": 2,
+         "y": 2
+        },
+        "to": {
+         "x": 2,
+         "y": 1
+        }
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Chaque déplacement a trouvé sa description depuis b2. Bien relié !",
+     "en": "Every move found its description from b2. Well matched!"
+    },
+    "wrong": {
+     "fr": "Regarde de combien de cases la pièce bouge et dans quel sens. Haut, bas ou droite.",
+     "en": "Look at how many squares the piece moves and which way. Up, down or right."
+    }
+   }
   },
   {
    "id": "echecs.parcours.013",
@@ -1943,24 +3374,39 @@
     "data": {
      "cols": 4,
      "rows": 4,
+     "board": true,
      "cells": [
       {
        "x": 1,
        "y": 1,
        "label": {
-        "fr": "départ",
-        "en": "start"
+        "fr": "img:chess-bishop",
+        "en": "img:chess-bishop"
        }
-      },
+      }
+     ],
+     "axes": "numbers",
+     "marks": [
       {
        "x": 3,
        "y": 3,
-       "label": {
-        "fr": "arrivée",
-        "en": "finish"
-       }
+       "tone": "info"
       }
-     ]
+     ],
+     "after": {
+      "arrows": [
+       {
+        "from": {
+         "x": 1,
+         "y": 1
+        },
+        "to": {
+         "x": 3,
+         "y": 3
+        }
+       }
+      ]
+     }
     }
    },
    "answer": {
@@ -2007,7 +3453,17 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "reaction": {
+    "right": {
+     "fr": "Deux pas en diagonale : le fou rejoint bien l'arrivée.",
+     "en": "Two steps on the diagonal: the bishop reaches the finish."
+    },
+    "wrong": {
+     "fr": "Compte chaque pas de 1 case en diagonale entre le départ et l'arrivée.",
+     "en": "Count each 1-square step on the diagonal between the start and the finish."
+    }
+   }
   },
   {
    "id": "echecs.parcours.014",
@@ -2062,7 +3518,43 @@
      "role": "scene",
      "asset": "a_e498bd56e1046bb2593f"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Cases parcourues",
+      "en": "Squares moved"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "rangée 1",
+        "en": "row 1"
+       },
+       "value": 18
+      },
+      {
+       "label": {
+        "fr": "rangée 2",
+        "en": "row 2"
+       },
+       "value": 21
+      }
+     ],
+     "max": 25
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "18 et 21 donnent environ 40 cases. Belle estimation pour la tour !",
+     "en": "18 and 21 make about 40 squares. A fine estimate for the rook!"
+    },
+    "wrong": {
+     "fr": "Arrondis 18 à 20 et 21 à 20, puis additionne.",
+     "en": "Round 18 to 20 and 21 to 20, then add."
+    }
+   }
   },
   {
    "id": "echecs.valeurs.001",
@@ -2123,7 +3615,45 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Points",
+      "en": "Points"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       },
+       "value": 1,
+       "icon": "chess-pawn-b"
+      },
+      {
+       "label": {
+        "fr": "cavalier",
+        "en": "knight"
+       },
+       "value": 3,
+       "icon": "chess-knight"
+      }
+     ],
+     "max": 5
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Un pion vaut 1 et un cavalier 3. Ça fait 4 points en tout.",
+     "en": "A pawn is worth 1 and a knight 3. That makes 4 points in all."
+    },
+    "wrong": {
+     "fr": "Additionne les points des deux pièces. 1 pour le pion, 3 pour le cavalier.",
+     "en": "Add the points of the two pieces. 1 for the pawn, 3 for the knight."
+    }
+   }
   },
   {
    "id": "echecs.valeurs.002",
@@ -2184,7 +3714,45 @@
      "role": "scene",
      "asset": "a_363661b8b93c27e81892"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Points",
+      "en": "Points"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "dame",
+        "en": "queen"
+       },
+       "value": 9,
+       "icon": "chess-queen"
+      },
+      {
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       },
+       "value": 1,
+       "icon": "chess-pawn-b"
+      }
+     ],
+     "max": 10
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "La dame vaut 9, le pion 1 : Léa a gagné 10 points.",
+     "en": "The queen is worth 9, the pawn 1: Léa won 10 points."
+    },
+    "wrong": {
+     "fr": "Ajoute les points de la dame et ceux du pion.",
+     "en": "Add the queen's points and the pawn's points."
+    }
+   }
   },
   {
    "id": "echecs.valeurs.003",
@@ -2245,7 +3813,53 @@
      "role": "scene",
      "asset": "a_363661b8b93c27e81892"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Points",
+      "en": "Points"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "tour",
+        "en": "rook"
+       },
+       "value": 5,
+       "icon": "chess-rook"
+      },
+      {
+       "label": {
+        "fr": "fou",
+        "en": "bishop"
+       },
+       "value": 3,
+       "icon": "chess-bishop"
+      },
+      {
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       },
+       "value": 1,
+       "icon": "chess-pawn-b"
+      }
+     ],
+     "max": 6
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "5 pour la tour, 3 pour le fou, 1 pour le pion. Noah compte 9 points.",
+     "en": "5 for the rook, 3 for the bishop, 1 for the pawn. Noah has 9 points."
+    },
+    "wrong": {
+     "fr": "Additionne les trois pièces une à la fois : 5, puis 3, puis 1.",
+     "en": "Add the three pieces one at a time: 5, then 3, then 1."
+    }
+   }
   },
   {
    "id": "echecs.valeurs.004",
@@ -2306,7 +3920,53 @@
      "role": "scene",
      "asset": "a_363661b8b93c27e81892"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Points",
+      "en": "Points"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "tour",
+        "en": "rook"
+       },
+       "value": 5,
+       "icon": "chess-rook"
+      },
+      {
+       "label": {
+        "fr": "tour",
+        "en": "rook"
+       },
+       "value": 5,
+       "icon": "chess-rook"
+      },
+      {
+       "label": {
+        "fr": "dame",
+        "en": "queen"
+       },
+       "value": 9,
+       "icon": "chess-queen"
+      }
+     ],
+     "max": 10
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Deux tours et une dame. 5 plus 5 plus 9, soit 19 points pour Léa.",
+     "en": "Two rooks and a queen. 5 plus 5 plus 9, so 19 points for Léa."
+    },
+    "wrong": {
+     "fr": "N'oublie pas que Léa garde deux tours. Ajoute 5 deux fois, puis la dame.",
+     "en": "Remember Léa keeps two rooks. Add 5 twice, then the queen."
+    }
+   }
   },
   {
    "id": "echecs.valeurs.005",
@@ -2367,7 +4027,69 @@
      "role": "scene",
      "asset": "a_363661b8b93c27e81892"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Points",
+      "en": "Points"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       },
+       "value": 1,
+       "icon": "chess-pawn-b"
+      },
+      {
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       },
+       "value": 1,
+       "icon": "chess-pawn-b"
+      },
+      {
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       },
+       "value": 1,
+       "icon": "chess-pawn-b"
+      },
+      {
+       "label": {
+        "fr": "cavalier",
+        "en": "knight"
+       },
+       "value": 3,
+       "icon": "chess-knight"
+      },
+      {
+       "label": {
+        "fr": "tour",
+        "en": "rook"
+       },
+       "value": 5,
+       "icon": "chess-rook"
+      }
+     ],
+     "max": 6
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Trois pions, un cavalier et une tour : Noah a pris 11 points.",
+     "en": "Three pawns, a knight and a rook: Noah captured 11 points."
+    },
+    "wrong": {
+     "fr": "Compte chaque pion pour 1, puis ajoute le cavalier et la tour.",
+     "en": "Count each pawn as 1, then add the knight and the rook."
+    }
+   }
   },
   {
    "id": "echecs.valeurs.006",
@@ -2434,7 +4156,53 @@
      "role": "scene",
      "asset": "a_363661b8b93c27e81892"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Points",
+      "en": "Points"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       },
+       "value": 1,
+       "icon": "chess-pawn-b"
+      },
+      {
+       "label": {
+        "fr": "fou",
+        "en": "bishop"
+       },
+       "value": 3,
+       "icon": "chess-bishop"
+      },
+      {
+       "label": {
+        "fr": "tour",
+        "en": "rook"
+       },
+       "value": 5,
+       "icon": "chess-rook"
+      }
+     ],
+     "max": 6
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "La tour est la plus précieuse : elle vaut 5 points.",
+     "en": "The rook is the most valuable: it is worth 5 points."
+    },
+    "wrong": {
+     "fr": "Compare les points : pion 1, fou 3, tour 5. Le plus grand nombre gagne.",
+     "en": "Compare the points: pawn 1, bishop 3, rook 5. The biggest number wins."
+    }
+   }
   },
   {
    "id": "echecs.valeurs.007",
@@ -2509,7 +4277,45 @@
      "role": "scene",
      "asset": "a_363661b8b93c27e81892"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Points",
+      "en": "Points"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "tour",
+        "en": "rook"
+       },
+       "value": 5,
+       "icon": "chess-rook"
+      },
+      {
+       "label": {
+        "fr": "fou",
+        "en": "bishop"
+       },
+       "value": 3,
+       "icon": "chess-bishop"
+      }
+     ],
+     "max": 6
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "5 plus 3 : c'est la bonne addition pour une tour et un fou.",
+     "en": "5 plus 3: that is the right sum for a rook and a bishop."
+    },
+    "wrong": {
+     "fr": "La tour vaut 5 et le fou 3. Cherche l'addition qui les réunit.",
+     "en": "The rook is worth 5 and the bishop 3. Find the sum that puts them together."
+    }
+   }
   },
   {
    "id": "echecs.valeurs.008",
@@ -2587,7 +4393,44 @@
      "role": "scene",
      "asset": "a_363661b8b93c27e81892"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Points",
+      "en": "Points"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "total",
+        "en": "total"
+       },
+       "value": 12
+      },
+      {
+       "label": {
+        "fr": "tour perdue",
+        "en": "lost rook"
+       },
+       "value": 5,
+       "icon": "chess-rook"
+      }
+     ],
+     "max": 12
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "12 points moins 5. Il reste 7 points à Léa après avoir perdu sa tour.",
+     "en": "12 points minus 5: Léa has 7 points left after losing her rook."
+    },
+    "wrong": {
+     "fr": "Léa perd la tour : enlève 5 points aux 12 points.",
+     "en": "Léa loses the rook: take 5 points away from the 12 points."
+    }
+   }
   },
   {
    "id": "echecs.valeurs.009",
@@ -2648,7 +4491,45 @@
      "role": "scene",
      "asset": "a_363661b8b93c27e81892"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Pièces",
+      "en": "Pieces"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "pions (1 point)",
+        "en": "pawns (1 point)"
+       },
+       "count": 8,
+       "icon": "chess-pawn-b"
+      },
+      {
+       "label": {
+        "fr": "tours (5 points)",
+        "en": "rooks (5 points)"
+       },
+       "count": 2,
+       "icon": "chess-rook"
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "8 pions et 2 tours de 5 points. L'équipe de Noah a 18 points.",
+     "en": "8 pawns and 2 rooks of 5 points: Noah's team has 18 points."
+    },
+    "wrong": {
+     "fr": "Compte les pions d'abord, puis les 2 tours à 5 points chacune.",
+     "en": "Count the pawns first, then the 2 rooks at 5 points each."
+    }
+   }
   },
   {
    "id": "echecs.valeurs.010",
@@ -2709,7 +4590,45 @@
      "role": "scene",
      "asset": "a_363661b8b93c27e81892"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Points",
+      "en": "Points"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "dame",
+        "en": "queen"
+       },
+       "value": 9,
+       "icon": "chess-queen"
+      },
+      {
+       "label": {
+        "fr": "tour",
+        "en": "rook"
+       },
+       "value": 5,
+       "icon": "chess-rook"
+      }
+     ],
+     "max": 10
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "9 moins 5 : la dame vaut 4 points de plus que la tour.",
+     "en": "9 minus 5: the queen is worth 4 points more than the rook."
+    },
+    "wrong": {
+     "fr": "Pour comparer, soustrais la valeur de la tour à celle de la dame.",
+     "en": "To compare, subtract the rook's value from the queen's."
+    }
+   }
   },
   {
    "id": "echecs.valeurs.011",
@@ -2752,7 +4671,37 @@
      "role": "scene",
      "asset": "a_363661b8b93c27e81892"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Pièces",
+      "en": "Pieces"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "tours (5 points chacune)",
+        "en": "rooks (5 points each)"
+       },
+       "count": 2,
+       "icon": "chess-rook"
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Deux tours de 5 points font 10 points, pas 12. Noah s'était trompé.",
+     "en": "Two rooks of 5 points make 10 points, not 12. Noah was mistaken."
+    },
+    "wrong": {
+     "fr": "Ajoute 5 et 5 : est-ce que ça fait 12 ?",
+     "en": "Add 5 and 5: does that make 12?"
+    }
+   }
   },
   {
    "id": "echecs.valeurs.012",
@@ -2835,7 +4784,59 @@
      "role": "scene",
      "asset": "a_363661b8b93c27e81892"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 1,
+     "board": true,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-rook",
+        "en": "img:chess-rook"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-queen",
+        "en": "img:chess-queen"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-knight",
+        "en": "img:chess-knight"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Pion, cavalier, tour, dame. Tes pièces sont bien rangées de la moins précieuse à la plus précieuse.",
+     "en": "Pawn, knight, rook, queen: your pieces are in order from least to most valuable."
+    },
+    "wrong": {
+     "fr": "Cherche d'abord la pièce qui vaut le moins de points, puis la suivante.",
+     "en": "Look first for the piece worth the fewest points, then the next one."
+    }
+   }
   },
   {
    "id": "echecs.valeurs.013",
@@ -2939,7 +4940,61 @@
      "role": "scene",
      "asset": "a_363661b8b93c27e81892"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Points",
+      "en": "Points"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "pion",
+        "en": "pawn"
+       },
+       "value": 1,
+       "icon": "chess-pawn-b"
+      },
+      {
+       "label": {
+        "fr": "cavalier",
+        "en": "knight"
+       },
+       "value": 3,
+       "icon": "chess-knight"
+      },
+      {
+       "label": {
+        "fr": "fou",
+        "en": "bishop"
+       },
+       "value": 3,
+       "icon": "chess-bishop"
+      },
+      {
+       "label": {
+        "fr": "tour",
+        "en": "rook"
+       },
+       "value": 5,
+       "icon": "chess-rook"
+      }
+     ],
+     "max": 6
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Chaque total retrouve sa paire de pièces. Tu connais bien les valeurs !",
+     "en": "Each total found its pair of pieces. You know the values well!"
+    },
+    "wrong": {
+     "fr": "Additionne les valeurs des deux pièces de chaque paire, puis compare avec le total.",
+     "en": "Add the values of the two pieces in each pair. Then compare with the total."
+    }
+   }
   },
   {
    "id": "echecs.valeurs.014",
@@ -2970,21 +5025,24 @@
         "fr": "pions",
         "en": "pawns"
        },
-       "count": 4
+       "count": 4,
+       "icon": "chess-pawn-b"
       },
       {
        "label": {
         "fr": "cavaliers",
         "en": "knights"
        },
-       "count": 2
+       "count": 2,
+       "icon": "chess-knight"
       },
       {
        "label": {
         "fr": "tours",
         "en": "rooks"
        },
-       "count": 1
+       "count": 1,
+       "icon": "chess-rook"
       }
      ]
     }
@@ -3033,7 +5091,17 @@
      "role": "scene",
      "asset": "a_363661b8b93c27e81892"
     }
-   ]
+   ],
+   "reaction": {
+    "right": {
+     "fr": "4 plus 2 plus 1 : 7 pièces ont été prises pendant la partie.",
+     "en": "4 plus 2 plus 1: 7 pieces were captured during the game."
+    },
+    "wrong": {
+     "fr": "Lis chaque ligne du tableau et additionne les pièces prises.",
+     "en": "Read each line of the table and add up the captured pieces."
+    }
+   }
   },
   {
    "id": "echecs.valeurs.015",
@@ -3088,7 +5156,45 @@
      "role": "scene",
      "asset": "a_363661b8b93c27e81892"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Pièces",
+      "en": "Pieces"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "dames (9 points)",
+        "en": "queens (9 points)"
+       },
+       "count": 2,
+       "icon": "chess-queen"
+      },
+      {
+       "label": {
+        "fr": "tour (5 points)",
+        "en": "rook (5 points)"
+       },
+       "count": 1,
+       "icon": "chess-rook"
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Deux dames et une tour : environ 23 points, bien estimé !",
+     "en": "Two queens and a rook: about 23 points, well estimated!"
+    },
+    "wrong": {
+     "fr": "Arrondis les dames à 10 : 10 plus 10 plus 5 donne environ 25.",
+     "en": "Round the queens to 10: 10 plus 10 plus 5 gives about 25."
+    }
+   }
   },
   {
    "id": "echecs.motifs.001",
@@ -3155,7 +5261,35 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 1,
+     "board": true,
+     "cells": [],
+     "after": {
+      "marks": [
+       {
+        "x": 2,
+        "y": 1,
+        "tone": "good"
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "La première case est noire, donc la deuxième est blanche. Les couleurs alternent !",
+     "en": "The first square is black, so the second is white. The colours alternate!"
+    },
+    "wrong": {
+     "fr": "Les couleurs changent à chaque case. Si la première est noire, la suivante est de l'autre couleur.",
+     "en": "The colours change on every square. If the first is black, the next one is the other colour."
+    }
+   }
   },
   {
    "id": "echecs.motifs.002",
@@ -3222,7 +5356,45 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 6,
+     "rows": 1,
+     "board": true,
+     "cells": [],
+     "after": {
+      "marks": [
+       {
+        "x": 1,
+        "y": 1,
+        "tone": "info"
+       },
+       {
+        "x": 3,
+        "y": 1,
+        "tone": "good"
+       },
+       {
+        "x": 5,
+        "y": 1,
+        "tone": "good"
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Cette case a la même couleur que la première. On saute une case à chaque fois.",
+     "en": "That square has the same colour as the first. We skip one square each time."
+    },
+    "wrong": {
+     "fr": "Regarde la rangée : noir, blanc, noir... Quelle case répète la couleur de la première ?",
+     "en": "Look at the row: black, white, black... Which square repeats the colour of the first?"
+    }
+   }
   },
   {
    "id": "echecs.motifs.003",
@@ -3283,7 +5455,50 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 8,
+     "rows": 1,
+     "board": true,
+     "cells": [],
+     "after": {
+      "marks": [
+       {
+        "x": 1,
+        "y": 1,
+        "tone": "good"
+       },
+       {
+        "x": 3,
+        "y": 1,
+        "tone": "good"
+       },
+       {
+        "x": 5,
+        "y": 1,
+        "tone": "good"
+       },
+       {
+        "x": 7,
+        "y": 1,
+        "tone": "good"
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Sur 8 cases qui alternent, la moitié est noire : 4 cases.",
+     "en": "Out of 8 alternating squares, half are black: 4 squares."
+    },
+    "wrong": {
+     "fr": "Les cases noires et blanches alternent. Partage les 8 cases en deux groupes égaux.",
+     "en": "Black and white squares alternate. Split the 8 squares into two equal groups."
+    }
+   }
   },
   {
    "id": "echecs.motifs.004",
@@ -3344,7 +5559,59 @@
      "role": "scene",
      "asset": "a_8bf5129e219638daa34a"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 8,
+     "rows": 1,
+     "board": true,
+     "cells": [
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "1",
+        "en": "1"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "3",
+        "en": "3"
+       }
+      },
+      {
+       "x": 6,
+       "y": 1,
+       "label": {
+        "fr": "5",
+        "en": "5"
+       }
+      },
+      {
+       "x": 8,
+       "y": 1,
+       "label": {
+        "fr": "7",
+        "en": "7"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Le numéro suivant est 9 : on ajoute 2 à chaque case blanche.",
+     "en": "The next number is 9: we add 2 on every white square."
+    },
+    "wrong": {
+     "fr": "Regarde l'écart entre les numéros : de 1 à 3, il y a 2. Ajoute 2 à 7.",
+     "en": "Look at the gap between the numbers: from 1 to 3 it is 2. Add 2 to 7."
+    }
+   }
   },
   {
    "id": "echecs.motifs.005",
@@ -3405,7 +5672,59 @@
      "role": "scene",
      "asset": "a_8bf5129e219638daa34a"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 8,
+     "rows": 1,
+     "board": true,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "2",
+        "en": "2"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "4",
+        "en": "4"
+       }
+      },
+      {
+       "x": 5,
+       "y": 1,
+       "label": {
+        "fr": "6",
+        "en": "6"
+       }
+      },
+      {
+       "x": 7,
+       "y": 1,
+       "label": {
+        "fr": "8",
+        "en": "8"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "2, 4, 6, 8, puis 10 : tu as bien suivi les cases noires.",
+     "en": "2, 4, 6, 8, then 10: you followed the black squares well."
+    },
+    "wrong": {
+     "fr": "L'écart entre les numéros est 2. Ajoute 2 à 8.",
+     "en": "The gap between the numbers is 2. Add 2 to 8."
+    }
+   }
   },
   {
    "id": "echecs.motifs.006",
@@ -3466,7 +5785,57 @@
      "role": "scene",
      "asset": "a_8bf5129e219638daa34a"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Pions posés",
+      "en": "Pawns placed"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "tour 1",
+        "en": "turn 1"
+       },
+       "count": 1
+      },
+      {
+       "label": {
+        "fr": "tour 2",
+        "en": "turn 2"
+       },
+       "count": 2
+      },
+      {
+       "label": {
+        "fr": "tour 3",
+        "en": "turn 3"
+       },
+       "count": 3
+      },
+      {
+       "label": {
+        "fr": "tour 4",
+        "en": "turn 4"
+       },
+       "count": 4
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "1, 2, 3, 4, puis 5. Léa pose un pion de plus à chaque tour.",
+     "en": "1, 2, 3, 4, then 5: Léa places one more pawn each turn."
+    },
+    "wrong": {
+     "fr": "À chaque tour, Léa pose un pion de plus que la fois d'avant.",
+     "en": "Each turn, Léa places one more pawn than the turn before."
+    }
+   }
   },
   {
    "id": "echecs.motifs.007",
@@ -3527,7 +5896,135 @@
      "role": "scene",
      "asset": "a_8bf5129e219638daa34a"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 8,
+     "rows": 1,
+     "board": true,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 5,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 6,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 7,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 8,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      }
+     ],
+     "after": {
+      "marks": [
+       {
+        "x": 1,
+        "y": 1,
+        "tone": "good"
+       },
+       {
+        "x": 2,
+        "y": 1,
+        "tone": "good"
+       },
+       {
+        "x": 3,
+        "y": 1,
+        "tone": "info"
+       },
+       {
+        "x": 4,
+        "y": 1,
+        "tone": "info"
+       },
+       {
+        "x": 5,
+        "y": 1,
+        "tone": "warn"
+       },
+       {
+        "x": 6,
+        "y": 1,
+        "tone": "warn"
+       },
+       {
+        "x": 7,
+        "y": 1,
+        "tone": "good"
+       },
+       {
+        "x": 8,
+        "y": 1,
+        "tone": "good"
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "8 pions, un motif de 2 : il revient 4 fois dans le collier.",
+     "en": "8 pawns, a pattern of 2: it comes back 4 times in the necklace."
+    },
+    "wrong": {
+     "fr": "Partage les 8 pions en groupes de 2 et compte les groupes.",
+     "en": "Split the 8 pawns into groups of 2 and count the groups."
+    }
+   }
   },
   {
    "id": "echecs.motifs.008",
@@ -3549,40 +6046,32 @@
     "data": {
      "cols": 4,
      "rows": 2,
-     "cells": [
-      {
-       "x": 1,
-       "y": 1,
-       "label": {
-        "fr": "noire",
-        "en": "black"
+     "board": true,
+     "cells": [],
+     "after": {
+      "marks": [
+       {
+        "x": 1,
+        "y": 1,
+        "tone": "good"
+       },
+       {
+        "x": 2,
+        "y": 2,
+        "tone": "good"
+       },
+       {
+        "x": 3,
+        "y": 1,
+        "tone": "good"
+       },
+       {
+        "x": 4,
+        "y": 2,
+        "tone": "good"
        }
-      },
-      {
-       "x": 3,
-       "y": 1,
-       "label": {
-        "fr": "noire",
-        "en": "black"
-       }
-      },
-      {
-       "x": 2,
-       "y": 2,
-       "label": {
-        "fr": "noire",
-        "en": "black"
-       }
-      },
-      {
-       "x": 4,
-       "y": 2,
-       "label": {
-        "fr": "noire",
-        "en": "black"
-       }
-      }
-     ]
+      ]
+     }
     }
    },
    "answer": {
@@ -3629,7 +6118,17 @@
      "role": "scene",
      "asset": "a_8bf5129e219638daa34a"
     }
-   ]
+   ],
+   "reaction": {
+    "right": {
+     "fr": "4 cases noires sur la grille : elles forment bien un damier.",
+     "en": "4 black squares on the grid: they do make a checkerboard."
+    },
+    "wrong": {
+     "fr": "Compte seulement les cases noires de la grille, une par une.",
+     "en": "Count only the black squares of the grid, one by one."
+    }
+   }
   },
   {
    "id": "echecs.motifs.009",
@@ -3672,7 +6171,40 @@
      "role": "scene",
      "asset": "a_8bf5129e219638daa34a"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 2,
+     "board": true,
+     "cells": [],
+     "after": {
+      "marks": [
+       {
+        "x": 1,
+        "y": 1,
+        "tone": "good"
+       },
+       {
+        "x": 2,
+        "y": 1,
+        "tone": "info"
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Deux cases voisines n'ont jamais la même couleur : Léa se trompait.",
+     "en": "Two neighbouring squares never share a colour: Léa was mistaken."
+    },
+    "wrong": {
+     "fr": "Regarde deux cases côte à côte sur l'échiquier. Ont-elles la même couleur ?",
+     "en": "Look at two squares side by side on the board. Do they have the same colour?"
+    }
+   }
   },
   {
    "id": "echecs.motifs.010",
@@ -3755,7 +6287,59 @@
      "role": "scene",
      "asset": "a_8bf5129e219638daa34a"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 1,
+     "board": true,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "6",
+        "en": "6"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "2",
+        "en": "2"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "8",
+        "en": "8"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "4",
+        "en": "4"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "2, 4, 6, 8 : les numéros des cases noires sont bien rangés.",
+     "en": "2, 4, 6, 8: the black-square numbers are in the right order."
+    },
+    "wrong": {
+     "fr": "Cherche le plus petit numéro d'abord, puis le suivant, jusqu'au plus grand.",
+     "en": "Look for the smallest number first, then the next one, up to the biggest."
+    }
+   }
   },
   {
    "id": "echecs.motifs.011",
@@ -3859,7 +6443,50 @@
      "role": "scene",
      "asset": "a_8bf5129e219638daa34a"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 3,
+     "rows": 1,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "2, 4, 6, 8",
+        "en": "2, 4, 6, 8"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "1, 3, 5, 7",
+        "en": "1, 3, 5, 7"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "5, 10, 15, 20",
+        "en": "5, 10, 15, 20"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Chaque suite a trouvé sa règle. Tu repères bien les motifs !",
+     "en": "Each sequence found its rule. You spot patterns well!"
+    },
+    "wrong": {
+     "fr": "Regarde de combien on avance d'un nombre au suivant dans chaque suite.",
+     "en": "See how much you add from one number to the next."
+    }
+   }
   },
   {
    "id": "echecs.motifs.012",
@@ -3937,7 +6564,57 @@
      "role": "scene",
      "asset": "a_8bf5129e219638daa34a"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Pions par tour",
+      "en": "Pawns per turn"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "tour 1",
+        "en": "turn 1"
+       },
+       "count": 1
+      },
+      {
+       "label": {
+        "fr": "tour 2",
+        "en": "turn 2"
+       },
+       "count": 2
+      },
+      {
+       "label": {
+        "fr": "tour 3",
+        "en": "turn 3"
+       },
+       "count": 3
+      },
+      {
+       "label": {
+        "fr": "tour 4",
+        "en": "turn 4"
+       },
+       "count": 4
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "1 plus 2 plus 3 plus 4. Léa a posé 10 pions en tout.",
+     "en": "1 plus 2 plus 3 plus 4: Léa placed 10 pawns in all."
+    },
+    "wrong": {
+     "fr": "Additionne les pions posés à chaque tour : 1, 2, 3, puis 4.",
+     "en": "Add the pawns placed each turn: 1, 2, 3, then 4."
+    }
+   }
   },
   {
    "id": "echecs.motifs.013",
@@ -3992,7 +6669,50 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 8,
+     "rows": 8,
+     "board": true,
+     "cells": [],
+     "after": {
+      "marks": [
+       {
+        "x": 1,
+        "y": 1,
+        "tone": "good"
+       },
+       {
+        "x": 3,
+        "y": 1,
+        "tone": "good"
+       },
+       {
+        "x": 5,
+        "y": 1,
+        "tone": "good"
+       },
+       {
+        "x": 7,
+        "y": 1,
+        "tone": "good"
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Un échiquier a 64 cases, dont environ la moitié sont noires. À peu près 32.",
+     "en": "A board has 64 squares and about half are black: roughly 32."
+    },
+    "wrong": {
+     "fr": "La moitié de 64 tourne autour de 30. Partage les cases en deux.",
+     "en": "Half of 64 is around 30. Split the squares in two."
+    }
+   }
   },
   {
    "id": "echecs.partie.001",
@@ -4054,7 +6774,155 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 8,
+     "rows": 2,
+     "board": true,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 5,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 6,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 7,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 8,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 5,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 6,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 7,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 8,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "2 rangées de 8 pions : Léa en aligne 16 pour la partie.",
+     "en": "2 rows of 8 pawns: Léa lines up 16 for the game."
+    },
+    "wrong": {
+     "fr": "Compte les pions d'une rangée, 8, puis double : il y a 2 rangées.",
+     "en": "Count the pawns in one row, 8, then double it: there are 2 rows."
+    }
+   }
   },
   {
    "id": "echecs.partie.002",
@@ -4116,7 +6984,219 @@
      "role": "scene",
      "asset": "a_e498bd56e1046bb2593f"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 8,
+     "rows": 3,
+     "board": true,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 5,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 6,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 7,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 8,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 5,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 6,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 7,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 8,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 4,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 5,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 6,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 7,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 8,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "3 rangées de 8 pions : Noah prépare 24 pions.",
+     "en": "3 rows of 8 pawns: Noah sets out 24 pawns."
+    },
+    "wrong": {
+     "fr": "Il y a 8 pions par rangée et 3 rangées. Compte 8, 16, 24.",
+     "en": "There are 8 pawns per row and 3 rows: count 8, 16, 24."
+    }
+   }
   },
   {
    "id": "echecs.partie.003",
@@ -4178,7 +7258,411 @@
      "role": "scene",
      "asset": "a_e498bd56e1046bb2593f"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 8,
+     "rows": 6,
+     "board": true,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 5,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 6,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 7,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 8,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 5,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 6,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 7,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 8,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 4,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 5,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 6,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 7,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 8,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 1,
+       "y": 4,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 4,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 4,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 4,
+       "y": 4,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 5,
+       "y": 4,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 6,
+       "y": 4,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 7,
+       "y": 4,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 8,
+       "y": 4,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 1,
+       "y": 5,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 5,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 5,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 4,
+       "y": 5,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 5,
+       "y": 5,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 6,
+       "y": 5,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 7,
+       "y": 5,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 8,
+       "y": 5,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 1,
+       "y": 6,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 6,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 6,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 4,
+       "y": 6,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 5,
+       "y": 6,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 6,
+       "y": 6,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 7,
+       "y": 6,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 8,
+       "y": 6,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "6 rangées de 8 pièces : Léa montre 48 pièces.",
+     "en": "6 rows of 8 pieces: Léa shows 48 pieces."
+    },
+    "wrong": {
+     "fr": "Compte de 8 en 8 : 8, 16, 24, 32, 40, 48.",
+     "en": "Count in 8s: 8, 16, 24, 32, 40, 48."
+    }
+   }
   },
   {
    "id": "echecs.partie.004",
@@ -4240,7 +7724,474 @@
      "role": "scene",
      "asset": "a_e498bd56e1046bb2593f"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 8,
+     "rows": 7,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 5,
+       "y": 1,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 6,
+       "y": 1,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 7,
+       "y": 1,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 8,
+       "y": 1,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 5,
+       "y": 2,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 6,
+       "y": 2,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 7,
+       "y": 2,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 8,
+       "y": 2,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 4,
+       "y": 3,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 5,
+       "y": 3,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 6,
+       "y": 3,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 7,
+       "y": 3,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 8,
+       "y": 3,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 1,
+       "y": 4,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 2,
+       "y": 4,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 3,
+       "y": 4,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 4,
+       "y": 4,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 5,
+       "y": 4,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 6,
+       "y": 4,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 7,
+       "y": 4,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 8,
+       "y": 4,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 1,
+       "y": 5,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 2,
+       "y": 5,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 3,
+       "y": 5,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 4,
+       "y": 5,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 5,
+       "y": 5,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 6,
+       "y": 5,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 7,
+       "y": 5,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 8,
+       "y": 5,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 1,
+       "y": 6,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 2,
+       "y": 6,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 3,
+       "y": 6,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 4,
+       "y": 6,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 5,
+       "y": 6,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 6,
+       "y": 6,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 7,
+       "y": 6,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 8,
+       "y": 6,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 1,
+       "y": 7,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 2,
+       "y": 7,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 3,
+       "y": 7,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 4,
+       "y": 7,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 5,
+       "y": 7,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 6,
+       "y": 7,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 7,
+       "y": 7,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 8,
+       "y": 7,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "7 rangées de 8 chaises font 56 chaises au club d'échecs.",
+     "en": "7 rows of 8 chairs make 56 chairs at the chess club."
+    },
+    "wrong": {
+     "fr": "Chaque rangée a 8 chaises. Additionne 8 sept fois, ou calcule 7 fois 8.",
+     "en": "Each row has 8 chairs. Add 8 seven times, or work out 7 times 8."
+    }
+   }
   },
   {
    "id": "echecs.partie.005",
@@ -4302,7 +8253,70 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 8,
+     "rows": 8,
+     "board": true,
+     "cells": [],
+     "after": {
+      "marks": [
+       {
+        "x": 1,
+        "y": 1,
+        "tone": "info"
+       },
+       {
+        "x": 2,
+        "y": 1,
+        "tone": "info"
+       },
+       {
+        "x": 3,
+        "y": 1,
+        "tone": "info"
+       },
+       {
+        "x": 4,
+        "y": 1,
+        "tone": "info"
+       },
+       {
+        "x": 5,
+        "y": 1,
+        "tone": "info"
+       },
+       {
+        "x": 6,
+        "y": 1,
+        "tone": "info"
+       },
+       {
+        "x": 7,
+        "y": 1,
+        "tone": "info"
+       },
+       {
+        "x": 8,
+        "y": 1,
+        "tone": "info"
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "8 rangées de 8 cases : l'échiquier complet a 64 cases.",
+     "en": "8 rows of 8 squares: the full board has 64 squares."
+    },
+    "wrong": {
+     "fr": "Un échiquier a 8 rangées de 8 cases. Calcule 8 fois 8.",
+     "en": "A board has 8 rows of 8 squares. Work out 8 times 8."
+    }
+   }
   },
   {
    "id": "echecs.partie.006",
@@ -4380,7 +8394,667 @@
      "role": "scene",
      "asset": "a_e498bd56e1046bb2593f"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 8,
+     "rows": 10,
+     "board": true,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 5,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 6,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 7,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 8,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 5,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 6,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 7,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 8,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 4,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 5,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 6,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 7,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 8,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 1,
+       "y": 4,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 4,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 4,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 4,
+       "y": 4,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 5,
+       "y": 4,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 6,
+       "y": 4,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 7,
+       "y": 4,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 8,
+       "y": 4,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 1,
+       "y": 5,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 5,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 5,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 4,
+       "y": 5,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 5,
+       "y": 5,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 6,
+       "y": 5,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 7,
+       "y": 5,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 8,
+       "y": 5,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 1,
+       "y": 6,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 6,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 6,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 4,
+       "y": 6,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 5,
+       "y": 6,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 6,
+       "y": 6,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 7,
+       "y": 6,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 8,
+       "y": 6,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 1,
+       "y": 7,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 7,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 7,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 4,
+       "y": 7,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 5,
+       "y": 7,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 6,
+       "y": 7,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 7,
+       "y": 7,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 8,
+       "y": 7,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 1,
+       "y": 8,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 8,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 8,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 4,
+       "y": 8,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 5,
+       "y": 8,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 6,
+       "y": 8,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 7,
+       "y": 8,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 8,
+       "y": 8,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 1,
+       "y": 9,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 9,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 9,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 4,
+       "y": 9,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 5,
+       "y": 9,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 6,
+       "y": 9,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 7,
+       "y": 9,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 8,
+       "y": 9,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 1,
+       "y": 10,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 10,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 10,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 4,
+       "y": 10,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 5,
+       "y": 10,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 6,
+       "y": 10,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 7,
+       "y": 10,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 8,
+       "y": 10,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "10 rangées de 8 pions font 80 pions. Multiplier par 10, c'est facile !",
+     "en": "10 rows of 8 pawns make 80 pawns. Multiplying by 10 is easy!"
+    },
+    "wrong": {
+     "fr": "Dix fois 8 : ajoute un zéro à 8.",
+     "en": "Ten times 8: put a zero after the 8."
+    }
+   }
   },
   {
    "id": "echecs.partie.007",
@@ -4457,7 +9131,65 @@
      "role": "scene",
      "asset": "a_e498bd56e1046bb2593f"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 0,
+     "max": 40,
+     "step": 8,
+     "labels": [
+      0,
+      40
+     ],
+     "after": {
+      "hops": [
+       {
+        "from": 0,
+        "to": 8,
+        "label": {
+         "fr": "+8",
+         "en": "+8"
+        }
+       },
+       {
+        "from": 8,
+        "to": 16,
+        "label": {
+         "fr": "+8",
+         "en": "+8"
+        }
+       },
+       {
+        "from": 16,
+        "to": 24,
+        "label": {
+         "fr": "+8",
+         "en": "+8"
+        }
+       },
+       {
+        "from": 24,
+        "to": 32,
+        "label": {
+         "fr": "+8",
+         "en": "+8"
+        }
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "En comptant de 8 en 8, on tombe sur 16, 24, 32. Tu connais la table de 8 !",
+     "en": "Counting in 8s you land on 16, 24, 32. You know the 8 times table!"
+    },
+    "wrong": {
+     "fr": "Compte par bonds de 8 : 8, 16, 24. Quel nombre apparaît dans ta liste ?",
+     "en": "Count in jumps of 8: 8, 16, 24. Which number shows up in your list?"
+    }
+   }
   },
   {
    "id": "echecs.partie.008",
@@ -4535,7 +9267,154 @@
      "role": "scene",
      "asset": "a_e498bd56e1046bb2593f"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 8,
+     "rows": 2,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 5,
+       "y": 1,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 6,
+       "y": 1,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 7,
+       "y": 1,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 8,
+       "y": 1,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 5,
+       "y": 2,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 6,
+       "y": 2,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 7,
+       "y": 2,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 8,
+       "y": 2,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "8 tables de 2 joueurs : 16 joueurs au petit tournoi.",
+     "en": "8 tables of 2 players: 16 players at the little tournament."
+    },
+    "wrong": {
+     "fr": "Chaque table a 2 joueurs. Compte les tables et double.",
+     "en": "Each table has 2 players. Count the tables and double."
+    }
+   }
   },
   {
    "id": "echecs.partie.009",
@@ -4596,7 +9475,426 @@
      "role": "scene",
      "asset": "a_e498bd56e1046bb2593f"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 8,
+     "rows": 7,
+     "cells": [
+      {
+       "x": 7,
+       "y": 1,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 8,
+       "y": 1,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 5,
+       "y": 2,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 6,
+       "y": 2,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 7,
+       "y": 2,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 8,
+       "y": 2,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 4,
+       "y": 3,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 5,
+       "y": 3,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 6,
+       "y": 3,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 7,
+       "y": 3,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 8,
+       "y": 3,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 1,
+       "y": 4,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 2,
+       "y": 4,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 3,
+       "y": 4,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 4,
+       "y": 4,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 5,
+       "y": 4,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 6,
+       "y": 4,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 7,
+       "y": 4,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 8,
+       "y": 4,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 1,
+       "y": 5,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 2,
+       "y": 5,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 3,
+       "y": 5,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 4,
+       "y": 5,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 5,
+       "y": 5,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 6,
+       "y": 5,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 7,
+       "y": 5,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 8,
+       "y": 5,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 1,
+       "y": 6,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 2,
+       "y": 6,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 3,
+       "y": 6,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 4,
+       "y": 6,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 5,
+       "y": 6,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 6,
+       "y": 6,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 7,
+       "y": 6,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 8,
+       "y": 6,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 1,
+       "y": 7,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 2,
+       "y": 7,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 3,
+       "y": 7,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 4,
+       "y": 7,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 5,
+       "y": 7,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 6,
+       "y": 7,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 7,
+       "y": 7,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      },
+      {
+       "x": 8,
+       "y": 7,
+       "label": {
+        "fr": "img:chair",
+        "en": "img:chair"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "7 rangées de 8 font 56 chaises, moins 6 vides : 50 chaises occupées.",
+     "en": "7 rows of 8 make 56 chairs, minus 6 empty: 50 chairs taken."
+    },
+    "wrong": {
+     "fr": "Calcule d'abord toutes les chaises, 7 fois 8, puis enlève les 6 vides.",
+     "en": "First work out all the chairs, 7 times 8. Then take away the 6 empty ones."
+    }
+   }
   },
   {
    "id": "echecs.partie.010",
@@ -4665,7 +9963,602 @@
      "role": "scene",
      "asset": "a_e498bd56e1046bb2593f"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 8,
+     "rows": 9,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 5,
+       "y": 1,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 6,
+       "y": 1,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 7,
+       "y": 1,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 8,
+       "y": 1,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 5,
+       "y": 2,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 6,
+       "y": 2,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 7,
+       "y": 2,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 8,
+       "y": 2,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 4,
+       "y": 3,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 5,
+       "y": 3,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 6,
+       "y": 3,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 7,
+       "y": 3,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 8,
+       "y": 3,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 1,
+       "y": 4,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 2,
+       "y": 4,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 3,
+       "y": 4,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 4,
+       "y": 4,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 5,
+       "y": 4,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 6,
+       "y": 4,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 7,
+       "y": 4,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 8,
+       "y": 4,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 1,
+       "y": 5,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 2,
+       "y": 5,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 3,
+       "y": 5,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 4,
+       "y": 5,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 5,
+       "y": 5,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 6,
+       "y": 5,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 7,
+       "y": 5,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 8,
+       "y": 5,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 1,
+       "y": 6,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 2,
+       "y": 6,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 3,
+       "y": 6,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 4,
+       "y": 6,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 5,
+       "y": 6,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 6,
+       "y": 6,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 7,
+       "y": 6,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 8,
+       "y": 6,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 1,
+       "y": 7,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 2,
+       "y": 7,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 3,
+       "y": 7,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 4,
+       "y": 7,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 5,
+       "y": 7,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 6,
+       "y": 7,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 7,
+       "y": 7,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 8,
+       "y": 7,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 1,
+       "y": 8,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 2,
+       "y": 8,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 3,
+       "y": 8,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 4,
+       "y": 8,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 5,
+       "y": 8,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 6,
+       "y": 8,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 7,
+       "y": 8,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 8,
+       "y": 8,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 1,
+       "y": 9,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 2,
+       "y": 9,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 3,
+       "y": 9,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 4,
+       "y": 9,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 5,
+       "y": 9,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 6,
+       "y": 9,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      },
+      {
+       "x": 7,
+       "y": 9,
+       "label": {
+        "fr": "img:person-man",
+        "en": "img:person-man"
+       }
+      },
+      {
+       "x": 8,
+       "y": 9,
+       "label": {
+        "fr": "img:person-woman",
+        "en": "img:person-woman"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "9 équipes de 8 joueurs : le grand tournoi réunit 72 joueurs.",
+     "en": "9 teams of 8 players: the big tournament brings together 72 players."
+    },
+    "wrong": {
+     "fr": "Multiplie le nombre d'équipes par le nombre de joueurs de chaque équipe.",
+     "en": "Multiply the number of teams by the number of players in each team."
+    }
+   }
   },
   {
    "id": "echecs.partie.011",
@@ -4708,7 +10601,475 @@
      "role": "scene",
      "asset": "a_e498bd56e1046bb2593f"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 8,
+     "rows": 7,
+     "board": true,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 5,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 6,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 7,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 8,
+       "y": 1,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 5,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 6,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 7,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 8,
+       "y": 2,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 4,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 5,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 6,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 7,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 8,
+       "y": 3,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 1,
+       "y": 4,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 4,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 4,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 4,
+       "y": 4,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 5,
+       "y": 4,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 6,
+       "y": 4,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 7,
+       "y": 4,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 8,
+       "y": 4,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 1,
+       "y": 5,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 5,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 5,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 4,
+       "y": 5,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 5,
+       "y": 5,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 6,
+       "y": 5,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 7,
+       "y": 5,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 8,
+       "y": 5,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 1,
+       "y": 6,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 6,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 6,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 4,
+       "y": 6,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 5,
+       "y": 6,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 6,
+       "y": 6,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 7,
+       "y": 6,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 8,
+       "y": 6,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 1,
+       "y": 7,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 2,
+       "y": 7,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 3,
+       "y": 7,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 4,
+       "y": 7,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 5,
+       "y": 7,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 6,
+       "y": 7,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 7,
+       "y": 7,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      },
+      {
+       "x": 8,
+       "y": 7,
+       "label": {
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "7 fois 8 donne 56, pas 54. Bien vérifié !",
+     "en": "7 times 8 is 56, not 54. Well checked!"
+    },
+    "wrong": {
+     "fr": "Refais le calcul de Noah : 7 fois 8, compte par bonds de 8.",
+     "en": "Redo Noah's sum: 7 times 8, count in jumps of 8."
+    }
+   }
   },
   {
    "id": "echecs.partie.012",
@@ -4790,7 +11151,58 @@
      "role": "scene",
      "asset": "a_e498bd56e1046bb2593f"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 1,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "3 × 8",
+        "en": "3 × 8"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "6 × 8",
+        "en": "6 × 8"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "2 × 8",
+        "en": "2 × 8"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "5 × 8",
+        "en": "5 × 8"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Les produits sont bien rangés du plus petit au plus grand.",
+     "en": "The products are in the right order from smallest to biggest."
+    },
+    "wrong": {
+     "fr": "Calcule chaque produit de la table de 8, puis compare-les.",
+     "en": "Work out each product from the 8 times table, then compare them."
+    }
+   }
   },
   {
    "id": "echecs.partie.013",
@@ -4893,7 +11305,50 @@
      "role": "scene",
      "asset": "a_e498bd56e1046bb2593f"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 3,
+     "rows": 1,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "4 × 8",
+        "en": "4 × 8"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "6 × 8",
+        "en": "6 × 8"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "9 × 8",
+        "en": "9 × 8"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Chaque multiplication a trouvé son résultat dans la table de 8.",
+     "en": "Each multiplication found its answer in the 8 times table."
+    },
+    "wrong": {
+     "fr": "Calcule chaque multiplication, puis cherche son résultat dans la liste.",
+     "en": "Work out each multiplication, then look for its answer in the list."
+    }
+   }
   },
   {
    "id": "echecs.partie.014",
@@ -4915,197 +11370,198 @@
     "data": {
      "cols": 8,
      "rows": 3,
+     "board": true,
      "cells": [
       {
        "x": 1,
        "y": 1,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       },
       {
        "x": 2,
        "y": 1,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       },
       {
        "x": 3,
        "y": 1,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       },
       {
        "x": 4,
        "y": 1,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       },
       {
        "x": 5,
        "y": 1,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       },
       {
        "x": 6,
        "y": 1,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       },
       {
        "x": 7,
        "y": 1,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       },
       {
        "x": 8,
        "y": 1,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       },
       {
        "x": 1,
        "y": 2,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       },
       {
        "x": 2,
        "y": 2,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       },
       {
        "x": 3,
        "y": 2,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       },
       {
        "x": 4,
        "y": 2,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       },
       {
        "x": 5,
        "y": 2,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       },
       {
        "x": 6,
        "y": 2,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       },
       {
        "x": 7,
        "y": 2,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       },
       {
        "x": 8,
        "y": 2,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       },
       {
        "x": 1,
        "y": 3,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       },
       {
        "x": 2,
        "y": 3,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       },
       {
        "x": 3,
        "y": 3,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       },
       {
        "x": 4,
        "y": 3,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       },
       {
        "x": 5,
        "y": 3,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       },
       {
        "x": 6,
        "y": 3,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       },
       {
        "x": 7,
        "y": 3,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       },
       {
        "x": 8,
        "y": 3,
        "label": {
-        "fr": "pion",
-        "en": "pawn"
+        "fr": "img:chess-pawn-b",
+        "en": "img:chess-pawn-b"
        }
       }
      ]
@@ -5155,7 +11611,17 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "reaction": {
+    "right": {
+     "fr": "3 rangées de 8 pions : 24 pions alignés sur la grille.",
+     "en": "3 rows of 8 pawns: 24 pawns lined up on the grid."
+    },
+    "wrong": {
+     "fr": "Compte les pions d'une rangée, puis multiplie par le nombre de rangées.",
+     "en": "Count the pawns in one row, then multiply by the number of rows."
+    }
+   }
   },
   {
    "id": "echecs.partie.015",
@@ -5210,7 +11676,43 @@
      "role": "scene",
      "asset": "a_e498bd56e1046bb2593f"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Tournoi",
+      "en": "Tournament"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "joueurs par table",
+        "en": "players per table"
+       },
+       "value": 12
+      },
+      {
+       "label": {
+        "fr": "tables",
+        "en": "tables"
+       },
+       "value": 8
+      }
+     ],
+     "max": 12
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "8 tables de 12 joueurs : environ 100 joueurs au tournoi.",
+     "en": "8 tables of 12 players: about 100 players at the tournament."
+    },
+    "wrong": {
+     "fr": "Arrondis 12 à 10 : 8 fois 10, c'est facile à estimer.",
+     "en": "Round 12 to 10: 8 times 10 is easy to estimate."
+    }
+   }
   }
  ]
 }

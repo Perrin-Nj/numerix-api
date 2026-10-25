@@ -18,7 +18,7 @@ import (
 func playPerfectChapter(t *testing.T, f feedFixture) {
 	t.Helper()
 	sid := f.startChapter(t, "ARI-OPE-A03a")
-	for i := 0; i < 3; i++ {
+	for i := 0; i < chapterLength; i++ {
 		_, beat, _ := f.gcall(t, "POST", "/v1/sessions/"+sid+"/beats", f.childTok, "{}", nil)
 		p := f.problemOf(t, beat["id"].(string))
 		f.answer(t, sid, beat["id"].(string), p.Reponse, uuid.NewString())

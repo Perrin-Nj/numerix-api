@@ -1,0 +1,26 @@
+# Same three sites and rules as deploy/vps/Caddyfile, with Caddy's own local certificate authority instead of Let's Encrypt.
+{
+	local_certs
+}
+
+app.localhost {
+	encode zstd gzip
+	header Strict-Transport-Security "max-age=31536000"
+	reverse_proxy 127.0.0.1:3000 {
+		flush_interval -1
+	}
+}
+
+admin.localhost {
+	encode zstd gzip
+	header Strict-Transport-Security "max-age=31536000"
+	reverse_proxy 127.0.0.1:3100
+}
+
+api.localhost {
+	encode zstd gzip
+	header Strict-Transport-Security "max-age=31536000"
+	reverse_proxy 127.0.0.1:8081 {
+		flush_interval -1
+	}
+}

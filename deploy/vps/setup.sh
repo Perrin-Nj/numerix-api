@@ -34,7 +34,7 @@ install -d -m 750 -g numerix /etc/numerix
 
 # 2. Packages: Caddy from its official apt repository, sqlite3 for backups.
 apt-get update -y
-apt-get install -y debian-keyring debian-archive-keyring apt-transport-https curl gpg python3 sqlite3 xz-utils
+apt-get install -y debian-keyring debian-archive-keyring apt-transport-https curl gpg python3 sqlite3 xz-utils ffmpeg
 curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | gpg --dearmor --yes -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
 curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' >/etc/apt/sources.list.d/caddy-stable.list
 apt-get update -y && apt-get install -y caddy

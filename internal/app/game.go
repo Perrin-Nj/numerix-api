@@ -34,8 +34,8 @@ import (
 	"github.com/Perrin-Nj/numerix-api/internal/narrator"
 )
 
-// chapterLength is the number of beats in a chapter (contract: ChapterLength, same as the mock).
-const chapterLength = 3
+// chapterLength is the number of beats (questions) in a chapter (contract: ChapterLength). Five, each one distinct.
+const chapterLength = 5
 
 // gameState holds the game collaborators of one Server. It is created lazily on first use, so the
 // Server struct (owned by the platform module) needs no new field.
@@ -58,6 +58,7 @@ func (s *Server) game() *gameState {
 	if err != nil { // the JSON is embedded, so this is a build mistake: fail loudly at first use
 		panic("game: load curriculum: " + err.Error())
 	}
+	graph.SetBankOnly(bankOnlyWorlds...) // chess, medicine and space play only their written questions
 	log := s.Log
 	if log == nil {
 		log = slog.New(slog.NewTextHandler(io.Discard, nil))

@@ -9,6 +9,7 @@ import (
 	"database/sql"
 	"encoding/json"
 	"math"
+	"slices"
 	"sort"
 	"time"
 
@@ -41,11 +42,11 @@ var feedWorlds = []feedWorldInfo{
 }
 
 // feedHomeWorld is the world home suggests (and the quest is computed for): favorite, else nature.
-func feedHomeWorld(c plChild) api.WorldId {
-	if c.FavoriteWorld.Valid {
-		return api.WorldId(c.FavoriteWorld.String)
+func feedHomeWorld(c plChild, enabled []string) api.WorldId {
+	if c.FavoriteWorld.Valid && slices.Contains(enabled, c.FavoriteWorld.String) {
+		return api.WorldId(c.FavoriteWorld.String) // the favourite counts only while a parent keeps it on
 	}
-	return "nature"
+	return api.WorldId(enabled[0]) // enabledWorlds never returns an empty list
 }
 
 // feedTime parses a stored timestamp; the zero time means missing or malformed.
@@ -250,7 +251,7 @@ func (s *Server) feedQuest(ctx context.Context, c plChild, sessions []feedSessio
 		q.SkillIds = &ids // no profile, no offer: an empty list never points at a skill that start refuses
 		return q
 	}
-	world, grade := string(feedHomeWorld(c)), gradeOf(c)
+	world, grade := string(feedHomeWorld(c, s.enabledWorlds(ctx, c.ID))), gradeOf(c)
 	mastered, due := prof.Mastered(now), map[string]bool{}
 	reviews := prof.ToReview(now) // most forgotten first
 	for _, d := range reviews {
@@ -409,7 +410,8 @@ func (s *Server) GetHome(ctx context.Context, req api.GetHomeRequestObject) (api
 	quest := s.feedQuest(ctx, c, ss, now)
 	h := api.Home{Quest: quest, RecentCards: cards, Engagement: s.feedEngagement(ctx, c, ss, now), Growth: feedGrowth(ss, now, 7)}
 	// Suggested chapter: favorite world, else the last played one, else nature. open_session stays null (see report).
-	world := feedHomeWorld(c)
+	enabled := s.enabledWorlds(ctx, c.ID) // worlds this child may see (parent setting)
+	world := feedHomeWorld(c, enabled)
 	h.Suggested.World = world
 	if ids := *quest.SkillIds; len(ids) > 0 { // empty means nothing startable: no skill, the client opens the world instead
 		h.Suggested.SkillId = &ids[0]
@@ -423,7 +425,11 @@ func (s *Server) GetHome(ctx context.Context, req api.GetHomeRequestObject) (api
 	if werr != nil {
 		return nil, werr
 	}
-	h.Worlds = append(h.Worlds, worlds...)
+	for _, w := range worlds { // home lists only the enabled worlds
+		if slices.Contains(enabled, string(w.Id)) {
+			h.Worlds = append(h.Worlds, w)
+		}
+	}
 	gift := false
 	if s.plConfig(ctx).WelcomeGift {
 		var n int

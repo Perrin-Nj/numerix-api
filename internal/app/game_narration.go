@@ -105,7 +105,7 @@ func (s *Server) StreamNarration(ctx context.Context, req api.StreamNarrationReq
 				return nil, s.plInternalErr(ctx, "decode answer", err)
 			}
 			cr := cq.Check(st.GivenRaw)
-			text = content.DenouementText(cr.Outcome, lang, cr.Feedback, r.Data.Seed+uint32(idx))
+			text = content.DenouementText(cr.Outcome, lang, cq, cr.Feedback, r.Data.Seed+uint32(idx))
 		}
 		return sseResponse{body: sseBlocks(phase, narrator.Result{Text: text, Status: narrator.StatusReady, Source: "curated"}, after)}, nil
 	}

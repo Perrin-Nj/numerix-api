@@ -81,7 +81,7 @@ func TestGameChapterFlow(t *testing.T) {
 	f := newFeedFixture(t, true)
 	sid := f.startChapter(t, "ARI-OPE-A06a")
 
-	wantOutcomes := []string{"correct", "erreur_typique", "correct"}
+	wantOutcomes := []string{"correct", "erreur_typique", "correct", "correct", "erreur_typique"}
 	var shapes []string
 	for i, want := range wantOutcomes {
 		code, beat, raw := f.gcall(t, "POST", "/v1/sessions/"+sid+"/beats", f.childTok, "{}", nil)
@@ -140,13 +140,13 @@ func TestGameChapterFlow(t *testing.T) {
 		if code, _, sse := f.gcall(t, "GET", "/v1/sessions/"+sid+"/beats/"+beatID+"/narration?phase=denouement", f.childTok, "", nil); code != 200 || !strings.Contains(sse, "event: denouement") {
 			t.Fatalf("denouement: %d %q", code, sse)
 		}
-		if i == 2 {
+		if i == chapterLength-1 { // last beat of the chapter
 			sess := res["session"].(map[string]any)
 			if sess["status"] != "completed" {
 				t.Fatalf("session status = %v", sess["status"])
 			}
 			score := sess["score"].(map[string]any)
-			if score["correct"].(float64) != 2 || score["total"].(float64) != 3 || score["card_awarded"] != false {
+			if score["correct"].(float64) != 3 || score["total"].(float64) != float64(chapterLength) || score["card_awarded"] != false {
 				t.Fatalf("score = %v", score)
 			}
 			if r := fmt.Sprint(res["rewards"]); !strings.Contains(r, "chapter_complete") || strings.Contains(r, "card_earned") {
@@ -160,8 +160,8 @@ func TestGameChapterFlow(t *testing.T) {
 	}
 	var served int
 	_ = f.s.Store.R.QueryRow(`SELECT COUNT(*) FROM child_questions WHERE child_id = ?`, f.childID).Scan(&served)
-	if served != 3 {
-		t.Fatalf("3 questions must be recorded as served, got %d", served)
+	if served != chapterLength {
+		t.Fatalf("a whole chapter of questions must be recorded as served, got %d", served)
 	}
 	// summary, progress, reviews, growth and the weekly report answer
 	for _, p := range []string{"/v1/sessions/" + sid + "/summary", "/v1/children/" + f.childID + "/progress", "/v1/children/" + f.childID + "/reviews", "/v1/children/" + f.childID + "/growth", "/v1/sessions/" + sid, "/v1/children/" + f.childID + "/sessions"} {
@@ -170,7 +170,8 @@ func TestGameChapterFlow(t *testing.T) {
 		}
 	}
 	code, sum, _ := f.gcall(t, "GET", "/v1/sessions/"+sid+"/summary", f.parentTok, "", nil)
-	if code != 200 || len(sum["stuck_points"].([]any)) != 1 || !strings.Contains(sum["story_recap"].(string), "2 sur 3") {
+	if code != 200 || len(sum["stuck_points"].([]any)) < 1 || len(sum["stuck_points"].([]any)) > 2 || // two typical errors may share one misconception code
+		 !strings.Contains(sum["story_recap"].(string), "3 sur 5") {
 		t.Fatalf("summary = %v", sum)
 	}
 	code, rep, raw := f.gcall(t, "GET", "/v1/reports/weekly?child_id="+f.childID+"&week_start=2020-01-06", f.parentTok, "", nil)
@@ -187,7 +188,7 @@ func TestGamePerfectChapterAwardsCard(t *testing.T) {
 	f := newFeedFixture(t, true)
 	sid := f.startChapter(t, "ARI-OPE-A03a")
 	var last map[string]any
-	for i := 0; i < 3; i++ {
+	for i := 0; i < chapterLength; i++ {
 		_, beat, _ := f.gcall(t, "POST", "/v1/sessions/"+sid+"/beats", f.childTok, "{}", nil)
 		p := f.problemOf(t, beat["id"].(string))
 		_, last = f.answer(t, sid, beat["id"].(string), p.Reponse, uuid.NewString())

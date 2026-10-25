@@ -217,7 +217,11 @@ func curatedProblem(q *content.Question, version int) (engine.Problem, error) {
 // pickCurated takes the best published bank question this child has not seen for (world, skill), copies the
 // current version into `questions` and returns its served id. ok is false when the child exhausted the bank.
 func (s *Server) pickCurated(ctx context.Context, tx *sql.Tx, childID, world, skill string, grade int, avoidShape string) (id, shape string, ok bool, err error) {
-	cands, err := s.Content.Candidates(ctx, tx, childID, world, skill, grade)
+	capGrade := grade
+	if s.game().graph.IsBankOnly(world) {
+		capGrade = 12 // a written-questions world serves any school year; the ranking below still prefers this child's year
+	}
+	cands, err := s.Content.Candidates(ctx, tx, childID, world, skill, capGrade)
 	if err != nil || len(cands) == 0 {
 		return "", "", false, err
 	}

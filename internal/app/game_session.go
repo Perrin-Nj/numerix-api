@@ -68,6 +68,9 @@ func (s *Server) StartSession(ctx context.Context, req api.StartSessionRequestOb
 	} else if !ok {
 		return nil, httpapi.Validation(plField("world", "unknown world"))
 	}
+	if !slices.Contains(s.enabledWorlds(ctx, c.ID), world) { // a parent turned this world off
+		return nil, httpapi.Validation(plField("world", "not enabled for this child"))
+	}
 	s.syncBank(ctx) // fresh view of which skills have bank questions
 	lang := gameLang(req.Params.AcceptLanguage, c.Locale)
 	idem := plUID(req.Params.IdempotencyKey)
@@ -95,7 +98,7 @@ func (s *Server) StartSession(ctx context.Context, req api.StartSessionRequestOb
 		for _, d := range prof.ToReview(now) {
 			due[d.SkillID] = true
 		}
-		if g.skillState(prof, sk.ID, mastered, due) == api.NodeStateLocked {
+		if g.skillState(prof, sk.ID, mastered, due) == api.NodeStateLocked && !g.graph.IsBankOnly(world) {
 			return nil, httpapi.Validation(plField("skill_id", "locked: "+string(api.Prerequisites))) // locked_reason = prerequisites
 		}
 		skill = sk.ID
@@ -485,8 +488,36 @@ func (s *Server) pickQuestion(ctx context.Context, tx *sql.Tx, childID, world, s
 	return id, shape, nil
 }
 
+// bankOnlyWorlds are the worlds whose questions all come from the written bank (each has its own diagram and reaction).
+// When a child has seen every bank question of a skill there, an old one is served again; a generated question,
+// which has no matching diagram or reaction, is only the last resort.
+var bankOnlyWorlds = []string{"echecs", "medecine", "espace"}
+
+// reserveBank serves again the least recently seen bank question of this skill in this world (ok false when the child has seen none).
+func (s *Server) reserveBank(ctx context.Context, tx *sql.Tx, childID, world, skill, avoidShape, now string) (id, shape string, ok bool, err error) {
+	err = tx.QueryRowContext(ctx, `SELECT q.id, q.shape FROM questions q JOIN child_questions cq ON cq.question_id = q.id
+		WHERE q.skill_id = ? AND cq.child_id = ? AND q.bank_id IN (SELECT id FROM bank_questions WHERE world_id = ? AND status = 'published')
+		ORDER BY (q.shape = ?), cq.served_at ASC LIMIT 1`, skill, childID, world, avoidShape).Scan(&id, &shape)
+	if errors.Is(err, sql.ErrNoRows) {
+		return "", "", false, nil // nothing seen yet: the caller may still generate
+	}
+	if err != nil {
+		return "", "", false, err
+	}
+	if _, err = tx.ExecContext(ctx, `UPDATE child_questions SET served_at = ? WHERE child_id = ? AND question_id = ?`, now, childID, id); err != nil {
+		return "", "", false, err
+	}
+	_, err = tx.ExecContext(ctx, `UPDATE questions SET served_count = served_count + 1 WHERE id = ?`, id)
+	return id, shape, true, err
+}
+
 // pickGenerated is the generator side of pickQuestion. reserved is true when it re-served an old question.
 func (s *Server) pickGenerated(ctx context.Context, tx *sql.Tx, childID, world, skill, avoidShape, now string) (id, shape string, reserved bool, err error) {
+	if slices.Contains(bankOnlyWorlds, world) { // the written bank first, even when its questions repeat
+		if rid, rshape, ok, rerr := s.reserveBank(ctx, tx, childID, world, skill, avoidShape, now); rerr != nil || ok {
+			return rid, rshape, ok, rerr
+		}
+	}
 	g := s.game()
 	// 1. a generated question stored earlier that this child has not seen, of another shape than the last beat
 	err = tx.QueryRowContext(ctx, `SELECT q.id, q.shape FROM questions q

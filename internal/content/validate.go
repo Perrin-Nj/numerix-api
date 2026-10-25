@@ -134,6 +134,10 @@ func (q *Question) texts() []textField {
 	add("prompt", "prompt", q.Prompt)
 	add("hint", "hint", q.Hint)
 	add("explain", "explain", q.Explain)
+	if q.Reaction != nil {
+		add("reaction.right", "explain", q.Reaction.Right)
+		add("reaction.wrong", "explain", q.Reaction.Wrong)
+	}
 	if q.MathText != "" {
 		out = append(out, textField{"math_text", "", q.MathText, "other"})
 	}
@@ -263,6 +267,10 @@ func (v *run) languages() {
 	need("prompt", q.Prompt, false)
 	need("hint", q.Hint, false)
 	need("explain", q.Explain, false)
+	if q.Reaction != nil {
+		need("reaction.right", q.Reaction.Right, false)
+		need("reaction.wrong", q.Reaction.Wrong, false)
+	}
 	for i, c := range q.Choices {
 		need(fmt.Sprintf("choices[%d].text", i), c.Text, true) // a word like "triangle" is the same in both languages
 	}

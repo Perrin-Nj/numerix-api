@@ -62,7 +62,42 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "style": "vial",
+     "max": 20,
+     "segments": [
+      {
+       "value": 12,
+       "tone": "a"
+      }
+     ],
+     "unit": {
+      "fr": "gouttes",
+      "en": "drops"
+     },
+     "after": {
+      "segments": [
+       {
+        "value": 8,
+        "tone": "good"
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "12 et 8 font 20 : il reste 8 gouttes au chiot. Bien joué !",
+     "en": "12 and 8 make 20: the puppy still needs 8 drops. Well done!"
+    },
+    "wrong": {
+     "fr": "Compte à partir de 12 jusqu'à 20 sur les graduations.",
+     "en": "Count up from 12 to 20 on the bottle's marks."
+    }
+   }
   },
   {
    "id": "medecine.doses.002",
@@ -124,7 +159,42 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "style": "vial",
+     "max": 15,
+     "segments": [
+      {
+       "value": 9,
+       "tone": "a"
+      }
+     ],
+     "unit": {
+      "fr": "pastilles",
+      "en": "pills"
+     },
+     "after": {
+      "segments": [
+       {
+        "value": 6,
+        "tone": "good"
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Il manque 6 pastilles pour arriver à 15. Noah peut compléter la boîte !",
+     "en": "6 pills are missing to reach 15. Noah can fill the box!"
+    },
+    "wrong": {
+     "fr": "Pars de 9 et compte jusqu'à 15.",
+     "en": "Start at 9 and count up to 15."
+    }
+   }
   },
   {
    "id": "medecine.doses.003",
@@ -186,7 +256,42 @@
      "role": "scene",
      "asset": "a_1052c940a2ad9c143cdc"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "style": "vial",
+     "max": 30,
+     "segments": [
+      {
+       "value": 14,
+       "tone": "a"
+      }
+     ],
+     "unit": {
+      "fr": "gouttes",
+      "en": "drops"
+     },
+     "after": {
+      "segments": [
+       {
+        "value": 16,
+        "tone": "good"
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "14 le matin, 16 le soir : le chat a ses 30 gouttes.",
+     "en": "14 in the morning, 16 in the evening: the cat gets its 30 drops."
+    },
+    "wrong": {
+     "fr": "Cherche ce qui manque à 14 pour arriver à 30.",
+     "en": "Find what 14 needs to reach 30."
+    }
+   }
   },
   {
    "id": "medecine.doses.004",
@@ -263,7 +368,42 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "style": "vial",
+     "max": 40,
+     "segments": [
+      {
+       "value": 25,
+       "tone": "a"
+      }
+     ],
+     "unit": {
+      "fr": "gouttes",
+      "en": "drops"
+     },
+     "after": {
+      "segments": [
+       {
+        "value": 15,
+        "tone": "good"
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Il manque 15 gouttes pour arriver à 40. La fiche du chiot est juste !",
+     "en": "15 drops are missing to reach 40. The puppy's chart is right!"
+    },
+    "wrong": {
+     "fr": "Le chiot a eu 25 gouttes. Compte combien il faut pour arriver à 40.",
+     "en": "The puppy had 25 drops. Count how many more reach 40."
+    }
+   }
   },
   {
    "id": "medecine.doses.005",
@@ -341,7 +481,42 @@
      "role": "scene",
      "asset": "a_1052c940a2ad9c143cdc"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "style": "vial",
+     "max": 50,
+     "segments": [
+      {
+       "value": 28,
+       "tone": "a"
+      }
+     ],
+     "unit": {
+      "fr": "gouttes",
+      "en": "drops"
+     },
+     "after": {
+      "segments": [
+       {
+        "value": 22,
+        "tone": "good"
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "22 gouttes manquent pour faire les 50 de la dose complète.",
+     "en": "22 drops are missing to make the full dose of 50."
+    },
+    "wrong": {
+     "fr": "Elle a reçu 28 gouttes. Cherche ce qui manque pour arriver à 50.",
+     "en": "She got 28 drops. Find what is missing to reach 50."
+    }
+   }
   },
   {
    "id": "medecine.doses.006",
@@ -402,7 +577,42 @@
      "role": "scene",
      "asset": "a_1052c940a2ad9c143cdc"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "style": "vial",
+     "max": 45,
+     "segments": [
+      {
+       "value": 18,
+       "tone": "a"
+      }
+     ],
+     "unit": {
+      "fr": "gouttes",
+      "en": "drops"
+     },
+     "after": {
+      "segments": [
+       {
+        "value": 27,
+        "tone": "good"
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "45 moins 18 : il reste 27 gouttes pour le deuxième verre.",
+     "en": "45 minus 18: 27 drops are left for the second glass."
+    },
+    "wrong": {
+     "fr": "La vétérinaire en a mis 18 dans le premier verre. Enlève-les aux 45.",
+     "en": "The vet put 18 in the first glass. Take them from the 45."
+    }
+   }
   },
   {
    "id": "medecine.doses.007",
@@ -463,7 +673,46 @@
      "role": "scene",
      "asset": "a_1052c940a2ad9c143cdc"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "style": "vial",
+     "max": 70,
+     "segments": [
+      {
+       "value": 30,
+       "tone": "a"
+      },
+      {
+       "value": 25,
+       "tone": "b"
+      }
+     ],
+     "unit": {
+      "fr": "gouttes",
+      "en": "drops"
+     },
+     "after": {
+      "segments": [
+       {
+        "value": 15,
+        "tone": "good"
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "70 moins 30, puis moins 25 : il reste 15 gouttes pour le lapin.",
+     "en": "70 minus 30, then minus 25: 15 drops are left for the rabbit."
+    },
+    "wrong": {
+     "fr": "Enlève 30 gouttes, puis enlève encore 25.",
+     "en": "Take away 30 drops, then take away 25 more."
+    }
+   }
   },
   {
    "id": "medecine.doses.008",
@@ -505,7 +754,42 @@
      "role": "scene",
      "asset": "a_1052c940a2ad9c143cdc"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "style": "vial",
+     "max": 30,
+     "segments": [
+      {
+       "value": 24,
+       "tone": "a"
+      }
+     ],
+     "unit": {
+      "fr": "gouttes",
+      "en": "drops"
+     },
+     "after": {
+      "segments": [
+       {
+        "value": 6,
+        "tone": "good"
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "24 et 6 font 30. Noah a raison : il manque 6 gouttes.",
+     "en": "24 and 6 make 30. Noah is right: 6 drops are missing."
+    },
+    "wrong": {
+     "fr": "Ajoute 6 à 24. Arrives-tu à 30 ?",
+     "en": "Add 6 to 24. Do you reach 30?"
+    }
+   }
   },
   {
    "id": "medecine.doses.009",
@@ -578,7 +862,50 @@
      "role": "scene",
      "asset": "a_1052c940a2ad9c143cdc"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 3,
+     "rows": 1,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "Après 12 gouttes",
+        "en": "After 12 drops"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "Après 25 gouttes",
+        "en": "After 25 drops"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "Après 8 gouttes",
+        "en": "After 8 drops"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Après 25 gouttes il reste le moins, après 8 le plus. Bien rangé !",
+     "en": "After 25 drops the least is left, after 8 the most. Well sorted!"
+    },
+    "wrong": {
+     "fr": "Enlève chaque nombre de gouttes à 30, puis compare les restes.",
+     "en": "Take each number of drops from 30, then compare what is left."
+    }
+   }
   },
   {
    "id": "medecine.doses.010",
@@ -681,7 +1008,50 @@
      "role": "scene",
      "asset": "a_1052c940a2ad9c143cdc"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 3,
+     "rows": 1,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "8 + ? = 20",
+        "en": "8 + ? = 20"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "5 + ? = 20",
+        "en": "5 + ? = 20"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "14 + ? = 20",
+        "en": "14 + ? = 20"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Chaque addition a trouvé ce qui manque pour faire 20. Bravo !",
+     "en": "Each sum found what is missing to make 20. Well done!"
+    },
+    "wrong": {
+     "fr": "Cherche ce qu'il faut ajouter à chaque nombre pour arriver à 20.",
+     "en": "Find what to add to each number to reach 20."
+    }
+   }
   },
   {
    "id": "medecine.doses.011",
@@ -691,8 +1061,8 @@
    "grade": 2,
    "difficulty": 3,
    "story": {
-    "fr": "La flèche montre les gouttes déjà données.",
-    "en": "The arrow shows the drops already given."
+    "fr": "Le niveau du flacon montre les gouttes déjà données.",
+    "en": "The level in the bottle shows the drops already given."
    },
    "prompt": {
     "fr": "Il en faut 40 en tout. Combien de gouttes manquent-elles ?",
@@ -701,17 +1071,26 @@
    "visual": {
     "kind": "numberline",
     "data": {
-     "min": 20,
+     "style": "vial",
      "max": 40,
-     "step": 1,
-     "labels": [
-      20,
-      25,
-      30,
-      35,
-      40
+     "segments": [
+      {
+       "value": 36,
+       "tone": "a"
+      }
      ],
-     "arrow": 36
+     "unit": {
+      "fr": "gouttes",
+      "en": "drops"
+     },
+     "after": {
+      "segments": [
+       {
+        "value": 4,
+        "tone": "good"
+       }
+      ]
+     }
     }
    },
    "answer": {
@@ -746,12 +1125,12 @@
     }
    ],
    "hint": {
-    "fr": "Lis d’abord le nombre montré par la flèche.",
-    "en": "First read the number the arrow shows."
+    "fr": "Lis le niveau du flacon, puis compte jusqu’à 40.",
+    "en": "Read the level in the bottle, then count up to 40."
    },
    "explain": {
-    "fr": "La flèche est sur 36. De 36 à 40, il y a 4 traits.",
-    "en": "The arrow is on 36. From 36 to 40 is 4 marks."
+    "fr": "Le niveau est à 36. De 36 à 40, il y a 4 graduations.",
+    "en": "The level is at 36. From 36 to 40 is 4 marks."
    },
    "tags": [
     "doses",
@@ -765,7 +1144,17 @@
      "role": "scene",
      "asset": "a_1052c940a2ad9c143cdc"
     }
-   ]
+   ],
+   "reaction": {
+    "right": {
+     "fr": "Le niveau est à 36. Il manque 4 gouttes pour arriver à 40.",
+     "en": "The level is at 36. 4 drops are missing to reach 40."
+    },
+    "wrong": {
+     "fr": "Lis le niveau du flacon. Puis compte jusqu’à 40.",
+     "en": "Read the level in the bottle. Then count up to 40."
+    }
+   }
   },
   {
    "id": "medecine.doses.012",
@@ -820,7 +1209,45 @@
      "role": "scene",
      "asset": "a_1052c940a2ad9c143cdc"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Gouttes",
+      "en": "Drops"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "flacon 1",
+        "en": "bottle 1"
+       },
+       "value": 48,
+       "icon": "water-drop"
+      },
+      {
+       "label": {
+        "fr": "flacon 2",
+        "en": "bottle 2"
+       },
+       "value": 31,
+       "icon": "water-drop"
+      }
+     ],
+     "max": 50
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "48 et 31 font environ 80 gouttes. Belle estimation !",
+     "en": "48 and 31 make about 80 drops. A fine estimate!"
+    },
+    "wrong": {
+     "fr": "Arrondis 48 à 50 et 31 à 30, puis additionne.",
+     "en": "Round 48 to 50 and 31 to 30, then add."
+    }
+   }
   },
   {
    "id": "medecine.poids.001",
@@ -881,7 +1308,37 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Masse (kg)",
+      "en": "Mass (kg)"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "chiot",
+        "en": "puppy"
+       },
+       "value": 3,
+       "icon": "dog"
+      }
+     ],
+     "max": 4
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "3 kg, c'est 3000 g. Le chiot pèse bien ça sur la balance.",
+     "en": "3 kg is 3000 g. The puppy weighs that much on the scale."
+    },
+    "wrong": {
+     "fr": "Un kilogramme, c'est 1000 grammes. Compte 1000 trois fois.",
+     "en": "One kilogram is 1000 grams. Count 1000 three times."
+    }
+   }
   },
   {
    "id": "medecine.poids.002",
@@ -946,7 +1403,37 @@
      "role": "object",
      "asset": "a_f0d7a2b57eaf8b3501f2"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Masse (g)",
+      "en": "Mass (g)"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "lapin",
+        "en": "rabbit"
+       },
+       "value": 2000,
+       "icon": "rabbit"
+      }
+     ],
+     "max": 3000
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "2000 g font 2 kg. Le lapin est un poids plume !",
+     "en": "2000 g make 2 kg. The rabbit is a featherweight!"
+    },
+    "wrong": {
+     "fr": "Chaque 1000 g font 1 kg. Combien de milliers vois-tu ?",
+     "en": "Every 1000 g make 1 kg. How many thousands do you see?"
+    }
+   }
   },
   {
    "id": "medecine.poids.003",
@@ -1010,7 +1497,43 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Masse (g)",
+      "en": "Mass (g)"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "hamster",
+        "en": "hamster"
+       },
+       "value": 150
+      },
+      {
+       "label": {
+        "fr": "cochon d’Inde",
+        "en": "guinea pig"
+       },
+       "value": 900
+      }
+     ],
+     "max": 1000
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "150 et 900 font 1050 g pour le hamster et le cochon d'Inde.",
+     "en": "150 and 900 make 1050 g for the hamster and the guinea pig."
+    },
+    "wrong": {
+     "fr": "Additionne les deux masses en grammes.",
+     "en": "Add the two masses in grams."
+    }
+   }
   },
   {
    "id": "medecine.poids.004",
@@ -1071,7 +1594,37 @@
      "role": "scene",
      "asset": "a_1d3a33d8827b6969ec93"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Masse (kg)",
+      "en": "Mass (kg)"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "chiot",
+        "en": "puppy"
+       },
+       "value": 2.5,
+       "icon": "dog"
+      }
+     ],
+     "max": 3
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "2 kg et 500 g, c'est 2500 g. Le carnet de Léa est juste !",
+     "en": "2 kg and 500 g is 2500 g. Léa's notebook is right!"
+    },
+    "wrong": {
+     "fr": "Change d'abord les 2 kg en grammes, puis ajoute 500.",
+     "en": "First change the 2 kg into grams, then add 500."
+    }
+   }
   },
   {
    "id": "medecine.poids.005",
@@ -1145,7 +1698,34 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 1,
+     "rows": 1,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:mouse",
+        "en": "img:mouse"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Pour une petite souris, on utilise les grammes.",
+     "en": "For a little mouse we use grams."
+    },
+    "wrong": {
+     "fr": "Une souris est très légère. Pense à l'unité la plus petite.",
+     "en": "A mouse is very light. Think of the smallest unit."
+    }
+   }
   },
   {
    "id": "medecine.poids.006",
@@ -1220,7 +1800,59 @@
      "role": "scene",
      "asset": "a_1d3a33d8827b6969ec93"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Masse (g)",
+      "en": "Mass (g)"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "chat",
+        "en": "cat"
+       },
+       "value": 850,
+       "icon": "cat"
+      },
+      {
+       "label": {
+        "fr": "lapin",
+        "en": "rabbit"
+       },
+       "value": 2000,
+       "icon": "rabbit"
+      },
+      {
+       "label": {
+        "fr": "furet",
+        "en": "ferret"
+       },
+       "value": 1500
+      },
+      {
+       "label": {
+        "fr": "hamster",
+        "en": "hamster"
+       },
+       "value": 900
+      }
+     ],
+     "max": 2000
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Le lapin est le plus lourd : 2 kg, plus que les autres.",
+     "en": "The rabbit is the heaviest: 2 kg, more than the others."
+    },
+    "wrong": {
+     "fr": "Mets toutes les masses dans la même unité avant de comparer.",
+     "en": "Put all the masses in the same unit before comparing."
+    }
+   }
   },
   {
    "id": "medecine.poids.007",
@@ -1298,7 +1930,50 @@
      "role": "scene",
      "asset": "a_1d3a33d8827b6969ec93"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 3,
+     "rows": 1,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:cat",
+        "en": "img:cat"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:cat",
+        "en": "img:cat"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:cat",
+        "en": "img:cat"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "6 kg partagés entre 3 chats, c'est 2 kg chacun.",
+     "en": "6 kg shared between 3 cats is 2 kg each."
+    },
+    "wrong": {
+     "fr": "Partage 6 en 3 parts égales.",
+     "en": "Share 6 into 3 equal parts."
+    }
+   }
   },
   {
    "id": "medecine.poids.008",
@@ -1359,7 +2034,43 @@
      "role": "scene",
      "asset": "a_1d3a33d8827b6969ec93"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Masse (g)",
+      "en": "Mass (g)"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "boîte",
+        "en": "box"
+       },
+       "value": 2000
+      },
+      {
+       "label": {
+        "fr": "bol",
+        "en": "bowl"
+       },
+       "value": 750
+      }
+     ],
+     "max": 2000
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "2000 g moins 750 g : il reste 1250 g dans la boîte.",
+     "en": "2000 g minus 750 g: 1250 g are left in the box."
+    },
+    "wrong": {
+     "fr": "Mets 2 kg en grammes, puis enlève les 750 g du bol.",
+     "en": "Change 2 kg into grams, then take away the 750 g in the bowl."
+    }
+   }
   },
   {
    "id": "medecine.poids.009",
@@ -1420,7 +2131,50 @@
      "role": "scene",
      "asset": "a_1d3a33d8827b6969ec93"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 3,
+     "rows": 1,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:cat",
+        "en": "img:cat"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:cat",
+        "en": "img:cat"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:cat",
+        "en": "img:cat"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "3 chatons de 500 g font 1500 g. Maman chatte est fière !",
+     "en": "3 kittens of 500 g make 1500 g. Mother cat is proud!"
+    },
+    "wrong": {
+     "fr": "Il y a 3 chatons de 500 g chacun. Additionne ou multiplie.",
+     "en": "There are 3 kittens of 500 g each. Add or multiply."
+    }
+   }
   },
   {
    "id": "medecine.poids.010",
@@ -1481,7 +2235,53 @@
      "role": "scene",
      "asset": "a_1d3a33d8827b6969ec93"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Masse (kg)",
+      "en": "Mass (kg)"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "chiot 1",
+        "en": "puppy 1"
+       },
+       "value": 2,
+       "icon": "dog"
+      },
+      {
+       "label": {
+        "fr": "chiot 2",
+        "en": "puppy 2"
+       },
+       "value": 3,
+       "icon": "dog"
+      },
+      {
+       "label": {
+        "fr": "chiot 3",
+        "en": "puppy 3"
+       },
+       "value": 4,
+       "icon": "dog"
+      }
+     ],
+     "max": 5
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "2 plus 3 plus 4 : les trois chiots pèsent 9 kg ensemble.",
+     "en": "2 plus 3 plus 4: the three puppies weigh 9 kg together."
+    },
+    "wrong": {
+     "fr": "Additionne les trois masses, une à la fois.",
+     "en": "Add the three masses, one at a time."
+    }
+   }
   },
   {
    "id": "medecine.poids.011",
@@ -1524,7 +2324,37 @@
      "role": "scene",
      "asset": "a_1d3a33d8827b6969ec93"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Masse (kg)",
+      "en": "Mass (kg)"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "chat",
+        "en": "cat"
+       },
+       "value": 4,
+       "icon": "cat"
+      }
+     ],
+     "max": 5
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Un chat de 4 kg pèse 4000 g, pas 400 g. Noah se trompait.",
+     "en": "A 4 kg cat weighs 4000 g, not 400 g. Noah was mistaken."
+    },
+    "wrong": {
+     "fr": "1 kg fait 1000 g. Combien font 4 kg ?",
+     "en": "1 kg makes 1000 g. How many is 4 kg?"
+    }
+   }
   },
   {
    "id": "medecine.poids.012",
@@ -1606,7 +2436,58 @@
      "role": "scene",
      "asset": "a_1d3a33d8827b6969ec93"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 1,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "1 kg",
+        "en": "1 kg"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "800 g",
+        "en": "800 g"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "1 kg 200 g",
+        "en": "1 kg 200 g"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "900 g",
+        "en": "900 g"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "800 g, 900 g, 1 kg, puis 1 kg 200 g. Les masses sont bien rangées.",
+     "en": "800 g, 900 g, 1 kg, then 1 kg 200 g. The masses are in order."
+    },
+    "wrong": {
+     "fr": "Mets tout en grammes : 1 kg fait 1000 g. Puis compare.",
+     "en": "Put everything in grams: 1 kg is 1000 g. Then compare."
+    }
+   }
   },
   {
    "id": "medecine.poids.013",
@@ -1710,7 +2591,50 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 3,
+     "rows": 1,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:mouse",
+        "en": "img:mouse"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:cat",
+        "en": "img:cat"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:dog",
+        "en": "img:dog"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "La souris, le chat et le chien ont chacun la bonne masse.",
+     "en": "The mouse, the cat and the dog each got the right mass."
+    },
+    "wrong": {
+     "fr": "Pense à la taille de chaque animal. Le plus petit pèse le moins.",
+     "en": "Think of each animal's size. The smallest weighs the least."
+    }
+   }
   },
   {
    "id": "medecine.poids.014",
@@ -1740,21 +2664,24 @@
         "fr": "chiot",
         "en": "puppy"
        },
-       "value": 3
+       "value": 3,
+       "icon": "dog"
       },
       {
        "label": {
         "fr": "chat",
         "en": "cat"
        },
-       "value": 4
+       "value": 4,
+       "icon": "cat"
       },
       {
        "label": {
         "fr": "lapin",
         "en": "rabbit"
        },
-       "value": 2
+       "value": 2,
+       "icon": "rabbit"
       }
      ],
      "max": 5
@@ -1804,7 +2731,17 @@
      "role": "scene",
      "asset": "a_1d3a33d8827b6969ec93"
     }
-   ]
+   ],
+   "reaction": {
+    "right": {
+     "fr": "Le chat pèse 4 kg et le lapin 2 kg. 2 kg de plus.",
+     "en": "The cat weighs 4 kg and the rabbit 2 kg: 2 kg more."
+    },
+    "wrong": {
+     "fr": "Regarde les deux barres et trouve l'écart entre elles.",
+     "en": "Look at the two bars and find the gap between them."
+    }
+   }
   },
   {
    "id": "medecine.poids.015",
@@ -1867,7 +2804,50 @@
      "role": "scene",
      "asset": "a_1d3a33d8827b6969ec93"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 3,
+     "rows": 1,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "",
+        "en": ""
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "",
+        "en": ""
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "",
+        "en": ""
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "3 sacs de 19 kg, c'est environ 60 kg à porter.",
+     "en": "3 bags of 19 kg is about 60 kg to carry."
+    },
+    "wrong": {
+     "fr": "Arrondis 19 à 20, puis multiplie par 3.",
+     "en": "Round 19 to 20, then multiply by 3."
+    }
+   }
   },
   {
    "id": "medecine.horaire.001",
@@ -1949,7 +2929,17 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "reaction": {
+    "right": {
+     "fr": "Tu lis bien l'horloge de la salle d'attente.",
+     "en": "You read the waiting room clock well."
+    },
+    "wrong": {
+     "fr": "La petite aiguille donne l'heure. Regarde où elle pointe.",
+     "en": "The short hand shows the hour. Look where it points."
+    }
+   }
   },
   {
    "id": "medecine.horaire.002",
@@ -2031,7 +3021,17 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "reaction": {
+    "right": {
+     "fr": "Léa n'est pas en retard : tu as lu la bonne heure !",
+     "en": "Léa is not late: you read the right time!"
+    },
+    "wrong": {
+     "fr": "Regarde la petite aiguille pour l'heure, la grande pour les minutes.",
+     "en": "Use the short hand for the hour, the long one for the minutes."
+    }
+   }
   },
   {
    "id": "medecine.horaire.003",
@@ -2113,7 +3113,17 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "reaction": {
+    "right": {
+     "fr": "Le prochain rendez-vous est bien à cette heure-là.",
+     "en": "The next appointment is indeed at that time."
+    },
+    "wrong": {
+     "fr": "Commence par la petite aiguille, puis regarde la grande.",
+     "en": "Start with the short hand, then look at the long one."
+    }
+   }
   },
   {
    "id": "medecine.horaire.004",
@@ -2174,7 +3184,24 @@
      "role": "scene",
      "asset": "a_9ad2d33dcc8c509dde96"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "clock",
+    "data": {
+     "hour": 2,
+     "minute": 0
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "2 h plus 1 heure : le rendez-vous de Noah finit à 3 h.",
+     "en": "2 o'clock plus 1 hour: Noah's appointment ends at 3 o'clock."
+    },
+    "wrong": {
+     "fr": "Avance d'une heure sur l'horloge à partir de 2 h.",
+     "en": "Move forward one hour on the clock from 2 o'clock."
+    }
+   }
   },
   {
    "id": "medecine.horaire.005",
@@ -2235,7 +3262,24 @@
      "role": "scene",
      "asset": "a_9ad2d33dcc8c509dde96"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "clock",
+    "data": {
+     "hour": 6,
+     "minute": 30
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Une demi-heure, c'est 30 minutes. La moitié de 60 !",
+     "en": "Half an hour is 30 minutes. Half of 60!"
+    },
+    "wrong": {
+     "fr": "Une heure a 60 minutes. Prends-en la moitié.",
+     "en": "An hour has 60 minutes. Take half of it."
+    }
+   }
   },
   {
    "id": "medecine.horaire.006",
@@ -2296,7 +3340,24 @@
      "role": "scene",
      "asset": "a_9ad2d33dcc8c509dde96"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "clock",
+    "data": {
+     "hour": 3,
+     "minute": 0
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "60 moins 15 : Léa arrive 45 minutes après 2 h.",
+     "en": "60 minus 15: Léa arrives 45 minutes after 2 o'clock."
+    },
+    "wrong": {
+     "fr": "Elle arrive un quart d'heure avant 3 h. Pars de 60 minutes.",
+     "en": "She arrives a quarter hour before 3. Start from 60 minutes."
+    }
+   }
   },
   {
    "id": "medecine.horaire.007",
@@ -2371,7 +3432,24 @@
      "role": "scene",
      "asset": "a_9ad2d33dcc8c509dde96"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "clock",
+    "data": {
+     "hour": 9,
+     "minute": 0
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Petite aiguille sur le 9, grande sur le 12. Il est 9 h pile.",
+     "en": "Short hand on 9, long hand on 12: it is exactly 9 o'clock."
+    },
+    "wrong": {
+     "fr": "La petite aiguille donne l'heure. La grande sur le 12 veut dire pile.",
+     "en": "The short hand gives the hour. The long hand on 12 means exactly."
+    }
+   }
   },
   {
    "id": "medecine.horaire.008",
@@ -2449,7 +3527,76 @@
      "role": "scene",
      "asset": "a_9ad2d33dcc8c509dde96"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 8,
+     "max": 13,
+     "step": 1,
+     "labels": [
+      9,
+      10,
+      11,
+      12
+     ],
+     "pins": [
+      {
+       "value": 9,
+       "icon": "stopwatch",
+       "label": {
+        "fr": "ouverture",
+        "en": "opens"
+       }
+      },
+      {
+       "value": 12,
+       "label": {
+        "fr": "fermeture",
+        "en": "closes"
+       }
+      }
+     ],
+     "after": {
+      "hops": [
+       {
+        "from": 9,
+        "to": 10,
+        "label": {
+         "fr": "+1 h",
+         "en": "+1 h"
+        }
+       },
+       {
+        "from": 10,
+        "to": 11,
+        "label": {
+         "fr": "+1 h",
+         "en": "+1 h"
+        }
+       },
+       {
+        "from": 11,
+        "to": 12,
+        "label": {
+         "fr": "+1 h",
+         "en": "+1 h"
+        }
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "De 9 h à 12 h, la clinique est ouverte 3 heures.",
+     "en": "From 9 to 12, the clinic is open 3 hours."
+    },
+    "wrong": {
+     "fr": "Compte les heures de 9 jusqu'à 12 sur la ligne.",
+     "en": "Count the hours from 9 up to 12 on the line."
+    }
+   }
   },
   {
    "id": "medecine.horaire.009",
@@ -2524,7 +3671,24 @@
      "role": "scene",
      "asset": "a_9ad2d33dcc8c509dde96"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "clock",
+    "data": {
+     "hour": 3,
+     "minute": 30
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "3 h 30 plus une heure. Le patient suivant vient à 4 h 30.",
+     "en": "3:30 plus one hour: the next patient comes at 4:30."
+    },
+    "wrong": {
+     "fr": "Ajoute une heure et garde les 30 minutes.",
+     "en": "Add one hour and keep the 30 minutes."
+    }
+   }
   },
   {
    "id": "medecine.horaire.010",
@@ -2567,7 +3731,24 @@
      "role": "scene",
      "asset": "a_9ad2d33dcc8c509dde96"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "clock",
+    "data": {
+     "hour": 6,
+     "minute": 0
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "À 6 h pile, la petite aiguille est sur le 6, pas le 12.",
+     "en": "At exactly 6 o'clock the short hand is on the 6, not the 12."
+    },
+    "wrong": {
+     "fr": "Sur la grande aiguille, le 12 veut dire pile. Regarde la petite.",
+     "en": "On the long hand, 12 means exactly. Look at the short hand."
+    }
+   }
   },
   {
    "id": "medecine.horaire.011",
@@ -2649,7 +3830,58 @@
      "role": "scene",
      "asset": "a_9ad2d33dcc8c509dde96"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 1,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "9 h",
+        "en": "9:00"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "7 h 45",
+        "en": "7:45"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "10 h 15",
+        "en": "10:15"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "8 h 30",
+        "en": "8:30"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "7 h 45, 8 h 30, 9 h, 10 h 15. Tes rendez-vous sont bien rangés.",
+     "en": "7:45, 8:30, 9:00, 10:15: your appointments are in order."
+    },
+    "wrong": {
+     "fr": "Compare d'abord les heures, puis les minutes.",
+     "en": "Compare the hours first, then the minutes."
+    }
+   }
   },
   {
    "id": "medecine.horaire.012",
@@ -2753,7 +3985,50 @@
      "role": "scene",
      "asset": "a_9ad2d33dcc8c509dde96"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 3,
+     "rows": 1,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "3 h 30",
+        "en": "3 h 30"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "6 h 15",
+        "en": "6 h 15"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "9 h 45",
+        "en": "9 h 45"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Chaque heure a trouvé ses mots. Tu lis l'horloge de deux façons !",
+     "en": "Each time found its words. You can read the clock two ways!"
+    },
+    "wrong": {
+     "fr": "Pense à 15 minutes pour un quart et 30 pour une demie.",
+     "en": "Think 15 minutes for a quarter and 30 for a half."
+    }
+   }
   },
   {
    "id": "medecine.horaire.013",
@@ -2821,7 +4096,17 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "reaction": {
+    "right": {
+     "fr": "La grande aiguille montre 30 minutes après l'heure.",
+     "en": "The long hand shows 30 minutes past the hour."
+    },
+    "wrong": {
+     "fr": "Chaque nombre vaut 5 minutes. Compte de 5 en 5 depuis le 12.",
+     "en": "Each number is 5 minutes. Count in 5s from the 12."
+    }
+   }
   },
   {
    "id": "medecine.horaire.014",
@@ -2876,7 +4161,24 @@
      "role": "scene",
      "asset": "a_9ad2d33dcc8c509dde96"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "clock",
+    "data": {
+     "hour": 2,
+     "minute": 2
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "De 2 h 02 à 3 h 01, la visite dure environ une heure.",
+     "en": "From 2:02 to 3:01 the visit lasts about an hour."
+    },
+    "wrong": {
+     "fr": "Arrondis 2 h 02 à 2 h et 3 h 01 à 3 h.",
+     "en": "Round 2:02 to 2:00 and 3:01 to 3:00."
+    }
+   }
   },
   {
    "id": "medecine.dossier.001",
@@ -2907,21 +4209,24 @@
         "fr": "lundi",
         "en": "Monday"
        },
-       "count": 4
+       "count": 4,
+       "icon": "dog"
       },
       {
        "label": {
         "fr": "mardi",
         "en": "Tuesday"
        },
-       "count": 6
+       "count": 6,
+       "icon": "dog"
       },
       {
        "label": {
         "fr": "mercredi",
         "en": "Wednesday"
        },
-       "count": 5
+       "count": 5,
+       "icon": "dog"
       }
      ]
     }
@@ -2969,7 +4274,17 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "reaction": {
+    "right": {
+     "fr": "Mardi, 6 visites. Tu as bien lu les images du dossier.",
+     "en": "Tuesday, 6 visits. You read the chart pictures well."
+    },
+    "wrong": {
+     "fr": "Trouve la ligne du mardi et compte ses images.",
+     "en": "Find the Tuesday line and count its pictures."
+    }
+   }
   },
   {
    "id": "medecine.dossier.002",
@@ -2999,21 +4314,24 @@
         "fr": "lapins",
         "en": "rabbits"
        },
-       "value": 8
+       "value": 8,
+       "icon": "rabbit"
       },
       {
        "label": {
         "fr": "chats",
         "en": "cats"
        },
-       "value": 12
+       "value": 12,
+       "icon": "cat"
       },
       {
        "label": {
         "fr": "chiens",
         "en": "dogs"
        },
-       "value": 10
+       "value": 10,
+       "icon": "dog"
       },
       {
        "label": {
@@ -3069,7 +4387,17 @@
      "role": "scene",
      "asset": "a_b8cfe25fe19da1d4904d"
     }
-   ]
+   ],
+   "reaction": {
+    "right": {
+     "fr": "12 chats et 6 oiseaux : 6 chats de plus que d'oiseaux.",
+     "en": "12 cats and 6 birds: 6 more cats than birds."
+    },
+    "wrong": {
+     "fr": "Regarde la barre des chats et celle des oiseaux. Cherche l'écart.",
+     "en": "Look at the cat bar and the bird bar. Find the gap."
+    }
+   }
   },
   {
    "id": "medecine.dossier.003",
@@ -3183,7 +4511,17 @@
      "role": "scene",
      "asset": "a_b8cfe25fe19da1d4904d"
     }
-   ]
+   ],
+   "reaction": {
+    "right": {
+     "fr": "Le jour avec la barre la plus haute a eu le plus de visites.",
+     "en": "The day with the tallest bar had the most visits."
+    },
+    "wrong": {
+     "fr": "Cherche la barre la plus haute, puis lis son nom.",
+     "en": "Find the tallest bar, then read its name."
+    }
+   }
   },
   {
    "id": "medecine.dossier.004",
@@ -3276,7 +4614,17 @@
      "role": "scene",
      "asset": "a_b8cfe25fe19da1d4904d"
     }
-   ]
+   ],
+   "reaction": {
+    "right": {
+     "fr": "8 plus 12 plus 9. La clinique a vu 29 visites en trois jours.",
+     "en": "8 plus 12 plus 9: the clinic had 29 visits in three days."
+    },
+    "wrong": {
+     "fr": "Lis chaque barre et additionne les trois jours.",
+     "en": "Read each bar and add the three days."
+    }
+   }
   },
   {
    "id": "medecine.dossier.005",
@@ -3307,21 +4655,24 @@
         "fr": "chiens",
         "en": "dogs"
        },
-       "count": 7
+       "count": 7,
+       "icon": "dog"
       },
       {
        "label": {
         "fr": "chats",
         "en": "cats"
        },
-       "count": 5
+       "count": 5,
+       "icon": "cat"
       },
       {
        "label": {
         "fr": "lapins",
         "en": "rabbits"
        },
-       "count": 4
+       "count": 4,
+       "icon": "rabbit"
       }
      ]
     }
@@ -3369,7 +4720,17 @@
      "role": "scene",
      "asset": "a_b8cfe25fe19da1d4904d"
     }
-   ]
+   ],
+   "reaction": {
+    "right": {
+     "fr": "7 plus 5 plus 4 : 16 animaux sont venus en tout.",
+     "en": "7 plus 5 plus 4: 16 animals came in all."
+    },
+    "wrong": {
+     "fr": "Compte les images de chaque animal, puis additionne.",
+     "en": "Count the pictures for each animal, then add."
+    }
+   }
   },
   {
    "id": "medecine.dossier.006",
@@ -3430,7 +4791,50 @@
      "role": "scene",
      "asset": "a_b8cfe25fe19da1d4904d"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Visites",
+      "en": "Visits"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "lundi",
+        "en": "Monday"
+       },
+       "value": 5
+      },
+      {
+       "label": {
+        "fr": "mardi",
+        "en": "Tuesday"
+       },
+       "value": 7
+      },
+      {
+       "label": {
+        "fr": "mercredi",
+        "en": "Wednesday"
+       },
+       "value": 3
+      }
+     ],
+     "max": 8
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "5 plus 7 plus 3 : 15 visites en trois jours.",
+     "en": "5 plus 7 plus 3: 15 visits in three days."
+    },
+    "wrong": {
+     "fr": "Additionne les visites du lundi, du mardi et du mercredi.",
+     "en": "Add the visits for Monday, Tuesday and Wednesday."
+    }
+   }
   },
   {
    "id": "medecine.dossier.007",
@@ -3504,7 +4908,53 @@
      "role": "scene",
      "asset": "a_b8cfe25fe19da1d4904d"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Visites",
+      "en": "Visits"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "chiens",
+        "en": "dogs"
+       },
+       "value": 9,
+       "icon": "dog"
+      },
+      {
+       "label": {
+        "fr": "chats",
+        "en": "cats"
+       },
+       "value": 14,
+       "icon": "cat"
+      },
+      {
+       "label": {
+        "fr": "lapins",
+        "en": "rabbits"
+       },
+       "value": 6,
+       "icon": "rabbit"
+      }
+     ],
+     "max": 15
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "La barre la plus haute montre le plus grand nombre.",
+     "en": "The tallest bar shows the biggest number."
+    },
+    "wrong": {
+     "fr": "Plus la barre est haute, plus le nombre est grand.",
+     "en": "The taller the bar, the bigger the number."
+    }
+   }
   },
   {
    "id": "medecine.dossier.008",
@@ -3581,7 +5031,53 @@
      "role": "scene",
      "asset": "a_b8cfe25fe19da1d4904d"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Visites",
+      "en": "Visits"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "chiens",
+        "en": "dogs"
+       },
+       "value": 9,
+       "icon": "dog"
+      },
+      {
+       "label": {
+        "fr": "chats",
+        "en": "cats"
+       },
+       "value": 14,
+       "icon": "cat"
+      },
+      {
+       "label": {
+        "fr": "lapins",
+        "en": "rabbits"
+       },
+       "value": 6,
+       "icon": "rabbit"
+      }
+     ],
+     "max": 15
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "9 chiens et 6 lapins : 15 visites ensemble.",
+     "en": "9 dogs and 6 rabbits: 15 visits together."
+    },
+    "wrong": {
+     "fr": "Prends les chiens et les lapins seulement, puis additionne.",
+     "en": "Take only the dogs and the rabbits, then add."
+    }
+   }
   },
   {
    "id": "medecine.dossier.009",
@@ -3642,7 +5138,36 @@
      "role": "scene",
      "asset": "a_b8cfe25fe19da1d4904d"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Patients",
+      "en": "Patients"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "lundi",
+        "en": "Monday"
+       },
+       "value": 18
+      }
+     ],
+     "max": 20
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "18 moins 7 : la clinique a vu 11 patients mardi.",
+     "en": "18 minus 7: the clinic saw 11 patients on Tuesday."
+    },
+    "wrong": {
+     "fr": "Mardi, il y en a 7 de moins que lundi. Enlève 7 à 18.",
+     "en": "On Tuesday there are 7 fewer than Monday. Take 7 from 18."
+    }
+   }
   },
   {
    "id": "medecine.dossier.010",
@@ -3684,7 +5209,43 @@
      "role": "scene",
      "asset": "a_b8cfe25fe19da1d4904d"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Visites",
+      "en": "Visits"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "mercredi",
+        "en": "Wednesday"
+       },
+       "value": 9
+      },
+      {
+       "label": {
+        "fr": "jeudi",
+        "en": "Thursday"
+       },
+       "value": 12
+      }
+     ],
+     "max": 12
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "12 est plus grand que 9 : jeudi a eu plus de visites.",
+     "en": "12 is bigger than 9: Thursday had more visits."
+    },
+    "wrong": {
+     "fr": "Compare 9 et 12. Lequel est le plus grand ?",
+     "en": "Compare 9 and 12. Which one is bigger?"
+    }
+   }
   },
   {
    "id": "medecine.dossier.011",
@@ -3766,7 +5327,57 @@
      "role": "scene",
      "asset": "a_b8cfe25fe19da1d4904d"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Visites",
+      "en": "Visits"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "lundi",
+        "en": "Monday"
+       },
+       "value": 12
+      },
+      {
+       "label": {
+        "fr": "mardi",
+        "en": "Tuesday"
+       },
+       "value": 7
+      },
+      {
+       "label": {
+        "fr": "mercredi",
+        "en": "Wednesday"
+       },
+       "value": 15
+      },
+      {
+       "label": {
+        "fr": "jeudi",
+        "en": "Thursday"
+       },
+       "value": 9
+      }
+     ],
+     "max": 15
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Les jours sont bien rangés du moins de visites au plus de visites.",
+     "en": "The days are in order from fewest visits to most visits."
+    },
+    "wrong": {
+     "fr": "Cherche d'abord la plus petite barre, puis la suivante.",
+     "en": "Look for the smallest bar first, then the next one."
+    }
+   }
   },
   {
    "id": "medecine.dossier.012",
@@ -3870,7 +5481,45 @@
      "role": "scene",
      "asset": "a_b8cfe25fe19da1d4904d"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Visites par animal",
+      "en": "Visits per animal"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "chats",
+        "en": "cats"
+       },
+       "value": 3,
+       "icon": "cat"
+      },
+      {
+       "label": {
+        "fr": "chiens",
+        "en": "dogs"
+       },
+       "value": 5,
+       "icon": "dog"
+      }
+     ],
+     "max": 6
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Le titre, la barre, l'étiquette : tu sais lire un diagramme !",
+     "en": "The title, the bar, the label: you can read a chart!"
+    },
+    "wrong": {
+     "fr": "Le titre dit de quoi on parle. L'étiquette nomme chaque barre.",
+     "en": "The title says what it is about. The label names each bar."
+    }
+   }
   },
   {
    "id": "medecine.dossier.013",
@@ -3925,7 +5574,50 @@
      "role": "scene",
      "asset": "a_b8cfe25fe19da1d4904d"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Visites",
+      "en": "Visits"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "jour 1",
+        "en": "day 1"
+       },
+       "value": 19
+      },
+      {
+       "label": {
+        "fr": "jour 2",
+        "en": "day 2"
+       },
+       "value": 21
+      },
+      {
+       "label": {
+        "fr": "jour 3",
+        "en": "day 3"
+       },
+       "value": 18
+      }
+     ],
+     "max": 22
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "19, 21 et 18 font environ 60 visites.",
+     "en": "19, 21 and 18 make about 60 visits."
+    },
+    "wrong": {
+     "fr": "Arrondis chaque nombre à la dizaine, puis additionne.",
+     "en": "Round each number to the nearest ten, then add."
+    }
+   }
   },
   {
    "id": "medecine.pansements.001",
@@ -3987,7 +5679,146 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 5,
+     "rows": 3,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 5,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 5,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 5,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "3 boîtes de 5 pansements : Léa en a 15 dans sa trousse.",
+     "en": "3 boxes of 5 bandages: Léa has 15 in her kit."
+    },
+    "wrong": {
+     "fr": "Compte les pansements d'une boîte, puis répète 3 fois.",
+     "en": "Count the bandages in one box, then repeat 3 times."
+    }
+   }
   },
   {
    "id": "medecine.pansements.002",
@@ -4049,7 +5880,218 @@
    ],
    "status": "published",
    "author": "numerix-p4b",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 6,
+     "rows": 4,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 5,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 6,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 5,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 6,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 5,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 6,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 5,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 6,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "4 boîtes de 6 : Noah a préparé 24 pansements.",
+     "en": "4 boxes of 6: Noah prepared 24 bandages."
+    },
+    "wrong": {
+     "fr": "Chaque boîte a 6 pansements. Compte 6, 12, 18, 24.",
+     "en": "Each box has 6 bandages. Count 6, 12, 18, 24."
+    }
+   }
   },
   {
    "id": "medecine.pansements.003",
@@ -4111,7 +6153,282 @@
      "role": "scene",
      "asset": "a_9ad2d33dcc8c509dde96"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 8,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 5,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 5,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 5,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 5,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 6,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 6,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 6,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 6,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 7,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 7,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 7,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 7,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 8,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 8,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 8,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 8,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "8 sachets de 4 pansements : 32 en tout.",
+     "en": "8 bags of 4 bandages: 32 in all."
+    },
+    "wrong": {
+     "fr": "Chaque sachet en a 4. Compte de 4 en 4.",
+     "en": "Each bag has 4. Count in 4s."
+    }
+   }
   },
   {
    "id": "medecine.pansements.004",
@@ -4173,7 +6490,458 @@
      "role": "scene",
      "asset": "a_9ad2d33dcc8c509dde96"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 9,
+     "rows": 6,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 5,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 6,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 7,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 8,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 9,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 5,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 6,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 7,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 8,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 9,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 5,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 6,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 7,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 8,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 9,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 5,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 6,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 7,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 8,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 9,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 5,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 5,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 5,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 5,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 5,
+       "y": 5,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 6,
+       "y": 5,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 7,
+       "y": 5,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 8,
+       "y": 5,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 9,
+       "y": 5,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 6,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 6,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 6,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 6,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 5,
+       "y": 6,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 6,
+       "y": 6,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 7,
+       "y": 6,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 8,
+       "y": 6,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 9,
+       "y": 6,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "6 étagères de 9 pansements : le placard en compte 54.",
+     "en": "6 shelves of 9 bandages: the cupboard holds 54."
+    },
+    "wrong": {
+     "fr": "Compte 9 pansements par étagère, 6 fois.",
+     "en": "Count 9 bandages per shelf, 6 times."
+    }
+   }
   },
   {
    "id": "medecine.pansements.005",
@@ -4251,7 +7019,186 @@
      "role": "scene",
      "asset": "a_9ad2d33dcc8c509dde96"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 10,
+     "rows": 2,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 5,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 6,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 7,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 8,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 9,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 10,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 5,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 6,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 7,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 8,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 9,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 10,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "2 boîtes de 10 pansements font 20 pansements.",
+     "en": "2 boxes of 10 bandages make 20 bandages."
+    },
+    "wrong": {
+     "fr": "Deux fois 10. Ajoute 10 et 10.",
+     "en": "Two times 10. Add 10 and 10."
+    }
+   }
   },
   {
    "id": "medecine.pansements.006",
@@ -4326,7 +7273,186 @@
      "role": "scene",
      "asset": "a_9ad2d33dcc8c509dde96"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 5,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 5,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 5,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 5,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 5,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "5 boîtes de 4 : la bonne opération donne le total.",
+     "en": "5 boxes of 4: the right operation gives the total."
+    },
+    "wrong": {
+     "fr": "Des groupes égaux, ça se multiplie. Combien de groupes, combien dans chacun ?",
+     "en": "Equal groups are multiplied. How many groups, how many in each?"
+    }
+   }
   },
   {
    "id": "medecine.pansements.007",
@@ -4404,7 +7530,242 @@
      "role": "scene",
      "asset": "a_9ad2d33dcc8c509dde96"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 9,
+     "rows": 3,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 5,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 6,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 7,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 8,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 9,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 5,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 6,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 7,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 8,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 9,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 5,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 6,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 7,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 8,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 9,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "3 trousses de 9 pansements : Léa en prépare 27.",
+     "en": "3 kits of 9 bandages: Léa prepares 27."
+    },
+    "wrong": {
+     "fr": "Chaque trousse contient 9 pansements. Compte trois trousses.",
+     "en": "Each kit holds 9 bandages. Count three kits."
+    }
+   }
   },
   {
    "id": "medecine.pansements.008",
@@ -4465,7 +7826,45 @@
      "role": "scene",
      "asset": "a_9ad2d33dcc8c509dde96"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Pansements",
+      "en": "Bandages"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "boîtes de 12",
+        "en": "boxes of 12"
+       },
+       "count": 4,
+       "icon": "bandage"
+      },
+      {
+       "label": {
+        "fr": "utilisés",
+        "en": "used"
+       },
+       "count": 10,
+       "icon": "bandage"
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "4 boîtes de 12 font 48. Noah en utilise 10 : il reste 38.",
+     "en": "4 boxes of 12 make 48. Noah uses 10: 38 are left."
+    },
+    "wrong": {
+     "fr": "Calcule d'abord toutes les boîtes, puis enlève les 10 utilisés.",
+     "en": "First work out all the boxes, then take away the 10 used."
+    }
+   }
   },
   {
    "id": "medecine.pansements.009",
@@ -4526,7 +7925,346 @@
      "role": "scene",
      "asset": "a_9ad2d33dcc8c509dde96"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 8,
+     "rows": 5,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 5,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 6,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 7,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 8,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 5,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 6,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 7,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 8,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 5,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 6,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 7,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 8,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 5,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 6,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 7,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 8,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 5,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 5,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 5,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 5,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 5,
+       "y": 5,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 6,
+       "y": 5,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 7,
+       "y": 5,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 8,
+       "y": 5,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "5 rangées de 8 pansements : 40 sur la table.",
+     "en": "5 rows of 8 bandages: 40 on the table."
+    },
+    "wrong": {
+     "fr": "Il y a 8 pansements par rangée. Compte 5 rangées.",
+     "en": "There are 8 bandages per row. Count 5 rows."
+    }
+   }
   },
   {
    "id": "medecine.pansements.010",
@@ -4569,7 +8307,250 @@
      "role": "scene",
      "asset": "a_9ad2d33dcc8c509dde96"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 7,
+     "rows": 4,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 5,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 6,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 7,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 5,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 6,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 7,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 5,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 6,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 7,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 5,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 6,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 7,
+       "y": 4,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "4 boîtes de 7 font 28, pas 24. Noah s'est trompé.",
+     "en": "4 boxes of 7 make 28, not 24. Noah made a mistake."
+    },
+    "wrong": {
+     "fr": "Refais le calcul : 7 plus 7 plus 7 plus 7.",
+     "en": "Do the sum again: 7 plus 7 plus 7 plus 7."
+    }
+   }
   },
   {
    "id": "medecine.pansements.011",
@@ -4652,7 +8633,61 @@
      "role": "scene",
      "asset": "a_9ad2d33dcc8c509dde96"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Boîtes",
+      "en": "Boxes"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "pile A",
+        "en": "pile A"
+       },
+       "value": 3,
+       "icon": "bandage"
+      },
+      {
+       "label": {
+        "fr": "pile B",
+        "en": "pile B"
+       },
+       "value": 2,
+       "icon": "bandage"
+      },
+      {
+       "label": {
+        "fr": "pile C",
+        "en": "pile C"
+       },
+       "value": 4,
+       "icon": "bandage"
+      },
+      {
+       "label": {
+        "fr": "pile D",
+        "en": "pile D"
+       },
+       "value": 3,
+       "icon": "bandage"
+      }
+     ],
+     "max": 5
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Les piles sont bien rangées de la plus petite à la plus grande.",
+     "en": "The piles are in order from the smallest to the biggest."
+    },
+    "wrong": {
+     "fr": "Calcule chaque pile, boîtes fois pansements, puis compare.",
+     "en": "Work out each pile, boxes times bandages, then compare."
+    }
+   }
   },
   {
    "id": "medecine.pansements.012",
@@ -4756,7 +8791,122 @@
      "role": "scene",
      "asset": "a_9ad2d33dcc8c509dde96"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 3,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      },
+      {
+       "x": 4,
+       "y": 3,
+       "label": {
+        "fr": "img:bandage",
+        "en": "img:bandage"
+       }
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Chaque rangement a trouvé son total. Tu multiplies bien !",
+     "en": "Each arrangement found its total. You multiply well!"
+    },
+    "wrong": {
+     "fr": "Multiplie le nombre de boîtes par ce que chacune contient.",
+     "en": "Multiply the number of boxes by what each one holds."
+    }
+   }
   },
   {
    "id": "medecine.pansements.013",
@@ -4783,144 +8933,144 @@
        "x": 1,
        "y": 1,
        "label": {
-        "fr": "pansement",
-        "en": "bandage"
+        "fr": "img:bandage",
+        "en": "img:bandage"
        }
       },
       {
        "x": 2,
        "y": 1,
        "label": {
-        "fr": "pansement",
-        "en": "bandage"
+        "fr": "img:bandage",
+        "en": "img:bandage"
        }
       },
       {
        "x": 3,
        "y": 1,
        "label": {
-        "fr": "pansement",
-        "en": "bandage"
+        "fr": "img:bandage",
+        "en": "img:bandage"
        }
       },
       {
        "x": 4,
        "y": 1,
        "label": {
-        "fr": "pansement",
-        "en": "bandage"
+        "fr": "img:bandage",
+        "en": "img:bandage"
        }
       },
       {
        "x": 5,
        "y": 1,
        "label": {
-        "fr": "pansement",
-        "en": "bandage"
+        "fr": "img:bandage",
+        "en": "img:bandage"
        }
       },
       {
        "x": 6,
        "y": 1,
        "label": {
-        "fr": "pansement",
-        "en": "bandage"
+        "fr": "img:bandage",
+        "en": "img:bandage"
        }
       },
       {
        "x": 1,
        "y": 2,
        "label": {
-        "fr": "pansement",
-        "en": "bandage"
+        "fr": "img:bandage",
+        "en": "img:bandage"
        }
       },
       {
        "x": 2,
        "y": 2,
        "label": {
-        "fr": "pansement",
-        "en": "bandage"
+        "fr": "img:bandage",
+        "en": "img:bandage"
        }
       },
       {
        "x": 3,
        "y": 2,
        "label": {
-        "fr": "pansement",
-        "en": "bandage"
+        "fr": "img:bandage",
+        "en": "img:bandage"
        }
       },
       {
        "x": 4,
        "y": 2,
        "label": {
-        "fr": "pansement",
-        "en": "bandage"
+        "fr": "img:bandage",
+        "en": "img:bandage"
        }
       },
       {
        "x": 5,
        "y": 2,
        "label": {
-        "fr": "pansement",
-        "en": "bandage"
+        "fr": "img:bandage",
+        "en": "img:bandage"
        }
       },
       {
        "x": 6,
        "y": 2,
        "label": {
-        "fr": "pansement",
-        "en": "bandage"
+        "fr": "img:bandage",
+        "en": "img:bandage"
        }
       },
       {
        "x": 1,
        "y": 3,
        "label": {
-        "fr": "pansement",
-        "en": "bandage"
+        "fr": "img:bandage",
+        "en": "img:bandage"
        }
       },
       {
        "x": 2,
        "y": 3,
        "label": {
-        "fr": "pansement",
-        "en": "bandage"
+        "fr": "img:bandage",
+        "en": "img:bandage"
        }
       },
       {
        "x": 3,
        "y": 3,
        "label": {
-        "fr": "pansement",
-        "en": "bandage"
+        "fr": "img:bandage",
+        "en": "img:bandage"
        }
       },
       {
        "x": 4,
        "y": 3,
        "label": {
-        "fr": "pansement",
-        "en": "bandage"
+        "fr": "img:bandage",
+        "en": "img:bandage"
        }
       },
       {
        "x": 5,
        "y": 3,
        "label": {
-        "fr": "pansement",
-        "en": "bandage"
+        "fr": "img:bandage",
+        "en": "img:bandage"
        }
       },
       {
        "x": 6,
        "y": 3,
        "label": {
-        "fr": "pansement",
-        "en": "bandage"
+        "fr": "img:bandage",
+        "en": "img:bandage"
        }
       }
      ]
@@ -4970,7 +9120,17 @@
      "role": "scene",
      "asset": "a_9ad2d33dcc8c509dde96"
     }
-   ]
+   ],
+   "reaction": {
+    "right": {
+     "fr": "3 rangées de 6 pansements : 18 sur le plateau.",
+     "en": "3 rows of 6 bandages: 18 on the tray."
+    },
+    "wrong": {
+     "fr": "Compte une rangée, puis multiplie par le nombre de rangées.",
+     "en": "Count one row, then multiply by the number of rows."
+    }
+   }
   },
   {
    "id": "medecine.pansements.014",
@@ -5033,7 +9193,37 @@
      "role": "scene",
      "asset": "a_9ad2d33dcc8c509dde96"
     }
-   ]
+   ],
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Boîtes",
+      "en": "Boxes"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "boîtes de 19 pansements",
+        "en": "boxes of 19 bandages"
+       },
+       "count": 6,
+       "icon": "bandage"
+      }
+     ]
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "6 boîtes de 19 pansements : environ 120 pansements.",
+     "en": "6 boxes of 19 bandages: about 120 bandages."
+    },
+    "wrong": {
+     "fr": "Arrondis 19 à 20, puis multiplie par 6.",
+     "en": "Round 19 to 20, then multiply by 6."
+    }
+   }
   }
  ]
 }

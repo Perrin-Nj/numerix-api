@@ -1,0 +1,14 @@
+.git
+.idea
+.github
+bin
+data
+tools
+docs
+**/*.db
+**/*.db-wal
+**/*.db-shm
+**/*.exe
+**/*.log
+deploy/local/.secrets
+seed/feed-media

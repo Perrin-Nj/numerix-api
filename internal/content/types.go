@@ -81,6 +81,13 @@ type Visual struct {
 	Data map[string]any `json:"data,omitempty"`
 }
 
+// Reaction is the story line shown after an answer: one for a right answer, one for a miss.
+// (Spring: a small @Embeddable value object.)
+type Reaction struct {
+	Right LText `json:"right"`
+	Wrong LText `json:"wrong"`
+}
+
 // Choice is one option of a choice/estimate question.
 type Choice struct {
 	ID            string `json:"id"`
@@ -193,6 +200,7 @@ type Question struct {
 	CommonErrors []CommonError `json:"common_errors,omitempty"`
 	Hint         LText         `json:"hint"`
 	Explain      LText         `json:"explain"`
+	Reaction     *Reaction     `json:"reaction,omitempty"` // what the story says after the answer, written for this question
 	Tags         []string      `json:"tags,omitempty"`
 	Media        []Media       `json:"media,omitempty"`
 	Status       string        `json:"status"`

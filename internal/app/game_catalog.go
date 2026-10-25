@@ -157,6 +157,9 @@ func (s *Server) GetJourney(ctx context.Context, req api.GetJourneyRequestObject
 		}
 	}
 	rest := g.graph.ByWorld(world)
+	if g.graph.IsBankOnly(world) {
+		rest = nil // a written-questions world shows only its quests, never generated chapters
+	}
 	slices.SortStableFunc(rest, func(a, b string) int { // earliest school year first, then id
 		sa, _ := g.graph.Get(a)
 		sb, _ := g.graph.Get(b)
@@ -186,6 +189,8 @@ func (s *Server) GetJourney(ctx context.Context, req api.GetJourneyRequestObject
 			n.State = api.NodeStateLocked
 			reason := api.Grade // locked_reason is a pointer: nil means "absent" in the JSON (Spring: a nullable field)
 			n.LockedReason = &reason
+		} else if n.State == api.NodeStateLocked && g.graph.IsBankOnly(world) {
+			n.State = api.NodeStateAvailable // every quest of a written-questions world is open from the start
 		} else if n.State == api.NodeStateLocked {
 			reason := api.Prerequisites
 			n.LockedReason = &reason

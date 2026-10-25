@@ -52,6 +52,8 @@ type Config struct {
 	MongoDB            string        // MONGODB_DB: database name (default numerix)
 	MongoPseudoSecret  string        // MONGO_PSEUDO_SECRET: HMAC key for pseudonymous ids (min 32 chars when MONGODB_URI is set)
 	AssetBaseURL       string        // ASSET_BASE_URL: path prefix of image URLs sent to clients (default /assets, rewritten by the web app to /v1/assets)
+	MediaOptimize      bool          // MEDIA_OPTIMIZE: shrink the media files once at start-up (default on; skipped when ffmpeg is missing)
+	FFmpegBin          string        // FFMPEG_BIN: the ffmpeg program (default "ffmpeg")
 	MediaDir           string        // MEDIA_DIR: folder with the Discover media files (videos, photos, captions); default ./seed/feed-media
 	MediaBaseURL       string        // MEDIA_BASE_URL: path prefix of Discover media URLs sent to clients (default /feed-media, rewritten by the web app to /v1/feed-media)
 }
@@ -106,6 +108,8 @@ func Load(getenv func(string) string) (Config, error) {
 		MongoDB:            get("MONGODB_DB", "numerix"),
 		MongoPseudoSecret:  get("MONGO_PSEUDO_SECRET", ""),
 		AssetBaseURL:       strings.TrimRight(get("ASSET_BASE_URL", "/assets"), "/"),
+		MediaOptimize:      get("MEDIA_OPTIMIZE", "true") != "false",
+		FFmpegBin:          get("FFMPEG_BIN", "ffmpeg"),
 		MediaDir:           get("MEDIA_DIR", "./seed/feed-media"),
 		MediaBaseURL:       strings.TrimRight(get("MEDIA_BASE_URL", "/feed-media"), "/"),
 	}

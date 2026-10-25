@@ -25,7 +25,7 @@ func Choose(gr *Graph, prof *Profile, world string, grade int, g *RNG, now time.
 	}
 	var inWorld []string
 	for _, id := range gr.ByWorld(world) {
-		if s, _ := gr.Get(id); s.YearIntro <= grade && gr.PlayableFor(world, id, grade) { // only chapters this grade can really be served
+		if s, _ := gr.Get(id); (s.YearIntro <= grade || gr.IsBankOnly(world)) && gr.PlayableFor(world, id, grade) { // only chapters this grade can really be served
 			inWorld = append(inWorld, id)
 		}
 	}

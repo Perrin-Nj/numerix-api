@@ -297,10 +297,26 @@ func (s *Server) CreateChildToken(ctx context.Context, req api.CreateChildTokenR
 
 // ───────────── Settings ─────────────
 
+// enabledWorlds returns the worlds a child may play: the saved enabled_worlds, or plDefaultWorlds when nothing is saved.
+// (Spring: a repository read plus a default, used by every screen that lists worlds.)
+func (s *Server) enabledWorlds(ctx context.Context, childID string) []string {
+	var raw string
+	if s.Store.R.QueryRowContext(ctx, `SELECT json FROM child_settings WHERE child_id = ?`, childID).Scan(&raw) != nil {
+		return plDefaultWorlds // no settings row yet
+	}
+	var st struct {
+		Worlds []string `json:"enabled_worlds"` // same JSON key the settings API stores
+	}
+	if json.Unmarshal([]byte(raw), &st) != nil || len(st.Worlds) == 0 {
+		return plDefaultWorlds
+	}
+	return st.Worlds
+}
+
 // plDefaultSettings are the settings of a new child (daily limit from the platform default).
 func (s *Server) plDefaultSettings(ctx context.Context) api.ChildSettings {
-	worlds := make([]api.WorldId, len(plWorldIDs))
-	for i, w := range plWorldIDs {
+	worlds := make([]api.WorldId, len(plDefaultWorlds)) // only the focus worlds start enabled
+	for i, w := range plDefaultWorlds {
 		worlds[i] = api.WorldId(w)
 	}
 	var limit *int

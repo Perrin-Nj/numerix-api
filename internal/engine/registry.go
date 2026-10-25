@@ -6,6 +6,7 @@ import (
 	"errors"
 	"fmt"
 	"slices"
+	"strings"
 	"sync"
 )
 
@@ -82,6 +83,7 @@ type Graph struct {
 	bank        map[string]int         // "world|skill" -> published bank questions
 	bankGrade   map[string]map[int]int // "world|skill" -> published questions per question grade
 	questWorlds map[string][]string    // skill -> worlds that have a quest for it (any number of questions)
+	bankOnly    map[string]bool        // worlds that play only their written questions: no generated chapter, no school-year or prerequisite lock
 }
 
 // SetBank replaces the bank overlay (called when the question bank changed).
@@ -125,12 +127,61 @@ func (gr *Graph) IsImplemented(id string) bool {
 	return gr.implemented(id)
 }
 
+// SetBankOnly names the worlds that play only their written bank questions (Spring: a setting read at start-up).
+func (gr *Graph) SetBankOnly(worlds ...string) {
+	gr.mu.Lock()
+	defer gr.mu.Unlock()
+	gr.bankOnly = map[string]bool{}
+	for _, w := range worlds {
+		gr.bankOnly[w] = true
+	}
+}
+
+// IsBankOnly reports whether a world plays only its written questions.
+func (gr *Graph) IsBankOnly(world string) bool {
+	gr.mu.RLock()
+	defer gr.mu.RUnlock()
+	return gr.bankOnlyNow(world)
+}
+
+// bankOnlyNow is IsBankOnly with the lock held. A world counts as written-questions only once its bank is loaded
+// (an empty database must still be playable with generated chapters).
+func (gr *Graph) bankOnlyNow(world string) bool {
+	if !gr.bankOnly[world] {
+		return false
+	}
+	for key, perGrade := range gr.bankGrade {
+		if strings.HasPrefix(key, world+"|") {
+			n := 0
+			for _, c := range perGrade {
+				n += c
+			}
+			if n >= MinBankQuestions {
+				return true
+			}
+		}
+	}
+	return false
+}
+
+// bankAny counts the published bank questions of a quest for any school year.
+func (gr *Graph) bankAny(world, id string) int {
+	n := 0
+	for _, c := range gr.bankGrade[world+"|"+id] {
+		n += c
+	}
+	return n
+}
+
 // PlayableIn reports whether a chapter of this skill can be served in this world: a generator exists (it works in
 // any world) or the world has enough published bank questions for it.
 func (gr *Graph) PlayableIn(world, id string) bool {
 	gr.mu.RLock()
 	defer gr.mu.RUnlock()
 	s, ok := gr.skills[id]
+	if gr.bankOnlyNow(world) { // written questions only, whatever the school year
+		return ok && gr.bankAny(world, id) >= MinBankQuestions
+	}
 	return ok && (s.Implementation || gr.bank[world+"|"+id] >= MinBankQuestions)
 }
 
@@ -159,6 +210,9 @@ func (gr *Graph) PlayableFor(world, id string, grade int) bool {
 	gr.mu.RLock()
 	defer gr.mu.RUnlock()
 	s, ok := gr.skills[id]
+	if gr.bankOnlyNow(world) {
+		return ok && gr.bankAny(world, id) >= MinBankQuestions
+	}
 	return ok && (s.Implementation || gr.bankFor(world, id, grade) >= MinBankQuestions)
 }
 

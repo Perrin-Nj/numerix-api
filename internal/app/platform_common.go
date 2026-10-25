@@ -32,9 +32,12 @@ const plDay = 24 * time.Hour
 // plMaxChildren is the family limit (contract: at most 8 profiles per parent).
 const plMaxChildren = 8
 
-// plWorldIDs are the twenty worlds of the contract (WorldId enum). A new child starts with all of them enabled.
+// plWorldIDs are the twenty worlds of the contract (WorldId enum). A new child starts with plDefaultWorlds enabled only.
 var plWorldIDs = []string{"nature", "espace", "cuisine", "sport", "construction", "medecine", "science", "echecs",
 	"ocean", "dinosaures", "animaux", "musique", "transport", "pirates", "marche", "meteo", "robots", "arts", "hiver", "jeux"}
+
+// plDefaultWorlds are the only worlds a child can play until a parent turns more on (chess, medicine, space).
+var plDefaultWorlds = []string{"echecs", "medecine", "espace"}
 
 // plPasswordMax caps password length before argon2 runs (QA-BE-001).
 const plPasswordMax = 128

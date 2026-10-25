@@ -82,7 +82,59 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 1,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "45",
+        "en": "45"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "12",
+        "en": "12"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "78",
+        "en": "78"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "31",
+        "en": "31"
+       }
+      }
+     ],
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Du plus petit au plus grand : tes fiches sont prêtes pour le décollage.",
+     "en": "From smallest to biggest: your cards are ready for liftoff."
+    },
+    "wrong": {
+     "fr": "Compare d'abord les dizaines, puis les unités.",
+     "en": "Compare the tens first, then the ones."
+    }
+   }
   },
   {
    "id": "espace.decompte.002",
@@ -164,7 +216,59 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 1,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "50",
+        "en": "50"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "9",
+        "en": "9"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "63",
+        "en": "63"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "27",
+        "en": "27"
+       }
+      }
+     ],
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Du plus grand au plus petit : tes réservoirs sont bien en ordre.",
+     "en": "From biggest to smallest: your tanks are in the right order."
+    },
+    "wrong": {
+     "fr": "Cherche le plus grand nombre en premier, puis descends.",
+     "en": "Find the biggest number first, then go down."
+    }
+   }
   },
   {
    "id": "espace.decompte.003",
@@ -247,7 +351,59 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 1,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "120",
+        "en": "120"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "102",
+        "en": "102"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "210",
+        "en": "210"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "201",
+        "en": "201"
+       }
+      }
+     ],
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Les codes à trois chiffres sont bien rangés. Regarde les centaines, puis les dizaines !",
+     "en": "The three-digit codes are in order. Check the hundreds, then the tens!"
+    },
+    "wrong": {
+     "fr": "Compare les centaines d'abord. S'il y a égalité, regarde les dizaines.",
+     "en": "Compare the hundreds first. If they match, look at the tens."
+    }
+   }
   },
   {
    "id": "espace.decompte.004",
@@ -307,7 +463,47 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 30,
+     "max": 50,
+     "step": 1,
+     "labels": [
+      30,
+      35,
+      40,
+      45,
+      50
+     ],
+     "arrow": 39,
+     "theme": "space",
+     "revealArrow": true,
+     "after": {
+      "hops": [
+       {
+        "from": 39,
+        "to": 40,
+        "label": {
+         "fr": "+1",
+         "en": "+1"
+        }
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Après 39, c'est 40. Léa lit bien la fiche de lancement.",
+     "en": "After 39 comes 40. Léa reads the launch card well."
+    },
+    "wrong": {
+     "fr": "Ajoute 1 à 39. La dizaine change !",
+     "en": "Add 1 to 39. The tens change!"
+    }
+   }
   },
   {
    "id": "espace.decompte.005",
@@ -367,7 +563,47 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 60,
+     "max": 80,
+     "step": 1,
+     "labels": [
+      60,
+      65,
+      70,
+      75,
+      80
+     ],
+     "arrow": 70,
+     "theme": "space",
+     "revealArrow": true,
+     "after": {
+      "hops": [
+       {
+        "from": 70,
+        "to": 69,
+        "label": {
+         "fr": "−1",
+         "en": "−1"
+        }
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Juste avant 70, c'est 69. Noah a retrouvé sa fiche.",
+     "en": "Just before 70 is 69. Noah found his card."
+    },
+    "wrong": {
+     "fr": "Enlève 1 à 70 et compte à reculons.",
+     "en": "Take 1 from 70 and count backwards."
+    }
+   }
   },
   {
    "id": "espace.decompte.006",
@@ -427,7 +663,33 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 80,
+     "max": 90,
+     "step": 1,
+     "labels": [
+      80,
+      84,
+      86,
+      90
+     ],
+     "theme": "space",
+     "revealArrow": true
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Entre 84 et 86, la fiche tombée porte le 85.",
+     "en": "Between 84 and 86, the fallen card says 85."
+    },
+    "wrong": {
+     "fr": "Compte 84, puis le nombre suivant, puis 86.",
+     "en": "Count 84, then the next number, then 86."
+    }
+   }
   },
   {
    "id": "espace.decompte.007",
@@ -505,7 +767,34 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 0,
+     "max": 100,
+     "step": 10,
+     "labels": [
+      0,
+      20,
+      40,
+      60,
+      80,
+      100
+     ],
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Tu as trouvé la fusée qui porte le plus grand numéro.",
+     "en": "You found the rocket with the biggest number."
+    },
+    "wrong": {
+     "fr": "Compare les dizaines de chaque numéro. La plus grande gagne.",
+     "en": "Compare the tens of each number. The biggest wins."
+    }
+   }
   },
   {
    "id": "espace.decompte.008",
@@ -579,7 +868,34 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 0,
+     "max": 100,
+     "step": 10,
+     "labels": [
+      0,
+      20,
+      40,
+      60,
+      80,
+      100
+     ],
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Même quand les nombres se ressemblent, tu trouves le plus grand.",
+     "en": "Even when the numbers look alike, you find the biggest."
+    },
+    "wrong": {
+     "fr": "Compare les dizaines, puis les unités si besoin.",
+     "en": "Compare the tens, then the ones if you need to."
+    }
+   }
   },
   {
    "id": "espace.decompte.009",
@@ -656,7 +972,33 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 90,
+     "max": 105,
+     "step": 1,
+     "labels": [
+      90,
+      95,
+      99,
+      105
+     ],
+     "theme": "space",
+     "revealArrow": true
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Après 99, c'est 100. Les numéros continuent !",
+     "en": "After 99 comes 100. The numbers keep going!"
+    },
+    "wrong": {
+     "fr": "Ajoute 1 à 99. Une nouvelle centaine commence.",
+     "en": "Add 1 to 99. A new hundred begins."
+    }
+   }
   },
   {
    "id": "espace.decompte.010",
@@ -700,7 +1042,43 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 2,
+     "rows": 1,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "62",
+        "en": "62"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "26",
+        "en": "26"
+       }
+      }
+     ],
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "62 est plus grand que 26. Le technicien se trompait.",
+     "en": "62 is bigger than 26. The technician was mistaken."
+    },
+    "wrong": {
+     "fr": "Compare les dizaines : 6 et 2. Laquelle est la plus grande ?",
+     "en": "Compare the tens: 6 and 2. Which one is bigger?"
+    }
+   }
   },
   {
    "id": "espace.decompte.011",
@@ -821,7 +1199,59 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 1,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "19",
+        "en": "19"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "49",
+        "en": "49"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "99",
+        "en": "99"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "59",
+        "en": "59"
+       }
+      }
+     ],
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Chaque nombre a trouvé celui qui vient juste après.",
+     "en": "Each number found the one that comes right after."
+    },
+    "wrong": {
+     "fr": "Ajoute 1 à chaque nombre. Fais attention aux changements de dizaine.",
+     "en": "Add 1 to each number. Watch out when the tens change."
+    }
+   }
   },
   {
    "id": "espace.decompte.012",
@@ -881,7 +1311,44 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Fiches",
+      "en": "Cards"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "piles de 10",
+        "en": "piles of 10"
+       },
+       "count": 6
+      },
+      {
+       "label": {
+        "fr": "fiches seules",
+        "en": "single cards"
+       },
+       "count": 5
+      }
+     ],
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "6 piles de 10 et 5 fiches seules : 65 fiches en tout.",
+     "en": "6 piles of 10 and 5 single cards: 65 cards in all."
+    },
+    "wrong": {
+     "fr": "Compte les dizaines d'abord, puis ajoute les fiches seules.",
+     "en": "Count the tens first, then add the single cards."
+    }
+   }
   },
   {
    "id": "espace.decompte.013",
@@ -904,7 +1371,8 @@
      "min": 40,
      "max": 50,
      "step": 1,
-     "arrow": 47
+     "arrow": 47,
+     "theme": "space"
     }
    },
    "answer": {
@@ -954,7 +1422,17 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "reaction": {
+    "right": {
+     "fr": "La flèche est sur le 47. Tu lis bien la droite numérique.",
+     "en": "The arrow is on 47. You read the number line well."
+    },
+    "wrong": {
+     "fr": "Pars du dernier nombre écrit avant la flèche et compte les traits.",
+     "en": "Start from the last written number before the arrow and count the ticks."
+    }
+   }
   },
   {
    "id": "espace.decompte.014",
@@ -1033,7 +1511,32 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 50,
+     "max": 70,
+     "step": 1,
+     "labels": [
+      50,
+      60,
+      70
+     ],
+     "arrow": 59,
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "59 est tout près de 60 : c'est la dizaine la plus proche.",
+     "en": "59 is very close to 60: it is the nearest ten."
+    },
+    "wrong": {
+     "fr": "Regarde le nombre d'unités. Est-ce que 59 est plus près de 50 ou de 60 ?",
+     "en": "Look at the ones. Is 59 closer to 50 or to 60?"
+    }
+   }
   },
   {
    "id": "espace.fusee.001",
@@ -1097,7 +1600,42 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "style": "vial",
+     "max": 70,
+     "segments": [
+      {
+       "value": 45,
+       "tone": "a"
+      }
+     ],
+     "unit": {
+      "fr": "bidons",
+      "en": "cans"
+     },
+     "after": {
+      "segments": [
+       {
+        "value": 20,
+        "tone": "good"
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "45 bidons plus 20 bidons : la fusée en a 65.",
+     "en": "45 cans plus 20 cans: the rocket has 65."
+    },
+    "wrong": {
+     "fr": "Ajoute les 20 bidons aux 45 déjà là.",
+     "en": "Add the 20 cans to the 45 already there."
+    }
+   }
   },
   {
    "id": "espace.fusee.002",
@@ -1157,7 +1695,41 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "style": "vial",
+     "max": 60,
+     "segments": [
+      {
+       "value": 34,
+       "tone": "a"
+      },
+      {
+       "value": 25,
+       "tone": "b"
+      }
+     ],
+     "unit": {
+      "fr": "litres",
+      "en": "litres"
+     },
+     "after": {
+      "segments": []
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "34 L et 25 L font 59 L de carburant.",
+     "en": "34 L and 25 L make 59 L of fuel."
+    },
+    "wrong": {
+     "fr": "Additionne les dizaines, puis les unités.",
+     "en": "Add the tens, then the ones."
+    }
+   }
   },
   {
    "id": "espace.fusee.003",
@@ -1218,7 +1790,41 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "style": "vial",
+     "max": 90,
+     "segments": [
+      {
+       "value": 48,
+       "tone": "a"
+      },
+      {
+       "value": 37,
+       "tone": "b"
+      }
+     ],
+     "unit": {
+      "fr": "bouteilles",
+      "en": "bottles"
+     },
+     "after": {
+      "segments": []
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "48 et 37 bouteilles : les camions ont apporté 85 bouteilles d'oxygène.",
+     "en": "48 and 37 bottles: the trucks brought 85 bottles of oxygen."
+    },
+    "wrong": {
+     "fr": "Additionne les deux livraisons. Pense à la retenue.",
+     "en": "Add the two deliveries. Remember the carry."
+    }
+   }
   },
   {
    "id": "espace.fusee.004",
@@ -1279,7 +1885,45 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Litres",
+      "en": "Litres"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "eau",
+        "en": "water"
+       },
+       "value": 83,
+       "icon": "water-drop"
+      },
+      {
+       "label": {
+        "fr": "bue",
+        "en": "drunk"
+       },
+       "value": 47
+      }
+     ],
+     "max": 90,
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "83 L moins 47 L : il reste 36 L d'eau potable.",
+     "en": "83 L minus 47 L: 36 L of drinking water are left."
+    },
+    "wrong": {
+     "fr": "Enlève 47 L aux 83 L. Pense à l'emprunt.",
+     "en": "Take 47 L from 83 L. Remember to borrow."
+    }
+   }
   },
   {
    "id": "espace.fusee.005",
@@ -1343,7 +1987,44 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Litres",
+      "en": "Litres"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "réservoir",
+        "en": "tank"
+       },
+       "value": 60
+      },
+      {
+       "label": {
+        "fr": "utilisés",
+        "en": "used"
+       },
+       "value": 25
+      }
+     ],
+     "max": 60,
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "60 L moins 25 L : il reste 35 L après le décollage.",
+     "en": "60 L minus 25 L: 35 L are left after liftoff."
+    },
+    "wrong": {
+     "fr": "Enlève les 25 L utilisés aux 60 L du réservoir.",
+     "en": "Take the 25 L used from the 60 L in the tank."
+    }
+   }
   },
   {
    "id": "espace.fusee.006",
@@ -1404,7 +2085,46 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Équipage",
+      "en": "Crew"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "équipage",
+        "en": "crew"
+       },
+       "count": 12,
+       "icon": "person-man"
+      },
+      {
+       "label": {
+        "fr": "sortie dans l’espace",
+        "en": "spacewalk"
+       },
+       "count": 5,
+       "icon": "rocket"
+      }
+     ],
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "12 moins 5 : 7 personnes restent dans la station.",
+     "en": "12 minus 5: 7 people stay in the station."
+    },
+    "wrong": {
+     "fr": "Cinq personnes sortent. Enlève-les à l'équipage de 12.",
+     "en": "Five people go out. Take them from the crew of 12."
+    }
+   }
   },
   {
    "id": "espace.fusee.007",
@@ -1465,7 +2185,52 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Litres",
+      "en": "Litres"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "eau",
+        "en": "water"
+       },
+       "value": 128,
+       "icon": "water-drop"
+      },
+      {
+       "label": {
+        "fr": "utilisés",
+        "en": "used"
+       },
+       "value": 45
+      },
+      {
+       "label": {
+        "fr": "ajoutés",
+        "en": "added"
+       },
+       "value": 30
+      }
+     ],
+     "max": 130,
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "128 moins 45, plus 30 : la fusée finit avec 113 L.",
+     "en": "128 minus 45, plus 30: the rocket ends with 113 L."
+    },
+    "wrong": {
+     "fr": "Enlève d'abord 45 L, puis ajoute 30 L.",
+     "en": "First take away 45 L, then add 30 L."
+    }
+   }
   },
   {
    "id": "espace.fusee.008",
@@ -1546,7 +2311,42 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "style": "vial",
+     "max": 60,
+     "segments": [
+      {
+       "value": 38,
+       "tone": "a"
+      }
+     ],
+     "unit": {
+      "fr": "litres",
+      "en": "litres"
+     },
+     "after": {
+      "segments": [
+       {
+        "value": 20,
+        "tone": "good"
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "38 L plus 20 L : le réservoir contient 58 L.",
+     "en": "38 L plus 20 L: the tank holds 58 L."
+    },
+    "wrong": {
+     "fr": "Ajoute les 20 L aux 38 L.",
+     "en": "Add the 20 L to the 38 L."
+    }
+   }
   },
   {
    "id": "espace.fusee.009",
@@ -1623,7 +2423,46 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "km",
+      "en": "km"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "trajet",
+        "en": "trip"
+       },
+       "value": 92,
+       "icon": "rocket"
+      },
+      {
+       "label": {
+        "fr": "module",
+        "en": "module"
+       },
+       "value": 38,
+       "icon": "rocket"
+      }
+     ],
+     "max": 100,
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "92 km moins 38 km : il reste 54 km au module.",
+     "en": "92 km minus 38 km: 54 km are left for the module."
+    },
+    "wrong": {
+     "fr": "Enlève les 38 km déjà faits aux 92 km du trajet.",
+     "en": "Take the 38 km already done from the 92 km trip."
+    }
+   }
   },
   {
    "id": "espace.fusee.010",
@@ -1670,7 +2509,32 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 50,
+     "max": 60,
+     "step": 1,
+     "labels": [
+      50,
+      55,
+      60
+     ],
+     "arrow": 60,
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "60 moins 8 donne 52, pas 54. Zoé a fait une petite erreur.",
+     "en": "60 minus 8 gives 52, not 54. Zoé made a small mistake."
+    },
+    "wrong": {
+     "fr": "Refais 60 moins 8 sur une droite numérique.",
+     "en": "Redo 60 minus 8 on a number line."
+    }
+   }
   },
   {
    "id": "espace.fusee.011",
@@ -1756,7 +2620,59 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 1,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "35 + 20",
+        "en": "35 + 20"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "80 - 30",
+        "en": "80 - 30"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "29 + 29",
+        "en": "29 + 29"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "100 - 41",
+        "en": "100 - 41"
+       }
+      }
+     ],
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Tes calculs sont rangés du plus petit au plus grand résultat.",
+     "en": "Your sums are in order from the smallest to the biggest result."
+    },
+    "wrong": {
+     "fr": "Fais chaque calcul d'abord, puis compare les résultats.",
+     "en": "Work out each sum first, then compare the results."
+    }
+   }
   },
   {
    "id": "espace.fusee.012",
@@ -1881,7 +2797,59 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 1,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "30 + 40",
+        "en": "30 + 40"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "90 - 50",
+        "en": "90 - 50"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "25 + 25",
+        "en": "25 + 25"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "65 - 5",
+        "en": "65 - 5"
+       }
+      }
+     ],
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Chaque calcul de tête a trouvé son résultat.",
+     "en": "Each mental sum found its answer."
+    },
+    "wrong": {
+     "fr": "Fais chaque calcul dans ta tête, puis cherche le résultat.",
+     "en": "Do each sum in your head, then look for the answer."
+    }
+   }
   },
   {
    "id": "espace.fusee.013",
@@ -1911,24 +2879,28 @@
         "fr": "A",
         "en": "A"
        },
-       "value": 45
+       "value": 45,
+       "icon": "rocket"
       },
       {
        "label": {
         "fr": "B",
         "en": "B"
        },
-       "value": 30
+       "value": 30,
+       "icon": "rocket"
       },
       {
        "label": {
         "fr": "C",
         "en": "C"
        },
-       "value": 25
+       "value": 25,
+       "icon": "rocket"
       }
      ],
-     "max": 50
+     "max": 50,
+     "theme": "space"
     }
    },
    "answer": {
@@ -1979,7 +2951,17 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "reaction": {
+    "right": {
+     "fr": "45 plus 30 plus 25 : les trois réservoirs contiennent 100 L.",
+     "en": "45 plus 30 plus 25: the three tanks hold 100 L."
+    },
+    "wrong": {
+     "fr": "Lis chaque barre, puis additionne les trois réservoirs.",
+     "en": "Read each bar, then add the three tanks."
+    }
+   }
   },
   {
    "id": "espace.fusee.014",
@@ -2037,7 +3019,44 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "Litres",
+      "en": "Litres"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "réservoir 1",
+        "en": "tank 1"
+       },
+       "value": 49
+      },
+      {
+       "label": {
+        "fr": "réservoir 2",
+        "en": "tank 2"
+       },
+       "value": 52
+      }
+     ],
+     "max": 55,
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "49 et 52 font environ 100 L ensemble.",
+     "en": "49 and 52 make about 100 L together."
+    },
+    "wrong": {
+     "fr": "Arrondis 49 à 50 et 52 à 50, puis additionne.",
+     "en": "Round 49 to 50 and 52 to 50, then add."
+    }
+   }
   },
   {
    "id": "espace.orbites.001",
@@ -2098,7 +3117,123 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 3,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      }
+     ],
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "3 rangées de 4 panneaux : la station en a 12.",
+     "en": "3 rows of 4 panels: the station has 12."
+    },
+    "wrong": {
+     "fr": "Compte les panneaux d'une rangée, puis répète pour chaque rangée.",
+     "en": "Count the panels in one row, then repeat for each row."
+    }
+   }
   },
   {
    "id": "espace.orbites.002",
@@ -2159,7 +3294,227 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 5,
+     "rows": 5,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 5,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 5,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 5,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 5,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 5,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      }
+     ],
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "5 rangées de 5 panneaux : l'aile en compte 25.",
+     "en": "5 rows of 5 panels: the wing has 25."
+    },
+    "wrong": {
+     "fr": "Il y a 5 panneaux par rangée. Compte cinq rangées.",
+     "en": "There are 5 panels per row. Count five rows."
+    }
+   }
   },
   {
    "id": "espace.orbites.003",
@@ -2220,7 +3575,219 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 6,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      }
+     ],
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "6 rangées de 4 panneaux : ce côté en compte 24.",
+     "en": "6 rows of 4 panels: this side has 24."
+    },
+    "wrong": {
+     "fr": "Compte de 4 en 4 : 4, 8, 12, 16, 20, 24.",
+     "en": "Count in 4s: 4, 8, 12, 16, 20, 24."
+    }
+   }
   },
   {
    "id": "espace.orbites.004",
@@ -2281,7 +3848,411 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 6,
+     "rows": 8,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 5,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 6,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 5,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 6,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 5,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 6,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 5,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 6,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 5,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 6,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 5,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 6,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 7,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 7,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 7,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 7,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 5,
+       "y": 7,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 6,
+       "y": 7,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 8,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 8,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 8,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 8,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 5,
+       "y": 8,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 6,
+       "y": 8,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      }
+     ],
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "8 rangées de 6 panneaux : le champ solaire en a 48.",
+     "en": "8 rows of 6 panels: the solar field has 48."
+    },
+    "wrong": {
+     "fr": "Compte de 6 en 6, huit fois.",
+     "en": "Count in 6s, eight times."
+    }
+   }
   },
   {
    "id": "espace.orbites.005",
@@ -2346,7 +4317,315 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 9,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 7,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 7,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 7,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 7,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 8,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 8,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 8,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 8,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 9,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 9,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 9,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 9,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      }
+     ],
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "9 rangées de 4 panneaux : le satellite en a 36.",
+     "en": "9 rows of 4 panels: the satellite has 36."
+    },
+    "wrong": {
+     "fr": "Chaque rangée a 4 panneaux. Compte 9 rangées.",
+     "en": "Each row has 4 panels. Count 9 rows."
+    }
+   }
   },
   {
    "id": "espace.orbites.006",
@@ -2407,7 +4686,475 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 8,
+     "rows": 7,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 5,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 6,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 7,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 8,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 5,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 6,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 7,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 8,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 5,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 6,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 7,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 8,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 5,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 6,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 7,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 8,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 5,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 6,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 7,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 8,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 5,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 6,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 7,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 8,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 7,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 7,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 7,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 7,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 5,
+       "y": 7,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 6,
+       "y": 7,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 7,
+       "y": 7,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 8,
+       "y": 7,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      }
+     ],
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "7 rangées de 8 panneaux : le grand module en a 56.",
+     "en": "7 rows of 8 panels: the big module has 56."
+    },
+    "wrong": {
+     "fr": "Compte de 8 en 8, sept fois.",
+     "en": "Count in 8s, seven times."
+    }
+   }
   },
   {
    "id": "espace.orbites.007",
@@ -2468,7 +5215,54 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Panneaux",
+      "en": "Panels"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "ailes",
+        "en": "wings"
+       },
+       "count": 2,
+       "icon": "solar-panel"
+      },
+      {
+       "label": {
+        "fr": "rangées par aile",
+        "en": "rows per wing"
+       },
+       "count": 4,
+       "icon": "solar-panel"
+      },
+      {
+       "label": {
+        "fr": "panneaux par rangée",
+        "en": "panels per row"
+       },
+       "count": 6,
+       "icon": "solar-panel"
+      }
+     ],
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "2 ailes de 4 rangées de 6 : 48 panneaux sur les deux ailes.",
+     "en": "2 wings of 4 rows of 6: 48 panels on both wings."
+    },
+    "wrong": {
+     "fr": "Calcule une aile, 4 fois 6. Puis double.",
+     "en": "Work out one wing, 4 times 6. Then double it."
+    }
+   }
   },
   {
    "id": "espace.orbites.008",
@@ -2533,7 +5327,243 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 3,
+     "rows": 9,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 7,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 7,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 7,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 8,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 8,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 8,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 9,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 9,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 9,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      }
+     ],
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "9 rangées de 3 panneaux : le satellite en porte 27.",
+     "en": "9 rows of 3 panels: the satellite carries 27."
+    },
+    "wrong": {
+     "fr": "Chaque rangée a 3 panneaux. Compte 9 rangées.",
+     "en": "Each row has 3 panels. Count 9 rows."
+    }
+   }
   },
   {
    "id": "espace.orbites.009",
@@ -2607,7 +5637,219 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 6,
+     "rows": 4,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 5,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 6,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 5,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 6,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 5,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 6,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 5,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 6,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      }
+     ],
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "4 rangées de 6 panneaux : tu as trouvé la bonne multiplication.",
+     "en": "4 rows of 6 panels: you found the right multiplication."
+    },
+    "wrong": {
+     "fr": "Des rangées égales, ça se multiplie. Combien de rangées, combien par rangée ?",
+     "en": "Equal rows are multiplied. How many rows, how many per row?"
+    }
+   }
   },
   {
    "id": "espace.orbites.010",
@@ -2685,7 +5927,363 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 7,
+     "rows": 6,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 5,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 6,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 7,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 5,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 6,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 7,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 5,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 6,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 7,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 5,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 6,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 7,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 5,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 6,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 7,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 5,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 6,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 7,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      }
+     ],
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "6 fois 7 font 42. Le chef de mission sera content !",
+     "en": "6 times 7 is 42. The mission chief will be pleased!"
+    },
+    "wrong": {
+     "fr": "Compte de 7 en 7, six fois.",
+     "en": "Count in 7s, six times."
+    }
+   }
   },
   {
    "id": "espace.orbites.011",
@@ -2729,7 +6327,251 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 7,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 2,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 3,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 4,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 5,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 6,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 1,
+       "y": 7,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 2,
+       "y": 7,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 3,
+       "y": 7,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      },
+      {
+       "x": 4,
+       "y": 7,
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
+      }
+     ],
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "7 rangées de 4 font 28, pas 24. Théo se trompait.",
+     "en": "7 rows of 4 make 28, not 24. Théo was mistaken."
+    },
+    "wrong": {
+     "fr": "Refais le calcul : 7 fois 4, compte de 4 en 4.",
+     "en": "Do the sum again: 7 times 4, count in 4s."
+    }
+   }
   },
   {
    "id": "espace.orbites.012",
@@ -2811,7 +6653,59 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 1,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "3 x 8",
+        "en": "3 x 8"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "5 x 5",
+        "en": "5 x 5"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "4 x 7",
+        "en": "4 x 7"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "9 x 2",
+        "en": "9 x 2"
+       }
+      }
+     ],
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Les ailes vont de la moins fournie à la plus fournie en panneaux.",
+     "en": "The wings are in order from the fewest panels to the most."
+    },
+    "wrong": {
+     "fr": "Calcule chaque multiplication, puis compare les résultats.",
+     "en": "Work out each multiplication, then compare the results."
+    }
+   }
   },
   {
    "id": "espace.orbites.013",
@@ -2932,7 +6826,59 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 1,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "3 x 4",
+        "en": "3 x 4"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "5 x 6",
+        "en": "5 x 6"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "7 x 7",
+        "en": "7 x 7"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "8 x 3",
+        "en": "8 x 3"
+       }
+      }
+     ],
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Chaque multiplication a trouvé son produit. Beau tableau !",
+     "en": "Each multiplication found its product. A great table!"
+    },
+    "wrong": {
+     "fr": "Calcule chaque multiplication, puis cherche son produit.",
+     "en": "Work out each multiplication, then look for its product."
+    }
+   }
   },
   {
    "id": "espace.orbites.014",
@@ -2958,79 +6904,125 @@
       {
        "x": 0,
        "y": 0,
-       "label": "P"
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
       },
       {
        "x": 1,
        "y": 0,
-       "label": "P"
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
       },
       {
        "x": 2,
        "y": 0,
-       "label": "P"
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
       },
       {
        "x": 3,
        "y": 0,
-       "label": "P"
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
       },
       {
        "x": 4,
        "y": 0,
-       "label": "P"
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
       },
       {
        "x": 0,
        "y": 1,
-       "label": "P"
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
       },
       {
        "x": 1,
        "y": 1,
-       "label": "P"
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
       },
       {
        "x": 2,
        "y": 1,
-       "label": "P"
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
       },
       {
        "x": 3,
        "y": 1,
-       "label": "P"
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
       },
       {
        "x": 4,
        "y": 1,
-       "label": "P"
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
       },
       {
        "x": 0,
        "y": 2,
-       "label": "P"
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
       },
       {
        "x": 1,
        "y": 2,
-       "label": "P"
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
       },
       {
        "x": 2,
        "y": 2,
-       "label": "P"
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
       },
       {
        "x": 3,
        "y": 2,
-       "label": "P"
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
       },
       {
        "x": 4,
        "y": 2,
-       "label": "P"
+       "label": {
+        "fr": "img:solar-panel",
+        "en": "img:solar-panel"
+       }
       }
-     ]
+     ],
+     "theme": "space"
     }
    },
    "answer": {
@@ -3077,7 +7069,17 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "reaction": {
+    "right": {
+     "fr": "5 colonnes et 3 rangées : 15 panneaux sur la grille.",
+     "en": "5 columns and 3 rows: 15 panels on the grid."
+    },
+    "wrong": {
+     "fr": "Compte une rangée de points, puis multiplie par le nombre de rangées.",
+     "en": "Count one row of dots, then multiply by the number of rows."
+    }
+   }
   },
   {
    "id": "espace.orbites.015",
@@ -3131,7 +7133,46 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "pictograph",
+    "data": {
+     "title": {
+      "fr": "Champ solaire",
+      "en": "Solar field"
+     },
+     "each": 1,
+     "rows": [
+      {
+       "label": {
+        "fr": "rangées",
+        "en": "rows"
+       },
+       "count": 11,
+       "icon": "solar-panel"
+      },
+      {
+       "label": {
+        "fr": "panneaux par rangée",
+        "en": "panels per row"
+       },
+       "count": 9,
+       "icon": "solar-panel"
+      }
+     ],
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "11 rangées de 9 panneaux : environ 100 panneaux.",
+     "en": "11 rows of 9 panels: about 100 panels."
+    },
+    "wrong": {
+     "fr": "Arrondis 11 à 10 et 9 à 10, puis multiplie.",
+     "en": "Round 11 to 10 and 9 to 10, then multiply."
+    }
+   }
   },
   {
    "id": "espace.horloge.001",
@@ -3152,7 +7193,8 @@
     "kind": "clock",
     "data": {
      "hour": 3,
-     "minute": 0
+     "minute": 0,
+     "theme": "space"
     }
    },
    "choices": [
@@ -3212,7 +7254,17 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "reaction": {
+    "right": {
+     "fr": "Tu lis bien l'horloge du centre de contrôle.",
+     "en": "You read the control centre clock well."
+    },
+    "wrong": {
+     "fr": "La petite aiguille donne l'heure, la grande les minutes.",
+     "en": "The short hand gives the hour, the long one the minutes."
+    }
+   }
   },
   {
    "id": "espace.horloge.002",
@@ -3233,7 +7285,8 @@
     "kind": "clock",
     "data": {
      "hour": 7,
-     "minute": 30
+     "minute": 30,
+     "theme": "space"
     }
    },
    "choices": [
@@ -3293,7 +7346,17 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "reaction": {
+    "right": {
+     "fr": "L'équipe de nuit a la bonne heure grâce à toi.",
+     "en": "The night crew has the right time thanks to you."
+    },
+    "wrong": {
+     "fr": "Regarde la petite aiguille d'abord, puis la grande.",
+     "en": "Look at the short hand first, then the long one."
+    }
+   }
   },
   {
    "id": "espace.horloge.003",
@@ -3314,7 +7377,8 @@
     "kind": "clock",
     "data": {
      "hour": 2,
-     "minute": 45
+     "minute": 45,
+     "theme": "space"
     }
    },
    "answer": {
@@ -3361,7 +7425,17 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "reaction": {
+    "right": {
+     "fr": "La grande aiguille est sur le 9 : 45 minutes après 2 h.",
+     "en": "The long hand is on 9: 45 minutes after 2 o'clock."
+    },
+    "wrong": {
+     "fr": "Chaque nombre vaut 5 minutes. Compte de 5 en 5 depuis le 12.",
+     "en": "Each number is 5 minutes. Count in 5s from the 12."
+    }
+   }
   },
   {
    "id": "espace.horloge.004",
@@ -3382,7 +7456,8 @@
     "kind": "clock",
     "data": {
      "hour": 10,
-     "minute": 15
+     "minute": 15,
+     "theme": "space"
     }
    },
    "choices": [
@@ -3442,7 +7517,17 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "reaction": {
+    "right": {
+     "fr": "Le technicien peut partir : tu as lu la bonne heure.",
+     "en": "The technician can leave: you read the right time."
+    },
+    "wrong": {
+     "fr": "Commence par la petite aiguille, puis lis la grande.",
+     "en": "Start with the short hand, then read the long one."
+    }
+   }
   },
   {
    "id": "espace.horloge.005",
@@ -3502,7 +7587,25 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "clock",
+    "data": {
+     "hour": 12,
+     "minute": 0,
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Une heure a 60 minutes. L'équipe travaille tout ce temps.",
+     "en": "An hour has 60 minutes. The crew works all that time."
+    },
+    "wrong": {
+     "fr": "Pense à un tour complet de la grande aiguille.",
+     "en": "Think of one full turn of the long hand."
+    }
+   }
   },
   {
    "id": "espace.horloge.006",
@@ -3562,7 +7665,25 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "clock",
+    "data": {
+     "hour": 3,
+     "minute": 0,
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "3 h plus 2 heures : le test finit à 5 h.",
+     "en": "3 o'clock plus 2 hours: the test ends at 5 o'clock."
+    },
+    "wrong": {
+     "fr": "Avance de deux heures sur l'horloge à partir de 3 h.",
+     "en": "Move forward two hours on the clock from 3 o'clock."
+    }
+   }
   },
   {
    "id": "espace.horloge.007",
@@ -3622,7 +7743,68 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 9,
+     "max": 13,
+     "step": 1,
+     "labels": [
+      10,
+      11,
+      12
+     ],
+     "theme": "space",
+     "pins": [
+      {
+       "value": 10,
+       "icon": "rocket",
+       "label": {
+        "fr": "départ",
+        "en": "start"
+       }
+      },
+      {
+       "value": 12,
+       "label": {
+        "fr": "arrivée",
+        "en": "finish"
+       }
+      }
+     ],
+     "after": {
+      "hops": [
+       {
+        "from": 10,
+        "to": 11,
+        "label": {
+         "fr": "+1 h",
+         "en": "+1 h"
+        }
+       },
+       {
+        "from": 11,
+        "to": 12,
+        "label": {
+         "fr": "+1 h",
+         "en": "+1 h"
+        }
+       }
+      ]
+     }
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "De 10 h à 12 h, la vérification a duré 2 heures.",
+     "en": "From 10 to 12, the check lasted 2 hours."
+    },
+    "wrong": {
+     "fr": "Compte les heures de 10 jusqu'à 12.",
+     "en": "Count the hours from 10 up to 12."
+    }
+   }
   },
   {
    "id": "espace.horloge.008",
@@ -3701,7 +7883,35 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 1,
+     "rows": 1,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "6 h",
+        "en": "6 o’clock"
+       }
+      }
+     ],
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Pour 6 h, la grande aiguille pointe vers le 12.",
+     "en": "For 6 o'clock the long hand points to the 12."
+    },
+    "wrong": {
+     "fr": "À l'heure pile, la grande aiguille est tout en haut.",
+     "en": "On the hour the long hand is at the very top."
+    }
+   }
   },
   {
    "id": "espace.horloge.009",
@@ -3775,7 +7985,25 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "clock",
+    "data": {
+     "hour": 4,
+     "minute": 30,
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Petite aiguille entre le 4 et le 5, grande sur le 6. Il est 4 h 30.",
+     "en": "Short hand between 4 and 5, long hand on 6: it is 4:30."
+    },
+    "wrong": {
+     "fr": "La petite aiguille a passé le 4. La grande sur le 6, c'est 30 minutes.",
+     "en": "The short hand passed the 4. The long hand on 6 is 30 minutes."
+    }
+   }
   },
   {
    "id": "espace.horloge.010",
@@ -3818,7 +8046,25 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "clock",
+    "data": {
+     "hour": 2,
+     "minute": 15,
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Sur le 3, ce sont 15 minutes, pas 3 minutes. Mathis se trompait.",
+     "en": "On the 3 it is 15 minutes, not 3 minutes. Mathis was mistaken."
+    },
+    "wrong": {
+     "fr": "Chaque nombre vaut 5 minutes. Que vaut le 3 ?",
+     "en": "Each number is 5 minutes. What is the 3 worth?"
+    }
+   }
   },
   {
    "id": "espace.horloge.011",
@@ -3900,7 +8146,59 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 1,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "7 h",
+        "en": "7 h"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "3 h",
+        "en": "3 h"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "11 h",
+        "en": "11 h"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "9 h",
+        "en": "9 h"
+       }
+      }
+     ],
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "7 h, 3 h, 11 h, 9 h : tes départs sont bien rangés.",
+     "en": "7, 3, 11, 9: your departures are in the right order."
+    },
+    "wrong": {
+     "fr": "Compare les heures entre elles, de la plus petite à la plus grande.",
+     "en": "Compare the hours, from the smallest to the biggest."
+    }
+   }
   },
   {
    "id": "espace.horloge.012",
@@ -4022,7 +8320,59 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 1,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "1 h",
+        "en": "1 h"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "30 min",
+        "en": "30 min"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "15 min",
+        "en": "15 min"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "45 min",
+        "en": "45 min"
+       }
+      }
+     ],
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Chaque durée a trouvé son nombre de minutes.",
+     "en": "Each duration found its number of minutes."
+    },
+    "wrong": {
+     "fr": "Une heure fait 60 minutes. Un quart d'heure en fait 15.",
+     "en": "An hour is 60 minutes. A quarter hour is 15."
+    }
+   }
   },
   {
    "id": "espace.horloge.013",
@@ -4097,7 +8447,25 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "clock",
+    "data": {
+     "hour": 4,
+     "minute": 58,
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "4 h 58, c'est presque 5 h. Le décollage est tout proche !",
+     "en": "4:58 is almost 5 o'clock. Liftoff is very close!"
+    },
+    "wrong": {
+     "fr": "Regarde la grande aiguille : elle est presque sur le 12.",
+     "en": "Look at the long hand: it is almost on the 12."
+    }
+   }
   },
   {
    "id": "espace.distances.001",
@@ -4152,7 +8520,46 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "km",
+      "en": "km"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "jour 1",
+        "en": "day 1"
+       },
+       "value": 305,
+       "icon": "rocket"
+      },
+      {
+       "label": {
+        "fr": "jour 2",
+        "en": "day 2"
+       },
+       "value": 296,
+       "icon": "rocket"
+      }
+     ],
+     "max": 320,
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "305 et 296 font environ 600 km pour la sonde.",
+     "en": "305 and 296 make about 600 km for the probe."
+    },
+    "wrong": {
+     "fr": "Arrondis 305 à 300 et 296 à 300, puis additionne.",
+     "en": "Round 305 to 300 and 296 to 300, then add."
+    }
+   }
   },
   {
    "id": "espace.distances.002",
@@ -4207,7 +8614,46 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "km",
+      "en": "km"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "matin",
+        "en": "morning"
+       },
+       "value": 2985,
+       "icon": "rocket"
+      },
+      {
+       "label": {
+        "fr": "après-midi",
+        "en": "afternoon"
+       },
+       "value": 3020,
+       "icon": "rocket"
+      }
+     ],
+     "max": 3100,
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "2985 et 3020 font environ 6000 km pour le satellite.",
+     "en": "2985 and 3020 make about 6000 km for the satellite."
+    },
+    "wrong": {
+     "fr": "Arrondis chaque distance au millier, puis additionne.",
+     "en": "Round each distance to the nearest thousand, then add."
+    }
+   }
   },
   {
    "id": "espace.distances.003",
@@ -4262,7 +8708,46 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "km",
+      "en": "km"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "trajet",
+        "en": "trip"
+       },
+       "value": 8120,
+       "icon": "rocket"
+      },
+      {
+       "label": {
+        "fr": "déjà fait",
+        "en": "done"
+       },
+       "value": 3905,
+       "icon": "rocket"
+      }
+     ],
+     "max": 8200,
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "8120 moins 3905 : il reste environ 4000 km à faire.",
+     "en": "8120 minus 3905: about 4000 km are left to go."
+    },
+    "wrong": {
+     "fr": "Arrondis les deux distances au millier, puis soustrais.",
+     "en": "Round both distances to the nearest thousand, then subtract."
+    }
+   }
   },
   {
    "id": "espace.distances.004",
@@ -4317,7 +8802,46 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "km",
+      "en": "km"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "sonde 1",
+        "en": "probe 1"
+       },
+       "value": 19870,
+       "icon": "ringed-planet"
+      },
+      {
+       "label": {
+        "fr": "sonde 2",
+        "en": "probe 2"
+       },
+       "value": 30150,
+       "icon": "ringed-planet"
+      }
+     ],
+     "max": 31000,
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "19870 et 30150 font environ 50000 km ensemble.",
+     "en": "19870 and 30150 make about 50000 km together."
+    },
+    "wrong": {
+     "fr": "Arrondis au millier : 20000 et 30000.",
+     "en": "Round to the nearest thousand: 20000 and 30000."
+    }
+   }
   },
   {
    "id": "espace.distances.005",
@@ -4391,7 +8915,46 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "km",
+      "en": "km"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "trajet 1",
+        "en": "trip 1"
+       },
+       "value": 498,
+       "icon": "rocket"
+      },
+      {
+       "label": {
+        "fr": "trajet 2",
+        "en": "trip 2"
+       },
+       "value": 502,
+       "icon": "rocket"
+      }
+     ],
+     "max": 600,
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "498 et 502 font environ 1000 km : la meilleure estimation.",
+     "en": "498 and 502 make about 1000 km: the best estimate."
+    },
+    "wrong": {
+     "fr": "Arrondis 498 à 500 et 502 à 500.",
+     "en": "Round 498 to 500 and 502 to 500."
+    }
+   }
   },
   {
    "id": "espace.distances.006",
@@ -4466,7 +9029,46 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "km",
+      "en": "km"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "module 1",
+        "en": "module 1"
+       },
+       "value": 4987,
+       "icon": "rocket"
+      },
+      {
+       "label": {
+        "fr": "module 2",
+        "en": "module 2"
+       },
+       "value": 1012,
+       "icon": "rocket"
+      }
+     ],
+     "max": 5000,
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "4987 moins 1012, c'est environ 4000 km de plus.",
+     "en": "4987 minus 1012 is about 4000 km more."
+    },
+    "wrong": {
+     "fr": "Arrondis 4987 à 5000 et 1012 à 1000, puis soustrais.",
+     "en": "Round 4987 to 5000 and 1012 to 1000, then subtract."
+    }
+   }
   },
   {
    "id": "espace.distances.007",
@@ -4526,7 +9128,33 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 700,
+     "max": 800,
+     "step": 10,
+     "labels": [
+      700,
+      750,
+      800
+     ],
+     "arrow": 748,
+     "theme": "space",
+     "revealArrow": true
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "748 arrondi à la centaine donne 700.",
+     "en": "748 rounded to the nearest hundred gives 700."
+    },
+    "wrong": {
+     "fr": "Regarde les dizaines : 4 est plus petit que 5, donc on garde 700.",
+     "en": "Look at the tens: 4 is less than 5, so we keep 700."
+    }
+   }
   },
   {
    "id": "espace.distances.008",
@@ -4586,7 +9214,33 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 6000,
+     "max": 7000,
+     "step": 100,
+     "labels": [
+      6000,
+      6500,
+      7000
+     ],
+     "arrow": 6479,
+     "theme": "space",
+     "revealArrow": true
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "6479 arrondi au millier donne 6000.",
+     "en": "6479 rounded to the nearest thousand gives 6000."
+    },
+    "wrong": {
+     "fr": "Regarde les centaines : 4 est plus petit que 5, donc on garde 6000.",
+     "en": "Look at the hundreds: 4 is less than 5, so we keep 6000."
+    }
+   }
   },
   {
    "id": "espace.distances.009",
@@ -4647,7 +9301,46 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "km",
+      "en": "km"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "jour 1",
+        "en": "day 1"
+       },
+       "value": 398,
+       "icon": "rocket"
+      },
+      {
+       "label": {
+        "fr": "jour 2",
+        "en": "day 2"
+       },
+       "value": 405,
+       "icon": "rocket"
+      }
+     ],
+     "max": 450,
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "400 et 400 font 800 km pour les deux jours.",
+     "en": "400 and 400 make 800 km for the two days."
+    },
+    "wrong": {
+     "fr": "Arrondis 398 et 405 à la centaine, puis additionne.",
+     "en": "Round 398 and 405 to the nearest hundred, then add."
+    }
+   }
   },
   {
    "id": "espace.distances.010",
@@ -4708,7 +9401,46 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "km",
+      "en": "km"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "à faire",
+        "en": "to do"
+       },
+       "value": 3980,
+       "icon": "rocket"
+      },
+      {
+       "label": {
+        "fr": "déjà fait",
+        "en": "done"
+       },
+       "value": 1995,
+       "icon": "rocket"
+      }
+     ],
+     "max": 4000,
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "4000 moins 2000 : il reste environ 2000 km à faire.",
+     "en": "4000 minus 2000: about 2000 km are left to go."
+    },
+    "wrong": {
+     "fr": "Arrondis 3980 et 1995 au millier, puis soustrais.",
+     "en": "Round 3980 and 1995 to the nearest thousand, then subtract."
+    }
+   }
   },
   {
    "id": "espace.distances.011",
@@ -4782,7 +9514,33 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "numberline",
+    "data": {
+     "min": 400,
+     "max": 600,
+     "step": 50,
+     "labels": [
+      400,
+      450,
+      500,
+      550,
+      600
+     ],
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Cette distance, arrondie à la centaine, donne bien 500 km.",
+     "en": "This distance, rounded to the nearest hundred, gives 500 km."
+    },
+    "wrong": {
+     "fr": "Cherche le nombre le plus proche de 500 en centaines.",
+     "en": "Look for the number nearest to 500 in hundreds."
+    }
+   }
   },
   {
    "id": "espace.distances.012",
@@ -4826,7 +9584,44 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "bars",
+    "data": {
+     "title": {
+      "fr": "km",
+      "en": "km"
+     },
+     "bars": [
+      {
+       "label": {
+        "fr": "302",
+        "en": "302"
+       },
+       "value": 302
+      },
+      {
+       "label": {
+        "fr": "299",
+        "en": "299"
+       },
+       "value": 299
+      }
+     ],
+     "max": 350,
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "300 plus 200 donne 500, mais 299 est presque 300. L'estimation de Léa est trop basse.",
+     "en": "300 plus 200 gives 500, but 299 is almost 300. Léa's estimate is too low."
+    },
+    "wrong": {
+     "fr": "Arrondis 302 et 299 à la centaine. Que trouves-tu ?",
+     "en": "Round 302 and 299 to the nearest hundred. What do you get?"
+    }
+   }
   },
   {
    "id": "espace.distances.013",
@@ -4909,7 +9704,59 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 1,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "img:rocket",
+        "en": "img:rocket"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "img:rocket",
+        "en": "img:rocket"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "img:rocket",
+        "en": "img:rocket"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "img:rocket",
+        "en": "img:rocket"
+       }
+      }
+     ],
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "De la station spatiale à la Lune : les engins sont bien rangés.",
+     "en": "From the space station to the Moon: the craft are in order."
+    },
+    "wrong": {
+     "fr": "Compare les distances en kilomètres, de la plus petite à la plus grande.",
+     "en": "Compare the distances in kilometres, from the smallest to the biggest."
+    }
+   }
   },
   {
    "id": "espace.distances.014",
@@ -5030,7 +9877,59 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "visual": {
+    "kind": "grid",
+    "data": {
+     "cols": 4,
+     "rows": 1,
+     "cells": [
+      {
+       "x": 1,
+       "y": 1,
+       "label": {
+        "fr": "498 + 503",
+        "en": "498 + 503"
+       }
+      },
+      {
+       "x": 2,
+       "y": 1,
+       "label": {
+        "fr": "612 - 195",
+        "en": "612 - 195"
+       }
+      },
+      {
+       "x": 3,
+       "y": 1,
+       "label": {
+        "fr": "299 + 301",
+        "en": "299 + 301"
+       }
+      },
+      {
+       "x": 4,
+       "y": 1,
+       "label": {
+        "fr": "905 - 395",
+        "en": "905 - 395"
+       }
+      }
+     ],
+     "theme": "space"
+    }
+   },
+   "reaction": {
+    "right": {
+     "fr": "Chaque calcul a trouvé sa bonne estimation.",
+     "en": "Each sum found its right estimate."
+    },
+    "wrong": {
+     "fr": "Arrondis chaque nombre, puis calcule dans ta tête.",
+     "en": "Round each number, then work it out in your head."
+    }
+   }
   },
   {
    "id": "espace.distances.015",
@@ -5060,24 +9959,28 @@
         "fr": "A",
         "en": "A"
        },
-       "value": 3020
+       "value": 3020,
+       "icon": "rocket"
       },
       {
        "label": {
         "fr": "B",
         "en": "B"
        },
-       "value": 4985
+       "value": 4985,
+       "icon": "rocket"
       },
       {
        "label": {
         "fr": "C",
         "en": "C"
        },
-       "value": 2010
+       "value": 2010,
+       "icon": "rocket"
       }
      ],
-     "max": 5000
+     "max": 5000,
+     "theme": "space"
     }
    },
    "choices": [
@@ -5138,7 +10041,17 @@
    ],
    "status": "published",
    "author": "numerix-p4a",
-   "version": 1
+   "version": 1,
+   "reaction": {
+    "right": {
+     "fr": "Les sondes A et B font environ cette distance ensemble.",
+     "en": "Probes A and B cover about that distance together."
+    },
+    "wrong": {
+     "fr": "Lis les barres A et B, arrondis, puis additionne.",
+     "en": "Read bars A and B, round them, then add."
+    }
+   }
   }
  ]
 }

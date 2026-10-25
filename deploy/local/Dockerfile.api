@@ -1,0 +1,26 @@
+# The API binary and the seed tools, built exactly like .github/workflows/deploy-prod.yml (static, CGO off).
+FROM golang:1.27-bookworm AS build
+WORKDIR /src
+COPY go.mod go.sum ./
+RUN go mod download
+COPY . .
+ENV CGO_ENABLED=0 GOOS=linux
+RUN mkdir -p /out/seed/bin /out/seed/scripts \
+ && go build -trimpath -ldflags "-s -w -X github.com/Perrin-Nj/numerix-api/internal/app.Version=local" -o /out/api ./cmd/api \
+ && go build -trimpath -ldflags "-s -w" -o /out/seed/bin/seed ./cmd/seed \
+ && go build -trimpath -ldflags "-s -w" -o /out/seed/bin/feedseed ./cmd/feedseed \
+ && tar -cf - --exclude=seed/feed-media seed | tar -xf - -C /out/seed \
+ && cp scripts/db-prod-deploy.sh /out/seed/scripts/
+
+# Ubuntu 24.04 like the VM.
+FROM ubuntu:24.04
+RUN apt-get update && apt-get install -y --no-install-recommends bash curl ca-certificates ffmpeg \
+ && rm -rf /var/lib/apt/lists/* \
+ && (id ubuntu >/dev/null 2>&1 && userdel -r ubuntu || true) \
+ && useradd --system --uid 1000 --home-dir /var/lib/numerix --shell /usr/sbin/nologin numerix \
+ && install -d -o numerix -g numerix /var/lib/numerix /var/lib/numerix/feed-media /opt/numerix
+COPY --from=build --chown=numerix:numerix /out/api /opt/numerix/api
+COPY --from=build --chown=numerix:numerix /out/seed /opt/numerix/seed
+USER numerix
+EXPOSE 80 443
+CMD ["/opt/numerix/api"]

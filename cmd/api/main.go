@@ -20,6 +20,7 @@ import (
 	"github.com/Perrin-Nj/numerix-api/internal/adminapi"
 	"github.com/Perrin-Nj/numerix-api/internal/app"
 	"github.com/Perrin-Nj/numerix-api/internal/config"
+	"github.com/Perrin-Nj/numerix-api/internal/mediaopt"
 	"github.com/Perrin-Nj/numerix-api/internal/drafter"
 	"github.com/Perrin-Nj/numerix-api/internal/httpapi"
 	"github.com/Perrin-Nj/numerix-api/internal/mongosync"
@@ -121,6 +122,23 @@ func run() error {
 		log.Info("listening", "addr", srv.Addr, "env", cfg.Env)
 		errCh <- srv.ListenAndServe()
 	}()
+
+	// Shrink the media files in the background, once per file, without slowing the first requests down.
+	// (Spring: an @Async job started after the application is ready.)
+	if cfg.MediaOptimize && mediaopt.Available(cfg.FFmpegBin) {
+		go func() {
+			select {
+			case <-time.After(20 * time.Second): // let the first requests through first
+			case <-ctx.Done():
+				return
+			}
+			rep, err := mediaopt.New(cfg.MediaDir, cfg.FFmpegBin, log).Run(ctx)
+			log.Info("media optimized", "seen", rep.Seen, "shrunk", rep.Shrunk, "kept", rep.Kept, "failed", rep.Failed,
+				"bytes_before", rep.Before, "bytes_after", rep.After, "err", err)
+		}()
+	} else if cfg.MediaOptimize {
+		log.Warn("media optimizer off: ffmpeg not found", "bin", cfg.FFmpegBin)
+	}
 
 	select {
 	case <-ctx.Done(): // signal received
