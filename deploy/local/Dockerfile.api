@@ -1,5 +1,5 @@
 # The API binary and the seed tools, built exactly like .github/workflows/deploy-prod.yml (static, CGO off).
-FROM golang:1.27-bookworm AS build
+FROM golang:1.27.4-bookworm AS build
 WORKDIR /src
 COPY go.mod go.sum ./
 RUN go mod download
