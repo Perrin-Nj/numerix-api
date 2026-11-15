@@ -6,6 +6,8 @@ Wants=network-online.target
 [Service]
 User=numerix
 Group=numerix
+# Soft Go memory cap (4 GB VM shared with web, admin, Caddy): the GC works harder near it instead of letting argon2 bursts grow the process. Placed before EnvironmentFile so api.env can override it.
+Environment=GOMEMLIMIT=512MiB
 # Secrets and settings live in /etc/numerix/api.env, never in the repo.
 EnvironmentFile=/etc/numerix/api.env
 # "current" is a symlink to the active release (see numerix-deploy); rollback just moves the link.

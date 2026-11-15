@@ -13,6 +13,7 @@ services:
     environment:
       # The media shrinker rewrites files in place, and here that folder is your repo. Set to "true" to try it.
       MEDIA_OPTIMIZE: "false"
+      GOMEMLIMIT: 512MiB
     volumes:
       - data:/var/lib/numerix
       - ../../seed/feed-media:/var/lib/numerix/feed-media
