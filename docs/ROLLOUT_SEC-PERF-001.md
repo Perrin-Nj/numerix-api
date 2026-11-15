@@ -6,7 +6,7 @@
    As root on the VM:
    `install -m 644 deploy/vps/numerix-api.service /etc/systemd/system/numerix-api.service && systemctl daemon-reload && systemctl restart numerix-api`
    Until then the API runs fine, only without GOMEMLIMIT=512MiB. Override per VM with GOMEMLIMIT in /etc/numerix/api.env.
-3. Check: `systemctl show numerix-api -p Environment` shows GOMEMLIMIT, and /health is ok.
+3. Check: `systemctl show numerix-api -p Environment` shows GOMEMLIMIT, and /v1/health is ok.
 
 ## Rollback
 Previous release: `numerix-deploy activate api <previous-id>` or the rollback workflow. To drop the memory cap, restore the old unit file and daemon-reload.
