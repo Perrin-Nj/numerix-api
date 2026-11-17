@@ -39,7 +39,7 @@ Key facts verified in the code (2026-10-21, branch `release/r3`):
 
 - The browser talks only to the web app. The web app calls the API from the server (`src/app/api/v1/[...path]/route.ts`). So the API does not need CORS for the web app, and all cookies belong to the web app address. The API is still reachable at `api.` for health checks, the admin proxy and tools.
 - The API listens on one port and stores everything in one SQLite file. One writer. That is why there is one API process per environment and no load balancer.
-- No email is sent by any code in either repo (searched for SMTP and mail libraries: none; the API has no email verification or password reset endpoints yet, they are listed as BE-34/BE-35 in `contracts/BACKEND_INTEGRATION.md`). See section 10.
+- No email is sent by any code in either repo. Password reset is done by an admin-created code (section 10); email verification (BE-35) is not built.
 
 ---
 
@@ -319,7 +319,7 @@ Restore drill (do it once on staging BEFORE go-live, then once on production rig
 
 ## 10. Email and Mongo
 
-**Email.** Searched both repos 2026-10-21: no code sends email. Consequences: there is no "forgot password" or "verify email" yet (BE-34 and BE-35 in `contracts/BACKEND_INTEGRATION.md` are open). A parent who forgets the password cannot reset it by email today. Before public launch decide: build BE-34/35 (then a sender is needed, cost UNVERIFIED) or accept a manual support path. This is a launch-readiness decision for you, not a hosting problem.
+**Email.** No code sends email, on purpose. Password reset is on screen and needs no mail server and no new environment variable: the parent contacts support, the admin opens the parent in the admin app and creates a reset code (`POST /admin/v1/parents/{id}/password-reset`, 8 digits, valid 1 hour, shown once), reads it to the parent, and the parent enters email, code and a new password on the web app (`/parent/reset`). After 5 wrong codes the code is burned and a new one must be created. Verify the identity of the caller before giving a code (for example call back on the number on file). Email verification (BE-35) is still not built. Migration `0013_password_resets.sql` applies by itself at start-up.
 
 **MongoDB Atlas M0 (optional, off by default).** Skip it at launch: SQLite serves everything and the app logs "mongo sync is off". If you turn it on: M0 free, 512 MB, no backups; choose a Canadian region if offered (UNVERIFIED on the free tier); restrict network access to the VM IP, never `0.0.0.0/0`; database user with `readWrite` on `numerix` only. Steps are in `DEPLOY_ORACLE.md`.
 
@@ -420,7 +420,7 @@ Gaps found and FIXED or hardened in this branch (tests are listed where present)
 
 Gaps found and NOT fixed (decisions or larger work):
 
-- No email, no password reset or email verification (section 10).
+- No email and no email verification. Password reset is by admin code (section 10).
 - Shared rate limiting is deferred by owner request. The web admin login limiter and API limiter are process-local; external edge/shared protection is still needed against distributed attempts.
 - Passkey RP id is one host. Moving the web app to another host name later invalidates every passkey.
 - "Same artifact" is exact for the API (one binary per CPU type) and for web and admin (one archive; nothing environment-specific inside). It holds only because the API address `127.0.0.1:8081` is the same on every VM.

@@ -108,6 +108,7 @@ func New(d Deps) http.Handler {
 	mux.HandleFunc("GET /admin/v1/parents/{id}", a.getParent)
 	mux.HandleFunc("PATCH /admin/v1/parents/{id}", a.patchParent)
 	mux.HandleFunc("DELETE /admin/v1/parents/{id}", a.deleteParent)
+	mux.HandleFunc("POST /admin/v1/parents/{id}/password-reset", a.passwordReset)
 	// children
 	mux.HandleFunc("GET /admin/v1/children", a.listChildren)
 	mux.HandleFunc("GET /admin/v1/children/{id}", a.getChild)
