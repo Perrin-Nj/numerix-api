@@ -2177,6 +2177,57 @@ paths:
           $ref: '#/components/responses/RateLimited'
         '500':
           $ref: '#/components/responses/ServerError'
+  /auth/password/reset:
+    post:
+      tags:
+        - Auth
+      operationId: resetPassword
+      summary: Choose a new password with the reset code an admin gave you
+      security: []
+      description: |
+        The parent asks support for a reset code (admin `POST /admin/v1/parents/{id}/password-reset`), then enters
+        email, the 8 digit code (`NNNN-NNNN`, dash and spaces optional) and a new password. The code is single use and valid 1 hour.
+        Every failure (unknown email, no active code, wrong code, expired, used, blocked or deleted parent) answers the same 400.
+        After 5 wrong codes the code is burned. On success every session is signed out (no auto login: send the parent to the login page).
+        Limit: 10 attempts per 15 minutes per IP.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - email
+                - code
+                - password
+              properties:
+                email:
+                  type: string
+                  format: email
+                  maxLength: 254
+                code:
+                  type: string
+                  maxLength: 20
+                  example: 1234-5678
+                password:
+                  type: string
+                  minLength: 10
+                  maxLength: 128
+      responses:
+        '204':
+          description: Password changed
+        '400':
+          description: Code not accepted (code reset_code_invalid, one generic answer for every cause)
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
   /auth/device:
     post:
       tags:

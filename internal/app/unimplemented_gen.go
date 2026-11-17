@@ -318,6 +318,11 @@ func (Unimplemented) RequestHint(ctx context.Context, request api.RequestHintReq
 	return nil, httpapi.ErrNotImplemented
 }
 
+// ResetPassword is not built yet: answers 501.
+func (Unimplemented) ResetPassword(ctx context.Context, request api.ResetPasswordRequestObject) (api.ResetPasswordResponseObject, error) {
+	return nil, httpapi.ErrNotImplemented
+}
+
 // ResumeSession is not built yet: answers 501.
 func (Unimplemented) ResumeSession(ctx context.Context, request api.ResumeSessionRequestObject) (api.ResumeSessionResponseObject, error) {
 	return nil, httpapi.ErrNotImplemented
