@@ -19,6 +19,12 @@ const tok = "test-admin-token-123456"
 
 // setup opens a temp database, seeds two parents and one child, and returns the handler.
 func setup(t *testing.T) http.Handler {
+	h, _ := setupDB(t)
+	return h
+}
+
+// setupDB is setup that also returns the database.
+func setupDB(t *testing.T) (http.Handler, *store.Store) {
 	t.Helper()
 	db, err := store.Open(context.Background(), filepath.Join(t.TempDir(), "t.db"))
 	if err != nil {
@@ -36,7 +42,7 @@ func setup(t *testing.T) http.Handler {
 			t.Fatal(err)
 		}
 	}
-	return New(Deps{Store: db, Log: slog.New(slog.NewTextHandler(io.Discard, nil)), Token: tok, Origins: "https://admin.example", Now: time.Now})
+	return New(Deps{Store: db, Log: slog.New(slog.NewTextHandler(io.Discard, nil)), Token: tok, Origins: "https://admin.example", Now: time.Now}), db
 }
 
 // call sends one request and decodes the JSON answer into a map (nil for empty bodies).
