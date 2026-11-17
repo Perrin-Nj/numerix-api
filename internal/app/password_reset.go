@@ -36,6 +36,7 @@ func (s *Server) ResetPassword(ctx context.Context, req api.ResetPasswordRequest
 	}
 	email, now := plNormEmail(string(b.Email)), time.Now()
 	code := pwreset.Normalize(b.Code)
+	rk := pwreset.DeriveKey(s.Config.JWTSecret)
 	sum := sha256.Sum256([]byte(email))
 	key := "rc:" + hex.EncodeToString(sum[:])
 
@@ -46,10 +47,10 @@ func (s *Server) ResetPassword(ctx context.Context, req api.ResetPasswordRequest
 	if errors.Is(err, pwreset.ErrNone) {
 		// Same hash work as a real check; the attempt is counted by email hash so an unknown email behaves like a known one.
 		s.ResetLimit.Fail(key)
-		_ = pwreset.Match("00000000000000000000000000000000", "0", code)
+		_ = pwreset.Match(rk, "00000000000000000000000000000000", "0", code)
 		return nil, plResetInvalid()
 	}
-	if code == "" || !pwreset.Match(act.Salt, act.Hash, code) {
+	if code == "" || !pwreset.Match(rk, act.Salt, act.Hash, code) {
 		s.ResetLimit.Fail(key)
 		if err := s.Store.WithWriteTx(ctx, func(tx *sql.Tx) error { return pwreset.Wrong(tx, act.ID, now) }); err != nil {
 			return nil, s.plInternalErr(ctx, "count wrong code", err)

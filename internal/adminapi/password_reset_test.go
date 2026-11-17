@@ -29,7 +29,7 @@ func TestAdminPasswordReset(t *testing.T) {
 	}
 	ce, _ := time.Parse(time.RFC3339Nano, exp)
 	cc, _ := time.Parse(time.RFC3339Nano, created)
-	if ce.Sub(cc) != time.Hour || hash == plain || hash != pwreset.Hash(salt, plain) {
+	if ce.Sub(cc) != time.Hour || hash == plain || hash != pwreset.Hash(pwreset.DeriveKey("test-secret"), salt, plain) || hash == pwreset.Hash(nil, salt, plain) {
 		t.Fatalf("ttl %v, hash must be salted: %s", ce.Sub(cc), hash)
 	}
 	var actorName, detail, target string

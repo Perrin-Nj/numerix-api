@@ -12,6 +12,10 @@ import (
 // POST /admin/v1/parents/{id}/password-reset: one-time 8 digit code valid 1 hour, earlier codes burned.
 // The admin reads the code to the parent; it is returned once and never logged or audited.
 func (a *API) passwordReset(w http.ResponseWriter, r *http.Request) {
+	if len(a.resetKey) == 0 {
+		a.fail(w, r, httpapi.NewError(http.StatusServiceUnavailable, "not_configured", "Password reset key is not available."))
+		return
+	}
 	id := r.PathValue("id")
 	var email, code string
 	err := a.db.WithWriteTx(r.Context(), func(tx *sql.Tx) (err error) {
@@ -20,7 +24,7 @@ func (a *API) passwordReset(w http.ResponseWriter, r *http.Request) {
 		} else if err != nil {
 			return err
 		}
-		if code, err = pwreset.Issue(tx, id, a.now()); err != nil {
+		if code, err = pwreset.Issue(tx, a.resetKey, id, a.now()); err != nil {
 			return err
 		}
 		return a.writeAudit(tx, actor(r), "parent.password_reset", "parent", id, "reset code created, valid 1 hour")

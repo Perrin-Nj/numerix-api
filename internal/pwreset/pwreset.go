@@ -1,12 +1,13 @@
 // Package pwreset issues and checks one-time password reset codes (8 digits, shown as NNNN-NNNN).
 // An admin creates a code for a parent; the parent enters it with the email and a new password.
-// The code is never stored: only SHA-256(salt || code) with a per-row salt.
+// The code is never stored: only HMAC-SHA256(key, salt || code), with a per-row salt and a server side key,
+// so a copy of the database alone cannot verify a guess.
 package pwreset
 
 import (
+	"crypto/hmac"
 	"crypto/rand"
 	"crypto/sha256"
-	"crypto/subtle"
 	"database/sql"
 	"encoding/hex"
 	"errors"
@@ -41,20 +42,28 @@ func Normalize(in string) string {
 	return s
 }
 
+// DeriveKey makes the dedicated reset key from the signing secret (never use the raw secret).
+func DeriveKey(secret string) []byte {
+	m := hmac.New(sha256.New, []byte(secret))
+	m.Write([]byte("numerix:password-reset:v1"))
+	return m.Sum(nil)
+}
+
 // Hash is the stored form of a code.
-func Hash(salt, code string) string {
-	h := sha256.Sum256([]byte(salt + ":" + code))
-	return hex.EncodeToString(h[:])
+func Hash(key []byte, salt, code string) string {
+	m := hmac.New(sha256.New, key)
+	m.Write([]byte(salt + ":" + code))
+	return hex.EncodeToString(m.Sum(nil))
 }
 
 // Match compares a stored hash with a candidate in constant time.
-func Match(salt, wantHash, code string) bool {
-	return subtle.ConstantTimeCompare([]byte(Hash(salt, code)), []byte(wantHash)) == 1
+func Match(key []byte, salt, wantHash, code string) bool {
+	return hmac.Equal([]byte(Hash(key, salt, code)), []byte(wantHash))
 }
 
 // Issue makes a new code for parentID inside tx; every earlier unused code of that parent is burned (replaced).
 // It returns the code as "NNNN-NNNN".
-func Issue(tx *sql.Tx, parentID string, now time.Time) (string, error) {
+func Issue(tx *sql.Tx, key []byte, parentID string, now time.Time) (string, error) {
 	n, err := rand.Int(rand.Reader, big.NewInt(100_000_000))
 	if err != nil {
 		return "", err
@@ -69,7 +78,7 @@ func Issue(tx *sql.Tx, parentID string, now time.Time) (string, error) {
 		return "", err
 	}
 	if _, err := tx.Exec(`INSERT INTO password_resets (id, parent_id, code_hash, salt, created_at, expires_at) VALUES (?,?,?,?,?,?)`,
-		uuid.NewString(), parentID, Hash(salt, code), salt, Stamp(now), Stamp(now.Add(TTL))); err != nil {
+		uuid.NewString(), parentID, Hash(key, salt, code), salt, Stamp(now), Stamp(now.Add(TTL))); err != nil {
 		return "", err
 	}
 	return code[:4] + "-" + code[4:], nil

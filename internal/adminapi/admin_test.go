@@ -12,6 +12,7 @@ import (
 	"testing"
 	"time"
 
+	"github.com/Perrin-Nj/numerix-api/internal/pwreset"
 	"github.com/Perrin-Nj/numerix-api/internal/store"
 )
 
@@ -42,7 +43,7 @@ func setupDB(t *testing.T) (http.Handler, *store.Store) {
 			t.Fatal(err)
 		}
 	}
-	return New(Deps{Store: db, Log: slog.New(slog.NewTextHandler(io.Discard, nil)), Token: tok, Origins: "https://admin.example", Now: time.Now}), db
+	return New(Deps{Store: db, Log: slog.New(slog.NewTextHandler(io.Discard, nil)), Token: tok, Origins: "https://admin.example", Now: time.Now, ResetKey: pwreset.DeriveKey("test-secret")}), db
 }
 
 // call sends one request and decodes the JSON answer into a map (nil for empty bodies).

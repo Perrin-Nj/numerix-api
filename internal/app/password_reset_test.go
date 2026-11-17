@@ -49,7 +49,7 @@ func (fx *resetFx) issue(t *testing.T) string {
 	t.Helper()
 	var code string
 	if err := fx.s.Store.WithWriteTx(context.Background(), func(tx *sql.Tx) (err error) {
-		code, err = pwreset.Issue(tx, fx.parentID(t), time.Now())
+		code, err = pwreset.Issue(tx, pwreset.DeriveKey(fx.s.Config.JWTSecret), fx.parentID(t), time.Now())
 		return
 	}); err != nil {
 		t.Fatal(err)
@@ -145,7 +145,7 @@ func TestResetFullFlow(t *testing.T) {
 	}
 	var hash, salt string
 	_ = fx.s.Store.R.QueryRow(`SELECT code_hash, salt FROM password_resets`).Scan(&hash, &salt)
-	if hash == plain || hash != pwreset.Hash(salt, plain) {
+	if hash == plain || hash != pwreset.Hash(pwreset.DeriveKey(fx.s.Config.JWTSecret), salt, plain) || hash == pwreset.Hash(nil, salt, plain) || hash == pwreset.Hash(pwreset.DeriveKey("other-secret"), salt, plain) {
 		t.Fatal("code must be stored salted and hashed")
 	}
 }
@@ -168,7 +168,7 @@ func TestResetEveryFailureIsOneGenericAnswer(t *testing.T) {
 	fx.exec(t, `INSERT INTO parents (id,email,password_hash,locale,blocked_at) VALUES ('pb','blocked@example.com','h','fr-CA','2026-01-01T00:00:00.000Z')`)
 	fx.exec(t, `INSERT INTO parents (id,email,password_hash,locale,deleted_at) VALUES ('pd','deleted@example.com','!','fr-CA','2026-01-01T00:00:00.000Z')`)
 	for _, id := range []string{"pb", "pd"} {
-		fx.exec(t, `INSERT INTO password_resets (id,parent_id,code_hash,salt,expires_at) VALUES (?,?,?,'s',?)`, "r"+id, id, pwreset.Hash("s", "12345678"), pwreset.Stamp(time.Now().Add(time.Hour)))
+		fx.exec(t, `INSERT INTO password_resets (id,parent_id,code_hash,salt,expires_at) VALUES (?,?,?,'s',?)`, "r"+id, id, pwreset.Hash(nil, "s", "12345678"), pwreset.Stamp(time.Now().Add(time.Hour)))
 	}
 	cases := []struct{ name, email, code string }{
 		{"unknown email", "ghost@example.com", rc},
