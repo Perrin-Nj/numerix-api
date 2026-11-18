@@ -65,6 +65,7 @@ var Ops = map[string]OpMeta{
 	"RefreshToken":              {Method: "POST", Path: "/auth/refresh", Public: true, Roles: []string{}},
 	"RegisterParent":            {Method: "POST", Path: "/auth/register", Public: true, Roles: []string{}},
 	"RequestHint":               {Method: "POST", Path: "/sessions/{sessionId}/beats/{beatId}/hint", Public: false, Roles: []string{"child"}},
+	"ResetPassword":             {Method: "POST", Path: "/auth/password/reset", Public: true, Roles: []string{}},
 	"ResumeSession":             {Method: "POST", Path: "/sessions/{sessionId}/resume", Public: false, Roles: []string{"child"}},
 	"RevokeDevice":              {Method: "DELETE", Path: "/account/devices/{deviceId}", Public: false, Roles: []string{"parent"}},
 	"SendEvents":                {Method: "POST", Path: "/events", Public: false, Roles: []string{"parent", "child"}},

@@ -24,6 +24,7 @@ import (
 	"github.com/Perrin-Nj/numerix-api/internal/httpapi"
 	"github.com/Perrin-Nj/numerix-api/internal/mediaopt"
 	"github.com/Perrin-Nj/numerix-api/internal/mongosync"
+	"github.com/Perrin-Nj/numerix-api/internal/pwreset"
 	"github.com/Perrin-Nj/numerix-api/internal/store"
 )
 
@@ -94,7 +95,7 @@ func run() error {
 	root := http.NewServeMux()
 	root.Handle("/admin/v1/", adminapi.New(adminapi.Deps{
 		Store: db, Log: log, Token: cfg.AdminAPIToken, Production: cfg.IsProduction(), Origins: os.Getenv("ADMIN_ORIGIN"), Sync: syncStats,
-		Content: server.Content, Assets: server.Assets, Cfg: server.Cfg, Drafter: drafter.FromEnv(os.Getenv, log),
+		Content: server.Content, Assets: server.Assets, Cfg: server.Cfg, ResetKey: pwreset.DeriveKey(cfg.JWTSecret), Drafter: drafter.FromEnv(os.Getenv, log),
 	}))
 	if cfg.PprofEnabled { // dev-only profiler: go tool pprof http://localhost:PORT/debug/pprof/profile
 		root.HandleFunc("/debug/pprof/", pprof.Index)

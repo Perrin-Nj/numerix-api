@@ -26,6 +26,7 @@ Gap: no history tables, so `mrr_by_month_12` is 0 except the current month, and 
 - `PATCH /parents/{id}` body (all optional):
   `{"name":"..","locale":"fr-CA","status":"blocked"|"active","blocked_reason":"..","subscription":{"status":"active"|"paid"|"unpaid","plan":"free|family_monthly|family_yearly","extend_days":1..3650}}`.
   paid/active starts a 30 day (yearly: 365) period when none is running and switches `free` to `family_monthly`; `extend_days` extends trial end (trial) or period end. Answers the updated parent (200).
+- `POST /parents/{id}/password-reset`: parent forgot the password. Creates a one-time 8 digit code `NNNN-NNNN` valid 1 hour (earlier codes burned) and answers `201 {"code","expires_in_seconds":3600,"parent":{"id","email"}}`. Read the code to the parent: they enter email, code and a new password on the web app (`POST /v1/auth/password/reset`). The code is shown once, never stored in clear, never logged or audited (audit action `parent.password_reset`). After 5 wrong guesses the code is burned: create a new one. The admin never sees or sets a password. 404 if unknown or deleted.
 - `DELETE /parents/{id}`: hard delete, cascades to children and data (consents are kept). 204.
 
 ### Children

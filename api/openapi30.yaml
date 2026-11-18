@@ -113,6 +113,52 @@ paths:
           $ref: '#/components/responses/RateLimited'
         '500':
           $ref: '#/components/responses/ServerError'
+  /auth/password/reset:
+    post:
+      tags:
+        - Auth
+      operationId: resetPassword
+      summary: Choose a new password with a reset code from the Numerix team
+      description: The code is 8 digits, comes from the team after they verified the parent, lasts 1 hour and works once. Every failure (wrong email, wrong code, expired, used, burned after 5 wrong tries) answers 400 reset_code_invalid. No session is opened.
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - email
+                - code
+                - password
+              properties:
+                email:
+                  type: string
+                  format: email
+                  maxLength: 254
+                code:
+                  type: string
+                  maxLength: 20
+                  description: 8 digits, NNNN-NNNN; dash and spaces are accepted
+                password:
+                  type: string
+                  minLength: 10
+                  maxLength: 128
+      responses:
+        '204':
+          description: Password changed
+        '400':
+          description: Code not valid (code reset_code_invalid)
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Problem'
+        '422':
+          $ref: '#/components/responses/ValidationError'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+        '500':
+          $ref: '#/components/responses/ServerError'
   /auth/refresh:
     post:
       tags:

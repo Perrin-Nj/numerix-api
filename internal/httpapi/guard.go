@@ -42,6 +42,8 @@ func ruleFor(opID string, method string) rule {
 		return rule{byIP, 5, time.Hour}
 	case "LoginParent":
 		return rule{byIP, 10, time.Minute} // the 5-failures-per-email lockout is done by the handler (auth.AttemptLimiter)
+	case "ResetPassword":
+		return rule{byIP, 10, 15 * time.Minute} // plus 5 wrong codes per active code (attempts column)
 	case "RefreshToken":
 		return rule{byIP, 30, time.Minute}
 	case "CreateChildToken":
