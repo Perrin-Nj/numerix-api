@@ -58,13 +58,13 @@ type API struct {
 	now     func() time.Time
 	sync    func() mongosync.Stats
 
-	content *contentdb.Repo
-	assets  *assetstore.Store
-	drafter drafter.Provider
-	cfg     *appconfig.Store
-	getenv  func(string) string
+	content  *contentdb.Repo
+	assets   *assetstore.Store
+	drafter  drafter.Provider
+	cfg      *appconfig.Store
+	getenv   func(string) string
 	resetKey []byte
-	drafts  draftLimiter // AI draft rate limit per admin
+	drafts   draftLimiter // AI draft rate limit per admin
 }
 
 // tsLayout matches SQLite's strftime('%Y-%m-%dT%H:%M:%fZ') so text comparisons and sorting stay valid.
