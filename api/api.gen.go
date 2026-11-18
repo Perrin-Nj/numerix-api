@@ -2443,7 +2443,7 @@ type LogoutParentJSONBody struct {
 
 // ResetPasswordJSONBody defines parameters for ResetPassword.
 type ResetPasswordJSONBody struct {
-	// Code Example: 1234-5678
+	// Code 8 digits, NNNN-NNNN; dash and spaces are accepted
 	Code     string              `json:"code"`
 	Email    openapi_types.Email `json:"email"`
 	Password string              `json:"password"`
@@ -3157,7 +3157,7 @@ type ServerInterface interface {
 	// FinishPasskeyRegistration Finish adding a passkey
 	// (POST /auth/passkeys/register/finish)
 	FinishPasskeyRegistration(w http.ResponseWriter, r *http.Request)
-	// ResetPassword Choose a new password with the reset code an admin gave you
+	// ResetPassword Choose a new password with a reset code from the Numerix team
 	// (POST /auth/password/reset)
 	ResetPassword(w http.ResponseWriter, r *http.Request)
 	// RefreshToken Exchange a refresh token for a new access token
@@ -6624,6 +6624,7 @@ func HandlerWithOptions(si ServerInterface, options StdHTTPServerOptions) http.H
 
 	m.HandleFunc(http.MethodPost+" "+options.BaseURL+"/auth/register", wrapper.RegisterParent)
 	m.HandleFunc(http.MethodPost+" "+options.BaseURL+"/auth/login", wrapper.LoginParent)
+	m.HandleFunc(http.MethodPost+" "+options.BaseURL+"/auth/password/reset", wrapper.ResetPassword)
 	m.HandleFunc(http.MethodPost+" "+options.BaseURL+"/auth/refresh", wrapper.RefreshToken)
 	m.HandleFunc(http.MethodPost+" "+options.BaseURL+"/auth/consent", wrapper.RecordConsent)
 	m.HandleFunc(http.MethodGet+" "+options.BaseURL+"/children", wrapper.ListChildren)
@@ -6679,7 +6680,6 @@ func HandlerWithOptions(si ServerInterface, options StdHTTPServerOptions) http.H
 	m.HandleFunc(http.MethodGet+" "+options.BaseURL+"/account", wrapper.GetAccount)
 	m.HandleFunc(http.MethodPatch+" "+options.BaseURL+"/account", wrapper.UpdateAccount)
 	m.HandleFunc(http.MethodPost+" "+options.BaseURL+"/auth/logout", wrapper.LogoutParent)
-	m.HandleFunc(http.MethodPost+" "+options.BaseURL+"/auth/password/reset", wrapper.ResetPassword)
 	m.HandleFunc(http.MethodPost+" "+options.BaseURL+"/auth/device", wrapper.DeviceLogin)
 	m.HandleFunc(http.MethodGet+" "+options.BaseURL+"/account/devices", wrapper.ListDevices)
 	m.HandleFunc(http.MethodDelete+" "+options.BaseURL+"/account/devices/{deviceId}", wrapper.RevokeDevice)
@@ -13741,7 +13741,7 @@ type StrictServerInterface interface {
 	// FinishPasskeyRegistration Finish adding a passkey
 	// (POST /auth/passkeys/register/finish)
 	FinishPasskeyRegistration(ctx context.Context, request FinishPasskeyRegistrationRequestObject) (FinishPasskeyRegistrationResponseObject, error)
-	// ResetPassword Choose a new password with the reset code an admin gave you
+	// ResetPassword Choose a new password with a reset code from the Numerix team
 	// (POST /auth/password/reset)
 	ResetPassword(ctx context.Context, request ResetPasswordRequestObject) (ResetPasswordResponseObject, error)
 	// RefreshToken Exchange a refresh token for a new access token
