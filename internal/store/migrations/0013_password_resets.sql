@@ -1,5 +1,5 @@
 -- 0013 password resets: one-time 8 digit codes an admin creates for a parent who forgot the password.
--- The code is never stored: only SHA-256(salt || code) with a per-row salt. Additive: down = DROP TABLE password_resets.
+-- The code is never stored: only HMAC-SHA256(server key, salt || code) with a per-row salt. Additive: down = DROP TABLE password_resets.
 CREATE TABLE password_resets (
     id         TEXT PRIMARY KEY,
     parent_id  TEXT NOT NULL REFERENCES parents(id) ON DELETE CASCADE,

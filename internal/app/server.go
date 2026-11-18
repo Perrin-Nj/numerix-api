@@ -40,8 +40,6 @@ type Server struct {
 	PINLimit *auth.AttemptLimiter
 	// LoginLimit: 5 failures per email per 15 minutes (contract section 16).
 	LoginLimit *auth.AttemptLimiter
-	// ResetLimit counts password reset code attempts by email hash, unknown emails included (so existence is not revealed).
-	ResetLimit *auth.AttemptLimiter
 	// WebAuthn runs passkey ceremonies (nil = passkeys off, endpoints answer 503). See passkeys.go.
 	WebAuthn *webauthn.WebAuthn
 	// Payments is the payment processor (nil = dev provider outside production, none in production). See platform_billing.go.
@@ -69,7 +67,6 @@ func NewServer(s *store.Store, cfg config.Config, log *slog.Logger) *Server {
 		Refresh:    auth.NewRefreshTokens(s, cfg.RefreshTTL),
 		PINLimit:   auth.NewAttemptLimiter(5, 15*time.Minute),
 		LoginLimit: auth.NewAttemptLimiter(5, 15*time.Minute),
-		ResetLimit: auth.NewAttemptLimiter(5, time.Hour),
 		WebAuthn:   newWebAuthn(cfg),
 		Content:    contentdb.New(s, nil),
 		Assets:     assetstore.New(s),

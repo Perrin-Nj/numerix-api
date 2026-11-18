@@ -203,16 +203,19 @@ func TestResetTimingSimilarForKnownAndUnknownEmail(t *testing.T) {
 	fx := newResetFx(t)
 	rc := fx.issue(t)
 	avg := func(email string) time.Duration {
-		// only 3 attempts each: stays under the burn threshold and the IP limit
+		// 3 attempts each: stays under the burn threshold and the IP limit (10 per 15 minutes)
 		t0 := time.Now()
 		for i := 0; i < 3; i++ {
 			fx.reset(t, email, wrongCode(rc), newPW)
 		}
 		return time.Since(t0) / 3
 	}
-	known, unknown := avg("ana@example.com"), avg("ghost@example.com")
-	if d := known - unknown; d > 100*time.Millisecond || d < -100*time.Millisecond {
-		t.Fatalf("timing classes differ: known %v unknown %v", known, unknown)
+	fx.exec(t, `INSERT INTO parents (id,email,password_hash,locale) VALUES ('pn','nocode@example.com','h','fr-CA')`)
+	known, unknown, nocode := avg("ana@example.com"), avg("ghost@example.com"), avg("nocode@example.com")
+	for name, d := range map[string]time.Duration{"unknown email": unknown, "account without code": nocode} {
+		if diff := known - d; diff > 100*time.Millisecond || diff < -100*time.Millisecond { // tolerant: only catches a different class of work
+			t.Fatalf("timing classes differ: active code %v, %s %v", known, name, d)
+		}
 	}
 }
 

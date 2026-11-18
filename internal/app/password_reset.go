@@ -5,9 +5,7 @@ package app
 
 import (
 	"context"
-	"crypto/sha256"
 	"database/sql"
-	"encoding/hex"
 	"errors"
 	"net/http"
 	"time"
@@ -37,21 +35,19 @@ func (s *Server) ResetPassword(ctx context.Context, req api.ResetPasswordRequest
 	email, now := plNormEmail(string(b.Email)), time.Now()
 	code := pwreset.Normalize(b.Code)
 	rk := pwreset.DeriveKey(s.Config.JWTSecret)
-	sum := sha256.Sum256([]byte(email))
-	key := "rc:" + hex.EncodeToString(sum[:])
 
 	pid, act, err := pwreset.Find(s.Store.R, email, now)
 	if err != nil && !errors.Is(err, pwreset.ErrNone) {
 		return nil, s.plInternalErr(ctx, "load reset code", err)
 	}
-	if errors.Is(err, pwreset.ErrNone) {
-		// Same hash work as a real check; the attempt is counted by email hash so an unknown email behaves like a known one.
-		s.ResetLimit.Fail(key)
-		_ = pwreset.Match(rk, "00000000000000000000000000000000", "0", code)
-		return nil, plResetInvalid()
+	none := errors.Is(err, pwreset.ErrNone)
+	if none { // no account or no active code: compare against a dummy so the work is the same
+		act = pwreset.Active{ID: "none", Salt: "00000000000000000000000000000000", Hash: "0"}
 	}
-	if code == "" || !pwreset.Match(rk, act.Salt, act.Hash, code) {
-		s.ResetLimit.Fail(key)
+	good := pwreset.Match(rk, act.Salt, act.Hash, code) && code != "" && !none
+	if !good {
+		// Every failure does the same: one HMAC, one write transaction with the attempt counter UPDATE
+		// (for an unknown email or no code it matches no row), so timing does not reveal that a code exists.
 		if err := s.Store.WithWriteTx(ctx, func(tx *sql.Tx) error { return pwreset.Wrong(tx, act.ID, now) }); err != nil {
 			return nil, s.plInternalErr(ctx, "count wrong code", err)
 		}
@@ -98,7 +94,6 @@ func (s *Server) ResetPassword(ctx context.Context, req api.ResetPasswordRequest
 		return nil, s.plInternalErr(ctx, "reset password", err)
 	}
 	s.LoginLimit.Reset(email) // lifts a login lockout
-	s.ResetLimit.Reset(key)
 	s.Log.Info("audit password.reset", "request_id", httpapi.RequestID(ctx))
 	return api.ResetPassword204Response{}, nil
 }
