@@ -172,7 +172,7 @@ PY
 
   seed)
     id="${1:-}"; mode="${2:-}"; release_id "$id"
-    case "$mode" in dry) flag="" ;; apply) flag="--apply" ;; *) die "mode must be dry or apply";; esac
+    case "$mode" in dry) flag="" ;; apply) flag="--apply" ;; dry-retire) flag="--allow-retire" ;; apply-retire) flag="--apply --allow-retire" ;; *) die "mode must be dry, apply, dry-retire or apply-retire";; esac
     [ -d "$BASE/seed/releases/$id" ] || die "no such seed release $id"
     exec sudo -n -u numerix /usr/local/bin/numerix-deploy _seed "$id" "${flag:-dry}"
     ;;
