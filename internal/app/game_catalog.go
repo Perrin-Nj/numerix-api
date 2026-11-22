@@ -35,14 +35,6 @@ func (g *gameState) skillLabel(id, lang string) string {
 	return id
 }
 
-// gradeOf is the school year used by the planner; an unknown grade means "everything".
-func gradeOf(c plChild) int {
-	if c.Grade.Valid && c.Grade.Int64 > 0 {
-		return int(c.Grade.Int64)
-	}
-	return 6
-}
-
 // ListWorlds answers GET /worlds: the twenty worlds (from the database) with art and skill counts.
 func (s *Server) ListWorlds(ctx context.Context, req api.ListWorldsRequestObject) (api.ListWorldsResponseObject, error) {
 	if _, err := plCaller(ctx); err != nil {

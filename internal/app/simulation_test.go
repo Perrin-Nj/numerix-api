@@ -177,9 +177,7 @@ func TestPlannerNeverDeadEndsAcrossWorldsAndGrades(t *testing.T) {
 					for c := 0; c < 8; c++ { // 40 beats in the world under test
 						f.chapter(t, k, world, mode, label, st)
 					}
-					for _, p := range st.problems {
-						total.problems = append(total.problems, p)
-					}
+					total.problems = append(total.problems, st.problems...)
 					total.noQuestion += st.noQuestion
 					total.startFail += st.startFail
 					total.above += st.above

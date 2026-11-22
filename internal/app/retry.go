@@ -158,15 +158,6 @@ func (s *Server) answerRetry(ctx context.Context, r sessRow, c plChild, req api.
 	return api.AnswerBeat200JSONResponse(out), nil
 }
 
-func hasReward(list []api.Reward, t api.RewardType) bool {
-	for _, r := range list {
-		if r.Type == t {
-			return true
-		}
-	}
-	return false
-}
-
 // retryNudge is the last-resort second-try hint: a calm sentence per question type, with no number in it.
 func retryNudge(qtype, lang string) string {
 	fr := map[string]string{

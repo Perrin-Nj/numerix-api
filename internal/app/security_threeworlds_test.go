@@ -71,8 +71,7 @@ func TestInactiveWorldBypassAttempts(t *testing.T) {
 	}
 	// a child token may not write settings at all (worlds stay as the parent set them)
 	if code, _, _ := f.gcall(t, "PUT", "/v1/children/"+f.childID+"/settings", f.childTok, `{"daily_goal_chapters":1,"enabled_worlds":["cuisine"],"read_aloud":true,"sound":true}`, nil); code == 200 {
-		var got []string
-		got = f.s.enabledWorlds(t.Context(), f.childID)
+		got := f.s.enabledWorlds(t.Context(), f.childID)
 		for _, w := range got {
 			if w == "jeux" {
 				t.Fatal("child edit enabled a draft world")
