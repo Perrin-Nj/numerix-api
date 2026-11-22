@@ -66,3 +66,13 @@ Code: `internal/adminapi/{content,assets,aidraft}.go`. Same auth, CORS, problem+
 ## Runtime config (appconfig)
 
 See docs/ADMIN_CONFIG_MATRIX.md. Endpoints: GET /appconfig, GET|PUT /appconfig/{ns}, GET /appconfig/{ns}/versions, POST /appconfig/{ns}/rollback. Audit actions: appconfig.set, appconfig.rollback. Problem codes: version_conflict 409, nothing_to_roll_back 409, ai_disabled 503.
+
+## Three-worlds release (feat/three-worlds-api)
+
+All routes below need the admin bearer token (any other credential, parent and child tokens included, is refused with 401 by the guard) and write an `admin_audit` row in the same transaction.
+
+- `PUT /worlds/{id}/status {status: "published"|"draft"}` opens or closes a world for children and parents. `404` for an unknown or retired world, `422` for another status, and `422` for closing a world that is in `platform.default_worlds` or `platform.ready_worlds` (remove it there first). Audit action `world.status`, detail `old -> new`. A seed run never overwrites the status of an existing world.
+- `PUT /parents/{id}/free-access {until: RFC 3339 future date | null, reason: 1..200 chars}` grants or extends free access (stored in `subscriptions.json` under `free_access`); `DELETE /parents/{id}/free-access` ends it. Both answer the parent view; `subscription.free_access {granted_by, granted_at, until, reason}` is shown to the admin only. Parents and children only ever see `status: active` plus `access_until` (never `trial`, never `trial_ends_at` or `days_left`). Audit action `parent.free_access`.
+- `PATCH /children/{id}` `enabled_worlds` now accepts any published world (the admin is not limited to the ready list); a draft or unknown world is `422`.
+- `GET /content/coverage` also gives per quest `by_grade`, `grade_min`, `grade_max` and per world `by_grade` and `grade_quota_missing` (rule Q1: 20 published questions for each school year 1 to 4 that a quest of the world covers).
+- Config `platform`: `default_worlds` (worlds a new child starts with), `ready_worlds` (the only worlds a parent may switch on, decision 18), `retry_enabled`, `grade_window`, `grade_prior_base`, `grade_prior_step`. Default and ready worlds must be published worlds and every default world must be ready. Config `feed`: `home_sections {challenges, discover, daily_quest}`, all false by default.

@@ -8,6 +8,7 @@ import (
 	"slices"
 	"strings"
 	"sync"
+	"sync/atomic"
 )
 
 // The curriculum JSON files are compiled into the binary (Spring: files under src/main/resources).
@@ -77,7 +78,8 @@ type BankEntry struct {
 // Go for Spring people: sync.RWMutex is a read-write lock; many readers can hold RLock at the same time, a
 // writer waits for them. Public methods lock once; the lower-case helpers assume the lock is already held.
 type Graph struct {
-	skills map[string]*Skill
+	skills      map[string]*Skill
+	gradeWindow atomic.Bool
 
 	mu          sync.RWMutex
 	bank        map[string]int         // "world|skill" -> published bank questions
@@ -195,9 +197,14 @@ func (gr *Graph) BankFor(world, id string, grade int) int {
 
 // bankFor is BankFor with the lock already held.
 func (gr *Graph) bankFor(world, id string, grade int) int {
+	return gr.bankIn(world, id, grade, gr.windowOn(world, grade))
+}
+
+// bankIn counts the bank questions of a quest for a school year, with or without the grade window.
+func (gr *Graph) bankIn(world, id string, grade int, window bool) int {
 	n := 0
 	for g, c := range gr.bankGrade[world+"|"+id] {
-		if g <= grade {
+		if g <= grade && (!window || g >= grade-1) { // grade-true: this year and the one before only
 			n += c
 		}
 	}
@@ -211,6 +218,9 @@ func (gr *Graph) PlayableFor(world, id string, grade int) bool {
 	defer gr.mu.RUnlock()
 	s, ok := gr.skills[id]
 	if gr.bankOnlyNow(world) {
+		if gr.gradeWindow.Load() { // grade-true: the window, or every lower year when the window is empty; never a higher year
+			return ok && gr.bankFor(world, id, grade) >= MinBankQuestions
+		}
 		return ok && gr.bankAny(world, id) >= MinBankQuestions
 	}
 	return ok && (s.Implementation || gr.bankFor(world, id, grade) >= MinBankQuestions)
@@ -440,4 +450,34 @@ func (gr *Graph) WorldsOf(id string) []string {
 		}
 	}
 	return out
+}
+
+// SetGradeWindow switches the grade-true rules (platform.grade_window): questions of the child's school year and the
+// one before, closest school year first, no school-year bypass for written-questions worlds.
+func (gr *Graph) SetGradeWindow(on bool) { gr.gradeWindow.Store(on) }
+
+// GradeWindow reports whether the grade-true rules are on.
+func (gr *Graph) GradeWindow() bool { return gr.gradeWindow.Load() }
+
+// WindowFor reports whether the grade-true rules apply to this world and school year: the switch is on AND the
+// world has at least one playable quest inside the window. A world with no content near the child's year (for
+// example a grade 1 child in a world that starts at grade 2) keeps the old rules, so it never becomes a dead end.
+func (gr *Graph) WindowFor(world string, grade int) bool {
+	gr.mu.RLock()
+	defer gr.mu.RUnlock()
+	return gr.windowOn(world, grade)
+}
+
+// windowOn is WindowFor with the lock held.
+func (gr *Graph) windowOn(world string, grade int) bool {
+	if !gr.gradeWindow.Load() {
+		return false
+	}
+	bankOnly := gr.bankOnlyNow(world)
+	for id, s := range gr.skills {
+		if gr.bankIn(world, id, grade, true) >= MinBankQuestions || (!bankOnly && s.Implementation && s.YearIntro <= grade) {
+			return true
+		}
+	}
+	return false
 }

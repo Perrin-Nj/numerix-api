@@ -181,6 +181,13 @@ func (s *Store) Set(ctx context.Context, ns string, raw []byte, actor string, ex
 	if err != nil {
 		return Doc{}, err
 	}
+	if ns == NSPlatform {
+		var p Platform
+		_ = json.Unmarshal(val, &p)
+		if err := s.checkWorldsPublished(ctx, p.DefaultWorlds, p.ReadyWorlds); err != nil {
+			return Doc{}, err
+		}
+	}
 	return s.write(ctx, ns, actor, "set", expected, func(*sql.Tx, int, string) (json.RawMessage, error) { return val, nil })
 }
 
@@ -282,4 +289,21 @@ func (s *Store) Versions(ctx context.Context, ns string, limit int) ([]Version, 
 		out = append(out, v)
 	}
 	return out, rows.Err()
+}
+
+// checkWorldsPublished rejects a default or ready world that is not a published world, so a draft world can never
+// be offered to a parent or switched on for a new child by a config edit.
+func (s *Store) checkWorldsPublished(ctx context.Context, lists ...[]string) error {
+	for _, list := range lists {
+		for _, w := range list {
+			var n int
+			if err := s.db.R.QueryRowContext(ctx, `SELECT COUNT(*) FROM worlds WHERE id = ? AND status = 'published'`, w).Scan(&n); err != nil {
+				return err
+			}
+			if n == 0 {
+				return &ValidationError{fmt.Sprintf("world %q is not a published world", w)}
+			}
+		}
+	}
+	return nil
 }

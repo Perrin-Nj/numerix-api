@@ -90,6 +90,18 @@ func (s *Server) StreamNarration(ctx context.Context, req api.StreamNarrationReq
 	if req.Params.LastEventID != nil {
 		after, _ = strconv.Atoi(*req.Params.LastEventID) // a bad value restarts from the beginning
 	}
+	if phase == narrator.PhaseDenouement && answerJSON != "" { // a question whose second try is still open must not reveal its answer
+		var first storedAnswer
+		if json.Unmarshal([]byte(answerJSON), &first) == nil && first.RetryOpen {
+			var used int
+			if err := s.Store.R.QueryRowContext(ctx, `SELECT COUNT(*) FROM answer_retries WHERE beat_id = ?`, plUID(req.BeatId)).Scan(&used); err != nil {
+				return nil, s.plInternalErr(ctx, "check retry", err)
+			}
+			if used == 0 {
+				return nil, plConflict("beat_not_answered", "The second try is still open.")
+			}
+		}
+	}
 	if len(q.Problem.Curated) > 0 { // a bank question: its own words, no model is ever called
 		cq, cerr := s.curatedOf(&q.Problem)
 		if cerr != nil {
@@ -104,6 +116,7 @@ func (s *Server) StreamNarration(ctx context.Context, req api.StreamNarrationReq
 			if err := json.Unmarshal([]byte(answerJSON), &st); err != nil {
 				return nil, s.plInternalErr(ctx, "decode answer", err)
 			}
+
 			cr := cq.Check(st.GivenRaw)
 			text = content.DenouementText(cr.Outcome, lang, cq, cr.Feedback, r.Data.Seed+uint32(idx))
 		}

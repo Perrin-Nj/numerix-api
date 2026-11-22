@@ -74,7 +74,7 @@ func TestApplyIsIdempotentAndDryRunWritesNothing(t *testing.T) {
 	nQuestions := len(x.f.Questions())
 
 	dry := x.apply(t, Options{DryRun: true, Actor: "test"})
-	if dry.Questions.Added != nQuestions || dry.Quests.Added != 89 || dry.Worlds.Added != 0 {
+	if dry.Questions.Added != nQuestions || dry.Quests.Added != len(x.f.Quests) || dry.Worlds.Added != 3 {
 		t.Fatalf("dry run counts: %+v", dry)
 	}
 	if n := x.count(t, `SELECT COUNT(*) FROM bank_questions`); n != 0 {
@@ -88,7 +88,7 @@ func TestApplyIsIdempotentAndDryRunWritesNothing(t *testing.T) {
 	}
 
 	first := x.apply(t, Options{Actor: "test", Strict: false})
-	if first.Questions.Added != nQuestions || first.Quests.Added != 89 {
+	if first.Questions.Added != nQuestions || first.Quests.Added != len(x.f.Quests) {
 		t.Fatalf("first run: %+v", first)
 	}
 	if first.Worlds.Changed != 20 { // the migration inserted 20 rows with an empty hash; the first run refreshes them
@@ -106,7 +106,7 @@ func TestApplyIsIdempotentAndDryRunWritesNothing(t *testing.T) {
 	if n := x.count(t, `SELECT COUNT(*) FROM seed_runs WHERE status = 'ok'`); n != 2 {
 		t.Errorf("seed_runs ok = %d, want 2", n)
 	}
-	if n := x.count(t, `SELECT COUNT(*) FROM worlds`); n != 20 {
+	if n := x.count(t, `SELECT COUNT(*) FROM worlds`); n != 23 {
 		t.Errorf("worlds = %d", n)
 	}
 	// every question has a version snapshot, an audit row and an outbox event
@@ -116,7 +116,7 @@ func TestApplyIsIdempotentAndDryRunWritesNothing(t *testing.T) {
 	if n := x.count(t, `SELECT COUNT(DISTINCT key) FROM outbox WHERE kind = ?`, mongosync.KindQuestionBank); n != nQuestions {
 		t.Errorf("question_bank outbox keys = %d, want %d", n, nQuestions)
 	}
-	if n := x.count(t, `SELECT COUNT(DISTINCT key) FROM outbox WHERE kind = ?`, mongosync.KindContentQuest); n != 89 {
+	if n := x.count(t, `SELECT COUNT(DISTINCT key) FROM outbox WHERE kind = ?`, mongosync.KindContentQuest); n != len(x.f.Quests) {
 		t.Errorf("content_quests outbox keys = %d", n)
 	}
 }
@@ -225,10 +225,18 @@ func TestSeedWorldsMatchTheMigration(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if len(rows) != len(x.f.Worlds) {
-		t.Fatalf("migration has %d worlds, seed has %d", len(rows), len(x.f.Worlds))
+	// the migration owns the first 20 worlds; every other world in the seed must be a draft (it is created by the seed run)
+	var seeded []content.World
+	for _, w := range x.f.Worlds {
+		if w.Status == content.StatusDraft {
+			continue
+		}
+		seeded = append(seeded, w)
 	}
-	for i, w := range x.f.Worlds {
+	if len(rows) != len(seeded) {
+		t.Fatalf("migration has %d worlds, seed has %d published", len(rows), len(seeded))
+	}
+	for i, w := range seeded {
 		r := rows[i]
 		if r.ID != w.ID || r.Ord != w.Ord || r.Name != w.Name || r.Tagline != w.Tagline || r.Hook != w.Hook || r.AccentColor != w.AccentColor ||
 			r.GradeMin != w.GradeMin || r.GradeMax != w.GradeMax || r.Strand != w.Strand {
@@ -239,16 +247,16 @@ func TestSeedWorldsMatchTheMigration(t *testing.T) {
 
 func TestSeedShape(t *testing.T) {
 	f := readExamples(t)
-	if len(f.Worlds) != 20 || len(f.Quests) != 89 {
-		t.Fatalf("worlds=%d quests=%d, want 20 and 89", len(f.Worlds), len(f.Quests))
+	if len(f.Worlds) != 23 || len(f.Quests) < 95 { // the quest count grows with the content
+		t.Fatalf("worlds=%d quests=%d, want 23 and at least 95", len(f.Worlds), len(f.Quests))
 	}
 	perWorld := map[string]int{}
 	for _, q := range f.Quests {
 		perWorld[q.World]++
 	}
 	for _, w := range []string{"nature", "espace", "cuisine", "sport", "construction", "medecine", "science", "echecs"} {
-		if perWorld[w] != 5 {
-			t.Errorf("legacy world %s has %d quests, want 5", w, perWorld[w])
+		if perWorld[w] < 5 {
+			t.Errorf("legacy world %s has %d quests, want at least 5", w, perWorld[w])
 		}
 	}
 	if perWorld["marche"] != 5 {
@@ -306,5 +314,41 @@ func TestRealAssetFilesLoadAndApply(t *testing.T) {
 	}
 	if n := x.count(t, `SELECT COUNT(*) FROM asset_variants`); n == 0 {
 		t.Fatal("no variant bytes stored")
+	}
+}
+
+// The three new worlds ship as draft worlds with three solid published sample questions each, fr and en names with
+// accents, grades spread inside 1 to 4; a seed run keeps them draft and an admin's later status is never overwritten.
+func TestNewWorldsShipAsDraftWithThreeQuestions(t *testing.T) {
+	x := newFixture(t)
+	f, err := Read(seedDir, ReadOptions{SkipAssets: true, Only: []string{"histoires", "english", "francais"}})
+	if err != nil {
+		t.Fatal(err)
+	}
+	x.f = f
+	x.apply(t, Options{Actor: "test"})
+	for _, id := range []string{"histoires", "english", "francais"} {
+		var status, nameFR, nameEN string
+		if err := x.db.R.QueryRow(`SELECT status, name_fr, name_en FROM worlds WHERE id = ?`, id).Scan(&status, &nameFR, &nameEN); err != nil {
+			t.Fatal(err)
+		}
+		if status != "draft" || nameFR == "" || nameEN == "" {
+			t.Errorf("%s: status=%q names=%q/%q", id, status, nameFR, nameEN)
+		}
+		if n := x.count(t, `SELECT COUNT(*) FROM bank_questions WHERE world_id = ? AND status = 'published'`, id); n != 3 {
+			t.Errorf("%s has %d published sample questions, want 3", id, n)
+		}
+		if n := x.count(t, `SELECT COUNT(DISTINCT grade) FROM bank_questions WHERE world_id = ? AND grade BETWEEN 1 AND 4`, id); n < 3 {
+			t.Errorf("%s samples cover only %d grades", id, n)
+		}
+	}
+	if _, err := x.db.W.Exec(`UPDATE worlds SET status = 'published' WHERE id = 'histoires'`); err != nil {
+		t.Fatal(err)
+	}
+	x.apply(t, Options{Actor: "test"})
+	var st string
+	_ = x.db.R.QueryRow(`SELECT status FROM worlds WHERE id = 'histoires'`).Scan(&st)
+	if st != "published" {
+		t.Fatalf("a seed run must keep the status an admin set, got %q", st)
 	}
 }

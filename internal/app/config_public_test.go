@@ -92,3 +92,67 @@ func TestDiscoverHonoursHiddenItemsAndStretch(t *testing.T) {
 }
 
 var _ = http.StatusOK
+
+// T020: home sections are off by default, an admin save shows them within the cache generation, and the public key
+// set is exactly the contract's (config_public key check).
+func TestPublicConfigHomeSectionsDefaultOffAndToggle(t *testing.T) {
+	f := newFeedFixture(t, true)
+	read := func() map[string]any {
+		rec := httptest.NewRecorder()
+		f.h.ServeHTTP(rec, httptest.NewRequest("GET", "/v1/config/public", nil))
+		var m map[string]any
+		_ = json.Unmarshal(rec.Body.Bytes(), &m)
+		return m["feed"].(map[string]any)["home_sections"].(map[string]any)
+	}
+	hs := read()
+	for _, k := range []string{"challenges", "discover", "daily_quest"} {
+		if v, ok := hs[k]; !ok || v != false {
+			t.Fatalf("home_sections.%s must default to false: %v", k, hs)
+		}
+	}
+	body := `{"discover_enabled":true,"hidden_item_ids":[],"max_grade_stretch":1,"family_board_visible":true,"home_sections":{"challenges":false,"discover":true,"daily_quest":false}}`
+	if _, err := f.s.Cfg.Set(context.Background(), "feed", []byte(body), "admin", nil); err != nil {
+		t.Fatal(err)
+	}
+	if hs = read(); hs["discover"] != true || hs["challenges"] != false {
+		t.Fatalf("after the admin toggle: %v", hs)
+	}
+	// no secret and no world list leaks through the public document
+	rec := httptest.NewRecorder()
+	f.h.ServeHTTP(rec, httptest.NewRequest("GET", "/v1/config/public", nil))
+	for _, banned := range []string{"ready_worlds", "default_worlds", "grade_window", "retry_enabled", "grade_prior"} {
+		if strings.Contains(rec.Body.String(), banned) {
+			t.Fatalf("the public config must not expose %s", banned)
+		}
+	}
+}
+
+func TestPlatformConfigKeysAreValidated(t *testing.T) {
+	f := newFeedFixture(t, true)
+	ctx := context.Background()
+	set := func(mutate func(*appconfig.Platform)) error {
+		p := appconfig.Get[appconfig.Platform](ctx, f.s.Cfg, appconfig.NSPlatform)
+		mutate(&p)
+		raw, _ := json.Marshal(p)
+		_, err := f.s.Cfg.Set(ctx, appconfig.NSPlatform, raw, "admin", nil)
+		return err
+	}
+	for name, mutate := range map[string]func(*appconfig.Platform){
+		"prior base too high":  func(p *appconfig.Platform) { p.GradePriorBase = 0.9 },
+		"prior step negative":  func(p *appconfig.Platform) { p.GradePriorStep = -1 },
+		"empty default worlds": func(p *appconfig.Platform) { p.DefaultWorlds = nil },
+		"unknown default world": func(p *appconfig.Platform) {
+			p.DefaultWorlds = []string{"atlantis"}
+			p.ReadyWorlds = []string{"atlantis"}
+		},
+		"default not ready":       func(p *appconfig.Platform) { p.ReadyWorlds = []string{"echecs"}; p.DefaultWorlds = []string{"espace"} },
+		"bad world id characters": func(p *appconfig.Platform) { p.ReadyWorlds = append(p.ReadyWorlds, "Bad World!") },
+	} {
+		if err := set(mutate); err == nil {
+			t.Errorf("%s must be refused", name)
+		}
+	}
+	if err := set(func(p *appconfig.Platform) { p.RetryEnabled, p.GradeWindow, p.GradePriorBase = false, false, 0.3 }); err != nil {
+		t.Fatalf("a valid edit: %v", err)
+	}
+}

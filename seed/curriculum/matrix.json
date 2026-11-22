@@ -1,0 +1,1062 @@
+{
+  "note": "Level guide in our own words (specs/001-three-worlds-premium/curriculum.md), grades 1 to 4. A row says: a question of this skill at this grade may use these difficulty bands and this style. style: drill (quick repeated practice, grades 1 and 2 only), context (story-framed only) or any. Tunable defaults to be validated by play-testing.",
+  "rows": [
+    {
+      "grade": 1,
+      "strand": "arithmetique",
+      "skill": "ARI-SEN-A02c",
+      "difficulty_range": [
+        1,
+        4
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 2,
+      "strand": "arithmetique",
+      "skill": "ARI-SEN-A02c",
+      "difficulty_range": [
+        2,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 1,
+      "strand": "arithmetique",
+      "skill": "ARI-SEN-A01c",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 1,
+      "strand": "arithmetique",
+      "skill": "ARI-SEN-A03",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 1,
+      "strand": "arithmetique",
+      "skill": "ARI-SEN-A07",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 1,
+      "strand": "arithmetique",
+      "skill": "ARI-SOP-A02a",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 1,
+      "strand": "arithmetique",
+      "skill": "ARI-SEN-A05",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 2,
+      "strand": "arithmetique",
+      "skill": "ARI-SEN-A05",
+      "difficulty_range": [
+        2,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 1,
+      "strand": "arithmetique",
+      "skill": "ARI-SEN-A08",
+      "difficulty_range": [
+        1,
+        3
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 2,
+      "strand": "arithmetique",
+      "skill": "ARI-SEN-A08",
+      "difficulty_range": [
+        2,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 1,
+      "strand": "arithmetique",
+      "skill": "ARI-SEN-A10",
+      "difficulty_range": [
+        2,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 1,
+      "strand": "arithmetique",
+      "skill": "ARI-SOP-A05a",
+      "difficulty_range": [
+        2,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 2,
+      "strand": "arithmetique",
+      "skill": "ARI-SEN-A10",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 2,
+      "strand": "arithmetique",
+      "skill": "ARI-SEN-A11a",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 2,
+      "strand": "arithmetique",
+      "skill": "ARI-SEN-B01",
+      "difficulty_range": [
+        1,
+        4
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 3,
+      "strand": "arithmetique",
+      "skill": "ARI-SEN-B02",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 3,
+      "strand": "arithmetique",
+      "skill": "ARI-SEN-B03",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 3,
+      "strand": "arithmetique",
+      "skill": "ARI-SOP-A03a",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 4,
+      "strand": "arithmetique",
+      "skill": "ARI-SEN-B02",
+      "difficulty_range": [
+        1,
+        3
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 4,
+      "strand": "arithmetique",
+      "skill": "ARI-SEN-B03",
+      "difficulty_range": [
+        1,
+        3
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 4,
+      "strand": "arithmetique",
+      "skill": "ARI-SOP-A03a",
+      "difficulty_range": [
+        1,
+        3
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 3,
+      "strand": "arithmetique",
+      "skill": "ARI-SEN-C03",
+      "difficulty_range": [
+        1,
+        4
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 4,
+      "strand": "arithmetique",
+      "skill": "ARI-SEN-C03",
+      "difficulty_range": [
+        2,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 4,
+      "strand": "arithmetique",
+      "skill": "ARI-SEN-C08",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 1,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A02a",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "drill",
+      "source_ref": "curriculum.md s6 and s7"
+    },
+    {
+      "grade": 1,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A04a",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "drill",
+      "source_ref": "curriculum.md s6 and s7"
+    },
+    {
+      "grade": 2,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A02a",
+      "difficulty_range": [
+        1,
+        2
+      ],
+      "style": "drill",
+      "source_ref": "curriculum.md s6 and s7"
+    },
+    {
+      "grade": 2,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A02c",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "drill",
+      "source_ref": "curriculum.md s6 and s7"
+    },
+    {
+      "grade": 2,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A05",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "drill",
+      "source_ref": "curriculum.md s6 and s7"
+    },
+    {
+      "grade": 2,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A03a",
+      "difficulty_range": [
+        2,
+        5
+      ],
+      "style": "drill",
+      "source_ref": "curriculum.md s6 and s7"
+    },
+    {
+      "grade": 2,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A04a",
+      "difficulty_range": [
+        1,
+        3
+      ],
+      "style": "drill",
+      "source_ref": "curriculum.md s6 and s7"
+    },
+    {
+      "grade": 2,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A01a",
+      "difficulty_range": [
+        1,
+        4
+      ],
+      "style": "drill",
+      "source_ref": "curriculum.md s6 and s7"
+    },
+    {
+      "grade": 3,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A02a",
+      "difficulty_range": [
+        1,
+        3
+      ],
+      "style": "context",
+      "source_ref": "curriculum.md s6 and s7"
+    },
+    {
+      "grade": 3,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A02c",
+      "difficulty_range": [
+        1,
+        3
+      ],
+      "style": "context",
+      "source_ref": "curriculum.md s6 and s7"
+    },
+    {
+      "grade": 3,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A03a",
+      "difficulty_range": [
+        1,
+        3
+      ],
+      "style": "context",
+      "source_ref": "curriculum.md s6 and s7"
+    },
+    {
+      "grade": 3,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A04a",
+      "difficulty_range": [
+        1,
+        3
+      ],
+      "style": "context",
+      "source_ref": "curriculum.md s6 and s7"
+    },
+    {
+      "grade": 3,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A05",
+      "difficulty_range": [
+        1,
+        3
+      ],
+      "style": "context",
+      "source_ref": "curriculum.md s6 and s7"
+    },
+    {
+      "grade": 3,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A06a",
+      "difficulty_range": [
+        1,
+        3
+      ],
+      "style": "context",
+      "source_ref": "curriculum.md s6 and s7"
+    },
+    {
+      "grade": 3,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A06c",
+      "difficulty_range": [
+        1,
+        3
+      ],
+      "style": "context",
+      "source_ref": "curriculum.md s6 and s7"
+    },
+    {
+      "grade": 4,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A02a",
+      "difficulty_range": [
+        1,
+        2
+      ],
+      "style": "context",
+      "source_ref": "curriculum.md s6 and s7"
+    },
+    {
+      "grade": 4,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A02c",
+      "difficulty_range": [
+        1,
+        2
+      ],
+      "style": "context",
+      "source_ref": "curriculum.md s6 and s7"
+    },
+    {
+      "grade": 3,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A01a",
+      "difficulty_range": [
+        1,
+        4
+      ],
+      "style": "context",
+      "source_ref": "curriculum.md s6 and s7"
+    },
+    {
+      "grade": 3,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A04b",
+      "difficulty_range": [
+        1,
+        4
+      ],
+      "style": "context",
+      "source_ref": "curriculum.md s6 and s7"
+    },
+    {
+      "grade": 3,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A04c",
+      "difficulty_range": [
+        1,
+        4
+      ],
+      "style": "context",
+      "source_ref": "curriculum.md s6 and s7"
+    },
+    {
+      "grade": 3,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A03b",
+      "difficulty_range": [
+        1,
+        4
+      ],
+      "style": "context",
+      "source_ref": "curriculum.md s6 and s7"
+    },
+    {
+      "grade": 4,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A01a",
+      "difficulty_range": [
+        1,
+        4
+      ],
+      "style": "context",
+      "source_ref": "curriculum.md s6 and s7"
+    },
+    {
+      "grade": 4,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A07a",
+      "difficulty_range": [
+        1,
+        4
+      ],
+      "style": "context",
+      "source_ref": "curriculum.md s6 and s7"
+    },
+    {
+      "grade": 4,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A08",
+      "difficulty_range": [
+        1,
+        4
+      ],
+      "style": "context",
+      "source_ref": "curriculum.md s6 and s7"
+    },
+    {
+      "grade": 4,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-C02a",
+      "difficulty_range": [
+        1,
+        4
+      ],
+      "style": "context",
+      "source_ref": "curriculum.md s6 and s7"
+    },
+    {
+      "grade": 4,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A06a",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "context",
+      "source_ref": "curriculum.md s6 and s7"
+    },
+    {
+      "grade": 4,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A06c",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "context",
+      "source_ref": "curriculum.md s6 and s7"
+    },
+    {
+      "grade": 1,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A13a",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 1,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A13b",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 1,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A14",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 2,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A13a",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 2,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A13b",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 2,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A14",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 3,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A13a",
+      "difficulty_range": [
+        2,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 3,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A13b",
+      "difficulty_range": [
+        2,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 3,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A14",
+      "difficulty_range": [
+        2,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 4,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A13a",
+      "difficulty_range": [
+        3,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 4,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A13b",
+      "difficulty_range": [
+        3,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 4,
+      "strand": "arithmetique",
+      "skill": "ARI-OPE-A14",
+      "difficulty_range": [
+        3,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 1,
+      "strand": "geometrie",
+      "skill": "GEO-A01",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 1,
+      "strand": "geometrie",
+      "skill": "GEO-B03",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 1,
+      "strand": "geometrie",
+      "skill": "GEO-C02",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 2,
+      "strand": "geometrie",
+      "skill": "GEO-A01",
+      "difficulty_range": [
+        1,
+        3
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 1,
+      "strand": "geometrie",
+      "skill": "GEO-A02",
+      "difficulty_range": [
+        2,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 2,
+      "strand": "geometrie",
+      "skill": "GEO-A02",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 2,
+      "strand": "geometrie",
+      "skill": "GEO-D01",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 2,
+      "strand": "geometrie",
+      "skill": "GEO-D03a",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 2,
+      "strand": "geometrie",
+      "skill": "GEO-B03",
+      "difficulty_range": [
+        1,
+        4
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 2,
+      "strand": "geometrie",
+      "skill": "GEO-C02",
+      "difficulty_range": [
+        1,
+        4
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 4,
+      "strand": "geometrie",
+      "skill": "GEO-C05",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 1,
+      "strand": "mesure",
+      "skill": "MES-G01",
+      "difficulty_range": [
+        1,
+        4
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 2,
+      "strand": "mesure",
+      "skill": "MES-G01",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 2,
+      "strand": "mesure",
+      "skill": "MES-A03",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 2,
+      "strand": "mesure",
+      "skill": "MES-A04a",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 2,
+      "strand": "mesure",
+      "skill": "MES-G02",
+      "difficulty_range": [
+        1,
+        3
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 3,
+      "strand": "mesure",
+      "skill": "MES-G02",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 3,
+      "strand": "mesure",
+      "skill": "MES-A05a",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 3,
+      "strand": "mesure",
+      "skill": "MES-A06",
+      "difficulty_range": [
+        1,
+        4
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 4,
+      "strand": "mesure",
+      "skill": "MES-A06",
+      "difficulty_range": [
+        2,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 4,
+      "strand": "mesure",
+      "skill": "MES-B01b",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 3,
+      "strand": "mesure",
+      "skill": "MES-E03",
+      "difficulty_range": [
+        2,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 3,
+      "strand": "mesure",
+      "skill": "MES-F03",
+      "difficulty_range": [
+        2,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 1,
+      "strand": "statistique",
+      "skill": "STA-02",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 1,
+      "strand": "probabilite",
+      "skill": "PRO-05a",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 1,
+      "strand": "statistique",
+      "skill": "STA-03a",
+      "difficulty_range": [
+        1,
+        4
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 2,
+      "strand": "statistique",
+      "skill": "STA-03a",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 2,
+      "strand": "statistique",
+      "skill": "STA-04a",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 2,
+      "strand": "probabilite",
+      "skill": "PRO-05a",
+      "difficulty_range": [
+        1,
+        3
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 3,
+      "strand": "statistique",
+      "skill": "STA-03b",
+      "difficulty_range": [
+        3,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 4,
+      "strand": "statistique",
+      "skill": "STA-03b",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 4,
+      "strand": "probabilite",
+      "skill": "PRO-08a",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    },
+    {
+      "grade": 3,
+      "strand": "probabilite",
+      "skill": "PRO-05b",
+      "difficulty_range": [
+        1,
+        5
+      ],
+      "style": "any",
+      "source_ref": "curriculum.md s7"
+    }
+  ],
+  "schema": 1
+}

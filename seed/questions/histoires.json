@@ -1,0 +1,51 @@
+{
+  "world": "histoires",
+  "schema": 1,
+  "questions": [
+    {
+      "id": "histoires.tambours.001", "quest": "histoires.tambours", "skill": "ARI-OPE-A02a", "type": "numeric", "grade": 1, "difficulty": 2, "style": "context",
+      "story": {"fr": "Aya joue du tambour pour tout le village.", "en": "Aya plays the drum for the whole village."},
+      "prompt": {"fr": "Elle frappe 6 coups sur le grand tambour, puis 5 coups sur le petit. Combien de coups en tout ?", "en": "She beats the big drum 6 times, then the small drum 5 times. How many beats in all?"},
+      "math_text": "6 + 5 = ?",
+      "answer": {"kind": "numeric", "value": 11, "calc": "6+5"},
+      "common_errors": [
+        {"value": 10, "misconception": "mis_off_by_one", "feedback": {"fr": "Presque ! Compte encore les coups du petit tambour.", "en": "Close! Count the small drum beats once more."}},
+        {"value": 1, "misconception": "mis_subtract_instead_of_add", "feedback": {"fr": "Ici, les coups s’ajoutent : on additionne.", "en": "Here the beats come together, so we add."}}
+      ],
+      "hint": {"fr": "Pars de 6 et avance de 5 pas.", "en": "Start at 6 and hop 5 steps."},
+      "explain": {"fr": "6 + 5 = 6 + 4 + 1, donc 10 + 1 = 11.", "en": "6 + 5 = 6 + 4 + 1, so 10 + 1 = 11."},
+      "tags": ["drums", "add-within-20", "village"],
+      "status": "published", "author": "numerix-3w", "version": 1
+    },
+    {
+      "id": "histoires.tambours.002", "quest": "histoires.tambours", "skill": "ARI-OPE-A02a", "type": "choice", "grade": 2, "difficulty": 2, "style": "context",
+      "story": {"fr": "Mamadou prépare la danse du soir.", "en": "Mamadou gets the evening dance ready."},
+      "prompt": {"fr": "Il y a 9 danseurs devant le feu et 8 danseurs derrière. Combien de danseurs en tout ?", "en": "There are 9 dancers in front of the fire and 8 dancers behind it. How many dancers in all?"},
+      "choices": [
+        {"id": "a", "text": {"fr": "16", "en": "16"}, "misconception": "mis_off_by_one"},
+        {"id": "b", "text": {"fr": "17", "en": "17"}},
+        {"id": "c", "text": {"fr": "1", "en": "1"}, "misconception": "mis_subtract_instead_of_add"},
+        {"id": "d", "text": {"fr": "18", "en": "18"}, "misconception": "mis_off_by_one"}
+      ],
+      "answer": {"kind": "choice", "correct": "b", "calc_choice": {"b": "9+8"}},
+      "hint": {"fr": "Fais d’abord 9 + 1, puis ajoute le reste.", "en": "First make 9 + 1, then add the rest."},
+      "explain": {"fr": "9 + 8 = 9 + 1 + 7, donc 10 + 7 = 17.", "en": "9 + 8 = 9 + 1 + 7, so 10 + 7 = 17."},
+      "tags": ["dance", "add-within-20", "village"],
+      "status": "published", "author": "numerix-3w", "version": 1
+    },
+    {
+      "id": "histoires.marche.001", "quest": "histoires.marche", "skill": "ARI-OPE-A06a", "type": "numeric", "grade": 4, "difficulty": 3, "style": "context",
+      "story": {"fr": "Fatou vend des mangues sous le grand baobab.", "en": "Fatou sells mangoes under the big baobab."},
+      "prompt": {"fr": "Elle range ses mangues en 4 rangées de 8. Combien de mangues a-t-elle ?", "en": "She sets her mangoes in 4 rows of 8. How many mangoes does she have?"},
+      "answer": {"kind": "numeric", "value": 32, "calc": "4*8"},
+      "common_errors": [
+        {"value": 12, "misconception": "mis_add_instead_of_multiply", "feedback": {"fr": "Les rangées sont égales : pense à des groupes de même taille.", "en": "The rows are equal: think of groups of the same size."}},
+        {"value": 31, "misconception": "mis_off_by_one", "feedback": {"fr": "Presque ! Recompte les rangées une à une.", "en": "Close! Count the rows again one by one."}}
+      ],
+      "hint": {"fr": "Compte 8, puis encore 8, quatre fois.", "en": "Count 8, then 8 again, four times."},
+      "explain": {"fr": "4 rangées de 8 : 8 + 8 + 8 + 8 = 32.", "en": "4 rows of 8: 8 + 8 + 8 + 8 = 32."},
+      "tags": ["market", "equal-groups", "mangoes"],
+      "status": "published", "author": "numerix-3w", "version": 1
+    }
+  ]
+}

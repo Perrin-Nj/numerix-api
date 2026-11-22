@@ -107,6 +107,9 @@ type Coverage struct {
 	Target   int            `json:"target_count"`
 	ByStatus map[string]int `json:"by_status"`
 	ByType   map[string]int `json:"by_type"`
+	ByGrade  map[int]int    `json:"by_grade"` // published questions per school year
+	GradeMin int            `json:"grade_min"`
+	GradeMax int            `json:"grade_max"`
 }
 
 // Coverage counts questions per quest by status and (published only) by type.
@@ -118,24 +121,25 @@ func (r *Repo) Coverage(ctx context.Context, q Querier) ([]Coverage, error) {
 	idx := map[string]*Coverage{}
 	out := make([]Coverage, len(qs))
 	for i, x := range qs {
-		out[i] = Coverage{Quest: x.ID, World: x.World, Target: x.TargetCount, ByStatus: map[string]int{}, ByType: map[string]int{}}
+		out[i] = Coverage{Quest: x.ID, World: x.World, Target: x.TargetCount, ByStatus: map[string]int{}, ByType: map[string]int{}, ByGrade: map[int]int{}, GradeMin: x.GradeMin, GradeMax: x.GradeMax}
 		idx[x.ID] = &out[i]
 	}
-	rows, err := q.QueryContext(ctx, `SELECT quest_id, status, type, COUNT(*) FROM bank_questions GROUP BY quest_id, status, type`)
+	rows, err := q.QueryContext(ctx, `SELECT quest_id, status, type, grade, COUNT(*) FROM bank_questions GROUP BY quest_id, status, type, grade`)
 	if err != nil {
 		return nil, fmt.Errorf("coverage: %w", err)
 	}
 	defer rows.Close()
 	for rows.Next() {
 		var quest, status, typ string
-		var n int
-		if err := rows.Scan(&quest, &status, &typ, &n); err != nil {
+		var n, grade int
+		if err := rows.Scan(&quest, &status, &typ, &grade, &n); err != nil {
 			return nil, err
 		}
 		if c := idx[quest]; c != nil {
 			c.ByStatus[status] += n
 			if status == content.StatusPublished {
 				c.ByType[typ] += n
+				c.ByGrade[grade] += n
 			}
 		}
 	}

@@ -10,6 +10,7 @@ import (
 	"errors"
 	"fmt"
 	"regexp"
+	"slices"
 	"strings"
 	"unicode"
 	"unicode/utf8"
@@ -47,16 +48,28 @@ type Platform struct {
 	Features                     map[string]bool `json:"features"`
 	DailyGoalDefault             int             `json:"daily_goal_default"` // chapters a day when the child has no goal of its own
 	WelcomeGift                  bool            `json:"welcome_gift"`       // the env FEATURE_WELCOME_GIFT only seeds the default
+	// Three-worlds release. DefaultWorlds start enabled for a new child; ReadyWorlds are the only worlds a parent may turn on
+	// (an admin widens the list when a world goes live). GradeWindow serves questions of the child's school year and the one
+	// before; RetryEnabled lets the client offer a second try. The prior pair sets a new skill's starting mastery.
+	DefaultWorlds  []string `json:"default_worlds"`
+	ReadyWorlds    []string `json:"ready_worlds"`
+	RetryEnabled   bool     `json:"retry_enabled"`
+	GradeWindow    bool     `json:"grade_window"`
+	GradePriorBase float64  `json:"grade_prior_base"`
+	GradePriorStep float64  `json:"grade_prior_step"`
 }
 
 func platformDefault(welcomeGift bool) Platform {
 	limit := 60
 	return Platform{CardThresholdPct: 70, UnpaidPolicy: "block", TrialDays: 14, DailyTimeLimitMinutesDefault: &limit,
 		ReminderHourLocal: 17, ExpiringWarningDays: 7, DefaultLocale: "fr-CA", DailyGoalDefault: 1, WelcomeGift: welcomeGift,
+		DefaultWorlds: []string{"echecs", "medecine", "espace"}, ReadyWorlds: []string{"echecs", "medecine", "espace"},
+		RetryEnabled: true, GradeWindow: true, GradePriorBase: 0.25, GradePriorStep: 0.15,
 		Features: map[string]bool{"feed": true, "challenges": true, "push": false, "payments": true}}
 }
 
 var featureKey = regexp.MustCompile(`^[a-z][a-z0-9_]{0,31}$`)
+var worldID = regexp.MustCompile(`^[a-z][a-z0-9-]{1,23}$`)
 
 func (p Platform) check() error {
 	switch {
@@ -78,6 +91,22 @@ func (p Platform) check() error {
 		return errors.New("invalid config daily_goal_default")
 	case len(p.Features) > 20:
 		return errors.New("invalid config features")
+	case len(p.DefaultWorlds) == 0 || len(p.DefaultWorlds) > 40 || len(p.ReadyWorlds) > 40:
+		return errors.New("invalid config default_worlds")
+	case p.GradePriorBase < 0 || p.GradePriorBase > 0.6 || p.GradePriorStep < 0 || p.GradePriorStep > 0.3:
+		return errors.New("invalid config grade_prior_base or grade_prior_step")
+	}
+	for _, list := range [][]string{p.DefaultWorlds, p.ReadyWorlds} {
+		for _, w := range list {
+			if !worldID.MatchString(w) {
+				return errors.New("invalid config world id " + w)
+			}
+		}
+	}
+	for _, w := range p.DefaultWorlds { // a new child may only start in a world a parent could turn on
+		if !slices.Contains(p.ReadyWorlds, w) {
+			return errors.New("default_worlds must all be in ready_worlds")
+		}
 	}
 	for k := range p.Features {
 		if !featureKey.MatchString(k) {
@@ -236,10 +265,18 @@ func (s Scenes) check() error {
 
 // Feed is the Discover feed and board policy.
 type Feed struct {
-	DiscoverEnabled    bool     `json:"discover_enabled"`
-	HiddenItemIDs      []string `json:"hidden_item_ids"` // Discover items (slug ids) hidden from every child
-	MaxGradeStretch    int      `json:"max_grade_stretch"`
-	FamilyBoardVisible bool     `json:"family_board_visible"`
+	DiscoverEnabled    bool         `json:"discover_enabled"`
+	HiddenItemIDs      []string     `json:"hidden_item_ids"` // Discover items (slug ids) hidden from every child
+	MaxGradeStretch    int          `json:"max_grade_stretch"`
+	FamilyBoardVisible bool         `json:"family_board_visible"`
+	HomeSections       HomeSections `json:"home_sections"`
+}
+
+// HomeSections says which blocks the child home page shows; all off until an admin turns them on (decision D2).
+type HomeSections struct {
+	Challenges bool `json:"challenges"`
+	Discover   bool `json:"discover"`
+	DailyQuest bool `json:"daily_quest"`
 }
 
 func feedDefault() Feed {

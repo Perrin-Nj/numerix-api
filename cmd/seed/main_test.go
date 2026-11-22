@@ -3,12 +3,14 @@ package main
 import (
 	"bytes"
 	"context"
+	"fmt"
 	"os"
 	"path/filepath"
 	"regexp"
 	"strings"
 	"testing"
 
+	"github.com/Perrin-Nj/numerix-api/internal/seedload"
 	"github.com/Perrin-Nj/numerix-api/internal/store"
 )
 
@@ -35,7 +37,7 @@ func count(t *testing.T, db *store.Store, query string) int {
 func TestValidateOnlyNeverTouchesTheDatabase(t *testing.T) {
 	dbPath := filepath.Join(t.TempDir(), "never.db")
 	code, out, errOut := runSeed(t, nil, "--db", dbPath, "--seed-dir", seedDir, "--validate-only")
-	if code != 0 || !strings.Contains(out, "seed files valid: 20 worlds, 89 quests") {
+	if code != 0 || !strings.Contains(out, fmt.Sprintf("seed files valid: 23 worlds, %d quests", questCount(t))) {
 		t.Fatalf("code=%d out=%q err=%q", code, out, errOut)
 	}
 	if _, err := os.Stat(dbPath); err == nil {
@@ -49,7 +51,7 @@ func TestDryRunThenApplyThenNothingToDo(t *testing.T) {
 	base := []string{"--db", dbPath, "--seed-dir", seedDir, "--only", "assets,worlds,quests,questions", "--actor", "tester"}
 
 	code, out, errOut := runSeed(t, nil, append(base, "--dry-run")...)
-	if code != 0 || !strings.Contains(out, "dry run (nothing written)") || !has(out, "quests added=89") {
+	if code != 0 || !strings.Contains(out, "dry run (nothing written)") || !has(out, fmt.Sprintf("quests added=%d", questCount(t))) {
 		t.Fatalf("dry run: code=%d out=%q err=%q", code, out, errOut)
 	}
 	if _, err := os.Stat(dbPath); err == nil {
@@ -57,12 +59,12 @@ func TestDryRunThenApplyThenNothingToDo(t *testing.T) {
 	}
 
 	code, out, errOut = runSeed(t, nil, base...)
-	if code != 0 || !has(out, "quests added=89") {
+	if code != 0 || !has(out, fmt.Sprintf("quests added=%d", questCount(t))) {
 		t.Fatalf("first apply: code=%d out=%q err=%q", code, out, errOut)
 	}
 	// second dry run: nothing left to change
 	code, out, _ = runSeed(t, nil, append(base, "--dry-run")...)
-	if code != 0 || !has(out, "quests added=0 changed=0 unchanged=89") {
+	if code != 0 || !has(out, fmt.Sprintf("quests added=0 changed=0 unchanged=%d", questCount(t))) {
 		t.Fatalf("second dry run: code=%d out=%q", code, out)
 	}
 	// second real run takes a backup of the existing database and changes nothing
@@ -79,7 +81,7 @@ func TestDryRunThenApplyThenNothingToDo(t *testing.T) {
 		t.Fatal(err)
 	}
 	defer b.Close()
-	if n := count(t, b, `SELECT COUNT(*) FROM world_quests`); n != 89 {
+	if n := count(t, b, `SELECT COUNT(*) FROM world_quests`); n != questCount(t) {
 		t.Fatalf("backup holds %d quests", n)
 	}
 }
@@ -131,4 +133,21 @@ func TestRefusals(t *testing.T) {
 // has reports whether the output matches a pattern where runs of spaces are flexible.
 func has(out, pattern string) bool {
 	return regexp.MustCompile(strings.ReplaceAll(pattern, " ", `\s+`)).MatchString(out)
+}
+
+func TestReportStyleListsUntaggedDrillQuestions(t *testing.T) {
+	code, out, errOut := runSeed(t, nil, "--seed-dir", seedDir, "--report-style")
+	if code != 0 || !strings.Contains(out, "0 questions without an explicit style") { // the three worlds are clean
+		t.Fatalf("code=%d out=%q err=%q", code, out, errOut)
+	}
+}
+
+// questCount is how many quests the seed files hold (the tests follow the data instead of hard-coding it).
+func questCount(t *testing.T) int {
+	t.Helper()
+	f, err := seedload.Read(seedDir, seedload.ReadOptions{SkipAssets: true, Exclude: []string{seedload.ExamplesFile}})
+	if err != nil {
+		t.Fatal(err)
+	}
+	return len(f.Quests)
 }

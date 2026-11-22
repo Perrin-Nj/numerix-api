@@ -7,7 +7,6 @@ import (
 	"github.com/Perrin-Nj/numerix-api/api"
 	"github.com/Perrin-Nj/numerix-api/internal/contentdb"
 	"github.com/Perrin-Nj/numerix-api/internal/engine"
-	"github.com/Perrin-Nj/numerix-api/internal/httpapi"
 )
 
 // skillNames are the child-friendly chapter titles [fr, en] of the implemented skills (from the mock).
@@ -36,14 +35,6 @@ func (g *gameState) skillLabel(id, lang string) string {
 	return id
 }
 
-// gradeOf is the school year used by the planner; an unknown grade means "everything".
-func gradeOf(c plChild) int {
-	if c.Grade.Valid && c.Grade.Int64 > 0 {
-		return int(c.Grade.Int64)
-	}
-	return 6
-}
-
 // ListWorlds answers GET /worlds: the twenty worlds (from the database) with art and skill counts.
 func (s *Server) ListWorlds(ctx context.Context, req api.ListWorldsRequestObject) (api.ListWorldsResponseObject, error) {
 	if _, err := plCaller(ctx); err != nil {
@@ -54,7 +45,14 @@ func (s *Server) ListWorlds(ctx context.Context, req api.ListWorldsRequestObject
 	if err != nil {
 		return nil, err
 	}
-	return api.ListWorlds200JSONResponse{Items: items}, nil
+	ready := s.plConfig(ctx).ReadyWorlds
+	out := make([]api.World, len(items)) // the cached list is shared: copy before adding the per-request flag
+	for i, w := range items {
+		r := slices.Contains(ready, string(w.Id))
+		w.Ready = &r
+		out[i] = w
+	}
+	return api.ListWorlds200JSONResponse{Items: out}, nil
 }
 
 // ListSkills answers GET /skills with the optional filters world, grade and implemented.
@@ -123,10 +121,8 @@ func (s *Server) GetJourney(ctx context.Context, req api.GetJourneyRequestObject
 	}
 	g := s.game()
 	world := string(req.Params.World)
-	if ok, werr := s.worldExists(ctx, world); werr != nil {
+	if werr := s.worldOpen(ctx, world); werr != nil {
 		return nil, werr
-	} else if !ok {
-		return nil, httpapi.Validation(plField("world", "unknown world"))
 	}
 	s.syncBank(ctx)
 	lang := gameLang(req.Params.AcceptLanguage, c.Locale)
@@ -174,7 +170,7 @@ func (s *Server) GetJourney(ctx context.Context, req api.GetJourneyRequestObject
 	if base == "" {
 		base = "/assets"
 	}
-	grade := gradeOf(c)
+	grade := s.childGrade(ctx, c)
 	nodes := make([]api.JourneyNode, 0, len(order))
 	for i, nd := range order {
 		label := g.skillLabel(nd.skill, lang)
@@ -222,4 +218,25 @@ func (s *Server) GetJourney(ctx context.Context, req api.GetJourneyRequestObject
 		out.CurrentSkillId = &sel.SkillID
 	}
 	return api.GetJourney200JSONResponse(out), nil
+}
+
+// gradeWindowOn reads platform.grade_window and applies it to the skill graph (an atomic store, cheap), so the
+// planner, the playable check and the question picker all follow the admin switch.
+func (s *Server) gradeWindowOn(ctx context.Context) bool {
+	on := s.plConfig(ctx).GradeWindow
+	s.game().graph.SetGradeWindow(on)
+	return on
+}
+
+// childGrade is the school year used for play. With grade-true play on, a child without a grade is a grade 1
+// child; with it off the old rule stays (unknown grade means everything).
+func (s *Server) childGrade(ctx context.Context, c plChild) int {
+	on := s.gradeWindowOn(ctx) // always applied, so every later graph call sees the current flag
+	if c.Grade.Valid && c.Grade.Int64 > 0 {
+		return int(c.Grade.Int64)
+	}
+	if on {
+		return 1
+	}
+	return 6
 }

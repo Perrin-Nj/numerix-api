@@ -283,6 +283,12 @@ func (r *run) assetKind(ctx context.Context, tx *sql.Tx) error {
 
 func (r *run) worlds(ctx context.Context, tx *sql.Tx, actor string) error {
 	for _, w := range r.f.Worlds {
+		// the status of a world that already exists belongs to the admin (published or draft switch): a seed run only
+		// sets it when it creates the world
+		var cur string
+		if tx.QueryRowContext(ctx, `SELECT status FROM worlds WHERE id = ?`, w.ID).Scan(&cur) == nil && cur != "" {
+			w.Status = cur
+		}
 		ch, err := r.repo.UpsertWorld(ctx, tx, w, actor)
 		if err != nil {
 			return err
@@ -381,8 +387,14 @@ func (r *run) postChecks(ctx context.Context) error {
 		if err := r.repo.DB.R.QueryRowContext(ctx, `SELECT COUNT(*) FROM worlds WHERE status = 'published'`).Scan(&n); err != nil {
 			return err
 		}
-		if n < len(r.f.Worlds) {
-			return fmt.Errorf("expected at least %d published worlds, found %d", len(r.f.Worlds), n)
+		want := 0
+		for _, w := range r.f.Worlds {
+			if w.Status != content.StatusDraft { // a draft world stays closed until an admin publishes it
+				want++
+			}
+		}
+		if n < want {
+			return fmt.Errorf("expected at least %d published worlds, found %d", want, n)
 		}
 	}
 	if r.opt.Strict {

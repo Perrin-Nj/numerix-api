@@ -12,6 +12,7 @@ import (
 	"time"
 
 	"github.com/Perrin-Nj/numerix-api/api"
+	"github.com/Perrin-Nj/numerix-api/internal/content"
 	"github.com/Perrin-Nj/numerix-api/internal/engine"
 	"github.com/Perrin-Nj/numerix-api/internal/httpapi"
 	"github.com/Perrin-Nj/numerix-api/internal/narrator"
@@ -63,10 +64,8 @@ func (s *Server) StartSession(ctx context.Context, req api.StartSessionRequestOb
 	}
 	g := s.game()
 	world := string(req.Body.World)
-	if ok, werr := s.worldExists(ctx, world); werr != nil {
+	if werr := s.worldOpen(ctx, world); werr != nil {
 		return nil, werr
-	} else if !ok {
-		return nil, httpapi.Validation(plField("world", "unknown world"))
 	}
 	if !slices.Contains(s.enabledWorlds(ctx, c.ID), world) { // a parent turned this world off
 		return nil, httpapi.Validation(plField("world", "not enabled for this child"))
@@ -88,7 +87,7 @@ func (s *Server) StartSession(ctx context.Context, req api.StartSessionRequestOb
 	skill, reason := "", "choisie"
 	if req.Body.SkillId != nil {
 		sk, gerr := g.graph.Get(*req.Body.SkillId)
-		if gerr != nil || !g.graph.PlayableFor(world, sk.ID, gradeOf(c)) { // also refuses a chapter this grade has too few questions for
+		if gerr != nil || !g.graph.PlayableFor(world, sk.ID, s.childGrade(ctx, c)) { // also refuses a chapter this grade has too few questions for
 			return nil, httpapi.Validation(plField("skill_id", "unknown or not available yet"))
 		}
 		// Same lock rule as the journey map (QA-BE-004): a chapter whose prerequisites are not mastered is refused with 422.
@@ -103,7 +102,7 @@ func (s *Server) StartSession(ctx context.Context, req api.StartSessionRequestOb
 		}
 		skill = sk.ID
 	} else {
-		sel, cerr := engine.Choose(g.graph, prof, world, gradeOf(c), engine.NewRNG(g.seed()), now)
+		sel, cerr := engine.Choose(g.graph, prof, world, s.childGrade(ctx, c), engine.NewRNG(g.seed()), now)
 		if cerr != nil {
 			return nil, httpapi.Validation(plField("world", "no chapter available for this world and grade"))
 		}
@@ -200,6 +199,21 @@ func (s *Server) sessionView(ctx context.Context, r sessRow, lang string, withBe
 	}
 	if withScore {
 		out.Score = s.scoreOf(ctx, r.Status, outcomes)
+	}
+	if withBeat && r.Status == "active" && s.plConfig(ctx).RetryEnabled {
+		// a wrong first answer whose second try is still open: a reload resumes it instead of skipping the question
+		if rb, found, err := retryBeatFrom(ctx, s.Store.R, r.ID); err != nil {
+			return api.Session{}, err
+		} else if found {
+			view, err := s.beatView(ctx, rb, lang)
+			if err != nil {
+				return api.Session{}, err
+			}
+			open := true
+			view.RetryAvailable = &open
+			out.CurrentBeat = &view
+			return out, nil
+		}
 	}
 	if withBeat {
 		b, found, err := s.openBeat(ctx, r.ID)
@@ -405,9 +419,18 @@ func (s *Server) NextBeat(ctx context.Context, req api.NextBeatRequestObject) (a
 	case "paused":
 		return nil, plConflict("session_paused", "This chapter is paused.")
 	}
-	var created bool
+	var created, closedChapter bool
 	var beat beatRow
 	err = s.Store.WithWriteTx(ctx, func(tx *sql.Tx) error {
+		// asking for the next beat while a second try is open moves on: the window closes, and on the last question
+		// the chapter is finished with the first-try score
+		done, e := s.closeRetryWindow(ctx, tx, r, c, s.game().now())
+		if e != nil {
+			return e
+		}
+		if closedChapter = done; done {
+			return nil
+		}
 		if b, found, e := openBeatFrom(ctx, tx, r.ID); e != nil || found { // a retry gets the same beat
 			beat = b
 			return e
@@ -421,7 +444,7 @@ func (s *Server) NextBeat(ctx context.Context, req api.NextBeatRequestObject) (a
 		}
 		var last string
 		_ = tx.QueryRowContext(ctx, `SELECT COALESCE(json_extract(json,'$.shape'),'') FROM beats WHERE session_id = ? ORDER BY idx DESC LIMIT 1`, r.ID).Scan(&last)
-		qid, shape, e := s.pickQuestion(ctx, tx, r.ChildID, r.World, r.Data.Skill, gradeOf(c), last)
+		qid, shape, e := s.pickQuestion(ctx, tx, r.ID, r.ChildID, r.World, r.Data.Skill, s.childGrade(ctx, c), last)
 		if e != nil {
 			return e
 		}
@@ -438,6 +461,12 @@ func (s *Server) NextBeat(ctx context.Context, req api.NextBeatRequestObject) (a
 	}
 	if err != nil {
 		return nil, s.plInternalErr(ctx, "next beat", err)
+	}
+	if closedChapter { // the chapter was finished by moving on from the last question: nothing more to play
+		if _, e := s.settleChallenges(ctx, c); e != nil {
+			s.Log.Warn("settle challenges failed", "err", e)
+		}
+		return nil, plConflict("session_completed", "This chapter is already complete.")
 	}
 	view, err := s.beatView(ctx, beat, lang)
 	if err != nil {
@@ -463,7 +492,7 @@ func paramsHash(skill, statement string) string {
 //
 // then record "served" in child_questions. SQLite has a single writer, so no SKIP LOCKED is needed
 // (Postgres would use FOR UPDATE SKIP LOCKED here).
-func (s *Server) pickQuestion(ctx context.Context, tx *sql.Tx, childID, world, skill string, grade int, avoidShape string) (id, shape string, err error) {
+func (s *Server) pickQuestion(ctx context.Context, tx *sql.Tx, sessionID, childID, world, skill string, grade int, avoidShape string) (id, shape string, err error) {
 	now := plTS(s.game().now())
 	id, shape, curated, err := s.pickCurated(ctx, tx, childID, world, skill, grade, avoidShape)
 	if err != nil {
@@ -471,7 +500,7 @@ func (s *Server) pickQuestion(ctx context.Context, tx *sql.Tx, childID, world, s
 	}
 	if !curated {
 		var reserved bool
-		if id, shape, reserved, err = s.pickGenerated(ctx, tx, childID, world, skill, avoidShape, now); err != nil {
+		if id, shape, reserved, err = s.pickGenerated(ctx, tx, sessionID, grade, childID, world, skill, avoidShape, now); err != nil {
 			return "", "", err
 		}
 		if reserved { // a question the child already saw was served again; its record is updated
@@ -494,7 +523,10 @@ func (s *Server) pickQuestion(ctx context.Context, tx *sql.Tx, childID, world, s
 var bankOnlyWorlds = []string{"echecs", "medecine", "espace"}
 
 // reserveBank serves again the least recently seen bank question of this skill in this world (ok false when the child has seen none).
-func (s *Server) reserveBank(ctx context.Context, tx *sql.Tx, childID, world, skill, avoidShape, now string) (id, shape string, ok bool, err error) {
+func (s *Server) reserveBank(ctx context.Context, tx *sql.Tx, sessionID string, grade int, childID, world, skill, avoidShape, now string) (id, shape string, ok bool, err error) {
+	if s.plConfig(ctx).GradeWindow {
+		return s.reserveBankGradeTrue(ctx, tx, sessionID, grade, childID, world, skill, avoidShape, now)
+	}
 	err = tx.QueryRowContext(ctx, `SELECT q.id, q.shape FROM questions q JOIN child_questions cq ON cq.question_id = q.id
 		WHERE q.skill_id = ? AND cq.child_id = ? AND q.bank_id IN (SELECT id FROM bank_questions WHERE world_id = ? AND status = 'published')
 		ORDER BY (q.shape = ?), cq.served_at ASC LIMIT 1`, skill, childID, world, avoidShape).Scan(&id, &shape)
@@ -512,9 +544,9 @@ func (s *Server) reserveBank(ctx context.Context, tx *sql.Tx, childID, world, sk
 }
 
 // pickGenerated is the generator side of pickQuestion. reserved is true when it re-served an old question.
-func (s *Server) pickGenerated(ctx context.Context, tx *sql.Tx, childID, world, skill, avoidShape, now string) (id, shape string, reserved bool, err error) {
+func (s *Server) pickGenerated(ctx context.Context, tx *sql.Tx, sessionID string, grade int, childID, world, skill, avoidShape, now string) (id, shape string, reserved bool, err error) {
 	if slices.Contains(bankOnlyWorlds, world) { // the written bank first, even when its questions repeat
-		if rid, rshape, ok, rerr := s.reserveBank(ctx, tx, childID, world, skill, avoidShape, now); rerr != nil || ok {
+		if rid, rshape, ok, rerr := s.reserveBank(ctx, tx, sessionID, grade, childID, world, skill, avoidShape, now); rerr != nil || ok {
 			return rid, rshape, ok, rerr
 		}
 	}
@@ -568,4 +600,47 @@ func (s *Server) pickGenerated(ctx context.Context, tx *sql.Tx, childID, world, 
 		return id, shape, true, err
 	}
 	return "", "", false, gerr
+}
+
+// reserveBankGradeTrue is reserveBank for grade-true play: only questions of this school year or lower, never one this
+// chapter already served, and from grade 3 on a drill only when nothing else is left.
+func (s *Server) reserveBankGradeTrue(ctx context.Context, tx *sql.Tx, sessionID string, grade int, childID, world, skill, avoidShape, now string) (id, shape string, ok bool, err error) {
+	rows, err := tx.QueryContext(ctx, `SELECT q.id, q.shape, b.grade, COALESCE(json_extract(b.content_json, '$.style'), '')
+		FROM questions q JOIN child_questions cq ON cq.question_id = q.id JOIN bank_questions b ON b.id = q.bank_id
+		WHERE q.skill_id = ? AND cq.child_id = ? AND b.world_id = ? AND b.status = 'published' AND b.grade <= ?
+		  AND q.id NOT IN (SELECT question_id FROM beats WHERE session_id = ?)
+		ORDER BY (q.shape = ?), cq.served_at ASC LIMIT 60`, skill, childID, world, grade, sessionID, avoidShape)
+	if err != nil {
+		return "", "", false, err
+	}
+	var firstID, firstShape string
+	for rows.Next() {
+		var qid, qshape, style string
+		var g int
+		if err = rows.Scan(&qid, &qshape, &g, &style); err != nil {
+			_ = rows.Close()
+			return "", "", false, err
+		}
+		if firstID == "" {
+			firstID, firstShape = qid, qshape
+		}
+		if grade < 3 || content.DerivedStyle(skill, g, style) != content.StyleDrill {
+			id, shape = qid, qshape
+			break
+		}
+	}
+	if err = errors.Join(rows.Err(), rows.Close()); err != nil {
+		return "", "", false, err
+	}
+	if id == "" {
+		id, shape = firstID, firstShape // only drills are left: better than a dead end
+	}
+	if id == "" {
+		return "", "", false, nil // nothing seen yet: the caller may still generate
+	}
+	if _, err = tx.ExecContext(ctx, `UPDATE child_questions SET served_at = ? WHERE child_id = ? AND question_id = ?`, now, childID, id); err != nil {
+		return "", "", false, err
+	}
+	_, err = tx.ExecContext(ctx, `UPDATE questions SET served_count = served_count + 1 WHERE id = ?`, id)
+	return id, shape, true, err
 }

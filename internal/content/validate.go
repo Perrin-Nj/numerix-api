@@ -77,6 +77,7 @@ type Env struct {
 	Denylist      []string        // brand and rude words (folded)
 	Names         map[string]bool // allowed first names and proper nouns (folded)
 	SeedFile      bool            // true for files in seed/: "retired" is refused there
+	StrictStyle   bool            // F1: a missing style on a drill skill is an error (content gate), else a warning
 }
 
 var (
@@ -177,8 +178,30 @@ func (e *Env) Validate(q *Question) []Issue {
 	v.lengths()
 	v.media()
 	v.status()
+	v.style()
+	v.styleRequired()
 	return v.issues
 }
+
+// style: rule T1. Drills (quick repeated practice) are for grades 1 and 2; grade 3 may keep a few (checked per quest in
+// ValidateSet) and grade 4 none. An empty style counts as context.
+func (v *run) style() {
+	switch v.q.Style {
+	case "", StyleContext:
+	case StyleDrill:
+		if v.q.Grade >= 4 {
+			v.err("style_drill_grade", "style", "a drill is served to grades 1 to 3 only (grade 3 at most 10 percent of a quest), this question is grade %d", v.q.Grade)
+		}
+	default:
+		v.err("style_value", "style", "style must be drill or context, got %q", v.q.Style)
+	}
+}
+
+// Question styles.
+const (
+	StyleDrill   = "drill"
+	StyleContext = "context"
+)
 
 // run collects the issues of one Validate call.
 type run struct {
@@ -690,7 +713,22 @@ func (v *run) leaks() {
 		return
 	}
 	if q.Answer.Kind == KindTrueFalse || q.Answer.Kind == KindOrder || q.Answer.Kind == KindMatch {
-		return // the statement and the cards are the question; there is no hidden value
+		// the statement and the cards are the question, but a hint can still state the answer
+		// an error in echecs, medecine and espace; a warning in the older worlds, whose content predates this rule
+		report := v.warn
+		if styleWorlds[strings.SplitN(q.ID, ".", 2)[0]] {
+			report = v.err
+		}
+		fields := []textField{{"hint.fr", "fr", q.Hint.FR, ""}, {"hint.en", "en", q.Hint.EN, ""}}
+		if q.RetryHint != nil {
+			fields = append(fields, textField{"retry_hint.fr", "fr", q.RetryHint.FR, ""}, textField{"retry_hint.en", "en", q.RetryHint.EN, ""})
+		}
+		for _, f := range fields {
+			if q.structuredLeak(f.text, f.lang) {
+				report("answer_leak", f.name, "the hint gives the answer away")
+			}
+		}
+		return
 	}
 	lt := q.answerTokens()
 	check := func(field, text, lang string) {
@@ -704,6 +742,22 @@ func (v *run) leaks() {
 		{"hint.fr", "fr", q.Hint.FR, ""}, {"hint.en", "en", q.Hint.EN, ""},
 	} {
 		check(f.name, f.text, f.lang)
+	}
+	// the second-try hint is the retry_hint or the feedback of the typical error made, so neither may give the answer away
+	if q.RetryHint != nil {
+		check("retry_hint.fr", q.RetryHint.FR, "fr")
+		check("retry_hint.en", q.RetryHint.EN, "en")
+	}
+	for i, ce := range q.CommonErrors { // a leaking feedback is only a warning: the server falls back to the hint instead of using it as a retry hint
+		for _, f := range []textField{{fmt.Sprintf("common_errors[%d].feedback.fr", i), "fr", ce.Feedback.FR, ""}, {fmt.Sprintf("common_errors[%d].feedback.en", i), "en", ce.Feedback.EN, ""}} {
+			if tok, bad := lt.leaksIn(f.text, f.lang); bad {
+				if v.env.StrictStyle && styleWorlds[strings.SplitN(q.ID, ".", 2)[0]] { // the content gate: an error in echecs, medecine and espace
+					v.err("feedback_leak", f.name, "the feedback shows the answer (%s); it is used as the second-try hint", tok)
+				} else {
+					v.warn("feedback_leak", f.name, "the feedback shows the answer (%s); it will not be used as a second-try hint", tok)
+				}
+			}
+		}
 	}
 	if q.MathText != "" {
 		check("math_text", q.MathText, "fr")
@@ -952,6 +1006,18 @@ func (e *Env) ValidateSet(qs []*Question) []Issue {
 		for _, q := range list {
 			types[q.Type] = true
 		}
+		var g3, g3drills int
+		for _, q := range list {
+			if q.Grade == 3 {
+				g3++
+				if q.Style == StyleDrill {
+					g3drills++
+				}
+			}
+		}
+		if g3drills*10 > g3 { // T1: at most 10 percent of the grade 3 questions of a quest
+			out = append(out, Issue{Code: "style_drill_share", Field: quest, Message: fmt.Sprintf("%d of %d grade 3 questions are drills, the limit is 10 percent", g3drills, g3)})
+		}
 		if len(types) < 4 {
 			out = append(out, Issue{Code: "quest_type_variety", Field: quest, Message: fmt.Sprintf("only %d distinct types, aim for 4 or more", len(types)), Warning: true})
 		}
@@ -1070,4 +1136,145 @@ func MarshalIssues(is []Issue) json.RawMessage {
 	}
 	b, _ := json.Marshal(is) // a slice of plain structs always marshals
 	return b
+}
+
+// Leaks reports whether a text would show this question's answer (digits or number words, in that language).
+// The server uses it to refuse a second-try hint that gives the answer away.
+func (q *Question) Leaks(text, lang string) bool {
+	if q.AllowOperandEqualsAnswer {
+		return false
+	}
+	switch q.Answer.Kind {
+	case KindTrueFalse, KindOrder, KindMatch:
+		return q.structuredLeak(text, lang)
+	}
+	_, bad := q.answerTokens().leaksIn(text, lang)
+	return bad
+}
+
+// structuredLeak is the leak test for answers that are not a number: true/false (a hint that says true or false),
+// order (a hint that lists two or more items in the right order) and match (a hint that names both sides of a pair).
+func (q *Question) structuredLeak(text, lang string) bool {
+	folded := Fold(text)
+	switch q.Answer.Kind {
+	case KindTrueFalse:
+		for _, w := range []string{"vrai", "faux", "true", "false"} {
+			if containsPhrase(folded, w) {
+				return true
+			}
+		}
+	case KindOrder:
+		if q.Items == nil {
+			return false
+		}
+		byID := map[string]string{}
+		for _, it := range q.Items.List {
+			byID[it.ID] = Fold(it.Text.Get(lang))
+		}
+		pos, hits := 0, 0
+		for _, id := range q.Answer.Sequence {
+			p := byID[id]
+			if p == "" || !containsPhrase(folded[pos:], p) {
+				continue
+			}
+			pos += strings.Index(folded[pos:], p) + len(p)
+			hits++
+		}
+		return hits >= 2
+	case KindMatch:
+		if q.Items == nil {
+			return false
+		}
+		left, right := map[string]string{}, map[string]string{}
+		for _, it := range q.Items.Left {
+			left[it.ID] = Fold(it.Text.Get(lang))
+		}
+		for _, it := range q.Items.Right {
+			right[it.ID] = Fold(it.Text.Get(lang))
+		}
+		for _, p := range q.Answer.Pairs {
+			l, r := left[p[0]], right[p[1]]
+			if l != "" && r != "" && containsPhrase(folded, l) && containsPhrase(folded, r) {
+				return true
+			}
+		}
+	}
+	return false
+}
+
+// GradeQuotaMin is how many published questions a published world needs for each school year it serves (Q1).
+const GradeQuotaMin = 20
+
+// GradeQuota is rule Q1: every school year that a quest of the world covers (grades 1 to 4) needs GradeQuotaMin
+// published questions. It warns until strict is true (the content gate), then it is an error.
+func (e *Env) GradeQuota(world string, qs []*Question, quests []Quest, strict bool) []Issue {
+	served := map[int]bool{}
+	for _, qu := range quests {
+		if qu.World == world {
+			for g := max(1, qu.GradeMin); g <= min(4, qu.GradeMax); g++ {
+				served[g] = true
+			}
+		}
+	}
+	count := map[int]int{}
+	for _, q := range qs {
+		if q.Status == StatusPublished {
+			count[q.Grade]++
+		}
+	}
+	var out []Issue
+	for g := 1; g <= 4; g++ {
+		if served[g] && count[g] < GradeQuotaMin {
+			out = append(out, Issue{Code: "world_grade_quota", Field: world, Warning: !strict,
+				Message: fmt.Sprintf("grade %d has %d published questions, the quota is %d", g, count[g], GradeQuotaMin)})
+		}
+	}
+	return out
+}
+
+// drillSkills are the ARI-OPE skills whose quick repeated practice (drill) is allowed in grades 1 and 2 only
+// (curriculum.md section 6); in grades 3 and 4 the same skills are story-framed.
+var drillSkills = map[string]bool{
+	"ARI-OPE-A01a": true, "ARI-OPE-A02a": true, "ARI-OPE-A02c": true, "ARI-OPE-A03a": true, "ARI-OPE-A04a": true, "ARI-OPE-A05": true,
+}
+
+// IsDrillSkill reports whether a skill is on the drill list.
+func IsDrillSkill(skill string) bool { return drillSkills[skill] }
+
+// DerivedStyle is the style a question counts as: its own when set, else drill for a drill skill in grades 1 and 2
+// and context for everything else. The picker uses it so questions that were never tagged still follow the rule.
+func DerivedStyle(skill string, grade int, style string) string {
+	switch {
+	case style != "":
+		return style
+	case drillSkills[skill] && grade <= 2:
+		return StyleDrill
+	}
+	return StyleContext
+}
+
+// styleWorlds are the worlds that must tag their drill-skill questions (F1).
+var styleWorlds = map[string]bool{"echecs": true, "medecine": true, "espace": true}
+
+// styleRequired: in the three worlds every question on a drill skill carries an explicit style, drill only at grades
+// 1 and 2 and context at 3 and 4. A warning until the content gate (Env.StrictStyle), then an error.
+func (v *run) styleRequired() {
+	q := v.q
+	if !drillSkills[q.Skill] || !styleWorlds[strings.SplitN(q.ID, ".", 2)[0]] {
+		return
+	}
+	if n := q.ID[strings.LastIndex(q.ID, ".")+1:]; strings.HasPrefix(n, "9") { // 9xx are sample questions (seed/README)
+		return
+	}
+	if q.Style == "" {
+		msg := "ARI-OPE drill skill: set style to drill (grades 1 and 2) or context (grades 3 and 4)"
+		if v.env.StrictStyle {
+			v.err("style_required", "style", "%s", msg)
+		} else {
+			v.warn("style_required", "style", "%s", msg)
+		}
+	}
+	if q.Style == StyleDrill && q.Grade >= 3 {
+		v.err("style_drill_grade3", "style", "drills on this skill are for grades 1 and 2, this question is grade %d: use context", q.Grade)
+	}
 }

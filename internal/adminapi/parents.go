@@ -33,6 +33,9 @@ type subJSON struct {
 	MarkedByAdmin bool   `json:"marked_by_admin,omitempty"`
 	CanPlay       bool   `json:"can_play"`
 	DaysLeft      *int   `json:"days_left"`
+	// FreeAccess is the admin grant, present while it runs or until the admin ends it (the admin sees the real status
+	// next to it; parents and children only ever see `active`).
+	FreeAccess *freeAccess `json:"free_access,omitempty"`
 }
 
 // subRow is the raw stored subscription (latest row of a parent).
@@ -96,6 +99,16 @@ func effective(s subRow, now time.Time) subJSON {
 	if t, err := time.Parse(time.RFC3339, end); err == nil {
 		d := int((t.Sub(now) + day - 1) / day) // ceil, like the mock
 		out.DaysLeft = &d
+	}
+	if raw, ok := s.Extra["free_access"]; ok { // an admin grant opens play until it ends
+		b, _ := json.Marshal(raw)
+		var fa freeAccess
+		if json.Unmarshal(b, &fa) == nil {
+			out.FreeAccess = &fa
+			if fa.Until == nil || after(*fa.Until, now) {
+				out.CanPlay = true
+			}
+		}
 	}
 	return out
 }

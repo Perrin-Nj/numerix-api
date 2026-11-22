@@ -26,8 +26,9 @@ type publicVoice struct {
 }
 
 type publicFeed struct {
-	DiscoverEnabled    bool `json:"discover_enabled"`
-	FamilyBoardVisible bool `json:"family_board_visible"`
+	DiscoverEnabled    bool         `json:"discover_enabled"`
+	FamilyBoardVisible bool         `json:"family_board_visible"`
+	HomeSections       HomeSections `json:"home_sections"`
 }
 
 // publicMaintenance mirrors Maintenance (BlockPlay lets the client show the right screen).
@@ -86,7 +87,7 @@ func (s *Store) PublicJSON(ctx context.Context) ([]byte, error) {
 	pl := Get[Platform](ctx, s, NSPlatform)
 	f := Get[Feed](ctx, s, NSFeed)
 	p.Version, p.Scenes, p.Features, p.WelcomeGift = ver, Get[Scenes](ctx, s, NSScenes), pl.Features, pl.WelcomeGift
-	p.Feed = publicFeed{f.DiscoverEnabled, f.FamilyBoardVisible}
+	p.Feed = publicFeed{f.DiscoverEnabled, f.FamilyBoardVisible, f.HomeSections}
 	p.Maintenance, p.Copy = Get[Maintenance](ctx, s, NSMaintenance), Get[Copy](ctx, s, NSCopy)
 	body, err := json.Marshal(p)
 	if err != nil {

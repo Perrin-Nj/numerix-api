@@ -1,0 +1,51 @@
+{
+  "world": "english",
+  "schema": 1,
+  "questions": [
+    {
+      "id": "english.club.001", "quest": "english.club", "skill": "ARI-OPE-A02a", "type": "numeric", "grade": 1, "difficulty": 2, "style": "context",
+      "story": {"fr": "Noah rejoint le club de lecture en anglais.", "en": "Noah joins the reading club."},
+      "prompt": {"fr": "Il lit 4 mots sur le tableau, puis 3 mots de plus. Combien de mots a-t-il lus ?", "en": "He reads 4 words on the board, then 3 more words. How many words did he read?"},
+      "math_text": "4 + 3 = ?",
+      "answer": {"kind": "numeric", "value": 7, "calc": "4+3"},
+      "common_errors": [
+        {"value": 6, "misconception": "mis_off_by_one", "feedback": {"fr": "Presque ! Compte encore les mots de plus.", "en": "Close! Count the extra words once more."}},
+        {"value": 1, "misconception": "mis_subtract_instead_of_add", "feedback": {"fr": "Les mots s’ajoutent : on additionne.", "en": "The words come together, so we add."}}
+      ],
+      "hint": {"fr": "Pars de 4 et avance de 3 pas.", "en": "Start at 4 and hop 3 steps."},
+      "explain": {"fr": "4 + 3 : quatre, puis cinq, six, sept.", "en": "4 + 3: four, then five, six, seven."},
+      "tags": ["reading-club", "add-within-20", "words"],
+      "status": "published", "author": "numerix-3w", "version": 1
+    },
+    {
+      "id": "english.club.002", "quest": "english.club", "skill": "ARI-OPE-A02a", "type": "choice", "grade": 3, "difficulty": 3, "style": "context",
+      "story": {"fr": "Emma lit une histoire à toute la classe.", "en": "Emma reads a story to the whole class."},
+      "prompt": {"fr": "Elle lit 14 pages lundi et 9 pages mardi. Combien de pages en tout ?", "en": "She reads 14 pages on Monday and 9 pages on Tuesday. How many pages in all?"},
+      "choices": [
+        {"id": "a", "text": {"fr": "13", "en": "13"}, "misconception": "mis_forgot_carry"},
+        {"id": "b", "text": {"fr": "23", "en": "23"}},
+        {"id": "c", "text": {"fr": "5", "en": "5"}, "misconception": "mis_subtract_instead_of_add"},
+        {"id": "d", "text": {"fr": "24", "en": "24"}, "misconception": "mis_off_by_one"}
+      ],
+      "answer": {"kind": "choice", "correct": "b", "calc_choice": {"b": "14+9"}},
+      "hint": {"fr": "Ajoute d’abord les unités : 4 et 9.", "en": "Add the ones first: 4 and 9."},
+      "explain": {"fr": "14 + 9 = 14 + 6 + 3, donc 20 + 3 = 23.", "en": "14 + 9 = 14 + 6 + 3, so 20 + 3 = 23."},
+      "tags": ["reading-club", "pages", "add-within-100"],
+      "status": "published", "author": "numerix-3w", "version": 1
+    },
+    {
+      "id": "english.shelves.001", "quest": "english.shelves", "skill": "ARI-OPE-A06a", "type": "numeric", "grade": 4, "difficulty": 3, "style": "context",
+      "story": {"fr": "La bibliothèque du club a de longues étagères.", "en": "The club library has long shelves."},
+      "prompt": {"fr": "Il y a 5 étagères et chacune porte 8 livres. Combien de livres en tout ?", "en": "There are 5 shelves and each shelf holds 8 books. How many books in all?"},
+      "answer": {"kind": "numeric", "value": 40, "calc": "5*8"},
+      "common_errors": [
+        {"value": 13, "misconception": "mis_add_instead_of_multiply", "feedback": {"fr": "Les étagères sont égales : pense à des groupes de même taille.", "en": "The shelves are equal: think of groups of the same size."}},
+        {"value": 45, "misconception": "mis_off_by_one", "feedback": {"fr": "Presque ! Recompte les étagères une à une.", "en": "Close! Count the shelves again one by one."}}
+      ],
+      "hint": {"fr": "Compte 8, puis encore 8, cinq fois.", "en": "Count 8, then 8 again, five times."},
+      "explain": {"fr": "5 étagères de 8 livres : 8 + 8 + 8 + 8 + 8 = 40.", "en": "5 shelves of 8 books: 8 + 8 + 8 + 8 + 8 = 40."},
+      "tags": ["library", "equal-groups", "books"],
+      "status": "published", "author": "numerix-3w", "version": 1
+    }
+  ]
+}

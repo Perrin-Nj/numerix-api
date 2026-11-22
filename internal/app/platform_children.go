@@ -12,6 +12,7 @@ import (
 	"encoding/json"
 	"errors"
 	"net/http"
+	"slices"
 	"strings"
 	"time"
 	"unicode/utf8"
@@ -300,23 +301,38 @@ func (s *Server) CreateChildToken(ctx context.Context, req api.CreateChildTokenR
 // enabledWorlds returns the worlds a child may play: the saved enabled_worlds, or plDefaultWorlds when nothing is saved.
 // (Spring: a repository read plus a default, used by every screen that lists worlds.)
 func (s *Server) enabledWorlds(ctx context.Context, childID string) []string {
+	w, err := s.storedWorlds(ctx, childID)
+	if err != nil || len(w) == 0 {
+		w = s.defaultWorlds(ctx) // no settings row yet, or none saved
+	}
+	if open := s.openWorlds(ctx); open != nil { // a world an admin closed is no longer on offer, whatever the stored list says
+		if kept := slices.DeleteFunc(slices.Clone(w), func(id string) bool { return !open[id] }); len(kept) > 0 {
+			return kept
+		}
+	}
+	return w
+}
+
+// storedWorlds reads the saved enabled_worlds of a child (an error when nothing usable is saved).
+func (s *Server) storedWorlds(ctx context.Context, childID string) ([]string, error) {
 	var raw string
-	if s.Store.R.QueryRowContext(ctx, `SELECT json FROM child_settings WHERE child_id = ?`, childID).Scan(&raw) != nil {
-		return plDefaultWorlds // no settings row yet
+	if err := s.Store.R.QueryRowContext(ctx, `SELECT json FROM child_settings WHERE child_id = ?`, childID).Scan(&raw); err != nil {
+		return nil, err
 	}
 	var st struct {
 		Worlds []string `json:"enabled_worlds"` // same JSON key the settings API stores
 	}
-	if json.Unmarshal([]byte(raw), &st) != nil || len(st.Worlds) == 0 {
-		return plDefaultWorlds
+	if err := json.Unmarshal([]byte(raw), &st); err != nil {
+		return nil, err
 	}
-	return st.Worlds
+	return st.Worlds, nil
 }
 
 // plDefaultSettings are the settings of a new child (daily limit from the platform default).
 func (s *Server) plDefaultSettings(ctx context.Context) api.ChildSettings {
-	worlds := make([]api.WorldId, len(plDefaultWorlds)) // only the focus worlds start enabled
-	for i, w := range plDefaultWorlds {
+	def := s.defaultWorlds(ctx)
+	worlds := make([]api.WorldId, len(def)) // only the default worlds start enabled
+	for i, w := range def {
 		worlds[i] = api.WorldId(w)
 	}
 	var limit *int
@@ -419,16 +435,12 @@ func (s *Server) UpdateChildSettings(ctx context.Context, req api.UpdateChildSet
 	if l := in.DailyTimeLimitMinutes; !child && l != nil && (*l < 5 || *l > 180) {
 		bad = append(bad, plField("daily_time_limit_minutes", "null or 5 to 180"))
 	}
-	known := map[string]bool{}
-	for _, w := range plWorldIDs {
-		known[w] = true
-	}
 	seen := map[api.WorldId]bool{}
 	for _, w := range in.EnabledWorlds {
 		if child {
 			break
 		}
-		if !known[string(w)] || seen[w] {
+		if seen[w] {
 			bad = append(bad, plField("enabled_worlds", "unknown or repeated world"))
 			break
 		}
@@ -439,6 +451,15 @@ func (s *Server) UpdateChildSettings(ctx context.Context, req api.UpdateChildSet
 	}
 	if len(bad) > 0 {
 		return nil, httpapi.Validation(bad...)
+	}
+	if !child { // each world must exist, be published, and be ready for parents (or already on for this child)
+		want := make([]string, len(in.EnabledWorlds))
+		for i, w := range in.EnabledWorlds {
+			want[i] = string(w)
+		}
+		if err := s.checkSettingsWorlds(ctx, id, want); err != nil {
+			return nil, err
+		}
 	}
 	// the stored settings: what a child edit is merged into, and what an omitted music or voice block keeps
 	stored := s.plDefaultSettings(ctx)

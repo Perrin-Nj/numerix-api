@@ -251,7 +251,7 @@ func (s *Server) feedQuest(ctx context.Context, c plChild, sessions []feedSessio
 		q.SkillIds = &ids // no profile, no offer: an empty list never points at a skill that start refuses
 		return q
 	}
-	world, grade := string(feedHomeWorld(c, s.enabledWorlds(ctx, c.ID))), gradeOf(c)
+	world, grade := string(feedHomeWorld(c, s.enabledWorlds(ctx, c.ID))), s.childGrade(ctx, c)
 	mastered, due := prof.Mastered(now), map[string]bool{}
 	reviews := prof.ToReview(now) // most forgotten first
 	for _, d := range reviews {

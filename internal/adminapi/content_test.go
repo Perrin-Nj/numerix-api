@@ -388,7 +388,7 @@ func TestAIDraftIsLimitedPerAdmin(t *testing.T) {
 func TestWorldsQuestsCoverageAndMongoDocs(t *testing.T) {
 	e := setupContent(t, nil)
 	code, m, _ := call(e.h, "GET", "/admin/v1/worlds", "", tok)
-	if code != 200 || len(m["items"].([]any)) != 20 {
+	if code != 200 || len(m["items"].([]any)) != 23 { // 20 published plus 3 draft worlds (admin sees them all)
 		t.Fatalf("worlds: %d %v", code, m)
 	}
 	code, m, _ = call(e.h, "GET", "/admin/v1/quests?world=cuisine", "", tok)
@@ -424,6 +424,21 @@ func TestWorldsQuestsCoverageAndMongoDocs(t *testing.T) {
 	}
 	if !found {
 		t.Fatalf("coverage of the quest: %v", m["quests"])
+	}
+	// T029: published questions per school year, and what each served year still lacks against Q1 (20)
+	for _, c := range m["worlds"].([]any) {
+		wm := c.(map[string]any)
+		if wm["world"] == "cuisine" {
+			bg, gm := wm["by_grade"].(map[string]any), wm["grade_quota_missing"].(map[string]any)
+			if len(bg) != 1 || len(gm) == 0 {
+				t.Fatalf("by_grade=%v grade_quota_missing=%v", bg, gm)
+			}
+			for g, n := range bg {
+				if gm[g] != 20.0-n.(float64) {
+					t.Fatalf("grade %s: %v published, missing %v", g, n, gm[g])
+				}
+			}
+		}
 	}
 	// the Mongo documents are built from the current state
 	ctx := context.Background()

@@ -230,3 +230,14 @@ func (p *Profile) ActiveMisconceptions() map[string][]string {
 	}
 	return out
 }
+
+// GradePrior is the starting mastery used to pick the first question of a skill the child has never practised:
+// base + step per school year above the year the skill is introduced, clamped to [base, 0.6]. A grade 4 child on a
+// grade 3 skill starts near difficulty 3, a grade 1 child on a grade 1 skill near difficulty 2 (FR-010).
+func (gr *Graph) GradePrior(skillID string, grade int, base, step float64) float64 {
+	intro := 99
+	if s, err := gr.Get(skillID); err == nil && s.YearIntro > 0 {
+		intro = s.YearIntro
+	}
+	return math.Min(0.6, math.Max(base, base+step*float64(grade-intro)))
+}

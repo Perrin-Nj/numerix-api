@@ -4,8 +4,8 @@ Loaded by `cmd/seed` (idempotent: only changed objects are written). Validate wi
 
 | File | Content |
 |---|---|
-| `worlds.json` | `{schema:1, worlds:[{id, ord, name{fr,en}, tagline, hook, accent_color, grade_min, grade_max, strand, hero_asset?}]}` 20 worlds |
-| `quests.json` | `{schema:1, quests:[{id "world.slug", world, ord, skill (real PDA id), name, goal, grade_min, grade_max, target_count, icon_asset?}]}` 89 quests |
+| `worlds.json` | `{schema:1, worlds:[{id, ord, status?, name{fr,en}, tagline, hook, accent_color, grade_min, grade_max, strand, hero_asset?}]}` 23 worlds: 20 published, plus `histoires`, `english`, `francais` as `status: "draft"` (three sample questions each; closed to children and parents until an admin publishes the world, and a seed run never changes the status of a world that already exists) |
+| `quests.json` | `{schema:1, quests:[{id "world.slug", world, ord, skill (real PDA id), name, goal, grade_min, grade_max, target_count, icon_asset?}]}` 95 quests (89 + 6 of the draft worlds) |
 | `misconceptions.json` | extra `mis_*` error codes. The 99 curriculum codes come from the embedded graph. Use only these codes. |
 | `questions/<world>.json` | `{world, schema:1, questions:[Question]}`. `_examples.json` (world `_examples`) is demo data, never loaded in production |
 | `assets/*.json`, `assets/files/` | written by tools/assets: one array of assets per world, `sprites.json`, `vocab.json`; bytes in `files/` |
@@ -29,6 +29,9 @@ answer    numeric {kind,value|[q,r],calc}   choice {kind,correct,calc_choice{id:
 common_errors  numeric/range: [{value, misconception, feedback{fr,en}}]
 hint, explain {fr,en}  hint guides without the answer; explain teaches (shown only after answering)
 tags[], media[{role scene|object|visual|choice:<id>, asset | criteria{world,topic,object,mood,kind,setting}}]  max 3
+style     drill | context (optional, empty = context). Drills (quick repeated practice) are for grades 1 and 2; grade 3 may keep at most 10 percent of a quest as drills; grade 4 none (rule T1).
+          Grades 3 and 4 operation questions are story-framed (`context`). Skill list: specs/001-three-worlds-premium/curriculum.md section 6.
+retry_hint  optional {fr,en}: shown in the second-try window. Server order: feedback of the typical error made, retry_hint, hint, a canned nudge. Never holds the answer.
 status draft|review|published, author, version, source (filled by the loader)
 ```
 
@@ -36,7 +39,8 @@ status draft|review|published, author, version, source (filled by the loader)
 
 `calc`: numbers, `+ - * / ( )`, `divmod(a,b)` `min` `max` `abs` `round` `gcd` `pow(a,n)` `sum(...)`, exact fractions. The server recomputes it.
 
-Rules enforced (hard errors unless noted): answer inside the options, distinct distractors, both languages, calc equals the answer, no answer in story/prompt/math_text/hint (digits or words), no timers or hurry words, no em or en dash, no emoji, deny list, reading limits by grade band (story 25/35/45 words, prompt 20/30/40, sentence 14/18/22, option 8/10/12), at most 3 media. Warnings: unknown capitalised names, missing calc, tags under 2, near duplicate prompts, fewer than 4 types in a quest. A world file whose questions are all `published` must meet the type quotas (numeric 10, choice 10, word 8, truefalse 5, order 5, match 5, visual 5, estimate 4) and target-2 per quest.
+Rules enforced (hard errors unless noted): answer inside the options, distinct distractors, both languages, calc equals the answer, no answer in story/prompt/math_text/hint (digits or words), no timers or hurry words, no em or en dash, no emoji, deny list, reading limits by grade band (story 25/35/45 words, prompt 20/30/40, sentence 14/18/22, option 8/10/12), at most 3 media. New rules of the three-worlds release: T1 (style value, no grade 4 drill, grade 3 drills at most 10 percent per quest, errors); Q1 (every school year a world serves needs 20 published questions: warning, error with `cmd/seed --strict`; draft worlds are skipped); a typical-error `feedback` that shows the answer is a warning (the server then skips it as a second-try hint) and a `retry_hint` that shows the answer is an error.
+Warnings: unknown capitalised names, missing calc, tags under 2, near duplicate prompts, fewer than 4 types in a quest. A world file whose questions are all `published` must meet the type quotas (numeric 10, choice 10, word 8, truefalse 5, order 5, match 5, visual 5, estimate 4) and target-2 per quest.
 
 ## visual.data shapes (read by the play pages)
 
@@ -53,3 +57,5 @@ Strings inside `data` are scanned for answer leaks; numbers are not.
 ## Client answer format
 
 choice: the value of the chosen card as sent in `choices` (number or text). truefalse: boolean. order: item ids. match: `[[left,right],...]`. numeric: number or `[quotient, remainder]`.
+
+`cmd/seed --report-style` lists the questions of echecs, medecine and espace on an ARI-OPE drill skill (A01a, A02a, A02c, A03a, A04a, A05) that have no explicit `style` (rule `style_required`: a warning, an error with `--strict`; `drill` only at grades 1 and 2, `context` at 3 and 4). The picker derives the style from the skill when it is absent.
