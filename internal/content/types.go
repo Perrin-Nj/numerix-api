@@ -203,6 +203,8 @@ type Question struct {
 	Reaction     *Reaction     `json:"reaction,omitempty"` // what the story says after the answer, written for this question
 	Tags         []string      `json:"tags,omitempty"`
 	Media        []Media       `json:"media,omitempty"`
+	Style        string        `json:"style,omitempty"`      // drill | context (empty counts as context)
+	RetryHint    *LText        `json:"retry_hint,omitempty"` // shown in the second-try window; never holds the answer
 	Status       string        `json:"status"`
 	Author       string        `json:"author"`
 	Version      int           `json:"version"`

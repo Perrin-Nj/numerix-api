@@ -6,9 +6,9 @@ import (
 	"errors"
 	"fmt"
 	"net/http"
-	"slices"
 	"strings"
 
+	"github.com/Perrin-Nj/numerix-api/internal/appconfig"
 	"github.com/Perrin-Nj/numerix-api/internal/httpapi"
 )
 
@@ -43,13 +43,13 @@ type parentBrief struct {
 var settingRules = map[string]func(any) bool{
 	"daily_goal_chapters":      func(v any) bool { return isInt(v, 1, 5) },
 	"daily_time_limit_minutes": func(v any) bool { return v == nil || isInt(v, 5, 180) },
-	"enabled_worlds": func(v any) bool {
+	"enabled_worlds": func(v any) bool { // the format only; patchChild checks each id against the world registry
 		l, ok := v.([]any)
-		if !ok || len(l) == 0 {
+		if !ok || len(l) == 0 || len(l) > 40 {
 			return false
 		}
 		for _, w := range l {
-			if s, _ := w.(string); !slices.Contains(worldIDs, s) {
+			if s, _ := w.(string); s == "" || len(s) > 24 {
 				return false
 			}
 		}
@@ -69,8 +69,8 @@ func isInt(v any, lo, hi float64) bool {
 }
 
 // defaultSettings fill gaps in the stored child_settings json.
-func defaultSettings() map[string]any {
-	return map[string]any{"daily_goal_chapters": 1.0, "daily_time_limit_minutes": nil, "enabled_worlds": []any{"echecs", "medecine", "espace"},
+func defaultSettings(worlds []string) map[string]any {
+	return map[string]any{"daily_goal_chapters": 1.0, "daily_time_limit_minutes": nil, "enabled_worlds": toAny(worlds),
 		"read_aloud": true, "sound": true, "kid_can_change_language": false}
 }
 
@@ -102,7 +102,7 @@ func (a *API) scanChildren(r *http.Request, where string, args []any, tail strin
 			&c.MinutesToday, &c.SessionsTotal, &c.CardsTotal, &raw); err != nil {
 			return nil, err
 		}
-		c.Settings = defaultSettings()
+		c.Settings = defaultSettings(appconfig.Get[appconfig.Platform](r.Context(), a.cfg, appconfig.NSPlatform).DefaultWorlds)
 		var stored map[string]any
 		_ = json.Unmarshal([]byte(raw), &stored)
 		for k, v := range stored {
@@ -187,6 +187,15 @@ func (a *API) patchChild(w http.ResponseWriter, r *http.Request) {
 		if rule := settingRules[k]; rule == nil || !rule(v) {
 			a.fail(w, r, bad("invalid setting "+k))
 			return
+		}
+	}
+	if l, ok := settings["enabled_worlds"].([]any); ok { // each world must be a published world (the admin may enable any of them)
+		for _, wid := range l {
+			var st string
+			if err := a.db.R.QueryRowContext(r.Context(), `SELECT status FROM worlds WHERE id = ? AND status <> 'retired'`, wid).Scan(&st); err != nil || st != "published" {
+				a.fail(w, r, bad("invalid setting enabled_worlds: unknown or inactive world"))
+				return
+			}
 		}
 	}
 	name, hasName := b["display_name"]
@@ -340,4 +349,12 @@ func (a *API) childActivity(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	writeJSON(w, http.StatusOK, out)
+}
+
+func toAny(l []string) []any {
+	out := make([]any, len(l))
+	for i, s := range l {
+		out[i] = s
+	}
+	return out
 }

@@ -282,7 +282,7 @@ func TestPickQuestionNeverServesTwice(t *testing.T) {
 		go func() {
 			defer wg.Done()
 			err := f.s.Store.WithWriteTx(context.Background(), func(tx *sql.Tx) error {
-				id, _, e := f.s.pickQuestion(context.Background(), tx, f.childID, "echecs", "ARI-OPE-A06a", 4, "")
+				id, _, e := f.s.pickQuestion(context.Background(), tx, "", f.childID, "echecs", "ARI-OPE-A06a", 4, "")
 				ids[i] = id
 				return e
 			})
@@ -303,7 +303,7 @@ func TestPickQuestionNeverServesTwice(t *testing.T) {
 	var before, after int
 	_ = f.s.Store.R.QueryRow(`SELECT COUNT(*) FROM questions`).Scan(&before)
 	err := f.s.Store.WithWriteTx(context.Background(), func(tx *sql.Tx) error {
-		_, _, e := f.s.pickQuestion(context.Background(), tx, "22222222-2222-4222-8222-222222222222", "echecs", "ARI-OPE-A06a", 4, "")
+		_, _, e := f.s.pickQuestion(context.Background(), tx, "", "22222222-2222-4222-8222-222222222222", "echecs", "ARI-OPE-A06a", 4, "")
 		return e
 	})
 	if err != nil {

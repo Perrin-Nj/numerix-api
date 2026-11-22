@@ -190,7 +190,7 @@ func (s *Server) GetDiscover(ctx context.Context, req api.GetDiscoverRequestObje
 	if !fc.DiscoverEnabled { // the admin switched Discover off
 		return nil, httpapi.NewError(http.StatusServiceUnavailable, "feed_empty", "The Discover feed is switched off.")
 	}
-	items := discoverEligible(all, gradeOf(c), fc)
+	items := discoverEligible(all, s.childGrade(ctx, c), fc)
 	if len(items) == 0 {
 		return nil, httpapi.NewError(http.StatusServiceUnavailable, "feed_empty", "The Discover feed has no items yet.")
 	}

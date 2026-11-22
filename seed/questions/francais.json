@@ -1,0 +1,51 @@
+{
+  "world": "francais",
+  "schema": 1,
+  "questions": [
+    {
+      "id": "francais.dictee.001", "quest": "francais.dictee", "skill": "ARI-OPE-A02a", "type": "numeric", "grade": 2, "difficulty": 2, "style": "context",
+      "story": {"fr": "Camille prépare la dictée du matin.", "en": "Camille gets ready for the morning dictation."},
+      "prompt": {"fr": "Elle écrit 12 mots sur la première ligne et 6 mots sur la deuxième. Combien de mots en tout ?", "en": "She writes 12 words on the first line and 6 words on the second. How many words in all?"},
+      "math_text": "12 + 6 = ?",
+      "answer": {"kind": "numeric", "value": 18, "calc": "12+6"},
+      "common_errors": [
+        {"value": 17, "misconception": "mis_off_by_one", "feedback": {"fr": "Presque ! Recompte les mots de la deuxième ligne.", "en": "Close! Count the words of the second line again."}},
+        {"value": 6, "misconception": "mis_subtract_instead_of_add", "feedback": {"fr": "Les lignes se réunissent : on additionne.", "en": "The lines come together, so we add."}}
+      ],
+      "hint": {"fr": "Garde 12 en tête et avance de 6 pas.", "en": "Keep 12 in mind and hop 6 steps."},
+      "explain": {"fr": "12 + 6 = 10 + 2 + 6, donc 10 + 8 = 18.", "en": "12 + 6 = 10 + 2 + 6, so 10 + 8 = 18."},
+      "tags": ["dictation", "add-within-20", "words"],
+      "status": "published", "author": "numerix-3w", "version": 1
+    },
+    {
+      "id": "francais.dictee.002", "quest": "francais.dictee", "skill": "ARI-OPE-A02a", "type": "choice", "grade": 3, "difficulty": 3, "style": "context",
+      "story": {"fr": "Léo corrige sa dictée avec la classe.", "en": "Léo checks his dictation with the class."},
+      "prompt": {"fr": "Il écrit 15 mots avant la récréation et 8 mots après. Combien de mots en tout ?", "en": "He writes 15 words before recess and 8 words after. How many words in all?"},
+      "choices": [
+        {"id": "a", "text": {"fr": "22", "en": "22"}, "misconception": "mis_off_by_one"},
+        {"id": "b", "text": {"fr": "23", "en": "23"}},
+        {"id": "c", "text": {"fr": "7", "en": "7"}, "misconception": "mis_subtract_instead_of_add"},
+        {"id": "d", "text": {"fr": "13", "en": "13"}, "misconception": "mis_forgot_carry"}
+      ],
+      "answer": {"kind": "choice", "correct": "b", "calc_choice": {"b": "15+8"}},
+      "hint": {"fr": "Ajoute d’abord 5 pour atteindre la dizaine.", "en": "Add 5 first to reach the next ten."},
+      "explain": {"fr": "15 + 8 = 15 + 5 + 3, donc 20 + 3 = 23.", "en": "15 + 8 = 15 + 5 + 3, so 20 + 3 = 23."},
+      "tags": ["dictation", "recess", "add-within-100"],
+      "status": "published", "author": "numerix-3w", "version": 1
+    },
+    {
+      "id": "francais.bibliotheque.001", "quest": "francais.bibliotheque", "skill": "ARI-OPE-A06a", "type": "numeric", "grade": 4, "difficulty": 3, "style": "context",
+      "story": {"fr": "Zoé aide à ranger la bibliothèque de l’école.", "en": "Zoé helps tidy the school library."},
+      "prompt": {"fr": "Elle range les livres en 6 piles de 7 livres. Combien de livres a-t-elle rangés ?", "en": "She stacks the books in 6 piles of 7 books. How many books did she stack?"},
+      "answer": {"kind": "numeric", "value": 42, "calc": "6*7"},
+      "common_errors": [
+        {"value": 13, "misconception": "mis_add_instead_of_multiply", "feedback": {"fr": "Les piles sont égales : pense à des groupes de même taille.", "en": "The piles are equal: think of groups of the same size."}},
+        {"value": 41, "misconception": "mis_off_by_one", "feedback": {"fr": "Presque ! Recompte les piles une à une.", "en": "Close! Count the piles again one by one."}}
+      ],
+      "hint": {"fr": "Compte 7, puis encore 7, six fois.", "en": "Count 7, then 7 again, six times."},
+      "explain": {"fr": "6 piles de 7 livres : 7 + 7 + 7 + 7 + 7 + 7 = 42.", "en": "6 piles of 7 books: 7 + 7 + 7 + 7 + 7 + 7 = 42."},
+      "tags": ["library", "equal-groups", "books"],
+      "status": "published", "author": "numerix-3w", "version": 1
+    }
+  ]
+}

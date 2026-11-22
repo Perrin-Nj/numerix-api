@@ -45,6 +45,7 @@ func (a *API) contentRoutes(mux *http.ServeMux) {
 	mux.HandleFunc("POST "+p+"/questions/{id}/restore", a.restoreVersion)
 	mux.HandleFunc("GET "+p+"/worlds", a.listWorlds)
 	mux.HandleFunc("PUT "+p+"/worlds/{id}", a.putWorld)
+	mux.HandleFunc("PUT "+p+"/worlds/{id}/status", a.putWorldStatus)
 	mux.HandleFunc("GET "+p+"/quests", a.listQuests)
 	mux.HandleFunc("PUT "+p+"/quests/{id}", a.putQuest)
 	mux.HandleFunc("GET "+p+"/content/coverage", a.coverage)
@@ -906,19 +907,31 @@ func (a *API) coverage(w http.ResponseWriter, r *http.Request) {
 		World   string         `json:"world"`
 		ByType  map[string]int `json:"by_type"`
 		Missing map[string]int `json:"quota_missing"`
+		// ByGrade counts published questions per school year; GradeMissing is how many each served year (1 to 4) still lacks
+		// against the per (world, grade) quota Q1.
+		ByGrade      map[int]int `json:"by_grade"`
+		GradeMissing map[int]int `json:"grade_quota_missing"`
 	}
+	served := map[string]map[int]bool{}
 	quota := map[string]int{content.TypeNumeric: 10, content.TypeChoice: 10, content.TypeWord: 8, content.TypeTrueFalse: 5, content.TypeOrder: 5, content.TypeMatch: 5, content.TypeVisual: 5, content.TypeEstimate: 4}
 	byWorld := map[string]*worldCov{}
 	var order []string
 	for _, c := range cov {
 		wc := byWorld[c.World]
 		if wc == nil {
-			wc = &worldCov{World: c.World, ByType: map[string]int{}, Missing: map[string]int{}}
+			wc = &worldCov{World: c.World, ByType: map[string]int{}, Missing: map[string]int{}, ByGrade: map[int]int{}, GradeMissing: map[int]int{}}
+			served[c.World] = map[int]bool{}
 			byWorld[c.World] = wc
 			order = append(order, c.World)
 		}
 		for t, n := range c.ByType {
 			wc.ByType[t] += n
+		}
+		for g, n := range c.ByGrade {
+			wc.ByGrade[g] += n
+		}
+		for g := max(1, c.GradeMin); g <= min(4, c.GradeMax); g++ {
+			served[c.World][g] = true
 		}
 	}
 	worlds := make([]worldCov, 0, len(order))
@@ -927,6 +940,11 @@ func (a *API) coverage(w http.ResponseWriter, r *http.Request) {
 		for t, q := range quota {
 			if d := q - wc.ByType[t]; d > 0 {
 				wc.Missing[t] = d
+			}
+		}
+		for g := range served[id] {
+			if d := content.GradeQuotaMin - wc.ByGrade[g]; d > 0 {
+				wc.GradeMissing[g] = d
 			}
 		}
 		worlds = append(worlds, *wc)

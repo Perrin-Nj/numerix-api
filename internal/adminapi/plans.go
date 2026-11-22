@@ -51,7 +51,7 @@ func defaultPlans() plansDoc {
 		Plans: []planDef{
 			mk("free", 0, "none", "Gratuit", "Free", []string{"Un profil enfant", "Un chapitre par jour", "Rapports de base"}, []string{"One child profile", "One chapter a day", "Basic reports"}),
 			mk("family_monthly", 899, "month", "Famille mensuel", "Family monthly", []string{"Jusqu’à 8 profils enfants", "Chapitres illimités", "Rapports détaillés pour les parents", "Annulable à tout moment"}, []string{"Up to 8 child profiles", "Unlimited chapters", "Detailed parent reports", "Cancel any time"}),
-			mk("family_yearly", 8990, "year", "Famille annuel", "Family yearly", []string{"Tout le forfait mensuel", "Deux mois offerts", "Annulable à tout moment"}, []string{"Everything in monthly", "Two months free", "Cancel any time"}),
+			mk("family_yearly", 8990, "year", "Famille annuel", "Family yearly", []string{"Tout le forfait mensuel", "Économisez avec le forfait annuel", "Annulable à tout moment"}, []string{"Everything in monthly", "Save with the yearly plan", "Cancel any time"}),
 		},
 		Methods: []methodDef{
 			{"card", bi{"Carte de crédit", "Credit card"}}, {"interac", bi{"Interac", "Interac"}}, {"paypal", bi{"PayPal", "PayPal"}},

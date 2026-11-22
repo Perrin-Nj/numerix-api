@@ -37,6 +37,42 @@ func (e AccountLocale) Valid() bool {
 	}
 }
 
+// Defines values for AnswerRequestAttempt.
+const (
+	AnswerRequestAttemptN1 AnswerRequestAttempt = 1
+	AnswerRequestAttemptN2 AnswerRequestAttempt = 2
+)
+
+// Valid indicates whether the value is a known member of the AnswerRequestAttempt enum.
+func (e AnswerRequestAttempt) Valid() bool {
+	switch e {
+	case AnswerRequestAttemptN1:
+		return true
+	case AnswerRequestAttemptN2:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AnswerResultAttempt.
+const (
+	AnswerResultAttemptN1 AnswerResultAttempt = 1
+	AnswerResultAttemptN2 AnswerResultAttempt = 2
+)
+
+// Valid indicates whether the value is a known member of the AnswerResultAttempt enum.
+func (e AnswerResultAttempt) Valid() bool {
+	switch e {
+	case AnswerResultAttemptN1:
+		return true
+	case AnswerResultAttemptN2:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for AppPublicConfigMaintenanceLevel.
 const (
 	Critical AppPublicConfigMaintenanceLevel = "critical"
@@ -490,6 +526,24 @@ func (e PlatformPublicUnpaidPolicy) Valid() bool {
 	}
 }
 
+// Defines values for QuestionStyle.
+const (
+	Context QuestionStyle = "context"
+	Drill   QuestionStyle = "drill"
+)
+
+// Valid indicates whether the value is a known member of the QuestionStyle enum.
+func (e QuestionStyle) Valid() bool {
+	switch e {
+	case Context:
+		return true
+	case Drill:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for QuestionKind.
 const (
 	Choice    QuestionKind = "choice"
@@ -750,7 +804,10 @@ const (
 	Cuisine      WorldId = "cuisine"
 	Dinosaures   WorldId = "dinosaures"
 	Echecs       WorldId = "echecs"
+	English      WorldId = "english"
 	Espace       WorldId = "espace"
+	Francais     WorldId = "francais"
+	Histoires    WorldId = "histoires"
 	Hiver        WorldId = "hiver"
 	Jeux         WorldId = "jeux"
 	Marche       WorldId = "marche"
@@ -781,7 +838,13 @@ func (e WorldId) Valid() bool {
 		return true
 	case Echecs:
 		return true
+	case English:
+		return true
 	case Espace:
+		return true
+	case Francais:
+		return true
+	case Histoires:
 		return true
 	case Hiver:
 		return true
@@ -976,6 +1039,24 @@ func (e Ready503JSONResponseBodyStatus) Valid() bool {
 	}
 }
 
+// Defines values for RequestHint200JSONResponseBodyKind.
+const (
+	Hint      RequestHint200JSONResponseBodyKind = "hint"
+	RetryHint RequestHint200JSONResponseBodyKind = "retry_hint"
+)
+
+// Valid indicates whether the value is a known member of the RequestHint200JSONResponseBodyKind enum.
+func (e RequestHint200JSONResponseBodyKind) Valid() bool {
+	switch e {
+	case Hint:
+		return true
+	case RetryHint:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for StreamNarrationParamsPhase.
 const (
 	Denouement StreamNarrationParamsPhase = "denouement"
@@ -1030,6 +1111,9 @@ type AnswerRequest struct {
 	// Answer Example: 48
 	Answer AnswerValue `json:"answer"`
 
+	// Attempt Absent = legacy client: the full verdict is returned at once and no second try exists. `1` opts in to the second try: when the first answer is not correct, the question type allows it (not truefalse) and platform.retry_enabled is on, the result is withheld (`retry_available: true`, no `correct_answer`). `2` is the second try (needs a wrong first answer, else 409 `retry_not_allowed`); it returns the full reveal. Only the first attempt counts for mastery; a correct second try counts half in the card threshold.
+	Attempt *AnswerRequestAttempt `json:"attempt,omitempty"`
+
 	// ResponseTimeMs Used by mastery tracking only. Never displayed, never a timer.
 	ResponseTimeMs *int `json:"response_time_ms,omitempty"`
 
@@ -1037,10 +1121,16 @@ type AnswerRequest struct {
 	VariantHistory *[]string `json:"variant_history,omitempty"`
 }
 
+// AnswerRequestAttempt Absent = legacy client: the full verdict is returned at once and no second try exists. `1` opts in to the second try: when the first answer is not correct, the question type allows it (not truefalse) and platform.retry_enabled is on, the result is withheld (`retry_available: true`, no `correct_answer`). `2` is the second try (needs a wrong first answer, else 409 `retry_not_allowed`); it returns the full reveal. Only the first attempt counts for mastery; a correct second try counts half in the card threshold.
+type AnswerRequestAttempt int
+
 // AnswerResult Example: {"correct_answer":42,"denouement":{"illustration_url":null,"status":"pending","text":null},"method_visual":{"alt":"6 groupes de 7 points font 42.","cache_key":"equal_groups:6,7:fr","kind":"equal_groups","params":{"groups":6,"size":7},"steps":[{"caption":"6 groupes."},{"caption":"7 dans chaque groupe."},{"caption":"6 groupes de 7 font 42."}]},"outcome":"correct","rewards":[{"type":"chapter_complete"},{"card":{"earned_at":"2026-10-12T14:00:00Z","id":"55555555-5555-4555-8555-555555555551","image_url":"","session_id":"33333333-3333-4333-8333-333333333333","title":"Le tournoi des tours","world":"echecs"},"type":"card_earned"},{"skill_id":"ARI-OPE-A06a","type":"skill_mastered"}],"session":{"beats_answered":3,"chapter_length":5,"child_id":"11111111-1111-4111-8111-111111111111","current_beat":null,"ended_at":"2026-10-12T14:00:00Z","id":"33333333-3333-4333-8333-333333333333","kind":"chapter","score":{"card_awarded":true,"correct":3,"pct":100,"threshold_pct":70,"total":3},"started_at":"2026-10-12T14:00:00Z","status":"completed","story_title":"Le tournoi des tours","world":"echecs"}}
 type AnswerResult struct {
+	// Attempt Echo of the request attempt; absent for a legacy request.
+	Attempt *AnswerResultAttempt `json:"attempt,omitempty"`
+
 	// CorrectAnswer Example: 48
-	CorrectAnswer AnswerValue `json:"correct_answer"`
+	CorrectAnswer *AnswerValue `json:"correct_answer,omitempty"`
 
 	// Denouement For a curated question the beat's `scene` is `ready` at once with the question's own story text and no model is
 	// called (CR-15); the narration stream then replays the same text. Generated questions keep the pending flow.
@@ -1062,8 +1152,11 @@ type AnswerResult struct {
 
 	// Outcome Verdict of the deterministic engine. Selects the story beat. The client
 	// must never render it as success/failure chrome (no red X).
-	Outcome Outcome   `json:"outcome"`
-	Rewards *[]Reward `json:"rewards,omitempty"`
+	Outcome Outcome `json:"outcome"`
+
+	// RetryAvailable True when this first answer was not correct and a second try is open. The reveal fields (`correct_answer`, `explain`, `feedback`, `method_visual`, `misconception`) are then absent, `rewards` is empty and `denouement` stays pending. Ask `POST .../hint` for a hint, then send `attempt: 2`.
+	RetryAvailable *bool     `json:"retry_available,omitempty"`
+	Rewards        *[]Reward `json:"rewards,omitempty"`
 
 	// SceneKey Hint for the client to pick a consequence scene. It is the topic family (number, add_sub, mult_div, fractions,
 	// measure, geometry, data, time). On an `AnswerResult` for a typical error it is `<family>:<misconception id>`.
@@ -1074,6 +1167,9 @@ type AnswerResult struct {
 	SceneKey *SceneKey `json:"scene_key,omitempty"`
 	Session  Session   `json:"session"`
 }
+
+// AnswerResultAttempt Echo of the request attempt; absent for a legacy request.
+type AnswerResultAttempt int
 
 // AnswerValue Example: 48
 type AnswerValue struct {
@@ -1112,6 +1208,13 @@ type AppPublicConfig struct {
 	Feed     struct {
 		DiscoverEnabled    bool `json:"discover_enabled"`
 		FamilyBoardVisible bool `json:"family_board_visible"`
+
+		// HomeSections Which blocks the child home page shows. Missing means all false.
+		HomeSections *struct {
+			Challenges *bool `json:"challenges,omitempty"`
+			DailyQuest *bool `json:"daily_quest,omitempty"`
+			Discover   *bool `json:"discover,omitempty"`
+		} `json:"home_sections,omitempty"`
 	} `json:"feed"`
 	Maintenance struct {
 		// BlockPlay true: game requests answer 503 maintenance
@@ -1192,6 +1295,9 @@ type Beat struct {
 	// (a number inside a range, or choice). An unknown `kind` should be shown as a numeric entry.
 	Question Question `json:"question"`
 
+	// RetryAvailable True when the child already gave a wrong first answer to this beat and the second try is still open (a reload resumes it). Send `attempt: 2`, or ask for the next beat to move on. Absent otherwise.
+	RetryAvailable *bool `json:"retry_available,omitempty"`
+
 	// Scene For a curated question the beat's `scene` is `ready` at once with the question's own story text and no model is
 	// called (CR-15); the narration stream then replays the same text. Generated questions keep the pending flow.
 	Scene Narration `json:"scene"`
@@ -1254,13 +1360,16 @@ type ChallengeStatus string
 
 // CheckoutResult The subscription view, plus the processor's hosted page when payment is not instant.
 type CheckoutResult struct {
+	// AccessUntil End of the current access period, neutral wording for parents and children. Replaces trial_ends_at, which parent and child tokens never receive; status is never trial for them (a running trial reads active).
+	AccessUntil *time.Time `json:"access_until,omitempty"`
+
 	// CanPlay The subscription alone allows play (trial running, paid period running, or canceled but not ended). The start gate is can_play OR unpaid_policy allow, and a blocked parent is always refused.
 	CanPlay bool `json:"can_play"`
 
 	// CheckoutUrl https only; the browser navigates to it
 	CheckoutUrl *string `json:"checkout_url,omitempty"`
 
-	// DaysLeft Whole days, rounded up, until trial_ends_at or renews_at; null when there is no end
+	// DaysLeft Whole days, rounded up, until trial_ends_at or renews_at; null when there is no end. Parent and child tokens always see null here.
 	DaysLeft      *int               `json:"days_left,omitempty"`
 	MarkedByAdmin *bool              `json:"marked_by_admin,omitempty"`
 	Method        *PaymentMethod     `json:"method,omitempty"`
@@ -1268,8 +1377,11 @@ type CheckoutResult struct {
 	RenewsAt      *time.Time         `json:"renews_at,omitempty"`
 
 	// Status Effective status (a trial or paid period that ended reads expired)
-	Status      CheckoutResultStatus `json:"status"`
-	TrialEndsAt *time.Time           `json:"trial_ends_at,omitempty"`
+	Status CheckoutResultStatus `json:"status"`
+
+	// TrialEndsAt Parent and child tokens never receive it; use access_until.
+	// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+	TrialEndsAt *time.Time `json:"trial_ends_at,omitempty"`
 }
 
 // CheckoutResultPlan defines model for CheckoutResult.Plan.
@@ -1481,8 +1593,9 @@ type FeedItem struct {
 		// Example: ARI-OPE-A07a
 		SkillId *SkillId `json:"skill_id,omitempty"`
 
-		// World The twenty story worlds. The first eight are the original worlds; the other twelve came with the question bank
-		// (CR-11). A client must treat an id it does not know as a generic world (accent colour and name come from
+		// World The story worlds. The first eight are the original worlds; the next twelve came with the question bank
+		// (CR-11); `histoires`, `english` and `francais` are new and stay draft (absent from GET /worlds and refused with
+		// `world_inactive`) until an admin publishes them. A client must treat an id it does not know as a generic world (accent colour and name come from
 		// `GET /worlds`), so a new world never needs a release.
 		World WorldId `json:"world"`
 	} `json:"cta,omitempty"`
@@ -1499,8 +1612,9 @@ type FeedItem struct {
 	Text   string    `json:"text"`
 	Title  string    `json:"title"`
 
-	// World The twenty story worlds. The first eight are the original worlds; the other twelve came with the question bank
-	// (CR-11). A client must treat an id it does not know as a generic world (accent colour and name come from
+	// World The story worlds. The first eight are the original worlds; the next twelve came with the question bank
+	// (CR-11); `histoires`, `english` and `francais` are new and stay draft (absent from GET /worlds and refused with
+	// `world_inactive`) until an admin publishes them. A client must treat an id it does not know as a generic world (accent colour and name come from
 	// `GET /worlds`), so a new world never needs a release.
 	World WorldId `json:"world"`
 }
@@ -1557,8 +1671,9 @@ type Home struct {
 		// Example: ARI-OPE-A07a
 		SkillId *SkillId `json:"skill_id,omitempty"`
 
-		// World The twenty story worlds. The first eight are the original worlds; the other twelve came with the question bank
-		// (CR-11). A client must treat an id it does not know as a generic world (accent colour and name come from
+		// World The story worlds. The first eight are the original worlds; the next twelve came with the question bank
+		// (CR-11); `histoires`, `english` and `francais` are new and stay draft (absent from GET /worlds and refused with
+		// `world_inactive`) until an admin publishes them. A client must treat an id it does not know as a generic world (accent colour and name come from
 		// `GET /worlds`), so a new world never needs a release.
 		World WorldId `json:"world"`
 	} `json:"suggested"`
@@ -1571,8 +1686,9 @@ type Journey struct {
 	CurrentSkillId *SkillId      `json:"current_skill_id,omitempty"`
 	Nodes          []JourneyNode `json:"nodes"`
 
-	// World The twenty story worlds. The first eight are the original worlds; the other twelve came with the question bank
-	// (CR-11). A client must treat an id it does not know as a generic world (accent colour and name come from
+	// World The story worlds. The first eight are the original worlds; the next twelve came with the question bank
+	// (CR-11); `histoires`, `english` and `francais` are new and stay draft (absent from GET /worlds and refused with
+	// `world_inactive`) until an admin publishes them. A client must treat an id it does not know as a generic world (accent colour and name come from
 	// `GET /worlds`), so a new world never needs a release.
 	World WorldId `json:"world"`
 }
@@ -1713,8 +1829,9 @@ type MediaItem struct {
 	Topic string `json:"topic"`
 	Width int    `json:"width"`
 
-	// World The twenty story worlds. The first eight are the original worlds; the other twelve came with the question bank
-	// (CR-11). A client must treat an id it does not know as a generic world (accent colour and name come from
+	// World The story worlds. The first eight are the original worlds; the next twelve came with the question bank
+	// (CR-11); `histoires`, `english` and `francais` are new and stay draft (absent from GET /worlds and refused with
+	// `world_inactive`) until an admin publishes them. A client must treat an id it does not know as a generic world (accent colour and name come from
 	// `GET /worlds`), so a new world never needs a release.
 	World WorldId `json:"world"`
 }
@@ -1918,9 +2035,12 @@ type PlatformPublic struct {
 	Features            *map[string]bool `json:"features,omitempty"`
 
 	// ReminderHourLocal Local hour after which a play reminder is allowed
-	ReminderHourLocal *int                       `json:"reminder_hour_local,omitempty"`
-	TrialDays         *int                       `json:"trial_days,omitempty"`
-	UnpaidPolicy      PlatformPublicUnpaidPolicy `json:"unpaid_policy"`
+	ReminderHourLocal *int `json:"reminder_hour_local,omitempty"`
+
+	// TrialDays No longer sent.
+	// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+	TrialDays    *int                       `json:"trial_days,omitempty"`
+	UnpaidPolicy PlatformPublicUnpaidPolicy `json:"unpaid_policy"`
 }
 
 // PlatformPublicUnpaidPolicy defines model for PlatformPublic.UnpaidPolicy.
@@ -1935,7 +2055,8 @@ type Problem struct {
 	// consent_missing, daily_limit_reached, session_active, session_paused, session_completed,
 	// beat_answered, beat_not_answered, invalid_pin, subscription_inactive, account_blocked,
 	// not_cancelable, conflict, email_taken, passkey_invalid, passkey_session_expired,
-	// passkey_exists, passkey_limit, passkeys_unavailable.
+	// passkey_exists, passkey_limit, passkeys_unavailable, retry_not_allowed (409: a second attempt is not allowed
+	// for this beat), world_inactive (422: the world exists but is not open to children yet), world_not_ready (422).
 	//
 	//
 	// Example: consent_missing
@@ -2014,9 +2135,15 @@ type Question struct {
 	// Story Short story line of the question (curated questions); also the scene text
 	Story *string `json:"story,omitempty"`
 
+	// Style How the question is framed. Drills are served to grades 1 and 2 only; absent means context.
+	Style *QuestionStyle `json:"style,omitempty"`
+
 	// Visual Data for a picture the child reads (see seed/README.md in numerix-api for each data shape). No pixels, no answer.
 	Visual *QuestionVisual `json:"visual,omitempty"`
 }
+
+// QuestionStyle How the question is framed. Drills are served to grades 1 and 2 only; absent means context.
+type QuestionStyle string
 
 // QuestionItem defines model for QuestionItem.
 type QuestionItem struct {
@@ -2139,8 +2266,9 @@ type Session struct {
 	// VariantHistory Scene ids the client showed most recently in this session (oldest first, 30 at most), as last sent on an answer. A reload keeps the no-repeat rule by reading this back.
 	VariantHistory *[]string `json:"variant_history,omitempty"`
 
-	// World The twenty story worlds. The first eight are the original worlds; the other twelve came with the question bank
-	// (CR-11). A client must treat an id it does not know as a generic world (accent colour and name come from
+	// World The story worlds. The first eight are the original worlds; the next twelve came with the question bank
+	// (CR-11); `histoires`, `english` and `francais` are new and stay draft (absent from GET /worlds and refused with
+	// `world_inactive`) until an admin publishes them. A client must treat an id it does not know as a generic world (accent colour and name come from
 	// `GET /worlds`), so a new world never needs a release.
 	World WorldId `json:"world"`
 }
@@ -2221,8 +2349,9 @@ type StartSessionRequest struct {
 	// SkillId Optional. Replay a specific node from the journey.
 	SkillId *SkillId `json:"skill_id,omitempty"`
 
-	// World The twenty story worlds. The first eight are the original worlds; the other twelve came with the question bank
-	// (CR-11). A client must treat an id it does not know as a generic world (accent colour and name come from
+	// World The story worlds. The first eight are the original worlds; the next twelve came with the question bank
+	// (CR-11); `histoires`, `english` and `francais` are new and stay draft (absent from GET /worlds and refused with
+	// `world_inactive`) until an admin publishes them. A client must treat an id it does not know as a generic world (accent colour and name come from
 	// `GET /worlds`), so a new world never needs a release.
 	World WorldId `json:"world"`
 }
@@ -2240,18 +2369,22 @@ type StoryCard struct {
 	SessionId *openapi_types.UUID `json:"session_id,omitempty"`
 	Title     string              `json:"title"`
 
-	// World The twenty story worlds. The first eight are the original worlds; the other twelve came with the question bank
-	// (CR-11). A client must treat an id it does not know as a generic world (accent colour and name come from
+	// World The story worlds. The first eight are the original worlds; the next twelve came with the question bank
+	// (CR-11); `histoires`, `english` and `francais` are new and stay draft (absent from GET /worlds and refused with
+	// `world_inactive`) until an admin publishes them. A client must treat an id it does not know as a generic world (accent colour and name come from
 	// `GET /worlds`), so a new world never needs a release.
 	World WorldId `json:"world"`
 }
 
-// SubscriptionView Example: {"can_play":true,"days_left":14,"plan":"free","status":"trial","trial_ends_at":"2026-10-26T14:00:00Z"}
+// SubscriptionView Example: {"access_until":"2026-10-26T14:00:00Z","can_play":true,"plan":"free","status":"active"}
 type SubscriptionView struct {
+	// AccessUntil End of the current access period, neutral wording for parents and children. Replaces trial_ends_at, which parent and child tokens never receive; status is never trial for them (a running trial reads active).
+	AccessUntil *time.Time `json:"access_until,omitempty"`
+
 	// CanPlay The subscription alone allows play (trial running, paid period running, or canceled but not ended). The start gate is can_play OR unpaid_policy allow, and a blocked parent is always refused.
 	CanPlay bool `json:"can_play"`
 
-	// DaysLeft Whole days, rounded up, until trial_ends_at or renews_at; null when there is no end
+	// DaysLeft Whole days, rounded up, until trial_ends_at or renews_at; null when there is no end. Parent and child tokens always see null here.
 	DaysLeft      *int                 `json:"days_left,omitempty"`
 	MarkedByAdmin *bool                `json:"marked_by_admin,omitempty"`
 	Method        *PaymentMethod       `json:"method,omitempty"`
@@ -2259,8 +2392,11 @@ type SubscriptionView struct {
 	RenewsAt      *time.Time           `json:"renews_at,omitempty"`
 
 	// Status Effective status (a trial or paid period that ended reads expired)
-	Status      SubscriptionViewStatus `json:"status"`
-	TrialEndsAt *time.Time             `json:"trial_ends_at,omitempty"`
+	Status SubscriptionViewStatus `json:"status"`
+
+	// TrialEndsAt Parent and child tokens never receive it; use access_until.
+	// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
+	TrialEndsAt *time.Time `json:"trial_ends_at,omitempty"`
 }
 
 // SubscriptionViewPlan defines model for SubscriptionView.Plan.
@@ -2305,8 +2441,9 @@ type World struct {
 	// Hook One short teaser line shown on the home feed
 	Hook *string `json:"hook,omitempty"`
 
-	// Id The twenty story worlds. The first eight are the original worlds; the other twelve came with the question bank
-	// (CR-11). A client must treat an id it does not know as a generic world (accent colour and name come from
+	// Id The story worlds. The first eight are the original worlds; the next twelve came with the question bank
+	// (CR-11); `histoires`, `english` and `francais` are new and stay draft (absent from GET /worlds and refused with
+	// `world_inactive`) until an admin publishes them. A client must treat an id it does not know as a generic world (accent colour and name come from
 	// `GET /worlds`), so a new world never needs a release.
 	Id WorldId `json:"id"`
 
@@ -2316,14 +2453,18 @@ type World struct {
 	// Name Example: Échecs
 	Name string `json:"name"`
 
+	// Ready True when an admin marked the world ready for parents (platform.ready_worlds). The parent settings may switch on only ready worlds (else 422 world_not_ready). Children only see worlds enabled for them. Absent on old servers, read as false.
+	Ready *bool `json:"ready,omitempty"`
+
 	// Scenes A few scene images of the world for the world page (CR-12). Empty until art is approved.
 	Scenes     *[]MediaRef `json:"scenes,omitempty"`
 	SkillCount int         `json:"skill_count"`
 	Tagline    string      `json:"tagline"`
 }
 
-// WorldId The twenty story worlds. The first eight are the original worlds; the other twelve came with the question bank
-// (CR-11). A client must treat an id it does not know as a generic world (accent colour and name come from
+// WorldId The story worlds. The first eight are the original worlds; the next twelve came with the question bank
+// (CR-11); `histoires`, `english` and `francais` are new and stay draft (absent from GET /worlds and refused with
+// `world_inactive`) until an admin publishes them. A client must treat an id it does not know as a generic world (accent colour and name come from
 // `GET /worlds`), so a new world never needs a release.
 type WorldId string
 
@@ -2758,6 +2899,9 @@ type RequestHintParams struct {
 	// AcceptLanguage fr-CA or en-CA. The app forwards the NEXT_LOCALE cookie, else the browser header. Default fr-CA.
 	AcceptLanguage *AcceptLanguage `json:"Accept-Language,omitempty"`
 }
+
+// RequestHint200JSONResponseBodyKind defines parameters for RequestHint.
+type RequestHint200JSONResponseBodyKind string
 
 // StreamNarrationParams defines parameters for StreamNarration.
 type StreamNarrationParams struct {
@@ -12483,6 +12627,9 @@ type RequestHintResponseObject interface {
 
 type RequestHint200JSONResponse struct {
 	Hint string `json:"hint"`
+
+	// Kind `retry_hint` when asked in the second-try window (after a wrong first answer); it never contains the answer.
+	Kind *RequestHint200JSONResponseBodyKind `json:"kind,omitempty"`
 }
 
 func (response RequestHint200JSONResponse) VisitRequestHintResponse(w http.ResponseWriter) error {

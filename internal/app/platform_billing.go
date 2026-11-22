@@ -82,7 +82,7 @@ func (s *Server) plConfig(ctx context.Context) platformConfig {
 const plDefaultPlans = `{"currency":"CAD","plans":[
 {"id":"free","price_cad_cents":0,"period":"none","name":{"fr":"Gratuit","en":"Free"},"features":{"fr":["Un profil enfant","Un chapitre par jour","Rapports de base"],"en":["One child profile","One chapter a day","Basic reports"]}},
 {"id":"family_monthly","price_cad_cents":899,"period":"month","name":{"fr":"Famille mensuel","en":"Family monthly"},"features":{"fr":["Jusqu’à 8 profils enfants","Chapitres illimités","Rapports détaillés pour les parents","Annulable à tout moment"],"en":["Up to 8 child profiles","Unlimited chapters","Detailed parent reports","Cancel any time"]}},
-{"id":"family_yearly","price_cad_cents":8990,"period":"year","name":{"fr":"Famille annuel","en":"Family yearly"},"features":{"fr":["Tout le forfait mensuel","Deux mois offerts","Annulable à tout moment"],"en":["Everything in monthly","Two months free","Cancel any time"]}}],
+{"id":"family_yearly","price_cad_cents":8990,"period":"year","name":{"fr":"Famille annuel","en":"Family yearly"},"features":{"fr":["Tout le forfait mensuel","Économisez avec le forfait annuel","Annulable à tout moment"],"en":["Everything in monthly","Save with the yearly plan","Cancel any time"]}}],
 "methods":[{"id":"card","label":{"fr":"Carte de crédit","en":"Credit card"}},{"id":"interac","label":{"fr":"Interac","en":"Interac"}},{"id":"paypal","label":{"fr":"PayPal","en":"PayPal"}},{"id":"apple_pay","label":{"fr":"Apple Pay","en":"Apple Pay"}},{"id":"google_pay","label":{"fr":"Google Pay","en":"Google Pay"}}]}`
 
 // plPlans reads the catalog row, else the built-in default.
@@ -103,9 +103,9 @@ func (s *Server) plPlans(ctx context.Context) api.PlanCatalog {
 func (s *Server) GetPlatformPublic(ctx context.Context, _ api.GetPlatformPublicRequestObject) (api.GetPlatformPublicResponseObject, error) {
 	c := s.plConfig(ctx)
 	return api.GetPlatformPublic200JSONResponse{
-		UnpaidPolicy:                 api.PlatformPublicUnpaidPolicy(c.UnpaidPolicy),
-		CardThresholdPct:             c.CardThresholdPct,
-		TrialDays:                    &c.TrialDays,
+		UnpaidPolicy:     api.PlatformPublicUnpaidPolicy(c.UnpaidPolicy),
+		CardThresholdPct: c.CardThresholdPct,
+
 		DefaultLocale:                &c.DefaultLocale,
 		Features:                     &c.Features,
 		DailyTimeLimitMinutesDefault: c.DailyTimeLimitMinutesDefault,
@@ -116,7 +116,14 @@ func (s *Server) GetPlatformPublic(ctx context.Context, _ api.GetPlatformPublicR
 
 // ListSubscriptionPlans returns the catalog.
 func (s *Server) ListSubscriptionPlans(ctx context.Context, _ api.ListSubscriptionPlansRequestObject) (api.ListSubscriptionPlansResponseObject, error) {
-	return api.ListSubscriptionPlans200JSONResponse(s.plPlans(ctx)), nil
+	cat := s.plPlans(ctx)
+	std := "Standard"
+	for i := range cat.Plans { // the base plan keeps its id but never shows "Gratuit" or "Free" to a parent
+		if cat.Plans[i].Id == "free" {
+			cat.Plans[i].Name.Fr, cat.Plans[i].Name.En = &std, &std
+		}
+	}
+	return api.ListSubscriptionPlans200JSONResponse(cat), nil
 }
 
 // ───────────── Subscription state ─────────────
@@ -127,6 +134,9 @@ type plSub struct {
 	TrialEnds, RenewsAt, CanceledAt, ProviderRef sql.NullString
 	Method                                       string // from the json column
 	MarkedByAdmin                                bool   // from the json column
+	// FreeAccess is an admin grant (json column). Nil = none. FreeUntil nil with FreeAccess set = no end date.
+	FreeAccess bool
+	FreeUntil  *time.Time
 }
 
 // plLoadSub reads the parent's subscription, creating a trial when none exists yet (admin-created parents).
@@ -142,9 +152,15 @@ func (s *Server) plLoadSub(ctx context.Context, parentID string) (plSub, error) 
 		var j struct {
 			Method        string `json:"method"`
 			MarkedByAdmin bool   `json:"marked_by_admin"`
+			FreeAccess    *struct {
+				Until *time.Time `json:"until"`
+			} `json:"free_access"`
 		}
 		_ = json.Unmarshal([]byte(raw), &j)
 		sub.Method, sub.MarkedByAdmin = j.Method, j.MarkedByAdmin
+		if j.FreeAccess != nil {
+			sub.FreeAccess, sub.FreeUntil = true, j.FreeAccess.Until
+		}
 		return sub, nil
 	}
 	sub, err := scan(s.Store.R.QueryRowContext(ctx, q, parentID))
@@ -187,6 +203,12 @@ func plView(sub plSub, now time.Time) api.SubscriptionView {
 		end = renews
 		can = end != nil && end.After(now)
 	}
+	if sub.FreeAccess && (sub.FreeUntil == nil || sub.FreeUntil.After(now)) { // an admin grant opens play until it ends
+		can, end = true, sub.FreeUntil
+		if status == "expired" || status == "unpaid" {
+			status = "active"
+		}
+	}
 	v := api.SubscriptionView{
 		Status: api.SubscriptionViewStatus(status), Plan: api.SubscriptionViewPlan(sub.PlanID), CanPlay: can,
 		TrialEndsAt: trialEnd, RenewsAt: renews,
@@ -203,6 +225,26 @@ func plView(sub plSub, now time.Time) api.SubscriptionView {
 	return v
 }
 
+// plPublicView is what parents and children are shown: never a trial or a free grant, only `active`, `expired` and
+// the other real states, with one neutral end date (`access_until`). can_play is the real answer.
+func plPublicView(sub plSub, now time.Time) api.SubscriptionView {
+	v := plView(sub, now)
+	freeOn := sub.FreeAccess && (sub.FreeUntil == nil || sub.FreeUntil.After(now))
+	switch {
+	case freeOn:
+		v.AccessUntil = sub.FreeUntil
+	case sub.Status == "trial":
+		v.AccessUntil = v.TrialEndsAt
+	default:
+		v.AccessUntil = v.RenewsAt
+	}
+	if v.Status == "trial" || freeOn {
+		v.Status = api.SubscriptionViewStatusActive
+	}
+	v.TrialEndsAt, v.DaysLeft = nil, nil
+	return v
+}
+
 // GetSubscription returns the effective subscription of the caller.
 func (s *Server) GetSubscription(ctx context.Context, _ api.GetSubscriptionRequestObject) (api.GetSubscriptionResponseObject, error) {
 	p, err := plCaller(ctx)
@@ -213,7 +255,7 @@ func (s *Server) GetSubscription(ctx context.Context, _ api.GetSubscriptionReque
 	if err != nil {
 		return nil, err
 	}
-	return api.GetSubscription200JSONResponse(plView(sub, time.Now())), nil
+	return api.GetSubscription200JSONResponse(plPublicView(sub, time.Now())), nil
 }
 
 // CheckoutSubscription starts a paid plan through the payment provider (BE-24).
@@ -278,10 +320,10 @@ func (s *Server) CheckoutSubscription(ctx context.Context, req api.CheckoutSubsc
 	if err != nil {
 		return nil, err
 	}
-	v := plView(sub, time.Now())
+	v := plPublicView(sub, time.Now())
 	out := api.CheckoutResult{
-		CanPlay: v.CanPlay, DaysLeft: v.DaysLeft, MarkedByAdmin: v.MarkedByAdmin, Method: v.Method,
-		Plan: api.CheckoutResultPlan(v.Plan), RenewsAt: v.RenewsAt, Status: api.CheckoutResultStatus(v.Status), TrialEndsAt: v.TrialEndsAt,
+		CanPlay: v.CanPlay, MarkedByAdmin: v.MarkedByAdmin, Method: v.Method, AccessUntil: v.AccessUntil,
+		Plan: api.CheckoutResultPlan(v.Plan), RenewsAt: v.RenewsAt, Status: api.CheckoutResultStatus(v.Status),
 	}
 	if sess.URL != "" {
 		out.CheckoutUrl = &sess.URL
@@ -302,7 +344,7 @@ func (s *Server) CancelSubscription(ctx context.Context, _ api.CancelSubscriptio
 	now := time.Now()
 	switch plView(sub, now).Status {
 	case "canceled":
-		return api.CancelSubscription200JSONResponse(plView(sub, now)), nil // already canceled: same answer
+		return api.CancelSubscription200JSONResponse(plPublicView(sub, now)), nil // already canceled: same answer
 	case "trial", "active":
 	default:
 		return nil, plConflict("not_cancelable", "This subscription is not running.")
@@ -329,5 +371,5 @@ func (s *Server) CancelSubscription(ctx context.Context, _ api.CancelSubscriptio
 	if err != nil {
 		return nil, err
 	}
-	return api.CancelSubscription200JSONResponse(plView(sub, now)), nil
+	return api.CancelSubscription200JSONResponse(plPublicView(sub, now)), nil
 }

@@ -618,3 +618,7 @@ Certainty of a flawless launch is impossible. These gates make failure early, vi
 | Law 25 specifics (age threshold wording, incident thresholds, penalties) | read the official text or ask the lawyer; the summaries I found are secondary |
 | Refresh-token behaviour after a `JWT_SECRET` change | test on staging |
 | Node and tool pins, action major versions | `dependabot` pull requests |
+
+## Addendum: three-worlds release
+
+Ship order, rollback (including `seed --rollback` and hiding the draft worlds before an old binary starts) and the content gate are in `docs/ROLLOUT_THREE_WORLDS.md`. The web ships with the API: old web builds lose `trial_ends_at`, `days_left` and `trial_days`.

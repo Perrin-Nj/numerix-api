@@ -74,6 +74,9 @@ var titles = map[string][2]string{ // [fr, en]
 	"version_conflict":       {"Version dépassée", "Version out of date"},
 	"transition_not_allowed": {"Changement d’état impossible", "State change not allowed"},
 	"needs_reviewer":         {"Un autre relecteur est requis", "Another reviewer is needed"},
+	"retry_not_allowed":      {"Pas de deuxième essai ici", "No second try here"},
+	"world_inactive":         {"Ce monde n’est pas encore ouvert", "This world is not open yet"},
+	"world_not_ready":        {"Ce monde n’est pas encore offert", "This world is not available yet"},
 }
 
 // titleFor picks the title for a code; unknown codes get a generic title for their status class.

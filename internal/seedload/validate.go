@@ -94,6 +94,7 @@ func (f *Files) Env(g *engine.Graph) *content.Env {
 		}
 		env.Vocab = func(facet, v string) bool { return vocab[[2]string{facet, v}] }
 	}
+	env.StrictStyle = f.StrictGradeQuota
 	return env
 }
 
@@ -178,6 +179,10 @@ func (f *Files) Validate(g *engine.Graph) []content.Issue {
 	}
 	// questions
 	env := f.Env(g)
+	draftWorld := map[string]bool{}
+	for _, w := range f.Worlds {
+		draftWorld[w.ID] = w.Status == content.StatusDraft
+	}
 	var all []*content.Question
 	for _, qf := range f.QuestionFiles {
 		for _, q := range qf.Questions {
@@ -195,8 +200,12 @@ func (f *Files) Validate(g *engine.Graph) []content.Issue {
 				out = append(out, is)
 			}
 		}
-		if qf.World != ExamplesFile {
+		if qf.World != ExamplesFile && !draftWorld[qf.World] { // a draft world (sample questions only) has no quotas
 			for _, is := range env.WorldQuota(qf.World, qf.Questions, f.Quests) {
+				is.Field = qf.Name + ":" + is.Field
+				out = append(out, is)
+			}
+			for _, is := range env.GradeQuota(qf.World, qf.Questions, f.Quests, f.StrictGradeQuota) {
 				is.Field = qf.Name + ":" + is.Field
 				out = append(out, is)
 			}

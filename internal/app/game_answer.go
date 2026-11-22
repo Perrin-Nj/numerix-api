@@ -11,7 +11,6 @@ import (
 	"github.com/Perrin-Nj/numerix-api/internal/engine"
 	"github.com/Perrin-Nj/numerix-api/internal/httpapi"
 	"github.com/Perrin-Nj/numerix-api/internal/mongosync"
-	"github.com/Perrin-Nj/numerix-api/internal/narrator"
 	"github.com/Perrin-Nj/numerix-api/internal/visual"
 )
 
@@ -27,6 +26,12 @@ type storedAnswer struct {
 	Rewards    []api.Reward `json:"rewards"`
 	// GivenRaw is the answer exactly as sent, kept for curated questions (their answers can be lists of ids).
 	GivenRaw json.RawMessage `json:"given_raw,omitempty"`
+	// RetryOpen is true when this wrong first answer was answered with attempt 1: the reveal was withheld and a second
+	// try is open until answer_retries has a row for the beat.
+	RetryOpen bool `json:"retry_open,omitempty"`
+	// PendingFinish is true when this wrong answer was the last of the chapter: the chapter stays active (no card, no
+	// completion) until the second try is answered or the child moves on.
+	PendingFinish bool `json:"pending_finish,omitempty"`
 }
 
 // AnswerBeat answers POST /sessions/{sessionId}/beats/{beatId}/answer: grade, update mastery, close the chapter
@@ -49,6 +54,17 @@ func (s *Server) AnswerBeat(ctx context.Context, req api.AnswerBeatRequestObject
 	ms := 0
 	if req.Body.ResponseTimeMs != nil {
 		ms = max(0, *req.Body.ResponseTimeMs)
+	}
+	attempt := 0 // 0 = legacy client: full reveal at once, no second try
+	if a := req.Body.Attempt; a != nil {
+		if !a.Valid() {
+			return nil, httpapi.Validation(plField("attempt", "1 or 2"))
+		}
+		attempt = int(*a)
+	}
+	retryOn := s.plConfig(ctx).RetryEnabled
+	if attempt == 2 {
+		return s.answerRetry(ctx, r, c, req, lang, retryOn)
 	}
 
 	// B2: the client's recent scene ids, validated before any write; nil means "leave the stored list alone"
@@ -139,8 +155,12 @@ func (s *Server) AnswerBeat(ctx context.Context, req api.AnswerBeatRequestObject
 		} else if t, ok := problem.Metadonnees["temps_cible_ms"].(int); ok {
 			target = float64(t)
 		}
-		after := prof.Observe(skill, res, float64(ms), target, now)
-		stored = storedAnswer{Given: given, Outcome: string(res.Type), Code: res.CodeErreur, ResponseMs: ms, Skill: skill,
+		after := prof.Observe(skill, res, float64(ms), target, now) // only the first attempt ever reaches mastery
+		qType := problem.Shape
+		if cur != nil {
+			qType = cur.Type
+		}
+		stored = storedAnswer{RetryOpen: attempt == 1 && retryOn && res.Type != engine.Correct && qType != "truefalse", Given: given, Outcome: string(res.Type), Code: res.CodeErreur, ResponseMs: ms, Skill: skill,
 			Mastered: before < engine.MasteryThreshold && after >= engine.MasteryThreshold, Rewards: []api.Reward{}}
 		if cur != nil {
 			stored.GivenRaw = rawGiven
@@ -151,32 +171,20 @@ func (s *Server) AnswerBeat(ctx context.Context, req api.AnswerBeatRequestObject
 			return e
 		}
 		answered++ // this answer
-		if finished = answered >= r.Data.Length; finished {
-			var correct int
-			if e := tx.QueryRowContext(ctx, `SELECT COUNT(*) FROM answers WHERE session_id = ? AND outcome = 'correct'`, r.ID).Scan(&correct); e != nil {
-				return e
-			}
-			if res.Type == engine.Correct {
-				correct++
-			}
-			stored.Rewards = append(stored.Rewards, api.Reward{Type: api.ChapterComplete})
-			pct := float64(correct) / float64(answered) * 100
-			if pct >= float64(s.plConfig(ctx).CardThresholdPct) {
-				card := api.StoryCard{Id: plUUID(newID()), World: api.WorldId(r.World), Title: narrator.TitleOf(r.World, r.Data.TitleIdx, r.Data.Lang),
-					ImageUrl: "", SessionId: &req.SessionId, EarnedAt: now}
-				cj, _ := json.Marshal(map[string]string{"world": r.World, "title": card.Title, "session_id": r.ID, "image_url": ""})
-				if _, e := tx.ExecContext(ctx, `INSERT OR IGNORE INTO collection (child_id, card_id, json, acquired_at) VALUES (?, ?, ?, ?)`,
-					r.ChildID, plUID(card.Id), string(cj), plTS(now)); e != nil {
+		if answered >= r.Data.Length {
+			if stored.RetryOpen { // a wrong last answer with a second try open: the chapter waits for the window to close
+				stored.PendingFinish = true
+			} else {
+				finished = true
+				good := 0
+				if res.Type == engine.Correct {
+					good = 1
+				}
+				rw, e := s.finishChapter(ctx, tx, r, c, now, skill, 1, good)
+				if e != nil {
 					return e
 				}
-				stored.Rewards = append(stored.Rewards, api.Reward{Type: api.CardEarned, Card: &card})
-			}
-			if _, e := tx.ExecContext(ctx, `UPDATE sessions SET status = 'completed', finished_at = ? WHERE id = ?`, plTS(now), r.ID); e != nil {
-				return e
-			}
-			// Mongo copy: same transaction, so a rollback leaves no event (no-op when sync is off).
-			if e := s.syncChapterDone(ctx, tx, r.ChildID, c.ParentID, r.World, skill); e != nil {
-				return e
+				stored.Rewards = append(stored.Rewards, rw...)
 			}
 		}
 		if stored.Mastered {
@@ -212,27 +220,57 @@ func (s *Server) AnswerBeat(ctx context.Context, req api.AnswerBeatRequestObject
 	if err != nil {
 		return nil, s.plInternalErr(ctx, "answer beat", err)
 	}
+	var retryUsed bool // the second try was already taken: the first answer replays as a full reveal
+	if attempt == 1 && stored.RetryOpen {
+		if e := s.Store.R.QueryRowContext(ctx, `SELECT COUNT(*) > 0 FROM answer_retries WHERE beat_id = ?`, beatID).Scan(&retryUsed); e != nil {
+			return nil, s.plInternalErr(ctx, "check retry", e)
+		}
+	}
+	withheld := attempt == 1 && stored.RetryOpen && !retryUsed
 	if finished && !replay { // a finished chapter may complete accepted challenges (feed module)
 		if extra, e := s.settleChallenges(ctx, c); e != nil {
 			s.Log.Warn("settle challenges failed", "err", e)
 		} else if len(extra) > 0 {
 			stored.Rewards = append(stored.Rewards, extra...)
+			if withheld { // the reveal comes with the second try: keep the extra rewards for it
+				if aj, e := json.Marshal(stored); e == nil {
+					_, _ = s.Store.W.ExecContext(ctx, `UPDATE answers SET json = ? WHERE beat_id = ?`, string(aj), beatID)
+				}
+			}
 		}
 	}
 	sess, err := s.sessionByID(ctx, r.ID, lang, false, true)
 	if err != nil {
 		return nil, err
 	}
+	if withheld { // first wrong answer with a second try open: the verdict only, nothing that gives the answer away
+		one, open := api.AnswerResultAttemptN1, true
+		return api.AnswerBeat200JSONResponse(api.AnswerResult{
+			Outcome: api.Outcome(stored.Outcome), Attempt: &one, RetryAvailable: &open,
+			Denouement: api.Narration{Status: api.Pending}, Session: sess, Rewards: &[]api.Reward{},
+		}), nil
+	}
+	out := s.revealResult(ctx, sess, stored, problem, cur, curRes, lang)
+	if attempt == 1 {
+		one := api.AnswerResultAttemptN1
+		out.Attempt = &one
+	}
+	return api.AnswerBeat200JSONResponse(out), nil
+}
+
+// revealResult builds the full verdict: the answer, the explanation, the feedback and the how-to picture.
+func (s *Server) revealResult(ctx context.Context, sess api.Session, stored storedAnswer, problem engine.Problem, cur *content.Question, curRes content.Result, lang string) api.AnswerResult {
+	ca := answerValue(problem.Reponse)
 	out := api.AnswerResult{
 		Outcome:       api.Outcome(stored.Outcome),
-		CorrectAnswer: answerValue(problem.Reponse),
+		CorrectAnswer: &ca,
 		Denouement:    api.Narration{Status: api.Pending},
 		Session:       sess,
 		Rewards:       &stored.Rewards,
 		SceneKey:      sceneKeyPtr(sceneKeyFor(stored.Skill, stored.Outcome, stored.Code)),
 	}
 	if cur != nil {
-		out.CorrectAnswer = answerFromJSON(cur.CorrectAnswer(lang))
+		ca = answerFromJSON(cur.CorrectAnswer(lang))
 		if ex := cur.Explain.Get(lang); ex != "" {
 			out.Explain = &ex
 		}
@@ -247,7 +285,7 @@ func (s *Server) AnswerBeat(ctx context.Context, req api.AnswerBeatRequestObject
 	if mv := s.methodVisual(ctx, problem.Visual, lang); mv != nil {
 		out.MethodVisual = mv
 	}
-	return api.AnswerBeat200JSONResponse(out), nil
+	return out
 }
 
 // methodVisual builds the how-to picture for a question (nil when none exists) and caches it by cache_key,

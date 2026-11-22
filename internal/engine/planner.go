@@ -23,9 +23,16 @@ func Choose(gr *Graph, prof *Profile, world string, grade int, g *RNG, now time.
 	for _, id := range gr.Implemented() {
 		impl[id] = true
 	}
+	window := gr.GradeWindow() // grade-true rules; PlayableFor decides per world and year whether the window or the lower years apply
 	var inWorld []string
 	for _, id := range gr.ByWorld(world) {
-		if s, _ := gr.Get(id); (s.YearIntro <= grade || gr.IsBankOnly(world)) && gr.PlayableFor(world, id, grade) { // only chapters this grade can really be served
+		s, _ := gr.Get(id)
+		if window {
+			// grade-true: PlayableFor counts only the two school years around the child, and a written-questions world no longer bypasses the year
+			if gr.PlayableFor(world, id, grade) && (s.YearIntro <= grade || gr.BankFor(world, id, grade) >= MinBankQuestions) {
+				inWorld = append(inWorld, id)
+			}
+		} else if (s.YearIntro <= grade || gr.IsBankOnly(world)) && gr.PlayableFor(world, id, grade) { // only chapters this grade can really be served
 			inWorld = append(inWorld, id)
 		}
 	}
@@ -60,15 +67,21 @@ func Choose(gr *Graph, prof *Profile, world string, grade int, g *RNG, now time.
 			fresh = append(fresh, id)
 		}
 	}
-	if len(fresh) > 0 { // earliest school year first, random among ties
+	if len(fresh) > 0 { // earliest school year first (grade-true: the introduction year closest to the child's), random among ties
+		dist := func(year int) int {
+			if window {
+				return max(year-grade, grade-year)
+			}
+			return year
+		}
 		first := 99
 		for _, id := range fresh {
 			s, _ := gr.Get(id)
-			first = min(first, s.YearIntro)
+			first = min(first, dist(s.YearIntro))
 		}
 		var ties []string
 		for _, id := range fresh {
-			if s, _ := gr.Get(id); s.YearIntro == first {
+			if s, _ := gr.Get(id); dist(s.YearIntro) == first {
 				ties = append(ties, id)
 			}
 		}
@@ -77,7 +90,7 @@ func Choose(gr *Graph, prof *Profile, world string, grade int, g *RNG, now time.
 
 	var upkeep []string
 	for id := range mastered {
-		if impl[id] {
+		if impl[id] && (!window || slices.Contains(inWorld, id)) { // grade-true: upkeep only in a skill this world can serve at this year
 			upkeep = append(upkeep, id)
 		}
 	}

@@ -30,7 +30,8 @@ func newTestServer(t *testing.T) (http.Handler, *Server) {
 	t.Cleanup(func() { _ = db.Close() })
 	log := slog.New(slog.NewTextHandler(io.Discard, nil))
 	s := NewServer(db, cfg, log)
-	return httpapi.NewHandler(httpapi.Deps{Impl: s, Config: cfg, Log: log, Issuer: s.Issuer}), s
+	legacyPlatform(t, s)
+	return httpapi.NewHandler(httpapi.Deps{Impl: s, Config: cfg, Log: log, Issuer: s.Issuer, Limiter: testLimiter}), s
 }
 
 // do sends one request through the handler and returns the recorded response.
@@ -177,3 +178,6 @@ func TestConcurrencyLimit(t *testing.T) {
 		t.Fatalf("saturated: status %d retry-after %q", rec.Code, rec.Header().Get("Retry-After"))
 	}
 }
+
+// testLimiter, when set before newTestServer, replaces the rate limiter (simulations play faster than real time).
+var testLimiter *httpapi.Limiter

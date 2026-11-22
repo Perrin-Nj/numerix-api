@@ -43,6 +43,8 @@ type Files struct {
 	Denylist      []string
 	Names         map[string]bool
 	Hash          string // sha256 of all file names and contents, stored in seed_runs.files_hash
+	// StrictGradeQuota turns rule Q1 (20 published questions per world and grade) from a warning into an error (content gate).
+	StrictGradeQuota bool
 }
 
 // Questions returns every question of every file in file order.

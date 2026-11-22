@@ -101,3 +101,10 @@ func IPLimit(l *Limiter, limit int, trustProxy bool) Middleware {
 		})
 	}
 }
+
+// NewLimiterWithClock is NewLimiter with a custom clock, for simulations that play far faster than real time.
+func NewLimiterWithClock(now func() time.Time) *Limiter {
+	l := NewLimiter()
+	l.now = now
+	return l
+}

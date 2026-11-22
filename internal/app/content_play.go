@@ -42,6 +42,9 @@ type contentState struct {
 	worldsAt map[string]time.Time // per language
 	worldsG  map[string]uint64
 	worlds   map[string][]api.World
+	open     map[string]bool // ids of the published worlds
+	openAt   time.Time
+	openGen  uint64
 }
 
 var contentStates sync.Map
@@ -76,15 +79,6 @@ func (s *Server) syncBank(ctx context.Context) {
 		entries[i] = engine.BankEntry{World: c.World, Skill: c.Skill, Published: c.Published, ByGrade: c.ByGrade}
 	}
 	s.game().graph.SetBank(entries)
-}
-
-// worldExists tells whether a world id is in the catalogue.
-func (s *Server) worldExists(ctx context.Context, id string) (bool, error) {
-	var n int
-	if err := s.Store.R.QueryRowContext(ctx, `SELECT COUNT(*) FROM worlds WHERE id = ? AND status <> 'retired'`, id).Scan(&n); err != nil {
-		return false, s.plInternalErr(ctx, "check world", err)
-	}
-	return n > 0, nil
 }
 
 // toAPIMedia converts the store's MediaRef to the generated type (same JSON shape).
@@ -127,6 +121,9 @@ func (s *Server) worldViews(ctx context.Context, lang string) ([]api.World, erro
 	}
 	items := make([]api.World, 0, len(rows))
 	for _, w := range rows {
+		if w.Status != content.StatusPublished { // a draft world is invisible to children and parents
+			continue
+		}
 		name, tag, hook := w.Name.Get(lang), w.Tagline.Get(lang), w.Hook.Get(lang)
 		gmin, gmax := w.GradeMin, w.GradeMax
 		item := api.World{
@@ -217,19 +214,52 @@ func curatedProblem(q *content.Question, version int) (engine.Problem, error) {
 // pickCurated takes the best published bank question this child has not seen for (world, skill), copies the
 // current version into `questions` and returns its served id. ok is false when the child exhausted the bank.
 func (s *Server) pickCurated(ctx context.Context, tx *sql.Tx, childID, world, skill string, grade int, avoidShape string) (id, shape string, ok bool, err error) {
-	capGrade := grade
-	if s.game().graph.IsBankOnly(world) {
-		capGrade = 12 // a written-questions world serves any school year; the ranking below still prefers this child's year
-	}
-	cands, err := s.Content.Candidates(ctx, tx, childID, world, skill, capGrade)
-	if err != nil || len(cands) == 0 {
-		return "", "", false, err
-	}
+	cfg := s.plConfig(ctx)
+	s.game().graph.SetGradeWindow(cfg.GradeWindow)
+	flagOn := cfg.GradeWindow
+	windowed := flagOn && s.game().graph.WindowFor(world, grade)
 	prof, err := s.profileFrom(ctx, tx, childID)
 	if err != nil {
 		return "", "", false, err
 	}
-	best, found := contentdb.Rank(cands, childID, avoidShape, contentdb.TargetDifficulty(prof.Mastery(skill, s.game().now())), grade)
+	mastery := prof.Mastery(skill, s.game().now())
+	var best contentdb.Candidate
+	var found bool
+	if flagOn {
+		// grade-true: the child's school year and the one before; when the world has nothing playable in that window, or
+		// the window holds no suitable unseen question, every lower year. Never a harder year, and from grade 3 on no bare
+		// drill (the review share aside): an empty result lets the caller re-serve or generate instead.
+		if _, seen := prof.States[skill]; !seen { // an unseen skill starts from a prior that depends on the child's year
+			mastery = s.game().graph.GradePrior(skill, grade, cfg.GradePriorBase, cfg.GradePriorStep)
+		}
+		var served int // the pick number: stable for one child, so a reload cannot change the share decisions
+		if err = tx.QueryRowContext(ctx, `SELECT COUNT(*) FROM child_questions WHERE child_id = ?`, childID).Scan(&served); err != nil {
+			return "", "", false, err
+		}
+		lo := grade - 1
+		if !windowed {
+			lo = 0
+		}
+		for _, from := range []int{lo, 0} {
+			cands, e := s.Content.CandidatesWindow(ctx, tx, childID, world, skill, from, grade)
+			if e != nil {
+				return "", "", false, e
+			}
+			if best, found = contentdb.RankGradeStrict(cands, childID, avoidShape, contentdb.TargetDifficulty(mastery), grade, served); found || from == 0 {
+				break
+			}
+		}
+	} else {
+		capGrade := grade
+		if s.game().graph.IsBankOnly(world) {
+			capGrade = 12 // a written-questions world serves any school year; the ranking below still prefers this child's year
+		}
+		cands, e := s.Content.Candidates(ctx, tx, childID, world, skill, capGrade)
+		if e != nil || len(cands) == 0 {
+			return "", "", false, e
+		}
+		best, found = contentdb.Rank(cands, childID, avoidShape, contentdb.TargetDifficulty(mastery), grade)
+	}
 	if !found {
 		return "", "", false, nil
 	}
@@ -292,6 +322,10 @@ func (s *Server) curatedBeatView(ctx context.Context, b beatRow, cq *content.Que
 	}
 	hint := !cq.Hint.IsZero()
 	view := api.Question{Kind: &kind, MathText: math, Choices: []api.AnswerValue{}, Prompt: &prompt, Story: &story, HintAvailable: &hint}
+	if cq.Style != "" { // absent for every question that has no style, so legacy payloads stay byte-identical
+		st := api.QuestionStyle(cq.Style)
+		view.Style = &st
+	}
 	if cq.Answer.Kind == content.KindChoice {
 		for _, c := range shuffled(cq.Choices, b.ID, func(c content.Choice) string { return c.ID }) {
 			view.Choices = append(view.Choices, answerFromJSON(content.ChoiceValue(c, lang)))
@@ -378,17 +412,25 @@ func (s *Server) RequestHint(ctx context.Context, req api.RequestHintRequestObje
 	}
 	lang := gameLang(req.Params.AcceptLanguage, c.Locale)
 	var qid string
-	var answered int
-	err = s.Store.R.QueryRowContext(ctx, `SELECT b.question_id, (SELECT COUNT(*) FROM answers a WHERE a.beat_id = b.id) FROM beats b WHERE b.id = ? AND b.session_id = ?`,
-		plUID(req.BeatId), r.ID).Scan(&qid, &answered)
+	var answered, retried int
+	var firstJSON sql.NullString
+	err = s.Store.R.QueryRowContext(ctx, `SELECT b.question_id, (SELECT COUNT(*) FROM answers a WHERE a.beat_id = b.id),
+		(SELECT json FROM answers a WHERE a.beat_id = b.id LIMIT 1), (SELECT COUNT(*) FROM answer_retries t WHERE t.beat_id = b.id) FROM beats b WHERE b.id = ? AND b.session_id = ?`,
+		plUID(req.BeatId), r.ID).Scan(&qid, &answered, &firstJSON, &retried)
 	if errors.Is(err, sql.ErrNoRows) {
 		return nil, httpapi.ErrNotFound
 	}
 	if err != nil {
 		return nil, s.plInternalErr(ctx, "load beat", err)
 	}
+	var first storedAnswer
+	retryWindow := false // wrong first answer given with attempt 1, second try not taken yet
 	if answered > 0 {
-		return nil, plConflict("beat_answered", "This question was already answered.")
+		_ = json.Unmarshal([]byte(firstJSON.String), &first)
+		retryWindow = first.RetryOpen && retried == 0 && s.plConfig(ctx).RetryEnabled
+		if !retryWindow {
+			return nil, plConflict("beat_answered", "This question was already answered.")
+		}
 	}
 	q, err := loadQuestion(ctx, s.Store.R, qid)
 	if err != nil {
@@ -401,9 +443,17 @@ func (s *Server) RequestHint(ctx context.Context, req api.RequestHintRequestObje
 	if err != nil {
 		return nil, s.plInternalErr(ctx, "decode question", err)
 	}
+	if retryWindow {
+		// the hint for a second try never holds the answer: the message written for the typical error that was made,
+		// else the question's retry hint, else its hint, else a nudge for the question type
+		h := retryHintText(cq, first.GivenRaw, lang)
+		kind := api.RequestHint200JSONResponseBodyKind("retry_hint")
+		return api.RequestHint200JSONResponse{Hint: h, Kind: &kind}, nil
+	}
 	h := cq.Hint.Get(lang)
 	if h == "" {
 		return nil, httpapi.ErrNotFound
 	}
-	return api.RequestHint200JSONResponse{Hint: h}, nil
+	kind := api.RequestHint200JSONResponseBodyKind("hint")
+	return api.RequestHint200JSONResponse{Hint: h, Kind: &kind}, nil
 }

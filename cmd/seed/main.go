@@ -41,8 +41,8 @@ func main() {
 
 // options are the parsed command line flags.
 type options struct {
-	db, seedDir, backupDir, rollback, actor, only, world, exclude string
-	dryRun, validateOnly, noBackup, allowRetire, strict, asJSON   bool
+	db, seedDir, backupDir, rollback, actor, only, world, exclude            string
+	dryRun, validateOnly, noBackup, allowRetire, strict, asJSON, reportStyle bool
 }
 
 // run is the whole program; it returns the process exit code (0 ok, 1 failure, 2 bad usage).
@@ -64,6 +64,7 @@ func run(args []string, stdout, stderr io.Writer, getenv func(string) string) in
 	fs.BoolVar(&o.allowRetire, "allow-retire", false, "retire questions that are no longer in the seed files")
 	fs.BoolVar(&o.strict, "strict", false, "post checks also demand target_count-2 published questions per quest")
 	fs.BoolVar(&o.asJSON, "json", false, "print the report as JSON")
+	fs.BoolVar(&o.reportStyle, "report-style", false, "list the questions of echecs, medecine and espace on an ARI-OPE drill skill that have no explicit style, then stop")
 	if err := fs.Parse(args); err != nil {
 		return 2
 	}
@@ -109,6 +110,10 @@ func execute(ctx context.Context, o options, stdout, stderr io.Writer, getenv fu
 	files, err := seedload.Read(o.seedDir, seedload.ReadOptions{Exclude: splitList(o.exclude)})
 	if err != nil {
 		return fmt.Errorf("read seed files: %w", err)
+	}
+	files.StrictGradeQuota = o.strict
+	if o.reportStyle {
+		return reportStyle(stdout, files)
 	}
 	issues := files.Validate(g)
 	printIssues(stderr, issues)
@@ -317,4 +322,24 @@ func short(h string) string {
 // signalContext is cancelled by Ctrl+C or SIGTERM so a long run stops between transactions.
 func signalContext() (context.Context, context.CancelFunc) {
 	return signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
+}
+
+// reportStyle lists the offenders of rule style_required: one line per question with the style the picker derives.
+func reportStyle(out io.Writer, files *seedload.Files) error {
+	n := 0
+	for _, qf := range files.QuestionFiles {
+		if qf.World == seedload.ExamplesFile { // demo data, never loaded in production
+			continue
+		}
+		for _, q := range qf.Questions {
+			world := strings.SplitN(q.ID, ".", 2)[0]
+			if (world != "echecs" && world != "medecine" && world != "espace") || !content.IsDrillSkill(q.Skill) || q.Style != "" {
+				continue
+			}
+			n++
+			fmt.Fprintf(out, "%s\t%s\tgrade %d\tderived %s\n", q.ID, q.Skill, q.Grade, content.DerivedStyle(q.Skill, q.Grade, ""))
+		}
+	}
+	fmt.Fprintf(out, "%d questions without an explicit style\n", n)
+	return nil
 }

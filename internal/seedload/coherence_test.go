@@ -84,7 +84,7 @@ func shown(v *content.Visual) []float64 {
 	return out
 }
 
-// TestFocusWorldsEveryQuestionHasAMatchingDiagram: in chess, medicine and space every published question carries a
+// TestFocusWorldsEveryQuestionHasAMatchingDiagram: in chess, medicine and space every visual and board question carries a
 // diagram, and every number the diagram shows is a number the question itself mentions (so a picture never
 // belongs to another question). Spring: a data-integrity test over the seed "fixtures".
 func TestFocusWorldsEveryQuestionHasAMatchingDiagram(t *testing.T) {
@@ -102,17 +102,26 @@ func TestFocusWorldsEveryQuestionHasAMatchingDiagram(t *testing.T) {
 			continue
 		}
 		count++
+		// a diagram is required for visual questions and for board questions (chess grid and path skills); any other
+		// question may go without one
+		board := strings.HasPrefix(q.ID, "echecs.") && (q.Skill == "GEO-A01" || q.Skill == "GEO-A02")
 		if q.Visual == nil {
-			t.Errorf("%s: no diagram", q.ID)
+			if q.Type == content.TypeVisual || board {
+				t.Errorf("%s: no diagram", q.ID)
+			}
 			continue
 		}
 		if q.Type == content.TypeVisual || knownExtras[q.ID] != "" {
 			continue // visual questions keep their data only in the diagram, by design
 		}
-		if q.Reaction == nil || q.Reaction.Right.FR == "" || q.Reaction.Wrong.FR == "" || q.Reaction.Right.EN == "" || q.Reaction.Wrong.EN == "" {
-			t.Errorf("%s: no written reaction (right and wrong, fr and en)", q.ID)
-		} else if bad := reactionNumbersNotInQuestion(q); len(bad) > 0 && !derivedInReaction[q.ID] {
-			t.Errorf("%s: reaction mentions %v which the question never says", q.ID, bad)
+		// the written reaction is optional (the denouement falls back to the explanation, the feedback or the hint);
+		// when there is one it must be about this question
+		if q.Reaction != nil {
+			if q.Reaction.Right.FR == "" || q.Reaction.Wrong.FR == "" || q.Reaction.Right.EN == "" || q.Reaction.Wrong.EN == "" {
+				t.Errorf("%s: a reaction needs right and wrong, fr and en", q.ID)
+			} else if bad := reactionNumbersNotInQuestion(q); len(bad) > 0 && !derivedInReaction[q.ID] {
+				t.Errorf("%s: reaction mentions %v which the question never says", q.ID, bad)
+			}
 		}
 		nums := textNumbers(q)
 		for _, n := range shown(q.Visual) {

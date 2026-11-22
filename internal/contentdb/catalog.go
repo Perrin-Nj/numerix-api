@@ -203,8 +203,9 @@ type BankCount struct {
 // BankCounts feeds the skill graph: how many published questions each (world, skill) has by question grade, and
 // every quest (even with 0 questions) so the world lists its skills.
 func (r *Repo) BankCounts(ctx context.Context, q Querier) ([]BankCount, error) {
-	// LEFT JOIN: a quest without any published question still yields one row (grade NULL, count 0)
-	rows, err := q.QueryContext(ctx, `SELECT wq.world_id, wq.skill_id, COALESCE(b.grade, 0), COUNT(b.id)
+	// LEFT JOIN: a quest without any published question still yields one row (grade NULL, count 0). DISTINCT: two quests
+	// of a world may share a skill, and the join would then count each question once per quest.
+	rows, err := q.QueryContext(ctx, `SELECT wq.world_id, wq.skill_id, COALESCE(b.grade, 0), COUNT(DISTINCT b.id)
 		FROM world_quests wq
 		LEFT JOIN bank_questions b ON b.world_id = wq.world_id AND b.skill_id = wq.skill_id AND b.status = 'published'
 		WHERE wq.status = 'published'

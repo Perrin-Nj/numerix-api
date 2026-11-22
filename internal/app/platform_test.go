@@ -178,7 +178,7 @@ func TestPlatformFullFlow(t *testing.T) {
 	// subscription: trial, instant dev checkout, cancel (twice), invalid plan
 	code, sub, _ := plCall(t, h, "GET", "/v1/subscription", tok, nil)
 	plWant(t, code, sub, 200, "subscription")
-	if sub["status"] != "trial" || sub["can_play"] != true {
+	if sub["status"] != "active" || sub["can_play"] != true || sub["access_until"] == nil || sub["trial_ends_at"] != nil { // T021: a silent trial reads active, with a neutral end date
 		t.Fatalf("sub %v", sub)
 	}
 	code, body, _ = plCall(t, h, "POST", "/v1/subscription/checkout", tok, map[string]any{"plan": "free", "method": "card"})

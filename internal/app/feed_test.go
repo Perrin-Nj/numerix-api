@@ -12,6 +12,8 @@ import (
 	"strings"
 	"testing"
 	"time"
+
+	"github.com/Perrin-Nj/numerix-api/internal/appconfig"
 )
 
 // feedFixture is one family: a parent, a consented child on the UTC time zone, and their tokens.
@@ -48,7 +50,21 @@ func newFeedFixture(t *testing.T, consent bool) feedFixture {
 	if f.parentTok, _, err = s.Issuer.IssueParent("p-1"); err != nil {
 		t.Fatal(err)
 	}
+	// the suite predates grade-true play: its children have no grade and its banks span grades, so it runs with the
+	// switch off (the same path as origin/main). Grade-true behaviour has its own tests, which turn it back on.
+	f.setPlatform(t, func(p *appconfig.Platform) { p.GradeWindow = false })
 	return f
+}
+
+// setPlatform edits the platform config document through the real validated store.
+func (f feedFixture) setPlatform(t *testing.T, mutate func(*appconfig.Platform)) {
+	t.Helper()
+	p := appconfig.Get[appconfig.Platform](context.Background(), f.s.Cfg, appconfig.NSPlatform)
+	mutate(&p)
+	raw, _ := json.Marshal(p)
+	if _, err := f.s.Cfg.Set(context.Background(), appconfig.NSPlatform, raw, "test", nil); err != nil {
+		t.Fatal(err)
+	}
 }
 
 // call sends one JSON request and decodes the JSON answer into a generic map.
