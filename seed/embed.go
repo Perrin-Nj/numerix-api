@@ -9,6 +9,7 @@ package seed
 
 import (
 	_ "embed" // enables the //go:embed directives below
+	"encoding/json"
 	"strings"
 )
 
@@ -35,3 +36,18 @@ func Denylist() []string { return lines(denylist) }
 
 // Names returns the allowed first names and proper nouns (unfolded).
 func Names() []string { return lines(names) }
+
+//go:embed scene/approved.json
+var approvedScenes []byte
+
+// SceneApproved returns the question ids whose 3D scene was reviewed and may be served (seed/scene/approved.json, committed empty
+// until a human signs a scene off). Embedded, so a scene never ships without a commit.
+func SceneApproved() map[string]bool {
+	var ids []string
+	_ = json.Unmarshal(approvedScenes, &ids) // the file is a test-checked JSON array
+	out := make(map[string]bool, len(ids))
+	for _, id := range ids {
+		out[id] = true
+	}
+	return out
+}

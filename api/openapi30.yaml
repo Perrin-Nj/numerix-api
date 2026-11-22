@@ -4305,6 +4305,11 @@ components:
         hint_available:
           type: boolean
           description: True when POST .../hint will answer (BE-70)
+        scene:
+          type: object
+          additionalProperties: true
+          description: Question-phase part of the 3D scene spec (SceneSpec v1 without any answer-bound value). Sent only for a bank question whose scene was approved while platform.scenes_enabled is on; absent otherwise (old clients ignore it).
+          nullable: true
     QuestionKind:
       type: string
       enum:
@@ -4528,6 +4533,11 @@ components:
         feedback:
           type: string
           description: 'Curated questions only: the kind message written for the matched common error, when there is one.'
+          nullable: true
+        scene_reveal:
+          type: object
+          additionalProperties: true
+          description: Reveal part of the scene spec (answer-bound and derived-wrong bindings, reveal label). Sent only with the released reveal (never in a withheld first result) and only when the question carries `scene`.
           nullable: true
         scene_key:
           $ref: '#/components/schemas/SceneKey'

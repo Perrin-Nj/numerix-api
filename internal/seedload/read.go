@@ -6,6 +6,7 @@
 package seedload
 
 import (
+	"encoding/json"
 	"crypto/sha256"
 	"encoding/hex"
 	"errors"
@@ -40,6 +41,8 @@ type Files struct {
 	Misconception []contentdb.Misconception
 	QuestionFiles []QuestionFile
 	Assets        assetstore.Seed
+	// Scenes maps a question id to its scene document {question, reveal, hash} (seed/scene/specs.json, optional).
+	Scenes        map[string]json.RawMessage
 	Denylist      []string
 	Names         map[string]bool
 	Hash          string // sha256 of all file names and contents, stored in seed_runs.files_hash
@@ -153,6 +156,13 @@ func Read(dir string, opt ReadOptions) (*Files, error) {
 			}
 		}
 		f.QuestionFiles = append(f.QuestionFiles, QuestionFile{Name: stem, World: doc.World, Questions: doc.Questions})
+	}
+
+	if raw, err := os.ReadFile(filepath.Join(dir, "scene", "specs.json")); err == nil {
+		if err := json.Unmarshal(raw, &f.Scenes); err != nil {
+			return nil, fmt.Errorf("read scene specs: %w", err)
+		}
+		feed("scene/specs.json", raw)
 	}
 
 	if !opt.SkipAssets {

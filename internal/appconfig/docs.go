@@ -57,6 +57,8 @@ type Platform struct {
 	GradeWindow    bool     `json:"grade_window"`
 	GradePriorBase float64  `json:"grade_prior_base"`
 	GradePriorStep float64  `json:"grade_prior_step"`
+	// ScenesEnabled lets the beat carry the 3D scene spec of an approved question (seed/scene/approved.json). Off by default.
+	ScenesEnabled bool `json:"scenes_enabled"`
 }
 
 func platformDefault(welcomeGift bool) Platform {
