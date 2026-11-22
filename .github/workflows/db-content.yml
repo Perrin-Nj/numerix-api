@@ -20,6 +20,11 @@ on:
         required: true
         type: boolean
         default: false
+      allow_retire:
+        description: Also retire questions that are no longer in the seed files (check retired=N in a dry run first)
+        required: true
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -35,6 +40,8 @@ jobs:
     environment: ${{ inputs.environment }}
     env:
       ID: ${{ inputs.release }}
+      DRY_MODE: ${{ inputs.allow_retire && 'dry-retire' || 'dry' }}
+      APPLY_MODE: ${{ inputs.allow_retire && 'apply-retire' || 'apply' }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: ./.github/actions/vm-ssh
@@ -46,11 +53,11 @@ jobs:
       - name: Dry run (validates the files, then shows what would change, writes nothing)
         run: |
           set -euo pipefail
-          ssh nxvm "seed $ID dry" | tee dry.log
+          ssh nxvm "seed $ID $DRY_MODE" | tee dry.log
           { echo '### Seed dry run'; echo '```'; tail -40 dry.log; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
       - name: Apply (backup, migrate, write only what changed)
         if: ${{ inputs.apply }}
         run: |
           set -euo pipefail
-          ssh nxvm "seed $ID apply" | tee apply.log
+          ssh nxvm "seed $ID $APPLY_MODE" | tee apply.log
           { echo '### Seed applied'; echo '```'; tail -40 apply.log; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
