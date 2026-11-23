@@ -28,16 +28,16 @@
      "value": 32,
      "misconception": "mis_add_instead_of_subtract",
      "feedback": {
-      "fr": "On cherche ce qui manque pour arriver à 20 : on ne réunit pas.",
-      "en": "We look for what is missing to reach 20, so we do not put them together."
+      "fr": "32, c’est 12 + 20. Mais il faut trouver ce qui manque pour aller jusqu’à 20.",
+      "en": "32 is 12 + 20. But we want what is missing to get to 20."
      }
     },
     {
      "value": 7,
      "misconception": "mis_off_by_one",
      "feedback": {
-      "fr": "Presque ! Recompte les pas entre 12 et 20.",
-      "en": "Close! Count the steps between 12 and 20 again."
+      "fr": "Tu es à un pas de la réponse. Recompte de 12 jusqu’à 20.",
+      "en": "You are one step off. Count again from 12 up to 20."
      }
     }
    ],
@@ -90,12 +90,12 @@
    },
    "reaction": {
     "right": {
-     "fr": "12 et 8 font 20 : il reste 8 gouttes au chiot. Bien joué !",
-     "en": "12 and 8 make 20: the puppy still needs 8 drops. Well done!"
+     "fr": "Tu as bien compté jusqu’à 20. Il reste 8 gouttes à donner au chiot.",
+     "en": "You counted up to 20 well. The puppy still needs 8 drops."
     },
     "wrong": {
-     "fr": "Compte à partir de 12 jusqu’à 20 sur les graduations.",
-     "en": "Count up from 12 to 20 on the bottle’s marks."
+     "fr": "Regarde le flacon : 12 gouttes sont déjà prises. Il en faut 20.",
+     "en": "Look at the bottle: 12 drops are already taken. It needs 20."
     }
    },
    "style": "drill"
@@ -126,16 +126,16 @@
      "value": 24,
      "misconception": "mis_add_instead_of_subtract",
      "feedback": {
-      "fr": "On cherche ce qui manque : on ne réunit pas 15 et 9.",
-      "en": "We look for what is missing, so we do not add 15 and 9."
+      "fr": "Tu as additionné. La boîte doit seulement arriver à 15.",
+      "en": "You added. The box only needs to reach 15."
      }
     },
     {
      "value": 5,
      "misconception": "mis_off_by_one",
      "feedback": {
-      "fr": "Presque ! Recompte à partir de 9.",
-      "en": "Close! Count again from 9."
+      "fr": "Tu as sauté un pas. Recompte à partir de 9, un à la fois.",
+      "en": "You skipped a step. Count again from 9, one at a time."
      }
     }
    ],
@@ -188,12 +188,12 @@
    },
    "reaction": {
     "right": {
-     "fr": "Il manque 6 friandises pour arriver à 15. Noah peut compléter la boîte !",
-     "en": "6 treats are missing to reach 15. Noah can fill the box!"
+     "fr": "Il manque 6 friandises. Noah peut finir de remplir la boîte.",
+     "en": "6 treats are missing. Noah can finish filling the box."
     },
     "wrong": {
-     "fr": "Pars de 9 et compte jusqu’à 15.",
-     "en": "Start at 9 and count up to 15."
+     "fr": "Il y en a déjà 9 dans la boîte. Combien de plus pour arriver à 15 ?",
+     "en": "There are already 9 in the box. How many more to reach 15?"
     }
    },
    "style": "drill"
@@ -206,8 +206,8 @@
    "grade": 2,
    "difficulty": 3,
    "story": {
-    "fr": "Un chat se fait soigner pendant la journée.",
-    "en": "A cat is being cared for during the day."
+    "fr": "Le chat de la clinique reçoit ses gouttes en deux fois.",
+    "en": "The clinic cat gets its drops in two turns."
    },
    "prompt": {
     "fr": "Il doit recevoir 30 gouttes en tout. Il en a eu 14 le matin : combien de gouttes le soir ?",
@@ -224,16 +224,16 @@
      "value": 44,
      "misconception": "mis_add_instead_of_subtract",
      "feedback": {
-      "fr": "Il faut trouver le reste, pas le total plus grand.",
-      "en": "We need what is left, not a bigger total."
+      "fr": "Tu as additionné. Le chat en reçoit 30 en tout, pas plus.",
+      "en": "You added. The cat gets 30 in all, not more."
      }
     },
     {
      "value": 24,
      "misconception": "mis_forgot_borrow",
      "feedback": {
-      "fr": "Attention à l’emprunt : 30 - 14 demande de défaire une dizaine.",
-      "en": "Watch the borrowing: 30 - 14 means breaking a ten."
+      "fr": "Le 0 de 30 est traître. Il faut défaire une dizaine pour enlever 4.",
+      "en": "The 0 in 30 can trip you up. Break a ten to take away 4."
      }
     }
    ],
@@ -403,8 +403,8 @@
      "en": "15 drops are missing to reach 40. The puppy’s chart is right!"
     },
     "wrong": {
-     "fr": "Le chiot a eu 25 gouttes. Compte combien il faut pour arriver à 40.",
-     "en": "The puppy had 25 drops. Count how many more reach 40."
+     "fr": "Le chiot a eu 25 gouttes. Compte combien il en faut de plus pour arriver à 40.",
+     "en": "The puppy had 25 drops. Count how many more it takes to reach 40."
     }
    },
    "style": "drill"
@@ -548,16 +548,16 @@
      "value": 63,
      "misconception": "mis_add_instead_of_subtract",
      "feedback": {
-      "fr": "Les gouttes sont partagées entre deux flacons : on enlève.",
-      "en": "The drops are shared between two bottles, so we take away."
+      "fr": "Tu as additionné. Pour le deuxième flacon, on enlève les 18 déjà versées.",
+      "en": "You added. For the second bottle, we take away the 18 already poured."
      }
     },
     {
      "value": 33,
      "misconception": "mis_forgot_borrow",
      "feedback": {
-      "fr": "Attention à l’emprunt avec les unités : 5 - 8 ne se fait pas.",
-      "en": "Watch the borrowing: 5 - 8 does not work."
+      "fr": "Tu as fait 8 - 5 à l’envers. Avec 5 - 8, il faut défaire une dizaine.",
+      "en": "You turned 8 - 5 around. With 5 - 8, break a ten first."
      }
     }
    ],
@@ -645,16 +645,16 @@
      "value": 40,
      "misconception": "mis_partial_result",
      "feedback": {
-      "fr": "Tu t’es arrêté à la première étape. Retire aussi les 25.",
-      "en": "You stopped at the first step. Take away the 25 too."
+      "fr": "Tu as arrêté après 70 - 30. Il reste à enlever les 25.",
+      "en": "You stopped after 70 - 30. The 25 still need to come off."
      }
     },
     {
      "value": 125,
      "misconception": "mis_add_instead_of_subtract",
      "feedback": {
-      "fr": "Les gouttes données sont enlevées du total.",
-      "en": "The drops given are taken away from the total."
+      "fr": "Les gouttes données quittent le flacon. On les enlève, on ne les ajoute pas.",
+      "en": "The drops given leave the bottle. We take them away, not add them."
      }
     }
    ],
@@ -715,8 +715,8 @@
      "en": "70 minus 30, then minus 25: 15 drops are left for the rabbit."
     },
     "wrong": {
-     "fr": "Enlève 30 gouttes, puis enlève encore 25.",
-     "en": "Take away 30 drops, then take away 25 more."
+     "fr": "Il y en avait 70. Léa en donne 30, puis 25. Qu’est-ce qui reste ?",
+     "en": "There were 70. Léa gives 30, then 25. What is left?"
     }
    },
    "style": "context"
@@ -1053,8 +1053,8 @@
    },
    "reaction": {
     "right": {
-     "fr": "Chaque addition a trouvé ce qui manque pour faire 20. Bravo !",
-     "en": "Each sum found what is missing to make 20. Well done!"
+     "fr": "Tes trois liens sont bons : chaque nombre arrive à 20.",
+     "en": "All three of your matches work. Each number gets to 20."
     },
     "wrong": {
      "fr": "Cherche ce qu’il faut ajouter à chaque nombre pour arriver à 20.",
@@ -1129,8 +1129,8 @@
      "value": 5,
      "misconception": "mis_off_by_one",
      "feedback": {
-      "fr": "Presque ! Compte bien les petits traits.",
-      "en": "Close! Count the small marks carefully."
+      "fr": "Il y a un trait de trop ou de moins. Recompte les petits traits.",
+      "en": "You are off by one mark. Count the small marks again."
      }
     }
    ],
@@ -1161,8 +1161,8 @@
      "en": "The level is at 36. 4 drops are missing to reach 40."
     },
     "wrong": {
-     "fr": "Lis le niveau du flacon. Puis compte jusqu’à 40.",
-     "en": "Read the level in the bottle. Then count up to 40."
+     "fr": "Le niveau montre ce qui est déjà donné. Ce qui manque, c’est l’écart jusqu’à 40.",
+     "en": "The level shows what was already given. What is missing is the gap up to 40."
     }
    },
    "style": "drill"
@@ -1194,8 +1194,8 @@
      "value": 17,
      "misconception": "mis_subtract_instead_of_add",
      "feedback": {
-      "fr": "On réunit les deux flacons : on additionne.",
-      "en": "We put both bottles together, so we add."
+      "fr": "Tu as soustrait. Les deux flacons vont ensemble : on additionne.",
+      "en": "You subtracted. The two bottles go together, so we add."
      }
     }
    ],
@@ -1251,8 +1251,8 @@
    },
    "reaction": {
     "right": {
-     "fr": "48 et 31 font environ 80 gouttes. Belle estimation !",
-     "en": "48 and 31 make about 80 drops. A fine estimate!"
+     "fr": "Tu as bien arrondi : 50 + 30, ça fait environ 80 gouttes.",
+     "en": "You rounded well: 50 + 30 makes about 80 drops."
     },
     "wrong": {
      "fr": "Arrondis 48 à 50 et 31 à 30, puis additionne.",
@@ -1294,8 +1294,8 @@
      "value": 3,
      "misconception": "mis_unit_ignored",
      "feedback": {
-      "fr": "Il faut convertir les kilogrammes en grammes.",
-      "en": "You need to change kilograms into grams."
+      "fr": "Tu as gardé le 3 tel quel. Il faut changer les kg en g.",
+      "en": "You kept the 3 as it was. The kg need to become g."
      }
     }
    ],
@@ -1343,12 +1343,12 @@
    },
    "reaction": {
     "right": {
-     "fr": "3 kg, c’est 3000 g. Le chiot pèse bien ça sur la balance.",
-     "en": "3 kg is 3000 g. The puppy weighs that much on the scale."
+     "fr": "3 kg, c’est 3000 g. Le chiot pèse donc 3000 g sur la balance.",
+     "en": "3 kg is 3000 g. So the puppy weighs 3000 g on the scale."
     },
     "wrong": {
-     "fr": "Un kilogramme, c’est 1000 grammes. Compte 1000 trois fois.",
-     "en": "One kilogram is 1000 grams. Count 1000 three times."
+     "fr": "Pense à la balance : 1 kg = 1000 g, et il y a 3 kg.",
+     "en": "Think of the scale: 1 kg = 1000 g, and there are 3 kg."
     }
    }
   },
@@ -1472,16 +1472,16 @@
      "value": 750,
      "misconception": "mis_subtract_instead_of_add",
      "feedback": {
-      "fr": "On réunit les deux animaux : on additionne.",
-      "en": "We put both animals together, so we add."
+      "fr": "Tu as soustrait. Les deux animaux sont pesés ensemble : on additionne.",
+      "en": "You subtracted. The two animals are weighed together, so we add."
      }
     },
     {
      "value": 1005,
      "misconception": "mis_place_value",
      "feedback": {
-      "fr": "Attention à la valeur de position des chiffres.",
-      "en": "Watch the place value of the digits."
+      "fr": "Regarde la place de chaque chiffre dans ton résultat.",
+      "en": "Look at where each digit sits in your answer."
      }
     }
    ],
@@ -1538,8 +1538,8 @@
    },
    "reaction": {
     "right": {
-     "fr": "150 et 900 font 1050 g pour le hamster et le cochon d’Inde.",
-     "en": "150 and 900 make 1050 g for the hamster and the guinea pig."
+     "fr": "150 + 900 = 1050. Ensemble, ils pèsent 1050 g.",
+     "en": "150 + 900 = 1050. Together they weigh 1050 g."
     },
     "wrong": {
      "fr": "Additionne les deux masses en grammes.",
@@ -1572,16 +1572,16 @@
      "value": 502,
      "misconception": "mis_unit_ignored",
      "feedback": {
-      "fr": "Les kilogrammes et les grammes ne s’additionnent pas sans conversion.",
-      "en": "Kilograms and grams cannot be added without converting."
+      "fr": "Tu as additionné 2 et 500. Les kg et les g ne se mélangent pas tels quels.",
+      "en": "You added 2 and 500. Kilograms and grams do not mix as they are."
      }
     },
     {
      "value": 2005,
      "misconception": "mis_place_value",
      "feedback": {
-      "fr": "Attention : 500 g, pas 5 g.",
-      "en": "Watch out: 500 g, not 5 g."
+      "fr": "Les 500 g ne sont pas 5 g. Regarde bien les zéros.",
+      "en": "500 g is not 5 g. Look at the zeros."
      }
     }
    ],
@@ -1638,8 +1638,8 @@
      "en": "2 kg and 500 g is 2500 g. Léa’s notebook is right!"
     },
     "wrong": {
-     "fr": "Change d’abord les 2 kg en grammes, puis ajoute 500.",
-     "en": "First change the 2 kg into grams, then add 500."
+     "fr": "2 kg, c’est combien de grammes ? Ajoute ensuite les 500 g.",
+     "en": "How many grams is 2 kg? Then add the 500 g."
     }
    }
   },
@@ -1739,8 +1739,8 @@
      "en": "For a little mouse we use grams."
     },
     "wrong": {
-     "fr": "Une souris est très légère. Pense à l’unité la plus petite.",
-     "en": "A mouse is very light. Think of the smallest unit."
+     "fr": "Une souris tient dans la main. Quelle unité sert pour les petites masses ?",
+     "en": "A mouse fits in your hand. Which unit is for small masses?"
     }
    }
   },
@@ -1862,12 +1862,12 @@
    },
    "reaction": {
     "right": {
-     "fr": "Le lapin est le plus lourd : 2 kg, plus que les autres.",
-     "en": "The rabbit is the heaviest: 2 kg, more than the others."
+     "fr": "Tu as bien changé les 2 kg en grammes. Le lapin est le plus lourd.",
+     "en": "You changed the 2 kg into grams well. The rabbit is the heaviest."
     },
     "wrong": {
-     "fr": "Mets toutes les masses dans la même unité avant de comparer.",
-     "en": "Put all the masses in the same unit before comparing."
+     "fr": "Le lapin est donné en kg et les autres en g. Compare dans la même unité.",
+     "en": "The rabbit is given in kg and the others in g. Compare using the same unit."
     }
    }
   },
@@ -1987,8 +1987,8 @@
      "en": "6 kg shared between 3 cats is 2 kg each."
     },
     "wrong": {
-     "fr": "Partage 6 en 3 parts égales.",
-     "en": "Share 6 into 3 equal parts."
+     "fr": "Il y a 6 kg pour 3 chats. Chaque chat en reçoit autant.",
+     "en": "There are 6 kg for 3 cats. Each cat gets the same."
     }
    }
   },
@@ -2017,16 +2017,16 @@
      "value": 748,
      "misconception": "mis_unit_ignored",
      "feedback": {
-      "fr": "Convertis les kilogrammes en grammes avant de soustraire.",
-      "en": "Convert the kilograms into grams before subtracting."
+      "fr": "Les 2 kg et les 750 g ne sont pas dans la même unité. Change d’abord.",
+      "en": "The 2 kg and the 750 g are not in the same unit. Change first."
      }
     },
     {
      "value": 2750,
      "misconception": "mis_add_instead_of_subtract",
      "feedback": {
-      "fr": "On verse : la boîte devient plus légère.",
-      "en": "He pours some out, so the box gets lighter."
+      "fr": "Tu as additionné. Verser des croquettes, c’est en enlever de la boîte.",
+      "en": "You added. Pouring food out takes it out of the box."
      }
     }
    ],
@@ -2083,8 +2083,8 @@
      "en": "2000 g minus 750 g: 1250 g are left in the box."
     },
     "wrong": {
-     "fr": "Mets 2 kg en grammes, puis enlève les 750 g du bol.",
-     "en": "Change 2 kg into grams, then take away the 750 g in the bowl."
+     "fr": "Le bol prend 750 g de la boîte. Pour les enlever, il faut les mêmes unités.",
+     "en": "The bowl takes 750 g from the box. To take them away, use the same units."
     }
    }
   },
@@ -2121,8 +2121,8 @@
      "value": 150,
      "misconception": "mis_place_value",
      "feedback": {
-      "fr": "Attention à la valeur de position.",
-      "en": "Watch the place value."
+      "fr": "Regarde la valeur de chaque chiffre : 500, c’est 5 centaines.",
+      "en": "Look at each digit’s value: 500 is 5 hundreds."
      }
     }
    ],
@@ -2225,8 +2225,8 @@
      "value": 24,
      "misconception": "mis_add_instead_of_multiply",
      "feedback": {
-      "fr": "Ici on additionne les masses.",
-      "en": "Here we add the masses."
+      "fr": "Tu as fait une autre opération. On veut la masse de tous les chiots ensemble.",
+      "en": "You used another operation. We want the mass of all the puppies together."
      }
     }
    ],
@@ -2294,8 +2294,8 @@
      "en": "2 plus 3 plus 4: the three puppies weigh 9 kg together."
     },
     "wrong": {
-     "fr": "Additionne les trois masses, une à la fois.",
-     "en": "Add the three masses, one at a time."
+     "fr": "Il y a trois chiots : 2 kg, 3 kg et 4 kg. Quelle est leur masse ensemble ?",
+     "en": "There are three puppies: 2 kg, 3 kg and 4 kg. What is their mass together?"
     }
    }
   },
@@ -2712,8 +2712,8 @@
      "value": 6,
      "misconception": "mis_add_instead_of_subtract",
      "feedback": {
-      "fr": "On compare : on cherche l’écart.",
-      "en": "We compare, so we look for the gap."
+      "fr": "Tu as additionné. Pour savoir combien de plus, on cherche l’écart.",
+      "en": "You added. To find how many more, we look for the gap."
      }
     },
     {
@@ -2785,16 +2785,16 @@
      "value": 22,
      "misconception": "mis_add_instead_of_multiply",
      "feedback": {
-      "fr": "Trois sacs égaux : on multiplie.",
-      "en": "Three equal bags: we multiply."
+      "fr": "Tu as additionné 19 et 3. Trois sacs égaux, c’est 3 fois 19.",
+      "en": "You added 19 and 3. Three equal bags means 3 times 19."
      }
     },
     {
      "value": 570,
      "misconception": "mis_place_value",
      "feedback": {
-      "fr": "Vérifie l’ordre de grandeur de ta réponse.",
-      "en": "Check the size of your answer."
+      "fr": "Ta réponse est très loin de ce que trois gros sacs peuvent peser. Vérifie.",
+      "en": "Your answer is far from what three big bags can weigh. Check it."
      }
     }
    ],
@@ -2846,8 +2846,8 @@
      "en": "3 bags of 19 kg is about 60 kg to carry."
     },
     "wrong": {
-     "fr": "Arrondis 19 à 20, puis multiplie par 3.",
-     "en": "Round 19 to 20, then multiply by 3."
+     "fr": "Chaque sac est proche d’un nombre rond. Multiplie ce nombre par 3.",
+     "en": "Each bag is close to a round number. Multiply that number by 3."
     }
    }
   },
@@ -3026,8 +3026,8 @@
    "version": 1,
    "reaction": {
     "right": {
-     "fr": "Léa n’est pas en retard : tu as lu la bonne heure !",
-     "en": "Léa is not late: you read the right time!"
+     "fr": "Léa n’est pas en retard. Tu as bien lu l’heure.",
+     "en": "Léa is not late. You read the time right."
     },
     "wrong": {
      "fr": "Regarde la petite aiguille pour l’heure, la grande pour les minutes.",
@@ -3118,8 +3118,8 @@
    "version": 1,
    "reaction": {
     "right": {
-     "fr": "Le prochain rendez-vous est bien à cette heure-là.",
-     "en": "The next appointment is indeed at that time."
+     "fr": "Tu as lu le 3 comme 15 minutes. Le rendez-vous est à 5 h 15.",
+     "en": "You read the 3 as 15 minutes. The appointment is at 5:15."
     },
     "wrong": {
      "fr": "Commence par la petite aiguille, puis regarde la grande.",
@@ -3152,16 +3152,16 @@
      "value": 1,
      "misconception": "mis_subtract_instead_of_add",
      "feedback": {
-      "fr": "La visite continue : on avance sur l’horloge.",
-      "en": "The visit goes on, so we move forward on the clock."
+      "fr": "Tu as gardé 2 h. La visite dure encore une heure après.",
+      "en": "You kept 2:00. The visit goes on for one more hour."
      }
     },
     {
      "value": 4,
      "misconception": "mis_off_by_one",
      "feedback": {
-      "fr": "Presque ! Avance d’une seule heure.",
-      "en": "Close! Move forward just one hour."
+      "fr": "Tu as avancé trop loin. Il n’y a qu’une heure à ajouter.",
+      "en": "You went too far. There is only one hour to add."
      }
     }
    ],
@@ -3200,8 +3200,8 @@
      "en": "2 o’clock plus 1 hour: Noah’s appointment ends at 3 o’clock."
     },
     "wrong": {
-     "fr": "Avance d’une heure sur l’horloge à partir de 2 h.",
-     "en": "Move forward one hour on the clock from 2 o’clock."
+     "fr": "Le rendez-vous commence à 2 h et dure 1 heure. Où est la petite aiguille une heure plus tard ?",
+     "en": "The appointment starts at 2:00 and lasts 1 hour. Where is the short hand one hour later?"
     }
    }
   },
@@ -3283,8 +3283,8 @@
      "en": "Half an hour is 30 minutes. Half of 60!"
     },
     "wrong": {
-     "fr": "Une heure a 60 minutes. Prends-en la moitié.",
-     "en": "An hour has 60 minutes. Take half of it."
+     "fr": "Une demi-heure, c’est la moitié d’une heure. Combien de minutes dans une heure entière ?",
+     "en": "Half an hour is half of one hour. How many minutes are in a whole hour?"
     }
    }
   },
@@ -3600,8 +3600,8 @@
      "en": "From 9 to 12, the clinic is open 3 hours."
     },
     "wrong": {
-     "fr": "Compte les heures de 9 jusqu’à 12 sur la ligne.",
-     "en": "Count the hours from 9 up to 12 on the line."
+     "fr": "Saute une heure à la fois en partant de 9 h, jusqu’à 12 h.",
+     "en": "Jump one hour at a time from 9:00 until 12:00."
     }
    }
   },
@@ -4004,7 +4004,7 @@
        "y": 1,
        "label": {
         "fr": "3 h 30",
-        "en": "3 h 30"
+        "en": "3:30"
        }
       },
       {
@@ -4012,7 +4012,7 @@
        "y": 1,
        "label": {
         "fr": "6 h 15",
-        "en": "6 h 15"
+        "en": "6:15"
        }
       },
       {
@@ -4020,7 +4020,7 @@
        "y": 1,
        "label": {
         "fr": "9 h 45",
-        "en": "9 h 45"
+        "en": "9:45"
        }
       }
      ]
@@ -4361,8 +4361,8 @@
      "value": 18,
      "misconception": "mis_add_instead_of_subtract",
      "feedback": {
-      "fr": "On compare deux barres : on cherche l’écart.",
-      "en": "We compare two bars, so we look for the gap."
+      "fr": "Tu as additionné les deux barres. Quand on demande combien de plus, on cherche l’écart.",
+      "en": "You added the two bars. When we ask how many more, we look for the gap."
      }
     },
     {
@@ -4521,8 +4521,8 @@
    ],
    "reaction": {
     "right": {
-     "fr": "Le jour avec la barre la plus haute a eu le plus de visites.",
-     "en": "The day with the tallest bar had the most visits."
+     "fr": "Le mardi a la barre la plus haute : 12 visites.",
+     "en": "Tuesday has the tallest bar: 12 visits."
     },
     "wrong": {
      "fr": "Cherche la barre la plus haute, puis lis son nom.",
@@ -4596,8 +4596,8 @@
      "value": 28,
      "misconception": "mis_off_by_one",
      "feedback": {
-      "fr": "Presque ! Refais l’addition étape par étape.",
-      "en": "Close! Redo the addition step by step."
+      "fr": "Il y a une erreur dans l’addition. Fais-la en deux étapes.",
+      "en": "There is a slip in the addition. Do it in two steps."
      }
     }
    ],
@@ -4702,8 +4702,8 @@
      "value": 15,
      "misconception": "mis_off_by_one",
      "feedback": {
-      "fr": "Presque ! Recompte les images.",
-      "en": "Close! Count the pictures again."
+      "fr": "Il y a une image de trop ou de moins. Recompte chaque ligne.",
+      "en": "One picture too many or too few. Count each row again."
      }
     }
    ],
@@ -4772,8 +4772,8 @@
      "value": 14,
      "misconception": "mis_off_by_one",
      "feedback": {
-      "fr": "Presque ! Refais l’addition.",
-      "en": "Close! Do the addition again."
+      "fr": "Une erreur s’est glissée dans l’addition. Recommence-la lentement.",
+      "en": "A slip crept into the addition. Do it again slowly."
      }
     }
    ],
@@ -5119,8 +5119,8 @@
      "value": 10,
      "misconception": "mis_off_by_one",
      "feedback": {
-      "fr": "Presque ! Recompte à partir de 18.",
-      "en": "Close! Count again from 18."
+      "fr": "Tu es à un près. Recule depuis 18, un pas à la fois.",
+      "en": "You are off by one. Count back from 18, one step at a time."
      }
     }
    ],
@@ -5377,8 +5377,8 @@
    },
    "reaction": {
     "right": {
-     "fr": "Les jours sont bien rangés du moins de visites au plus de visites.",
-     "en": "The days are in order from fewest visits to most visits."
+     "fr": "Mardi a le moins de visites et mercredi le plus. Tu les as bien rangés.",
+     "en": "Tuesday has the fewest visits and Wednesday the most. You sorted them well."
     },
     "wrong": {
      "fr": "Cherche d’abord la plus petite barre, puis la suivante.",
@@ -5651,16 +5651,16 @@
      "value": 8,
      "misconception": "mis_add_instead_of_multiply",
      "feedback": {
-      "fr": "Trois groupes égaux : on multiplie.",
-      "en": "Three equal groups: we multiply."
+      "fr": "Tu as additionné 3 et 5. Trois boîtes de 5, c’est 3 fois 5.",
+      "en": "You added 3 and 5. Three boxes of 5 is 3 times 5."
      }
     },
     {
      "value": 14,
      "misconception": "mis_off_by_one",
      "feedback": {
-      "fr": "Presque ! Compte par bonds de 5.",
-      "en": "Close! Count by jumps of 5."
+      "fr": "Tu as raté un bond. Compte de 5 en 5, trois fois.",
+      "en": "You missed a jump. Count by 5s, three times."
      }
     }
    ],
@@ -5851,8 +5851,8 @@
      "value": 10,
      "misconception": "mis_add_instead_of_multiply",
      "feedback": {
-      "fr": "Quatre groupes de 6 : on multiplie.",
-      "en": "Four groups of 6: we multiply."
+      "fr": "Tu as additionné 4 et 6. Quatre boîtes de 6, c’est 4 fois 6.",
+      "en": "You added 4 and 6. Four boxes of 6 is 4 times 6."
      }
     },
     {
@@ -6123,8 +6123,8 @@
      "value": 12,
      "misconception": "mis_add_instead_of_multiply",
      "feedback": {
-      "fr": "Huit groupes de 4 : on multiplie.",
-      "en": "Eight groups of 4: we multiply."
+      "fr": "Tu as additionné 8 et 4. Huit sachets de 4, c’est 8 fois 4.",
+      "en": "You added 8 and 4. Eight packets of 4 is 8 times 4."
      }
     },
     {
@@ -6426,11 +6426,11 @@
    "reaction": {
     "right": {
      "fr": "8 sachets de 4 pansements : 32 en tout.",
-     "en": "8 bags of 4 bandages: 32 in all."
+     "en": "8 packets of 4 bandages: 32 in all."
     },
     "wrong": {
      "fr": "Chaque sachet en a 4. Compte de 4 en 4.",
-     "en": "Each bag has 4. Count in 4s."
+     "en": "Each packet has 4. Count in 4s."
     }
    }
   },
@@ -6459,8 +6459,8 @@
      "value": 15,
      "misconception": "mis_add_instead_of_multiply",
      "feedback": {
-      "fr": "Six groupes de 9 : on multiplie.",
-      "en": "Six groups of 9: we multiply."
+      "fr": "Tu as additionné 6 et 9. Six étagères de 9, c’est 6 fois 9.",
+      "en": "You added 6 and 9. Six shelves of 9 is 6 times 9."
      }
     },
     {
@@ -7448,8 +7448,8 @@
    },
    "reaction": {
     "right": {
-     "fr": "5 boîtes de 4 : la bonne opération donne le total.",
-     "en": "5 boxes of 4: the right operation gives the total."
+     "fr": "5 boîtes de 4 pansements, c’est 5 × 4. Tu as bien reconnu les groupes égaux.",
+     "en": "5 boxes of 4 bandages is 5 × 4. You spotted the equal groups."
     },
     "wrong": {
      "fr": "Des groupes égaux, ça se multiplie. Combien de groupes, combien dans chacun ?",
@@ -7803,8 +7803,8 @@
      "value": 58,
      "misconception": "mis_add_instead_of_subtract",
      "feedback": {
-      "fr": "Les pansements utilisés sont enlevés.",
-      "en": "The bandages used are taken away."
+      "fr": "Tu as additionné. Les pansements utilisés, on les enlève.",
+      "en": "You added. Bandages that are used get taken away."
      }
     }
    ],
@@ -7894,8 +7894,8 @@
      "value": 13,
      "misconception": "mis_add_instead_of_multiply",
      "feedback": {
-      "fr": "Cinq rangées égales : on multiplie.",
-      "en": "Five equal rows: we multiply."
+      "fr": "Tu as additionné 5 et 8. Cinq rangées de 8, c’est 5 fois 8.",
+      "en": "You added 5 and 8. Five rows of 8 is 5 times 8."
      }
     },
     {
@@ -8549,8 +8549,8 @@
      "en": "4 boxes of 7 make 28. Noah is right!"
     },
     "wrong": {
-     "fr": "Refais le calcul : 7 plus 7 plus 7 plus 7.",
-     "en": "Do the sum again: 7 plus 7 plus 7 plus 7."
+     "fr": "Compte les pansements des 4 boîtes, 7 à la fois.",
+     "en": "Count the bandages in the 4 boxes, 7 at a time."
     }
    }
   },
@@ -8679,8 +8679,8 @@
    },
    "reaction": {
     "right": {
-     "fr": "Les piles sont bien rangées de la plus petite à la plus grande.",
-     "en": "The piles are in order from the smallest to the biggest."
+     "fr": "Tu as calculé chaque pile avant de comparer. Dans l’ordre : 14, 15, 18, 20.",
+     "en": "You worked out each pile before comparing. In order: 14, 15, 18, 20."
     },
     "wrong": {
      "fr": "Calcule chaque pile, boîtes fois pansements, puis compare.",
@@ -9013,16 +9013,16 @@
      "value": 9,
      "misconception": "mis_add_instead_of_multiply",
      "feedback": {
-      "fr": "Il y a des rangées égales : on multiplie.",
-      "en": "There are equal rows: we multiply."
+      "fr": "Tu as additionné 3 et 6. Trois rangées de 6, c’est 3 fois 6.",
+      "en": "You added 3 and 6. Three rows of 6 is 3 times 6."
      }
     },
     {
      "value": 17,
      "misconception": "mis_off_by_one",
      "feedback": {
-      "fr": "Presque ! Recompte une rangée entière.",
-      "en": "Close! Count a whole row again."
+      "fr": "Il manque un pansement dans ton compte. Recompte une rangée entière.",
+      "en": "You are one bandage off. Count one whole row again."
      }
     }
    ],
@@ -9086,16 +9086,16 @@
      "value": 23,
      "misconception": "mis_add_instead_of_multiply",
      "feedback": {
-      "fr": "Quatre boîtes égales : on multiplie.",
-      "en": "Four equal boxes: we multiply."
+      "fr": "Tu as additionné 4 et 19. Quatre boîtes de 19, c’est 4 fois 19.",
+      "en": "You added 4 and 19. Four boxes of 19 is 4 times 19."
      }
     },
     {
      "value": 760,
      "misconception": "mis_place_value",
      "feedback": {
-      "fr": "Vérifie l’ordre de grandeur de ta réponse.",
-      "en": "Check the size of your answer."
+      "fr": "Ton nombre est dix fois trop grand. Regarde la place du zéro.",
+      "en": "Your number is ten times too big. Look at where the zero goes."
      }
     }
    ],
@@ -9234,8 +9234,8 @@
      "value": 12,
      "misconception": "mis_multiply_instead_of_add",
      "feedback": {
-      "fr": "On ajoute les pansements, on ne les multiplie pas.",
-      "en": "We add the bandages, we do not multiply them."
+      "fr": "Tu as multiplié. Ici, on ajoute les pansements.",
+      "en": "You multiplied. Here we add the bandages."
      }
     },
     {
@@ -9243,19 +9243,19 @@
      "misconception": "mis_subtract_instead_of_add",
      "feedback": {
       "fr": "Léa en colle de plus : il y en a davantage, pas moins.",
-      "en": "Lea sticks on more, so there are more, not fewer."
+      "en": "Léa sticks on more, so there are more, not fewer."
      }
     }
    ],
    "id": "medecine.peluches.001",
    "reaction": {
     "right": {
-     "fr": "Bravo ! 3 et 4 font 7. L’ourson a 7 pansements.",
-     "en": "Well done! 3 and 4 make 7. The teddy has 7 bandages."
+     "fr": "3 et 4 font 7. Tu as bien continué de compter : l’ourson a 7 pansements.",
+     "en": "3 and 4 make 7. You counted on well: the teddy has 7 bandages."
     },
     "wrong": {
-     "fr": "Presque ! Compte 3, puis continue de compter.",
-     "en": "Almost! Count 3, then keep counting on."
+     "fr": "L’ourson en a déjà 3. Compte les 4 que Léa ajoute.",
+     "en": "The teddy already has 3. Count the 4 that Léa adds."
     }
    },
    "style": "drill"
@@ -9374,12 +9374,12 @@
    },
    "reaction": {
     "right": {
-     "fr": "Bravo ! 8 et 6 font 14 : la boîte a 14 pansements.",
-     "en": "Well done! 8 and 6 make 14: the box has 14 bandages."
+     "fr": "8 et 6 font 14. Tu as bien compté à partir de 8 : la boîte a 14 pansements.",
+     "en": "8 and 6 make 14. You counted on from 8 well: the box has 14 bandages."
     },
     "wrong": {
-     "fr": "Presque ! Pars de 8 et compte 6 de plus.",
-     "en": "Almost! Start at 8 and count on 6 more."
+     "fr": "Il y en a déjà 8 dans la boîte. Compte les 6 de plus.",
+     "en": "There are already 8 in the box. Count the 6 more."
     }
    },
    "style": "drill"
@@ -9463,12 +9463,12 @@
    "id": "medecine.peluches.003",
    "reaction": {
     "right": {
-     "fr": "Bravo ! 9 et 5 font 14, pas 13.",
-     "en": "Well done! 9 and 5 make 14, not 13."
+     "fr": "Tu as bien vérifié : 9 et 5 font 14, pas 13.",
+     "en": "You checked well: 9 and 5 make 14, not 13."
     },
     "wrong": {
-     "fr": "Presque ! Pars de 9 et compte 5 de plus.",
-     "en": "Almost! Start at 9 and count 5 more."
+     "fr": "Pars de 9 et fais cinq pas, un à la fois. Où arrives-tu ?",
+     "en": "Start at 9 and take five steps, one at a time. Where do you land?"
     }
    },
    "style": "drill"
@@ -9588,12 +9588,12 @@
    "id": "medecine.peluches.004",
    "reaction": {
     "right": {
-     "fr": "Bravo ! 4 + 4 font 8, 6 + 5 font 11 et 9 + 9 font 18.",
-     "en": "Well done! 4 + 4 make 8, 6 + 5 make 11 and 9 + 9 make 18."
+     "fr": "4 + 4 font 8, 6 + 5 font 11 et 9 + 9 font 18. Tes additions sont bien rangées.",
+     "en": "4 + 4 make 8, 6 + 5 make 11 and 9 + 9 make 18. Your sums are in good order."
     },
     "wrong": {
-     "fr": "Presque ! Trouve chaque résultat, puis compare.",
-     "en": "Almost! Find each result, then compare."
+     "fr": "Calcule les trois additions avant de les ranger.",
+     "en": "Work out all three sums before putting them in order."
     }
    },
    "style": "drill"
@@ -9679,28 +9679,28 @@
      "value": 1,
      "misconception": "mis_subtract_instead_of_add",
      "feedback": {
-      "fr": "Les deux groupes se mettent ensemble : on ajoute.",
-      "en": "The two groups go together, so we add."
+      "fr": "Tu as soustrait. Les deux groupes vont ensemble, alors on ajoute.",
+      "en": "You subtracted. The two groups go together, so we add."
      }
     },
     {
      "value": 18,
      "misconception": "mis_off_by_one",
      "feedback": {
-      "fr": "Presque ! Recompte le deuxième groupe pas à pas.",
-      "en": "Close! Count the second group again, one step at a time."
+      "fr": "Tu es à un près. Recompte les pansements verts un à un.",
+      "en": "You are off by one. Count the green bandages one by one."
      }
     }
    ],
    "id": "medecine.peluches.005",
    "reaction": {
     "right": {
-     "fr": "Bravo ! 9 et 1 font 10, puis 7 de plus : 17 pansements.",
-     "en": "Well done! 9 and 1 make 10, then 7 more: 17 bandages."
+     "fr": "Tu es passé par 10 : 9 et 1, puis 7 de plus. Ça fait 17 pansements.",
+     "en": "You went through 10: 9 and 1, then 7 more. That makes 17 bandages."
     },
     "wrong": {
-     "fr": "Presque ! Pars de 9 et ajoute 1 pour faire 10.",
-     "en": "Almost! Start at 9 and add 1 to make 10."
+     "fr": "Il y a 9 pansements bleus et 8 verts. Mets-les ensemble.",
+     "en": "There are 9 blue bandages and 8 green. Put them together."
     }
    },
    "style": "context"
@@ -9850,12 +9850,12 @@
    "id": "medecine.peluches.006",
    "reaction": {
     "right": {
-     "fr": "Bravo ! 7 + 6 font 13, 10 + 5 font 15 et 8 + 8 font 16.",
-     "en": "Well done! 7 + 6 make 13, 10 + 5 make 15 and 8 + 8 make 16."
+     "fr": "7 + 6 font 13, 10 + 5 font 15 et 8 + 8 font 16. Tes liens sont tous bons.",
+     "en": "7 + 6 make 13, 10 + 5 make 15 and 8 + 8 make 16. All your matches are right."
     },
     "wrong": {
-     "fr": "Presque ! Résous une addition à la fois.",
-     "en": "Almost! Solve one sum at a time."
+     "fr": "Fais une addition à la fois et cherche son résultat dans la liste.",
+     "en": "Do one sum at a time and look for its result in the list."
     }
    },
    "style": "drill"
@@ -9942,12 +9942,12 @@
    "id": "medecine.salle.001",
    "reaction": {
     "right": {
-     "fr": "Bravo ! La petite aiguille est sur le 3. La grande est sur le 12 : il est 3 h.",
-     "en": "Well done! The short hand is on 3. The long hand is on 12: it is 3 o’clock."
+     "fr": "Petite aiguille sur le 3, grande sur le 12 : il est 3 h. Tu as bien repéré les aiguilles.",
+     "en": "Short hand on 3, long hand on 12: it is 3 o’clock. You spotted the hands well."
     },
     "wrong": {
-     "fr": "Presque ! Regarde la petite aiguille.",
-     "en": "Almost! Look at the short hand."
+     "fr": "Deux aiguilles, deux rôles. L’heure, c’est la petite.",
+     "en": "Two hands, two jobs. The short one gives the hour."
     }
    }
   },
@@ -10019,12 +10019,12 @@
    "id": "medecine.salle.002",
    "reaction": {
     "right": {
-     "fr": "Bravo ! La petite aiguille est sur le 7 : il est 7 h.",
-     "en": "Well done! The short hand is on 7: it is 7 o’clock."
+     "fr": "La petite aiguille est sur le 7. Il est 7 h.",
+     "en": "The short hand is on 7. It is 7 o’clock."
     },
     "wrong": {
-     "fr": "Presque ! La petite aiguille dit l’heure.",
-     "en": "Almost! The short hand tells the hour."
+     "fr": "Regarde la petite aiguille pour l’heure, pas la grande.",
+     "en": "Look at the short hand for the hour, not the long one."
     }
    }
   },
@@ -10110,12 +10110,12 @@
    "id": "medecine.salle.003",
    "reaction": {
     "right": {
-     "fr": "Bravo ! La grande aiguille est sur le 6 : c’est la demie. Il est 5 h 30.",
-     "en": "Well done! The long hand is on 6: it is half past. It is 5:30."
+     "fr": "La grande aiguille est sur le 6, c’est la demie. Il est 5 h 30.",
+     "en": "The long hand is on 6, so it is half past. It is 5:30."
     },
     "wrong": {
-     "fr": "Presque ! La petite aiguille est entre deux nombres.",
-     "en": "Almost! The short hand sits between two numbers."
+     "fr": "Si la petite aiguille est entre deux nombres, ce n’est pas l’heure pile. Regarde la grande.",
+     "en": "If the short hand sits between two numbers, it is not on the hour. Look at the long hand."
     }
    }
   },
@@ -10177,12 +10177,12 @@
    "id": "medecine.salle.004",
    "reaction": {
     "right": {
-     "fr": "Bravo ! À l’heure pile, la grande aiguille est sur le 12.",
-     "en": "Well done! On the hour, the long hand is on the 12."
+     "fr": "C’est faux : à l’heure pile, la grande aiguille est sur le 12.",
+     "en": "False: on the hour, the long hand is on the 12."
     },
     "wrong": {
-     "fr": "Presque ! Où est la grande aiguille à l’heure pile ?",
-     "en": "Almost! Where is the long hand on the hour?"
+     "fr": "À 2 h pile, c’est la petite aiguille qui est sur le 2. Et la grande ?",
+     "en": "At 2 o’clock, the short hand is on the 2. What about the long one?"
     }
    }
   },
@@ -10318,12 +10318,12 @@
    "id": "medecine.salle.005",
    "reaction": {
     "right": {
-     "fr": "Bravo ! Dans l’ordre : 8 h 30, 9 h, 9 h 30, puis 10 h.",
-     "en": "Well done! In order: 8:30, 9:00, 9:30, then 10:00."
+     "fr": "Tu les as rangés : 8 h 30, 9 h, 9 h 30, 10 h.",
+     "en": "You sorted them well: 8:30, 9:00, 9:30, then 10:00."
     },
     "wrong": {
-     "fr": "Presque ! Compare d’abord les heures, puis les demies.",
-     "en": "Almost! Compare the hours first, then the half hours."
+     "fr": "Classe d’abord par heure. Quand l’heure est la même, la demie vient après.",
+     "en": "Sort by the hour first. When the hour is the same, the half hour comes after."
     }
    }
   },
@@ -10472,12 +10472,12 @@
    "id": "medecine.salle.006",
    "reaction": {
     "right": {
-     "fr": "Bravo ! 9 h se dit neuf heures. 9 h 30 se dit neuf heures et demie. 6 h se dit six heures.",
-     "en": "Well done! 9:00 is nine o’clock. 9:30 is half past nine. 6:00 is six o’clock."
+     "fr": "Tu as bien relié. 9 h, neuf heures. 9 h 30, neuf heures et demie. 6 h, six heures.",
+     "en": "You matched them right. 9:00 is nine o’clock. 9:30 is half past nine. 6:00 is six o’clock."
     },
     "wrong": {
-     "fr": "Presque ! Une demie veut dire 30 minutes de plus.",
-     "en": "Almost! Half past means 30 minutes more."
+     "fr": "Une demie, c’est 30 minutes après l’heure. Cherche le mot demie.",
+     "en": "Half past is 30 minutes after the hour. Look for the word half."
     }
    }
   },
@@ -10557,12 +10557,12 @@
    "id": "medecine.salle.007",
    "reaction": {
     "right": {
-     "fr": "Bravo ! De 8 h, on avance de 2 heures : 9 h, puis 10 h.",
-     "en": "Well done! From 8, move 2 hours on: 9 o’clock, then 10 o’clock."
+     "fr": "Tu as avancé de 2 heures : 9 h, puis 10 h. Le chien arrive à 10 h.",
+     "en": "You moved ahead 2 hours: 9 o’clock, then 10 o’clock. The dog comes at 10."
     },
     "wrong": {
-     "fr": "Presque ! Avance de 1 heure, puis encore 1.",
-     "en": "Almost! Move 1 hour forward, then 1 more."
+     "fr": "Le chien arrive 2 heures après l’ouverture. Où est la petite aiguille alors ?",
+     "en": "The dog comes 2 hours after opening. Where is the short hand then?"
     }
    }
   },
@@ -10663,12 +10663,12 @@
    "id": "medecine.registre.001",
    "reaction": {
     "right": {
-     "fr": "Bravo ! Il y a 3 images de chats : 3 chats sont venus.",
-     "en": "Well done! There are 3 cat pictures: 3 cats came."
+     "fr": "Tu as bien compté la ligne des chats : 3 chats sont venus.",
+     "en": "You counted the cats row well: 3 cats came."
     },
     "wrong": {
-     "fr": "Presque ! Compte les images de la ligne des chats.",
-     "en": "Almost! Count the pictures in the cats row."
+     "fr": "Il y a une ligne par animal. Trouve celle des chats et compte.",
+     "en": "There is one row for each animal. Find the cats row and count."
     }
    }
   },
@@ -10761,8 +10761,8 @@
      "value": 12,
      "misconception": "mis_add_instead_of_subtract",
      "feedback": {
-      "fr": "On compare les lignes : on cherche l’écart.",
-      "en": "We compare the rows, so we look for the gap."
+      "fr": "Tu as réuni la ligne des chats et celle des lapins. On veut l’écart entre elles.",
+      "en": "You put the cats row and the rabbits row together. We want the gap between them."
      }
     },
     {
@@ -10777,12 +10777,12 @@
    "id": "medecine.registre.002",
    "reaction": {
     "right": {
-     "fr": "Bravo ! Il y a 7 chats et 5 lapins. 7 - 5 = 2 chats de plus.",
-     "en": "Well done! There are 7 cats and 5 rabbits. 7 - 5 = 2 more cats."
+     "fr": "7 chats et 5 lapins : 7 - 5 = 2 chats de plus. Tu as bien comparé les deux lignes.",
+     "en": "7 cats and 5 rabbits: 7 - 5 = 2 more cats. You compared the two rows well."
     },
     "wrong": {
-     "fr": "Presque ! Compte les chats, puis les lapins.",
-     "en": "Almost! Count the cats, then the rabbits."
+     "fr": "Une ligne pour les chats, une pour les lapins. Combien de plus d’un côté ?",
+     "en": "One row for cats, one for rabbits. How many more on one side?"
     }
    }
   },
@@ -10864,12 +10864,12 @@
    "id": "medecine.registre.003",
    "reaction": {
     "right": {
-     "fr": "Bravo ! Mardi a 6 images et lundi 4 : mardi en a plus.",
-     "en": "Well done! Tuesday has 6 pictures and Monday 4: Tuesday has more."
+     "fr": "Vrai : mardi a 6 images et lundi 4.",
+     "en": "True: Tuesday has 6 pictures and Monday has 4."
     },
     "wrong": {
-     "fr": "Presque ! Compare les deux lignes.",
-     "en": "Almost! Compare the two rows."
+     "fr": "Compte les images de lundi, puis celles de mardi. Quelle ligne est la plus longue ?",
+     "en": "Count Monday’s pictures, then Tuesday’s. Which row is longer?"
     }
    }
   },
@@ -10954,28 +10954,28 @@
      "value": 1,
      "misconception": "mis_subtract_instead_of_add",
      "feedback": {
-      "fr": "On met les deux lignes ensemble : on ajoute.",
-      "en": "We put both rows together, so we add."
+      "fr": "Tu as soustrait. Chiens et chats ensemble, on ajoute.",
+      "en": "You subtracted. Dogs and cats together means we add."
      }
     },
     {
      "value": 10,
      "misconception": "mis_off_by_one",
      "feedback": {
-      "fr": "Presque ! Recompte les images une à une.",
-      "en": "Close! Count the pictures again, one by one."
+      "fr": "Il y a une image de trop ou de moins. Recompte une par une.",
+      "en": "One picture too many or too few. Count them one by one."
      }
     }
    ],
    "id": "medecine.registre.004",
    "reaction": {
     "right": {
-     "fr": "Bravo ! 6 chiens et 5 chats font 11 animaux.",
-     "en": "Well done! 6 dogs and 5 cats make 11 animals."
+     "fr": "6 chiens et 5 chats, ça fait 11 animaux. Tu as bien additionné les deux lignes.",
+     "en": "6 dogs and 5 cats make 11 animals. You added the two rows well."
     },
     "wrong": {
-     "fr": "Presque ! Compte les chats, puis continue avec les chiens.",
-     "en": "Almost! Count the cats, then keep going with the dogs."
+     "fr": "Il y a une ligne de chiens et une de chats. Mets-les ensemble.",
+     "en": "There is a dogs row and a cats row. Put them together."
     }
    }
   },
@@ -11114,12 +11114,12 @@
    "id": "medecine.registre.005",
    "reaction": {
     "right": {
-     "fr": "Bravo ! Jeudi 2, lundi 3, mercredi 5, mardi 7.",
-     "en": "Well done! Thursday 2, Monday 3, Wednesday 5, Tuesday 7."
+     "fr": "Tu as bien compté : jeudi 2, lundi 3, mercredi 5, mardi 7.",
+     "en": "You counted well: Thursday 2, Monday 3, Wednesday 5, Tuesday 7."
     },
     "wrong": {
-     "fr": "Presque ! Compte les images de chaque jour.",
-     "en": "Almost! Count the pictures of each day."
+     "fr": "Note le nombre d’images de chaque jour, puis cherche le plus petit.",
+     "en": "Write the number of pictures for each day, then find the smallest."
     }
    }
   },
@@ -11355,12 +11355,12 @@
    "id": "medecine.registre.006",
    "reaction": {
     "right": {
-     "fr": "Bravo ! 9 est proche de 10, 11 aussi : environ 20 visites.",
-     "en": "Well done! 9 is near 10, so is 11: about 20 visits."
+     "fr": "9 est proche de 10 et 11 aussi : environ 20 visites. Tu as bien arrondi.",
+     "en": "9 is close to 10 and so is 11: about 20 visits. You rounded well."
     },
     "wrong": {
-     "fr": "Presque ! Arrondis chaque nombre à la dizaine proche.",
-     "en": "Almost! Round each number to a near ten."
+     "fr": "Chaque jour est proche d’une dizaine. Additionne les deux dizaines.",
+     "en": "Each day is close to a ten. Add the two tens."
     }
    }
   },
@@ -11445,12 +11445,12 @@
    "id": "medecine.bonds.001",
    "reaction": {
     "right": {
-     "fr": "Bravo ! 2, 4, 6, 8 : il y a 8 oreilles.",
-     "en": "Well done! 2, 4, 6, 8: there are 8 ears."
+     "fr": "2, 4, 6, 8 : 4 chiens, 8 oreilles. Tu as bien compté de 2 en 2.",
+     "en": "2, 4, 6, 8: 4 dogs, 8 ears. You counted by 2s well."
     },
     "wrong": {
-     "fr": "Presque ! Dis 2, 4, et continue.",
-     "en": "Almost! Say 2, 4, and keep going."
+     "fr": "Chaque chien a 2 oreilles. Dis 2, 4 et continue pour 4 chiens.",
+     "en": "Each dog has 2 ears. Say 2, 4 and keep going for 4 dogs."
     }
    }
   },
@@ -11554,12 +11554,12 @@
    },
    "reaction": {
     "right": {
-     "fr": "Bravo ! On ajoute 5 à chaque fois : après 20 vient 25.",
-     "en": "Well done! We add 5 each time: after 20 comes 25."
+     "fr": "On ajoute 5 à chaque fois, donc après 20 vient 25.",
+     "en": "We add 5 each time, so after 20 comes 25."
     },
     "wrong": {
-     "fr": "Presque ! Chaque bond ajoute 5.",
-     "en": "Almost! Each jump adds 5."
+     "fr": "Regarde le saut de 5 à 10, puis de 10 à 15.",
+     "en": "Look at the jump from 5 to 10, then from 10 to 15."
     }
    }
   },
@@ -11652,12 +11652,12 @@
    },
    "reaction": {
     "right": {
-     "fr": "Bravo ! 10, 20, 30 : trois boîtes font 30 autocollants.",
-     "en": "Well done! 10, 20, 30: three boxes make 30 stickers."
+     "fr": "10, 20, 30 : trois boîtes font 30 autocollants. Tu as bien compté de 10 en 10.",
+     "en": "10, 20, 30: three boxes make 30 stickers. You counted by 10s well."
     },
     "wrong": {
-     "fr": "Presque ! Compte de 10 en 10 : 10, 20.",
-     "en": "Almost! Count by 10s: 10, 20."
+     "fr": "Une boîte, c’est 10. Fais un bond de 10 pour chaque boîte.",
+     "en": "One box is 10. Take one jump of 10 for each box."
     }
    }
   },
@@ -11725,12 +11725,12 @@
    },
    "reaction": {
     "right": {
-     "fr": "Bravo ! Après 6 vient 8, pas 9. Il faut compter 2, 4, 6, 8, 10.",
-     "en": "Well done! After 6 comes 8, not 9. We must count 2, 4, 6, 8, 10."
+     "fr": "C’est faux : après 6 vient 8, pas 9. On compte 2, 4, 6, 8, 10.",
+     "en": "False: after 6 comes 8, not 9. We count 2, 4, 6, 8, 10."
     },
     "wrong": {
-     "fr": "Presque ! Chaque nombre est 2 de plus que le précédent.",
-     "en": "Almost! Each number is 2 more than the one before."
+     "fr": "Regarde de combien chaque nombre augmente. Un des sauts est-il différent ?",
+     "en": "Look at how much each number goes up. Is one of the jumps different?"
     }
    }
   },
@@ -11866,12 +11866,12 @@
    "id": "medecine.bonds.005",
    "reaction": {
     "right": {
-     "fr": "Bravo ! En comptant de 10 en 10 : 20, 30, 40, 50.",
-     "en": "Well done! Counting by 10s: 20, 30, 40, 50."
+     "fr": "Tu as bien compté de 10 en 10 : 20, 30, 40, 50.",
+     "en": "You counted by 10s well: 20, 30, 40, 50."
     },
     "wrong": {
-     "fr": "Presque ! Compte de 10 en 10 : lequel vient en premier ?",
-     "en": "Almost! Count by 10s: which comes first?"
+     "fr": "Place les nombres sur la règle, de 10 en 10. Lequel est le plus près du début ?",
+     "en": "Place the numbers on the ruler in 10s. Which one is closest to the start?"
     }
    }
   },
@@ -11972,12 +11972,12 @@
    "id": "medecine.bonds.006",
    "reaction": {
     "right": {
-     "fr": "Bravo ! 5, 10, 15, 20, 25, 30 : six boîtes font 30 pansements.",
-     "en": "Well done! 5, 10, 15, 20, 25, 30: six boxes make 30 bandages."
+     "fr": "Six boîtes de 5, ça fait 30 pansements : 5, 10, 15, 20, 25, 30.",
+     "en": "Six boxes of 5 make 30 bandages: 5, 10, 15, 20, 25, 30."
     },
     "wrong": {
-     "fr": "Presque ! Compte de 5 en 5 et fais un bond par boîte.",
-     "en": "Almost! Count by 5s, one jump for each box."
+     "fr": "Il y a 6 boîtes. Fais un bond de 5 pour chacune.",
+     "en": "There are 6 boxes. Take one jump of 5 for each."
     }
    }
   },
@@ -12126,12 +12126,12 @@
    "id": "medecine.bonds.007",
    "reaction": {
     "right": {
-     "fr": "Bravo ! On saute de 2, de 5 et de 10 : 8, 20 et 40.",
-     "en": "Well done! The jumps are 2, 5 and 10: 8, 20 and 40."
+     "fr": "Tu as trouvé chaque saut : 2, 5 et 10. Les suites finissent par 8, 20 et 40.",
+     "en": "You found each jump: 2, 5 and 10. The patterns end with 8, 20 and 40."
     },
     "wrong": {
-     "fr": "Presque ! Trouve de combien on saute à chaque fois.",
-     "en": "Almost! Find how far each jump is."
+     "fr": "Regarde la différence entre deux nombres voisins dans chaque suite.",
+     "en": "Look at the difference between two neighbouring numbers in each pattern."
     }
    }
   },
@@ -12533,8 +12533,8 @@
      "value": 13,
      "misconception": "mis_add_instead_of_multiply",
      "feedback": {
-      "fr": "Sept bols égaux de 6 : on multiplie.",
-      "en": "Seven equal bowls of 6: we multiply."
+      "fr": "Tu as additionné 7 et 6. Sept bols de 6, c’est 7 fois 6.",
+      "en": "You added 7 and 6. Seven bowls of 6 is 7 times 6."
      }
     },
     {
@@ -12549,12 +12549,12 @@
    "id": "medecine.rations.001",
    "reaction": {
     "right": {
-     "fr": "Bravo ! 7 bols de 6 croquettes : 7 × 6 = 42.",
-     "en": "Well done! 7 bowls of 6 pieces: 7 × 6 = 42."
+     "fr": "7 bols de 6 croquettes, ça fait 7 × 6 = 42.",
+     "en": "7 bowls of 6 pieces make 7 × 6 = 42."
     },
     "wrong": {
-     "fr": "Presque ! Pense à 7 groupes de 6, ou à 6 fois 7.",
-     "en": "Almost! Think of 7 groups of 6, or 6 times 7."
+     "fr": "Chaque bol a 6 croquettes et il y a 7 bols. Que cherche-t-on ?",
+     "en": "Each bowl has 6 pieces and there are 7 bowls. What are we looking for?"
     }
    }
   },
@@ -12973,12 +12973,12 @@
    },
    "reaction": {
     "right": {
-     "fr": "Bravo ! 5 chats, 8 biscuits chacun : 5 × 8 = 40.",
-     "en": "Well done! 5 cats, 8 treats each: 5 × 8 = 40."
+     "fr": "Chaque chat a ses 8 biscuits : 5 × 8 = 40.",
+     "en": "Each cat gets its 8 treats: 5 × 8 = 40."
     },
     "wrong": {
-     "fr": "Presque ! Compte 5 groupes de 8.",
-     "en": "Almost! Count 5 groups of 8."
+     "fr": "Il y a 5 chats et chacun mange 8 biscuits. Combien en tout ?",
+     "en": "There are 5 cats and each eats 8 treats. How many in all?"
     }
    }
   },
@@ -13071,12 +13071,12 @@
    },
    "reaction": {
     "right": {
-     "fr": "Bravo ! Une journée : 3 × 4 = 12. Deux journées : 12 × 2 = 24.",
-     "en": "Well done! One day: 3 × 4 = 12. Two days: 12 × 2 = 24."
+     "fr": "Tu as pensé aux deux jours : 3 × 4 = 12, puis 12 × 2 = 24.",
+     "en": "You thought of both days: 3 × 4 = 12, then 12 × 2 = 24."
     },
     "wrong": {
-     "fr": "Presque ! Cherche d’abord les carottes d’une journée.",
-     "en": "Almost! First find the carrots for one day."
+     "fr": "Il mange 3 carottes à chaque repas et il y a 4 repas. Commence par un jour.",
+     "en": "He eats 3 carrots at each meal and there are 4 meals. Start with one day."
     }
    }
   },
@@ -13644,12 +13644,12 @@
    },
    "reaction": {
     "right": {
-     "fr": "Bravo ! 10 sacs font 70. On enlève un sac de 7 : 63, pas 56.",
-     "en": "Well done! 10 bags make 70. Take away a bag of 7: 63, not 56."
+     "fr": "C’est faux : 10 sacs font 70, moins un sac de 7, ça fait 63. Pas 56.",
+     "en": "False: 10 bags make 70, minus a bag of 7 is 63. Not 56."
     },
     "wrong": {
-     "fr": "Presque ! Vérifie avec 10 sacs de 7, puis enlève un sac.",
-     "en": "Almost! Check with 10 bags of 7, then take one bag away."
+     "fr": "Pense à 10 sacs de 7. Que se passe-t-il si on retire un sac ?",
+     "en": "Think of 10 bags of 7. What happens if one bag is taken away?"
     }
    }
   },
@@ -13708,8 +13708,8 @@
      "value": 57,
      "misconception": "mis_add_instead_of_multiply",
      "feedback": {
-      "fr": "Neuf sacs égaux : on multiplie, on n’ajoute pas.",
-      "en": "Nine equal bags: we multiply, we do not add."
+      "fr": "Tu as additionné. Neuf sacs de 48, c’est 9 fois 48.",
+      "en": "You added. Nine bags of 48 is 9 times 48."
      }
     }
    ],
@@ -13736,12 +13736,12 @@
    },
    "reaction": {
     "right": {
-     "fr": "Bravo ! 48 est proche de 50. 9 × 50 = 450, donc environ 450 croquettes.",
-     "en": "Well done! 48 is near 50. 9 × 50 = 450, so about 450 pieces."
+     "fr": "48 est proche de 50, donc 9 × 50 = 450. Environ 450 croquettes.",
+     "en": "48 is near 50, so 9 × 50 = 450. About 450 pieces."
     },
     "wrong": {
-     "fr": "Presque ! Arrondis 48 à 50, puis multiplie.",
-     "en": "Almost! Round 48 to 50, then multiply."
+     "fr": "48 est près d’un nombre rond. Multiplie ce nombre par 9.",
+     "en": "48 is near a round number. Multiply that number by 9."
     }
    }
   },
@@ -13890,12 +13890,12 @@
    "id": "medecine.rations.006",
    "reaction": {
     "right": {
-     "fr": "Bravo ! 3 × 8 = 24, 6 × 5 = 30 et 4 × 9 = 36.",
-     "en": "Well done! 3 × 8 = 24, 6 × 5 = 30 and 4 × 9 = 36."
+     "fr": "Tes liens sont bons : 3 × 8 = 24, 6 × 5 = 30 et 4 × 9 = 36.",
+     "en": "Your matches work: 3 × 8 = 24, 6 × 5 = 30 and 4 × 9 = 36."
     },
     "wrong": {
-     "fr": "Presque ! Multiplie le nombre de bols par le contenu d’un bol.",
-     "en": "Almost! Multiply the number of bowls by what one bowl holds."
+     "fr": "Pour chaque plateau, multiplie les bols par ce qu’un bol contient.",
+     "en": "For each tray, multiply the bowls by what one bowl holds."
     }
    }
   },
@@ -13988,12 +13988,12 @@
    },
    "reaction": {
     "right": {
-     "fr": "Bravo ! Départ : 6 × 25 = 150. Donné : 9 × 7 = 63. Reste : 150 - 63 = 87.",
-     "en": "Well done! Start: 6 × 25 = 150. Given: 9 × 7 = 63. Left: 150 - 63 = 87."
+     "fr": "Tu as pensé au départ et à ce qui est donné : 150 - 63 = 87.",
+     "en": "You thought of the start and what was given: 150 - 63 = 87."
     },
     "wrong": {
-     "fr": "Presque ! Trouve le départ, puis ce qui est donné.",
-     "en": "Almost! Find the start, then what is given."
+     "fr": "Il y a 6 sacs de 25 au départ. Ensuite, la clinique en donne. Que reste-t-il ?",
+     "en": "There are 6 bags of 25 at the start. Then the clinic gives some away. What is left?"
     }
    }
   },
@@ -14098,12 +14098,12 @@
    "id": "medecine.courbes.001",
    "reaction": {
     "right": {
-     "fr": "Bravo ! À 10 h, la barre monte jusqu’à 22 degrés.",
-     "en": "Well done! At 10 o’clock, the bar reaches 22 degrees."
+     "fr": "À 10 h, la barre monte jusqu’à 22 degrés. Tu as bien lu la hauteur.",
+     "en": "At 10 o’clock, the bar reaches 22 degrees. You read the height well."
     },
     "wrong": {
-     "fr": "Presque ! Va à 10 h sur le bas, puis monte jusqu’au haut de la barre.",
-     "en": "Almost! Go to 10 on the bottom, then climb to the top of the bar."
+     "fr": "Trouve 10 h en bas. La température, c’est la hauteur de la barre.",
+     "en": "Find 10 o’clock at the bottom. The temperature is the height of the bar."
     }
    }
   },
@@ -14200,8 +14200,8 @@
      "value": 44,
      "misconception": "mis_add_instead_of_subtract",
      "feedback": {
-      "fr": "On cherche l’écart entre deux points : on soustrait.",
-      "en": "We look for the gap between two points, so we subtract."
+      "fr": "Tu as additionné 24 et 20. Pour savoir combien de plus, on cherche l’écart.",
+      "en": "You added 24 and 20. To find how many more, we look for the gap."
      }
     },
     {
@@ -14216,12 +14216,12 @@
    "id": "medecine.courbes.002",
    "reaction": {
     "right": {
-     "fr": "Bravo ! À 11 h : 24 degrés. À 8 h : 20 degrés. 24 - 20 = 4 degrés.",
-     "en": "Well done! At 11: 24 degrees. At 8: 20 degrees. 24 - 20 = 4 degrees."
+     "fr": "24 degrés à 11 h, 20 degrés à 8 h : ça fait 4 degrés de plus.",
+     "en": "24 degrees at 11, 20 degrees at 8: that is 4 degrees more."
     },
     "wrong": {
-     "fr": "Presque ! Lis le haut de la barre de 11 h, puis celle de 8 h.",
-     "en": "Almost! Read the top of the 11 o’clock bar, then the 8 o’clock one."
+     "fr": "Trouve 11 h et 8 h en bas, puis compare la hauteur des deux barres.",
+     "en": "Find 11 and 8 at the bottom, then compare the height of the two bars."
     }
    }
   },
@@ -14318,8 +14318,8 @@
      "value": 940,
      "misconception": "mis_add_instead_of_subtract",
      "feedback": {
-      "fr": "On cherche l’écart entre deux semaines : on soustrait.",
-      "en": "We look for the gap between two weeks, so we subtract."
+      "fr": "Tu as additionné 560 et 380. On veut savoir de combien il a grandi : c’est l’écart.",
+      "en": "You added 560 and 380. We want how much he grew, and that is the gap."
      }
     },
     {
@@ -14334,12 +14334,12 @@
    "id": "medecine.courbes.003",
    "reaction": {
     "right": {
-     "fr": "Bravo ! Semaine 4 : 560 g. Semaine 2 : 380 g. 560 - 380 = 180 g.",
-     "en": "Well done! Week 4: 560 g. Week 2: 380 g. 560 - 380 = 180 g."
+     "fr": "Semaine 4 : 560 g, semaine 2 : 380 g. Il a grandi de 180 g.",
+     "en": "Week 4: 560 g, week 2: 380 g. He grew by 180 g."
     },
     "wrong": {
-     "fr": "Presque ! Lis la masse de la semaine 4, puis celle de la semaine 2.",
-     "en": "Almost! Read the mass of week 4, then of week 2."
+     "fr": "Il a grandi entre deux semaines. Cherche l’écart entre ses deux masses.",
+     "en": "He grew between two weeks. Find the gap between his two masses."
     }
    }
   },
@@ -14435,12 +14435,12 @@
    "id": "medecine.courbes.004",
    "reaction": {
     "right": {
-     "fr": "Bravo ! Les nombres montent chaque semaine : 300, 380, 470, 560. La masse n’a jamais baissé.",
-     "en": "Well done! The numbers go up every week: 300, 380, 470, 560. The mass never went down."
+     "fr": "C’est faux : les nombres montent chaque semaine, 300, 380, 470, 560.",
+     "en": "False: the numbers go up every week, 300, 380, 470, 560."
     },
     "wrong": {
-     "fr": "Presque ! Regarde si un nombre est plus petit que celui d’avant.",
-     "en": "Almost! Check whether a number is smaller than the one before it."
+     "fr": "Compare chaque nombre avec celui d’avant. Y en a-t-il un qui descend ?",
+     "en": "Compare each number with the one before. Does any of them go down?"
     }
    }
   },
@@ -14524,20 +14524,20 @@
      "value": 859,
      "misconception": "mis_add_instead_of_subtract",
      "feedback": {
-      "fr": "On cherche combien de plus : on compare, on n’ajoute pas.",
-      "en": "We look for how many more: we compare, we do not add."
+      "fr": "Tu as additionné les deux masses. Ici on compare la semaine 4 avec la semaine 1.",
+      "en": "You added the two masses. Here we compare week 4 with week 1."
      }
     }
    ],
    "id": "medecine.courbes.005",
    "reaction": {
     "right": {
-     "fr": "Bravo ! 563 est près de 560 et 296 près de 300 : 560 - 300 = 260. Environ 260 g.",
-     "en": "Well done! 563 is near 560 and 296 near 300: 560 - 300 = 260. About 260 g."
+     "fr": "563 est près de 560 et 296 près de 300 : 560 - 300 = 260. Environ 260 g. Tu as bien arrondi.",
+     "en": "563 is near 560 and 296 near 300: 560 - 300 = 260. About 260 g. You rounded well."
     },
     "wrong": {
-     "fr": "Presque ! Arrondis chaque masse à la dizaine la plus proche, puis soustrais.",
-     "en": "Almost! Round each mass to the nearest ten, then subtract."
+     "fr": "Pas besoin du nombre exact. Prends des nombres ronds près de chaque masse.",
+     "en": "The exact number is not needed. Use round numbers close to each mass."
     }
    }
   },
@@ -14621,20 +14621,20 @@
      "value": 12,
      "misconception": "mis_off_by_one",
      "feedback": {
-      "fr": "Presque ! Compte les bonds de 2 un par un.",
-      "en": "Close! Count the jumps of 2 one by one."
+      "fr": "Il y a un bond de trop ou de moins. Compte les bonds de 2 un par un.",
+      "en": "There is one jump too many or too few. Count the jumps of 2 one by one."
      }
     }
    ],
    "id": "medecine.courbes.006",
    "reaction": {
     "right": {
-     "fr": "Bravo ! De 18 à 24, il y a 6 degrés, soit 3 bonds de 2. 3 heures après 8 h : 11 h.",
-     "en": "Well done! From 18 to 24 is 6 degrees, so 3 jumps of 2. 3 hours after 8 o’clock: 11 o’clock."
+     "fr": "De 18 à 24, ça fait 3 bonds de 2. 3 heures après 8 h, il est 11 h.",
+     "en": "From 18 to 24 is 3 jumps of 2. 3 hours after 8 o’clock, it is 11."
     },
     "wrong": {
-     "fr": "Presque ! De 18 à 24, combien de bonds de 2 ?",
-     "en": "Almost! From 18 to 24, how many jumps of 2?"
+     "fr": "La salle gagne 2 degrés par heure. Combien d’heures pour passer de 18 à 24 ?",
+     "en": "The room warms 2 degrees an hour. How many hours to go from 18 to 24?"
     }
    }
   },
@@ -14783,12 +14783,12 @@
    "id": "medecine.courbes.007",
    "reaction": {
     "right": {
-     "fr": "Bravo ! En bas on lit les heures, à gauche les degrés, et un point donne une mesure.",
-     "en": "Well done! At the bottom we read the hours, on the left the degrees, and a dot gives one measure."
+     "fr": "Tu as bien relié : les heures en bas, les degrés à gauche.",
+     "en": "You matched them well: hours at the bottom, degrees on the left."
     },
     "wrong": {
-     "fr": "Presque ! Pense à ce qu’on lit en bas et à gauche.",
-     "en": "Almost! Think about what we read at the bottom and on the left."
+     "fr": "Imagine un diagramme de la clinique. Qu’est-ce qui est écrit en bas, et à gauche ?",
+     "en": "Picture a clinic chart. What is written at the bottom, and on the left?"
     }
    }
   },
@@ -14845,16 +14845,16 @@
      "value": 16,
      "misconception": "mis_wrong_operation",
      "feedback": {
-      "fr": "On partage en parts égales : on divise.",
-      "en": "We share equally, so we divide."
+      "fr": "Tu as soustrait. On partage en parts égales, alors on divise.",
+      "en": "You subtracted. Sharing equally means we divide."
      }
     },
     {
      "value": 80,
      "misconception": "mis_multiply_instead_of_add",
      "feedback": {
-      "fr": "On partage, on ne multiplie pas.",
-      "en": "We share, we do not multiply."
+      "fr": "Tu as multiplié 20 par 4. Ici on partage, on ne multiplie pas.",
+      "en": "You multiplied 20 by 4. Here we share, we do not multiply."
      }
     }
    ],
@@ -15030,12 +15030,12 @@
    },
    "reaction": {
     "right": {
-     "fr": "Bravo ! 20 divisé par 4 donne 5 : chaque trousse reçoit 5 pansements.",
-     "en": "Well done! 20 divided by 4 is 5: each kit gets 5 bandages."
+     "fr": "20 pansements dans 4 trousses : 5 dans chacune.",
+     "en": "20 bandages in 4 kits: 5 in each."
     },
     "wrong": {
-     "fr": "Presque ! Cherche combien de fois 4 entre dans 20.",
-     "en": "Almost! Find how many times 4 fits into 20."
+     "fr": "Les 4 trousses reçoivent autant l’une que l’autre. Partage les 20 pansements.",
+     "en": "The 4 kits get the same amount each. Share out the 20 bandages."
     }
    }
   },
@@ -15286,12 +15286,12 @@
    },
    "reaction": {
     "right": {
-     "fr": "Bravo ! 4 trousses font 20 pansements. Il en reste 3.",
-     "en": "Well done! 4 kits use 20 bandages. 3 are left over."
+     "fr": "4 trousses pleines font 20 pansements, et il en reste 3.",
+     "en": "4 full kits use 20 bandages, and 3 are left over."
     },
     "wrong": {
-     "fr": "Presque ! Compte de 5 en 5 sans dépasser 23.",
-     "en": "Almost! Count by 5s without going past 23."
+     "fr": "Remplis des trousses de 5 une à une, sans passer 23. Que reste-t-il ?",
+     "en": "Fill kits of 5 one at a time without going past 23. What is left?"
     }
    }
   },
@@ -15622,12 +15622,12 @@
    },
    "reaction": {
     "right": {
-     "fr": "Bravo ! 4 boîtes font 24 gants. Il en reste 5, ce qui ne remplit pas une autre boîte.",
-     "en": "Well done! 4 boxes use 24 gloves. 5 are left, which does not fill another box."
+     "fr": "4 boîtes font 24 gants. Les 5 qui restent ne remplissent pas une autre boîte.",
+     "en": "4 boxes use 24 gloves. The 5 left over do not fill another box."
     },
     "wrong": {
-     "fr": "Presque ! Compte de 6 en 6 sans dépasser 29.",
-     "en": "Almost! Count by 6s without going past 29."
+     "fr": "Il y a 29 gants. Seules les boîtes complètes de 6 comptent.",
+     "en": "There are 29 gloves. Only complete boxes of 6 count."
     }
    }
   },
@@ -16101,12 +16101,12 @@
    },
    "reaction": {
     "right": {
-     "fr": "Bravo ! 6 trousses pleines font 48. Il en reste 2, donc il faut une 7e trousse.",
-     "en": "Well done! 6 full kits use 48. 2 are left, so a 7th kit is needed."
+     "fr": "6 trousses pleines font 48 et il reste 2 pansements. Il faut donc une 7e trousse.",
+     "en": "6 full kits use 48 and 2 bandages are left. So a 7th kit is needed."
     },
     "wrong": {
-     "fr": "Presque ! Que fait-on des pansements qui restent ?",
-     "en": "Almost! What do we do with the bandages left over?"
+     "fr": "Les pansements qui restent doivent aller quelque part. Où ?",
+     "en": "The bandages left over have to go somewhere. Where?"
     }
    }
   },
@@ -16441,12 +16441,12 @@
    },
    "reaction": {
     "right": {
-     "fr": "Bravo ! 5 boîtes pleines font 30 pansements. 34 - 30 = 4 : Noah a raison.",
-     "en": "Well done! 5 full boxes use 30 bandages. 34 - 30 = 4: Noah is right."
+     "fr": "C’est vrai : 5 boîtes pleines font 30 pansements, et 34 - 30 = 4.",
+     "en": "True: 5 full boxes use 30 bandages, and 34 - 30 = 4."
     },
     "wrong": {
-     "fr": "Presque ! Compte de 6 en 6 jusqu’à 34.",
-     "en": "Almost! Count by 6s up to 34."
+     "fr": "Remplis des boîtes de 6 une à une. Combien de pansements restent à la fin ?",
+     "en": "Fill boxes of 6 one at a time. How many bandages are left at the end?"
     }
    }
   },
@@ -16582,12 +16582,12 @@
    "id": "medecine.trousses.006",
    "reaction": {
     "right": {
-     "fr": "Bravo ! Les restes sont 1, 2, 5 et 6.",
-     "en": "Well done! The remainders are 1, 2, 5 and 6."
+     "fr": "Tu as trouvé chaque reste : 1, 2, 5 et 6, dans le bon ordre.",
+     "en": "You found each remainder: 1, 2, 5 and 6, in the right order."
     },
     "wrong": {
-     "fr": "Presque ! Trouve le reste de chaque rangement.",
-     "en": "Almost! Find the remainder of each packing."
+     "fr": "Pour chaque rangement, remplis le plus de boîtes possible. Regarde ce qui reste.",
+     "en": "For each packing, fill as many boxes as you can. Look at what is left."
     }
    }
   },
@@ -16877,12 +16877,12 @@
    "id": "medecine.trousses.007",
    "reaction": {
     "right": {
-     "fr": "Bravo ! 4 rangées pleines font 24. Il y a 27 pansements, donc 3 dans la dernière.",
-     "en": "Well done! 4 full rows make 24. There are 27 bandages, so 3 in the last row."
+     "fr": "4 rangées pleines font 24, et il y a 27 pansements. Il y en a donc 3 dans la dernière.",
+     "en": "4 full rows make 24, and there are 27 bandages. So there are 3 in the last row."
     },
     "wrong": {
-     "fr": "Presque ! Les rangées pleines ont 6 pansements.",
-     "en": "Almost! Full rows have 6 bandages."
+     "fr": "Compte les rangées pleines de 6. Les pansements en trop forment la dernière rangée.",
+     "en": "Count the full rows of 6. The bandages left over make the last row."
     }
    }
   },
@@ -17052,12 +17052,12 @@
    "id": "medecine.tapis.001",
    "reaction": {
     "right": {
-     "fr": "Bravo ! 3 rangées de 4 carreaux : 12 carreaux.",
-     "en": "Well done! 3 rows of 4 tiles: 12 tiles."
+     "fr": "3 rangées de 4 carreaux : 12 carreaux. Tu as bien compté rangée par rangée.",
+     "en": "3 rows of 4 tiles: 12 tiles. You counted row by row well."
     },
     "wrong": {
-     "fr": "Presque ! Compte les carreaux rangée par rangée.",
-     "en": "Almost! Count the tiles row by row."
+     "fr": "Regarde une rangée. Combien de carreaux y a-t-il, et combien de rangées ?",
+     "en": "Look at one row. How many tiles are there, and how many rows?"
     }
    }
   },
@@ -17348,12 +17348,12 @@
    },
    "reaction": {
     "right": {
-     "fr": "Bravo ! L’aire est 6 × 4 = 24 carreaux. Le tour du tapis serait 20.",
-     "en": "Well done! The area is 6 × 4 = 24 tiles. The distance around would be 20."
+     "fr": "Tu as trouvé l’aire : 6 × 4 = 24 carreaux. Le tour du tapis, lui, serait 20.",
+     "en": "You found the area: 6 × 4 = 24 tiles. The distance around the mat would be 20."
     },
     "wrong": {
-     "fr": "Presque ! Pense à 4 rangées de 6 carreaux.",
-     "en": "Almost! Think of 4 rows of 6 tiles."
+     "fr": "Le tapis a 4 rangées. Combien de carreaux dans chaque rangée ?",
+     "en": "The mat has 4 rows. How many tiles in each row?"
     }
    }
   },
@@ -17547,12 +17547,12 @@
    "id": "medecine.tapis.003",
    "reaction": {
     "right": {
-     "fr": "Bravo ! Rangées : 5, 5, 2 et 2. En tout, 14 carreaux.",
-     "en": "Well done! Rows: 5, 5, 2 and 2. In all, 14 tiles."
+     "fr": "5, 5, 2 et 2 : ça fait 14 carreaux en tout.",
+     "en": "5, 5, 2 and 2: that makes 14 tiles in all."
     },
     "wrong": {
-     "fr": "Presque ! Compte chaque rangée, puis ajoute.",
-     "en": "Almost! Count each row, then add."
+     "fr": "Le tapis a des rangées de longueurs différentes. Compte-les une à une.",
+     "en": "The mat has rows of different lengths. Count them one by one."
     }
    }
   },
@@ -17631,12 +17631,12 @@
    },
    "reaction": {
     "right": {
-     "fr": "Bravo ! 3 × 8 = 24 et 4 × 6 = 24. Des formes différentes peuvent avoir la même aire.",
-     "en": "Well done! 3 × 8 = 24 and 4 × 6 = 24. Different shapes can have the same area."
+     "fr": "C’est vrai : 3 × 8 = 24 et 4 × 6 = 24. Deux formes différentes peuvent avoir la même aire.",
+     "en": "True: 3 × 8 = 24 and 4 × 6 = 24. Two different shapes can have the same area."
     },
     "wrong": {
-     "fr": "Presque ! Trouve l’aire de chaque tapis.",
-     "en": "Almost! Find the area of each mat."
+     "fr": "Deux tapis, deux aires. Calcule chacune, puis compare.",
+     "en": "Two mats, two areas. Work out each one, then compare."
     }
    }
   },
@@ -18166,12 +18166,12 @@
    },
    "reaction": {
     "right": {
-     "fr": "Bravo ! Sol : 8 × 7 = 56. Tapis : 3 × 4 = 12. Visibles : 56 - 12 = 44.",
-     "en": "Well done! Floor: 8 × 7 = 56. Mat: 3 × 4 = 12. Visible: 56 - 12 = 44."
+     "fr": "Le sol a 8 × 7 = 56 carreaux et le tapis en cache 3 × 4 = 12. Il en reste 44 à voir.",
+     "en": "The floor has 8 × 7 = 56 tiles and the mat hides 3 × 4 = 12. That leaves 44 to see."
     },
     "wrong": {
-     "fr": "Presque ! Aire du sol, puis aire du tapis.",
-     "en": "Almost! Area of the floor, then area of the mat."
+     "fr": "Le tapis cache une partie du sol. Combien de carreaux reste-t-il à voir ?",
+     "en": "The mat hides part of the floor. How many tiles are left to see?"
     }
    }
   },
@@ -18230,8 +18230,8 @@
      "value": 30,
      "misconception": "mis_add_instead_of_multiply",
      "feedback": {
-      "fr": "Neuf rangées égales : on multiplie.",
-      "en": "Nine equal rows: we multiply."
+      "fr": "Tu as additionné 9 et 21. Neuf rangées de 21, c’est 9 fois 21.",
+      "en": "You added 9 and 21. Nine rows of 21 is 9 times 21."
      }
     }
    ],
@@ -19759,12 +19759,12 @@
    },
    "reaction": {
     "right": {
-     "fr": "Bravo ! 21 est proche de 20. 9 × 20 = 180, donc environ 180 carreaux.",
-     "en": "Well done! 21 is near 20. 9 × 20 = 180, so about 180 tiles."
+     "fr": "21 est proche de 20, donc 9 × 20 = 180. Environ 180 carreaux.",
+     "en": "21 is near 20, so 9 × 20 = 180. About 180 tiles."
     },
     "wrong": {
-     "fr": "Presque ! Arrondis 21 à 20, puis multiplie.",
-     "en": "Almost! Round 21 to 20, then multiply."
+     "fr": "21 est près d’un nombre rond. Multiplie ce nombre par 9.",
+     "en": "21 is near a round number. Multiply that number by 9."
     }
    }
   },
@@ -19829,8 +19829,8 @@
      "value": 34,
      "misconception": "mis_add_instead_of_multiply",
      "feedback": {
-      "fr": "Les rangées sont égales : multiplie d’abord.",
-      "en": "The rows are equal: multiply first."
+      "fr": "Tu as additionné 9 et 25. Neuf rangées de 8, c’est d’abord 9 fois 8.",
+      "en": "You added 9 and 25. Nine rows of 8 is first 9 times 8."
      }
     }
    ],
@@ -20422,12 +20422,12 @@
    },
    "reaction": {
     "right": {
-     "fr": "Bravo ! Tous les carreaux : 9 × 8 = 72. Bleus : 72 - 25 = 47.",
-     "en": "Well done! All the tiles: 9 × 8 = 72. Blue: 72 - 25 = 47."
+     "fr": "9 × 8 = 72 carreaux en tout. Avec 25 jaunes, il y en a 72 - 25 = 47 bleus.",
+     "en": "9 × 8 = 72 tiles in all. With 25 yellow, there are 72 - 25 = 47 blue."
     },
     "wrong": {
-     "fr": "Presque ! Trouve tous les carreaux, puis enlève les jaunes.",
-     "en": "Almost! Find all the tiles, then take away the yellow ones."
+     "fr": "Combien de carreaux y a-t-il au total ? Retire ensuite les jaunes.",
+     "en": "How many tiles are there in all? Then take away the yellow ones."
     }
    }
   },
@@ -20545,12 +20545,12 @@
    "id": "medecine.peluches.007",
    "reaction": {
     "right": {
-     "fr": "Bravo ! 5 et 3 font 8 : la girafe a 8 pansements.",
-     "en": "Well done! 5 and 3 make 8: the giraffe has 8 bandages."
+     "fr": "5 et 3 font 8. La girafe a 8 pansements.",
+     "en": "5 and 3 make 8. The giraffe has 8 bandages."
     },
     "wrong": {
-     "fr": "Presque ! Pars de 5 et compte encore 3.",
-     "en": "Almost! Start at 5 and count 3 more."
+     "fr": "La girafe en a déjà 5. Compte les 3 que Léa ajoute.",
+     "en": "The giraffe already has 5. Count the 3 that Léa adds."
     }
    },
    "style": "drill"
@@ -20636,28 +20636,28 @@
      "value": 1,
      "misconception": "mis_subtract_instead_of_add",
      "feedback": {
-      "fr": "On met les deux groupes ensemble : on ajoute.",
-      "en": "We put both groups together, so we add."
+      "fr": "Tu as soustrait. Les pansements des deux peluches se mettent ensemble.",
+      "en": "You subtracted. The bandages of both toys go together."
      }
     },
     {
      "value": 12,
      "misconception": "mis_off_by_one",
      "feedback": {
-      "fr": "Presque ! Recompte une rangée, puis l’autre.",
-      "en": "Close! Count one row, then the other."
+      "fr": "Il y a un pansement de trop ou de moins. Recompte une rangée, puis l’autre.",
+      "en": "One bandage too many or too few. Count one row, then the other."
      }
     }
    ],
    "id": "medecine.peluches.008",
    "reaction": {
     "right": {
-     "fr": "Bravo ! 6 et 7 font 13 pansements.",
-     "en": "Well done! 6 and 7 make 13 bandages."
+     "fr": "6 et 7 font 13. Tu as bien compté les deux rangées.",
+     "en": "6 and 7 make 13. You counted both rows well."
     },
     "wrong": {
-     "fr": "Presque ! Compte la première rangée, puis continue.",
-     "en": "Almost! Count the first row, then keep going."
+     "fr": "Compte la rangée de la première peluche, puis celle de la deuxième.",
+     "en": "Count the first toy’s row, then the second toy’s row."
     }
    },
    "style": "drill"
@@ -20744,12 +20744,12 @@
    "id": "medecine.salle.008",
    "reaction": {
     "right": {
-     "fr": "Bravo ! La grande aiguille est sur le 6 : c’est la demie. Il est 8 h 30.",
-     "en": "Well done! The long hand is on 6: it is half past. It is 8:30."
+     "fr": "Grande aiguille sur le 6, c’est la demie. Il est 8 h 30.",
+     "en": "Long hand on the 6 means half past. It is 8:30."
     },
     "wrong": {
-     "fr": "Presque ! La grande aiguille est sur le 6.",
-     "en": "Almost! The long hand is on the 6."
+     "fr": "Sur le 6, c’est la demie. Regarde maintenant la petite aiguille pour l’heure.",
+     "en": "On the 6, it is half past. Now look at the short hand for the hour."
     }
    }
   },
@@ -20810,12 +20810,12 @@
    "id": "medecine.salle.009",
    "reaction": {
     "right": {
-     "fr": "Bravo ! À la demie, la grande aiguille est sur le 6.",
-     "en": "Well done! At half past, the long hand is on the 6."
+     "fr": "C’est vrai : à la demie, la grande aiguille est sur le 6.",
+     "en": "True: at half past, the long hand is on the 6."
     },
     "wrong": {
-     "fr": "Presque ! Où est la grande aiguille pour une demie ?",
-     "en": "Almost! Where is the long hand for half past?"
+     "fr": "Une demie, c’est 30 minutes. Sur quel nombre est la grande aiguille alors ?",
+     "en": "Half past is 30 minutes. Which number is the long hand on then?"
     }
    }
   },
@@ -20900,8 +20900,8 @@
      "value": 15,
      "misconception": "mis_add_instead_of_subtract",
      "feedback": {
-      "fr": "On compare deux lignes : on cherche l’écart.",
-      "en": "We compare the rows, so we look for the gap."
+      "fr": "Tu as additionné les deux lignes. On veut l’écart entre jeudi et vendredi.",
+      "en": "You added the two rows. We want the gap between Thursday and Friday."
      }
     },
     {
@@ -20916,12 +20916,12 @@
    "id": "medecine.registre.007",
    "reaction": {
     "right": {
-     "fr": "Bravo ! Jeudi 9 images, vendredi 6 : 9 - 6 = 3 visites de plus.",
-     "en": "Well done! Thursday 9 pictures, Friday 6: 9 - 6 = 3 more visits."
+     "fr": "Jeudi 9 images, vendredi 6 : 9 - 6 = 3 visites de plus.",
+     "en": "Thursday 9 pictures, Friday 6: 9 - 6 = 3 more visits."
     },
     "wrong": {
-     "fr": "Presque ! Compte la ligne de jeudi, puis celle de vendredi.",
-     "en": "Almost! Count the Thursday row, then the Friday row."
+     "fr": "Une ligne pour jeudi, une pour vendredi. Combien de plus d’un côté ?",
+     "en": "One row for Thursday, one for Friday. How many more on one side?"
     }
    }
   },
@@ -21073,12 +21073,12 @@
    "id": "medecine.registre.008",
    "reaction": {
     "right": {
-     "fr": "Bravo ! Lundi 5, mardi 7 et mercredi 2.",
-     "en": "Well done! Monday 5, Tuesday 7 and Wednesday 2."
+     "fr": "Tu as bien compté : lundi 5, mardi 7 et mercredi 2.",
+     "en": "You counted well: Monday 5, Tuesday 7 and Wednesday 2."
     },
     "wrong": {
-     "fr": "Presque ! Compte les images de chaque ligne.",
-     "en": "Almost! Count the pictures of each row."
+     "fr": "Trouve la ligne de chaque jour et compte ses images.",
+     "en": "Find each day’s row and count its pictures."
     }
    }
   },
@@ -21155,8 +21155,8 @@
      "value": 9,
      "misconception": "mis_add_instead_of_multiply",
      "feedback": {
-      "fr": "Chaque gant compte 5 doigts : compte de 5 en 5.",
-      "en": "Each glove has 5 fingers: count by 5s."
+      "fr": "Tu as additionné 5 et 4. Chaque gant a 5 doigts : compte de 5 en 5.",
+      "en": "You added 5 and 4. Each glove has 5 fingers, so count by 5s."
      }
     },
     {
@@ -21171,12 +21171,12 @@
    "id": "medecine.bonds.008",
    "reaction": {
     "right": {
-     "fr": "Bravo ! 5, 10, 15, 20 : quatre gants ont 20 doigts.",
-     "en": "Well done! 5, 10, 15, 20: four gloves have 20 fingers."
+     "fr": "5, 10, 15, 20 : quatre gants, 20 doigts.",
+     "en": "5, 10, 15, 20: four gloves, 20 fingers."
     },
     "wrong": {
-     "fr": "Presque ! Compte de 5 en 5, un bond par gant.",
-     "en": "Almost! Count by 5s, one jump for each glove."
+     "fr": "Il y a 4 gants. Fais un bond de 5 pour chacun.",
+     "en": "There are 4 gloves. Take one jump of 5 for each."
     }
    }
   },
@@ -21279,12 +21279,12 @@
    "id": "medecine.bonds.009",
    "reaction": {
     "right": {
-     "fr": "Bravo ! On ajoute 10 à chaque fois : 10, 20, 30, 40.",
-     "en": "Well done! We add 10 each time: 10, 20, 30, 40."
+     "fr": "On ajoute 10 à chaque fois : 10, 20, 30, 40.",
+     "en": "We add 10 each time: 10, 20, 30, 40."
     },
     "wrong": {
-     "fr": "Presque ! De combien saute-t-on à chaque fois ?",
-     "en": "Almost! How far is each jump?"
+     "fr": "Regarde de 10 à 20, puis de 20 à 40. Le saut est-il le même ?",
+     "en": "Look from 10 to 20, then from 20 to 40. Is the jump the same?"
     }
    }
   },
@@ -21420,12 +21420,12 @@
    "id": "medecine.rations.008",
    "reaction": {
     "right": {
-     "fr": "Bravo ! Les totaux sont 14, 24, 25 et 27 croquettes.",
-     "en": "Well done! The totals are 14, 24, 25 and 27 pieces."
+     "fr": "Tu as calculé chaque plateau : 14, 24, 25 et 27 croquettes.",
+     "en": "You worked out each tray: 14, 24, 25 and 27 pieces."
     },
     "wrong": {
-     "fr": "Presque ! Calcule le total de chaque plateau, puis compare.",
-     "en": "Almost! Work out each tray’s total, then compare."
+     "fr": "Chaque plateau a des bols de même contenu. Multiplie, puis compare les totaux.",
+     "en": "Each tray has bowls with the same amount. Multiply, then compare the totals."
     }
    }
   },
@@ -21502,28 +21502,28 @@
      "value": 24,
      "misconception": "mis_partial_result",
      "feedback": {
-      "fr": "Tu as trouvé une seule journée. Il y en a plusieurs.",
-      "en": "You found one day only. There are several."
+      "fr": "Tu as trouvé une seule journée. Les biscuits durent 3 jours.",
+      "en": "You found one day only. The treats last 3 days."
      }
     },
     {
      "value": 13,
      "misconception": "mis_add_instead_of_multiply",
      "feedback": {
-      "fr": "Les groupes sont égaux : on multiplie.",
-      "en": "The groups are equal: we multiply."
+      "fr": "Tu as additionné. Six chiots, 4 biscuits chacun : on multiplie.",
+      "en": "You added. Six puppies with 4 treats each means multiplying."
      }
     }
    ],
    "id": "medecine.rations.009",
    "reaction": {
     "right": {
-     "fr": "Bravo ! Une journée : 6 × 4 = 24. Trois journées : 24 × 3 = 72.",
-     "en": "Well done! One day: 6 × 4 = 24. Three days: 24 × 3 = 72."
+     "fr": "Tu as pensé aux 3 jours : 6 × 4 = 24, puis 24 × 3 = 72.",
+     "en": "You thought of all 3 days: 6 × 4 = 24, then 24 × 3 = 72."
     },
     "wrong": {
-     "fr": "Presque ! Cherche d’abord les biscuits d’une journée.",
-     "en": "Almost! First find the treats for one day."
+     "fr": "Six chiots, 4 biscuits chacun. Commence par une seule journée.",
+     "en": "Six puppies, 4 treats each. Start with a single day."
     }
    }
   },
@@ -21620,8 +21620,8 @@
      "value": 39,
      "misconception": "mis_add_instead_of_subtract",
      "feedback": {
-      "fr": "On cherche la hausse entre deux barres : on soustrait.",
-      "en": "We look for the rise between two bars, so we subtract."
+      "fr": "Tu as additionné 23 et 16. La hausse, c’est l’écart entre les deux barres.",
+      "en": "You added 23 and 16. The rise is the gap between the two bars."
      }
     },
     {
@@ -21636,12 +21636,12 @@
    "id": "medecine.courbes.008",
    "reaction": {
     "right": {
-     "fr": "Bravo ! À 11 h : 23 degrés. À 8 h : 16 degrés. 23 - 16 = 7 degrés.",
-     "en": "Well done! At 11: 23 degrees. At 8: 16 degrees. 23 - 16 = 7 degrees."
+     "fr": "23 degrés à 11 h, 16 à 8 h : la salle a monté de 7 degrés.",
+     "en": "23 degrees at 11, 16 at 8: the room rose by 7 degrees."
     },
     "wrong": {
-     "fr": "Presque ! Lis la barre de 11 h, puis celle de 8 h.",
-     "en": "Almost! Read the 11 o’clock bar, then the 8 o’clock one."
+     "fr": "Trouve 8 h et 11 h en bas. De combien la barre de 11 h est-elle plus haute ?",
+     "en": "Find 8 and 11 at the bottom. How much taller is the 11 o’clock bar?"
     }
    }
   },
@@ -21728,12 +21728,12 @@
    "id": "medecine.courbes.009",
    "reaction": {
     "right": {
-     "fr": "Bravo ! 450 - 310 = 140. C’est plus de 100 g : c’est vrai.",
-     "en": "Well done! 450 - 310 = 140. That is more than 100 g: it is true."
+     "fr": "C’est vrai : 450 - 310 = 140, et c’est plus de 100 g.",
+     "en": "True: 450 - 310 = 140, and that is more than 100 g."
     },
     "wrong": {
-     "fr": "Presque ! Cherche l’écart entre la semaine 1 et la semaine 3.",
-     "en": "Almost! Find the gap between week 1 and week 3."
+     "fr": "Lis la masse de la semaine 1 et celle de la semaine 3, puis cherche l’écart.",
+     "en": "Read the mass for week 1 and for week 3, then find the gap."
     }
    }
   },
@@ -22119,12 +22119,12 @@
    "id": "medecine.trousses.008",
    "reaction": {
     "right": {
-     "fr": "Bravo ! 5 boîtes font 35 gants. 38 - 35 = 3 gants restent seuls.",
-     "en": "Well done! 5 boxes use 35 gloves. 38 - 35 = 3 gloves are left over."
+     "fr": "5 boîtes font 35 gants, et 38 - 35 = 3 gants restent seuls.",
+     "en": "5 boxes use 35 gloves, and 38 - 35 = 3 gloves are left over."
     },
     "wrong": {
-     "fr": "Presque ! Compte de 7 en 7 sans dépasser 38.",
-     "en": "Almost! Count by 7s without going past 38."
+     "fr": "Remplis des boîtes de 7 sans dépasser 38. Combien de gants ne rentrent nulle part ?",
+     "en": "Fill boxes of 7 without going past 38. How many gloves fit nowhere?"
     }
    }
   },
@@ -22575,12 +22575,12 @@
    "id": "medecine.trousses.009",
    "reaction": {
     "right": {
-     "fr": "Bravo ! 4 boîtes pleines font 36. Il en reste 8 : il faut une 5e boîte.",
-     "en": "Well done! 4 full boxes use 36. 8 are left, so a 5th box is needed."
+     "fr": "4 boîtes pleines font 36, et il en reste 8. Il faut donc une 5e boîte.",
+     "en": "4 full boxes use 36, and 8 are left. So a 5th box is needed."
     },
     "wrong": {
-     "fr": "Presque ! Que fait-on des pansements qui restent ?",
-     "en": "Almost! What do we do with the bandages left over?"
+     "fr": "Les pansements qui restent doivent aller dans une boîte aussi. Combien de boîtes en tout ?",
+     "en": "The leftover bandages have to go in a box too. How many boxes in all?"
     }
    }
   },
@@ -22716,12 +22716,12 @@
    "id": "medecine.tapis.008",
    "reaction": {
     "right": {
-     "fr": "Bravo ! Les aires sont 20, 25, 27 et 28 carreaux.",
-     "en": "Well done! The areas are 20, 25, 27 and 28 tiles."
+     "fr": "Tu as calculé chaque aire : 20, 25, 27 et 28 carreaux.",
+     "en": "You worked out each area: 20, 25, 27 and 28 tiles."
     },
     "wrong": {
-     "fr": "Presque ! Trouve l’aire de chaque tapis, puis compare.",
-     "en": "Almost! Find each mat’s area, then compare."
+     "fr": "Pour chaque tapis, multiplie les deux nombres. Compare ensuite les aires.",
+     "en": "For each mat, multiply the two numbers. Then compare the areas."
     }
    }
   },
@@ -22870,12 +22870,12 @@
    "id": "medecine.tapis.009",
    "reaction": {
     "right": {
-     "fr": "Bravo ! 2 × 6 = 12, 3 × 5 = 15 et 4 × 4 = 16.",
-     "en": "Well done! 2 × 6 = 12, 3 × 5 = 15 and 4 × 4 = 16."
+     "fr": "Tes liens sont bons : 2 × 6 = 12, 3 × 5 = 15 et 4 × 4 = 16.",
+     "en": "Your matches work: 2 × 6 = 12, 3 × 5 = 15 and 4 × 4 = 16."
     },
     "wrong": {
-     "fr": "Presque ! Multiplie la longueur par la largeur.",
-     "en": "Almost! Multiply the length by the width."
+     "fr": "Un tapis de 2 sur 6, c’est 2 rangées de 6 carreaux. Fais pareil pour les autres.",
+     "en": "A 2 by 6 mat is 2 rows of 6 tiles. Do the same for the others."
     }
    }
   }

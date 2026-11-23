@@ -94,8 +94,8 @@
     "en": "First look for the smallest number."
    },
    "explain": {
-    "fr": "8, 11, 15, 20 : chaque numéro est plus grand que celui d’avant.",
-    "en": "8, 11, 15, 20: each number is bigger than the one before."
+    "fr": "On met 8, 11, 15 puis 20. Chaque numéro est plus grand que celui d’avant.",
+    "en": "Smallest first gives 8, 11, 15, then 20. Each number is bigger than the one before."
    },
    "tags": [
     "ordering",
@@ -262,8 +262,8 @@
    },
    "math_text": "71 > 17",
    "hint": {
-    "fr": "Compare les dizaines : 7 et 1.",
-    "en": "Compare the tens: 7 and 1."
+    "fr": "Regarde les dizaines, 7 d’un côté et 1 de l’autre.",
+    "en": "Look at the tens, 7 on one side and 1 on the other."
    },
    "explain": {
     "fr": "71 a 7 dizaines et 17 en a une. Donc 71 est plus grand.",
@@ -327,8 +327,8 @@
     "en": "The missing number comes right after 84."
    },
    "explain": {
-    "fr": "84, 85, 86 : la fiche tombée se place entre 84 et 86.",
-    "en": "84, 85, 86: the fallen card sits between 84 and 86."
+    "fr": "En comptant 84, 85, 86, la fiche tombée prend la place du milieu.",
+    "en": "Counting 84, 85, 86, the fallen card takes the middle spot."
    },
    "tags": [
     "number-between",
@@ -393,8 +393,8 @@
     "en": "Compare the hundreds first, then the tens."
    },
    "explain": {
-    "fr": "530, 350, 335, 305, 253 : on compare les centaines, puis les dizaines.",
-    "en": "530, 350, 335, 305, 253: compare hundreds first, then tens."
+    "fr": "Du plus grand au plus petit, ça donne 530, 350, 335, 305 puis 253. On compare les centaines, puis les dizaines.",
+    "en": "Biggest to smallest, it goes 530, 350, 335, 305, then 253. Compare the hundreds first, then the tens."
    },
    "tags": [
     "ordering",
@@ -490,8 +490,8 @@
     "en": "Compare the hundreds, then the tens."
    },
    "explain": {
-    "fr": "Les deux codes en 4 sont les plus petits. Entre 416 et 461, on compare les dizaines : 1 est plus petit que 6.",
-    "en": "The two codes starting with 4 are the smallest. Between 416 and 461, compare the tens: 1 is smaller than 6."
+    "fr": "Les deux codes en 4 sont les plus petits. Entre 416 et 461, regarde les dizaines. 1 est plus petit que 6.",
+    "en": "The two codes starting with 4 are the smallest. Between 416 and 461, look at the tens. 1 is smaller than 6."
    },
    "tags": [
     "compare",
@@ -586,12 +586,12 @@
     }
    },
    "hint": {
-    "fr": "Compte de 2 en 2 : une paire, deux paires, trois paires.",
-    "en": "Count by 2s: one pair, two pairs, three pairs."
+    "fr": "Compte de 2 en 2, une paire à la fois.",
+    "en": "Count by 2s, one pair at a time."
    },
    "explain": {
-    "fr": "3 paires de 2 étoiles : 2, 4, 6.",
-    "en": "3 pairs of 2 stars: 2, 4, 6."
+    "fr": "3 paires de 2 étoiles, ça donne 2, 4, 6.",
+    "en": "3 pairs of 2 stars gives 2, 4, 6."
    },
    "tags": [
     "counting",
@@ -622,8 +622,8 @@
      "value": 5,
      "misconception": "mis_add_instead_of_multiply",
      "feedback": {
-      "fr": "Chaque paire compte deux étoiles : fais des sauts de 2.",
-      "en": "Each pair has two stars: skip count by 2."
+      "fr": "Chaque paire compte deux étoiles. Saute de 2 en 2.",
+      "en": "Each pair has two stars. Skip count by 2."
      }
     },
     {
@@ -631,7 +631,7 @@
      "misconception": "mis_skip_count",
      "feedback": {
       "fr": "Tu as sauté une fois de trop.",
-      "en": "You jumped one time too many."
+      "en": "You jumped once too many."
      }
     }
    ]
@@ -644,8 +644,8 @@
    "grade": 1,
    "difficulty": 2,
    "story": {
-    "fr": "Mia compte les étoiles de 5 en 5. Elle dit : 5, 10, 15.",
-    "en": "Mia counts stars by 5s. She says: 5, 10, 15."
+    "fr": "Mia compte les étoiles de 5 en 5. Elle dit 5, 10, 15.",
+    "en": "Mia counts stars by 5s. She says 5, 10, 15."
    },
    "prompt": {
     "fr": "Quel nombre dit-elle ensuite ?",
@@ -656,8 +656,8 @@
     "en": "Add 5 to the last number she said."
    },
    "explain": {
-    "fr": "On saute de 5 en 5 : 5, 10, 15, 20.",
-    "en": "Jumping by 5: 5, 10, 15, 20."
+    "fr": "On saute de 5 en 5, ce qui donne 5, 10, 15 puis 20.",
+    "en": "Jumping by 5s gives 5, 10, 15, then 20."
    },
    "tags": [
     "skip-count-5",
@@ -736,8 +736,8 @@
     "en": "Count by 10s, one pack at a time."
    },
    "explain": {
-    "fr": "4 paquets de 10 : 10, 20, 30, 40.",
-    "en": "4 packs of 10: 10, 20, 30, 40."
+    "fr": "4 paquets de 10 donnent 10, 20, 30, 40.",
+    "en": "4 packs of 10 give 10, 20, 30, 40."
    },
    "tags": [
     "counting",
@@ -799,8 +799,8 @@
    },
    "math_text": "5 x 2 = 12",
    "hint": {
-    "fr": "Compte de 2 en 2 : 2, 4, 6...",
-    "en": "Count by 2s: 2, 4, 6..."
+    "fr": "Compte de 2 en 2, 2, 4, 6...",
+    "en": "Count by 2s, 2, 4, 6..."
    },
    "explain": {
     "fr": "5 paires font 2, 4, 6, 8, 10 étoiles. Elle a compté une paire de trop.",
@@ -871,8 +871,8 @@
     "en": "Each symbol is worth 5 stars. Skip count by 5."
    },
    "explain": {
-    "fr": "7 groupes de 5 : 5, 10, 15, 20, 25, 30, 35.",
-    "en": "7 groups of 5: 5, 10, 15, 20, 25, 30, 35."
+    "fr": "7 groupes de 5 donnent 5, 10, 15, 20, 25, 30, 35.",
+    "en": "7 groups of 5 give 5, 10, 15, 20, 25, 30, 35."
    },
    "tags": [
     "pictograph",
@@ -1294,8 +1294,8 @@
     "en": "Start at 8 and count on 5 more."
    },
    "explain": {
-    "fr": "8 plus 5 : on va jusqu’à 10 avec 2, puis encore 3. Ça fait 13.",
-    "en": "8 plus 5: go to 10 with 2, then 3 more. That makes 13."
+    "fr": "8 plus 5. On va jusqu’à 10 avec 2, puis encore 3. Ça fait 13.",
+    "en": "8 plus 5. Go to 10 with 2, then 3 more. That makes 13."
    },
    "tags": [
     "addition",
@@ -1361,8 +1361,8 @@
     "en": "Count back 6 from 15, or go through 10."
    },
    "explain": {
-    "fr": "15 moins 5 font 10, puis encore 1 de moins : 9.",
-    "en": "15 minus 5 is 10, then 1 more less: 9."
+    "fr": "15 moins 5 font 10, puis encore 1 de moins, ce qui donne 9.",
+    "en": "15 minus 5 is 10, then 1 less is 9."
    },
    "tags": [
     "subtraction",
@@ -1394,16 +1394,16 @@
      "value": 21,
      "misconception": "mis_add_instead_of_subtract",
      "feedback": {
-      "fr": "Ravi enlève des tomates : on retire.",
-      "en": "Ravi takes tomatoes away: we subtract."
+      "fr": "Ravi enlève des tomates, alors on retire.",
+      "en": "Ravi takes tomatoes away, so we subtract."
      }
     },
     {
      "value": 11,
      "misconception": "mis_forgot_borrow",
      "feedback": {
-      "fr": "Pense à défaire une dizaine : 15 devient 10 et 5.",
-      "en": "Break a ten: 15 becomes 10 and 5."
+      "fr": "Défais une dizaine. 15 devient 10 et 5.",
+      "en": "Break a ten. 15 becomes 10 and 5."
      }
     },
     {
@@ -1437,8 +1437,8 @@
     "en": "Do 7 + 3 to reach 10, then add the rest."
    },
    "explain": {
-    "fr": "7 + 3 font 10, puis 5 de plus : 15. Ce n’est pas 16.",
-    "en": "7 + 3 makes 10, then 5 more: 15. It is not 16."
+    "fr": "7 + 3 font 10, puis 5 de plus, ça fait 15. Ce n’est pas 16.",
+    "en": "7 + 3 makes 10, then 5 more makes 15. It is not 16."
    },
    "tags": [
     "true-false",
@@ -1519,8 +1519,8 @@
      "value": 64,
      "misconception": "mis_add_instead_of_subtract",
      "feedback": {
-      "fr": "On déplace des outils : il en reste moins.",
-      "en": "Tools are moved away: there are fewer left."
+      "fr": "On déplace des outils, alors il en reste moins.",
+      "en": "Tools are moved away, so there are fewer left."
      }
     },
     {
@@ -1646,12 +1646,12 @@
     "en": "How many cans are there now?"
    },
    "hint": {
-    "fr": "Ajoute les dizaines : 4 dizaines et 2 dizaines.",
-    "en": "Add the tens: 4 tens and 2 tens."
+    "fr": "Ajoute les dizaines, 4 dizaines et 2 dizaines.",
+    "en": "Add the tens, 4 tens and 2 tens."
    },
    "explain": {
-    "fr": "45 plus 20 : 4 dizaines plus 2 dizaines font 6 dizaines. Avec les 5 unités, 65.",
-    "en": "45 plus 20: 4 tens plus 2 tens make 6 tens. With the 5 ones, 65."
+    "fr": "4 dizaines plus 2 dizaines font 6 dizaines. Avec les 5 unités, ça fait 65.",
+    "en": "4 tens plus 2 tens make 6 tens. With the 5 ones, that is 65."
    },
    "tags": [
     "addition",
@@ -1684,7 +1684,7 @@
      "value": 25,
      "misconception": "mis_subtract_instead_of_add",
      "feedback": {
-      "fr": "On apporte des bidons : on en a plus.",
+      "fr": "Des bidons arrivent, alors on en a plus.",
       "en": "More cans arrive, so there are more."
      }
     },
@@ -1692,8 +1692,8 @@
      "value": 47,
      "misconception": "mis_place_value",
      "feedback": {
-      "fr": "20 ajoute des dizaines, pas des unités.",
-      "en": "20 adds tens, not ones."
+      "fr": "Ce 20 ajoute des dizaines, pas des unités.",
+      "en": "That 20 adds tens, not ones."
      }
     }
    ]
@@ -1718,8 +1718,8 @@
     "en": "Take away the people who go out."
    },
    "explain": {
-    "fr": "12 moins 5 : 12 moins 2 font 10, puis 3 de moins font 7.",
-    "en": "12 minus 5: 12 minus 2 is 10, then 3 less is 7."
+    "fr": "12 moins 2 font 10, puis 3 de moins font 7. Donc 12 moins 5 égale 7.",
+    "en": "12 minus 2 is 10, then 3 less is 7. So 12 minus 5 is 7."
    },
    "tags": [
     "subtraction",
@@ -1752,8 +1752,8 @@
      "value": 17,
      "misconception": "mis_add_instead_of_subtract",
      "feedback": {
-      "fr": "Celles qui sortent ne sont plus dedans : on retire.",
-      "en": "Those who go out are no longer inside: subtract."
+      "fr": "Celles qui sortent ne sont plus dedans, alors on retire.",
+      "en": "Those who go out are no longer inside, so subtract."
      }
     },
     {
@@ -2046,8 +2046,8 @@
     "en": "How many bottles did the trucks bring in all?"
    },
    "hint": {
-    "fr": "Additionne les dizaines : 4 dizaines et 3 dizaines.",
-    "en": "Add the tens: 4 tens and 3 tens."
+    "fr": "Additionne les dizaines, 4 dizaines et 3 dizaines.",
+    "en": "Add the tens, 4 tens and 3 tens."
    },
    "explain": {
     "fr": "4 dizaines plus 3 dizaines font 7 dizaines, soit 70 bouteilles.",
@@ -2084,15 +2084,15 @@
      "value": 10,
      "misconception": "mis_subtract_instead_of_add",
      "feedback": {
-      "fr": "Les deux camions apportent des bouteilles : on les réunit.",
-      "en": "Both trucks bring bottles: put them together."
+      "fr": "Les deux camions apportent des bouteilles. Réunis-les.",
+      "en": "Both trucks bring bottles. Put them together."
      }
     },
     {
      "value": 7,
      "misconception": "mis_place_value",
      "feedback": {
-      "fr": "4 dizaines et 3 dizaines font des dizaines.",
+      "fr": "4 dizaines et 3 dizaines, ça fait des dizaines.",
       "en": "4 tens and 3 tens make tens."
      }
     }
@@ -2172,8 +2172,8 @@
      "value": 130,
      "misconception": "mis_add_instead_of_subtract",
      "feedback": {
-      "fr": "L’équipage utilise de l’eau : il en reste moins.",
-      "en": "The crew uses water: there is less left."
+      "fr": "L’équipage utilise de l’eau, alors il en reste moins.",
+      "en": "The crew uses water, so there is less left."
      }
     },
     {
@@ -2202,8 +2202,8 @@
     "en": "How many litres of water are there at the end?"
    },
    "hint": {
-    "fr": "Fais deux étapes : d’abord ce qui part, puis ce qui arrive.",
-    "en": "Do two steps: first what leaves, then what arrives."
+    "fr": "Fais deux étapes. D’abord ce qui part, puis ce qui arrive.",
+    "en": "Do two steps. First what leaves, then what arrives."
    },
    "explain": {
     "fr": "128 moins 45 font 83. Puis 83 plus 30 font 113.",
@@ -2240,16 +2240,16 @@
      "value": 83,
      "misconception": "mis_partial_result",
      "feedback": {
-      "fr": "Il y a une deuxième étape : le cargo ajoute de l’eau.",
-      "en": "There is a second step: the cargo ship adds water."
+      "fr": "Il y a une deuxième étape. Le cargo ajoute de l’eau.",
+      "en": "There is a second step. The cargo ship adds water."
      }
     },
     {
      "value": 203,
      "misconception": "mis_add_instead_of_subtract",
      "feedback": {
-      "fr": "L’équipage utilise de l’eau : on retire.",
-      "en": "The crew uses water: subtract."
+      "fr": "L’équipage utilise de l’eau, alors on retire.",
+      "en": "The crew uses water, so subtract."
      }
     }
    ]
@@ -2309,7 +2309,7 @@
      "value": 3,
      "misconception": "mis_subtract_instead_of_add",
      "feedback": {
-      "fr": "On réunit les deux réservoirs : on additionne.",
+      "fr": "On réunit les deux réservoirs, alors on additionne.",
       "en": "We put the two tanks together, so we add."
      }
     }
@@ -2403,8 +2403,8 @@
      "value": 75,
      "misconception": "mis_partial_result",
      "feedback": {
-      "fr": "Il y a trois barres à lire. N’en oublie pas une.",
-      "en": "There are three bars to read. Do not forget one."
+      "fr": "Il y a trois barres à lire. Pas une de moins.",
+      "en": "There are three bars to read. Not one less."
      }
     },
     {
@@ -2599,8 +2599,8 @@
     "en": "When the long hand is on 6, it is half past."
    },
    "explain": {
-    "fr": "La grande aiguille est sur le 6 : c’est la demie. La petite est après le 7 : 7 h 30.",
-    "en": "The long hand is on 6: it is half past. The short hand is past 7: 7:30."
+    "fr": "La grande aiguille est sur le 6, c’est la demie. La petite est après le 7, donc il est 7 h 30.",
+    "en": "The long hand is on 6, so it is half past. The short hand is past 7, so it is 7:30."
    },
    "tags": [
     "clock",
@@ -2680,8 +2680,8 @@
     "en": "The short hand gives the hour and the long hand gives the minutes."
    },
    "explain": {
-    "fr": "Grande aiguille sur le 12 : c’est l’heure pile. Petite aiguille sur le 9 : 9 h.",
-    "en": "Long hand on 12: exactly on the hour. Short hand on 9: 9 o’clock."
+    "fr": "La grande aiguille est sur le 12, c’est l’heure pile. La petite est sur le 9, donc il est 9 h.",
+    "en": "The long hand is on 12, so it is exactly on the hour. The short hand is on 9, so it is 9 o’clock."
    },
    "tags": [
     "true-false",
@@ -2736,8 +2736,8 @@
     "en": "When the long hand is on 3, it is 15 minutes."
    },
    "explain": {
-    "fr": "La petite aiguille est juste après le 10. La grande est sur le 3 : 15 minutes. Il est 10 h 15.",
-    "en": "The short hand is just past 10. The long hand is on 3: 15 minutes. It is 10:15."
+    "fr": "La petite aiguille est juste après le 10. La grande est sur le 3, ça fait 15 minutes. Il est 10 h 15.",
+    "en": "The short hand is just past 10. The long hand is on 3, which means 15 minutes. It is 10:15."
    },
    "tags": [
     "clock",
@@ -2969,7 +2969,7 @@
    "difficulty": 3,
    "story": {
     "fr": "Au contrôle, on relie des durées à leurs minutes.",
-    "en": "At mission control, waiting times are matched with their number of minutes."
+    "en": "At mission control, the crew matches lengths of time to minutes."
    },
    "prompt": {
     "fr": "Relie chaque durée au bon nombre de minutes.",
@@ -3196,8 +3196,8 @@
     "en": "Move the short hand forward two hours."
    },
    "explain": {
-    "fr": "De 3 h, on avance de 2 heures : 4 h, puis 5 h. Le test finit à 5 h.",
-    "en": "From 3 o’clock, go forward 2 hours: 4, then 5. The test ends at 5 o’clock."
+    "fr": "On part de 3 h et on avance de 2 heures. 4 h, puis 5 h. Le test finit à 5 h.",
+    "en": "Start at 3 o’clock and go forward 2 hours. 4, then 5. The test ends at 5 o’clock."
    },
    "tags": [
     "clock",
@@ -3228,8 +3228,8 @@
      "value": 1,
      "misconception": "mis_subtract_instead_of_add",
      "feedback": {
-      "fr": "Le test avance dans le temps : on ajoute.",
-      "en": "The test moves forward in time: add."
+      "fr": "Le test avance dans le temps, alors on ajoute.",
+      "en": "The test moves forward in time, so add."
      }
     },
     {
@@ -3481,12 +3481,12 @@
    "grade": 1,
    "difficulty": 3,
    "story": {
-    "fr": "Le robot est en bas à gauche. Colonnes : gauche vers droite. Rangées : haut vers bas.",
-    "en": "The robot is at the bottom left. Columns: left to right. Rows: top to bottom."
+    "fr": "Le robot est en bas à gauche. Les colonnes vont de gauche à droite et les rangées de haut en bas.",
+    "en": "The robot is at the bottom left. Columns go left to right and rows go top to bottom."
    },
    "prompt": {
-    "fr": "Zoé dit : en haut à droite. A-t-elle raison ?",
-    "en": "Zoe says: top right. Is she right?"
+    "fr": "Zoé dit qu’il est en haut à droite. A-t-elle raison ?",
+    "en": "Zoe says it is at the top right. Is she right?"
    },
    "visual": {
     "kind": "grid",
@@ -3557,7 +3557,7 @@
    "difficulty": 1,
    "story": {
     "fr": "Le rover quitte la rampe. Il avance de 2 cases à droite, puis descend de 3 cases. Colonnes : gauche à droite. Rangées : haut en bas.",
-    "en": "The rover leaves the ramp. It moves 2 squares right, then down 3 squares. Columns: left to right. Rows: top to bottom."
+    "en": "The rover leaves the ramp. It moves 2 squares right, then down 3 squares. Columns go left to right and rows go top to bottom."
    },
    "prompt": {
     "fr": "Combien de cases le rover parcourt-il en tout ?",
@@ -3594,8 +3594,8 @@
     "en": "Add the squares to the right and the squares down."
    },
    "explain": {
-    "fr": "2 cases à droite et 3 cases vers le bas. On calcule 2 plus 3 : 5 cases.",
-    "en": "2 squares to the right and 3 down make 2 plus 3: 5 squares."
+    "fr": "2 cases à droite et 3 cases vers le bas. Ça fait 2 plus 3, donc 5 cases.",
+    "en": "2 squares to the right and 3 down. That is 2 plus 3, so 5 squares."
    },
    "tags": [
     "map",
@@ -3649,7 +3649,7 @@
    "grade": 2,
    "difficulty": 2,
    "story": {
-    "fr": "Colonnes : de gauche à droite. Rangées : de haut en bas. Une serre est dessinée sur la grille.",
+    "fr": "Les colonnes vont de gauche à droite et les rangées de haut en bas. Une serre est dessinée sur la grille.",
     "en": "Columns go left to right. Rows go top to bottom. A greenhouse is drawn on the grid."
    },
    "prompt": {
@@ -3861,8 +3861,8 @@
    "grade": 1,
    "difficulty": 1,
    "story": {
-    "fr": "Numéros des étoiles : 2, 4, 6, 8.",
-    "en": "Star numbers: 2, 4, 6, 8."
+    "fr": "Les étoiles portent les numéros 2, 4, 6, 8.",
+    "en": "The stars are numbered 2, 4, 6, 8."
    },
    "prompt": {
     "fr": "Quel numéro porte l’étoile suivante ?",
@@ -3873,8 +3873,8 @@
     "en": "Look at how much each star goes up."
    },
    "explain": {
-    "fr": "On ajoute 2 chaque fois : 2, 4, 6, 8, 10.",
-    "en": "Add 2 each time: 2, 4, 6, 8, 10."
+    "fr": "On ajoute 2 chaque fois, ce qui donne 2, 4, 6, 8, 10.",
+    "en": "Add 2 each time to get 2, 4, 6, 8, 10."
    },
    "tags": [
     "pattern",
@@ -3945,8 +3945,8 @@
     "en": "Look at the gap between two neighbouring numbers."
    },
    "explain": {
-    "fr": "On ajoute 2 à chaque étoile : 1, 3, 5, 7, 9.",
-    "en": "Add 2 each time: 1, 3, 5, 7, 9."
+    "fr": "On ajoute 2 à chaque étoile, ce qui donne 1, 3, 5, 7, 9.",
+    "en": "Add 2 each time to get 1, 3, 5, 7, 9."
    },
    "tags": [
     "pattern",
@@ -3999,8 +3999,8 @@
    "grade": 1,
    "difficulty": 3,
    "story": {
-    "fr": "Marques de la comète : 12, 10, 8.",
-    "en": "A comet leaves marks: 12, 10, 8."
+    "fr": "La comète laisse des marques aux numéros 12, 10, 8.",
+    "en": "A comet leaves marks at 12, 10, 8."
    },
    "prompt": {
     "fr": "Léo dit que la suivante est 6. A-t-il raison ?",
@@ -4012,8 +4012,8 @@
     "en": "The numbers go down. By how much each time?"
    },
    "explain": {
-    "fr": "On enlève 2 chaque fois : 12, 10, 8, 6.",
-    "en": "Take away 2 each time: 12, 10, 8, 6."
+    "fr": "On enlève 2 chaque fois, ce qui donne 12, 10, 8, 6.",
+    "en": "Take away 2 each time to get 12, 10, 8, 6."
    },
    "tags": [
     "true-false",
@@ -4061,8 +4061,8 @@
     "en": "Find how much each step goes up."
    },
    "explain": {
-    "fr": "On ajoute 3 chaque fois : 3, 6, 9, 12, 15.",
-    "en": "Add 3 each time: 3, 6, 9, 12, 15."
+    "fr": "On ajoute 3 chaque fois, ce qui donne 3, 6, 9, 12, 15.",
+    "en": "Add 3 each time to get 3, 6, 9, 12, 15."
    },
    "tags": [
     "pattern",
@@ -4127,8 +4127,8 @@
     "en": "Find the rule of each chain."
    },
    "explain": {
-    "fr": "Ajoute 5 : 20. Ajoute 2 : 8. Ajoute 10 : 40. Enlève 1 : 6.",
-    "en": "Add 5: 20. Add 2: 8. Add 10: 40. Take away 1: 6."
+    "fr": "On ajoute 5 pour aller à 20. On ajoute 2 pour aller à 8. On ajoute 10 pour aller à 40. On enlève 1 pour aller à 6.",
+    "en": "Add 5 to reach 20. Add 2 to reach 8. Add 10 to reach 40. Take away 1 to reach 6."
    },
    "tags": [
     "matching",
@@ -4254,8 +4254,8 @@
     "en": "The list goes up by the same number each night."
    },
    "explain": {
-    "fr": "On ajoute 4 chaque soir : 4, 8, 12, 16, 20.",
-    "en": "Add 4 each night: 4, 8, 12, 16, 20."
+    "fr": "On ajoute 4 chaque soir, ce qui donne 4, 8, 12, 16, 20.",
+    "en": "Add 4 each night to get 4, 8, 12, 16, 20."
    },
    "tags": [
     "pattern",
@@ -4401,8 +4401,8 @@
     "en": "Find how much each step goes up."
    },
    "explain": {
-    "fr": "On ajoute 7 chaque fois : 7, 14, 21, 28, 35.",
-    "en": "Add 7 each time: 7, 14, 21, 28, 35."
+    "fr": "On ajoute 7 chaque fois, ce qui donne 7, 14, 21, 28, 35.",
+    "en": "Add 7 each time to get 7, 14, 21, 28, 35."
    },
    "tags": [
     "pattern",
@@ -4455,8 +4455,8 @@
    "grade": 3,
    "difficulty": 2,
    "story": {
-    "fr": "Le pilote note les étoiles d’une route : 4, 8, 12 et 16.",
-    "en": "The pilot notes the stars along a route: 4, 8, 12 and 16."
+    "fr": "Le pilote note les étoiles d’une route, les numéros 4, 8, 12 et 16.",
+    "en": "The pilot notes the stars along a route, numbers 4, 8, 12 and 16."
    },
    "prompt": {
     "fr": "Il dit que l’étoile suivante porte le 22. A-t-il raison ?",
@@ -4505,16 +4505,16 @@
    "grade": 3,
    "difficulty": 4,
    "story": {
-    "fr": "Un télescope compte des étoiles nouvelles : 1, 2, 4, 7 et 11.",
-    "en": "A telescope counts new stars: 1, 2, 4, 7 and 11."
+    "fr": "Un télescope compte des étoiles nouvelles, 1, 2, 4, 7 puis 11.",
+    "en": "A telescope counts new stars, 1, 2, 4, 7, then 11."
    },
    "prompt": {
     "fr": "Quel nombre vient ensuite dans cette suite ?",
     "en": "Which number comes next in this chain?"
    },
    "hint": {
-    "fr": "Regarde les écarts : 1, 2, 3... que se passe-t-il ?",
-    "en": "Look at the gaps: 1, 2, 3... what is happening?"
+    "fr": "Regarde les écarts entre les nombres, 1, 2, 3... Que remarques-tu ?",
+    "en": "Look at the gaps between the numbers, 1, 2, 3... What do you notice?"
    },
    "explain": {
     "fr": "Les écarts sont 1, 2, 3, 4, donc le suivant est 5. 11 plus 5 fait 16.",
@@ -4557,8 +4557,8 @@
      "value": 14,
      "misconception": "mis_pattern_wrong_rule",
      "feedback": {
-      "fr": "Compare les écarts : ils ne sont pas tous pareils.",
-      "en": "Compare the gaps: they are not all the same."
+      "fr": "Compare les écarts. Ils ne sont pas tous pareils.",
+      "en": "Compare the gaps. They are not all the same."
      }
     }
    ]
@@ -4571,20 +4571,20 @@
    "grade": 4,
    "difficulty": 3,
    "story": {
-    "fr": "Un satellite double son signal à chaque passage : 3, 6, 12 et 24.",
-    "en": "A satellite doubles its signal at each pass: 3, 6, 12 and 24."
+    "fr": "Un satellite double son signal à chaque passage. Il affiche 3, 6, 12 et 24.",
+    "en": "A satellite doubles its signal at each pass. It shows 3, 6, 12 and 24."
    },
    "prompt": {
     "fr": "Quel nombre porte le passage suivant ?",
     "en": "Which number does the next pass have?"
    },
    "hint": {
-    "fr": "Compare chaque nombre avec celui d’avant : combien de fois plus grand ?",
-    "en": "Compare each number with the one before: how many times bigger?"
+    "fr": "Compare chaque nombre avec celui d’avant. Combien de fois plus grand ?",
+    "en": "Compare each number with the one before. How many times bigger?"
    },
    "explain": {
-    "fr": "Chaque nombre est le double du précédent : 3, 6, 12, 24, 48.",
-    "en": "Each number is double the one before: 3, 6, 12, 24, 48."
+    "fr": "Chaque nombre est le double du précédent, ce qui donne 3, 6, 12, 24, 48.",
+    "en": "Each number is double the one before, which gives 3, 6, 12, 24, 48."
    },
    "tags": [
     "pattern",
@@ -4615,8 +4615,8 @@
      "value": 30,
      "misconception": "mis_pattern_last_step",
      "feedback": {
-      "fr": "Le signal double : il ne gagne pas toujours le même nombre.",
-      "en": "The signal doubles: it does not gain the same number each time."
+      "fr": "Le signal double. Il ne gagne pas toujours le même nombre.",
+      "en": "The signal doubles. It does not gain the same number each time."
      }
     },
     {
@@ -4804,8 +4804,8 @@
     "en": "First find the rule of each chain."
    },
    "explain": {
-    "fr": "Les cinquièmes termes sont : 9, 10, 15, puis 25.",
-    "en": "The fifth terms are: 9, 10, 15, then 25."
+    "fr": "Les cinquièmes termes sont 9, 10, 15 puis 25.",
+    "en": "The fifth terms are 9, 10, 15, then 25."
    },
    "tags": [
     "ordering",
@@ -4880,7 +4880,7 @@
    "grade": 3,
    "difficulty": 1,
    "story": {
-    "fr": "Sur l’aile de la station, les panneaux solaires sont rangés en rangées. Il y a 3 rangées de 4 panneaux.",
+    "fr": "Sur l’aile de la station, les panneaux solaires sont alignés en rangées. Il y a 3 rangées de 4 panneaux.",
     "en": "On the station wing, the solar panels sit in rows. There are 3 rows of 4 panels."
    },
    "prompt": {
@@ -4892,8 +4892,8 @@
     "en": "Add the panels of each row, one row at a time."
    },
    "explain": {
-    "fr": "3 rangées de 4 : 4, 8, 12. Il y a 12 panneaux.",
-    "en": "3 rows of 4: 4, 8, 12. There are 12 panels."
+    "fr": "3 rangées de 4, ça donne 4, 8, 12. Il y a 12 panneaux.",
+    "en": "3 rows of 4 gives 4, 8, 12. There are 12 panels."
    },
    "tags": [
     "multiplication",
@@ -4925,8 +4925,8 @@
      "value": 7,
      "misconception": "mis_add_instead_of_multiply",
      "feedback": {
-      "fr": "Chaque rangée compte 4 panneaux, il y a 3 rangées : on répète.",
-      "en": "Each row has 4 panels and there are 3 rows: repeat the row."
+      "fr": "Chaque rangée compte 4 panneaux et il y a 3 rangées. Répète 4, trois fois.",
+      "en": "Each row has 4 panels and there are 3 rows. Repeat the 4 three times."
      }
     },
     {
@@ -4959,8 +4959,8 @@
     "en": "Count by 4s, once for each row."
    },
    "explain": {
-    "fr": "5 rangées de 4 : 4, 8, 12, 16, 20.",
-    "en": "5 rows of 4: 4, 8, 12, 16, 20."
+    "fr": "5 rangées de 4, ça donne 4, 8, 12, 16, 20.",
+    "en": "5 rows of 4 gives 4, 8, 12, 16, 20."
    },
    "tags": [
     "multiplication",
@@ -4992,8 +4992,8 @@
      "value": 9,
      "misconception": "mis_add_instead_of_multiply",
      "feedback": {
-      "fr": "Il y a 5 rangées égales : on répète 4, cinq fois.",
-      "en": "There are 5 equal rows: repeat 4, five times."
+      "fr": "Il y a 5 rangées égales. Répète 4, cinq fois.",
+      "en": "There are 5 equal rows. Repeat 4, five times."
      }
     },
     {
@@ -5026,8 +5026,8 @@
     "en": "Equal rows are counted with a multiplication."
    },
    "explain": {
-    "fr": "4 rangées de 5 panneaux : on calcule 4 fois 5.",
-    "en": "4 rows of 5 panels: we work out 4 times 5."
+    "fr": "4 rangées de 5 panneaux, alors on calcule 4 fois 5.",
+    "en": "4 rows of 5 panels, so we work out 4 times 5."
    },
    "tags": [
     "multiplication",
@@ -5104,12 +5104,12 @@
    },
    "math_text": "3 x 10 = 13",
    "hint": {
-    "fr": "Compte de 10 en 10 : combien de fois ?",
-    "en": "Count by 10s: how many times?"
+    "fr": "Compte de 10 en 10. Combien de fois ?",
+    "en": "Count by 10s. How many times?"
    },
    "explain": {
-    "fr": "3 rangées de 10 : 10, 20, 30. Il y en a 30.",
-    "en": "3 rows of 10: 10, 20, 30. There are 30."
+    "fr": "3 rangées de 10, ça donne 10, 20, 30. Il y en a 30.",
+    "en": "3 rows of 10 gives 10, 20, 30. There are 30."
    },
    "tags": [
     "true-false",
@@ -5157,8 +5157,8 @@
     "en": "First find the panels on one wing."
    },
    "explain": {
-    "fr": "Une aile a 4 fois 5 : 20 panneaux. Deux ailes en ont 40.",
-    "en": "One wing has 4 times 5: 20 panels. Two wings have 40."
+    "fr": "Une aile a 4 fois 5, soit 20 panneaux. Deux ailes en ont 40.",
+    "en": "One wing has 4 times 5, which is 20 panels. Two wings have 40."
    },
    "tags": [
     "two-step",
@@ -5190,16 +5190,16 @@
      "value": 20,
      "misconception": "mis_partial_result",
      "feedback": {
-      "fr": "Il y a deux ailes : n’en oublie pas une.",
-      "en": "There are two wings: do not forget one."
+      "fr": "Il y a deux ailes. Compte-les toutes les deux.",
+      "en": "There are two wings. Count both of them."
      }
     },
     {
      "value": 11,
      "misconception": "mis_add_instead_of_multiply",
      "feedback": {
-      "fr": "Chaque étape se multiplie : rangées, panneaux, ailes.",
-      "en": "Each step multiplies: rows, panels, wings."
+      "fr": "Il faut multiplier à chaque étape, pas additionner.",
+      "en": "Multiply at each step, do not add."
      }
     }
    ]
@@ -5354,8 +5354,8 @@
     "en": "Count the panels in one row, then repeat for each row."
    },
    "explain": {
-    "fr": "3 rangées de 5 panneaux : 5, 10, 15.",
-    "en": "3 rows of 5 panels: 5, 10, 15."
+    "fr": "3 rangées de 5 panneaux, ça donne 5, 10, 15.",
+    "en": "3 rows of 5 panels gives 5, 10, 15."
    },
    "tags": [
     "multiplication",
@@ -5387,8 +5387,8 @@
      "value": 8,
      "misconception": "mis_add_instead_of_multiply",
      "feedback": {
-      "fr": "La grille a des rangées égales : on répète.",
-      "en": "The grid has equal rows: repeat the row."
+      "fr": "La grille a des rangées égales. Répète la rangée.",
+      "en": "The grid has equal rows. Repeat the row."
      }
     },
     {
@@ -5421,8 +5421,8 @@
     "en": "Think of 10 times 7, then take away one row of 7."
    },
    "explain": {
-    "fr": "10 fois 7 font 70. On enlève 7 : 70 moins 7 font 63.",
-    "en": "10 times 7 is 70. Take away 7: 70 minus 7 is 63."
+    "fr": "10 fois 7 font 70. On enlève 7, et 70 moins 7 font 63.",
+    "en": "10 times 7 is 70. Take away 7, and 70 minus 7 is 63."
    },
    "tags": [
     "multiplication",
@@ -5455,8 +5455,8 @@
      "value": 16,
      "misconception": "mis_add_instead_of_multiply",
      "feedback": {
-      "fr": "Il y a 9 rangées égales : on multiplie.",
-      "en": "There are 9 equal rows: multiply."
+      "fr": "Il y a 9 rangées égales, alors on multiplie.",
+      "en": "There are 9 equal rows, so multiply."
      }
     },
     {
@@ -5485,8 +5485,8 @@
     "en": "Match each wing to the right number of panels."
    },
    "hint": {
-    "fr": "Cherche une astuce : 5 fois, puis encore une rangée.",
-    "en": "Look for a trick: 5 times, then one more row."
+    "fr": "Cherche une astuce. Pense à 5 fois, puis une rangée de plus.",
+    "en": "Look for a trick. Think 5 times, then one more row."
    },
    "explain": {
     "fr": "6 fois 8 font 48. 7 fois 7 font 49. 9 fois 6 font 54. 8 fois 4 font 32.",
@@ -5652,8 +5652,8 @@
      "value": 20,
      "misconception": "mis_add_instead_of_multiply",
      "feedback": {
-      "fr": "Il y a 11 rangées égales : on multiplie.",
-      "en": "There are 11 equal rows: multiply."
+      "fr": "Il y a 11 rangées égales, alors on multiplie.",
+      "en": "There are 11 equal rows, so multiply."
      }
     }
    ]
@@ -5711,16 +5711,16 @@
      "value": 72,
      "misconception": "mis_partial_result",
      "feedback": {
-      "fr": "Il y a une deuxième étape : les panneaux cassés.",
-      "en": "There is a second step: the broken panels."
+      "fr": "Il y a une deuxième étape. Pense aux panneaux cassés.",
+      "en": "There is a second step. Think of the broken panels."
      }
     },
     {
      "value": 87,
      "misconception": "mis_add_instead_of_subtract",
      "feedback": {
-      "fr": "Les panneaux cassés ne fonctionnent plus : on les enlève.",
-      "en": "Broken panels no longer work: take them away."
+      "fr": "Les panneaux cassés ne fonctionnent plus, alors on les enlève.",
+      "en": "Broken panels no longer work, so take them away."
      }
     }
    ]
@@ -5781,8 +5781,8 @@
      "value": 9,
      "misconception": "mis_subtract_instead_of_add",
      "feedback": {
-      "fr": "On réunit les deux jours : on additionne.",
-      "en": "We put both days together: we add."
+      "fr": "On réunit les deux jours, alors on additionne.",
+      "en": "We put both days together, so we add."
      }
     }
    ]
@@ -5818,8 +5818,8 @@
     }
    },
    "hint": {
-    "fr": "Regarde le chiffre des dizaines : 4 est-il près de 0 ou de 10 ?",
-    "en": "Look at the tens digit: is 4 closer to 0 or to 10?"
+    "fr": "Regarde le chiffre des dizaines. 4 est-il plus près de 0 ou de 10 ?",
+    "en": "Look at the tens digit. Is 4 closer to 0 or to 10?"
    },
    "explain": {
     "fr": "748 est entre 700 et 800. Il est plus près de 700.",
@@ -5975,16 +5975,16 @@
      "value": 700,
      "misconception": "mis_estimate_rounding",
      "feedback": {
-      "fr": "405 est plus près de 400 que de 500, mais 398 aussi.",
-      "en": "405 is closer to 400 than to 500, and so is 398."
+      "fr": "405 est tout près de 400, et 398 aussi.",
+      "en": "405 is very close to 400, and so is 398."
      }
     },
     {
      "value": 803,
      "misconception": "mis_estimate_exact",
      "feedback": {
-      "fr": "On demande d’arrondir d’abord, pas de calculer le total exact.",
-      "en": "We ask you to round first, not to find the exact total."
+      "fr": "Arrondis d’abord, sans calculer le total exact.",
+      "en": "Round first, without working out the exact total."
      }
     }
    ]
@@ -6102,8 +6102,8 @@
     }
    },
    "hint": {
-    "fr": "Regarde les centaines : 4 est-il plus petit que 5 ?",
-    "en": "Look at the hundreds: is 4 smaller than 5?"
+    "fr": "Regarde les centaines. 4 est-il plus petit que 5 ?",
+    "en": "Look at the hundreds. Is 4 smaller than 5?"
    },
    "explain": {
     "fr": "6 479 est entre 6 000 et 7 000. Il est plus près de 6 000.",
@@ -6210,8 +6210,8 @@
      "value": 12025,
      "misconception": "mis_add_instead_of_subtract",
      "feedback": {
-      "fr": "Il reste une partie du trajet : on soustrait.",
-      "en": "Part of the trip is done: we subtract."
+      "fr": "Une partie du trajet est déjà faite, alors on soustrait.",
+      "en": "Part of the trip is done, so we subtract."
      }
     }
    ]
@@ -6224,8 +6224,8 @@
    "grade": 4,
    "difficulty": 3,
    "story": {
-    "fr": "Voici quatre objets qui voyagent autour de la Terre ou près d’elle. Les distances sont des valeurs approximatives.",
-    "en": "Here are four objects that travel around Earth or near it. The distances are approximate."
+    "fr": "Voici quatre objets qui voyagent autour de la Terre ou près d’elle. Les distances sont arrondies.",
+    "en": "Here are four objects that travel around Earth or near it. The distances are rounded."
    },
    "prompt": {
     "fr": "Range-les, du plus proche de la Terre au plus éloigné.",
@@ -6360,16 +6360,16 @@
      "value": 6000,
      "misconception": "mis_add_instead_of_subtract",
      "feedback": {
-      "fr": "On cherche ce qui reste : on soustrait.",
-      "en": "We look for what is left: we subtract."
+      "fr": "On cherche ce qui reste, alors on soustrait.",
+      "en": "We want what is left, so we subtract."
      }
     },
     {
      "value": 1985,
      "misconception": "mis_estimate_exact",
      "feedback": {
-      "fr": "On demande d’arrondir d’abord, pas de calculer exactement.",
-      "en": "We ask you to round first, not to find the exact result."
+      "fr": "Arrondis d’abord, sans calculer le résultat exact.",
+      "en": "Round first, without working out the exact result."
      }
     }
    ]
@@ -6394,8 +6394,8 @@
     "en": "One hour has 60 minutes. How many times?"
    },
    "explain": {
-    "fr": "2 heures valent 60 plus 60 : 120 minutes.",
-    "en": "2 hours are 60 plus 60: 120 minutes."
+    "fr": "2 heures valent 60 plus 60, donc 120 minutes.",
+    "en": "2 hours are 60 plus 60, so 120 minutes."
    },
    "tags": [
     "time-units",
@@ -6435,8 +6435,8 @@
      "value": 62,
      "misconception": "mis_add_instead_of_multiply",
      "feedback": {
-      "fr": "Chaque heure vaut 60 minutes : on répète 60.",
-      "en": "Each hour is 60 minutes: repeat 60."
+      "fr": "Chaque heure vaut 60 minutes. Répète 60.",
+      "en": "Each hour is 60 minutes. Repeat 60."
      }
     }
    ]
@@ -6543,8 +6543,8 @@
     "en": "One hour has 60 minutes. What is left?"
    },
    "explain": {
-    "fr": "90 minutes, c’est 60 minutes plus 30 minutes : 1 h 30.",
-    "en": "90 minutes is 60 minutes plus 30 minutes: 1 h 30."
+    "fr": "90 minutes, c’est 60 minutes plus 30 minutes, donc 1 h 30.",
+    "en": "90 minutes is 60 minutes plus 30 minutes, so 1 h 30."
    },
    "tags": [
     "true-false",
@@ -6826,8 +6826,8 @@
      "value": 27,
      "misconception": "mis_add_instead_of_multiply",
      "feedback": {
-      "fr": "Chaque jour compte 24 heures : on répète.",
-      "en": "Each day has 24 hours: repeat."
+      "fr": "Chaque jour compte 24 heures. Répète 24.",
+      "en": "Each day has 24 hours. Repeat 24."
      }
     },
     {
@@ -7073,16 +7073,16 @@
     "en": "A team packs 22 tools into boxes. Each box holds 5 tools."
    },
    "prompt": {
-    "fr": "Division avec reste : combien de boîtes pleines, et combien d’outils restent dehors ?",
-    "en": "Division with remainder: how many full boxes, and how many tools are left out?"
+    "fr": "On fait une division avec reste. Combien de boîtes pleines, et combien d’outils restent dehors ?",
+    "en": "This is a division with a remainder. How many full boxes, and how many tools are left out?"
    },
    "hint": {
     "fr": "Compte de 5 en 5 jusqu’à 22, sans le dépasser.",
     "en": "Count by 5s up to 22, without going past it."
    },
    "explain": {
-    "fr": "4 fois 5 font 20. Il reste 22 moins 20 : 2 outils.",
-    "en": "4 times 5 is 20. What is left is 22 minus 20: 2 tools."
+    "fr": "4 fois 5 font 20. Il reste 22 moins 20, donc 2 outils.",
+    "en": "4 times 5 is 20. What is left is 22 minus 20, so 2 tools."
    },
    "tags": [
     "division",
@@ -7121,8 +7121,8 @@
      ],
      "misconception": "mis_remainder_as_quotient",
      "feedback": {
-      "fr": "Le reste est ce qui ne remplit pas une boîte.",
-      "en": "The remainder is what cannot fill a box."
+      "fr": "Le reste, ce sont les outils qui ne remplissent pas une boîte.",
+      "en": "The remainder is the tools that cannot fill a box."
      }
     },
     {
@@ -7132,8 +7132,8 @@
      ],
      "misconception": "mis_ignore_remainder",
      "feedback": {
-      "fr": "Il reste des outils qui ne remplissent pas une boîte.",
-      "en": "Some tools remain that do not fill a box."
+      "fr": "Une boîte de plus ne serait pas pleine.",
+      "en": "One more box would not be full."
      }
     }
    ]
@@ -7231,16 +7231,16 @@
     "en": "34 water bottles are shared between 6 astronauts. Each one gets the same number of bottles."
    },
    "prompt": {
-    "fr": "Division avec reste : combien de gourdes chacun reçoit-il, et combien en reste-t-il ?",
-    "en": "Division with remainder: how many bottles does each one get, and how many are left?"
+    "fr": "On fait une division avec reste. Combien de gourdes chacun reçoit-il, et combien en reste-t-il ?",
+    "en": "This is a division with a remainder. How many bottles does each one get, and how many are left?"
    },
    "hint": {
     "fr": "Cherche le plus grand nombre de fois que 6 entre dans 34.",
     "en": "Find the most times 6 fits into 34."
    },
    "explain": {
-    "fr": "6 fois 5 font 30. Il reste 34 moins 30 : 4 gourdes.",
-    "en": "6 times 5 is 30. What is left is 34 minus 30: 4 bottles."
+    "fr": "6 fois 5 font 30. Il reste 34 moins 30, donc 4 gourdes.",
+    "en": "6 times 5 is 30. What is left is 34 minus 30, so 4 bottles."
    },
    "tags": [
     "division",
@@ -7366,8 +7366,8 @@
     "en": "After the full shuttles, check whether any astronauts are left."
    },
    "explain": {
-    "fr": "4 navettes pleines emmènent 24 astronautes. Il en reste 3, donc une 5e navette.",
-    "en": "4 full shuttles carry 24 astronauts. 3 are left, so a 5th shuttle."
+    "fr": "4 navettes pleines emmènent 24 astronautes. Il en reste 3, donc il faut une 5e navette.",
+    "en": "4 full shuttles carry 24 astronauts. 3 are left, so a 5th shuttle is needed."
    },
    "tags": [
     "division",
@@ -7434,8 +7434,8 @@
     "en": "Find the greatest number of full groups."
    },
    "explain": {
-    "fr": "20 = 3 fois 6 et 2. 25 = 6 fois 4 et 1. 30 = 4 fois 7 et 2. 35 = 3 fois 9 et 8.",
-    "en": "20 = 3 times 6 and 2. 25 = 6 times 4 and 1. 30 = 4 times 7 and 2. 35 = 3 times 9 and 8."
+    "fr": "20, c’est 3 fois 6 et 2. 25, c’est 6 fois 4 et 1. 30, c’est 4 fois 7 et 2. 35, c’est 3 fois 9 et 8.",
+    "en": "20 is 3 times 6 and 2. 25 is 6 times 4 and 1. 30 is 4 times 7 and 2. 35 is 3 times 9 and 8."
    },
    "tags": [
     "matching",
@@ -7582,8 +7582,8 @@
     "en": "Make groups of 5 with the rations in the chart."
    },
    "explain": {
-    "fr": "17 rations : 3 groupes de 5 font 15. Il reste 2 rations, pas assez pour un sac.",
-    "en": "17 rations: 3 groups of 5 make 15. 2 rations are left, not enough for a bag."
+    "fr": "Il y a 17 rations. 3 groupes de 5 font 15. Il reste 2 rations, pas assez pour un sac.",
+    "en": "There are 17 rations. 3 groups of 5 make 15. 2 rations are left, not enough for a bag."
    },
    "tags": [
     "division",
@@ -7641,16 +7641,16 @@
     "en": "A team must install 62 solar panels. It installs 8 panels per day."
    },
    "prompt": {
-    "fr": "Division avec reste : combien de jours complets, et combien de panneaux restent pour le jour suivant ?",
-    "en": "Division with remainder: how many full days, and how many panels remain for the next day?"
+    "fr": "On fait une division avec reste. Combien de jours complets, et combien de panneaux restent pour le jour suivant ?",
+    "en": "This is a division with a remainder. How many full days, and how many panels remain for the next day?"
    },
    "hint": {
     "fr": "Cherche le plus grand nombre de fois que 8 entre dans 62.",
     "en": "Find the most times 8 fits into 62."
    },
    "explain": {
-    "fr": "7 fois 8 font 56. Il reste 62 moins 56 : 6 panneaux.",
-    "en": "7 times 8 is 56. What is left is 62 minus 56: 6 panels."
+    "fr": "7 fois 8 font 56. Il reste 62 moins 56, donc 6 panneaux.",
+    "en": "7 times 8 is 56. What is left is 62 minus 56, so 6 panels."
    },
    "tags": [
     "division",
@@ -8005,8 +8005,8 @@
     "en": "Look at the tens first."
    },
    "explain": {
-    "fr": "92, 63, 36, 29 : on compare les dizaines, puis les unités.",
-    "en": "92, 63, 36, 29: compare the tens, then the ones."
+    "fr": "Du plus grand au plus petit, ça donne 92, 63, 36, 29. On compare les dizaines, puis les unités.",
+    "en": "Biggest to smallest, it goes 92, 63, 36, 29. Compare the tens, then the ones."
    },
    "tags": [
     "ordering",
@@ -8093,8 +8093,8 @@
     "en": "Count by 10s, one group at a time."
    },
    "explain": {
-    "fr": "3 groupes de 10 : 10, 20, 30.",
-    "en": "3 groups of 10: 10, 20, 30."
+    "fr": "3 groupes de 10, ça donne 10, 20, 30.",
+    "en": "3 groups of 10 gives 10, 20, 30."
    },
    "tags": [
     "counting",
@@ -8355,8 +8355,8 @@
      "value": 19,
      "misconception": "mis_add_instead_of_subtract",
      "feedback": {
-      "fr": "L’équipage boit : il en reste moins.",
-      "en": "The crew drinks: there are fewer left."
+      "fr": "L’équipage boit, alors il en reste moins.",
+      "en": "The crew drinks, so there are fewer left."
      }
     },
     {
@@ -8517,8 +8517,8 @@
     "en": "Find how many cards must be added to the ones already there."
    },
    "explain": {
-    "fr": "De 8 à 14, il y a 2 pour aller à 10. Puis 4 de plus : 6.",
-    "en": "From 8 to 14: 2 to reach 10. Then 4 more: 6."
+    "fr": "De 8 à 10, il y a 2. De 10 à 14, il y a 4. Ça fait 6.",
+    "en": "From 8 to 10 is 2. From 10 to 14 is 4. That makes 6."
    },
    "tags": [
     "subtraction",
@@ -8678,8 +8678,8 @@
     "en": "Look at which number the long hand is on."
    },
    "explain": {
-    "fr": "La grande aiguille est sur le 6 : c’est la demie. Une demi-heure vaut 30 minutes.",
-    "en": "The long hand is on 6: it is half past. Half an hour is 30 minutes."
+    "fr": "La grande aiguille est sur le 6, c’est la demie. Une demi-heure vaut 30 minutes.",
+    "en": "The long hand is on 6, so it is half past. Half an hour is 30 minutes."
    },
    "tags": [
     "clock",
@@ -8737,8 +8737,8 @@
     "en": "Mathis looks at the control room clock."
    },
    "prompt": {
-    "fr": "Il dit : il est 6 h. A-t-il raison ?",
-    "en": "He says: it is 6 o’clock. Is he right?"
+    "fr": "Il dit qu’il est 6 h. A-t-il raison ?",
+    "en": "He says it is 6 o’clock. Is he right?"
    },
    "math_text": "6:00",
    "visual": {
@@ -9114,8 +9114,8 @@
    "grade": 1,
    "difficulty": 1,
    "story": {
-    "fr": "Les colonnes vont de gauche à droite. Mia dit : le dock est à droite du labo.",
-    "en": "Columns go from left to right. Mia says: the dock is right of the lab."
+    "fr": "Les colonnes vont de gauche à droite. Mia dit que le dock est à droite du labo.",
+    "en": "Columns go from left to right. Mia says the dock is to the right of the lab."
    },
    "prompt": {
     "fr": "A-t-elle raison ?",
@@ -9312,11 +9312,11 @@
    },
    "hint": {
     "fr": "La colonne 1 est tout à gauche.",
-    "en": "Column 1 is the very left."
+    "en": "Column 1 is all the way on the left."
    },
    "explain": {
-    "fr": "Les colonnes vont de 1 à 4 : serre, labo, cuisine, dock.",
-    "en": "Columns go from 1 to 4: greenhouse, lab, kitchen, dock."
+    "fr": "Les colonnes vont de 1 à 4. On lit serre, labo, cuisine, dock.",
+    "en": "Columns go from 1 to 4. We read greenhouse, lab, kitchen, dock."
    },
    "tags": [
     "map",
@@ -9404,8 +9404,8 @@
     "en": "First find the smallest."
    },
    "explain": {
-    "fr": "10, 20, 30, 40 : on ajoute 10 chaque fois.",
-    "en": "10, 20, 30, 40: add 10 each time."
+    "fr": "On ajoute 10 chaque fois, ce qui donne 10, 20, 30, 40.",
+    "en": "Add 10 each time to get 10, 20, 30, 40."
    },
    "tags": [
     "ordering",
@@ -9480,8 +9480,8 @@
    "grade": 1,
    "difficulty": 2,
    "story": {
-    "fr": "Une suite d’étoiles : 10, 20, 30, 40.",
-    "en": "A chain of stars: 10, 20, 30, 40."
+    "fr": "Les étoiles d’une suite portent les numéros 10, 20, 30, 40.",
+    "en": "The stars in a chain are numbered 10, 20, 30, 40."
    },
    "prompt": {
     "fr": "Quel numéro vient ensuite ?",
@@ -9492,8 +9492,8 @@
     "en": "Look at how much each number goes up."
    },
    "explain": {
-    "fr": "On ajoute 10 chaque fois : 10, 20, 30, 40, 50.",
-    "en": "Add 10 each time: 10, 20, 30, 40, 50."
+    "fr": "On ajoute 10 chaque fois, ce qui donne 10, 20, 30, 40, 50.",
+    "en": "Add 10 each time to get 10, 20, 30, 40, 50."
    },
    "tags": [
     "pattern",
@@ -9564,8 +9564,8 @@
     "en": "Look at how much the numbers go down each time."
    },
    "explain": {
-    "fr": "On enlève 2 chaque fois : 20, 18, 16, 14, 12.",
-    "en": "Take away 2 each time: 20, 18, 16, 14, 12."
+    "fr": "On enlève 2 chaque fois, ce qui donne 20, 18, 16, 14, 12.",
+    "en": "Take away 2 each time to get 20, 18, 16, 14, 12."
    },
    "tags": [
     "pattern",
@@ -9596,8 +9596,8 @@
      "value": 13,
      "misconception": "mis_pattern_wrong_rule",
      "feedback": {
-      "fr": "Les numéros baissent d’un peu plus qu’un pas.",
-      "en": "The numbers go down by more than one step."
+      "fr": "Les numéros ne baissent pas de 1 en 1.",
+      "en": "The numbers do not go down by 1 each time."
      }
     },
     {
@@ -9605,7 +9605,7 @@
      "misconception": "mis_skip_count",
      "feedback": {
       "fr": "Recule d’un seul pas de la suite.",
-      "en": "Go back one single step of the chain."
+      "en": "Go back just one step along the chain."
      }
     }
    ]
@@ -9630,8 +9630,8 @@
     "en": "Look at how much we go up or down."
    },
    "explain": {
-    "fr": "Les règles sont : ajoute 2, enlève 1, ajoute 5, enlève 10.",
-    "en": "The rules are: add 2, take away 1, add 5, take away 10."
+    "fr": "La première suite ajoute 2. La deuxième enlève 1. La troisième ajoute 5. La dernière enlève 10.",
+    "en": "The first chain adds 2. The second takes away 1. The third adds 5. The last takes away 10."
    },
    "tags": [
     "matching",
@@ -9747,7 +9747,7 @@
    "difficulty": 4,
    "story": {
     "fr": "Le premier soir, le dessin a 2 étoiles. Chaque soir, Zoé en ajoute 2.",
-    "en": "Night one: the drawing has 2 stars. Every night, Zoe adds 2."
+    "en": "On the first night, the drawing has 2 stars. Every night, Zoe adds 2."
    },
    "prompt": {
     "fr": "Combien d’étoiles le quatrième soir ?",
@@ -9758,8 +9758,8 @@
     "en": "Add 2 for every night that passes."
    },
    "explain": {
-    "fr": "Les soirs : 2, 4, 6, 8. Le quatrième soir, 8 étoiles.",
-    "en": "The nights: 2, 4, 6, 8. On the fourth night, 8 stars."
+    "fr": "Soir après soir, on compte 2, 4, 6, 8. Le quatrième soir, il y a 8 étoiles.",
+    "en": "Night after night we count 2, 4, 6, 8. On the fourth night there are 8 stars."
    },
    "tags": [
     "pattern",
@@ -9791,8 +9791,8 @@
      "value": 6,
      "misconception": "mis_pattern_last_step",
      "feedback": {
-      "fr": "Tu t’es arrêtée au troisième soir.",
-      "en": "You stopped at the third night."
+      "fr": "Tu as arrêté de compter au troisième soir.",
+      "en": "You stopped counting on the third night."
      }
     },
     {
@@ -9821,8 +9821,8 @@
     "en": "How many litres are left?"
    },
    "hint": {
-    "fr": "Retire les dizaines : 7 dizaines moins 3 dizaines.",
-    "en": "Take away the tens: 7 tens minus 3 tens."
+    "fr": "Retire les dizaines. 7 dizaines moins 3 dizaines.",
+    "en": "Take away the tens. 7 tens minus 3 tens."
    },
    "explain": {
     "fr": "7 dizaines moins 3 dizaines font 4 dizaines, soit 40 L.",
@@ -9859,16 +9859,16 @@
      "value": 100,
      "misconception": "mis_add_instead_of_subtract",
      "feedback": {
-      "fr": "On utilise du carburant : il en reste moins.",
-      "en": "Fuel is used: there is less left."
+      "fr": "On utilise du carburant, alors il en reste moins.",
+      "en": "Fuel is used, so there is less left."
      }
     },
     {
      "value": 4,
      "misconception": "mis_place_value",
      "feedback": {
-      "fr": "30 vaut 3 dizaines : on retire des dizaines.",
-      "en": "30 is 3 tens: we take away tens."
+      "fr": "30 vaut 3 dizaines, alors on retire des dizaines.",
+      "en": "30 is 3 tens, so we take away tens."
      }
     }
    ]
@@ -9978,8 +9978,8 @@
     "en": "Take away 30, then give 2 back."
    },
    "explain": {
-    "fr": "54 moins 30 font 24. On avait enlevé 2 de trop : 26.",
-    "en": "54 minus 30 is 24. We took away 2 too many: 26."
+    "fr": "54 moins 30 font 24. On avait enlevé 2 de trop, donc 26.",
+    "en": "54 minus 30 is 24. We took away 2 too many, so 26."
    },
    "tags": [
     "subtraction",
@@ -10012,8 +10012,8 @@
      "value": 82,
      "misconception": "mis_add_instead_of_subtract",
      "feedback": {
-      "fr": "L’équipage mange : il en reste moins.",
-      "en": "The crew eats: there are fewer left."
+      "fr": "L’équipage mange, alors il en reste moins.",
+      "en": "The crew eats, so there are fewer left."
      }
     },
     {
@@ -10034,8 +10034,8 @@
    "grade": 3,
    "difficulty": 3,
    "story": {
-    "fr": "Un satellite compte ses passages : 6, 12, 18 et 24.",
-    "en": "A satellite counts its passes: 6, 12, 18 and 24."
+    "fr": "Les passages d’un satellite portent les numéros 6, 12, 18 et 24.",
+    "en": "A satellite’s passes are numbered 6, 12, 18 and 24."
    },
    "prompt": {
     "fr": "Quel nombre vient ensuite dans la suite ?",
@@ -10046,8 +10046,8 @@
     "en": "Find how much each number goes up."
    },
    "explain": {
-    "fr": "On ajoute 6 chaque fois : 6, 12, 18, 24, 30.",
-    "en": "Add 6 each time: 6, 12, 18, 24, 30."
+    "fr": "On ajoute 6 chaque fois, ce qui donne 6, 12, 18, 24, 30.",
+    "en": "Add 6 each time to get 6, 12, 18, 24, 30."
    },
    "tags": [
     "pattern",
@@ -10100,8 +10100,8 @@
    "grade": 3,
    "difficulty": 4,
    "story": {
-    "fr": "Une sonde compte ses photos : 1, 3, 6 et 10.",
-    "en": "A probe counts its photos: 1, 3, 6 and 10."
+    "fr": "Une sonde compte ses photos, 1, 3, 6 puis 10.",
+    "en": "A probe counts its photos, 1, 3, 6, then 10."
    },
    "prompt": {
     "fr": "Quel nombre vient ensuite dans la suite ?",
@@ -10178,8 +10178,8 @@
     "en": "Count by 10s, one row at a time."
    },
    "explain": {
-    "fr": "2 rangées de 10 : 10, 20. Il y a 20 panneaux.",
-    "en": "2 rows of 10: 10, 20. There are 20 panels."
+    "fr": "2 rangées de 10, ça donne 10, 20. Il y a 20 panneaux.",
+    "en": "2 rows of 10 gives 10, 20. There are 20 panels."
    },
    "tags": [
     "multiplication",
@@ -10211,8 +10211,8 @@
      "value": 12,
      "misconception": "mis_add_instead_of_multiply",
      "feedback": {
-      "fr": "Chaque rangée compte dix panneaux : on répète.",
-      "en": "Each row has ten panels: repeat the row."
+      "fr": "Chaque rangée compte dix panneaux. Répète la rangée.",
+      "en": "Each row has ten panels. Repeat the row."
      }
     },
     {
@@ -10278,16 +10278,16 @@
      "value": 15,
      "misconception": "mis_partial_result",
      "feedback": {
-      "fr": "Il y a deux modules : n’en oublie pas un.",
-      "en": "There are two modules: do not forget one."
+      "fr": "Il y a deux modules. Compte-les tous les deux.",
+      "en": "There are two modules. Count both of them."
      }
     },
     {
      "value": 22,
      "misconception": "mis_add_instead_of_multiply",
      "feedback": {
-      "fr": "Chaque module a des rangées égales : on multiplie.",
-      "en": "Each module has equal rows: multiply."
+      "fr": "Chaque module a des rangées égales, alors on multiplie.",
+      "en": "Each module has equal rows, so multiply."
      }
     }
    ]
@@ -10348,8 +10348,8 @@
      "value": 1303,
      "misconception": "mis_add_instead_of_subtract",
      "feedback": {
-      "fr": "On compare deux distances : on soustrait.",
-      "en": "We compare two distances: we subtract."
+      "fr": "On compare deux distances, alors on soustrait.",
+      "en": "We compare two distances, so we subtract."
      }
     }
    ]
@@ -10385,8 +10385,8 @@
     }
    },
    "hint": {
-    "fr": "Regarde le chiffre des dizaines : il est plus petit que 5.",
-    "en": "Look at the tens digit: it is smaller than 5."
+    "fr": "Regarde le chiffre des dizaines. Il est plus petit que 5.",
+    "en": "Look at the tens digit. It is smaller than 5."
    },
    "explain": {
     "fr": "1 349 est entre 1 300 et 1 400. Il est plus près de 1 300.",
@@ -10575,8 +10575,8 @@
     "en": "Go to 8:00, then add the rest."
    },
    "explain": {
-    "fr": "De 7 h 40 à 8 h, il y a 20 minutes. Il reste 30 minutes : 8 h 30.",
-    "en": "From 7:40 to 8:00 is 20 minutes. There are 30 more minutes: 8:30."
+    "fr": "De 7 h 40 à 8 h, il y a 20 minutes. Il reste 30 minutes, donc il arrive à 8 h 30.",
+    "en": "From 7:40 to 8:00 is 20 minutes. There are 30 more minutes, so it arrives at 8:30."
    },
    "tags": [
     "elapsed-time",
@@ -10649,8 +10649,8 @@
     "en": "One day has 24 hours. How many days?"
    },
    "explain": {
-    "fr": "2 jours font 24 plus 24 : 48 heures.",
-    "en": "2 days are 24 plus 24: 48 hours."
+    "fr": "2 jours font 24 plus 24, donc 48 heures.",
+    "en": "2 days are 24 plus 24, so 48 hours."
    },
    "tags": [
     "true-false",
@@ -10732,16 +10732,16 @@
      "value": 7,
      "misconception": "mis_subtract_instead_of_add",
      "feedback": {
-      "fr": "Les deux camions apportent des bouteilles : on réunit.",
-      "en": "Both trucks bring bottles: put them together."
+      "fr": "Les deux camions apportent des bouteilles, alors on les réunit.",
+      "en": "Both trucks bring bottles, so put them together."
      }
     },
     {
      "value": 73,
      "misconception": "mis_forgot_carry",
      "feedback": {
-      "fr": "5 et 8 font plus de dix : pense à la retenue.",
-      "en": "5 and 8 make more than ten: remember to carry."
+      "fr": "5 et 8 font plus de dix. Pense à la retenue.",
+      "en": "5 and 8 make more than ten. Remember to carry."
      }
     }
    ]
@@ -10762,8 +10762,8 @@
     "en": "How many meals are there at the end?"
    },
    "hint": {
-    "fr": "Fais deux étapes : ce qui part, puis ce qui arrive.",
-    "en": "Do two steps: what leaves, then what arrives."
+    "fr": "Fais deux étapes. Ce qui part, puis ce qui arrive.",
+    "en": "Do two steps. What leaves, then what arrives."
    },
    "explain": {
     "fr": "120 moins 45 font 75. Puis 75 plus 60 font 135.",
@@ -10800,16 +10800,16 @@
      "value": 75,
      "misconception": "mis_partial_result",
      "feedback": {
-      "fr": "Il y a une deuxième étape : le cargo livre des repas.",
-      "en": "There is a second step: the cargo ship delivers meals."
+      "fr": "Il y a une deuxième étape. Le cargo livre des repas.",
+      "en": "There is a second step. The cargo ship delivers meals."
      }
     },
     {
      "value": 225,
      "misconception": "mis_add_instead_of_subtract",
      "feedback": {
-      "fr": "L’équipage mange des repas : on retire.",
-      "en": "The crew eats meals: subtract."
+      "fr": "L’équipage mange des repas, alors on retire.",
+      "en": "The crew eats meals, so subtract."
      }
     }
    ]
@@ -10834,8 +10834,8 @@
     "en": "Find the difference between the two tanks."
    },
    "explain": {
-    "fr": "64 moins 30 font 34. On a retiré 1 de trop : 35.",
-    "en": "64 minus 30 is 34. We took away 1 too many: 35."
+    "fr": "64 moins 30 font 34. On a retiré 1 de trop, donc 35.",
+    "en": "64 minus 30 is 34. We took away 1 too many, so 35."
    },
    "tags": [
     "subtraction",
