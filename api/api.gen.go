@@ -1165,7 +1165,10 @@ type AnswerResult struct {
 	//
 	// Example: mult_div:MIS-MUL-001
 	SceneKey *SceneKey `json:"scene_key,omitempty"`
-	Session  Session   `json:"session"`
+
+	// SceneReveal Reveal part of the scene spec (answer-bound and derived-wrong bindings, reveal label). Sent only with the released reveal (never in a withheld first result) and only when the question carries `scene`.
+	SceneReveal *map[string]interface{} `json:"scene_reveal,omitempty"`
+	Session     Session                 `json:"session"`
 }
 
 // AnswerResultAttempt Echo of the request attempt; absent for a legacy request.
@@ -2131,6 +2134,9 @@ type Question struct {
 
 	// Prompt What to answer
 	Prompt *string `json:"prompt,omitempty"`
+
+	// Scene Question-phase part of the 3D scene spec (SceneSpec v1 without any answer-bound value). Sent only for a bank question whose scene was approved while platform.scenes_enabled is on; absent otherwise (old clients ignore it).
+	Scene *map[string]interface{} `json:"scene,omitempty"`
 
 	// Story Short story line of the question (curated questions); also the scene text
 	Story *string `json:"story,omitempty"`

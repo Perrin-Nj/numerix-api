@@ -219,6 +219,9 @@ func (r *run) allKinds(ctx context.Context, tx *sql.Tx, actor string, perKind bo
 		if err := do(func(tx *sql.Tx) error { return r.missing(ctx, tx, actor) }); err != nil {
 			return fmt.Errorf("missing questions: %w", err)
 		}
+		if err := do(func(tx *sql.Tx) error { return r.scenes(ctx, tx) }); err != nil {
+			return fmt.Errorf("scenes: %w", err)
+		}
 	}
 	return nil
 }
@@ -452,4 +455,18 @@ func Rollback(ctx context.Context, repo *contentdb.Repo, runID, actor string) (i
 		repo.AfterCommit(ids...)
 	}
 	return n, err
+}
+
+// scenes stores each question's scene document in bank_questions.scene. Idempotent: a row already holding the same text is not touched,
+// and an id that is not in the bank is skipped. It is not part of the question content (no new version, no content hash change).
+func (r *run) scenes(ctx context.Context, tx *sql.Tx) error {
+	for id, doc := range r.f.Scenes {
+		if r.opt.World != "" && !strings.HasPrefix(id, r.opt.World+".") {
+			continue
+		}
+		if _, err := tx.ExecContext(ctx, `UPDATE bank_questions SET scene = ? WHERE id = ? AND COALESCE(scene, '') <> ?`, string(doc), id, string(doc)); err != nil {
+			return fmt.Errorf("%s: %w", id, err)
+		}
+	}
+	return nil
 }

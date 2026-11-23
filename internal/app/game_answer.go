@@ -285,6 +285,11 @@ func (s *Server) revealResult(ctx context.Context, sess api.Session, stored stor
 	if mv := s.methodVisual(ctx, problem.Visual, lang); mv != nil {
 		out.MethodVisual = mv
 	}
+	if cur != nil { // only a released reveal reaches here: the withheld first result of a retry window returns earlier
+		if _, rv := s.sceneParts(ctx, cur.ID); rv != nil {
+			out.SceneReveal = &rv
+		}
+	}
 	return out
 }
 

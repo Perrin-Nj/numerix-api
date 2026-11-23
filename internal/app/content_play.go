@@ -386,6 +386,9 @@ func (s *Server) curatedBeatView(ctx context.Context, b beatRow, cq *content.Que
 		}
 	}
 	view.Media = &media
+	if sq, _ := s.sceneParts(ctx, cq.ID); sq != nil {
+		view.Scene = &sq
+	}
 	created := plParseTS(b.Created)
 	return api.Beat{
 		Id: plUUID(b.ID), SessionId: plUUID(b.SessionID), Index: b.Index, SkillId: cq.Skill, Question: view,
